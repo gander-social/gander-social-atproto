@@ -9,11 +9,11 @@ import {
   is$typed as _is$typed,
   type OmitKey,
 } from '../../../../util'
-import type * as AppBskyFeedDefs from './defs.js'
+import type * as AppGndrFeedDefs from './defs.js'
 
 const is$typed = _is$typed,
   validate = _validate
-const id = 'app.bsky.feed.getPosts'
+const id = 'app.gndr.feed.getPosts'
 
 export type QueryParams = {
   /** List of post AT-URIs to return hydrated views for. */
@@ -22,7 +22,7 @@ export type QueryParams = {
 export type InputSchema = undefined
 
 export interface OutputSchema {
-  posts: AppBskyFeedDefs.PostView[]
+  posts: AppGndrFeedDefs.PostView[]
 }
 
 export type HandlerInput = void

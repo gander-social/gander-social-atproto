@@ -1448,7 +1448,7 @@ export const schemaDict = {
           name: {
             type: 'string',
             description:
-              "Name/identifier of the source (e.g., 'bsky-app/android', 'bsky-web/chrome')",
+              "Name/identifier of the source (e.g., 'gndr-app/android', 'gndr-web/chrome')",
           },
           meta: {
             type: 'unknown',
@@ -4541,9 +4541,9 @@ export const schemaDict = {
       },
     },
   },
-  AppBskyActorDefs: {
+  AppGndrActorDefs: {
     lexicon: 1,
-    id: 'app.bsky.actor.defs',
+    id: 'app.gndr.actor.defs',
     defs: {
       profileViewBasic: {
         type: 'object',
@@ -4568,11 +4568,11 @@ export const schemaDict = {
           },
           associated: {
             type: 'ref',
-            ref: 'lex:app.bsky.actor.defs#profileAssociated',
+            ref: 'lex:app.gndr.actor.defs#profileAssociated',
           },
           viewer: {
             type: 'ref',
-            ref: 'lex:app.bsky.actor.defs#viewerState',
+            ref: 'lex:app.gndr.actor.defs#viewerState',
           },
           labels: {
             type: 'array',
@@ -4587,11 +4587,11 @@ export const schemaDict = {
           },
           verification: {
             type: 'ref',
-            ref: 'lex:app.bsky.actor.defs#verificationState',
+            ref: 'lex:app.gndr.actor.defs#verificationState',
           },
           status: {
             type: 'ref',
-            ref: 'lex:app.bsky.actor.defs#statusView',
+            ref: 'lex:app.gndr.actor.defs#statusView',
           },
         },
       },
@@ -4623,7 +4623,7 @@ export const schemaDict = {
           },
           associated: {
             type: 'ref',
-            ref: 'lex:app.bsky.actor.defs#profileAssociated',
+            ref: 'lex:app.gndr.actor.defs#profileAssociated',
           },
           indexedAt: {
             type: 'string',
@@ -4635,7 +4635,7 @@ export const schemaDict = {
           },
           viewer: {
             type: 'ref',
-            ref: 'lex:app.bsky.actor.defs#viewerState',
+            ref: 'lex:app.gndr.actor.defs#viewerState',
           },
           labels: {
             type: 'array',
@@ -4646,11 +4646,11 @@ export const schemaDict = {
           },
           verification: {
             type: 'ref',
-            ref: 'lex:app.bsky.actor.defs#verificationState',
+            ref: 'lex:app.gndr.actor.defs#verificationState',
           },
           status: {
             type: 'ref',
-            ref: 'lex:app.bsky.actor.defs#statusView',
+            ref: 'lex:app.gndr.actor.defs#statusView',
           },
         },
       },
@@ -4695,11 +4695,11 @@ export const schemaDict = {
           },
           associated: {
             type: 'ref',
-            ref: 'lex:app.bsky.actor.defs#profileAssociated',
+            ref: 'lex:app.gndr.actor.defs#profileAssociated',
           },
           joinedViaStarterPack: {
             type: 'ref',
-            ref: 'lex:app.bsky.graph.defs#starterPackViewBasic',
+            ref: 'lex:app.gndr.graph.defs#starterPackViewBasic',
           },
           indexedAt: {
             type: 'string',
@@ -4711,7 +4711,7 @@ export const schemaDict = {
           },
           viewer: {
             type: 'ref',
-            ref: 'lex:app.bsky.actor.defs#viewerState',
+            ref: 'lex:app.gndr.actor.defs#viewerState',
           },
           labels: {
             type: 'array',
@@ -4726,11 +4726,11 @@ export const schemaDict = {
           },
           verification: {
             type: 'ref',
-            ref: 'lex:app.bsky.actor.defs#verificationState',
+            ref: 'lex:app.gndr.actor.defs#verificationState',
           },
           status: {
             type: 'ref',
-            ref: 'lex:app.bsky.actor.defs#statusView',
+            ref: 'lex:app.gndr.actor.defs#statusView',
           },
         },
       },
@@ -4751,11 +4751,11 @@ export const schemaDict = {
           },
           chat: {
             type: 'ref',
-            ref: 'lex:app.bsky.actor.defs#profileAssociatedChat',
+            ref: 'lex:app.gndr.actor.defs#profileAssociatedChat',
           },
           activitySubscription: {
             type: 'ref',
-            ref: 'lex:app.bsky.actor.defs#profileAssociatedActivitySubscription',
+            ref: 'lex:app.gndr.actor.defs#profileAssociatedActivitySubscription',
           },
         },
       },
@@ -4789,7 +4789,7 @@ export const schemaDict = {
           },
           mutedByList: {
             type: 'ref',
-            ref: 'lex:app.bsky.graph.defs#listViewBasic',
+            ref: 'lex:app.gndr.graph.defs#listViewBasic',
           },
           blockedBy: {
             type: 'boolean',
@@ -4800,7 +4800,7 @@ export const schemaDict = {
           },
           blockingByList: {
             type: 'ref',
-            ref: 'lex:app.bsky.graph.defs#listViewBasic',
+            ref: 'lex:app.gndr.graph.defs#listViewBasic',
           },
           following: {
             type: 'string',
@@ -4814,13 +4814,13 @@ export const schemaDict = {
             description:
               'This property is present only in selected cases, as an optimization.',
             type: 'ref',
-            ref: 'lex:app.bsky.actor.defs#knownFollowers',
+            ref: 'lex:app.gndr.actor.defs#knownFollowers',
           },
           activitySubscription: {
             description:
               'This property is present only in selected cases, as an optimization.',
             type: 'ref',
-            ref: 'lex:app.bsky.notification.defs#activitySubscription',
+            ref: 'lex:app.gndr.notification.defs#activitySubscription',
           },
         },
       },
@@ -4838,7 +4838,7 @@ export const schemaDict = {
             maxLength: 5,
             items: {
               type: 'ref',
-              ref: 'lex:app.bsky.actor.defs#profileViewBasic',
+              ref: 'lex:app.gndr.actor.defs#profileViewBasic',
             },
           },
         },
@@ -4855,7 +4855,7 @@ export const schemaDict = {
               'All verifications issued by trusted verifiers on behalf of this user. Verifications by untrusted verifiers are not included.',
             items: {
               type: 'ref',
-              ref: 'lex:app.bsky.actor.defs#verificationView',
+              ref: 'lex:app.gndr.actor.defs#verificationView',
             },
           },
           verifiedStatus: {
@@ -4902,20 +4902,20 @@ export const schemaDict = {
         items: {
           type: 'union',
           refs: [
-            'lex:app.bsky.actor.defs#adultContentPref',
-            'lex:app.bsky.actor.defs#contentLabelPref',
-            'lex:app.bsky.actor.defs#savedFeedsPref',
-            'lex:app.bsky.actor.defs#savedFeedsPrefV2',
-            'lex:app.bsky.actor.defs#personalDetailsPref',
-            'lex:app.bsky.actor.defs#feedViewPref',
-            'lex:app.bsky.actor.defs#threadViewPref',
-            'lex:app.bsky.actor.defs#interestsPref',
-            'lex:app.bsky.actor.defs#mutedWordsPref',
-            'lex:app.bsky.actor.defs#hiddenPostsPref',
-            'lex:app.bsky.actor.defs#bskyAppStatePref',
-            'lex:app.bsky.actor.defs#labelersPref',
-            'lex:app.bsky.actor.defs#postInteractionSettingsPref',
-            'lex:app.bsky.actor.defs#verificationPrefs',
+            'lex:app.gndr.actor.defs#adultContentPref',
+            'lex:app.gndr.actor.defs#contentLabelPref',
+            'lex:app.gndr.actor.defs#savedFeedsPref',
+            'lex:app.gndr.actor.defs#savedFeedsPrefV2',
+            'lex:app.gndr.actor.defs#personalDetailsPref',
+            'lex:app.gndr.actor.defs#feedViewPref',
+            'lex:app.gndr.actor.defs#threadViewPref',
+            'lex:app.gndr.actor.defs#interestsPref',
+            'lex:app.gndr.actor.defs#mutedWordsPref',
+            'lex:app.gndr.actor.defs#hiddenPostsPref',
+            'lex:app.gndr.actor.defs#gndrAppStatePref',
+            'lex:app.gndr.actor.defs#labelersPref',
+            'lex:app.gndr.actor.defs#postInteractionSettingsPref',
+            'lex:app.gndr.actor.defs#verificationPrefs',
           ],
         },
       },
@@ -4975,7 +4975,7 @@ export const schemaDict = {
             type: 'array',
             items: {
               type: 'ref',
-              ref: 'lex:app.bsky.actor.defs#savedFeed',
+              ref: 'lex:app.gndr.actor.defs#savedFeed',
             },
           },
         },
@@ -5109,7 +5109,7 @@ export const schemaDict = {
             description: 'The intended targets of the muted word.',
             items: {
               type: 'ref',
-              ref: 'lex:app.bsky.actor.defs#mutedWordTarget',
+              ref: 'lex:app.gndr.actor.defs#mutedWordTarget',
             },
           },
           actorTarget: {
@@ -5135,7 +5135,7 @@ export const schemaDict = {
             type: 'array',
             items: {
               type: 'ref',
-              ref: 'lex:app.bsky.actor.defs#mutedWord',
+              ref: 'lex:app.gndr.actor.defs#mutedWord',
             },
             description: 'A list of words the account owner has muted.',
           },
@@ -5164,7 +5164,7 @@ export const schemaDict = {
             type: 'array',
             items: {
               type: 'ref',
-              ref: 'lex:app.bsky.actor.defs#labelerPrefItem',
+              ref: 'lex:app.gndr.actor.defs#labelerPrefItem',
             },
           },
         },
@@ -5179,14 +5179,14 @@ export const schemaDict = {
           },
         },
       },
-      bskyAppStatePref: {
+      gndrAppStatePref: {
         description:
-          "A grab bag of state that's specific to the bsky.app program. Third-party apps shouldn't use this.",
+          "A grab bag of state that's specific to the gndr.app program. Third-party apps shouldn't use this.",
         type: 'object',
         properties: {
           activeProgressGuide: {
             type: 'ref',
-            ref: 'lex:app.bsky.actor.defs#bskyAppProgressGuide',
+            ref: 'lex:app.gndr.actor.defs#gndrAppProgressGuide',
           },
           queuedNudges: {
             description:
@@ -5204,12 +5204,12 @@ export const schemaDict = {
             maxLength: 100,
             items: {
               type: 'ref',
-              ref: 'lex:app.bsky.actor.defs#nux',
+              ref: 'lex:app.gndr.actor.defs#nux',
             },
           },
         },
       },
-      bskyAppProgressGuide: {
+      gndrAppProgressGuide: {
         description:
           'If set, an active progress guide. Once completed, can be set to undefined. Should have unspecced fields tracking progress.',
         type: 'object',
@@ -5276,10 +5276,10 @@ export const schemaDict = {
             items: {
               type: 'union',
               refs: [
-                'lex:app.bsky.feed.threadgate#mentionRule',
-                'lex:app.bsky.feed.threadgate#followerRule',
-                'lex:app.bsky.feed.threadgate#followingRule',
-                'lex:app.bsky.feed.threadgate#listRule',
+                'lex:app.gndr.feed.threadgate#mentionRule',
+                'lex:app.gndr.feed.threadgate#followerRule',
+                'lex:app.gndr.feed.threadgate#followingRule',
+                'lex:app.gndr.feed.threadgate#listRule',
               ],
             },
           },
@@ -5290,7 +5290,7 @@ export const schemaDict = {
             maxLength: 5,
             items: {
               type: 'union',
-              refs: ['lex:app.bsky.feed.postgate#disableRule'],
+              refs: ['lex:app.gndr.feed.postgate#disableRule'],
             },
           },
         },
@@ -5302,7 +5302,7 @@ export const schemaDict = {
           status: {
             type: 'string',
             description: 'The status for the account.',
-            knownValues: ['app.bsky.actor.status#live'],
+            knownValues: ['app.gndr.actor.status#live'],
           },
           record: {
             type: 'unknown',
@@ -5310,7 +5310,7 @@ export const schemaDict = {
           embed: {
             type: 'union',
             description: 'An optional embed associated with the status.',
-            refs: ['lex:app.bsky.embed.external#view'],
+            refs: ['lex:app.gndr.embed.external#view'],
           },
           expiresAt: {
             type: 'string',
@@ -5327,9 +5327,9 @@ export const schemaDict = {
       },
     },
   },
-  AppBskyActorGetPreferences: {
+  AppGndrActorGetPreferences: {
     lexicon: 1,
-    id: 'app.bsky.actor.getPreferences',
+    id: 'app.gndr.actor.getPreferences',
     defs: {
       main: {
         type: 'query',
@@ -5347,7 +5347,7 @@ export const schemaDict = {
             properties: {
               preferences: {
                 type: 'ref',
-                ref: 'lex:app.bsky.actor.defs#preferences',
+                ref: 'lex:app.gndr.actor.defs#preferences',
               },
             },
           },
@@ -5355,9 +5355,9 @@ export const schemaDict = {
       },
     },
   },
-  AppBskyActorGetProfile: {
+  AppGndrActorGetProfile: {
     lexicon: 1,
-    id: 'app.bsky.actor.getProfile',
+    id: 'app.gndr.actor.getProfile',
     defs: {
       main: {
         type: 'query',
@@ -5378,7 +5378,7 @@ export const schemaDict = {
           encoding: 'application/json',
           schema: {
             type: 'ref',
-            ref: 'lex:app.bsky.actor.defs#profileViewDetailed',
+            ref: 'lex:app.gndr.actor.defs#profileViewDetailed',
           },
         },
       },
@@ -5386,7 +5386,7 @@ export const schemaDict = {
   },
   AppBskyActorGetProfiles: {
     lexicon: 1,
-    id: 'app.bsky.actor.getProfiles',
+    id: 'app.gndr.actor.getProfiles',
     defs: {
       main: {
         type: 'query',
@@ -5415,7 +5415,7 @@ export const schemaDict = {
                 type: 'array',
                 items: {
                   type: 'ref',
-                  ref: 'lex:app.bsky.actor.defs#profileViewDetailed',
+                  ref: 'lex:app.gndr.actor.defs#profileViewDetailed',
                 },
               },
             },
@@ -5426,7 +5426,7 @@ export const schemaDict = {
   },
   AppBskyActorGetSuggestions: {
     lexicon: 1,
-    id: 'app.bsky.actor.getSuggestions',
+    id: 'app.gndr.actor.getSuggestions',
     defs: {
       main: {
         type: 'query',
@@ -5459,7 +5459,7 @@ export const schemaDict = {
                 type: 'array',
                 items: {
                   type: 'ref',
-                  ref: 'lex:app.bsky.actor.defs#profileView',
+                  ref: 'lex:app.gndr.actor.defs#profileView',
                 },
               },
               recId: {
@@ -5475,11 +5475,11 @@ export const schemaDict = {
   },
   AppBskyActorProfile: {
     lexicon: 1,
-    id: 'app.bsky.actor.profile',
+    id: 'app.gndr.actor.profile',
     defs: {
       main: {
         type: 'record',
-        description: 'A declaration of a Bluesky account profile.',
+        description: 'A declaration of a Gander account profile.',
         key: 'literal:self',
         record: {
           type: 'object',
@@ -5512,7 +5512,7 @@ export const schemaDict = {
             labels: {
               type: 'union',
               description:
-                'Self-label values, specific to the Bluesky application, on the overall account.',
+                'Self-label values, specific to the Gander application, on the overall account.',
               refs: ['lex:com.atproto.label.defs#selfLabels'],
             },
             joinedViaStarterPack: {
@@ -5534,7 +5534,7 @@ export const schemaDict = {
   },
   AppBskyActorPutPreferences: {
     lexicon: 1,
-    id: 'app.bsky.actor.putPreferences',
+    id: 'app.gndr.actor.putPreferences',
     defs: {
       main: {
         type: 'procedure',
@@ -5547,7 +5547,7 @@ export const schemaDict = {
             properties: {
               preferences: {
                 type: 'ref',
-                ref: 'lex:app.bsky.actor.defs#preferences',
+                ref: 'lex:app.gndr.actor.defs#preferences',
               },
             },
           },
@@ -5557,7 +5557,7 @@ export const schemaDict = {
   },
   AppBskyActorSearchActors: {
     lexicon: 1,
-    id: 'app.bsky.actor.searchActors',
+    id: 'app.gndr.actor.searchActors',
     defs: {
       main: {
         type: 'query',
@@ -5599,7 +5599,7 @@ export const schemaDict = {
                 type: 'array',
                 items: {
                   type: 'ref',
-                  ref: 'lex:app.bsky.actor.defs#profileView',
+                  ref: 'lex:app.gndr.actor.defs#profileView',
                 },
               },
             },
@@ -5610,7 +5610,7 @@ export const schemaDict = {
   },
   AppBskyActorSearchActorsTypeahead: {
     lexicon: 1,
-    id: 'app.bsky.actor.searchActorsTypeahead',
+    id: 'app.gndr.actor.searchActorsTypeahead',
     defs: {
       main: {
         type: 'query',
@@ -5645,7 +5645,7 @@ export const schemaDict = {
                 type: 'array',
                 items: {
                   type: 'ref',
-                  ref: 'lex:app.bsky.actor.defs#profileViewBasic',
+                  ref: 'lex:app.gndr.actor.defs#profileViewBasic',
                 },
               },
             },
@@ -5656,11 +5656,11 @@ export const schemaDict = {
   },
   AppBskyActorStatus: {
     lexicon: 1,
-    id: 'app.bsky.actor.status',
+    id: 'app.gndr.actor.status',
     defs: {
       main: {
         type: 'record',
-        description: 'A declaration of a Bluesky account status.',
+        description: 'A declaration of a Gander account status.',
         key: 'literal:self',
         record: {
           type: 'object',
@@ -5669,12 +5669,12 @@ export const schemaDict = {
             status: {
               type: 'string',
               description: 'The status for the account.',
-              knownValues: ['app.bsky.actor.status#live'],
+              knownValues: ['app.gndr.actor.status#live'],
             },
             embed: {
               type: 'union',
               description: 'An optional embed associated with the status.',
-              refs: ['lex:app.bsky.embed.external'],
+              refs: ['lex:app.gndr.embed.external'],
             },
             durationMinutes: {
               type: 'integer',
@@ -5698,7 +5698,7 @@ export const schemaDict = {
   },
   AppBskyEmbedDefs: {
     lexicon: 1,
-    id: 'app.bsky.embed.defs',
+    id: 'app.gndr.embed.defs',
     defs: {
       aspectRatio: {
         type: 'object',
@@ -5720,17 +5720,17 @@ export const schemaDict = {
   },
   AppBskyEmbedExternal: {
     lexicon: 1,
-    id: 'app.bsky.embed.external',
+    id: 'app.gndr.embed.external',
     defs: {
       main: {
         type: 'object',
         description:
-          "A representation of some externally linked content (eg, a URL and 'card'), embedded in a Bluesky record (eg, a post).",
+          "A representation of some externally linked content (eg, a URL and 'card'), embedded in a Gander record (eg, a post).",
         required: ['external'],
         properties: {
           external: {
             type: 'ref',
-            ref: 'lex:app.bsky.embed.external#external',
+            ref: 'lex:app.gndr.embed.external#external',
           },
         },
       },
@@ -5761,7 +5761,7 @@ export const schemaDict = {
         properties: {
           external: {
             type: 'ref',
-            ref: 'lex:app.bsky.embed.external#viewExternal',
+            ref: 'lex:app.gndr.embed.external#viewExternal',
           },
         },
       },
@@ -5789,8 +5789,8 @@ export const schemaDict = {
   },
   AppBskyEmbedImages: {
     lexicon: 1,
-    id: 'app.bsky.embed.images',
-    description: 'A set of images embedded in a Bluesky record (eg, a post).',
+    id: 'app.gndr.embed.images',
+    description: 'A set of images embedded in a Gander record (eg, a post).',
     defs: {
       main: {
         type: 'object',
@@ -5800,7 +5800,7 @@ export const schemaDict = {
             type: 'array',
             items: {
               type: 'ref',
-              ref: 'lex:app.bsky.embed.images#image',
+              ref: 'lex:app.gndr.embed.images#image',
             },
             maxLength: 4,
           },
@@ -5822,7 +5822,7 @@ export const schemaDict = {
           },
           aspectRatio: {
             type: 'ref',
-            ref: 'lex:app.bsky.embed.defs#aspectRatio',
+            ref: 'lex:app.gndr.embed.defs#aspectRatio',
           },
         },
       },
@@ -5834,7 +5834,7 @@ export const schemaDict = {
             type: 'array',
             items: {
               type: 'ref',
-              ref: 'lex:app.bsky.embed.images#viewImage',
+              ref: 'lex:app.gndr.embed.images#viewImage',
             },
             maxLength: 4,
           },
@@ -5863,7 +5863,7 @@ export const schemaDict = {
           },
           aspectRatio: {
             type: 'ref',
-            ref: 'lex:app.bsky.embed.defs#aspectRatio',
+            ref: 'lex:app.gndr.embed.defs#aspectRatio',
           },
         },
       },
@@ -5871,9 +5871,9 @@ export const schemaDict = {
   },
   AppBskyEmbedRecord: {
     lexicon: 1,
-    id: 'app.bsky.embed.record',
+    id: 'app.gndr.embed.record',
     description:
-      'A representation of a record embedded in a Bluesky record (eg, a post). For example, a quote-post, or sharing a feed generator record.',
+      'A representation of a record embedded in a Gander record (eg, a post). For example, a quote-post, or sharing a feed generator record.',
     defs: {
       main: {
         type: 'object',
@@ -5892,14 +5892,14 @@ export const schemaDict = {
           record: {
             type: 'union',
             refs: [
-              'lex:app.bsky.embed.record#viewRecord',
-              'lex:app.bsky.embed.record#viewNotFound',
-              'lex:app.bsky.embed.record#viewBlocked',
-              'lex:app.bsky.embed.record#viewDetached',
-              'lex:app.bsky.feed.defs#generatorView',
-              'lex:app.bsky.graph.defs#listView',
-              'lex:app.bsky.labeler.defs#labelerView',
-              'lex:app.bsky.graph.defs#starterPackViewBasic',
+              'lex:app.gndr.embed.record#viewRecord',
+              'lex:app.gndr.embed.record#viewNotFound',
+              'lex:app.gndr.embed.record#viewBlocked',
+              'lex:app.gndr.embed.record#viewDetached',
+              'lex:app.gndr.feed.defs#generatorView',
+              'lex:app.gndr.graph.defs#listView',
+              'lex:app.gndr.labeler.defs#labelerView',
+              'lex:app.gndr.graph.defs#starterPackViewBasic',
             ],
           },
         },
@@ -5918,7 +5918,7 @@ export const schemaDict = {
           },
           author: {
             type: 'ref',
-            ref: 'lex:app.bsky.actor.defs#profileViewBasic',
+            ref: 'lex:app.gndr.actor.defs#profileViewBasic',
           },
           value: {
             type: 'unknown',
@@ -5948,11 +5948,11 @@ export const schemaDict = {
             items: {
               type: 'union',
               refs: [
-                'lex:app.bsky.embed.images#view',
-                'lex:app.bsky.embed.video#view',
-                'lex:app.bsky.embed.external#view',
-                'lex:app.bsky.embed.record#view',
-                'lex:app.bsky.embed.recordWithMedia#view',
+                'lex:app.gndr.embed.images#view',
+                'lex:app.gndr.embed.video#view',
+                'lex:app.gndr.embed.external#view',
+                'lex:app.gndr.embed.record#view',
+                'lex:app.gndr.embed.recordWithMedia#view',
               ],
             },
           },
@@ -5990,7 +5990,7 @@ export const schemaDict = {
           },
           author: {
             type: 'ref',
-            ref: 'lex:app.bsky.feed.defs#blockedAuthor',
+            ref: 'lex:app.gndr.feed.defs#blockedAuthor',
           },
         },
       },
@@ -6012,9 +6012,9 @@ export const schemaDict = {
   },
   AppBskyEmbedRecordWithMedia: {
     lexicon: 1,
-    id: 'app.bsky.embed.recordWithMedia',
+    id: 'app.gndr.embed.recordWithMedia',
     description:
-      'A representation of a record embedded in a Bluesky record (eg, a post), alongside other compatible embeds. For example, a quote post and image, or a quote post and external URL card.',
+      'A representation of a record embedded in a Gander record (eg, a post), alongside other compatible embeds. For example, a quote post and image, or a quote post and external URL card.',
     defs: {
       main: {
         type: 'object',
@@ -6022,14 +6022,14 @@ export const schemaDict = {
         properties: {
           record: {
             type: 'ref',
-            ref: 'lex:app.bsky.embed.record',
+            ref: 'lex:app.gndr.embed.record',
           },
           media: {
             type: 'union',
             refs: [
-              'lex:app.bsky.embed.images',
-              'lex:app.bsky.embed.video',
-              'lex:app.bsky.embed.external',
+              'lex:app.gndr.embed.images',
+              'lex:app.gndr.embed.video',
+              'lex:app.gndr.embed.external',
             ],
           },
         },
@@ -6040,14 +6040,14 @@ export const schemaDict = {
         properties: {
           record: {
             type: 'ref',
-            ref: 'lex:app.bsky.embed.record#view',
+            ref: 'lex:app.gndr.embed.record#view',
           },
           media: {
             type: 'union',
             refs: [
-              'lex:app.bsky.embed.images#view',
-              'lex:app.bsky.embed.video#view',
-              'lex:app.bsky.embed.external#view',
+              'lex:app.gndr.embed.images#view',
+              'lex:app.gndr.embed.video#view',
+              'lex:app.gndr.embed.external#view',
             ],
           },
         },
@@ -6056,8 +6056,8 @@ export const schemaDict = {
   },
   AppBskyEmbedVideo: {
     lexicon: 1,
-    id: 'app.bsky.embed.video',
-    description: 'A video embedded in a Bluesky record (eg, a post).',
+    id: 'app.gndr.embed.video',
+    description: 'A video embedded in a Gander record (eg, a post).',
     defs: {
       main: {
         type: 'object',
@@ -6074,7 +6074,7 @@ export const schemaDict = {
             type: 'array',
             items: {
               type: 'ref',
-              ref: 'lex:app.bsky.embed.video#caption',
+              ref: 'lex:app.gndr.embed.video#caption',
             },
             maxLength: 20,
           },
@@ -6087,7 +6087,7 @@ export const schemaDict = {
           },
           aspectRatio: {
             type: 'ref',
-            ref: 'lex:app.bsky.embed.defs#aspectRatio',
+            ref: 'lex:app.gndr.embed.defs#aspectRatio',
           },
         },
       },
@@ -6129,7 +6129,7 @@ export const schemaDict = {
           },
           aspectRatio: {
             type: 'ref',
-            ref: 'lex:app.bsky.embed.defs#aspectRatio',
+            ref: 'lex:app.gndr.embed.defs#aspectRatio',
           },
         },
       },
@@ -6137,7 +6137,7 @@ export const schemaDict = {
   },
   AppBskyFeedDefs: {
     lexicon: 1,
-    id: 'app.bsky.feed.defs',
+    id: 'app.gndr.feed.defs',
     defs: {
       postView: {
         type: 'object',
@@ -6153,7 +6153,7 @@ export const schemaDict = {
           },
           author: {
             type: 'ref',
-            ref: 'lex:app.bsky.actor.defs#profileViewBasic',
+            ref: 'lex:app.gndr.actor.defs#profileViewBasic',
           },
           record: {
             type: 'unknown',
@@ -6161,11 +6161,11 @@ export const schemaDict = {
           embed: {
             type: 'union',
             refs: [
-              'lex:app.bsky.embed.images#view',
-              'lex:app.bsky.embed.video#view',
-              'lex:app.bsky.embed.external#view',
-              'lex:app.bsky.embed.record#view',
-              'lex:app.bsky.embed.recordWithMedia#view',
+              'lex:app.gndr.embed.images#view',
+              'lex:app.gndr.embed.video#view',
+              'lex:app.gndr.embed.external#view',
+              'lex:app.gndr.embed.record#view',
+              'lex:app.gndr.embed.recordWithMedia#view',
             ],
           },
           replyCount: {
@@ -6186,7 +6186,7 @@ export const schemaDict = {
           },
           viewer: {
             type: 'ref',
-            ref: 'lex:app.bsky.feed.defs#viewerState',
+            ref: 'lex:app.gndr.feed.defs#viewerState',
           },
           labels: {
             type: 'array',
@@ -6197,7 +6197,7 @@ export const schemaDict = {
           },
           threadgate: {
             type: 'ref',
-            ref: 'lex:app.bsky.feed.defs#threadgateView',
+            ref: 'lex:app.gndr.feed.defs#threadgateView',
           },
         },
       },
@@ -6245,17 +6245,17 @@ export const schemaDict = {
         properties: {
           post: {
             type: 'ref',
-            ref: 'lex:app.bsky.feed.defs#postView',
+            ref: 'lex:app.gndr.feed.defs#postView',
           },
           reply: {
             type: 'ref',
-            ref: 'lex:app.bsky.feed.defs#replyRef',
+            ref: 'lex:app.gndr.feed.defs#replyRef',
           },
           reason: {
             type: 'union',
             refs: [
-              'lex:app.bsky.feed.defs#reasonRepost',
-              'lex:app.bsky.feed.defs#reasonPin',
+              'lex:app.gndr.feed.defs#reasonRepost',
+              'lex:app.gndr.feed.defs#reasonPin',
             ],
           },
           feedContext: {
@@ -6279,22 +6279,22 @@ export const schemaDict = {
           root: {
             type: 'union',
             refs: [
-              'lex:app.bsky.feed.defs#postView',
-              'lex:app.bsky.feed.defs#notFoundPost',
-              'lex:app.bsky.feed.defs#blockedPost',
+              'lex:app.gndr.feed.defs#postView',
+              'lex:app.gndr.feed.defs#notFoundPost',
+              'lex:app.gndr.feed.defs#blockedPost',
             ],
           },
           parent: {
             type: 'union',
             refs: [
-              'lex:app.bsky.feed.defs#postView',
-              'lex:app.bsky.feed.defs#notFoundPost',
-              'lex:app.bsky.feed.defs#blockedPost',
+              'lex:app.gndr.feed.defs#postView',
+              'lex:app.gndr.feed.defs#notFoundPost',
+              'lex:app.gndr.feed.defs#blockedPost',
             ],
           },
           grandparentAuthor: {
             type: 'ref',
-            ref: 'lex:app.bsky.actor.defs#profileViewBasic',
+            ref: 'lex:app.gndr.actor.defs#profileViewBasic',
             description:
               'When parent is a reply to another post, this is the author of that post.',
           },
@@ -6306,7 +6306,7 @@ export const schemaDict = {
         properties: {
           by: {
             type: 'ref',
-            ref: 'lex:app.bsky.actor.defs#profileViewBasic',
+            ref: 'lex:app.gndr.actor.defs#profileViewBasic',
           },
           uri: {
             type: 'string',
@@ -6332,14 +6332,14 @@ export const schemaDict = {
         properties: {
           post: {
             type: 'ref',
-            ref: 'lex:app.bsky.feed.defs#postView',
+            ref: 'lex:app.gndr.feed.defs#postView',
           },
           parent: {
             type: 'union',
             refs: [
-              'lex:app.bsky.feed.defs#threadViewPost',
-              'lex:app.bsky.feed.defs#notFoundPost',
-              'lex:app.bsky.feed.defs#blockedPost',
+              'lex:app.gndr.feed.defs#threadViewPost',
+              'lex:app.gndr.feed.defs#notFoundPost',
+              'lex:app.gndr.feed.defs#blockedPost',
             ],
           },
           replies: {
@@ -6347,15 +6347,15 @@ export const schemaDict = {
             items: {
               type: 'union',
               refs: [
-                'lex:app.bsky.feed.defs#threadViewPost',
-                'lex:app.bsky.feed.defs#notFoundPost',
-                'lex:app.bsky.feed.defs#blockedPost',
+                'lex:app.gndr.feed.defs#threadViewPost',
+                'lex:app.gndr.feed.defs#notFoundPost',
+                'lex:app.gndr.feed.defs#blockedPost',
               ],
             },
           },
           threadContext: {
             type: 'ref',
-            ref: 'lex:app.bsky.feed.defs#threadContext',
+            ref: 'lex:app.gndr.feed.defs#threadContext',
           },
         },
       },
@@ -6387,7 +6387,7 @@ export const schemaDict = {
           },
           author: {
             type: 'ref',
-            ref: 'lex:app.bsky.feed.defs#blockedAuthor',
+            ref: 'lex:app.gndr.feed.defs#blockedAuthor',
           },
         },
       },
@@ -6401,7 +6401,7 @@ export const schemaDict = {
           },
           viewer: {
             type: 'ref',
-            ref: 'lex:app.bsky.actor.defs#viewerState',
+            ref: 'lex:app.gndr.actor.defs#viewerState',
           },
         },
       },
@@ -6423,7 +6423,7 @@ export const schemaDict = {
           },
           creator: {
             type: 'ref',
-            ref: 'lex:app.bsky.actor.defs#profileView',
+            ref: 'lex:app.gndr.actor.defs#profileView',
           },
           displayName: {
             type: 'string',
@@ -6437,7 +6437,7 @@ export const schemaDict = {
             type: 'array',
             items: {
               type: 'ref',
-              ref: 'lex:app.bsky.richtext.facet',
+              ref: 'lex:app.gndr.richtext.facet',
             },
           },
           avatar: {
@@ -6460,13 +6460,13 @@ export const schemaDict = {
           },
           viewer: {
             type: 'ref',
-            ref: 'lex:app.bsky.feed.defs#generatorViewerState',
+            ref: 'lex:app.gndr.feed.defs#generatorViewerState',
           },
           contentMode: {
             type: 'string',
             knownValues: [
-              'app.bsky.feed.defs#contentModeUnspecified',
-              'app.bsky.feed.defs#contentModeVideo',
+              'app.gndr.feed.defs#contentModeUnspecified',
+              'app.gndr.feed.defs#contentModeVideo',
             ],
           },
           indexedAt: {
@@ -6495,8 +6495,8 @@ export const schemaDict = {
           reason: {
             type: 'union',
             refs: [
-              'lex:app.bsky.feed.defs#skeletonReasonRepost',
-              'lex:app.bsky.feed.defs#skeletonReasonPin',
+              'lex:app.gndr.feed.defs#skeletonReasonRepost',
+              'lex:app.gndr.feed.defs#skeletonReasonPin',
             ],
           },
           feedContext: {
@@ -6539,7 +6539,7 @@ export const schemaDict = {
             type: 'array',
             items: {
               type: 'ref',
-              ref: 'lex:app.bsky.graph.defs#listViewBasic',
+              ref: 'lex:app.gndr.graph.defs#listViewBasic',
             },
           },
         },
@@ -6554,18 +6554,18 @@ export const schemaDict = {
           event: {
             type: 'string',
             knownValues: [
-              'app.bsky.feed.defs#requestLess',
-              'app.bsky.feed.defs#requestMore',
-              'app.bsky.feed.defs#clickthroughItem',
-              'app.bsky.feed.defs#clickthroughAuthor',
-              'app.bsky.feed.defs#clickthroughReposter',
-              'app.bsky.feed.defs#clickthroughEmbed',
-              'app.bsky.feed.defs#interactionSeen',
-              'app.bsky.feed.defs#interactionLike',
-              'app.bsky.feed.defs#interactionRepost',
-              'app.bsky.feed.defs#interactionReply',
-              'app.bsky.feed.defs#interactionQuote',
-              'app.bsky.feed.defs#interactionShare',
+              'app.gndr.feed.defs#requestLess',
+              'app.gndr.feed.defs#requestMore',
+              'app.gndr.feed.defs#clickthroughItem',
+              'app.gndr.feed.defs#clickthroughAuthor',
+              'app.gndr.feed.defs#clickthroughReposter',
+              'app.gndr.feed.defs#clickthroughEmbed',
+              'app.gndr.feed.defs#interactionSeen',
+              'app.gndr.feed.defs#interactionLike',
+              'app.gndr.feed.defs#interactionRepost',
+              'app.gndr.feed.defs#interactionReply',
+              'app.gndr.feed.defs#interactionQuote',
+              'app.gndr.feed.defs#interactionShare',
             ],
           },
           feedContext: {
@@ -6616,7 +6616,7 @@ export const schemaDict = {
       contentModeVideo: {
         type: 'token',
         description:
-          'Declares the feed generator returns posts containing app.bsky.embed.video embeds.',
+          'Declares the feed generator returns posts containing app.gndr.embed.video embeds.',
       },
       interactionSeen: {
         type: 'token',
@@ -6646,7 +6646,7 @@ export const schemaDict = {
   },
   AppBskyFeedDescribeFeedGenerator: {
     lexicon: 1,
-    id: 'app.bsky.feed.describeFeedGenerator',
+    id: 'app.gndr.feed.describeFeedGenerator',
     defs: {
       main: {
         type: 'query',
@@ -6666,12 +6666,12 @@ export const schemaDict = {
                 type: 'array',
                 items: {
                   type: 'ref',
-                  ref: 'lex:app.bsky.feed.describeFeedGenerator#feed',
+                  ref: 'lex:app.gndr.feed.describeFeedGenerator#feed',
                 },
               },
               links: {
                 type: 'ref',
-                ref: 'lex:app.bsky.feed.describeFeedGenerator#links',
+                ref: 'lex:app.gndr.feed.describeFeedGenerator#links',
               },
             },
           },
@@ -6702,7 +6702,7 @@ export const schemaDict = {
   },
   AppBskyFeedGenerator: {
     lexicon: 1,
-    id: 'app.bsky.feed.generator',
+    id: 'app.gndr.feed.generator',
     defs: {
       main: {
         type: 'record',
@@ -6731,7 +6731,7 @@ export const schemaDict = {
               type: 'array',
               items: {
                 type: 'ref',
-                ref: 'lex:app.bsky.richtext.facet',
+                ref: 'lex:app.gndr.richtext.facet',
               },
             },
             avatar: {
@@ -6742,7 +6742,7 @@ export const schemaDict = {
             acceptsInteractions: {
               type: 'boolean',
               description:
-                'Declaration that a feed accepts feedback interactions from a client through app.bsky.feed.sendInteractions',
+                'Declaration that a feed accepts feedback interactions from a client through app.gndr.feed.sendInteractions',
             },
             labels: {
               type: 'union',
@@ -6752,8 +6752,8 @@ export const schemaDict = {
             contentMode: {
               type: 'string',
               knownValues: [
-                'app.bsky.feed.defs#contentModeUnspecified',
-                'app.bsky.feed.defs#contentModeVideo',
+                'app.gndr.feed.defs#contentModeUnspecified',
+                'app.gndr.feed.defs#contentModeVideo',
               ],
             },
             createdAt: {
@@ -6767,7 +6767,7 @@ export const schemaDict = {
   },
   AppBskyFeedGetActorFeeds: {
     lexicon: 1,
-    id: 'app.bsky.feed.getActorFeeds',
+    id: 'app.gndr.feed.getActorFeeds',
     defs: {
       main: {
         type: 'query',
@@ -6805,7 +6805,7 @@ export const schemaDict = {
                 type: 'array',
                 items: {
                   type: 'ref',
-                  ref: 'lex:app.bsky.feed.defs#generatorView',
+                  ref: 'lex:app.gndr.feed.defs#generatorView',
                 },
               },
             },
@@ -6816,7 +6816,7 @@ export const schemaDict = {
   },
   AppBskyFeedGetActorLikes: {
     lexicon: 1,
-    id: 'app.bsky.feed.getActorLikes',
+    id: 'app.gndr.feed.getActorLikes',
     defs: {
       main: {
         type: 'query',
@@ -6854,7 +6854,7 @@ export const schemaDict = {
                 type: 'array',
                 items: {
                   type: 'ref',
-                  ref: 'lex:app.bsky.feed.defs#feedViewPost',
+                  ref: 'lex:app.gndr.feed.defs#feedViewPost',
                 },
               },
             },
@@ -6873,7 +6873,7 @@ export const schemaDict = {
   },
   AppBskyFeedGetAuthorFeed: {
     lexicon: 1,
-    id: 'app.bsky.feed.getAuthorFeed',
+    id: 'app.gndr.feed.getAuthorFeed',
     defs: {
       main: {
         type: 'query',
@@ -6928,7 +6928,7 @@ export const schemaDict = {
                 type: 'array',
                 items: {
                   type: 'ref',
-                  ref: 'lex:app.bsky.feed.defs#feedViewPost',
+                  ref: 'lex:app.gndr.feed.defs#feedViewPost',
                 },
               },
             },
@@ -6947,7 +6947,7 @@ export const schemaDict = {
   },
   AppBskyFeedGetFeed: {
     lexicon: 1,
-    id: 'app.bsky.feed.getFeed',
+    id: 'app.gndr.feed.getFeed',
     defs: {
       main: {
         type: 'query',
@@ -6985,7 +6985,7 @@ export const schemaDict = {
                 type: 'array',
                 items: {
                   type: 'ref',
-                  ref: 'lex:app.bsky.feed.defs#feedViewPost',
+                  ref: 'lex:app.gndr.feed.defs#feedViewPost',
                 },
               },
             },
@@ -7001,7 +7001,7 @@ export const schemaDict = {
   },
   AppBskyFeedGetFeedGenerator: {
     lexicon: 1,
-    id: 'app.bsky.feed.getFeedGenerator',
+    id: 'app.gndr.feed.getFeedGenerator',
     defs: {
       main: {
         type: 'query',
@@ -7026,7 +7026,7 @@ export const schemaDict = {
             properties: {
               view: {
                 type: 'ref',
-                ref: 'lex:app.bsky.feed.defs#generatorView',
+                ref: 'lex:app.gndr.feed.defs#generatorView',
               },
               isOnline: {
                 type: 'boolean',
@@ -7046,7 +7046,7 @@ export const schemaDict = {
   },
   AppBskyFeedGetFeedGenerators: {
     lexicon: 1,
-    id: 'app.bsky.feed.getFeedGenerators',
+    id: 'app.gndr.feed.getFeedGenerators',
     defs: {
       main: {
         type: 'query',
@@ -7074,7 +7074,7 @@ export const schemaDict = {
                 type: 'array',
                 items: {
                   type: 'ref',
-                  ref: 'lex:app.bsky.feed.defs#generatorView',
+                  ref: 'lex:app.gndr.feed.defs#generatorView',
                 },
               },
             },
@@ -7085,7 +7085,7 @@ export const schemaDict = {
   },
   AppBskyFeedGetFeedSkeleton: {
     lexicon: 1,
-    id: 'app.bsky.feed.getFeedSkeleton',
+    id: 'app.gndr.feed.getFeedSkeleton',
     defs: {
       main: {
         type: 'query',
@@ -7125,7 +7125,7 @@ export const schemaDict = {
                 type: 'array',
                 items: {
                   type: 'ref',
-                  ref: 'lex:app.bsky.feed.defs#skeletonFeedPost',
+                  ref: 'lex:app.gndr.feed.defs#skeletonFeedPost',
                 },
               },
               reqId: {
@@ -7147,7 +7147,7 @@ export const schemaDict = {
   },
   AppBskyFeedGetLikes: {
     lexicon: 1,
-    id: 'app.bsky.feed.getLikes',
+    id: 'app.gndr.feed.getLikes',
     defs: {
       main: {
         type: 'query',
@@ -7200,7 +7200,7 @@ export const schemaDict = {
                 type: 'array',
                 items: {
                   type: 'ref',
-                  ref: 'lex:app.bsky.feed.getLikes#like',
+                  ref: 'lex:app.gndr.feed.getLikes#like',
                 },
               },
             },
@@ -7221,7 +7221,7 @@ export const schemaDict = {
           },
           actor: {
             type: 'ref',
-            ref: 'lex:app.bsky.actor.defs#profileView',
+            ref: 'lex:app.gndr.actor.defs#profileView',
           },
         },
       },
@@ -7229,7 +7229,7 @@ export const schemaDict = {
   },
   AppBskyFeedGetListFeed: {
     lexicon: 1,
-    id: 'app.bsky.feed.getListFeed',
+    id: 'app.gndr.feed.getListFeed',
     defs: {
       main: {
         type: 'query',
@@ -7268,7 +7268,7 @@ export const schemaDict = {
                 type: 'array',
                 items: {
                   type: 'ref',
-                  ref: 'lex:app.bsky.feed.defs#feedViewPost',
+                  ref: 'lex:app.gndr.feed.defs#feedViewPost',
                 },
               },
             },
@@ -7284,7 +7284,7 @@ export const schemaDict = {
   },
   AppBskyFeedGetPosts: {
     lexicon: 1,
-    id: 'app.bsky.feed.getPosts',
+    id: 'app.gndr.feed.getPosts',
     defs: {
       main: {
         type: 'query',
@@ -7315,7 +7315,7 @@ export const schemaDict = {
                 type: 'array',
                 items: {
                   type: 'ref',
-                  ref: 'lex:app.bsky.feed.defs#postView',
+                  ref: 'lex:app.gndr.feed.defs#postView',
                 },
               },
             },
@@ -7326,7 +7326,7 @@ export const schemaDict = {
   },
   AppBskyFeedGetPostThread: {
     lexicon: 1,
-    id: 'app.bsky.feed.getPostThread',
+    id: 'app.gndr.feed.getPostThread',
     defs: {
       main: {
         type: 'query',
@@ -7368,14 +7368,14 @@ export const schemaDict = {
               thread: {
                 type: 'union',
                 refs: [
-                  'lex:app.bsky.feed.defs#threadViewPost',
-                  'lex:app.bsky.feed.defs#notFoundPost',
-                  'lex:app.bsky.feed.defs#blockedPost',
+                  'lex:app.gndr.feed.defs#threadViewPost',
+                  'lex:app.gndr.feed.defs#notFoundPost',
+                  'lex:app.gndr.feed.defs#blockedPost',
                 ],
               },
               threadgate: {
                 type: 'ref',
-                ref: 'lex:app.bsky.feed.defs#threadgateView',
+                ref: 'lex:app.gndr.feed.defs#threadgateView',
               },
             },
           },
@@ -7390,7 +7390,7 @@ export const schemaDict = {
   },
   AppBskyFeedGetQuotes: {
     lexicon: 1,
-    id: 'app.bsky.feed.getQuotes',
+    id: 'app.gndr.feed.getQuotes',
     defs: {
       main: {
         type: 'query',
@@ -7442,7 +7442,7 @@ export const schemaDict = {
                 type: 'array',
                 items: {
                   type: 'ref',
-                  ref: 'lex:app.bsky.feed.defs#postView',
+                  ref: 'lex:app.gndr.feed.defs#postView',
                 },
               },
             },
@@ -7453,7 +7453,7 @@ export const schemaDict = {
   },
   AppBskyFeedGetRepostedBy: {
     lexicon: 1,
-    id: 'app.bsky.feed.getRepostedBy',
+    id: 'app.gndr.feed.getRepostedBy',
     defs: {
       main: {
         type: 'query',
@@ -7505,7 +7505,7 @@ export const schemaDict = {
                 type: 'array',
                 items: {
                   type: 'ref',
-                  ref: 'lex:app.bsky.actor.defs#profileView',
+                  ref: 'lex:app.gndr.actor.defs#profileView',
                 },
               },
             },
@@ -7516,7 +7516,7 @@ export const schemaDict = {
   },
   AppBskyFeedGetSuggestedFeeds: {
     lexicon: 1,
-    id: 'app.bsky.feed.getSuggestedFeeds',
+    id: 'app.gndr.feed.getSuggestedFeeds',
     defs: {
       main: {
         type: 'query',
@@ -7549,7 +7549,7 @@ export const schemaDict = {
                 type: 'array',
                 items: {
                   type: 'ref',
-                  ref: 'lex:app.bsky.feed.defs#generatorView',
+                  ref: 'lex:app.gndr.feed.defs#generatorView',
                 },
               },
             },
@@ -7560,7 +7560,7 @@ export const schemaDict = {
   },
   AppBskyFeedGetTimeline: {
     lexicon: 1,
-    id: 'app.bsky.feed.getTimeline',
+    id: 'app.gndr.feed.getTimeline',
     defs: {
       main: {
         type: 'query',
@@ -7598,7 +7598,7 @@ export const schemaDict = {
                 type: 'array',
                 items: {
                   type: 'ref',
-                  ref: 'lex:app.bsky.feed.defs#feedViewPost',
+                  ref: 'lex:app.gndr.feed.defs#feedViewPost',
                 },
               },
             },
@@ -7609,7 +7609,7 @@ export const schemaDict = {
   },
   AppBskyFeedLike: {
     lexicon: 1,
-    id: 'app.bsky.feed.like',
+    id: 'app.gndr.feed.like',
     defs: {
       main: {
         type: 'record',
@@ -7638,11 +7638,11 @@ export const schemaDict = {
   },
   AppBskyFeedPost: {
     lexicon: 1,
-    id: 'app.bsky.feed.post',
+    id: 'app.gndr.feed.post',
     defs: {
       main: {
         type: 'record',
-        description: 'Record containing a Bluesky post.',
+        description: 'Record containing a Gander post.',
         key: 'tid',
         record: {
           type: 'object',
@@ -7657,10 +7657,10 @@ export const schemaDict = {
             },
             entities: {
               type: 'array',
-              description: 'DEPRECATED: replaced by app.bsky.richtext.facet.',
+              description: 'DEPRECATED: replaced by app.gndr.richtext.facet.',
               items: {
                 type: 'ref',
-                ref: 'lex:app.bsky.feed.post#entity',
+                ref: 'lex:app.gndr.feed.post#entity',
               },
             },
             facets: {
@@ -7669,21 +7669,21 @@ export const schemaDict = {
                 'Annotations of text (mentions, URLs, hashtags, etc)',
               items: {
                 type: 'ref',
-                ref: 'lex:app.bsky.richtext.facet',
+                ref: 'lex:app.gndr.richtext.facet',
               },
             },
             reply: {
               type: 'ref',
-              ref: 'lex:app.bsky.feed.post#replyRef',
+              ref: 'lex:app.gndr.feed.post#replyRef',
             },
             embed: {
               type: 'union',
               refs: [
-                'lex:app.bsky.embed.images',
-                'lex:app.bsky.embed.video',
-                'lex:app.bsky.embed.external',
-                'lex:app.bsky.embed.record',
-                'lex:app.bsky.embed.recordWithMedia',
+                'lex:app.gndr.embed.images',
+                'lex:app.gndr.embed.video',
+                'lex:app.gndr.embed.external',
+                'lex:app.gndr.embed.record',
+                'lex:app.gndr.embed.recordWithMedia',
               ],
             },
             langs: {
@@ -7743,7 +7743,7 @@ export const schemaDict = {
         properties: {
           index: {
             type: 'ref',
-            ref: 'lex:app.bsky.feed.post#textSlice',
+            ref: 'lex:app.gndr.feed.post#textSlice',
           },
           type: {
             type: 'string',
@@ -7757,7 +7757,7 @@ export const schemaDict = {
       textSlice: {
         type: 'object',
         description:
-          'Deprecated. Use app.bsky.richtext instead -- A text segment. Start is inclusive, end is exclusive. Indices are for utf16-encoded strings.',
+          'Deprecated. Use app.gndr.richtext instead -- A text segment. Start is inclusive, end is exclusive. Indices are for utf16-encoded strings.',
         required: ['start', 'end'],
         properties: {
           start: {
@@ -7774,7 +7774,7 @@ export const schemaDict = {
   },
   AppBskyFeedPostgate: {
     lexicon: 1,
-    id: 'app.bsky.feed.postgate',
+    id: 'app.gndr.feed.postgate',
     defs: {
       main: {
         type: 'record',
@@ -7811,7 +7811,7 @@ export const schemaDict = {
               maxLength: 5,
               items: {
                 type: 'union',
-                refs: ['lex:app.bsky.feed.postgate#disableRule'],
+                refs: ['lex:app.gndr.feed.postgate#disableRule'],
               },
             },
           },
@@ -7826,11 +7826,11 @@ export const schemaDict = {
   },
   AppBskyFeedRepost: {
     lexicon: 1,
-    id: 'app.bsky.feed.repost',
+    id: 'app.gndr.feed.repost',
     defs: {
       main: {
         description:
-          "Record representing a 'repost' of an existing Bluesky post.",
+          "Record representing a 'repost' of an existing Gander post.",
         type: 'record',
         key: 'tid',
         record: {
@@ -7856,7 +7856,7 @@ export const schemaDict = {
   },
   AppBskyFeedSearchPosts: {
     lexicon: 1,
-    id: 'app.bsky.feed.searchPosts',
+    id: 'app.gndr.feed.searchPosts',
     defs: {
       main: {
         type: 'query',
@@ -7957,7 +7957,7 @@ export const schemaDict = {
                 type: 'array',
                 items: {
                   type: 'ref',
-                  ref: 'lex:app.bsky.feed.defs#postView',
+                  ref: 'lex:app.gndr.feed.defs#postView',
                 },
               },
             },
@@ -7973,7 +7973,7 @@ export const schemaDict = {
   },
   AppBskyFeedSendInteractions: {
     lexicon: 1,
-    id: 'app.bsky.feed.sendInteractions',
+    id: 'app.gndr.feed.sendInteractions',
     defs: {
       main: {
         type: 'procedure',
@@ -7989,7 +7989,7 @@ export const schemaDict = {
                 type: 'array',
                 items: {
                   type: 'ref',
-                  ref: 'lex:app.bsky.feed.defs#interaction',
+                  ref: 'lex:app.gndr.feed.defs#interaction',
                 },
               },
             },
@@ -8007,7 +8007,7 @@ export const schemaDict = {
   },
   AppBskyFeedThreadgate: {
     lexicon: 1,
-    id: 'app.bsky.feed.threadgate',
+    id: 'app.gndr.feed.threadgate',
     defs: {
       main: {
         type: 'record',
@@ -8031,10 +8031,10 @@ export const schemaDict = {
               items: {
                 type: 'union',
                 refs: [
-                  'lex:app.bsky.feed.threadgate#mentionRule',
-                  'lex:app.bsky.feed.threadgate#followerRule',
-                  'lex:app.bsky.feed.threadgate#followingRule',
-                  'lex:app.bsky.feed.threadgate#listRule',
+                  'lex:app.gndr.feed.threadgate#mentionRule',
+                  'lex:app.gndr.feed.threadgate#followerRule',
+                  'lex:app.gndr.feed.threadgate#followingRule',
+                  'lex:app.gndr.feed.threadgate#listRule',
                 ],
               },
             },
@@ -8084,12 +8084,12 @@ export const schemaDict = {
   },
   AppBskyGraphBlock: {
     lexicon: 1,
-    id: 'app.bsky.graph.block',
+    id: 'app.gndr.graph.block',
     defs: {
       main: {
         type: 'record',
         description:
-          "Record declaring a 'block' relationship against another account. NOTE: blocks are public in Bluesky; see blog posts for details.",
+          "Record declaring a 'block' relationship against another account. NOTE: blocks are public in Gander; see blog posts for details.",
         key: 'tid',
         record: {
           type: 'object',
@@ -8111,7 +8111,7 @@ export const schemaDict = {
   },
   AppBskyGraphDefs: {
     lexicon: 1,
-    id: 'app.bsky.graph.defs',
+    id: 'app.gndr.graph.defs',
     defs: {
       listViewBasic: {
         type: 'object',
@@ -8132,7 +8132,7 @@ export const schemaDict = {
           },
           purpose: {
             type: 'ref',
-            ref: 'lex:app.bsky.graph.defs#listPurpose',
+            ref: 'lex:app.gndr.graph.defs#listPurpose',
           },
           avatar: {
             type: 'string',
@@ -8151,7 +8151,7 @@ export const schemaDict = {
           },
           viewer: {
             type: 'ref',
-            ref: 'lex:app.bsky.graph.defs#listViewerState',
+            ref: 'lex:app.gndr.graph.defs#listViewerState',
           },
           indexedAt: {
             type: 'string',
@@ -8173,7 +8173,7 @@ export const schemaDict = {
           },
           creator: {
             type: 'ref',
-            ref: 'lex:app.bsky.actor.defs#profileView',
+            ref: 'lex:app.gndr.actor.defs#profileView',
           },
           name: {
             type: 'string',
@@ -8182,7 +8182,7 @@ export const schemaDict = {
           },
           purpose: {
             type: 'ref',
-            ref: 'lex:app.bsky.graph.defs#listPurpose',
+            ref: 'lex:app.gndr.graph.defs#listPurpose',
           },
           description: {
             type: 'string',
@@ -8193,7 +8193,7 @@ export const schemaDict = {
             type: 'array',
             items: {
               type: 'ref',
-              ref: 'lex:app.bsky.richtext.facet',
+              ref: 'lex:app.gndr.richtext.facet',
             },
           },
           avatar: {
@@ -8213,7 +8213,7 @@ export const schemaDict = {
           },
           viewer: {
             type: 'ref',
-            ref: 'lex:app.bsky.graph.defs#listViewerState',
+            ref: 'lex:app.gndr.graph.defs#listViewerState',
           },
           indexedAt: {
             type: 'string',
@@ -8231,7 +8231,7 @@ export const schemaDict = {
           },
           subject: {
             type: 'ref',
-            ref: 'lex:app.bsky.actor.defs#profileView',
+            ref: 'lex:app.gndr.actor.defs#profileView',
           },
         },
       },
@@ -8252,18 +8252,18 @@ export const schemaDict = {
           },
           creator: {
             type: 'ref',
-            ref: 'lex:app.bsky.actor.defs#profileViewBasic',
+            ref: 'lex:app.gndr.actor.defs#profileViewBasic',
           },
           list: {
             type: 'ref',
-            ref: 'lex:app.bsky.graph.defs#listViewBasic',
+            ref: 'lex:app.gndr.graph.defs#listViewBasic',
           },
           listItemsSample: {
             type: 'array',
             maxLength: 12,
             items: {
               type: 'ref',
-              ref: 'lex:app.bsky.graph.defs#listItemView',
+              ref: 'lex:app.gndr.graph.defs#listItemView',
             },
           },
           feeds: {
@@ -8271,7 +8271,7 @@ export const schemaDict = {
             maxLength: 3,
             items: {
               type: 'ref',
-              ref: 'lex:app.bsky.feed.defs#generatorView',
+              ref: 'lex:app.gndr.feed.defs#generatorView',
             },
           },
           joinedWeekCount: {
@@ -8312,7 +8312,7 @@ export const schemaDict = {
           },
           creator: {
             type: 'ref',
-            ref: 'lex:app.bsky.actor.defs#profileViewBasic',
+            ref: 'lex:app.gndr.actor.defs#profileViewBasic',
           },
           listItemCount: {
             type: 'integer',
@@ -8342,9 +8342,9 @@ export const schemaDict = {
       listPurpose: {
         type: 'string',
         knownValues: [
-          'app.bsky.graph.defs#modlist',
-          'app.bsky.graph.defs#curatelist',
-          'app.bsky.graph.defs#referencelist',
+          'app.gndr.graph.defs#modlist',
+          'app.gndr.graph.defs#curatelist',
+          'app.gndr.graph.defs#referencelist',
         ],
       },
       modlist: {
@@ -8417,7 +8417,7 @@ export const schemaDict = {
   },
   AppBskyGraphFollow: {
     lexicon: 1,
-    id: 'app.bsky.graph.follow',
+    id: 'app.gndr.graph.follow',
     defs: {
       main: {
         type: 'record',
@@ -8443,7 +8443,7 @@ export const schemaDict = {
   },
   AppBskyGraphGetActorStarterPacks: {
     lexicon: 1,
-    id: 'app.bsky.graph.getActorStarterPacks',
+    id: 'app.gndr.graph.getActorStarterPacks',
     defs: {
       main: {
         type: 'query',
@@ -8480,7 +8480,7 @@ export const schemaDict = {
                 type: 'array',
                 items: {
                   type: 'ref',
-                  ref: 'lex:app.bsky.graph.defs#starterPackViewBasic',
+                  ref: 'lex:app.gndr.graph.defs#starterPackViewBasic',
                 },
               },
             },
@@ -8491,7 +8491,7 @@ export const schemaDict = {
   },
   AppBskyGraphGetBlocks: {
     lexicon: 1,
-    id: 'app.bsky.graph.getBlocks',
+    id: 'app.gndr.graph.getBlocks',
     defs: {
       main: {
         type: 'query',
@@ -8524,7 +8524,7 @@ export const schemaDict = {
                 type: 'array',
                 items: {
                   type: 'ref',
-                  ref: 'lex:app.bsky.actor.defs#profileView',
+                  ref: 'lex:app.gndr.actor.defs#profileView',
                 },
               },
             },
@@ -8535,7 +8535,7 @@ export const schemaDict = {
   },
   AppBskyGraphGetFollowers: {
     lexicon: 1,
-    id: 'app.bsky.graph.getFollowers',
+    id: 'app.gndr.graph.getFollowers',
     defs: {
       main: {
         type: 'query',
@@ -8568,7 +8568,7 @@ export const schemaDict = {
             properties: {
               subject: {
                 type: 'ref',
-                ref: 'lex:app.bsky.actor.defs#profileView',
+                ref: 'lex:app.gndr.actor.defs#profileView',
               },
               cursor: {
                 type: 'string',
@@ -8577,7 +8577,7 @@ export const schemaDict = {
                 type: 'array',
                 items: {
                   type: 'ref',
-                  ref: 'lex:app.bsky.actor.defs#profileView',
+                  ref: 'lex:app.gndr.actor.defs#profileView',
                 },
               },
             },
@@ -8588,7 +8588,7 @@ export const schemaDict = {
   },
   AppBskyGraphGetFollows: {
     lexicon: 1,
-    id: 'app.bsky.graph.getFollows',
+    id: 'app.gndr.graph.getFollows',
     defs: {
       main: {
         type: 'query',
@@ -8621,7 +8621,7 @@ export const schemaDict = {
             properties: {
               subject: {
                 type: 'ref',
-                ref: 'lex:app.bsky.actor.defs#profileView',
+                ref: 'lex:app.gndr.actor.defs#profileView',
               },
               cursor: {
                 type: 'string',
@@ -8630,7 +8630,7 @@ export const schemaDict = {
                 type: 'array',
                 items: {
                   type: 'ref',
-                  ref: 'lex:app.bsky.actor.defs#profileView',
+                  ref: 'lex:app.gndr.actor.defs#profileView',
                 },
               },
             },
@@ -8641,7 +8641,7 @@ export const schemaDict = {
   },
   AppBskyGraphGetKnownFollowers: {
     lexicon: 1,
-    id: 'app.bsky.graph.getKnownFollowers',
+    id: 'app.gndr.graph.getKnownFollowers',
     defs: {
       main: {
         type: 'query',
@@ -8674,7 +8674,7 @@ export const schemaDict = {
             properties: {
               subject: {
                 type: 'ref',
-                ref: 'lex:app.bsky.actor.defs#profileView',
+                ref: 'lex:app.gndr.actor.defs#profileView',
               },
               cursor: {
                 type: 'string',
@@ -8683,7 +8683,7 @@ export const schemaDict = {
                 type: 'array',
                 items: {
                   type: 'ref',
-                  ref: 'lex:app.bsky.actor.defs#profileView',
+                  ref: 'lex:app.gndr.actor.defs#profileView',
                 },
               },
             },
@@ -8694,7 +8694,7 @@ export const schemaDict = {
   },
   AppBskyGraphGetList: {
     lexicon: 1,
-    id: 'app.bsky.graph.getList',
+    id: 'app.gndr.graph.getList',
     defs: {
       main: {
         type: 'query',
@@ -8731,13 +8731,13 @@ export const schemaDict = {
               },
               list: {
                 type: 'ref',
-                ref: 'lex:app.bsky.graph.defs#listView',
+                ref: 'lex:app.gndr.graph.defs#listView',
               },
               items: {
                 type: 'array',
                 items: {
                   type: 'ref',
-                  ref: 'lex:app.bsky.graph.defs#listItemView',
+                  ref: 'lex:app.gndr.graph.defs#listItemView',
                 },
               },
             },
@@ -8748,7 +8748,7 @@ export const schemaDict = {
   },
   AppBskyGraphGetListBlocks: {
     lexicon: 1,
-    id: 'app.bsky.graph.getListBlocks',
+    id: 'app.gndr.graph.getListBlocks',
     defs: {
       main: {
         type: 'query',
@@ -8781,7 +8781,7 @@ export const schemaDict = {
                 type: 'array',
                 items: {
                   type: 'ref',
-                  ref: 'lex:app.bsky.graph.defs#listView',
+                  ref: 'lex:app.gndr.graph.defs#listView',
                 },
               },
             },
@@ -8792,7 +8792,7 @@ export const schemaDict = {
   },
   AppBskyGraphGetListMutes: {
     lexicon: 1,
-    id: 'app.bsky.graph.getListMutes',
+    id: 'app.gndr.graph.getListMutes',
     defs: {
       main: {
         type: 'query',
@@ -8825,7 +8825,7 @@ export const schemaDict = {
                 type: 'array',
                 items: {
                   type: 'ref',
-                  ref: 'lex:app.bsky.graph.defs#listView',
+                  ref: 'lex:app.gndr.graph.defs#listView',
                 },
               },
             },
@@ -8836,7 +8836,7 @@ export const schemaDict = {
   },
   AppBskyGraphGetLists: {
     lexicon: 1,
-    id: 'app.bsky.graph.getLists',
+    id: 'app.gndr.graph.getLists',
     defs: {
       main: {
         type: 'query',
@@ -8875,7 +8875,7 @@ export const schemaDict = {
                 type: 'array',
                 items: {
                   type: 'ref',
-                  ref: 'lex:app.bsky.graph.defs#listView',
+                  ref: 'lex:app.gndr.graph.defs#listView',
                 },
               },
             },
@@ -8886,7 +8886,7 @@ export const schemaDict = {
   },
   AppBskyGraphGetMutes: {
     lexicon: 1,
-    id: 'app.bsky.graph.getMutes',
+    id: 'app.gndr.graph.getMutes',
     defs: {
       main: {
         type: 'query',
@@ -8919,7 +8919,7 @@ export const schemaDict = {
                 type: 'array',
                 items: {
                   type: 'ref',
-                  ref: 'lex:app.bsky.actor.defs#profileView',
+                  ref: 'lex:app.gndr.actor.defs#profileView',
                 },
               },
             },
@@ -8930,7 +8930,7 @@ export const schemaDict = {
   },
   AppBskyGraphGetRelationships: {
     lexicon: 1,
-    id: 'app.bsky.graph.getRelationships',
+    id: 'app.gndr.graph.getRelationships',
     defs: {
       main: {
         type: 'query',
@@ -8972,8 +8972,8 @@ export const schemaDict = {
                 items: {
                   type: 'union',
                   refs: [
-                    'lex:app.bsky.graph.defs#relationship',
-                    'lex:app.bsky.graph.defs#notFoundActor',
+                    'lex:app.gndr.graph.defs#relationship',
+                    'lex:app.gndr.graph.defs#notFoundActor',
                   ],
                 },
               },
@@ -8992,7 +8992,7 @@ export const schemaDict = {
   },
   AppBskyGraphGetStarterPack: {
     lexicon: 1,
-    id: 'app.bsky.graph.getStarterPack',
+    id: 'app.gndr.graph.getStarterPack',
     defs: {
       main: {
         type: 'query',
@@ -9016,7 +9016,7 @@ export const schemaDict = {
             properties: {
               starterPack: {
                 type: 'ref',
-                ref: 'lex:app.bsky.graph.defs#starterPackView',
+                ref: 'lex:app.gndr.graph.defs#starterPackView',
               },
             },
           },
@@ -9026,7 +9026,7 @@ export const schemaDict = {
   },
   AppBskyGraphGetStarterPacks: {
     lexicon: 1,
-    id: 'app.bsky.graph.getStarterPacks',
+    id: 'app.gndr.graph.getStarterPacks',
     defs: {
       main: {
         type: 'query',
@@ -9055,7 +9055,7 @@ export const schemaDict = {
                 type: 'array',
                 items: {
                   type: 'ref',
-                  ref: 'lex:app.bsky.graph.defs#starterPackViewBasic',
+                  ref: 'lex:app.gndr.graph.defs#starterPackViewBasic',
                 },
               },
             },
@@ -9066,7 +9066,7 @@ export const schemaDict = {
   },
   AppBskyGraphGetSuggestedFollowsByActor: {
     lexicon: 1,
-    id: 'app.bsky.graph.getSuggestedFollowsByActor',
+    id: 'app.gndr.graph.getSuggestedFollowsByActor',
     defs: {
       main: {
         type: 'query',
@@ -9092,7 +9092,7 @@ export const schemaDict = {
                 type: 'array',
                 items: {
                   type: 'ref',
-                  ref: 'lex:app.bsky.actor.defs#profileView',
+                  ref: 'lex:app.gndr.actor.defs#profileView',
                 },
               },
               isFallback: {
@@ -9114,7 +9114,7 @@ export const schemaDict = {
   },
   AppBskyGraphList: {
     lexicon: 1,
-    id: 'app.bsky.graph.list',
+    id: 'app.gndr.graph.list',
     defs: {
       main: {
         type: 'record',
@@ -9129,7 +9129,7 @@ export const schemaDict = {
               type: 'ref',
               description:
                 'Defines the purpose of the list (aka, moderation-oriented or curration-oriented)',
-              ref: 'lex:app.bsky.graph.defs#listPurpose',
+              ref: 'lex:app.gndr.graph.defs#listPurpose',
             },
             name: {
               type: 'string',
@@ -9146,7 +9146,7 @@ export const schemaDict = {
               type: 'array',
               items: {
                 type: 'ref',
-                ref: 'lex:app.bsky.richtext.facet',
+                ref: 'lex:app.gndr.richtext.facet',
               },
             },
             avatar: {
@@ -9169,7 +9169,7 @@ export const schemaDict = {
   },
   AppBskyGraphListblock: {
     lexicon: 1,
-    id: 'app.bsky.graph.listblock',
+    id: 'app.gndr.graph.listblock',
     defs: {
       main: {
         type: 'record',
@@ -9196,7 +9196,7 @@ export const schemaDict = {
   },
   AppBskyGraphListitem: {
     lexicon: 1,
-    id: 'app.bsky.graph.listitem',
+    id: 'app.gndr.graph.listitem',
     defs: {
       main: {
         type: 'record',
@@ -9216,7 +9216,7 @@ export const schemaDict = {
               type: 'string',
               format: 'at-uri',
               description:
-                'Reference (AT-URI) to the list record (app.bsky.graph.list).',
+                'Reference (AT-URI) to the list record (app.gndr.graph.list).',
             },
             createdAt: {
               type: 'string',
@@ -9229,12 +9229,12 @@ export const schemaDict = {
   },
   AppBskyGraphMuteActor: {
     lexicon: 1,
-    id: 'app.bsky.graph.muteActor',
+    id: 'app.gndr.graph.muteActor',
     defs: {
       main: {
         type: 'procedure',
         description:
-          'Creates a mute relationship for the specified account. Mutes are private in Bluesky. Requires auth.',
+          'Creates a mute relationship for the specified account. Mutes are private in Gander. Requires auth.',
         input: {
           encoding: 'application/json',
           schema: {
@@ -9253,12 +9253,12 @@ export const schemaDict = {
   },
   AppBskyGraphMuteActorList: {
     lexicon: 1,
-    id: 'app.bsky.graph.muteActorList',
+    id: 'app.gndr.graph.muteActorList',
     defs: {
       main: {
         type: 'procedure',
         description:
-          'Creates a mute relationship for the specified list of accounts. Mutes are private in Bluesky. Requires auth.',
+          'Creates a mute relationship for the specified list of accounts. Mutes are private in Gander. Requires auth.',
         input: {
           encoding: 'application/json',
           schema: {
@@ -9277,12 +9277,12 @@ export const schemaDict = {
   },
   AppBskyGraphMuteThread: {
     lexicon: 1,
-    id: 'app.bsky.graph.muteThread',
+    id: 'app.gndr.graph.muteThread',
     defs: {
       main: {
         type: 'procedure',
         description:
-          'Mutes a thread preventing notifications from the thread and any of its children. Mutes are private in Bluesky. Requires auth.',
+          'Mutes a thread preventing notifications from the thread and any of its children. Mutes are private in Gander. Requires auth.',
         input: {
           encoding: 'application/json',
           schema: {
@@ -9301,7 +9301,7 @@ export const schemaDict = {
   },
   AppBskyGraphSearchStarterPacks: {
     lexicon: 1,
-    id: 'app.bsky.graph.searchStarterPacks',
+    id: 'app.gndr.graph.searchStarterPacks',
     defs: {
       main: {
         type: 'query',
@@ -9340,7 +9340,7 @@ export const schemaDict = {
                 type: 'array',
                 items: {
                   type: 'ref',
-                  ref: 'lex:app.bsky.graph.defs#starterPackViewBasic',
+                  ref: 'lex:app.gndr.graph.defs#starterPackViewBasic',
                 },
               },
             },
@@ -9351,7 +9351,7 @@ export const schemaDict = {
   },
   AppBskyGraphStarterpack: {
     lexicon: 1,
-    id: 'app.bsky.graph.starterpack',
+    id: 'app.gndr.graph.starterpack',
     defs: {
       main: {
         type: 'record',
@@ -9378,7 +9378,7 @@ export const schemaDict = {
               type: 'array',
               items: {
                 type: 'ref',
-                ref: 'lex:app.bsky.richtext.facet',
+                ref: 'lex:app.gndr.richtext.facet',
               },
             },
             list: {
@@ -9391,7 +9391,7 @@ export const schemaDict = {
               maxLength: 3,
               items: {
                 type: 'ref',
-                ref: 'lex:app.bsky.graph.starterpack#feedItem',
+                ref: 'lex:app.gndr.graph.starterpack#feedItem',
               },
             },
             createdAt: {
@@ -9415,7 +9415,7 @@ export const schemaDict = {
   },
   AppBskyGraphUnmuteActor: {
     lexicon: 1,
-    id: 'app.bsky.graph.unmuteActor',
+    id: 'app.gndr.graph.unmuteActor',
     defs: {
       main: {
         type: 'procedure',
@@ -9438,7 +9438,7 @@ export const schemaDict = {
   },
   AppBskyGraphUnmuteActorList: {
     lexicon: 1,
-    id: 'app.bsky.graph.unmuteActorList',
+    id: 'app.gndr.graph.unmuteActorList',
     defs: {
       main: {
         type: 'procedure',
@@ -9461,7 +9461,7 @@ export const schemaDict = {
   },
   AppBskyGraphUnmuteThread: {
     lexicon: 1,
-    id: 'app.bsky.graph.unmuteThread',
+    id: 'app.gndr.graph.unmuteThread',
     defs: {
       main: {
         type: 'procedure',
@@ -9484,7 +9484,7 @@ export const schemaDict = {
   },
   AppBskyGraphVerification: {
     lexicon: 1,
-    id: 'app.bsky.graph.verification',
+    id: 'app.gndr.graph.verification',
     defs: {
       main: {
         type: 'record',
@@ -9523,7 +9523,7 @@ export const schemaDict = {
   },
   AppBskyLabelerDefs: {
     lexicon: 1,
-    id: 'app.bsky.labeler.defs',
+    id: 'app.gndr.labeler.defs',
     defs: {
       labelerView: {
         type: 'object',
@@ -9539,7 +9539,7 @@ export const schemaDict = {
           },
           creator: {
             type: 'ref',
-            ref: 'lex:app.bsky.actor.defs#profileView',
+            ref: 'lex:app.gndr.actor.defs#profileView',
           },
           likeCount: {
             type: 'integer',
@@ -9547,7 +9547,7 @@ export const schemaDict = {
           },
           viewer: {
             type: 'ref',
-            ref: 'lex:app.bsky.labeler.defs#labelerViewerState',
+            ref: 'lex:app.gndr.labeler.defs#labelerViewerState',
           },
           indexedAt: {
             type: 'string',
@@ -9576,11 +9576,11 @@ export const schemaDict = {
           },
           creator: {
             type: 'ref',
-            ref: 'lex:app.bsky.actor.defs#profileView',
+            ref: 'lex:app.gndr.actor.defs#profileView',
           },
           policies: {
             type: 'ref',
-            ref: 'lex:app.bsky.labeler.defs#labelerPolicies',
+            ref: 'lex:app.gndr.labeler.defs#labelerPolicies',
           },
           likeCount: {
             type: 'integer',
@@ -9588,7 +9588,7 @@ export const schemaDict = {
           },
           viewer: {
             type: 'ref',
-            ref: 'lex:app.bsky.labeler.defs#labelerViewerState',
+            ref: 'lex:app.gndr.labeler.defs#labelerViewerState',
           },
           indexedAt: {
             type: 'string',
@@ -9667,7 +9667,7 @@ export const schemaDict = {
   },
   AppBskyLabelerGetServices: {
     lexicon: 1,
-    id: 'app.bsky.labeler.getServices',
+    id: 'app.gndr.labeler.getServices',
     defs: {
       main: {
         type: 'query',
@@ -9700,8 +9700,8 @@ export const schemaDict = {
                 items: {
                   type: 'union',
                   refs: [
-                    'lex:app.bsky.labeler.defs#labelerView',
-                    'lex:app.bsky.labeler.defs#labelerViewDetailed',
+                    'lex:app.gndr.labeler.defs#labelerView',
+                    'lex:app.gndr.labeler.defs#labelerViewDetailed',
                   ],
                 },
               },
@@ -9713,7 +9713,7 @@ export const schemaDict = {
   },
   AppBskyLabelerService: {
     lexicon: 1,
-    id: 'app.bsky.labeler.service',
+    id: 'app.gndr.labeler.service',
     defs: {
       main: {
         type: 'record',
@@ -9725,7 +9725,7 @@ export const schemaDict = {
           properties: {
             policies: {
               type: 'ref',
-              ref: 'lex:app.bsky.labeler.defs#labelerPolicies',
+              ref: 'lex:app.gndr.labeler.defs#labelerPolicies',
             },
             labels: {
               type: 'union',
@@ -9769,7 +9769,7 @@ export const schemaDict = {
   },
   AppBskyNotificationDeclaration: {
     lexicon: 1,
-    id: 'app.bsky.notification.declaration',
+    id: 'app.gndr.notification.declaration',
     defs: {
       main: {
         type: 'record',
@@ -9793,7 +9793,7 @@ export const schemaDict = {
   },
   AppBskyNotificationDefs: {
     lexicon: 1,
-    id: 'app.bsky.notification.defs',
+    id: 'app.gndr.notification.defs',
     defs: {
       recordDeleted: {
         type: 'object',
@@ -9860,55 +9860,55 @@ export const schemaDict = {
         properties: {
           chat: {
             type: 'ref',
-            ref: 'lex:app.bsky.notification.defs#chatPreference',
+            ref: 'lex:app.gndr.notification.defs#chatPreference',
           },
           follow: {
             type: 'ref',
-            ref: 'lex:app.bsky.notification.defs#filterablePreference',
+            ref: 'lex:app.gndr.notification.defs#filterablePreference',
           },
           like: {
             type: 'ref',
-            ref: 'lex:app.bsky.notification.defs#filterablePreference',
+            ref: 'lex:app.gndr.notification.defs#filterablePreference',
           },
           likeViaRepost: {
             type: 'ref',
-            ref: 'lex:app.bsky.notification.defs#filterablePreference',
+            ref: 'lex:app.gndr.notification.defs#filterablePreference',
           },
           mention: {
             type: 'ref',
-            ref: 'lex:app.bsky.notification.defs#filterablePreference',
+            ref: 'lex:app.gndr.notification.defs#filterablePreference',
           },
           quote: {
             type: 'ref',
-            ref: 'lex:app.bsky.notification.defs#filterablePreference',
+            ref: 'lex:app.gndr.notification.defs#filterablePreference',
           },
           reply: {
             type: 'ref',
-            ref: 'lex:app.bsky.notification.defs#filterablePreference',
+            ref: 'lex:app.gndr.notification.defs#filterablePreference',
           },
           repost: {
             type: 'ref',
-            ref: 'lex:app.bsky.notification.defs#filterablePreference',
+            ref: 'lex:app.gndr.notification.defs#filterablePreference',
           },
           repostViaRepost: {
             type: 'ref',
-            ref: 'lex:app.bsky.notification.defs#filterablePreference',
+            ref: 'lex:app.gndr.notification.defs#filterablePreference',
           },
           starterpackJoined: {
             type: 'ref',
-            ref: 'lex:app.bsky.notification.defs#preference',
+            ref: 'lex:app.gndr.notification.defs#preference',
           },
           subscribedPost: {
             type: 'ref',
-            ref: 'lex:app.bsky.notification.defs#preference',
+            ref: 'lex:app.gndr.notification.defs#preference',
           },
           unverified: {
             type: 'ref',
-            ref: 'lex:app.bsky.notification.defs#preference',
+            ref: 'lex:app.gndr.notification.defs#preference',
           },
           verified: {
             type: 'ref',
-            ref: 'lex:app.bsky.notification.defs#preference',
+            ref: 'lex:app.gndr.notification.defs#preference',
           },
         },
       },
@@ -9936,7 +9936,7 @@ export const schemaDict = {
           },
           activitySubscription: {
             type: 'ref',
-            ref: 'lex:app.bsky.notification.defs#activitySubscription',
+            ref: 'lex:app.gndr.notification.defs#activitySubscription',
           },
         },
       },
@@ -9944,7 +9944,7 @@ export const schemaDict = {
   },
   AppBskyNotificationGetPreferences: {
     lexicon: 1,
-    id: 'app.bsky.notification.getPreferences',
+    id: 'app.gndr.notification.getPreferences',
     defs: {
       main: {
         type: 'query',
@@ -9962,7 +9962,7 @@ export const schemaDict = {
             properties: {
               preferences: {
                 type: 'ref',
-                ref: 'lex:app.bsky.notification.defs#preferences',
+                ref: 'lex:app.gndr.notification.defs#preferences',
               },
             },
           },
@@ -9972,7 +9972,7 @@ export const schemaDict = {
   },
   AppBskyNotificationGetUnreadCount: {
     lexicon: 1,
-    id: 'app.bsky.notification.getUnreadCount',
+    id: 'app.gndr.notification.getUnreadCount',
     defs: {
       main: {
         type: 'query',
@@ -10007,7 +10007,7 @@ export const schemaDict = {
   },
   AppBskyNotificationListActivitySubscriptions: {
     lexicon: 1,
-    id: 'app.bsky.notification.listActivitySubscriptions',
+    id: 'app.gndr.notification.listActivitySubscriptions',
     defs: {
       main: {
         type: 'query',
@@ -10040,7 +10040,7 @@ export const schemaDict = {
                 type: 'array',
                 items: {
                   type: 'ref',
-                  ref: 'lex:app.bsky.actor.defs#profileView',
+                  ref: 'lex:app.gndr.actor.defs#profileView',
                 },
               },
             },
@@ -10051,7 +10051,7 @@ export const schemaDict = {
   },
   AppBskyNotificationListNotifications: {
     lexicon: 1,
-    id: 'app.bsky.notification.listNotifications',
+    id: 'app.gndr.notification.listNotifications',
     defs: {
       main: {
         type: 'query',
@@ -10100,7 +10100,7 @@ export const schemaDict = {
                 type: 'array',
                 items: {
                   type: 'ref',
-                  ref: 'lex:app.bsky.notification.listNotifications#notification',
+                  ref: 'lex:app.gndr.notification.listNotifications#notification',
                 },
               },
               priority: {
@@ -10136,7 +10136,7 @@ export const schemaDict = {
           },
           author: {
             type: 'ref',
-            ref: 'lex:app.bsky.actor.defs#profileView',
+            ref: 'lex:app.gndr.actor.defs#profileView',
           },
           reason: {
             type: 'string',
@@ -10184,7 +10184,7 @@ export const schemaDict = {
   },
   AppBskyNotificationPutActivitySubscription: {
     lexicon: 1,
-    id: 'app.bsky.notification.putActivitySubscription',
+    id: 'app.gndr.notification.putActivitySubscription',
     defs: {
       main: {
         type: 'procedure',
@@ -10202,7 +10202,7 @@ export const schemaDict = {
               },
               activitySubscription: {
                 type: 'ref',
-                ref: 'lex:app.bsky.notification.defs#activitySubscription',
+                ref: 'lex:app.gndr.notification.defs#activitySubscription',
               },
             },
           },
@@ -10219,7 +10219,7 @@ export const schemaDict = {
               },
               activitySubscription: {
                 type: 'ref',
-                ref: 'lex:app.bsky.notification.defs#activitySubscription',
+                ref: 'lex:app.gndr.notification.defs#activitySubscription',
               },
             },
           },
@@ -10229,7 +10229,7 @@ export const schemaDict = {
   },
   AppBskyNotificationPutPreferences: {
     lexicon: 1,
-    id: 'app.bsky.notification.putPreferences',
+    id: 'app.gndr.notification.putPreferences',
     defs: {
       main: {
         type: 'procedure',
@@ -10252,7 +10252,7 @@ export const schemaDict = {
   },
   AppBskyNotificationPutPreferencesV2: {
     lexicon: 1,
-    id: 'app.bsky.notification.putPreferencesV2',
+    id: 'app.gndr.notification.putPreferencesV2',
     defs: {
       main: {
         type: 'procedure',
@@ -10265,55 +10265,55 @@ export const schemaDict = {
             properties: {
               chat: {
                 type: 'ref',
-                ref: 'lex:app.bsky.notification.defs#chatPreference',
+                ref: 'lex:app.gndr.notification.defs#chatPreference',
               },
               follow: {
                 type: 'ref',
-                ref: 'lex:app.bsky.notification.defs#filterablePreference',
+                ref: 'lex:app.gndr.notification.defs#filterablePreference',
               },
               like: {
                 type: 'ref',
-                ref: 'lex:app.bsky.notification.defs#filterablePreference',
+                ref: 'lex:app.gndr.notification.defs#filterablePreference',
               },
               likeViaRepost: {
                 type: 'ref',
-                ref: 'lex:app.bsky.notification.defs#filterablePreference',
+                ref: 'lex:app.gndr.notification.defs#filterablePreference',
               },
               mention: {
                 type: 'ref',
-                ref: 'lex:app.bsky.notification.defs#filterablePreference',
+                ref: 'lex:app.gndr.notification.defs#filterablePreference',
               },
               quote: {
                 type: 'ref',
-                ref: 'lex:app.bsky.notification.defs#filterablePreference',
+                ref: 'lex:app.gndr.notification.defs#filterablePreference',
               },
               reply: {
                 type: 'ref',
-                ref: 'lex:app.bsky.notification.defs#filterablePreference',
+                ref: 'lex:app.gndr.notification.defs#filterablePreference',
               },
               repost: {
                 type: 'ref',
-                ref: 'lex:app.bsky.notification.defs#filterablePreference',
+                ref: 'lex:app.gndr.notification.defs#filterablePreference',
               },
               repostViaRepost: {
                 type: 'ref',
-                ref: 'lex:app.bsky.notification.defs#filterablePreference',
+                ref: 'lex:app.gndr.notification.defs#filterablePreference',
               },
               starterpackJoined: {
                 type: 'ref',
-                ref: 'lex:app.bsky.notification.defs#preference',
+                ref: 'lex:app.gndr.notification.defs#preference',
               },
               subscribedPost: {
                 type: 'ref',
-                ref: 'lex:app.bsky.notification.defs#preference',
+                ref: 'lex:app.gndr.notification.defs#preference',
               },
               unverified: {
                 type: 'ref',
-                ref: 'lex:app.bsky.notification.defs#preference',
+                ref: 'lex:app.gndr.notification.defs#preference',
               },
               verified: {
                 type: 'ref',
-                ref: 'lex:app.bsky.notification.defs#preference',
+                ref: 'lex:app.gndr.notification.defs#preference',
               },
             },
           },
@@ -10326,7 +10326,7 @@ export const schemaDict = {
             properties: {
               preferences: {
                 type: 'ref',
-                ref: 'lex:app.bsky.notification.defs#preferences',
+                ref: 'lex:app.gndr.notification.defs#preferences',
               },
             },
           },
@@ -10336,7 +10336,7 @@ export const schemaDict = {
   },
   AppBskyNotificationRegisterPush: {
     lexicon: 1,
-    id: 'app.bsky.notification.registerPush',
+    id: 'app.gndr.notification.registerPush',
     defs: {
       main: {
         type: 'procedure',
@@ -10370,7 +10370,7 @@ export const schemaDict = {
   },
   AppBskyNotificationUpdateSeen: {
     lexicon: 1,
-    id: 'app.bsky.notification.updateSeen',
+    id: 'app.gndr.notification.updateSeen',
     defs: {
       main: {
         type: 'procedure',
@@ -10394,7 +10394,7 @@ export const schemaDict = {
   },
   AppBskyRichtextFacet: {
     lexicon: 1,
-    id: 'app.bsky.richtext.facet',
+    id: 'app.gndr.richtext.facet',
     defs: {
       main: {
         type: 'object',
@@ -10403,16 +10403,16 @@ export const schemaDict = {
         properties: {
           index: {
             type: 'ref',
-            ref: 'lex:app.bsky.richtext.facet#byteSlice',
+            ref: 'lex:app.gndr.richtext.facet#byteSlice',
           },
           features: {
             type: 'array',
             items: {
               type: 'union',
               refs: [
-                'lex:app.bsky.richtext.facet#mention',
-                'lex:app.bsky.richtext.facet#link',
-                'lex:app.bsky.richtext.facet#tag',
+                'lex:app.gndr.richtext.facet#mention',
+                'lex:app.gndr.richtext.facet#link',
+                'lex:app.gndr.richtext.facet#tag',
               ],
             },
           },
@@ -10475,7 +10475,7 @@ export const schemaDict = {
   },
   AppBskyUnspeccedDefs: {
     lexicon: 1,
-    id: 'app.bsky.unspecced.defs',
+    id: 'app.gndr.unspecced.defs',
     defs: {
       skeletonSearchPost: {
         type: 'object',
@@ -10606,7 +10606,7 @@ export const schemaDict = {
             type: 'array',
             items: {
               type: 'ref',
-              ref: 'lex:app.bsky.actor.defs#profileViewBasic',
+              ref: 'lex:app.gndr.actor.defs#profileViewBasic',
             },
           },
         },
@@ -10624,7 +10624,7 @@ export const schemaDict = {
         properties: {
           post: {
             type: 'ref',
-            ref: 'lex:app.bsky.feed.defs#postView',
+            ref: 'lex:app.gndr.feed.defs#postView',
           },
           moreParents: {
             type: 'boolean',
@@ -10667,7 +10667,7 @@ export const schemaDict = {
         properties: {
           author: {
             type: 'ref',
-            ref: 'lex:app.bsky.feed.defs#blockedAuthor',
+            ref: 'lex:app.gndr.feed.defs#blockedAuthor',
           },
         },
       },
@@ -10675,7 +10675,7 @@ export const schemaDict = {
   },
   AppBskyUnspeccedGetConfig: {
     lexicon: 1,
-    id: 'app.bsky.unspecced.getConfig',
+    id: 'app.gndr.unspecced.getConfig',
     defs: {
       main: {
         type: 'query',
@@ -10693,7 +10693,7 @@ export const schemaDict = {
                 type: 'array',
                 items: {
                   type: 'ref',
-                  ref: 'lex:app.bsky.unspecced.getConfig#liveNowConfig',
+                  ref: 'lex:app.gndr.unspecced.getConfig#liveNowConfig',
                 },
               },
             },
@@ -10720,7 +10720,7 @@ export const schemaDict = {
   },
   AppBskyUnspeccedGetPopularFeedGenerators: {
     lexicon: 1,
-    id: 'app.bsky.unspecced.getPopularFeedGenerators',
+    id: 'app.gndr.unspecced.getPopularFeedGenerators',
     defs: {
       main: {
         type: 'query',
@@ -10755,7 +10755,7 @@ export const schemaDict = {
                 type: 'array',
                 items: {
                   type: 'ref',
-                  ref: 'lex:app.bsky.feed.defs#generatorView',
+                  ref: 'lex:app.gndr.feed.defs#generatorView',
                 },
               },
             },
@@ -10766,12 +10766,12 @@ export const schemaDict = {
   },
   AppBskyUnspeccedGetPostThreadOtherV2: {
     lexicon: 1,
-    id: 'app.bsky.unspecced.getPostThreadOtherV2',
+    id: 'app.gndr.unspecced.getPostThreadOtherV2',
     defs: {
       main: {
         type: 'query',
         description:
-          "(NOTE: this endpoint is under development and WILL change without notice. Don't use it until it is moved out of `unspecced` or your application WILL break) Get additional posts under a thread e.g. replies hidden by threadgate. Based on an anchor post at any depth of the tree, returns top-level replies below that anchor. It does not include ancestors nor the anchor itself. This should be called after exhausting `app.bsky.unspecced.getPostThreadV2`. Does not require auth, but additional metadata and filtering will be applied for authed requests.",
+          "(NOTE: this endpoint is under development and WILL change without notice. Don't use it until it is moved out of `unspecced` or your application WILL break) Get additional posts under a thread e.g. replies hidden by threadgate. Based on an anchor post at any depth of the tree, returns top-level replies below that anchor. It does not include ancestors nor the anchor itself. This should be called after exhausting `app.gndr.unspecced.getPostThreadV2`. Does not require auth, but additional metadata and filtering will be applied for authed requests.",
         parameters: {
           type: 'params',
           required: ['anchor'],
@@ -10802,7 +10802,7 @@ export const schemaDict = {
                   'A flat list of other thread items. The depth of each item is indicated by the depth property inside the item.',
                 items: {
                   type: 'ref',
-                  ref: 'lex:app.bsky.unspecced.getPostThreadOtherV2#threadItem',
+                  ref: 'lex:app.gndr.unspecced.getPostThreadOtherV2#threadItem',
                 },
               },
             },
@@ -10824,7 +10824,7 @@ export const schemaDict = {
           },
           value: {
             type: 'union',
-            refs: ['lex:app.bsky.unspecced.defs#threadItemPost'],
+            refs: ['lex:app.gndr.unspecced.defs#threadItemPost'],
           },
         },
       },
@@ -10832,7 +10832,7 @@ export const schemaDict = {
   },
   AppBskyUnspeccedGetPostThreadV2: {
     lexicon: 1,
-    id: 'app.bsky.unspecced.getPostThreadV2',
+    id: 'app.gndr.unspecced.getPostThreadV2',
     defs: {
       main: {
         type: 'query',
@@ -10895,12 +10895,12 @@ export const schemaDict = {
                   'A flat list of thread items. The depth of each item is indicated by the depth property inside the item.',
                 items: {
                   type: 'ref',
-                  ref: 'lex:app.bsky.unspecced.getPostThreadV2#threadItem',
+                  ref: 'lex:app.gndr.unspecced.getPostThreadV2#threadItem',
                 },
               },
               threadgate: {
                 type: 'ref',
-                ref: 'lex:app.bsky.feed.defs#threadgateView',
+                ref: 'lex:app.gndr.feed.defs#threadgateView',
               },
               hasOtherReplies: {
                 type: 'boolean',
@@ -10927,10 +10927,10 @@ export const schemaDict = {
           value: {
             type: 'union',
             refs: [
-              'lex:app.bsky.unspecced.defs#threadItemPost',
-              'lex:app.bsky.unspecced.defs#threadItemNoUnauthenticated',
-              'lex:app.bsky.unspecced.defs#threadItemNotFound',
-              'lex:app.bsky.unspecced.defs#threadItemBlocked',
+              'lex:app.gndr.unspecced.defs#threadItemPost',
+              'lex:app.gndr.unspecced.defs#threadItemNoUnauthenticated',
+              'lex:app.gndr.unspecced.defs#threadItemNotFound',
+              'lex:app.gndr.unspecced.defs#threadItemBlocked',
             ],
           },
         },
@@ -10939,7 +10939,7 @@ export const schemaDict = {
   },
   AppBskyUnspeccedGetSuggestedFeeds: {
     lexicon: 1,
-    id: 'app.bsky.unspecced.getSuggestedFeeds',
+    id: 'app.gndr.unspecced.getSuggestedFeeds',
     defs: {
       main: {
         type: 'query',
@@ -10965,7 +10965,7 @@ export const schemaDict = {
                 type: 'array',
                 items: {
                   type: 'ref',
-                  ref: 'lex:app.bsky.feed.defs#generatorView',
+                  ref: 'lex:app.gndr.feed.defs#generatorView',
                 },
               },
             },
@@ -10976,12 +10976,12 @@ export const schemaDict = {
   },
   AppBskyUnspeccedGetSuggestedFeedsSkeleton: {
     lexicon: 1,
-    id: 'app.bsky.unspecced.getSuggestedFeedsSkeleton',
+    id: 'app.gndr.unspecced.getSuggestedFeedsSkeleton',
     defs: {
       main: {
         type: 'query',
         description:
-          'Get a skeleton of suggested feeds. Intended to be called and hydrated by app.bsky.unspecced.getSuggestedFeeds',
+          'Get a skeleton of suggested feeds. Intended to be called and hydrated by app.gndr.unspecced.getSuggestedFeeds',
         parameters: {
           type: 'params',
           properties: {
@@ -11020,7 +11020,7 @@ export const schemaDict = {
   },
   AppBskyUnspeccedGetSuggestedStarterPacks: {
     lexicon: 1,
-    id: 'app.bsky.unspecced.getSuggestedStarterPacks',
+    id: 'app.gndr.unspecced.getSuggestedStarterPacks',
     defs: {
       main: {
         type: 'query',
@@ -11046,7 +11046,7 @@ export const schemaDict = {
                 type: 'array',
                 items: {
                   type: 'ref',
-                  ref: 'lex:app.bsky.graph.defs#starterPackView',
+                  ref: 'lex:app.gndr.graph.defs#starterPackView',
                 },
               },
             },
@@ -11057,12 +11057,12 @@ export const schemaDict = {
   },
   AppBskyUnspeccedGetSuggestedStarterPacksSkeleton: {
     lexicon: 1,
-    id: 'app.bsky.unspecced.getSuggestedStarterPacksSkeleton',
+    id: 'app.gndr.unspecced.getSuggestedStarterPacksSkeleton',
     defs: {
       main: {
         type: 'query',
         description:
-          'Get a skeleton of suggested starterpacks. Intended to be called and hydrated by app.bsky.unspecced.getSuggestedStarterpacks',
+          'Get a skeleton of suggested starterpacks. Intended to be called and hydrated by app.gndr.unspecced.getSuggestedStarterpacks',
         parameters: {
           type: 'params',
           properties: {
@@ -11101,7 +11101,7 @@ export const schemaDict = {
   },
   AppBskyUnspeccedGetSuggestedUsers: {
     lexicon: 1,
-    id: 'app.bsky.unspecced.getSuggestedUsers',
+    id: 'app.gndr.unspecced.getSuggestedUsers',
     defs: {
       main: {
         type: 'query',
@@ -11131,7 +11131,7 @@ export const schemaDict = {
                 type: 'array',
                 items: {
                   type: 'ref',
-                  ref: 'lex:app.bsky.actor.defs#profileView',
+                  ref: 'lex:app.gndr.actor.defs#profileView',
                 },
               },
             },
@@ -11142,12 +11142,12 @@ export const schemaDict = {
   },
   AppBskyUnspeccedGetSuggestedUsersSkeleton: {
     lexicon: 1,
-    id: 'app.bsky.unspecced.getSuggestedUsersSkeleton',
+    id: 'app.gndr.unspecced.getSuggestedUsersSkeleton',
     defs: {
       main: {
         type: 'query',
         description:
-          'Get a skeleton of suggested users. Intended to be called and hydrated by app.bsky.unspecced.getSuggestedUsers',
+          'Get a skeleton of suggested users. Intended to be called and hydrated by app.gndr.unspecced.getSuggestedUsers',
         parameters: {
           type: 'params',
           properties: {
@@ -11190,12 +11190,12 @@ export const schemaDict = {
   },
   AppBskyUnspeccedGetSuggestionsSkeleton: {
     lexicon: 1,
-    id: 'app.bsky.unspecced.getSuggestionsSkeleton',
+    id: 'app.gndr.unspecced.getSuggestionsSkeleton',
     defs: {
       main: {
         type: 'query',
         description:
-          'Get a skeleton of suggested actors. Intended to be called and then hydrated through app.bsky.actor.getSuggestions',
+          'Get a skeleton of suggested actors. Intended to be called and then hydrated through app.gndr.actor.getSuggestions',
         parameters: {
           type: 'params',
           properties: {
@@ -11235,7 +11235,7 @@ export const schemaDict = {
                 type: 'array',
                 items: {
                   type: 'ref',
-                  ref: 'lex:app.bsky.unspecced.defs#skeletonSearchActor',
+                  ref: 'lex:app.gndr.unspecced.defs#skeletonSearchActor',
                 },
               },
               relativeToDid: {
@@ -11257,7 +11257,7 @@ export const schemaDict = {
   },
   AppBskyUnspeccedGetTaggedSuggestions: {
     lexicon: 1,
-    id: 'app.bsky.unspecced.getTaggedSuggestions',
+    id: 'app.gndr.unspecced.getTaggedSuggestions',
     defs: {
       main: {
         type: 'query',
@@ -11277,7 +11277,7 @@ export const schemaDict = {
                 type: 'array',
                 items: {
                   type: 'ref',
-                  ref: 'lex:app.bsky.unspecced.getTaggedSuggestions#suggestion',
+                  ref: 'lex:app.gndr.unspecced.getTaggedSuggestions#suggestion',
                 },
               },
             },
@@ -11305,7 +11305,7 @@ export const schemaDict = {
   },
   AppBskyUnspeccedGetTrendingTopics: {
     lexicon: 1,
-    id: 'app.bsky.unspecced.getTrendingTopics',
+    id: 'app.gndr.unspecced.getTrendingTopics',
     defs: {
       main: {
         type: 'query',
@@ -11337,14 +11337,14 @@ export const schemaDict = {
                 type: 'array',
                 items: {
                   type: 'ref',
-                  ref: 'lex:app.bsky.unspecced.defs#trendingTopic',
+                  ref: 'lex:app.gndr.unspecced.defs#trendingTopic',
                 },
               },
               suggested: {
                 type: 'array',
                 items: {
                   type: 'ref',
-                  ref: 'lex:app.bsky.unspecced.defs#trendingTopic',
+                  ref: 'lex:app.gndr.unspecced.defs#trendingTopic',
                 },
               },
             },
@@ -11355,7 +11355,7 @@ export const schemaDict = {
   },
   AppBskyUnspeccedGetTrends: {
     lexicon: 1,
-    id: 'app.bsky.unspecced.getTrends',
+    id: 'app.gndr.unspecced.getTrends',
     defs: {
       main: {
         type: 'query',
@@ -11381,7 +11381,7 @@ export const schemaDict = {
                 type: 'array',
                 items: {
                   type: 'ref',
-                  ref: 'lex:app.bsky.unspecced.defs#trendView',
+                  ref: 'lex:app.gndr.unspecced.defs#trendView',
                 },
               },
             },
@@ -11392,12 +11392,12 @@ export const schemaDict = {
   },
   AppBskyUnspeccedGetTrendsSkeleton: {
     lexicon: 1,
-    id: 'app.bsky.unspecced.getTrendsSkeleton',
+    id: 'app.gndr.unspecced.getTrendsSkeleton',
     defs: {
       main: {
         type: 'query',
         description:
-          'Get the skeleton of trends on the network. Intended to be called and then hydrated through app.bsky.unspecced.getTrends',
+          'Get the skeleton of trends on the network. Intended to be called and then hydrated through app.gndr.unspecced.getTrends',
         parameters: {
           type: 'params',
           properties: {
@@ -11425,7 +11425,7 @@ export const schemaDict = {
                 type: 'array',
                 items: {
                   type: 'ref',
-                  ref: 'lex:app.bsky.unspecced.defs#skeletonTrend',
+                  ref: 'lex:app.gndr.unspecced.defs#skeletonTrend',
                 },
               },
             },
@@ -11436,7 +11436,7 @@ export const schemaDict = {
   },
   AppBskyUnspeccedSearchActorsSkeleton: {
     lexicon: 1,
-    id: 'app.bsky.unspecced.searchActorsSkeleton',
+    id: 'app.gndr.unspecced.searchActorsSkeleton',
     defs: {
       main: {
         type: 'query',
@@ -11491,7 +11491,7 @@ export const schemaDict = {
                 type: 'array',
                 items: {
                   type: 'ref',
-                  ref: 'lex:app.bsky.unspecced.defs#skeletonSearchActor',
+                  ref: 'lex:app.gndr.unspecced.defs#skeletonSearchActor',
                 },
               },
             },
@@ -11507,7 +11507,7 @@ export const schemaDict = {
   },
   AppBskyUnspeccedSearchPostsSkeleton: {
     lexicon: 1,
-    id: 'app.bsky.unspecced.searchPostsSkeleton',
+    id: 'app.gndr.unspecced.searchPostsSkeleton',
     defs: {
       main: {
         type: 'query',
@@ -11613,7 +11613,7 @@ export const schemaDict = {
                 type: 'array',
                 items: {
                   type: 'ref',
-                  ref: 'lex:app.bsky.unspecced.defs#skeletonSearchPost',
+                  ref: 'lex:app.gndr.unspecced.defs#skeletonSearchPost',
                 },
               },
             },
@@ -11629,7 +11629,7 @@ export const schemaDict = {
   },
   AppBskyUnspeccedSearchStarterPacksSkeleton: {
     lexicon: 1,
-    id: 'app.bsky.unspecced.searchStarterPacksSkeleton',
+    id: 'app.gndr.unspecced.searchStarterPacksSkeleton',
     defs: {
       main: {
         type: 'query',
@@ -11680,7 +11680,7 @@ export const schemaDict = {
                 type: 'array',
                 items: {
                   type: 'ref',
-                  ref: 'lex:app.bsky.unspecced.defs#skeletonSearchStarterPack',
+                  ref: 'lex:app.gndr.unspecced.defs#skeletonSearchStarterPack',
                 },
               },
             },
@@ -11696,7 +11696,7 @@ export const schemaDict = {
   },
   AppBskyVideoDefs: {
     lexicon: 1,
-    id: 'app.bsky.video.defs',
+    id: 'app.gndr.video.defs',
     defs: {
       jobStatus: {
         type: 'object',
@@ -11736,7 +11736,7 @@ export const schemaDict = {
   },
   AppBskyVideoGetJobStatus: {
     lexicon: 1,
-    id: 'app.bsky.video.getJobStatus',
+    id: 'app.gndr.video.getJobStatus',
     defs: {
       main: {
         type: 'query',
@@ -11758,7 +11758,7 @@ export const schemaDict = {
             properties: {
               jobStatus: {
                 type: 'ref',
-                ref: 'lex:app.bsky.video.defs#jobStatus',
+                ref: 'lex:app.gndr.video.defs#jobStatus',
               },
             },
           },
@@ -11768,7 +11768,7 @@ export const schemaDict = {
   },
   AppBskyVideoGetUploadLimits: {
     lexicon: 1,
-    id: 'app.bsky.video.getUploadLimits',
+    id: 'app.gndr.video.getUploadLimits',
     defs: {
       main: {
         type: 'query',
@@ -11802,7 +11802,7 @@ export const schemaDict = {
   },
   AppBskyVideoUploadVideo: {
     lexicon: 1,
-    id: 'app.bsky.video.uploadVideo',
+    id: 'app.gndr.video.uploadVideo',
     defs: {
       main: {
         type: 'procedure',
@@ -11818,7 +11818,7 @@ export const schemaDict = {
             properties: {
               jobStatus: {
                 type: 'ref',
-                ref: 'lex:app.bsky.video.defs#jobStatus',
+                ref: 'lex:app.gndr.video.defs#jobStatus',
               },
             },
           },
@@ -11828,11 +11828,11 @@ export const schemaDict = {
   },
   ChatBskyActorDeclaration: {
     lexicon: 1,
-    id: 'chat.bsky.actor.declaration',
+    id: 'chat.gndr.actor.declaration',
     defs: {
       main: {
         type: 'record',
-        description: 'A declaration of a Bluesky chat account.',
+        description: 'A declaration of a Gander chat account.',
         key: 'literal:self',
         record: {
           type: 'object',
@@ -11849,7 +11849,7 @@ export const schemaDict = {
   },
   ChatBskyActorDefs: {
     lexicon: 1,
-    id: 'chat.bsky.actor.defs',
+    id: 'chat.gndr.actor.defs',
     defs: {
       profileViewBasic: {
         type: 'object',
@@ -11874,11 +11874,11 @@ export const schemaDict = {
           },
           associated: {
             type: 'ref',
-            ref: 'lex:app.bsky.actor.defs#profileAssociated',
+            ref: 'lex:app.gndr.actor.defs#profileAssociated',
           },
           viewer: {
             type: 'ref',
-            ref: 'lex:app.bsky.actor.defs#viewerState',
+            ref: 'lex:app.gndr.actor.defs#viewerState',
           },
           labels: {
             type: 'array',
@@ -11894,7 +11894,7 @@ export const schemaDict = {
           },
           verification: {
             type: 'ref',
-            ref: 'lex:app.bsky.actor.defs#verificationState',
+            ref: 'lex:app.gndr.actor.defs#verificationState',
           },
         },
       },
@@ -11902,7 +11902,7 @@ export const schemaDict = {
   },
   ChatBskyActorDeleteAccount: {
     lexicon: 1,
-    id: 'chat.bsky.actor.deleteAccount',
+    id: 'chat.gndr.actor.deleteAccount',
     defs: {
       main: {
         type: 'procedure',
@@ -11918,7 +11918,7 @@ export const schemaDict = {
   },
   ChatBskyActorExportAccountData: {
     lexicon: 1,
-    id: 'chat.bsky.actor.exportAccountData',
+    id: 'chat.gndr.actor.exportAccountData',
     defs: {
       main: {
         type: 'query',
@@ -11930,7 +11930,7 @@ export const schemaDict = {
   },
   ChatBskyConvoAcceptConvo: {
     lexicon: 1,
-    id: 'chat.bsky.convo.acceptConvo',
+    id: 'chat.gndr.convo.acceptConvo',
     defs: {
       main: {
         type: 'procedure',
@@ -11964,7 +11964,7 @@ export const schemaDict = {
   },
   ChatBskyConvoAddReaction: {
     lexicon: 1,
-    id: 'chat.bsky.convo.addReaction',
+    id: 'chat.gndr.convo.addReaction',
     defs: {
       main: {
         type: 'procedure',
@@ -12000,7 +12000,7 @@ export const schemaDict = {
             properties: {
               message: {
                 type: 'ref',
-                ref: 'lex:chat.bsky.convo.defs#messageView',
+                ref: 'lex:chat.gndr.convo.defs#messageView',
               },
             },
           },
@@ -12027,7 +12027,7 @@ export const schemaDict = {
   },
   ChatBskyConvoDefs: {
     lexicon: 1,
-    id: 'chat.bsky.convo.defs',
+    id: 'chat.gndr.convo.defs',
     defs: {
       messageRef: {
         type: 'object',
@@ -12059,12 +12059,12 @@ export const schemaDict = {
             description: 'Annotations of text (mentions, URLs, hashtags, etc)',
             items: {
               type: 'ref',
-              ref: 'lex:app.bsky.richtext.facet',
+              ref: 'lex:app.gndr.richtext.facet',
             },
           },
           embed: {
             type: 'union',
-            refs: ['lex:app.bsky.embed.record'],
+            refs: ['lex:app.gndr.embed.record'],
           },
         },
       },
@@ -12088,12 +12088,12 @@ export const schemaDict = {
             description: 'Annotations of text (mentions, URLs, hashtags, etc)',
             items: {
               type: 'ref',
-              ref: 'lex:app.bsky.richtext.facet',
+              ref: 'lex:app.gndr.richtext.facet',
             },
           },
           embed: {
             type: 'union',
-            refs: ['lex:app.bsky.embed.record#view'],
+            refs: ['lex:app.gndr.embed.record#view'],
           },
           reactions: {
             type: 'array',
@@ -12101,12 +12101,12 @@ export const schemaDict = {
               'Reactions to this message, in ascending order of creation time.',
             items: {
               type: 'ref',
-              ref: 'lex:chat.bsky.convo.defs#reactionView',
+              ref: 'lex:chat.gndr.convo.defs#reactionView',
             },
           },
           sender: {
             type: 'ref',
-            ref: 'lex:chat.bsky.convo.defs#messageViewSender',
+            ref: 'lex:chat.gndr.convo.defs#messageViewSender',
           },
           sentAt: {
             type: 'string',
@@ -12126,7 +12126,7 @@ export const schemaDict = {
           },
           sender: {
             type: 'ref',
-            ref: 'lex:chat.bsky.convo.defs#messageViewSender',
+            ref: 'lex:chat.gndr.convo.defs#messageViewSender',
           },
           sentAt: {
             type: 'string',
@@ -12153,7 +12153,7 @@ export const schemaDict = {
           },
           sender: {
             type: 'ref',
-            ref: 'lex:chat.bsky.convo.defs#reactionViewSender',
+            ref: 'lex:chat.gndr.convo.defs#reactionViewSender',
           },
           createdAt: {
             type: 'string',
@@ -12177,11 +12177,11 @@ export const schemaDict = {
         properties: {
           message: {
             type: 'ref',
-            ref: 'lex:chat.bsky.convo.defs#messageView',
+            ref: 'lex:chat.gndr.convo.defs#messageView',
           },
           reaction: {
             type: 'ref',
-            ref: 'lex:chat.bsky.convo.defs#reactionView',
+            ref: 'lex:chat.gndr.convo.defs#reactionView',
           },
         },
       },
@@ -12199,19 +12199,19 @@ export const schemaDict = {
             type: 'array',
             items: {
               type: 'ref',
-              ref: 'lex:chat.bsky.actor.defs#profileViewBasic',
+              ref: 'lex:chat.gndr.actor.defs#profileViewBasic',
             },
           },
           lastMessage: {
             type: 'union',
             refs: [
-              'lex:chat.bsky.convo.defs#messageView',
-              'lex:chat.bsky.convo.defs#deletedMessageView',
+              'lex:chat.gndr.convo.defs#messageView',
+              'lex:chat.gndr.convo.defs#deletedMessageView',
             ],
           },
           lastReaction: {
             type: 'union',
-            refs: ['lex:chat.bsky.convo.defs#messageAndReactionView'],
+            refs: ['lex:chat.gndr.convo.defs#messageAndReactionView'],
           },
           muted: {
             type: 'boolean',
@@ -12298,8 +12298,8 @@ export const schemaDict = {
           message: {
             type: 'union',
             refs: [
-              'lex:chat.bsky.convo.defs#messageView',
-              'lex:chat.bsky.convo.defs#deletedMessageView',
+              'lex:chat.gndr.convo.defs#messageView',
+              'lex:chat.gndr.convo.defs#deletedMessageView',
             ],
           },
         },
@@ -12317,8 +12317,8 @@ export const schemaDict = {
           message: {
             type: 'union',
             refs: [
-              'lex:chat.bsky.convo.defs#messageView',
-              'lex:chat.bsky.convo.defs#deletedMessageView',
+              'lex:chat.gndr.convo.defs#messageView',
+              'lex:chat.gndr.convo.defs#deletedMessageView',
             ],
           },
         },
@@ -12336,8 +12336,8 @@ export const schemaDict = {
           message: {
             type: 'union',
             refs: [
-              'lex:chat.bsky.convo.defs#messageView',
-              'lex:chat.bsky.convo.defs#deletedMessageView',
+              'lex:chat.gndr.convo.defs#messageView',
+              'lex:chat.gndr.convo.defs#deletedMessageView',
             ],
           },
         },
@@ -12355,13 +12355,13 @@ export const schemaDict = {
           message: {
             type: 'union',
             refs: [
-              'lex:chat.bsky.convo.defs#messageView',
-              'lex:chat.bsky.convo.defs#deletedMessageView',
+              'lex:chat.gndr.convo.defs#messageView',
+              'lex:chat.gndr.convo.defs#deletedMessageView',
             ],
           },
           reaction: {
             type: 'ref',
-            ref: 'lex:chat.bsky.convo.defs#reactionView',
+            ref: 'lex:chat.gndr.convo.defs#reactionView',
           },
         },
       },
@@ -12378,13 +12378,13 @@ export const schemaDict = {
           message: {
             type: 'union',
             refs: [
-              'lex:chat.bsky.convo.defs#messageView',
-              'lex:chat.bsky.convo.defs#deletedMessageView',
+              'lex:chat.gndr.convo.defs#messageView',
+              'lex:chat.gndr.convo.defs#deletedMessageView',
             ],
           },
           reaction: {
             type: 'ref',
-            ref: 'lex:chat.bsky.convo.defs#reactionView',
+            ref: 'lex:chat.gndr.convo.defs#reactionView',
           },
         },
       },
@@ -12392,7 +12392,7 @@ export const schemaDict = {
   },
   ChatBskyConvoDeleteMessageForSelf: {
     lexicon: 1,
-    id: 'chat.bsky.convo.deleteMessageForSelf',
+    id: 'chat.gndr.convo.deleteMessageForSelf',
     defs: {
       main: {
         type: 'procedure',
@@ -12415,7 +12415,7 @@ export const schemaDict = {
           encoding: 'application/json',
           schema: {
             type: 'ref',
-            ref: 'lex:chat.bsky.convo.defs#deletedMessageView',
+            ref: 'lex:chat.gndr.convo.defs#deletedMessageView',
           },
         },
       },
@@ -12423,7 +12423,7 @@ export const schemaDict = {
   },
   ChatBskyConvoGetConvo: {
     lexicon: 1,
-    id: 'chat.bsky.convo.getConvo',
+    id: 'chat.gndr.convo.getConvo',
     defs: {
       main: {
         type: 'query',
@@ -12444,7 +12444,7 @@ export const schemaDict = {
             properties: {
               convo: {
                 type: 'ref',
-                ref: 'lex:chat.bsky.convo.defs#convoView',
+                ref: 'lex:chat.gndr.convo.defs#convoView',
               },
             },
           },
@@ -12454,7 +12454,7 @@ export const schemaDict = {
   },
   ChatBskyConvoGetConvoAvailability: {
     lexicon: 1,
-    id: 'chat.bsky.convo.getConvoAvailability',
+    id: 'chat.gndr.convo.getConvoAvailability',
     defs: {
       main: {
         type: 'query',
@@ -12486,7 +12486,7 @@ export const schemaDict = {
               },
               convo: {
                 type: 'ref',
-                ref: 'lex:chat.bsky.convo.defs#convoView',
+                ref: 'lex:chat.gndr.convo.defs#convoView',
               },
             },
           },
@@ -12496,7 +12496,7 @@ export const schemaDict = {
   },
   ChatBskyConvoGetConvoForMembers: {
     lexicon: 1,
-    id: 'chat.bsky.convo.getConvoForMembers',
+    id: 'chat.gndr.convo.getConvoForMembers',
     defs: {
       main: {
         type: 'query',
@@ -12523,7 +12523,7 @@ export const schemaDict = {
             properties: {
               convo: {
                 type: 'ref',
-                ref: 'lex:chat.bsky.convo.defs#convoView',
+                ref: 'lex:chat.gndr.convo.defs#convoView',
               },
             },
           },
@@ -12533,7 +12533,7 @@ export const schemaDict = {
   },
   ChatBskyConvoGetLog: {
     lexicon: 1,
-    id: 'chat.bsky.convo.getLog',
+    id: 'chat.gndr.convo.getLog',
     defs: {
       main: {
         type: 'query',
@@ -12560,16 +12560,16 @@ export const schemaDict = {
                 items: {
                   type: 'union',
                   refs: [
-                    'lex:chat.bsky.convo.defs#logBeginConvo',
-                    'lex:chat.bsky.convo.defs#logAcceptConvo',
-                    'lex:chat.bsky.convo.defs#logLeaveConvo',
-                    'lex:chat.bsky.convo.defs#logMuteConvo',
-                    'lex:chat.bsky.convo.defs#logUnmuteConvo',
-                    'lex:chat.bsky.convo.defs#logCreateMessage',
-                    'lex:chat.bsky.convo.defs#logDeleteMessage',
-                    'lex:chat.bsky.convo.defs#logReadMessage',
-                    'lex:chat.bsky.convo.defs#logAddReaction',
-                    'lex:chat.bsky.convo.defs#logRemoveReaction',
+                    'lex:chat.gndr.convo.defs#logBeginConvo',
+                    'lex:chat.gndr.convo.defs#logAcceptConvo',
+                    'lex:chat.gndr.convo.defs#logLeaveConvo',
+                    'lex:chat.gndr.convo.defs#logMuteConvo',
+                    'lex:chat.gndr.convo.defs#logUnmuteConvo',
+                    'lex:chat.gndr.convo.defs#logCreateMessage',
+                    'lex:chat.gndr.convo.defs#logDeleteMessage',
+                    'lex:chat.gndr.convo.defs#logReadMessage',
+                    'lex:chat.gndr.convo.defs#logAddReaction',
+                    'lex:chat.gndr.convo.defs#logRemoveReaction',
                   ],
                 },
               },
@@ -12581,7 +12581,7 @@ export const schemaDict = {
   },
   ChatBskyConvoGetMessages: {
     lexicon: 1,
-    id: 'chat.bsky.convo.getMessages',
+    id: 'chat.gndr.convo.getMessages',
     defs: {
       main: {
         type: 'query',
@@ -12617,8 +12617,8 @@ export const schemaDict = {
                 items: {
                   type: 'union',
                   refs: [
-                    'lex:chat.bsky.convo.defs#messageView',
-                    'lex:chat.bsky.convo.defs#deletedMessageView',
+                    'lex:chat.gndr.convo.defs#messageView',
+                    'lex:chat.gndr.convo.defs#deletedMessageView',
                   ],
                 },
               },
@@ -12630,7 +12630,7 @@ export const schemaDict = {
   },
   ChatBskyConvoLeaveConvo: {
     lexicon: 1,
-    id: 'chat.bsky.convo.leaveConvo',
+    id: 'chat.gndr.convo.leaveConvo',
     defs: {
       main: {
         type: 'procedure',
@@ -12666,7 +12666,7 @@ export const schemaDict = {
   },
   ChatBskyConvoListConvos: {
     lexicon: 1,
-    id: 'chat.bsky.convo.listConvos',
+    id: 'chat.gndr.convo.listConvos',
     defs: {
       main: {
         type: 'query',
@@ -12705,7 +12705,7 @@ export const schemaDict = {
                 type: 'array',
                 items: {
                   type: 'ref',
-                  ref: 'lex:chat.bsky.convo.defs#convoView',
+                  ref: 'lex:chat.gndr.convo.defs#convoView',
                 },
               },
             },
@@ -12716,7 +12716,7 @@ export const schemaDict = {
   },
   ChatBskyConvoMuteConvo: {
     lexicon: 1,
-    id: 'chat.bsky.convo.muteConvo',
+    id: 'chat.gndr.convo.muteConvo',
     defs: {
       main: {
         type: 'procedure',
@@ -12740,7 +12740,7 @@ export const schemaDict = {
             properties: {
               convo: {
                 type: 'ref',
-                ref: 'lex:chat.bsky.convo.defs#convoView',
+                ref: 'lex:chat.gndr.convo.defs#convoView',
               },
             },
           },
@@ -12750,7 +12750,7 @@ export const schemaDict = {
   },
   ChatBskyConvoRemoveReaction: {
     lexicon: 1,
-    id: 'chat.bsky.convo.removeReaction',
+    id: 'chat.gndr.convo.removeReaction',
     defs: {
       main: {
         type: 'procedure',
@@ -12786,7 +12786,7 @@ export const schemaDict = {
             properties: {
               message: {
                 type: 'ref',
-                ref: 'lex:chat.bsky.convo.defs#messageView',
+                ref: 'lex:chat.gndr.convo.defs#messageView',
               },
             },
           },
@@ -12808,7 +12808,7 @@ export const schemaDict = {
   },
   ChatBskyConvoSendMessage: {
     lexicon: 1,
-    id: 'chat.bsky.convo.sendMessage',
+    id: 'chat.gndr.convo.sendMessage',
     defs: {
       main: {
         type: 'procedure',
@@ -12823,7 +12823,7 @@ export const schemaDict = {
               },
               message: {
                 type: 'ref',
-                ref: 'lex:chat.bsky.convo.defs#messageInput',
+                ref: 'lex:chat.gndr.convo.defs#messageInput',
               },
             },
           },
@@ -12832,7 +12832,7 @@ export const schemaDict = {
           encoding: 'application/json',
           schema: {
             type: 'ref',
-            ref: 'lex:chat.bsky.convo.defs#messageView',
+            ref: 'lex:chat.gndr.convo.defs#messageView',
           },
         },
       },
@@ -12840,7 +12840,7 @@ export const schemaDict = {
   },
   ChatBskyConvoSendMessageBatch: {
     lexicon: 1,
-    id: 'chat.bsky.convo.sendMessageBatch',
+    id: 'chat.gndr.convo.sendMessageBatch',
     defs: {
       main: {
         type: 'procedure',
@@ -12855,7 +12855,7 @@ export const schemaDict = {
                 maxLength: 100,
                 items: {
                   type: 'ref',
-                  ref: 'lex:chat.bsky.convo.sendMessageBatch#batchItem',
+                  ref: 'lex:chat.gndr.convo.sendMessageBatch#batchItem',
                 },
               },
             },
@@ -12871,7 +12871,7 @@ export const schemaDict = {
                 type: 'array',
                 items: {
                   type: 'ref',
-                  ref: 'lex:chat.bsky.convo.defs#messageView',
+                  ref: 'lex:chat.gndr.convo.defs#messageView',
                 },
               },
             },
@@ -12887,7 +12887,7 @@ export const schemaDict = {
           },
           message: {
             type: 'ref',
-            ref: 'lex:chat.bsky.convo.defs#messageInput',
+            ref: 'lex:chat.gndr.convo.defs#messageInput',
           },
         },
       },
@@ -12895,7 +12895,7 @@ export const schemaDict = {
   },
   ChatBskyConvoUnmuteConvo: {
     lexicon: 1,
-    id: 'chat.bsky.convo.unmuteConvo',
+    id: 'chat.gndr.convo.unmuteConvo',
     defs: {
       main: {
         type: 'procedure',
@@ -12919,7 +12919,7 @@ export const schemaDict = {
             properties: {
               convo: {
                 type: 'ref',
-                ref: 'lex:chat.bsky.convo.defs#convoView',
+                ref: 'lex:chat.gndr.convo.defs#convoView',
               },
             },
           },
@@ -12929,7 +12929,7 @@ export const schemaDict = {
   },
   ChatBskyConvoUpdateAllRead: {
     lexicon: 1,
-    id: 'chat.bsky.convo.updateAllRead',
+    id: 'chat.gndr.convo.updateAllRead',
     defs: {
       main: {
         type: 'procedure',
@@ -12963,7 +12963,7 @@ export const schemaDict = {
   },
   ChatBskyConvoUpdateRead: {
     lexicon: 1,
-    id: 'chat.bsky.convo.updateRead',
+    id: 'chat.gndr.convo.updateRead',
     defs: {
       main: {
         type: 'procedure',
@@ -12990,7 +12990,7 @@ export const schemaDict = {
             properties: {
               convo: {
                 type: 'ref',
-                ref: 'lex:chat.bsky.convo.defs#convoView',
+                ref: 'lex:chat.gndr.convo.defs#convoView',
               },
             },
           },
@@ -13000,7 +13000,7 @@ export const schemaDict = {
   },
   ChatBskyModerationGetActorMetadata: {
     lexicon: 1,
-    id: 'chat.bsky.moderation.getActorMetadata',
+    id: 'chat.gndr.moderation.getActorMetadata',
     defs: {
       main: {
         type: 'query',
@@ -13022,15 +13022,15 @@ export const schemaDict = {
             properties: {
               day: {
                 type: 'ref',
-                ref: 'lex:chat.bsky.moderation.getActorMetadata#metadata',
+                ref: 'lex:chat.gndr.moderation.getActorMetadata#metadata',
               },
               month: {
                 type: 'ref',
-                ref: 'lex:chat.bsky.moderation.getActorMetadata#metadata',
+                ref: 'lex:chat.gndr.moderation.getActorMetadata#metadata',
               },
               all: {
                 type: 'ref',
-                ref: 'lex:chat.bsky.moderation.getActorMetadata#metadata',
+                ref: 'lex:chat.gndr.moderation.getActorMetadata#metadata',
               },
             },
           },
@@ -13063,7 +13063,7 @@ export const schemaDict = {
   },
   ChatBskyModerationGetMessageContext: {
     lexicon: 1,
-    id: 'chat.bsky.moderation.getMessageContext',
+    id: 'chat.gndr.moderation.getMessageContext',
     defs: {
       main: {
         type: 'query',
@@ -13100,8 +13100,8 @@ export const schemaDict = {
                 items: {
                   type: 'union',
                   refs: [
-                    'lex:chat.bsky.convo.defs#messageView',
-                    'lex:chat.bsky.convo.defs#deletedMessageView',
+                    'lex:chat.gndr.convo.defs#messageView',
+                    'lex:chat.gndr.convo.defs#deletedMessageView',
                   ],
                 },
               },
@@ -13113,7 +13113,7 @@ export const schemaDict = {
   },
   ChatBskyModerationUpdateActorAccess: {
     lexicon: 1,
-    id: 'chat.bsky.moderation.updateActorAccess',
+    id: 'chat.gndr.moderation.updateActorAccess',
     defs: {
       main: {
         type: 'procedure',
@@ -13539,7 +13539,7 @@ export const schemaDict = {
             refs: [
               'lex:com.atproto.admin.defs#repoRef',
               'lex:com.atproto.repo.strongRef',
-              'lex:chat.bsky.convo.defs#messageRef',
+              'lex:chat.gndr.convo.defs#messageRef',
             ],
           },
           subjectBlobCids: {
@@ -13648,7 +13648,7 @@ export const schemaDict = {
             refs: [
               'lex:com.atproto.admin.defs#repoRef',
               'lex:com.atproto.repo.strongRef',
-              'lex:chat.bsky.convo.defs#messageRef',
+              'lex:chat.gndr.convo.defs#messageRef',
             ],
           },
           hosting: {
@@ -16707,7 +16707,7 @@ export const schemaDict = {
           },
           profile: {
             type: 'ref',
-            ref: 'lex:app.bsky.actor.defs#profileViewDetailed',
+            ref: 'lex:app.gndr.actor.defs#profileViewDetailed',
           },
           createdAt: {
             type: 'string',
@@ -17374,153 +17374,153 @@ export const ids = {
   ComAtprotoTempFetchLabels: 'com.atproto.temp.fetchLabels',
   ComAtprotoTempRequestPhoneVerification:
     'com.atproto.temp.requestPhoneVerification',
-  AppBskyActorDefs: 'app.bsky.actor.defs',
-  AppBskyActorGetPreferences: 'app.bsky.actor.getPreferences',
-  AppBskyActorGetProfile: 'app.bsky.actor.getProfile',
-  AppBskyActorGetProfiles: 'app.bsky.actor.getProfiles',
-  AppBskyActorGetSuggestions: 'app.bsky.actor.getSuggestions',
-  AppBskyActorProfile: 'app.bsky.actor.profile',
-  AppBskyActorPutPreferences: 'app.bsky.actor.putPreferences',
-  AppBskyActorSearchActors: 'app.bsky.actor.searchActors',
-  AppBskyActorSearchActorsTypeahead: 'app.bsky.actor.searchActorsTypeahead',
-  AppBskyActorStatus: 'app.bsky.actor.status',
-  AppBskyEmbedDefs: 'app.bsky.embed.defs',
-  AppBskyEmbedExternal: 'app.bsky.embed.external',
-  AppBskyEmbedImages: 'app.bsky.embed.images',
-  AppBskyEmbedRecord: 'app.bsky.embed.record',
-  AppBskyEmbedRecordWithMedia: 'app.bsky.embed.recordWithMedia',
-  AppBskyEmbedVideo: 'app.bsky.embed.video',
-  AppBskyFeedDefs: 'app.bsky.feed.defs',
-  AppBskyFeedDescribeFeedGenerator: 'app.bsky.feed.describeFeedGenerator',
-  AppBskyFeedGenerator: 'app.bsky.feed.generator',
-  AppBskyFeedGetActorFeeds: 'app.bsky.feed.getActorFeeds',
-  AppBskyFeedGetActorLikes: 'app.bsky.feed.getActorLikes',
-  AppBskyFeedGetAuthorFeed: 'app.bsky.feed.getAuthorFeed',
-  AppBskyFeedGetFeed: 'app.bsky.feed.getFeed',
-  AppBskyFeedGetFeedGenerator: 'app.bsky.feed.getFeedGenerator',
-  AppBskyFeedGetFeedGenerators: 'app.bsky.feed.getFeedGenerators',
-  AppBskyFeedGetFeedSkeleton: 'app.bsky.feed.getFeedSkeleton',
-  AppBskyFeedGetLikes: 'app.bsky.feed.getLikes',
-  AppBskyFeedGetListFeed: 'app.bsky.feed.getListFeed',
-  AppBskyFeedGetPosts: 'app.bsky.feed.getPosts',
-  AppBskyFeedGetPostThread: 'app.bsky.feed.getPostThread',
-  AppBskyFeedGetQuotes: 'app.bsky.feed.getQuotes',
-  AppBskyFeedGetRepostedBy: 'app.bsky.feed.getRepostedBy',
-  AppBskyFeedGetSuggestedFeeds: 'app.bsky.feed.getSuggestedFeeds',
-  AppBskyFeedGetTimeline: 'app.bsky.feed.getTimeline',
-  AppBskyFeedLike: 'app.bsky.feed.like',
-  AppBskyFeedPost: 'app.bsky.feed.post',
-  AppBskyFeedPostgate: 'app.bsky.feed.postgate',
-  AppBskyFeedRepost: 'app.bsky.feed.repost',
-  AppBskyFeedSearchPosts: 'app.bsky.feed.searchPosts',
-  AppBskyFeedSendInteractions: 'app.bsky.feed.sendInteractions',
-  AppBskyFeedThreadgate: 'app.bsky.feed.threadgate',
-  AppBskyGraphBlock: 'app.bsky.graph.block',
-  AppBskyGraphDefs: 'app.bsky.graph.defs',
-  AppBskyGraphFollow: 'app.bsky.graph.follow',
-  AppBskyGraphGetActorStarterPacks: 'app.bsky.graph.getActorStarterPacks',
-  AppBskyGraphGetBlocks: 'app.bsky.graph.getBlocks',
-  AppBskyGraphGetFollowers: 'app.bsky.graph.getFollowers',
-  AppBskyGraphGetFollows: 'app.bsky.graph.getFollows',
-  AppBskyGraphGetKnownFollowers: 'app.bsky.graph.getKnownFollowers',
-  AppBskyGraphGetList: 'app.bsky.graph.getList',
-  AppBskyGraphGetListBlocks: 'app.bsky.graph.getListBlocks',
-  AppBskyGraphGetListMutes: 'app.bsky.graph.getListMutes',
-  AppBskyGraphGetLists: 'app.bsky.graph.getLists',
-  AppBskyGraphGetMutes: 'app.bsky.graph.getMutes',
-  AppBskyGraphGetRelationships: 'app.bsky.graph.getRelationships',
-  AppBskyGraphGetStarterPack: 'app.bsky.graph.getStarterPack',
-  AppBskyGraphGetStarterPacks: 'app.bsky.graph.getStarterPacks',
+  AppBskyActorDefs: 'app.gndr.actor.defs',
+  AppBskyActorGetPreferences: 'app.gndr.actor.getPreferences',
+  AppBskyActorGetProfile: 'app.gndr.actor.getProfile',
+  AppBskyActorGetProfiles: 'app.gndr.actor.getProfiles',
+  AppBskyActorGetSuggestions: 'app.gndr.actor.getSuggestions',
+  AppBskyActorProfile: 'app.gndr.actor.profile',
+  AppBskyActorPutPreferences: 'app.gndr.actor.putPreferences',
+  AppBskyActorSearchActors: 'app.gndr.actor.searchActors',
+  AppBskyActorSearchActorsTypeahead: 'app.gndr.actor.searchActorsTypeahead',
+  AppBskyActorStatus: 'app.gndr.actor.status',
+  AppBskyEmbedDefs: 'app.gndr.embed.defs',
+  AppBskyEmbedExternal: 'app.gndr.embed.external',
+  AppBskyEmbedImages: 'app.gndr.embed.images',
+  AppBskyEmbedRecord: 'app.gndr.embed.record',
+  AppBskyEmbedRecordWithMedia: 'app.gndr.embed.recordWithMedia',
+  AppBskyEmbedVideo: 'app.gndr.embed.video',
+  AppBskyFeedDefs: 'app.gndr.feed.defs',
+  AppBskyFeedDescribeFeedGenerator: 'app.gndr.feed.describeFeedGenerator',
+  AppBskyFeedGenerator: 'app.gndr.feed.generator',
+  AppBskyFeedGetActorFeeds: 'app.gndr.feed.getActorFeeds',
+  AppBskyFeedGetActorLikes: 'app.gndr.feed.getActorLikes',
+  AppBskyFeedGetAuthorFeed: 'app.gndr.feed.getAuthorFeed',
+  AppBskyFeedGetFeed: 'app.gndr.feed.getFeed',
+  AppBskyFeedGetFeedGenerator: 'app.gndr.feed.getFeedGenerator',
+  AppBskyFeedGetFeedGenerators: 'app.gndr.feed.getFeedGenerators',
+  AppBskyFeedGetFeedSkeleton: 'app.gndr.feed.getFeedSkeleton',
+  AppBskyFeedGetLikes: 'app.gndr.feed.getLikes',
+  AppBskyFeedGetListFeed: 'app.gndr.feed.getListFeed',
+  AppBskyFeedGetPosts: 'app.gndr.feed.getPosts',
+  AppBskyFeedGetPostThread: 'app.gndr.feed.getPostThread',
+  AppBskyFeedGetQuotes: 'app.gndr.feed.getQuotes',
+  AppBskyFeedGetRepostedBy: 'app.gndr.feed.getRepostedBy',
+  AppBskyFeedGetSuggestedFeeds: 'app.gndr.feed.getSuggestedFeeds',
+  AppBskyFeedGetTimeline: 'app.gndr.feed.getTimeline',
+  AppBskyFeedLike: 'app.gndr.feed.like',
+  AppBskyFeedPost: 'app.gndr.feed.post',
+  AppBskyFeedPostgate: 'app.gndr.feed.postgate',
+  AppBskyFeedRepost: 'app.gndr.feed.repost',
+  AppBskyFeedSearchPosts: 'app.gndr.feed.searchPosts',
+  AppBskyFeedSendInteractions: 'app.gndr.feed.sendInteractions',
+  AppBskyFeedThreadgate: 'app.gndr.feed.threadgate',
+  AppBskyGraphBlock: 'app.gndr.graph.block',
+  AppBskyGraphDefs: 'app.gndr.graph.defs',
+  AppBskyGraphFollow: 'app.gndr.graph.follow',
+  AppBskyGraphGetActorStarterPacks: 'app.gndr.graph.getActorStarterPacks',
+  AppBskyGraphGetBlocks: 'app.gndr.graph.getBlocks',
+  AppBskyGraphGetFollowers: 'app.gndr.graph.getFollowers',
+  AppBskyGraphGetFollows: 'app.gndr.graph.getFollows',
+  AppBskyGraphGetKnownFollowers: 'app.gndr.graph.getKnownFollowers',
+  AppBskyGraphGetList: 'app.gndr.graph.getList',
+  AppBskyGraphGetListBlocks: 'app.gndr.graph.getListBlocks',
+  AppBskyGraphGetListMutes: 'app.gndr.graph.getListMutes',
+  AppBskyGraphGetLists: 'app.gndr.graph.getLists',
+  AppBskyGraphGetMutes: 'app.gndr.graph.getMutes',
+  AppBskyGraphGetRelationships: 'app.gndr.graph.getRelationships',
+  AppBskyGraphGetStarterPack: 'app.gndr.graph.getStarterPack',
+  AppBskyGraphGetStarterPacks: 'app.gndr.graph.getStarterPacks',
   AppBskyGraphGetSuggestedFollowsByActor:
-    'app.bsky.graph.getSuggestedFollowsByActor',
-  AppBskyGraphList: 'app.bsky.graph.list',
-  AppBskyGraphListblock: 'app.bsky.graph.listblock',
-  AppBskyGraphListitem: 'app.bsky.graph.listitem',
-  AppBskyGraphMuteActor: 'app.bsky.graph.muteActor',
-  AppBskyGraphMuteActorList: 'app.bsky.graph.muteActorList',
-  AppBskyGraphMuteThread: 'app.bsky.graph.muteThread',
-  AppBskyGraphSearchStarterPacks: 'app.bsky.graph.searchStarterPacks',
-  AppBskyGraphStarterpack: 'app.bsky.graph.starterpack',
-  AppBskyGraphUnmuteActor: 'app.bsky.graph.unmuteActor',
-  AppBskyGraphUnmuteActorList: 'app.bsky.graph.unmuteActorList',
-  AppBskyGraphUnmuteThread: 'app.bsky.graph.unmuteThread',
-  AppBskyGraphVerification: 'app.bsky.graph.verification',
-  AppBskyLabelerDefs: 'app.bsky.labeler.defs',
-  AppBskyLabelerGetServices: 'app.bsky.labeler.getServices',
-  AppBskyLabelerService: 'app.bsky.labeler.service',
-  AppBskyNotificationDeclaration: 'app.bsky.notification.declaration',
-  AppBskyNotificationDefs: 'app.bsky.notification.defs',
-  AppBskyNotificationGetPreferences: 'app.bsky.notification.getPreferences',
-  AppBskyNotificationGetUnreadCount: 'app.bsky.notification.getUnreadCount',
+    'app.gndr.graph.getSuggestedFollowsByActor',
+  AppBskyGraphList: 'app.gndr.graph.list',
+  AppBskyGraphListblock: 'app.gndr.graph.listblock',
+  AppBskyGraphListitem: 'app.gndr.graph.listitem',
+  AppBskyGraphMuteActor: 'app.gndr.graph.muteActor',
+  AppBskyGraphMuteActorList: 'app.gndr.graph.muteActorList',
+  AppBskyGraphMuteThread: 'app.gndr.graph.muteThread',
+  AppBskyGraphSearchStarterPacks: 'app.gndr.graph.searchStarterPacks',
+  AppBskyGraphStarterpack: 'app.gndr.graph.starterpack',
+  AppBskyGraphUnmuteActor: 'app.gndr.graph.unmuteActor',
+  AppBskyGraphUnmuteActorList: 'app.gndr.graph.unmuteActorList',
+  AppBskyGraphUnmuteThread: 'app.gndr.graph.unmuteThread',
+  AppBskyGraphVerification: 'app.gndr.graph.verification',
+  AppBskyLabelerDefs: 'app.gndr.labeler.defs',
+  AppBskyLabelerGetServices: 'app.gndr.labeler.getServices',
+  AppBskyLabelerService: 'app.gndr.labeler.service',
+  AppBskyNotificationDeclaration: 'app.gndr.notification.declaration',
+  AppBskyNotificationDefs: 'app.gndr.notification.defs',
+  AppBskyNotificationGetPreferences: 'app.gndr.notification.getPreferences',
+  AppBskyNotificationGetUnreadCount: 'app.gndr.notification.getUnreadCount',
   AppBskyNotificationListActivitySubscriptions:
-    'app.bsky.notification.listActivitySubscriptions',
+    'app.gndr.notification.listActivitySubscriptions',
   AppBskyNotificationListNotifications:
-    'app.bsky.notification.listNotifications',
+    'app.gndr.notification.listNotifications',
   AppBskyNotificationPutActivitySubscription:
-    'app.bsky.notification.putActivitySubscription',
-  AppBskyNotificationPutPreferences: 'app.bsky.notification.putPreferences',
-  AppBskyNotificationPutPreferencesV2: 'app.bsky.notification.putPreferencesV2',
-  AppBskyNotificationRegisterPush: 'app.bsky.notification.registerPush',
-  AppBskyNotificationUpdateSeen: 'app.bsky.notification.updateSeen',
-  AppBskyRichtextFacet: 'app.bsky.richtext.facet',
-  AppBskyUnspeccedDefs: 'app.bsky.unspecced.defs',
-  AppBskyUnspeccedGetConfig: 'app.bsky.unspecced.getConfig',
+    'app.gndr.notification.putActivitySubscription',
+  AppBskyNotificationPutPreferences: 'app.gndr.notification.putPreferences',
+  AppBskyNotificationPutPreferencesV2: 'app.gndr.notification.putPreferencesV2',
+  AppBskyNotificationRegisterPush: 'app.gndr.notification.registerPush',
+  AppBskyNotificationUpdateSeen: 'app.gndr.notification.updateSeen',
+  AppBskyRichtextFacet: 'app.gndr.richtext.facet',
+  AppBskyUnspeccedDefs: 'app.gndr.unspecced.defs',
+  AppBskyUnspeccedGetConfig: 'app.gndr.unspecced.getConfig',
   AppBskyUnspeccedGetPopularFeedGenerators:
-    'app.bsky.unspecced.getPopularFeedGenerators',
+    'app.gndr.unspecced.getPopularFeedGenerators',
   AppBskyUnspeccedGetPostThreadOtherV2:
-    'app.bsky.unspecced.getPostThreadOtherV2',
-  AppBskyUnspeccedGetPostThreadV2: 'app.bsky.unspecced.getPostThreadV2',
-  AppBskyUnspeccedGetSuggestedFeeds: 'app.bsky.unspecced.getSuggestedFeeds',
+    'app.gndr.unspecced.getPostThreadOtherV2',
+  AppBskyUnspeccedGetPostThreadV2: 'app.gndr.unspecced.getPostThreadV2',
+  AppBskyUnspeccedGetSuggestedFeeds: 'app.gndr.unspecced.getSuggestedFeeds',
   AppBskyUnspeccedGetSuggestedFeedsSkeleton:
-    'app.bsky.unspecced.getSuggestedFeedsSkeleton',
+    'app.gndr.unspecced.getSuggestedFeedsSkeleton',
   AppBskyUnspeccedGetSuggestedStarterPacks:
-    'app.bsky.unspecced.getSuggestedStarterPacks',
+    'app.gndr.unspecced.getSuggestedStarterPacks',
   AppBskyUnspeccedGetSuggestedStarterPacksSkeleton:
-    'app.bsky.unspecced.getSuggestedStarterPacksSkeleton',
-  AppBskyUnspeccedGetSuggestedUsers: 'app.bsky.unspecced.getSuggestedUsers',
+    'app.gndr.unspecced.getSuggestedStarterPacksSkeleton',
+  AppBskyUnspeccedGetSuggestedUsers: 'app.gndr.unspecced.getSuggestedUsers',
   AppBskyUnspeccedGetSuggestedUsersSkeleton:
-    'app.bsky.unspecced.getSuggestedUsersSkeleton',
+    'app.gndr.unspecced.getSuggestedUsersSkeleton',
   AppBskyUnspeccedGetSuggestionsSkeleton:
-    'app.bsky.unspecced.getSuggestionsSkeleton',
+    'app.gndr.unspecced.getSuggestionsSkeleton',
   AppBskyUnspeccedGetTaggedSuggestions:
-    'app.bsky.unspecced.getTaggedSuggestions',
-  AppBskyUnspeccedGetTrendingTopics: 'app.bsky.unspecced.getTrendingTopics',
-  AppBskyUnspeccedGetTrends: 'app.bsky.unspecced.getTrends',
-  AppBskyUnspeccedGetTrendsSkeleton: 'app.bsky.unspecced.getTrendsSkeleton',
+    'app.gndr.unspecced.getTaggedSuggestions',
+  AppBskyUnspeccedGetTrendingTopics: 'app.gndr.unspecced.getTrendingTopics',
+  AppBskyUnspeccedGetTrends: 'app.gndr.unspecced.getTrends',
+  AppBskyUnspeccedGetTrendsSkeleton: 'app.gndr.unspecced.getTrendsSkeleton',
   AppBskyUnspeccedSearchActorsSkeleton:
-    'app.bsky.unspecced.searchActorsSkeleton',
-  AppBskyUnspeccedSearchPostsSkeleton: 'app.bsky.unspecced.searchPostsSkeleton',
+    'app.gndr.unspecced.searchActorsSkeleton',
+  AppBskyUnspeccedSearchPostsSkeleton: 'app.gndr.unspecced.searchPostsSkeleton',
   AppBskyUnspeccedSearchStarterPacksSkeleton:
-    'app.bsky.unspecced.searchStarterPacksSkeleton',
-  AppBskyVideoDefs: 'app.bsky.video.defs',
-  AppBskyVideoGetJobStatus: 'app.bsky.video.getJobStatus',
-  AppBskyVideoGetUploadLimits: 'app.bsky.video.getUploadLimits',
-  AppBskyVideoUploadVideo: 'app.bsky.video.uploadVideo',
-  ChatBskyActorDeclaration: 'chat.bsky.actor.declaration',
-  ChatBskyActorDefs: 'chat.bsky.actor.defs',
-  ChatBskyActorDeleteAccount: 'chat.bsky.actor.deleteAccount',
-  ChatBskyActorExportAccountData: 'chat.bsky.actor.exportAccountData',
-  ChatBskyConvoAcceptConvo: 'chat.bsky.convo.acceptConvo',
-  ChatBskyConvoAddReaction: 'chat.bsky.convo.addReaction',
-  ChatBskyConvoDefs: 'chat.bsky.convo.defs',
-  ChatBskyConvoDeleteMessageForSelf: 'chat.bsky.convo.deleteMessageForSelf',
-  ChatBskyConvoGetConvo: 'chat.bsky.convo.getConvo',
-  ChatBskyConvoGetConvoAvailability: 'chat.bsky.convo.getConvoAvailability',
-  ChatBskyConvoGetConvoForMembers: 'chat.bsky.convo.getConvoForMembers',
-  ChatBskyConvoGetLog: 'chat.bsky.convo.getLog',
-  ChatBskyConvoGetMessages: 'chat.bsky.convo.getMessages',
-  ChatBskyConvoLeaveConvo: 'chat.bsky.convo.leaveConvo',
-  ChatBskyConvoListConvos: 'chat.bsky.convo.listConvos',
-  ChatBskyConvoMuteConvo: 'chat.bsky.convo.muteConvo',
-  ChatBskyConvoRemoveReaction: 'chat.bsky.convo.removeReaction',
-  ChatBskyConvoSendMessage: 'chat.bsky.convo.sendMessage',
-  ChatBskyConvoSendMessageBatch: 'chat.bsky.convo.sendMessageBatch',
-  ChatBskyConvoUnmuteConvo: 'chat.bsky.convo.unmuteConvo',
-  ChatBskyConvoUpdateAllRead: 'chat.bsky.convo.updateAllRead',
-  ChatBskyConvoUpdateRead: 'chat.bsky.convo.updateRead',
-  ChatBskyModerationGetActorMetadata: 'chat.bsky.moderation.getActorMetadata',
-  ChatBskyModerationGetMessageContext: 'chat.bsky.moderation.getMessageContext',
-  ChatBskyModerationUpdateActorAccess: 'chat.bsky.moderation.updateActorAccess',
+    'app.gndr.unspecced.searchStarterPacksSkeleton',
+  AppBskyVideoDefs: 'app.gndr.video.defs',
+  AppBskyVideoGetJobStatus: 'app.gndr.video.getJobStatus',
+  AppBskyVideoGetUploadLimits: 'app.gndr.video.getUploadLimits',
+  AppBskyVideoUploadVideo: 'app.gndr.video.uploadVideo',
+  ChatBskyActorDeclaration: 'chat.gndr.actor.declaration',
+  ChatBskyActorDefs: 'chat.gndr.actor.defs',
+  ChatBskyActorDeleteAccount: 'chat.gndr.actor.deleteAccount',
+  ChatBskyActorExportAccountData: 'chat.gndr.actor.exportAccountData',
+  ChatBskyConvoAcceptConvo: 'chat.gndr.convo.acceptConvo',
+  ChatBskyConvoAddReaction: 'chat.gndr.convo.addReaction',
+  ChatBskyConvoDefs: 'chat.gndr.convo.defs',
+  ChatBskyConvoDeleteMessageForSelf: 'chat.gndr.convo.deleteMessageForSelf',
+  ChatBskyConvoGetConvo: 'chat.gndr.convo.getConvo',
+  ChatBskyConvoGetConvoAvailability: 'chat.gndr.convo.getConvoAvailability',
+  ChatBskyConvoGetConvoForMembers: 'chat.gndr.convo.getConvoForMembers',
+  ChatBskyConvoGetLog: 'chat.gndr.convo.getLog',
+  ChatBskyConvoGetMessages: 'chat.gndr.convo.getMessages',
+  ChatBskyConvoLeaveConvo: 'chat.gndr.convo.leaveConvo',
+  ChatBskyConvoListConvos: 'chat.gndr.convo.listConvos',
+  ChatBskyConvoMuteConvo: 'chat.gndr.convo.muteConvo',
+  ChatBskyConvoRemoveReaction: 'chat.gndr.convo.removeReaction',
+  ChatBskyConvoSendMessage: 'chat.gndr.convo.sendMessage',
+  ChatBskyConvoSendMessageBatch: 'chat.gndr.convo.sendMessageBatch',
+  ChatBskyConvoUnmuteConvo: 'chat.gndr.convo.unmuteConvo',
+  ChatBskyConvoUpdateAllRead: 'chat.gndr.convo.updateAllRead',
+  ChatBskyConvoUpdateRead: 'chat.gndr.convo.updateRead',
+  ChatBskyModerationGetActorMetadata: 'chat.gndr.moderation.getActorMetadata',
+  ChatBskyModerationGetMessageContext: 'chat.gndr.moderation.getMessageContext',
+  ChatBskyModerationUpdateActorAccess: 'chat.gndr.moderation.updateActorAccess',
   ToolsOzoneCommunicationCreateTemplate:
     'tools.ozone.communication.createTemplate',
   ToolsOzoneCommunicationDefs: 'tools.ozone.communication.defs',

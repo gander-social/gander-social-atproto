@@ -9,11 +9,11 @@ import {
   is$typed as _is$typed,
   type OmitKey,
 } from '../../../../util'
-import type * as ChatBskyConvoDefs from './defs.js'
+import type * as ChatGndrConvoDefs from './defs.js'
 
 const is$typed = _is$typed,
   validate = _validate
-const id = 'chat.bsky.convo.sendMessageBatch'
+const id = 'chat.gndr.convo.sendMessageBatch'
 
 export type QueryParams = {}
 
@@ -22,7 +22,7 @@ export interface InputSchema {
 }
 
 export interface OutputSchema {
-  items: ChatBskyConvoDefs.MessageView[]
+  items: ChatGndrConvoDefs.MessageView[]
 }
 
 export interface HandlerInput {
@@ -44,9 +44,9 @@ export interface HandlerError {
 export type HandlerOutput = HandlerError | HandlerSuccess
 
 export interface BatchItem {
-  $type?: 'chat.bsky.convo.sendMessageBatch#batchItem'
+  $type?: 'chat.gndr.convo.sendMessageBatch#batchItem'
   convoId: string
-  message: ChatBskyConvoDefs.MessageInput
+  message: ChatGndrConvoDefs.MessageInput
 }
 
 const hashBatchItem = 'batchItem'

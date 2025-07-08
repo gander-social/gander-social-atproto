@@ -117,8 +117,8 @@ const validMuteOp = (op: MuteOpInfo): MuteOpInfoValid => {
     } else if (isValidAtUri(op.subject)) {
       const uri = new AtUri(op.subject)
       if (
-        uri.collection !== 'app.bsky.graph.list' &&
-        uri.collection !== 'app.bsky.feed.post'
+        uri.collection !== 'app.gndr.graph.list' &&
+        uri.collection !== 'app.gndr.feed.post'
       ) {
         throw new ConnectError(
           'subject aturis must reference a list or post record',

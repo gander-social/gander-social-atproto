@@ -12,10 +12,10 @@ import {
 
 const is$typed = _is$typed,
   validate = _validate
-const id = 'chat.bsky.actor.declaration'
+const id = 'chat.gndr.actor.declaration'
 
 export interface Record {
-  $type: 'chat.bsky.actor.declaration'
+  $type: 'chat.gndr.actor.declaration'
   allowIncoming: 'all' | 'none' | 'following' | (string & {})
   [k: string]: unknown
 }

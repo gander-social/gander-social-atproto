@@ -1,6 +1,6 @@
 import { Kysely, sql } from 'kysely'
 
-// support lookup for chat.bsky.moderation.getMessageContext
+// support lookup for chat.gndr.moderation.getMessageContext
 
 export async function up(db: Kysely<unknown>): Promise<void> {
   // @NOTE: These queries should be run with the "CONCURRENTLY" option in

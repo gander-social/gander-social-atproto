@@ -9,17 +9,17 @@ import {
   is$typed as _is$typed,
   type OmitKey,
 } from '../../../../util'
-import type * as AppBskyNotificationDefs from './defs.js'
+import type * as AppGndrNotificationDefs from './defs.js'
 
 const is$typed = _is$typed,
   validate = _validate
-const id = 'app.bsky.notification.getPreferences'
+const id = 'app.gndr.notification.getPreferences'
 
 export type QueryParams = {}
 export type InputSchema = undefined
 
 export interface OutputSchema {
-  preferences: AppBskyNotificationDefs.Preferences
+  preferences: AppGndrNotificationDefs.Preferences
 }
 
 export type HandlerInput = void

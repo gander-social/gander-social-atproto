@@ -927,7 +927,7 @@ describe('Record validation', () => {
       'https://example.com',
       'https://example.com/with/path',
       'https://example.com/with/path?and=query',
-      'at://bsky.social',
+      'at://gndr.social',
       'did:example:test',
     ]) {
       lex.assertValidRecord('com.example.uri', {
@@ -983,11 +983,11 @@ describe('Record validation', () => {
   it('Applies handle formatting constraint', () => {
     lex.assertValidRecord('com.example.handle', {
       $type: 'com.example.handle',
-      handle: 'test.bsky.social',
+      handle: 'test.gndr.social',
     })
     lex.assertValidRecord('com.example.handle', {
       $type: 'com.example.handle',
-      handle: 'bsky.test',
+      handle: 'gndr.test',
     })
 
     expect(() =>
@@ -1007,7 +1007,7 @@ describe('Record validation', () => {
   it('Applies at-identifier formatting constraint', () => {
     lex.assertValidRecord('com.example.atIdentifier', {
       $type: 'com.example.atIdentifier',
-      atIdentifier: 'bsky.test',
+      atIdentifier: 'gndr.test',
     })
     lex.assertValidRecord('com.example.atIdentifier', {
       $type: 'com.example.atIdentifier',
@@ -1035,7 +1035,7 @@ describe('Record validation', () => {
     })
     lex.assertValidRecord('com.example.nsid', {
       $type: 'com.example.nsid',
-      nsid: 'app.bsky.nested.test',
+      nsid: 'app.gndr.nested.test',
     })
 
     expect(() =>

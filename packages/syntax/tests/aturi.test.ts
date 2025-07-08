@@ -238,9 +238,9 @@ describe('At Uris', () => {
         '#hash',
       ],
       [
-        'at://4513echo.bsky.social/app.bsky.feed.post/3jsrpdyf6ss23',
-        '4513echo.bsky.social',
-        '/app.bsky.feed.post/3jsrpdyf6ss23',
+        'at://4513echo.gndr.social/app.gndr.feed.post/3jsrpdyf6ss23',
+        '4513echo.gndr.social',
+        '/app.gndr.feed.post/3jsrpdyf6ss23',
         '',
         '',
       ],
@@ -373,12 +373,12 @@ describe('AtUri validation', () => {
 
   it('enforces spec basics', () => {
     expectValid('at://did:plc:asdf123')
-    expectValid('at://user.bsky.social')
+    expectValid('at://user.gndr.social')
     expectValid('at://did:plc:asdf123/com.atproto.feed.post')
     expectValid('at://did:plc:asdf123/com.atproto.feed.post/record')
 
     expectValid('at://did:plc:asdf123#/frag')
-    expectValid('at://user.bsky.social#/frag')
+    expectValid('at://user.gndr.social#/frag')
     expectValid('at://did:plc:asdf123/com.atproto.feed.post#/frag')
     expectValid('at://did:plc:asdf123/com.atproto.feed.post/record#/frag')
 
@@ -416,8 +416,8 @@ describe('AtUri validation', () => {
     expectInvalid('at://did:plc:asdf@123/com.atproto.feed.post')
 
     expectInvalid('at://DID:plc:asdf123')
-    expectInvalid('at://user.bsky.123')
-    expectInvalid('at://bsky')
+    expectInvalid('at://user.gndr.123')
+    expectInvalid('at://gndr')
     expectInvalid('at://did:plc:')
     expectInvalid('at://did:plc:')
     expectInvalid('at://frag')
@@ -429,9 +429,9 @@ describe('AtUri validation', () => {
   })
 
   it('has specified behavior on edge cases', () => {
-    expectInvalid('at://user.bsky.social//')
-    expectInvalid('at://user.bsky.social//com.atproto.feed.post')
-    expectInvalid('at://user.bsky.social/com.atproto.feed.post//')
+    expectInvalid('at://user.gndr.social//')
+    expectInvalid('at://user.gndr.social//com.atproto.feed.post')
+    expectInvalid('at://user.gndr.social/com.atproto.feed.post//')
     expectInvalid(
       'at://did:plc:asdf123/com.atproto.feed.post/asdf123/more/more',
     )
@@ -443,8 +443,8 @@ describe('AtUri validation', () => {
     expectValid('at://did:plc:asdf123')
     expectInvalid('at://did:plc:asdf123/')
 
-    expectValid('at://user.bsky.social')
-    expectInvalid('at://user.bsky.social/')
+    expectValid('at://user.gndr.social')
+    expectInvalid('at://user.gndr.social/')
 
     expectValid('at://did:plc:asdf123/com.atproto.feed.post')
     expectInvalid('at://did:plc:asdf123/com.atproto.feed.post/')

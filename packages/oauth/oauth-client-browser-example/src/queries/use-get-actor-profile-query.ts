@@ -10,7 +10,7 @@ export function useGetActorProfileQuery() {
       if (!agent) return null
       const { data } = await agent.com.atproto.repo.getRecord({
         repo: agent.assertDid,
-        collection: 'app.bsky.actor.profile',
+        collection: 'app.gndr.actor.profile',
         rkey: 'self',
       })
       return data

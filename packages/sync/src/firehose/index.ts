@@ -77,7 +77,7 @@ export class Firehose {
     }
     this.sub = new Subscription({
       ...opts,
-      service: opts.service ?? 'wss://bsky.network',
+      service: opts.service ?? 'wss://gndr.network',
       method: 'com.atproto.sync.subscribeRepos',
       signal: this.abortController.signal,
       getParams: async () => {

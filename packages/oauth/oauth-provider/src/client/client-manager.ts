@@ -430,7 +430,7 @@ export class ClientManager {
       // > accordingly.
 
       // @NOTE We may want to remove this restriction in the future, for example
-      // if https://github.com/bluesky-social/proposals/tree/main/0010-client-assertion-backend
+      // if https://github.com/gander-social/proposals/tree/main/0010-client-assertion-backend
       // gets adopted
 
       throw new InvalidClientMetadataError(

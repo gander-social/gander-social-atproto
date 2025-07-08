@@ -1,4 +1,4 @@
-import { AppBskyGraphDefs } from '../client/index'
+import { AppGndrGraphDefs } from '../client/index'
 import { LABELS } from './const/labels'
 import { MuteWordMatch } from './mutewords'
 import {
@@ -218,7 +218,7 @@ export class ModerationDecision {
   }
 
   addBlockingByList(
-    blockingByList: AppBskyGraphDefs.ListViewBasic | undefined,
+    blockingByList: AppGndrGraphDefs.ListViewBasic | undefined,
   ) {
     if (blockingByList) {
       this.causes.push({
@@ -358,7 +358,7 @@ export class ModerationDecision {
     }
   }
 
-  addMutedByList(mutedByList: AppBskyGraphDefs.ListViewBasic | undefined) {
+  addMutedByList(mutedByList: AppGndrGraphDefs.ListViewBasic | undefined) {
     if (mutedByList) {
       this.causes.push({
         type: 'muted',

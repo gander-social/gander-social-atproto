@@ -6,16 +6,16 @@ import { ids } from '../../../../lexicon/lexicons'
 import { pipethrough } from '../../../../pipethrough'
 
 export default function (server: Server, ctx: AppContext) {
-  const { bskyAppView } = ctx
-  if (!bskyAppView) return
+  const { gndrAppView } = ctx
+  if (!gndrAppView) return
 
-  server.app.bsky.feed.getFeed({
+  server.app.gndr.feed.getFeed({
     auth: ctx.authVerifier.accessStandard(),
     handler: async ({ params, auth, req }) => {
       const requester = auth.credentials.did
 
       const feedUrl = new AtUri(params.feed)
-      const { data } = await bskyAppView.agent.com.atproto.repo.getRecord({
+      const { data } = await gndrAppView.agent.com.atproto.repo.getRecord({
         repo: feedUrl.hostname,
         collection: feedUrl.collection,
         rkey: feedUrl.rkey,

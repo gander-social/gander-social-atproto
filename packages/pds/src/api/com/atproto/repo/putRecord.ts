@@ -6,7 +6,7 @@ import { ActorStoreTransactor } from '../../../../actor-store/actor-store-transa
 import { AppContext } from '../../../../context'
 import { Server } from '../../../../lexicon'
 import { ids } from '../../../../lexicon/lexicons'
-import { Record as ProfileRecord } from '../../../../lexicon/types/app/bsky/actor/profile'
+import { Record as ProfileRecord } from '../../../../lexicon/types/app/gndr/actor/profile'
 import { dbLogger } from '../../../../logger'
 import {
   BadCommitSwapError,

@@ -11,7 +11,7 @@ import {
 } from '../../../../util'
 import type * as ComAtprotoAdminDefs from '../../../com/atproto/admin/defs.js'
 import type * as ComAtprotoRepoStrongRef from '../../../com/atproto/repo/strongRef.js'
-import type * as ChatBskyConvoDefs from '../../../chat/bsky/convo/defs.js'
+import type * as ChatBskyConvoDefs from '../../../chat/gndr/convo/defs.js'
 import type * as ComAtprotoModerationDefs from '../../../com/atproto/moderation/defs.js'
 import type * as ComAtprotoServerDefs from '../../../com/atproto/server/defs.js'
 import type * as ComAtprotoLabelDefs from '../../../com/atproto/label/defs.js'

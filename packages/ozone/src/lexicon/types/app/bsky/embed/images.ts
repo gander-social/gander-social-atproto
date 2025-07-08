@@ -9,14 +9,14 @@ import {
   is$typed as _is$typed,
   type OmitKey,
 } from '../../../../util'
-import type * as AppBskyEmbedDefs from './defs.js'
+import type * as AppGndrEmbedDefs from './defs.js'
 
 const is$typed = _is$typed,
   validate = _validate
-const id = 'app.bsky.embed.images'
+const id = 'app.gndr.embed.images'
 
 export interface Main {
-  $type?: 'app.bsky.embed.images'
+  $type?: 'app.gndr.embed.images'
   images: Image[]
 }
 
@@ -31,11 +31,11 @@ export function validateMain<V>(v: V) {
 }
 
 export interface Image {
-  $type?: 'app.bsky.embed.images#image'
+  $type?: 'app.gndr.embed.images#image'
   image: BlobRef
   /** Alt text description of the image, for accessibility. */
   alt: string
-  aspectRatio?: AppBskyEmbedDefs.AspectRatio
+  aspectRatio?: AppGndrEmbedDefs.AspectRatio
 }
 
 const hashImage = 'image'
@@ -49,7 +49,7 @@ export function validateImage<V>(v: V) {
 }
 
 export interface View {
-  $type?: 'app.bsky.embed.images#view'
+  $type?: 'app.gndr.embed.images#view'
   images: ViewImage[]
 }
 
@@ -64,14 +64,14 @@ export function validateView<V>(v: V) {
 }
 
 export interface ViewImage {
-  $type?: 'app.bsky.embed.images#viewImage'
+  $type?: 'app.gndr.embed.images#viewImage'
   /** Fully-qualified URL where a thumbnail of the image can be fetched. For example, CDN location provided by the App View. */
   thumb: string
   /** Fully-qualified URL where a large version of the image can be fetched. May or may not be the exact original blob. For example, CDN location provided by the App View. */
   fullsize: string
   /** Alt text description of the image, for accessibility. */
   alt: string
-  aspectRatio?: AppBskyEmbedDefs.AspectRatio
+  aspectRatio?: AppGndrEmbedDefs.AspectRatio
 }
 
 const hashViewImage = 'viewImage'

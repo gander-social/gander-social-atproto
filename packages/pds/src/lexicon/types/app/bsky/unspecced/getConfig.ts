@@ -12,7 +12,7 @@ import {
 
 const is$typed = _is$typed,
   validate = _validate
-const id = 'app.bsky.unspecced.getConfig'
+const id = 'app.gndr.unspecced.getConfig'
 
 export type QueryParams = {}
 export type InputSchema = undefined
@@ -38,7 +38,7 @@ export interface HandlerError {
 export type HandlerOutput = HandlerError | HandlerSuccess
 
 export interface LiveNowConfig {
-  $type?: 'app.bsky.unspecced.getConfig#liveNowConfig'
+  $type?: 'app.gndr.unspecced.getConfig#liveNowConfig'
   did: string
   domains: string[]
 }

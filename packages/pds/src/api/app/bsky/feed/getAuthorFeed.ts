@@ -1,7 +1,7 @@
 import { AppContext } from '../../../../context'
 import { Server } from '../../../../lexicon'
-import { isReasonRepost } from '../../../../lexicon/types/app/bsky/feed/defs'
-import { OutputSchema } from '../../../../lexicon/types/app/bsky/feed/getAuthorFeed'
+import { isReasonRepost } from '../../../../lexicon/types/app/gndr/feed/defs'
+import { OutputSchema } from '../../../../lexicon/types/app/gndr/feed/getAuthorFeed'
 import {
   LocalRecords,
   LocalViewer,
@@ -9,9 +9,9 @@ import {
 } from '../../../../read-after-write'
 
 export default function (server: Server, ctx: AppContext) {
-  if (!ctx.bskyAppView) return
+  if (!ctx.gndrAppView) return
 
-  server.app.bsky.feed.getAuthorFeed({
+  server.app.gndr.feed.getAuthorFeed({
     auth: ctx.authVerifier.accessStandard(),
     handler: async (reqCtx) => {
       return pipethroughReadAfterWrite(ctx, reqCtx, getAuthorMunge)

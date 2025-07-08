@@ -1,7 +1,7 @@
 import { z } from 'zod'
 import { AtUri } from '@atproto/syntax'
-import { AppBskyActorDefs } from './client'
-import { Nux } from './client/types/app/bsky/actor/defs'
+import { AppGndrActorDefs } from './client'
+import { Nux } from './client/types/app/gndr/actor/defs'
 
 export function sanitizeMutedWordValue(value: string) {
   return (
@@ -14,7 +14,7 @@ export function sanitizeMutedWordValue(value: string) {
 }
 
 export function savedFeedsToUriArrays(
-  savedFeeds: AppBskyActorDefs.SavedFeed[],
+  savedFeeds: AppGndrActorDefs.SavedFeed[],
 ): {
   pinned: string[]
   saved: string[]
@@ -46,28 +46,28 @@ export function savedFeedsToUriArrays(
  */
 export function getSavedFeedType(
   uri: string,
-): AppBskyActorDefs.SavedFeed['type'] {
+): AppGndrActorDefs.SavedFeed['type'] {
   const urip = new AtUri(uri)
 
   switch (urip.collection) {
-    case 'app.bsky.feed.generator':
+    case 'app.gndr.feed.generator':
       return 'feed'
-    case 'app.bsky.graph.list':
+    case 'app.gndr.graph.list':
       return 'list'
     default:
       return 'unknown'
   }
 }
 
-export function validateSavedFeed(savedFeed: AppBskyActorDefs.SavedFeed) {
+export function validateSavedFeed(savedFeed: AppGndrActorDefs.SavedFeed) {
   if (!savedFeed.id) {
     throw new Error('Saved feed must have an `id` - use a TID')
   }
 
   if (['feed', 'list'].includes(savedFeed.type)) {
     const uri = new AtUri(savedFeed.value)
-    const isFeed = uri.collection === 'app.bsky.feed.generator'
-    const isList = uri.collection === 'app.bsky.graph.list'
+    const isFeed = uri.collection === 'app.gndr.feed.generator'
+    const isList = uri.collection === 'app.gndr.graph.list'
 
     if (savedFeed.type === 'feed' && !isFeed) {
       throw new Error(

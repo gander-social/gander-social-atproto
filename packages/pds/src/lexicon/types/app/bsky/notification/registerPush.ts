@@ -12,7 +12,7 @@ import {
 
 const is$typed = _is$typed,
   validate = _validate
-const id = 'app.bsky.notification.registerPush'
+const id = 'app.gndr.notification.registerPush'
 
 export type QueryParams = {}
 

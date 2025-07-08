@@ -1,7 +1,7 @@
 import events from 'node:events'
 import http from 'node:http'
 import express from 'express'
-import { TestBsky } from './bsky'
+import { TestBsky } from './gndr'
 import { TestOzone } from './ozone'
 import { TestPds } from './pds'
 import { TestPlc } from './plc'
@@ -16,7 +16,7 @@ export class IntrospectServer {
     port: number,
     plc: TestPlc,
     pds: TestPds,
-    bsky: TestBsky,
+    gndr: TestBsky,
     ozone: TestOzone,
   ) {
     const app = express()
@@ -29,9 +29,9 @@ export class IntrospectServer {
           url: pds.url,
           did: pds.ctx.cfg.service.did,
         },
-        bsky: {
-          url: bsky.url,
-          did: bsky.ctx.cfg.serverDid,
+        gndr: {
+          url: gndr.url,
+          did: gndr.ctx.cfg.serverDid,
         },
         ozone: {
           url: ozone.url,

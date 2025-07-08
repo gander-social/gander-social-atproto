@@ -1,7 +1,7 @@
 import {
-  AppBskyEmbedRecord,
-  AppBskyEmbedRecordWithMedia,
-  AppBskyLabelerDefs,
+  AppGndrEmbedRecord,
+  AppGndrEmbedRecordWithMedia,
+  AppGndrLabelerDefs,
   ComAtprotoLabelDefs,
 } from '../client'
 import { asPredicate } from '../client/util'
@@ -12,14 +12,14 @@ import {
   ModerationBehavior,
 } from './types'
 
-export function isQuotedPost(embed: unknown): embed is AppBskyEmbedRecord.View {
-  return Boolean(embed && AppBskyEmbedRecord.isView(embed))
+export function isQuotedPost(embed: unknown): embed is AppGndrEmbedRecord.View {
+  return Boolean(embed && AppGndrEmbedRecord.isView(embed))
 }
 
 export function isQuotedPostWithMedia(
   embed: unknown,
-): embed is AppBskyEmbedRecordWithMedia.View {
-  return Boolean(embed && AppBskyEmbedRecordWithMedia.isView(embed))
+): embed is AppGndrEmbedRecordWithMedia.View {
+  return Boolean(embed && AppGndrEmbedRecordWithMedia.isView(embed))
 }
 
 export function interpretLabelValueDefinition(
@@ -101,7 +101,7 @@ export function interpretLabelValueDefinition(
 }
 
 export function interpretLabelValueDefinitions(
-  labelerView: AppBskyLabelerDefs.LabelerViewDetailed,
+  labelerView: AppGndrLabelerDefs.LabelerViewDetailed,
 ): InterpretedLabelValueDefinition[] {
   return (labelerView.policies?.labelValueDefinitions || [])
     .filter(asPredicate(ComAtprotoLabelDefs.validateLabelValueDefinition))

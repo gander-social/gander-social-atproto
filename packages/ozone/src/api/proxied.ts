@@ -3,12 +3,12 @@ import { Server } from '../lexicon'
 import { ids } from '../lexicon/lexicons'
 
 export default function (server: Server, ctx: AppContext) {
-  server.app.bsky.actor.getProfile({
+  server.app.gndr.actor.getProfile({
     auth: ctx.authVerifier.moderator,
     handler: async (request) => {
-      const res = await ctx.appviewAgent.app.bsky.actor.getProfile(
+      const res = await ctx.appviewAgent.app.gndr.actor.getProfile(
         request.params,
-        await ctx.appviewAuth(ids.AppBskyActorGetProfile),
+        await ctx.appviewAuth(ids.AppGndrActorGetProfile),
       )
       return {
         encoding: 'application/json',
@@ -17,12 +17,12 @@ export default function (server: Server, ctx: AppContext) {
     },
   })
 
-  server.app.bsky.actor.getProfiles({
+  server.app.gndr.actor.getProfiles({
     auth: ctx.authVerifier.modOrAdminToken,
     handler: async (request) => {
-      const res = await ctx.appviewAgent.app.bsky.actor.getProfiles(
+      const res = await ctx.appviewAgent.app.gndr.actor.getProfiles(
         request.params,
-        await ctx.appviewAuth(ids.AppBskyActorGetProfiles),
+        await ctx.appviewAuth(ids.AppGndrActorGetProfiles),
       )
       return {
         encoding: 'application/json',
@@ -31,12 +31,12 @@ export default function (server: Server, ctx: AppContext) {
     },
   })
 
-  server.app.bsky.feed.getAuthorFeed({
+  server.app.gndr.feed.getAuthorFeed({
     auth: ctx.authVerifier.modOrAdminToken,
     handler: async (request) => {
-      const res = await ctx.appviewAgent.app.bsky.feed.getAuthorFeed(
+      const res = await ctx.appviewAgent.app.gndr.feed.getAuthorFeed(
         request.params,
-        await ctx.appviewAuth(ids.AppBskyFeedGetAuthorFeed),
+        await ctx.appviewAuth(ids.AppGndrFeedGetAuthorFeed),
       )
       return {
         encoding: 'application/json',
@@ -45,12 +45,12 @@ export default function (server: Server, ctx: AppContext) {
     },
   })
 
-  server.app.bsky.feed.searchPosts({
+  server.app.gndr.feed.searchPosts({
     auth: ctx.authVerifier.moderator,
     handler: async (request) => {
-      const res = await ctx.appviewAgent.app.bsky.feed.searchPosts(
+      const res = await ctx.appviewAgent.app.gndr.feed.searchPosts(
         request.params,
-        await ctx.appviewAuth(ids.AppBskyFeedSearchPosts),
+        await ctx.appviewAuth(ids.AppGndrFeedSearchPosts),
       )
       return {
         encoding: 'application/json',
@@ -59,12 +59,12 @@ export default function (server: Server, ctx: AppContext) {
     },
   })
 
-  server.app.bsky.feed.getPostThread({
+  server.app.gndr.feed.getPostThread({
     auth: ctx.authVerifier.modOrAdminToken,
     handler: async (request) => {
-      const res = await ctx.appviewAgent.app.bsky.feed.getPostThread(
+      const res = await ctx.appviewAgent.app.gndr.feed.getPostThread(
         request.params,
-        await ctx.appviewAuth(ids.AppBskyFeedGetPostThread),
+        await ctx.appviewAuth(ids.AppGndrFeedGetPostThread),
       )
       return {
         encoding: 'application/json',
@@ -73,12 +73,12 @@ export default function (server: Server, ctx: AppContext) {
     },
   })
 
-  server.app.bsky.feed.getFeedGenerator({
+  server.app.gndr.feed.getFeedGenerator({
     auth: ctx.authVerifier.moderator,
     handler: async (request) => {
-      const res = await ctx.appviewAgent.app.bsky.feed.getFeedGenerator(
+      const res = await ctx.appviewAgent.app.gndr.feed.getFeedGenerator(
         request.params,
-        await ctx.appviewAuth(ids.AppBskyFeedGetFeedGenerator),
+        await ctx.appviewAuth(ids.AppGndrFeedGetFeedGenerator),
       )
       return {
         encoding: 'application/json',
@@ -87,12 +87,12 @@ export default function (server: Server, ctx: AppContext) {
     },
   })
 
-  server.app.bsky.graph.getFollows({
+  server.app.gndr.graph.getFollows({
     auth: ctx.authVerifier.modOrAdminToken,
     handler: async (request) => {
-      const res = await ctx.appviewAgent.app.bsky.graph.getFollows(
+      const res = await ctx.appviewAgent.app.gndr.graph.getFollows(
         request.params,
-        await ctx.appviewAuth(ids.AppBskyGraphGetFollows),
+        await ctx.appviewAuth(ids.AppGndrGraphGetFollows),
       )
       return {
         encoding: 'application/json',
@@ -101,12 +101,12 @@ export default function (server: Server, ctx: AppContext) {
     },
   })
 
-  server.app.bsky.graph.getFollowers({
+  server.app.gndr.graph.getFollowers({
     auth: ctx.authVerifier.modOrAdminToken,
     handler: async (request) => {
-      const res = await ctx.appviewAgent.app.bsky.graph.getFollowers(
+      const res = await ctx.appviewAgent.app.gndr.graph.getFollowers(
         request.params,
-        await ctx.appviewAuth(ids.AppBskyGraphGetFollowers),
+        await ctx.appviewAuth(ids.AppGndrGraphGetFollowers),
       )
       return {
         encoding: 'application/json',
@@ -115,12 +115,12 @@ export default function (server: Server, ctx: AppContext) {
     },
   })
 
-  server.app.bsky.graph.getList({
+  server.app.gndr.graph.getList({
     auth: ctx.authVerifier.modOrAdminToken,
     handler: async (request) => {
-      const res = await ctx.appviewAgent.app.bsky.graph.getList(
+      const res = await ctx.appviewAgent.app.gndr.graph.getList(
         request.params,
-        await ctx.appviewAuth(ids.AppBskyGraphGetList),
+        await ctx.appviewAuth(ids.AppGndrGraphGetList),
       )
       return {
         encoding: 'application/json',
@@ -129,12 +129,12 @@ export default function (server: Server, ctx: AppContext) {
     },
   })
 
-  server.app.bsky.graph.getLists({
+  server.app.gndr.graph.getLists({
     auth: ctx.authVerifier.modOrAdminToken,
     handler: async (request) => {
-      const res = await ctx.appviewAgent.app.bsky.graph.getLists(
+      const res = await ctx.appviewAgent.app.gndr.graph.getLists(
         request.params,
-        await ctx.appviewAuth(ids.AppBskyGraphGetLists),
+        await ctx.appviewAuth(ids.AppGndrGraphGetLists),
       )
       return {
         encoding: 'application/json',
@@ -228,12 +228,12 @@ export default function (server: Server, ctx: AppContext) {
     },
   })
 
-  server.app.bsky.graph.getStarterPack({
+  server.app.gndr.graph.getStarterPack({
     auth: ctx.authVerifier.modOrAdminToken,
     handler: async (request) => {
-      const res = await ctx.appviewAgent.api.app.bsky.graph.getStarterPack(
+      const res = await ctx.appviewAgent.api.app.gndr.graph.getStarterPack(
         request.params,
-        await ctx.appviewAuth(ids.AppBskyGraphGetStarterPack),
+        await ctx.appviewAuth(ids.AppGndrGraphGetStarterPack),
       )
       return {
         encoding: 'application/json',
@@ -242,12 +242,12 @@ export default function (server: Server, ctx: AppContext) {
     },
   })
 
-  server.app.bsky.graph.getStarterPacks({
+  server.app.gndr.graph.getStarterPacks({
     auth: ctx.authVerifier.modOrAdminToken,
     handler: async (request) => {
-      const res = await ctx.appviewAgent.app.bsky.graph.getStarterPacks(
+      const res = await ctx.appviewAgent.app.gndr.graph.getStarterPacks(
         request.params,
-        await ctx.appviewAuth(ids.AppBskyGraphGetStarterPacks),
+        await ctx.appviewAuth(ids.AppGndrGraphGetStarterPacks),
       )
       return {
         encoding: 'application/json',
@@ -256,12 +256,12 @@ export default function (server: Server, ctx: AppContext) {
     },
   })
 
-  server.app.bsky.graph.getActorStarterPacks({
+  server.app.gndr.graph.getActorStarterPacks({
     auth: ctx.authVerifier.modOrAdminToken,
     handler: async (request) => {
-      const res = await ctx.appviewAgent.app.bsky.graph.getActorStarterPacks(
+      const res = await ctx.appviewAgent.app.gndr.graph.getActorStarterPacks(
         request.params,
-        await ctx.appviewAuth(ids.AppBskyGraphGetActorStarterPacks),
+        await ctx.appviewAuth(ids.AppGndrGraphGetActorStarterPacks),
       )
       return {
         encoding: 'application/json',
@@ -270,12 +270,12 @@ export default function (server: Server, ctx: AppContext) {
     },
   })
 
-  server.app.bsky.feed.getLikes({
+  server.app.gndr.feed.getLikes({
     auth: ctx.authVerifier.modOrAdminToken,
     handler: async (request) => {
-      const res = await ctx.appviewAgent.app.bsky.feed.getLikes(
+      const res = await ctx.appviewAgent.app.gndr.feed.getLikes(
         request.params,
-        await ctx.appviewAuth(ids.AppBskyFeedGetLikes),
+        await ctx.appviewAuth(ids.AppGndrFeedGetLikes),
       )
       return {
         encoding: 'application/json',
@@ -284,12 +284,12 @@ export default function (server: Server, ctx: AppContext) {
     },
   })
 
-  server.app.bsky.feed.getRepostedBy({
+  server.app.gndr.feed.getRepostedBy({
     auth: ctx.authVerifier.moderator,
     handler: async (request) => {
-      const res = await ctx.appviewAgent.app.bsky.feed.getRepostedBy(
+      const res = await ctx.appviewAgent.app.gndr.feed.getRepostedBy(
         request.params,
-        await ctx.appviewAuth(ids.AppBskyFeedGetRepostedBy),
+        await ctx.appviewAuth(ids.AppGndrFeedGetRepostedBy),
       )
       return {
         encoding: 'application/json',
@@ -298,12 +298,12 @@ export default function (server: Server, ctx: AppContext) {
     },
   })
 
-  server.app.bsky.actor.searchActorsTypeahead({
+  server.app.gndr.actor.searchActorsTypeahead({
     auth: ctx.authVerifier.moderator,
     handler: async (request) => {
-      const res = await ctx.appviewAgent.app.bsky.actor.searchActorsTypeahead(
+      const res = await ctx.appviewAgent.app.gndr.actor.searchActorsTypeahead(
         request.params,
-        await ctx.appviewAuth(ids.AppBskyActorSearchActorsTypeahead),
+        await ctx.appviewAuth(ids.AppGndrActorSearchActorsTypeahead),
       )
       return {
         encoding: 'application/json',

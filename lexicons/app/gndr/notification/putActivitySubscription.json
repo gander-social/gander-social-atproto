@@ -1,6 +1,6 @@
 {
   "lexicon": 1,
-  "id": "app.bsky.notification.putActivitySubscription",
+  "id": "app.gndr.notification.putActivitySubscription",
   "defs": {
     "main": {
       "type": "procedure",
@@ -14,7 +14,7 @@
             "subject": { "type": "string", "format": "did" },
             "activitySubscription": {
               "type": "ref",
-              "ref": "app.bsky.notification.defs#activitySubscription"
+              "ref": "app.gndr.notification.defs#activitySubscription"
             }
           }
         }
@@ -28,7 +28,7 @@
             "subject": { "type": "string", "format": "did" },
             "activitySubscription": {
               "type": "ref",
-              "ref": "app.bsky.notification.defs#activitySubscription"
+              "ref": "app.gndr.notification.defs#activitySubscription"
             }
           }
         }

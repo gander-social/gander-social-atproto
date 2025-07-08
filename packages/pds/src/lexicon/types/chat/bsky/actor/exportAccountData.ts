@@ -13,7 +13,7 @@ import {
 
 const is$typed = _is$typed,
   validate = _validate
-const id = 'chat.bsky.actor.exportAccountData'
+const id = 'chat.gndr.actor.exportAccountData'
 
 export type QueryParams = {}
 export type InputSchema = undefined

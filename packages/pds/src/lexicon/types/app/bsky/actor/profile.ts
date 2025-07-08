@@ -14,10 +14,10 @@ import type * as ComAtprotoRepoStrongRef from '../../../com/atproto/repo/strongR
 
 const is$typed = _is$typed,
   validate = _validate
-const id = 'app.bsky.actor.profile'
+const id = 'app.gndr.actor.profile'
 
 export interface Record {
-  $type: 'app.bsky.actor.profile'
+  $type: 'app.gndr.actor.profile'
   displayName?: string
   /** Free-form profile description text. */
   description?: string

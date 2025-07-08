@@ -1,9 +1,9 @@
 {
   "lexicon": 1,
-  "id": "app.bsky.feed.repost",
+  "id": "app.gndr.feed.repost",
   "defs": {
     "main": {
-      "description": "Record representing a 'repost' of an existing Bluesky post.",
+      "description": "Record representing a 'repost' of an existing Gander post.",
       "type": "record",
       "key": "tid",
       "record": {

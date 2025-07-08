@@ -1,6 +1,6 @@
 import { sql } from 'kysely'
 import {
-  AppBskyActorDefs,
+  AppGndrActorDefs,
   AtpAgent,
   ComAtprotoRepoGetRecord,
 } from '@atproto/api'
@@ -12,7 +12,7 @@ import { AtUri, INVALID_HANDLE, normalizeDatetimeAlways } from '@atproto/syntax'
 import { Database } from '../db'
 import { LabelRow } from '../db/schema/label'
 import { ids } from '../lexicon/lexicons'
-import { FeedViewPost } from '../lexicon/types/app/bsky/feed/defs'
+import { FeedViewPost } from '../lexicon/types/app/gndr/feed/defs'
 import { AccountView } from '../lexicon/types/com/atproto/admin/defs'
 import {
   Label,
@@ -743,19 +743,19 @@ export class ModerationViews {
   }
 
   async fetchAuthorFeed(actor: string): Promise<FeedViewPost[]> {
-    const auth = await this.appviewAuth(ids.AppBskyFeedGetAuthorFeed)
+    const auth = await this.appviewAuth(ids.AppGndrFeedGetAuthorFeed)
     if (!auth) return []
     const {
       data: { feed },
-    } = await this.appviewAgent.app.bsky.feed.getAuthorFeed({ actor }, auth)
+    } = await this.appviewAgent.app.gndr.feed.getAuthorFeed({ actor }, auth)
 
     return feed
   }
 
   async getProfiles(dids: string[]) {
-    const profiles = new Map<string, AppBskyActorDefs.ProfileViewDetailed>()
+    const profiles = new Map<string, AppGndrActorDefs.ProfileViewDetailed>()
 
-    const auth = await this.appviewAuth(ids.AppBskyActorGetProfiles)
+    const auth = await this.appviewAuth(ids.AppGndrActorGetProfiles)
     if (!auth) return profiles
 
     for (const actors of chunkArray(dids, 25)) {

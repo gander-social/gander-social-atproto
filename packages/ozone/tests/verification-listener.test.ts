@@ -1,5 +1,5 @@
 import { Sender, WebSocketServer } from 'ws'
-import { AppBskyGraphVerification, AtpAgent } from '@atproto/api'
+import { AppGndrGraphVerification, AtpAgent } from '@atproto/api'
 import { SeedClient, TestNetwork, basicSeed } from '@atproto/dev-env'
 import { forSnapshot } from './_util'
 
@@ -63,7 +63,7 @@ describe('verification-listener', () => {
           handle: sc.accounts[sc.dids.alice].handle,
           displayName: 'Alice',
           createdAt: new Date().toISOString(),
-        } satisfies AppBskyGraphVerification.Record,
+        } satisfies AppGndrGraphVerification.Record,
       },
     }
     const deleteEvent = {

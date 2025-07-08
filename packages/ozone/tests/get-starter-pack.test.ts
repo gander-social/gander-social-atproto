@@ -52,7 +52,7 @@ describe('admin get starter pack view', () => {
     it('gets a starterpack by uri', async () => {
       const result = await agent.api.app.bsky.graph.getStarterPack(
         { starterPack: sp1.uriStr },
-        { headers: await ozone.modHeaders(ids.AppBskyGraphGetStarterPack) },
+        { headers: await ozone.modHeaders(ids.AppGndrGraphGetStarterPack) },
       )
       expect(forSnapshot(result.data)).toMatchSnapshot()
     })
@@ -66,7 +66,7 @@ describe('admin get starter pack view', () => {
           {
             headers: await network.serviceHeaders(
               sc.dids.alice,
-              ids.AppBskyGraphGetStarterPack,
+              ids.AppGndrGraphGetStarterPack,
             ),
           },
         )
@@ -90,7 +90,7 @@ describe('admin get starter pack view', () => {
       const afterTakedownFromOzone =
         await agent.api.app.bsky.graph.getStarterPack(
           { starterPack: sp1.uriStr },
-          { headers: await ozone.modHeaders(ids.AppBskyGraphGetStarterPack) },
+          { headers: await ozone.modHeaders(ids.AppGndrGraphGetStarterPack) },
         )
 
       // validate that ozone returns starterpacks after takedown
@@ -105,7 +105,7 @@ describe('admin get starter pack view', () => {
           {
             headers: await network.serviceHeaders(
               sc.dids.alice,
-              ids.AppBskyGraphGetStarterPack,
+              ids.AppGndrGraphGetStarterPack,
             ),
           },
         ),

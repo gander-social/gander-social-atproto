@@ -12,10 +12,10 @@ import {
 
 const is$typed = _is$typed,
   validate = _validate
-const id = 'app.bsky.video.defs'
+const id = 'app.gndr.video.defs'
 
 export interface JobStatus {
-  $type?: 'app.bsky.video.defs#jobStatus'
+  $type?: 'app.gndr.video.defs#jobStatus'
   jobId: string
   did: string
   /** The state of the video processing job. All values not listed as a known value indicate that the job is in process. */

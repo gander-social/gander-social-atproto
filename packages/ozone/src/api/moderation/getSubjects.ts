@@ -64,7 +64,7 @@ export default function (server: Server, ctx: AppContext) {
           repo,
           record,
           profile: profile && {
-            $type: 'app.bsky.actor.defs#profileViewDetailed',
+            $type: 'app.gndr.actor.defs#profileViewDetailed',
             ...profile,
           },
           status,

@@ -1,46 +1,46 @@
-import { AppBskyActorDefs, AppBskyActorProfile } from './client/index'
+import { AppGndrActorDefs, AppGndrActorProfile } from './client/index'
 import { asPredicate } from './client/util'
 
-export const isValidProfile = asPredicate(AppBskyActorProfile.validateRecord)
+export const isValidProfile = asPredicate(AppGndrActorProfile.validateRecord)
 export const isValidAdultContentPref = asPredicate(
-  AppBskyActorDefs.validateAdultContentPref,
+  AppGndrActorDefs.validateAdultContentPref,
 )
-export const isValidBskyAppStatePref = asPredicate(
-  AppBskyActorDefs.validateBskyAppStatePref,
+export const isValidGndrAppStatePref = asPredicate(
+  AppGndrActorDefs.validateGndrAppStatePref,
 )
 export const isValidContentLabelPref = asPredicate(
-  AppBskyActorDefs.validateContentLabelPref,
+  AppGndrActorDefs.validateContentLabelPref,
 )
 export const isValidFeedViewPref = asPredicate(
-  AppBskyActorDefs.validateFeedViewPref,
+  AppGndrActorDefs.validateFeedViewPref,
 )
 export const isValidHiddenPostsPref = asPredicate(
-  AppBskyActorDefs.validateHiddenPostsPref,
+  AppGndrActorDefs.validateHiddenPostsPref,
 )
 export const isValidInterestsPref = asPredicate(
-  AppBskyActorDefs.validateInterestsPref,
+  AppGndrActorDefs.validateInterestsPref,
 )
 export const isValidLabelersPref = asPredicate(
-  AppBskyActorDefs.validateLabelersPref,
+  AppGndrActorDefs.validateLabelersPref,
 )
 export const isValidMutedWordsPref = asPredicate(
-  AppBskyActorDefs.validateMutedWordsPref,
+  AppGndrActorDefs.validateMutedWordsPref,
 )
 export const isValidPersonalDetailsPref = asPredicate(
-  AppBskyActorDefs.validatePersonalDetailsPref,
+  AppGndrActorDefs.validatePersonalDetailsPref,
 )
 export const isValidPostInteractionSettingsPref = asPredicate(
-  AppBskyActorDefs.validatePostInteractionSettingsPref,
+  AppGndrActorDefs.validatePostInteractionSettingsPref,
 )
 export const isValidSavedFeedsPref = asPredicate(
-  AppBskyActorDefs.validateSavedFeedsPref,
+  AppGndrActorDefs.validateSavedFeedsPref,
 )
 export const isValidSavedFeedsPrefV2 = asPredicate(
-  AppBskyActorDefs.validateSavedFeedsPrefV2,
+  AppGndrActorDefs.validateSavedFeedsPrefV2,
 )
 export const isValidThreadViewPref = asPredicate(
-  AppBskyActorDefs.validateThreadViewPref,
+  AppGndrActorDefs.validateThreadViewPref,
 )
 export const isValidVerificationPrefs = asPredicate(
-  AppBskyActorDefs.validateVerificationPrefs,
+  AppGndrActorDefs.validateVerificationPrefs,
 )

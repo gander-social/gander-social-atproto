@@ -63,7 +63,7 @@ export function toKnownErr(e: any) {
 /** Moderation tool information for tracing the source of the action */
 export interface ModTool {
   $type?: 'com.atproto.moderation.createReport#modTool'
-  /** Name/identifier of the source (e.g., 'bsky-app/android', 'bsky-web/chrome') */
+  /** Name/identifier of the source (e.g., 'gndr-app/android', 'gndr-web/chrome') */
   name: string
   /** Additional arbitrary metadata about the source */
   meta?: { [_ in string]: unknown }

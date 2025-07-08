@@ -9,11 +9,11 @@ import {
   is$typed as _is$typed,
   type OmitKey,
 } from '../../../../util'
-import type * as AppBskyActorDefs from '../actor/defs.js'
+import type * as AppGndrActorDefs from '../actor/defs.js'
 
 const is$typed = _is$typed,
   validate = _validate
-const id = 'app.bsky.feed.getLikes'
+const id = 'app.gndr.feed.getLikes'
 
 export type QueryParams = {
   /** AT-URI of the subject (eg, a post record). */
@@ -48,10 +48,10 @@ export interface HandlerError {
 export type HandlerOutput = HandlerError | HandlerSuccess
 
 export interface Like {
-  $type?: 'app.bsky.feed.getLikes#like'
+  $type?: 'app.gndr.feed.getLikes#like'
   indexedAt: string
   createdAt: string
-  actor: AppBskyActorDefs.ProfileView
+  actor: AppGndrActorDefs.ProfileView
 }
 
 const hashLike = 'like'

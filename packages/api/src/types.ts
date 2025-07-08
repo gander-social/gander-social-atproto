@@ -1,4 +1,4 @@
-import { AppBskyActorDefs } from './client'
+import { AppGndrActorDefs } from './client'
 import { ModerationPrefs } from './moderation/types'
 
 /**
@@ -58,10 +58,10 @@ export interface AtpAgentGlobalOpts {
 }
 
 /**
- * Bluesky feed view preferences
+ * Gander feed view preferences
  */
 
-export interface BskyFeedViewPreference {
+export interface GndrFeedViewPreference {
   hideReplies: boolean
   hideRepliesByUnfollowed: boolean
   hideRepliesByLikeCount: number
@@ -71,26 +71,26 @@ export interface BskyFeedViewPreference {
 }
 
 /**
- * Bluesky thread view preferences
+ * Gander thread view preferences
  */
-export interface BskyThreadViewPreference {
+export interface GndrThreadViewPreference {
   sort: string
   prioritizeFollowedUsers: boolean
   [key: string]: any
 }
 
 /**
- * Bluesky interests preferences
+ * Gander interests preferences
  */
-export interface BskyInterestsPreference {
+export interface GndrInterestsPreference {
   tags: string[]
   [key: string]: any
 }
 
 /**
- * Bluesky preferences
+ * Gander preferences
  */
-export interface BskyPreferences {
+export interface GndrPreferences {
   /**
    * @deprecated use `savedFeeds`
    */
@@ -98,17 +98,17 @@ export interface BskyPreferences {
     saved?: string[]
     pinned?: string[]
   }
-  savedFeeds: AppBskyActorDefs.SavedFeed[]
-  feedViewPrefs: Record<string, BskyFeedViewPreference>
-  threadViewPrefs: BskyThreadViewPreference
+  savedFeeds: AppGndrActorDefs.SavedFeed[]
+  feedViewPrefs: Record<string, GndrFeedViewPreference>
+  threadViewPrefs: GndrThreadViewPreference
   moderationPrefs: ModerationPrefs
   birthDate: Date | undefined
-  interests: BskyInterestsPreference
-  bskyAppState: {
+  interests: GndrInterestsPreference
+  gndrAppState: {
     queuedNudges: string[]
-    activeProgressGuide: AppBskyActorDefs.BskyAppProgressGuide | undefined
-    nuxs: AppBskyActorDefs.Nux[]
+    activeProgressGuide: AppGndrActorDefs.GndrAppProgressGuide | undefined
+    nuxs: AppGndrActorDefs.Nux[]
   }
-  postInteractionSettings: AppBskyActorDefs.PostInteractionSettingsPref
-  verificationPrefs: AppBskyActorDefs.VerificationPrefs
+  postInteractionSettings: AppGndrActorDefs.PostInteractionSettingsPref
+  verificationPrefs: AppGndrActorDefs.VerificationPrefs
 }

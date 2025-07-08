@@ -47,7 +47,7 @@ describe('did parsing', () => {
     {
       "id": "#atproto_pds",
       "type": "AtprotoPersonalDataServer",
-      "serviceEndpoint": "https://bsky.social"
+      "serviceEndpoint": "https://gndr.social"
     }
   ]
 }`
@@ -56,7 +56,7 @@ describe('did parsing', () => {
     const atpData = ensureAtpDocument(doc)
     expect(atpData.did).toEqual(did)
     expect(atpData.handle).toEqual('dholms.xyz')
-    expect(atpData.pds).toEqual('https://bsky.social')
+    expect(atpData.pds).toEqual('https://gndr.social')
     expect(atpData.signingKey).toEqual(
       'did:key:zQ3shXjHeiBuRCKmM36cuYnm7YEMzhGnCmCyW92sRJ9pribSF',
     )
@@ -86,7 +86,7 @@ describe('did parsing', () => {
     {
       "id": "#atproto_pds",
       "type": "AtprotoPersonalDataServer",
-      "serviceEndpoint": "https://bsky.social"
+      "serviceEndpoint": "https://gndr.social"
     }
   ]
 }`
@@ -95,7 +95,7 @@ describe('did parsing', () => {
     const atpData = ensureAtpDocument(doc)
     expect(atpData.did).toEqual(did)
     expect(atpData.handle).toEqual('dholms.xyz')
-    expect(atpData.pds).toEqual('https://bsky.social')
+    expect(atpData.pds).toEqual('https://gndr.social')
     expect(atpData.signingKey).toEqual(
       'did:key:zQ3shXjHeiBuRCKmM36cuYnm7YEMzhGnCmCyW92sRJ9pribSF',
     )

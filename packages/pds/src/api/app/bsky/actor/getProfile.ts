@@ -1,6 +1,6 @@
 import { AppContext } from '../../../../context'
 import { Server } from '../../../../lexicon'
-import { OutputSchema } from '../../../../lexicon/types/app/bsky/actor/getProfile'
+import { OutputSchema } from '../../../../lexicon/types/app/gndr/actor/getProfile'
 import {
   LocalRecords,
   LocalViewer,
@@ -8,9 +8,9 @@ import {
 } from '../../../../read-after-write'
 
 export default function (server: Server, ctx: AppContext) {
-  if (!ctx.bskyAppView) return
+  if (!ctx.gndrAppView) return
 
-  server.app.bsky.actor.getProfile({
+  server.app.gndr.actor.getProfile({
     auth: ctx.authVerifier.accessStandard(),
     handler: async (reqCtx) => {
       return pipethroughReadAfterWrite(ctx, reqCtx, getProfileMunge)

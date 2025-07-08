@@ -13,10 +13,10 @@ import type * as ComAtprotoRepoStrongRef from '../../../com/atproto/repo/strongR
 
 const is$typed = _is$typed,
   validate = _validate
-const id = 'app.bsky.feed.repost'
+const id = 'app.gndr.feed.repost'
 
 export interface Record {
-  $type: 'app.bsky.feed.repost'
+  $type: 'app.gndr.feed.repost'
   subject: ComAtprotoRepoStrongRef.Main
   createdAt: string
   via?: ComAtprotoRepoStrongRef.Main

@@ -1,6 +1,6 @@
 import {
   AtpAgent,
-  ChatBskyConvoDefs,
+  ChatGndrConvoDefs,
   ToolsOzoneModerationEmitEvent,
 } from '@atproto/api'
 import { HOUR } from '@atproto/common'
@@ -162,9 +162,9 @@ describe('moderation', () => {
       const reportA = await sc.createReport({
         reportedBy: sc.dids.alice,
         reasonType: REASONSPAM,
-        // @ts-expect-error "chat.bsky.convo.defs#messageRef" is not spec'd as subject
-        subject: identity<ChatBskyConvoDefs.MessageRef>({
-          $type: 'chat.bsky.convo.defs#messageRef',
+        // @ts-expect-error "chat.gndr.convo.defs#messageRef" is not spec'd as subject
+        subject: identity<ChatGndrConvoDefs.MessageRef>({
+          $type: 'chat.gndr.convo.defs#messageRef',
           did: sc.dids.carol,
           messageId: messageId1,
           convoId: 'testconvoid1',
@@ -174,9 +174,9 @@ describe('moderation', () => {
         reportedBy: sc.dids.carol,
         reasonType: REASONOTHER,
         reason: 'defamation',
-        // @ts-expect-error "chat.bsky.convo.defs#messageRef" is not spec'd as subject
-        subject: identity<ChatBskyConvoDefs.MessageRef>({
-          $type: 'chat.bsky.convo.defs#messageRef',
+        // @ts-expect-error "chat.gndr.convo.defs#messageRef" is not spec'd as subject
+        subject: identity<ChatGndrConvoDefs.MessageRef>({
+          $type: 'chat.gndr.convo.defs#messageRef',
           did: sc.dids.carol,
           messageId: messageId2,
           // @ts-expect-error convoId intentionally missing, restore once this behavior is deprecated
@@ -193,7 +193,7 @@ describe('moderation', () => {
       expect(events.length).toBe(2)
       expect(
         events.every(
-          (row) => row.subjectType === 'chat.bsky.convo.defs#messageRef',
+          (row) => row.subjectType === 'chat.gndr.convo.defs#messageRef',
         ),
       ).toBe(true)
     })

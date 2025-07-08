@@ -12,7 +12,7 @@ import {
 
 const is$typed = _is$typed,
   validate = _validate
-const id = 'chat.bsky.convo.leaveConvo'
+const id = 'chat.gndr.convo.leaveConvo'
 
 export type QueryParams = {}
 

@@ -12,10 +12,10 @@ import {
 
 const is$typed = _is$typed,
   validate = _validate
-const id = 'app.bsky.graph.follow'
+const id = 'app.gndr.graph.follow'
 
 export interface Record {
-  $type: 'app.bsky.graph.follow'
+  $type: 'app.gndr.graph.follow'
   subject: string
   createdAt: string
   [k: string]: unknown

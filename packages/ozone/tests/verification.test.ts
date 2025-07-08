@@ -1,8 +1,8 @@
-import { AppBskyActorDefs, AtpAgent, asPredicate } from '@atproto/api'
+import { AppGndrActorDefs, AtpAgent, asPredicate } from '@atproto/api'
 import { SeedClient, TestNetwork, basicSeed } from '@atproto/dev-env'
 import { forSnapshot } from './_util'
 
-const isValidProfile = asPredicate(AppBskyActorDefs.validateProfileViewDetailed)
+const isValidProfile = asPredicate(AppGndrActorDefs.validateProfileViewDetailed)
 
 describe('verification', () => {
   let network: TestNetwork

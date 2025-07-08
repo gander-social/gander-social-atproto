@@ -2,15 +2,15 @@ import * as plc from '@did-plc/lib'
 import { request } from 'undici'
 import { Secp256k1Keypair } from '@atproto/crypto'
 import { IdResolver } from '@atproto/identity'
-import { TestBsky } from './bsky'
+import { TestBsky } from './gndr'
 import { TestPds } from './pds'
 import { DidAndKey } from './types'
 
-export const mockNetworkUtilities = (pds: TestPds, bsky?: TestBsky) => {
+export const mockNetworkUtilities = (pds: TestPds, gndr?: TestBsky) => {
   mockResolvers(pds.ctx.idResolver, pds)
-  if (bsky) {
-    mockResolvers(bsky.ctx.idResolver, pds)
-    mockResolvers(bsky.dataplane.idResolver, pds)
+  if (gndr) {
+    mockResolvers(gndr.ctx.idResolver, pds)
+    mockResolvers(gndr.dataplane.idResolver, pds)
   }
 }
 

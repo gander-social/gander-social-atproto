@@ -6,7 +6,7 @@ import {
   AtpAgent,
   AtpSessionData,
   AtpSessionEvent,
-  BSKY_LABELER_DID,
+  GNDR_LABELER_DID,
 } from '../src'
 import { createHeaderEchoServer } from './util/echo-server'
 
@@ -396,7 +396,7 @@ describe('AtpAgent', () => {
 
     // put the agent through the auth flow
     try {
-      await agent.app.bsky.feed.getTimeline()
+      await agent.app.gndr.feed.getTimeline()
       throw new Error('Should have failed')
     } catch (e: any) {
       // the original error passes through
@@ -450,7 +450,7 @@ describe('AtpAgent', () => {
 
       const res1 = await agent.com.atproto.server.describeServer()
       expect(res1.data['atproto-accept-labelers']).toEqual(
-        `${BSKY_LABELER_DID};redact`,
+        `${GNDR_LABELER_DID};redact`,
       )
 
       AtpAgent.configure({ appLabelers: ['did:plc:test1', 'did:plc:test2'] })
@@ -462,7 +462,7 @@ describe('AtpAgent', () => {
       expect(res3.data['atproto-accept-labelers']).toEqual(
         'did:plc:test1;redact, did:plc:test2;redact',
       )
-      AtpAgent.configure({ appLabelers: [BSKY_LABELER_DID] })
+      AtpAgent.configure({ appLabelers: [GNDR_LABELER_DID] })
 
       await new Promise((r) => server.close(r))
     })
@@ -477,13 +477,13 @@ describe('AtpAgent', () => {
       agent.configureLabelers(['did:plc:test1'])
       const res1 = await agent.com.atproto.server.describeServer()
       expect(res1.data['atproto-accept-labelers']).toEqual(
-        `${BSKY_LABELER_DID};redact, did:plc:test1`,
+        `${GNDR_LABELER_DID};redact, did:plc:test1`,
       )
 
       agent.configureLabelers(['did:plc:test1', 'did:plc:test2'])
       const res2 = await agent.com.atproto.server.describeServer()
       expect(res2.data['atproto-accept-labelers']).toEqual(
-        `${BSKY_LABELER_DID};redact, did:plc:test1, did:plc:test2`,
+        `${GNDR_LABELER_DID};redact, did:plc:test1, did:plc:test2`,
       )
 
       await new Promise((r) => server.close(r))
@@ -520,7 +520,7 @@ describe('AtpAgent', () => {
 const createPost = async (agent: AtpAgent) => {
   return agent.com.atproto.repo.createRecord({
     repo: agent.accountDid,
-    collection: 'app.bsky.feed.post',
+    collection: 'app.gndr.feed.post',
     record: {
       text: 'hello there',
       createdAt: new Date().toISOString(),

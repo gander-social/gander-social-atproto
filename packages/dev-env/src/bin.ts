@@ -12,7 +12,7 @@ const run = async () => {
 ╚█║████╔╝
  ╚╝╚═══╝  protocol
 
-[ created by Bluesky ]`)
+[ created by Gander ]`)
 
   const network = await TestNetwork.create({
     pds: {
@@ -20,8 +20,8 @@ const run = async () => {
       hostname: 'localhost',
       enableDidDocWithSession: true,
     },
-    bsky: {
-      dbPostgresSchema: 'bsky',
+    gndr: {
+      dbPostgresSchema: 'gndr',
       port: 2584,
       publicUrl: 'http://localhost:2584',
     },
@@ -50,7 +50,7 @@ const run = async () => {
   )
   console.log(`🗼 Ozone server started http://localhost:${network.ozone.port}`)
   console.log(`🗼 Ozone service DID ${network.ozone.ctx.cfg.service.did}`)
-  console.log(`🌅 Bsky Appview started http://localhost:${network.bsky.port}`)
+  console.log(`🌅 Bsky Appview started http://localhost:${network.gndr.port}`)
   for (const fg of network.feedGens) {
     console.log(`🤖 Feed Generator started http://localhost:${fg.port}`)
   }

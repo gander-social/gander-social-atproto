@@ -9,17 +9,17 @@ import {
   is$typed as _is$typed,
   type OmitKey,
 } from '../../../../util'
-import type * as AppBskyEmbedExternal from '../embed/external.js'
+import type * as AppGndrEmbedExternal from '../embed/external.js'
 
 const is$typed = _is$typed,
   validate = _validate
-const id = 'app.bsky.actor.status'
+const id = 'app.gndr.actor.status'
 
 export interface Record {
-  $type: 'app.bsky.actor.status'
+  $type: 'app.gndr.actor.status'
   /** The status for the account. */
-  status: 'app.bsky.actor.status#live' | (string & {})
-  embed?: $Typed<AppBskyEmbedExternal.Main> | { $type: string }
+  status: 'app.gndr.actor.status#live' | (string & {})
+  embed?: $Typed<AppGndrEmbedExternal.Main> | { $type: string }
   /** The duration of the status in minutes. Applications can choose to impose minimum and maximum limits. */
   durationMinutes?: number
   createdAt: string

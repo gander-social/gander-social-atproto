@@ -12,7 +12,7 @@ import {
 
 const is$typed = _is$typed,
   validate = _validate
-const id = 'chat.bsky.moderation.getActorMetadata'
+const id = 'chat.gndr.moderation.getActorMetadata'
 
 export type QueryParams = {
   actor: string
@@ -41,7 +41,7 @@ export interface HandlerError {
 export type HandlerOutput = HandlerError | HandlerSuccess
 
 export interface Metadata {
-  $type?: 'chat.bsky.moderation.getActorMetadata#metadata'
+  $type?: 'chat.gndr.moderation.getActorMetadata#metadata'
   messagesSent: number
   messagesReceived: number
   convos: number

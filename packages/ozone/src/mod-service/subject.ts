@@ -1,6 +1,6 @@
 import { AtUri } from '@atproto/syntax'
 import { InvalidRequestError } from '@atproto/xrpc-server'
-import * as ChatBskyConvoDefs from '../lexicon/types/chat/bsky/convo/defs'
+import * as ChatGndrConvoDefs from '../lexicon/types/chat/gndr/convo/defs'
 import { RepoRef, isRepoRef } from '../lexicon/types/com/atproto/admin/defs'
 import { InputSchema as ReportInput } from '../lexicon/types/com/atproto/moderation/createReport'
 import * as ComAtprotoRepoStrongRef from '../lexicon/types/com/atproto/repo/strongRef'
@@ -13,8 +13,8 @@ type SubjectInput = ReportInput['subject'] | ActionInput['subject']
 type StrongRef = ComAtprotoRepoStrongRef.Main
 const isStrongRef = asPredicate(ComAtprotoRepoStrongRef.validateMain)
 
-type MessageRef = ChatBskyConvoDefs.MessageRef
-const isValidMessageRef = asPredicate(ChatBskyConvoDefs.validateMessageRef)
+type MessageRef = ChatGndrConvoDefs.MessageRef
+const isValidMessageRef = asPredicate(ChatGndrConvoDefs.validateMessageRef)
 
 const isMessageRefWithoutConvoId = (
   subject: unknown,
@@ -37,7 +37,7 @@ export const subjectFromInput = (
     return new RecordSubject(subject.uri, subject.cid, blobs)
   }
   // @NOTE #messageRef is not a report input for com.atproto.moderation.createReport.
-  // we are taking advantage of the open union in order for bsky.chat to interoperate here.
+  // we are taking advantage of the open union in order for gndr.chat to interoperate here.
   if (isValidMessageRef(subject)) {
     return new MessageSubject(subject.did, subject.convoId, subject.messageId)
   }
@@ -67,7 +67,7 @@ export const subjectFromEventRow = (row: ModerationEventRow): ModSubject => {
       row.subjectBlobCids ?? [],
     )
   } else if (
-    row.subjectType === 'chat.bsky.convo.defs#messageRef' &&
+    row.subjectType === 'chat.gndr.convo.defs#messageRef' &&
     row.subjectMessageId
   ) {
     const convoId =
@@ -95,7 +95,7 @@ type SubjectInfo = {
   subjectType:
     | 'com.atproto.admin.defs#repoRef'
     | 'com.atproto.repo.strongRef'
-    | 'chat.bsky.convo.defs#messageRef'
+    | 'chat.gndr.convo.defs#messageRef'
   subjectDid: string
   subjectUri: string | null
   subjectCid: string | null
@@ -208,7 +208,7 @@ export class MessageSubject implements ModSubject {
   }
   info() {
     return {
-      subjectType: 'chat.bsky.convo.defs#messageRef' as const,
+      subjectType: 'chat.gndr.convo.defs#messageRef' as const,
       subjectDid: this.did,
       subjectUri: null,
       subjectCid: null,
@@ -219,7 +219,7 @@ export class MessageSubject implements ModSubject {
   }
   lex(): $Typed<MessageRef> {
     return {
-      $type: 'chat.bsky.convo.defs#messageRef',
+      $type: 'chat.gndr.convo.defs#messageRef',
       did: this.did,
       convoId: this.convoId,
       messageId: this.messageId,

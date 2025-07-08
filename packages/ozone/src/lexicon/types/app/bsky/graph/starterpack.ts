@@ -9,18 +9,18 @@ import {
   is$typed as _is$typed,
   type OmitKey,
 } from '../../../../util'
-import type * as AppBskyRichtextFacet from '../richtext/facet.js'
+import type * as AppGndrRichtextFacet from '../richtext/facet.js'
 
 const is$typed = _is$typed,
   validate = _validate
-const id = 'app.bsky.graph.starterpack'
+const id = 'app.gndr.graph.starterpack'
 
 export interface Record {
-  $type: 'app.bsky.graph.starterpack'
+  $type: 'app.gndr.graph.starterpack'
   /** Display name for starter pack; can not be empty. */
   name: string
   description?: string
-  descriptionFacets?: AppBskyRichtextFacet.Main[]
+  descriptionFacets?: AppGndrRichtextFacet.Main[]
   /** Reference (AT-URI) to the list record. */
   list: string
   feeds?: FeedItem[]
@@ -39,7 +39,7 @@ export function validateRecord<V>(v: V) {
 }
 
 export interface FeedItem {
-  $type?: 'app.bsky.graph.starterpack#feedItem'
+  $type?: 'app.gndr.graph.starterpack#feedItem'
   uri: string
 }
 

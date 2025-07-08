@@ -9,11 +9,11 @@ import {
   is$typed as _is$typed,
   type OmitKey,
 } from '../../../../util'
-import type * as AppBskyActorDefs from './defs.js'
+import type * as AppGndrActorDefs from './defs.js'
 
 const is$typed = _is$typed,
   validate = _validate
-const id = 'app.bsky.actor.getProfiles'
+const id = 'app.gndr.actor.getProfiles'
 
 export type QueryParams = {
   actors: string[]
@@ -21,7 +21,7 @@ export type QueryParams = {
 export type InputSchema = undefined
 
 export interface OutputSchema {
-  profiles: AppBskyActorDefs.ProfileViewDetailed[]
+  profiles: AppGndrActorDefs.ProfileViewDetailed[]
 }
 
 export type HandlerInput = void

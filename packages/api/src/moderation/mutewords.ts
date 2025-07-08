@@ -1,4 +1,4 @@
-import { AppBskyActorDefs, AppBskyRichtextFacet } from '../client'
+import { AppGndrActorDefs, AppGndrRichtextFacet } from '../client'
 
 const REGEX = {
   LEADING_TRAILING_PUNCTUATION: /(?:^\p{P}+|\p{P}+$)/gu,
@@ -23,9 +23,9 @@ const LANGUAGE_EXCEPTIONS = [
 
 export type MuteWordMatch = {
   /**
-   * The `AppBskyActorDefs.MutedWord` that matched.
+   * The `AppGndrActorDefs.MutedWord` that matched.
    */
-  word: AppBskyActorDefs.MutedWord
+  word: AppGndrActorDefs.MutedWord
   /**
    * The string that matched the muted word.
    */
@@ -33,12 +33,12 @@ export type MuteWordMatch = {
 }
 
 export type Params = {
-  mutedWords: AppBskyActorDefs.MutedWord[]
+  mutedWords: AppGndrActorDefs.MutedWord[]
   text: string
-  facets?: AppBskyRichtextFacet.Main[]
+  facets?: AppGndrRichtextFacet.Main[]
   outlineTags?: string[]
   languages?: string[]
-  actor?: AppBskyActorDefs.ProfileView | AppBskyActorDefs.ProfileViewBasic
+  actor?: AppGndrActorDefs.ProfileView | AppGndrActorDefs.ProfileViewBasic
 }
 
 /**
@@ -58,7 +58,7 @@ export function matchMuteWords({
     .concat(outlineTags || [])
     .concat(
       (facets || []).flatMap((facet) =>
-        facet.features.filter(AppBskyRichtextFacet.isTag).map((tag) => tag.tag),
+        facet.features.filter(AppGndrRichtextFacet.isTag).map((tag) => tag.tag),
       ),
     )
     .map((t) => t.toLowerCase())

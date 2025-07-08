@@ -1,4 +1,4 @@
-import { AtpAgent, BSKY_LABELER_DID } from '@atproto/api'
+import { AtpAgent, GNDR_LABELER_DID } from '@atproto/api'
 import {
   ModeratorClient,
   RecordRef,
@@ -35,7 +35,7 @@ describe('admin get lists', () => {
   })
 
   afterAll(async () => {
-    AtpAgent.configure({ appLabelers: [BSKY_LABELER_DID] })
+    AtpAgent.configure({ appLabelers: [GNDR_LABELER_DID] })
     await network.close()
   })
 
@@ -43,7 +43,7 @@ describe('admin get lists', () => {
     const [{ data: fromOzone }, { data: fromAppview }] = await Promise.all([
       agent.api.app.bsky.graph.getLists(
         { actor: sc.dids.alice },
-        { headers: await ozone.modHeaders(ids.AppBskyGraphGetLists) },
+        { headers: await ozone.modHeaders(ids.AppGndrGraphGetLists) },
       ),
       appviewAgent.api.app.bsky.graph.getLists({ actor: sc.dids.alice }),
     ])

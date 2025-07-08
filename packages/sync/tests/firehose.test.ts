@@ -95,7 +95,7 @@ describe('firehose', () => {
     expect(evts.at(3)).toMatchObject({
       event: 'create',
       did: alice,
-      collection: 'app.bsky.feed.post',
+      collection: 'app.gndr.feed.post',
       record: {
         text: 'one',
       },
@@ -103,7 +103,7 @@ describe('firehose', () => {
     expect(evts.at(4)).toMatchObject({
       event: 'create',
       did: alice,
-      collection: 'app.bsky.feed.post',
+      collection: 'app.gndr.feed.post',
       record: {
         text: 'two',
       },
@@ -111,7 +111,7 @@ describe('firehose', () => {
     expect(evts.at(5)).toMatchObject({
       event: 'create',
       did: alice,
-      collection: 'app.bsky.feed.post',
+      collection: 'app.gndr.feed.post',
       record: {
         text: 'three',
       },

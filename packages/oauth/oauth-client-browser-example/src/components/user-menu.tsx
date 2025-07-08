@@ -30,7 +30,7 @@ export function UserMenu() {
             {
               label: 'Profile',
               onClick: () => {
-                window.open(`https://bsky.app/profile/${did}`, '_blank')
+                window.open(`https://gndr.app/profile/${did}`, '_blank')
               },
             },
           ],

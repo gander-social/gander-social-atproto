@@ -10,19 +10,19 @@ import {
   type OmitKey,
 } from '../../../../util'
 import type * as ComAtprotoLabelDefs from '../../../com/atproto/label/defs.js'
-import type * as AppBskyGraphDefs from '../graph/defs.js'
+import type * as AppGndrGraphDefs from '../graph/defs.js'
 import type * as ComAtprotoRepoStrongRef from '../../../com/atproto/repo/strongRef.js'
-import type * as AppBskyNotificationDefs from '../notification/defs.js'
-import type * as AppBskyFeedThreadgate from '../feed/threadgate.js'
-import type * as AppBskyFeedPostgate from '../feed/postgate.js'
-import type * as AppBskyEmbedExternal from '../embed/external.js'
+import type * as AppGndrNotificationDefs from '../notification/defs.js'
+import type * as AppGndrFeedThreadgate from '../feed/threadgate.js'
+import type * as AppGndrFeedPostgate from '../feed/postgate.js'
+import type * as AppGndrEmbedExternal from '../embed/external.js'
 
 const is$typed = _is$typed,
   validate = _validate
-const id = 'app.bsky.actor.defs'
+const id = 'app.gndr.actor.defs'
 
 export interface ProfileViewBasic {
-  $type?: 'app.bsky.actor.defs#profileViewBasic'
+  $type?: 'app.gndr.actor.defs#profileViewBasic'
   did: string
   handle: string
   displayName?: string
@@ -46,7 +46,7 @@ export function validateProfileViewBasic<V>(v: V) {
 }
 
 export interface ProfileView {
-  $type?: 'app.bsky.actor.defs#profileView'
+  $type?: 'app.gndr.actor.defs#profileView'
   did: string
   handle: string
   displayName?: string
@@ -72,7 +72,7 @@ export function validateProfileView<V>(v: V) {
 }
 
 export interface ProfileViewDetailed {
-  $type?: 'app.bsky.actor.defs#profileViewDetailed'
+  $type?: 'app.gndr.actor.defs#profileViewDetailed'
   did: string
   handle: string
   displayName?: string
@@ -83,7 +83,7 @@ export interface ProfileViewDetailed {
   followsCount?: number
   postsCount?: number
   associated?: ProfileAssociated
-  joinedViaStarterPack?: AppBskyGraphDefs.StarterPackViewBasic
+  joinedViaStarterPack?: AppGndrGraphDefs.StarterPackViewBasic
   indexedAt?: string
   createdAt?: string
   viewer?: ViewerState
@@ -104,7 +104,7 @@ export function validateProfileViewDetailed<V>(v: V) {
 }
 
 export interface ProfileAssociated {
-  $type?: 'app.bsky.actor.defs#profileAssociated'
+  $type?: 'app.gndr.actor.defs#profileAssociated'
   lists?: number
   feedgens?: number
   starterPacks?: number
@@ -124,7 +124,7 @@ export function validateProfileAssociated<V>(v: V) {
 }
 
 export interface ProfileAssociatedChat {
-  $type?: 'app.bsky.actor.defs#profileAssociatedChat'
+  $type?: 'app.gndr.actor.defs#profileAssociatedChat'
   allowIncoming: 'all' | 'none' | 'following' | (string & {})
 }
 
@@ -139,7 +139,7 @@ export function validateProfileAssociatedChat<V>(v: V) {
 }
 
 export interface ProfileAssociatedActivitySubscription {
-  $type?: 'app.bsky.actor.defs#profileAssociatedActivitySubscription'
+  $type?: 'app.gndr.actor.defs#profileAssociatedActivitySubscription'
   allowSubscriptions: 'followers' | 'mutuals' | 'none' | (string & {})
 }
 
@@ -160,16 +160,16 @@ export function validateProfileAssociatedActivitySubscription<V>(v: V) {
 
 /** Metadata about the requesting account's relationship with the subject account. Only has meaningful content for authed requests. */
 export interface ViewerState {
-  $type?: 'app.bsky.actor.defs#viewerState'
+  $type?: 'app.gndr.actor.defs#viewerState'
   muted?: boolean
-  mutedByList?: AppBskyGraphDefs.ListViewBasic
+  mutedByList?: AppGndrGraphDefs.ListViewBasic
   blockedBy?: boolean
   blocking?: string
-  blockingByList?: AppBskyGraphDefs.ListViewBasic
+  blockingByList?: AppGndrGraphDefs.ListViewBasic
   following?: string
   followedBy?: string
   knownFollowers?: KnownFollowers
-  activitySubscription?: AppBskyNotificationDefs.ActivitySubscription
+  activitySubscription?: AppGndrNotificationDefs.ActivitySubscription
 }
 
 const hashViewerState = 'viewerState'
@@ -184,7 +184,7 @@ export function validateViewerState<V>(v: V) {
 
 /** The subject's followers whom you also follow */
 export interface KnownFollowers {
-  $type?: 'app.bsky.actor.defs#knownFollowers'
+  $type?: 'app.gndr.actor.defs#knownFollowers'
   count: number
   followers: ProfileViewBasic[]
 }
@@ -201,7 +201,7 @@ export function validateKnownFollowers<V>(v: V) {
 
 /** Represents the verification information about the user this object is attached to. */
 export interface VerificationState {
-  $type?: 'app.bsky.actor.defs#verificationState'
+  $type?: 'app.gndr.actor.defs#verificationState'
   /** All verifications issued by trusted verifiers on behalf of this user. Verifications by untrusted verifiers are not included. */
   verifications: VerificationView[]
   /** The user's status as a verified account. */
@@ -222,7 +222,7 @@ export function validateVerificationState<V>(v: V) {
 
 /** An individual verification for an associated subject. */
 export interface VerificationView {
-  $type?: 'app.bsky.actor.defs#verificationView'
+  $type?: 'app.gndr.actor.defs#verificationView'
   /** The user who issued this verification. */
   issuer: string
   /** The AT-URI of the verification record. */
@@ -254,7 +254,7 @@ export type Preferences = (
   | $Typed<InterestsPref>
   | $Typed<MutedWordsPref>
   | $Typed<HiddenPostsPref>
-  | $Typed<BskyAppStatePref>
+  | $Typed<GndrAppStatePref>
   | $Typed<LabelersPref>
   | $Typed<PostInteractionSettingsPref>
   | $Typed<VerificationPrefs>
@@ -262,7 +262,7 @@ export type Preferences = (
 )[]
 
 export interface AdultContentPref {
-  $type?: 'app.bsky.actor.defs#adultContentPref'
+  $type?: 'app.gndr.actor.defs#adultContentPref'
   enabled: boolean
 }
 
@@ -277,7 +277,7 @@ export function validateAdultContentPref<V>(v: V) {
 }
 
 export interface ContentLabelPref {
-  $type?: 'app.bsky.actor.defs#contentLabelPref'
+  $type?: 'app.gndr.actor.defs#contentLabelPref'
   /** Which labeler does this preference apply to? If undefined, applies globally. */
   labelerDid?: string
   label: string
@@ -295,7 +295,7 @@ export function validateContentLabelPref<V>(v: V) {
 }
 
 export interface SavedFeed {
-  $type?: 'app.bsky.actor.defs#savedFeed'
+  $type?: 'app.gndr.actor.defs#savedFeed'
   id: string
   type: 'feed' | 'list' | 'timeline' | (string & {})
   value: string
@@ -313,7 +313,7 @@ export function validateSavedFeed<V>(v: V) {
 }
 
 export interface SavedFeedsPrefV2 {
-  $type?: 'app.bsky.actor.defs#savedFeedsPrefV2'
+  $type?: 'app.gndr.actor.defs#savedFeedsPrefV2'
   items: SavedFeed[]
 }
 
@@ -328,7 +328,7 @@ export function validateSavedFeedsPrefV2<V>(v: V) {
 }
 
 export interface SavedFeedsPref {
-  $type?: 'app.bsky.actor.defs#savedFeedsPref'
+  $type?: 'app.gndr.actor.defs#savedFeedsPref'
   pinned: string[]
   saved: string[]
   timelineIndex?: number
@@ -345,7 +345,7 @@ export function validateSavedFeedsPref<V>(v: V) {
 }
 
 export interface PersonalDetailsPref {
-  $type?: 'app.bsky.actor.defs#personalDetailsPref'
+  $type?: 'app.gndr.actor.defs#personalDetailsPref'
   /** The birth date of account owner. */
   birthDate?: string
 }
@@ -361,7 +361,7 @@ export function validatePersonalDetailsPref<V>(v: V) {
 }
 
 export interface FeedViewPref {
-  $type?: 'app.bsky.actor.defs#feedViewPref'
+  $type?: 'app.gndr.actor.defs#feedViewPref'
   /** The URI of the feed, or an identifier which describes the feed. */
   feed: string
   /** Hide replies in the feed. */
@@ -387,7 +387,7 @@ export function validateFeedViewPref<V>(v: V) {
 }
 
 export interface ThreadViewPref {
-  $type?: 'app.bsky.actor.defs#threadViewPref'
+  $type?: 'app.gndr.actor.defs#threadViewPref'
   /** Sorting mode for threads. */
   sort?:
     | 'oldest'
@@ -411,7 +411,7 @@ export function validateThreadViewPref<V>(v: V) {
 }
 
 export interface InterestsPref {
-  $type?: 'app.bsky.actor.defs#interestsPref'
+  $type?: 'app.gndr.actor.defs#interestsPref'
   /** A list of tags which describe the account owner's interests gathered during onboarding. */
   tags: string[]
 }
@@ -430,7 +430,7 @@ export type MutedWordTarget = 'content' | 'tag' | (string & {})
 
 /** A word that the account owner has muted. */
 export interface MutedWord {
-  $type?: 'app.bsky.actor.defs#mutedWord'
+  $type?: 'app.gndr.actor.defs#mutedWord'
   id?: string
   /** The muted word itself. */
   value: string
@@ -453,7 +453,7 @@ export function validateMutedWord<V>(v: V) {
 }
 
 export interface MutedWordsPref {
-  $type?: 'app.bsky.actor.defs#mutedWordsPref'
+  $type?: 'app.gndr.actor.defs#mutedWordsPref'
   /** A list of words the account owner has muted. */
   items: MutedWord[]
 }
@@ -469,7 +469,7 @@ export function validateMutedWordsPref<V>(v: V) {
 }
 
 export interface HiddenPostsPref {
-  $type?: 'app.bsky.actor.defs#hiddenPostsPref'
+  $type?: 'app.gndr.actor.defs#hiddenPostsPref'
   /** A list of URIs of posts the account owner has hidden. */
   items: string[]
 }
@@ -485,7 +485,7 @@ export function validateHiddenPostsPref<V>(v: V) {
 }
 
 export interface LabelersPref {
-  $type?: 'app.bsky.actor.defs#labelersPref'
+  $type?: 'app.gndr.actor.defs#labelersPref'
   labelers: LabelerPrefItem[]
 }
 
@@ -500,7 +500,7 @@ export function validateLabelersPref<V>(v: V) {
 }
 
 export interface LabelerPrefItem {
-  $type?: 'app.bsky.actor.defs#labelerPrefItem'
+  $type?: 'app.gndr.actor.defs#labelerPrefItem'
   did: string
 }
 
@@ -514,45 +514,45 @@ export function validateLabelerPrefItem<V>(v: V) {
   return validate<LabelerPrefItem & V>(v, id, hashLabelerPrefItem)
 }
 
-/** A grab bag of state that's specific to the bsky.app program. Third-party apps shouldn't use this. */
-export interface BskyAppStatePref {
-  $type?: 'app.bsky.actor.defs#bskyAppStatePref'
-  activeProgressGuide?: BskyAppProgressGuide
+/** A grab bag of state that's specific to the gndr.app program. Third-party apps shouldn't use this. */
+export interface GndrAppStatePref {
+  $type?: 'app.gndr.actor.defs#gndrAppStatePref'
+  activeProgressGuide?: GndrAppProgressGuide
   /** An array of tokens which identify nudges (modals, popups, tours, highlight dots) that should be shown to the user. */
   queuedNudges?: string[]
   /** Storage for NUXs the user has encountered. */
   nuxs?: Nux[]
 }
 
-const hashBskyAppStatePref = 'bskyAppStatePref'
+const hashGndrAppStatePref = 'gndrAppStatePref'
 
-export function isBskyAppStatePref<V>(v: V) {
-  return is$typed(v, id, hashBskyAppStatePref)
+export function isGndrAppStatePref<V>(v: V) {
+  return is$typed(v, id, hashGndrAppStatePref)
 }
 
-export function validateBskyAppStatePref<V>(v: V) {
-  return validate<BskyAppStatePref & V>(v, id, hashBskyAppStatePref)
+export function validateGndrAppStatePref<V>(v: V) {
+  return validate<GndrAppStatePref & V>(v, id, hashGndrAppStatePref)
 }
 
 /** If set, an active progress guide. Once completed, can be set to undefined. Should have unspecced fields tracking progress. */
-export interface BskyAppProgressGuide {
-  $type?: 'app.bsky.actor.defs#bskyAppProgressGuide'
+export interface GndrAppProgressGuide {
+  $type?: 'app.gndr.actor.defs#bskyAppProgressGuide'
   guide: string
 }
 
-const hashBskyAppProgressGuide = 'bskyAppProgressGuide'
+const hashGndrAppProgressGuide = 'bskyAppProgressGuide'
 
-export function isBskyAppProgressGuide<V>(v: V) {
-  return is$typed(v, id, hashBskyAppProgressGuide)
+export function isGndrAppProgressGuide<V>(v: V) {
+  return is$typed(v, id, hashGndrAppProgressGuide)
 }
 
-export function validateBskyAppProgressGuide<V>(v: V) {
-  return validate<BskyAppProgressGuide & V>(v, id, hashBskyAppProgressGuide)
+export function validateGndrAppProgressGuide<V>(v: V) {
+  return validate<GndrAppProgressGuide & V>(v, id, hashGndrAppProgressGuide)
 }
 
 /** A new user experiences (NUX) storage object */
 export interface Nux {
-  $type?: 'app.bsky.actor.defs#nux'
+  $type?: 'app.gndr.actor.defs#nux'
   id: string
   completed: boolean
   /** Arbitrary data for the NUX. The structure is defined by the NUX itself. Limited to 300 characters. */
@@ -573,7 +573,7 @@ export function validateNux<V>(v: V) {
 
 /** Preferences for how verified accounts appear in the app. */
 export interface VerificationPrefs {
-  $type?: 'app.bsky.actor.defs#verificationPrefs'
+  $type?: 'app.gndr.actor.defs#verificationPrefs'
   /** Hide the blue check badges for verified accounts and trusted verifiers. */
   hideBadges: boolean
 }
@@ -590,18 +590,18 @@ export function validateVerificationPrefs<V>(v: V) {
 
 /** Default post interaction settings for the account. These values should be applied as default values when creating new posts. These refs should mirror the threadgate and postgate records exactly. */
 export interface PostInteractionSettingsPref {
-  $type?: 'app.bsky.actor.defs#postInteractionSettingsPref'
+  $type?: 'app.gndr.actor.defs#postInteractionSettingsPref'
   /** Matches threadgate record. List of rules defining who can reply to this users posts. If value is an empty array, no one can reply. If value is undefined, anyone can reply. */
   threadgateAllowRules?: (
-    | $Typed<AppBskyFeedThreadgate.MentionRule>
-    | $Typed<AppBskyFeedThreadgate.FollowerRule>
-    | $Typed<AppBskyFeedThreadgate.FollowingRule>
-    | $Typed<AppBskyFeedThreadgate.ListRule>
+    | $Typed<AppGndrFeedThreadgate.MentionRule>
+    | $Typed<AppGndrFeedThreadgate.FollowerRule>
+    | $Typed<AppGndrFeedThreadgate.FollowingRule>
+    | $Typed<AppGndrFeedThreadgate.ListRule>
     | { $type: string }
   )[]
   /** Matches postgate record. List of rules defining who can embed this users posts. If value is an empty array or is undefined, no particular rules apply and anyone can embed. */
   postgateEmbeddingRules?: (
-    | $Typed<AppBskyFeedPostgate.DisableRule>
+    | $Typed<AppGndrFeedPostgate.DisableRule>
     | { $type: string }
   )[]
 }
@@ -621,11 +621,11 @@ export function validatePostInteractionSettingsPref<V>(v: V) {
 }
 
 export interface StatusView {
-  $type?: 'app.bsky.actor.defs#statusView'
+  $type?: 'app.gndr.actor.defs#statusView'
   /** The status for the account. */
-  status: 'app.bsky.actor.status#live' | (string & {})
+  status: 'app.gndr.actor.status#live' | (string & {})
   record: { [_ in string]: unknown }
-  embed?: $Typed<AppBskyEmbedExternal.View> | { $type: string }
+  embed?: $Typed<AppGndrEmbedExternal.View> | { $type: string }
   /** The date when this status will expire. The application might choose to no longer return the status after expiration. */
   expiresAt?: string
   /** True if the status is not expired, false if it is expired. Only present if expiration was set. */

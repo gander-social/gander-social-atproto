@@ -12,11 +12,11 @@ import {
 
 const is$typed = _is$typed,
   validate = _validate
-const id = 'app.bsky.embed.external'
+const id = 'app.gndr.embed.external'
 
-/** A representation of some externally linked content (eg, a URL and 'card'), embedded in a Bluesky record (eg, a post). */
+/** A representation of some externally linked content (eg, a URL and 'card'), embedded in a Gander record (eg, a post). */
 export interface Main {
-  $type?: 'app.bsky.embed.external'
+  $type?: 'app.gndr.embed.external'
   external: External
 }
 
@@ -31,7 +31,7 @@ export function validateMain<V>(v: V) {
 }
 
 export interface External {
-  $type?: 'app.bsky.embed.external#external'
+  $type?: 'app.gndr.embed.external#external'
   uri: string
   title: string
   description: string
@@ -49,7 +49,7 @@ export function validateExternal<V>(v: V) {
 }
 
 export interface View {
-  $type?: 'app.bsky.embed.external#view'
+  $type?: 'app.gndr.embed.external#view'
   external: ViewExternal
 }
 
@@ -64,7 +64,7 @@ export function validateView<V>(v: V) {
 }
 
 export interface ViewExternal {
-  $type?: 'app.bsky.embed.external#viewExternal'
+  $type?: 'app.gndr.embed.external#viewExternal'
   uri: string
   title: string
   description: string

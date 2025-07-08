@@ -9,15 +9,15 @@ import {
   is$typed as _is$typed,
   type OmitKey,
 } from '../../../../util'
-import type * as AppBskyActorDefs from '../actor/defs.js'
-import type * as AppBskyFeedDefs from '../feed/defs.js'
+import type * as AppGndrActorDefs from '../actor/defs.js'
+import type * as AppGndrFeedDefs from '../feed/defs.js'
 
 const is$typed = _is$typed,
   validate = _validate
-const id = 'app.bsky.unspecced.defs'
+const id = 'app.gndr.unspecced.defs'
 
 export interface SkeletonSearchPost {
-  $type?: 'app.bsky.unspecced.defs#skeletonSearchPost'
+  $type?: 'app.gndr.unspecced.defs#skeletonSearchPost'
   uri: string
 }
 
@@ -32,7 +32,7 @@ export function validateSkeletonSearchPost<V>(v: V) {
 }
 
 export interface SkeletonSearchActor {
-  $type?: 'app.bsky.unspecced.defs#skeletonSearchActor'
+  $type?: 'app.gndr.unspecced.defs#skeletonSearchActor'
   did: string
 }
 
@@ -47,7 +47,7 @@ export function validateSkeletonSearchActor<V>(v: V) {
 }
 
 export interface SkeletonSearchStarterPack {
-  $type?: 'app.bsky.unspecced.defs#skeletonSearchStarterPack'
+  $type?: 'app.gndr.unspecced.defs#skeletonSearchStarterPack'
   uri: string
 }
 
@@ -66,7 +66,7 @@ export function validateSkeletonSearchStarterPack<V>(v: V) {
 }
 
 export interface TrendingTopic {
-  $type?: 'app.bsky.unspecced.defs#trendingTopic'
+  $type?: 'app.gndr.unspecced.defs#trendingTopic'
   topic: string
   displayName?: string
   description?: string
@@ -84,7 +84,7 @@ export function validateTrendingTopic<V>(v: V) {
 }
 
 export interface SkeletonTrend {
-  $type?: 'app.bsky.unspecced.defs#skeletonTrend'
+  $type?: 'app.gndr.unspecced.defs#skeletonTrend'
   topic: string
   displayName: string
   link: string
@@ -106,7 +106,7 @@ export function validateSkeletonTrend<V>(v: V) {
 }
 
 export interface TrendView {
-  $type?: 'app.bsky.unspecced.defs#trendView'
+  $type?: 'app.gndr.unspecced.defs#trendView'
   topic: string
   displayName: string
   link: string
@@ -114,7 +114,7 @@ export interface TrendView {
   postCount: number
   status?: 'hot' | (string & {})
   category?: string
-  actors: AppBskyActorDefs.ProfileViewBasic[]
+  actors: AppGndrActorDefs.ProfileViewBasic[]
 }
 
 const hashTrendView = 'trendView'
@@ -128,8 +128,8 @@ export function validateTrendView<V>(v: V) {
 }
 
 export interface ThreadItemPost {
-  $type?: 'app.bsky.unspecced.defs#threadItemPost'
-  post: AppBskyFeedDefs.PostView
+  $type?: 'app.gndr.unspecced.defs#threadItemPost'
+  post: AppGndrFeedDefs.PostView
   /** This post has more parents that were not present in the response. This is just a boolean, without the number of parents. */
   moreParents: boolean
   /** This post has more replies that were not present in the response. This is a numeric value, which is best-effort and might not be accurate. */
@@ -153,7 +153,7 @@ export function validateThreadItemPost<V>(v: V) {
 }
 
 export interface ThreadItemNoUnauthenticated {
-  $type?: 'app.bsky.unspecced.defs#threadItemNoUnauthenticated'
+  $type?: 'app.gndr.unspecced.defs#threadItemNoUnauthenticated'
 }
 
 const hashThreadItemNoUnauthenticated = 'threadItemNoUnauthenticated'
@@ -171,7 +171,7 @@ export function validateThreadItemNoUnauthenticated<V>(v: V) {
 }
 
 export interface ThreadItemNotFound {
-  $type?: 'app.bsky.unspecced.defs#threadItemNotFound'
+  $type?: 'app.gndr.unspecced.defs#threadItemNotFound'
 }
 
 const hashThreadItemNotFound = 'threadItemNotFound'
@@ -185,8 +185,8 @@ export function validateThreadItemNotFound<V>(v: V) {
 }
 
 export interface ThreadItemBlocked {
-  $type?: 'app.bsky.unspecced.defs#threadItemBlocked'
-  author: AppBskyFeedDefs.BlockedAuthor
+  $type?: 'app.gndr.unspecced.defs#threadItemBlocked'
+  author: AppGndrFeedDefs.BlockedAuthor
 }
 
 const hashThreadItemBlocked = 'threadItemBlocked'

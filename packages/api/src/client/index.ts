@@ -100,139 +100,139 @@ import * as ComAtprotoTempAddReservedHandle from './types/com/atproto/temp/addRe
 import * as ComAtprotoTempCheckSignupQueue from './types/com/atproto/temp/checkSignupQueue.js'
 import * as ComAtprotoTempFetchLabels from './types/com/atproto/temp/fetchLabels.js'
 import * as ComAtprotoTempRequestPhoneVerification from './types/com/atproto/temp/requestPhoneVerification.js'
-import * as AppBskyActorDefs from './types/app/bsky/actor/defs.js'
-import * as AppBskyActorGetPreferences from './types/app/bsky/actor/getPreferences.js'
-import * as AppBskyActorGetProfile from './types/app/bsky/actor/getProfile.js'
-import * as AppBskyActorGetProfiles from './types/app/bsky/actor/getProfiles.js'
-import * as AppBskyActorGetSuggestions from './types/app/bsky/actor/getSuggestions.js'
-import * as AppBskyActorProfile from './types/app/bsky/actor/profile.js'
-import * as AppBskyActorPutPreferences from './types/app/bsky/actor/putPreferences.js'
-import * as AppBskyActorSearchActors from './types/app/bsky/actor/searchActors.js'
-import * as AppBskyActorSearchActorsTypeahead from './types/app/bsky/actor/searchActorsTypeahead.js'
-import * as AppBskyActorStatus from './types/app/bsky/actor/status.js'
-import * as AppBskyEmbedDefs from './types/app/bsky/embed/defs.js'
-import * as AppBskyEmbedExternal from './types/app/bsky/embed/external.js'
-import * as AppBskyEmbedImages from './types/app/bsky/embed/images.js'
-import * as AppBskyEmbedRecord from './types/app/bsky/embed/record.js'
-import * as AppBskyEmbedRecordWithMedia from './types/app/bsky/embed/recordWithMedia.js'
-import * as AppBskyEmbedVideo from './types/app/bsky/embed/video.js'
-import * as AppBskyFeedDefs from './types/app/bsky/feed/defs.js'
-import * as AppBskyFeedDescribeFeedGenerator from './types/app/bsky/feed/describeFeedGenerator.js'
-import * as AppBskyFeedGenerator from './types/app/bsky/feed/generator.js'
-import * as AppBskyFeedGetActorFeeds from './types/app/bsky/feed/getActorFeeds.js'
-import * as AppBskyFeedGetActorLikes from './types/app/bsky/feed/getActorLikes.js'
-import * as AppBskyFeedGetAuthorFeed from './types/app/bsky/feed/getAuthorFeed.js'
-import * as AppBskyFeedGetFeed from './types/app/bsky/feed/getFeed.js'
-import * as AppBskyFeedGetFeedGenerator from './types/app/bsky/feed/getFeedGenerator.js'
-import * as AppBskyFeedGetFeedGenerators from './types/app/bsky/feed/getFeedGenerators.js'
-import * as AppBskyFeedGetFeedSkeleton from './types/app/bsky/feed/getFeedSkeleton.js'
-import * as AppBskyFeedGetLikes from './types/app/bsky/feed/getLikes.js'
-import * as AppBskyFeedGetListFeed from './types/app/bsky/feed/getListFeed.js'
-import * as AppBskyFeedGetPosts from './types/app/bsky/feed/getPosts.js'
-import * as AppBskyFeedGetPostThread from './types/app/bsky/feed/getPostThread.js'
-import * as AppBskyFeedGetQuotes from './types/app/bsky/feed/getQuotes.js'
-import * as AppBskyFeedGetRepostedBy from './types/app/bsky/feed/getRepostedBy.js'
-import * as AppBskyFeedGetSuggestedFeeds from './types/app/bsky/feed/getSuggestedFeeds.js'
-import * as AppBskyFeedGetTimeline from './types/app/bsky/feed/getTimeline.js'
-import * as AppBskyFeedLike from './types/app/bsky/feed/like.js'
-import * as AppBskyFeedPost from './types/app/bsky/feed/post.js'
-import * as AppBskyFeedPostgate from './types/app/bsky/feed/postgate.js'
-import * as AppBskyFeedRepost from './types/app/bsky/feed/repost.js'
-import * as AppBskyFeedSearchPosts from './types/app/bsky/feed/searchPosts.js'
-import * as AppBskyFeedSendInteractions from './types/app/bsky/feed/sendInteractions.js'
-import * as AppBskyFeedThreadgate from './types/app/bsky/feed/threadgate.js'
-import * as AppBskyGraphBlock from './types/app/bsky/graph/block.js'
-import * as AppBskyGraphDefs from './types/app/bsky/graph/defs.js'
-import * as AppBskyGraphFollow from './types/app/bsky/graph/follow.js'
-import * as AppBskyGraphGetActorStarterPacks from './types/app/bsky/graph/getActorStarterPacks.js'
-import * as AppBskyGraphGetBlocks from './types/app/bsky/graph/getBlocks.js'
-import * as AppBskyGraphGetFollowers from './types/app/bsky/graph/getFollowers.js'
-import * as AppBskyGraphGetFollows from './types/app/bsky/graph/getFollows.js'
-import * as AppBskyGraphGetKnownFollowers from './types/app/bsky/graph/getKnownFollowers.js'
-import * as AppBskyGraphGetList from './types/app/bsky/graph/getList.js'
-import * as AppBskyGraphGetListBlocks from './types/app/bsky/graph/getListBlocks.js'
-import * as AppBskyGraphGetListMutes from './types/app/bsky/graph/getListMutes.js'
-import * as AppBskyGraphGetLists from './types/app/bsky/graph/getLists.js'
-import * as AppBskyGraphGetMutes from './types/app/bsky/graph/getMutes.js'
-import * as AppBskyGraphGetRelationships from './types/app/bsky/graph/getRelationships.js'
-import * as AppBskyGraphGetStarterPack from './types/app/bsky/graph/getStarterPack.js'
-import * as AppBskyGraphGetStarterPacks from './types/app/bsky/graph/getStarterPacks.js'
-import * as AppBskyGraphGetSuggestedFollowsByActor from './types/app/bsky/graph/getSuggestedFollowsByActor.js'
-import * as AppBskyGraphList from './types/app/bsky/graph/list.js'
-import * as AppBskyGraphListblock from './types/app/bsky/graph/listblock.js'
-import * as AppBskyGraphListitem from './types/app/bsky/graph/listitem.js'
-import * as AppBskyGraphMuteActor from './types/app/bsky/graph/muteActor.js'
-import * as AppBskyGraphMuteActorList from './types/app/bsky/graph/muteActorList.js'
-import * as AppBskyGraphMuteThread from './types/app/bsky/graph/muteThread.js'
-import * as AppBskyGraphSearchStarterPacks from './types/app/bsky/graph/searchStarterPacks.js'
-import * as AppBskyGraphStarterpack from './types/app/bsky/graph/starterpack.js'
-import * as AppBskyGraphUnmuteActor from './types/app/bsky/graph/unmuteActor.js'
-import * as AppBskyGraphUnmuteActorList from './types/app/bsky/graph/unmuteActorList.js'
-import * as AppBskyGraphUnmuteThread from './types/app/bsky/graph/unmuteThread.js'
-import * as AppBskyGraphVerification from './types/app/bsky/graph/verification.js'
-import * as AppBskyLabelerDefs from './types/app/bsky/labeler/defs.js'
-import * as AppBskyLabelerGetServices from './types/app/bsky/labeler/getServices.js'
-import * as AppBskyLabelerService from './types/app/bsky/labeler/service.js'
-import * as AppBskyNotificationDeclaration from './types/app/bsky/notification/declaration.js'
-import * as AppBskyNotificationDefs from './types/app/bsky/notification/defs.js'
-import * as AppBskyNotificationGetPreferences from './types/app/bsky/notification/getPreferences.js'
-import * as AppBskyNotificationGetUnreadCount from './types/app/bsky/notification/getUnreadCount.js'
-import * as AppBskyNotificationListActivitySubscriptions from './types/app/bsky/notification/listActivitySubscriptions.js'
-import * as AppBskyNotificationListNotifications from './types/app/bsky/notification/listNotifications.js'
-import * as AppBskyNotificationPutActivitySubscription from './types/app/bsky/notification/putActivitySubscription.js'
-import * as AppBskyNotificationPutPreferences from './types/app/bsky/notification/putPreferences.js'
-import * as AppBskyNotificationPutPreferencesV2 from './types/app/bsky/notification/putPreferencesV2.js'
-import * as AppBskyNotificationRegisterPush from './types/app/bsky/notification/registerPush.js'
-import * as AppBskyNotificationUpdateSeen from './types/app/bsky/notification/updateSeen.js'
-import * as AppBskyRichtextFacet from './types/app/bsky/richtext/facet.js'
-import * as AppBskyUnspeccedDefs from './types/app/bsky/unspecced/defs.js'
-import * as AppBskyUnspeccedGetConfig from './types/app/bsky/unspecced/getConfig.js'
-import * as AppBskyUnspeccedGetPopularFeedGenerators from './types/app/bsky/unspecced/getPopularFeedGenerators.js'
-import * as AppBskyUnspeccedGetPostThreadOtherV2 from './types/app/bsky/unspecced/getPostThreadOtherV2.js'
-import * as AppBskyUnspeccedGetPostThreadV2 from './types/app/bsky/unspecced/getPostThreadV2.js'
-import * as AppBskyUnspeccedGetSuggestedFeeds from './types/app/bsky/unspecced/getSuggestedFeeds.js'
-import * as AppBskyUnspeccedGetSuggestedFeedsSkeleton from './types/app/bsky/unspecced/getSuggestedFeedsSkeleton.js'
-import * as AppBskyUnspeccedGetSuggestedStarterPacks from './types/app/bsky/unspecced/getSuggestedStarterPacks.js'
-import * as AppBskyUnspeccedGetSuggestedStarterPacksSkeleton from './types/app/bsky/unspecced/getSuggestedStarterPacksSkeleton.js'
-import * as AppBskyUnspeccedGetSuggestedUsers from './types/app/bsky/unspecced/getSuggestedUsers.js'
-import * as AppBskyUnspeccedGetSuggestedUsersSkeleton from './types/app/bsky/unspecced/getSuggestedUsersSkeleton.js'
-import * as AppBskyUnspeccedGetSuggestionsSkeleton from './types/app/bsky/unspecced/getSuggestionsSkeleton.js'
-import * as AppBskyUnspeccedGetTaggedSuggestions from './types/app/bsky/unspecced/getTaggedSuggestions.js'
-import * as AppBskyUnspeccedGetTrendingTopics from './types/app/bsky/unspecced/getTrendingTopics.js'
-import * as AppBskyUnspeccedGetTrends from './types/app/bsky/unspecced/getTrends.js'
-import * as AppBskyUnspeccedGetTrendsSkeleton from './types/app/bsky/unspecced/getTrendsSkeleton.js'
-import * as AppBskyUnspeccedSearchActorsSkeleton from './types/app/bsky/unspecced/searchActorsSkeleton.js'
-import * as AppBskyUnspeccedSearchPostsSkeleton from './types/app/bsky/unspecced/searchPostsSkeleton.js'
-import * as AppBskyUnspeccedSearchStarterPacksSkeleton from './types/app/bsky/unspecced/searchStarterPacksSkeleton.js'
-import * as AppBskyVideoDefs from './types/app/bsky/video/defs.js'
-import * as AppBskyVideoGetJobStatus from './types/app/bsky/video/getJobStatus.js'
-import * as AppBskyVideoGetUploadLimits from './types/app/bsky/video/getUploadLimits.js'
-import * as AppBskyVideoUploadVideo from './types/app/bsky/video/uploadVideo.js'
-import * as ChatBskyActorDeclaration from './types/chat/bsky/actor/declaration.js'
-import * as ChatBskyActorDefs from './types/chat/bsky/actor/defs.js'
-import * as ChatBskyActorDeleteAccount from './types/chat/bsky/actor/deleteAccount.js'
-import * as ChatBskyActorExportAccountData from './types/chat/bsky/actor/exportAccountData.js'
-import * as ChatBskyConvoAcceptConvo from './types/chat/bsky/convo/acceptConvo.js'
-import * as ChatBskyConvoAddReaction from './types/chat/bsky/convo/addReaction.js'
-import * as ChatBskyConvoDefs from './types/chat/bsky/convo/defs.js'
-import * as ChatBskyConvoDeleteMessageForSelf from './types/chat/bsky/convo/deleteMessageForSelf.js'
-import * as ChatBskyConvoGetConvo from './types/chat/bsky/convo/getConvo.js'
-import * as ChatBskyConvoGetConvoAvailability from './types/chat/bsky/convo/getConvoAvailability.js'
-import * as ChatBskyConvoGetConvoForMembers from './types/chat/bsky/convo/getConvoForMembers.js'
-import * as ChatBskyConvoGetLog from './types/chat/bsky/convo/getLog.js'
-import * as ChatBskyConvoGetMessages from './types/chat/bsky/convo/getMessages.js'
-import * as ChatBskyConvoLeaveConvo from './types/chat/bsky/convo/leaveConvo.js'
-import * as ChatBskyConvoListConvos from './types/chat/bsky/convo/listConvos.js'
-import * as ChatBskyConvoMuteConvo from './types/chat/bsky/convo/muteConvo.js'
-import * as ChatBskyConvoRemoveReaction from './types/chat/bsky/convo/removeReaction.js'
-import * as ChatBskyConvoSendMessage from './types/chat/bsky/convo/sendMessage.js'
-import * as ChatBskyConvoSendMessageBatch from './types/chat/bsky/convo/sendMessageBatch.js'
-import * as ChatBskyConvoUnmuteConvo from './types/chat/bsky/convo/unmuteConvo.js'
-import * as ChatBskyConvoUpdateAllRead from './types/chat/bsky/convo/updateAllRead.js'
-import * as ChatBskyConvoUpdateRead from './types/chat/bsky/convo/updateRead.js'
-import * as ChatBskyModerationGetActorMetadata from './types/chat/bsky/moderation/getActorMetadata.js'
-import * as ChatBskyModerationGetMessageContext from './types/chat/bsky/moderation/getMessageContext.js'
-import * as ChatBskyModerationUpdateActorAccess from './types/chat/bsky/moderation/updateActorAccess.js'
+import * as AppGndrActorDefs from './types/app/gndr/actor/defs.js'
+import * as AppGndrActorGetPreferences from './types/app/gndr/actor/getPreferences.js'
+import * as AppGndrActorGetProfile from './types/app/gndr/actor/getProfile.js'
+import * as AppGndrActorGetProfiles from './types/app/gndr/actor/getProfiles.js'
+import * as AppGndrActorGetSuggestions from './types/app/gndr/actor/getSuggestions.js'
+import * as AppGndrActorProfile from './types/app/gndr/actor/profile.js'
+import * as AppGndrActorPutPreferences from './types/app/gndr/actor/putPreferences.js'
+import * as AppGndrActorSearchActors from './types/app/gndr/actor/searchActors.js'
+import * as AppGndrActorSearchActorsTypeahead from './types/app/gndr/actor/searchActorsTypeahead.js'
+import * as AppGndrActorStatus from './types/app/gndr/actor/status.js'
+import * as AppGndrEmbedDefs from './types/app/gndr/embed/defs.js'
+import * as AppGndrEmbedExternal from './types/app/gndr/embed/external.js'
+import * as AppGndrEmbedImages from './types/app/gndr/embed/images.js'
+import * as AppGndrEmbedRecord from './types/app/gndr/embed/record.js'
+import * as AppGndrEmbedRecordWithMedia from './types/app/gndr/embed/recordWithMedia.js'
+import * as AppGndrEmbedVideo from './types/app/gndr/embed/video.js'
+import * as AppGndrFeedDefs from './types/app/gndr/feed/defs.js'
+import * as AppGndrFeedDescribeFeedGenerator from './types/app/gndr/feed/describeFeedGenerator.js'
+import * as AppGndrFeedGenerator from './types/app/gndr/feed/generator.js'
+import * as AppGndrFeedGetActorFeeds from './types/app/gndr/feed/getActorFeeds.js'
+import * as AppGndrFeedGetActorLikes from './types/app/gndr/feed/getActorLikes.js'
+import * as AppGndrFeedGetAuthorFeed from './types/app/gndr/feed/getAuthorFeed.js'
+import * as AppGndrFeedGetFeed from './types/app/gndr/feed/getFeed.js'
+import * as AppGndrFeedGetFeedGenerator from './types/app/gndr/feed/getFeedGenerator.js'
+import * as AppGndrFeedGetFeedGenerators from './types/app/gndr/feed/getFeedGenerators.js'
+import * as AppGndrFeedGetFeedSkeleton from './types/app/gndr/feed/getFeedSkeleton.js'
+import * as AppGndrFeedGetLikes from './types/app/gndr/feed/getLikes.js'
+import * as AppGndrFeedGetListFeed from './types/app/gndr/feed/getListFeed.js'
+import * as AppGndrFeedGetPosts from './types/app/gndr/feed/getPosts.js'
+import * as AppGndrFeedGetPostThread from './types/app/gndr/feed/getPostThread.js'
+import * as AppGndrFeedGetQuotes from './types/app/gndr/feed/getQuotes.js'
+import * as AppGndrFeedGetRepostedBy from './types/app/gndr/feed/getRepostedBy.js'
+import * as AppGndrFeedGetSuggestedFeeds from './types/app/gndr/feed/getSuggestedFeeds.js'
+import * as AppGndrFeedGetTimeline from './types/app/gndr/feed/getTimeline.js'
+import * as AppGndrFeedLike from './types/app/gndr/feed/like.js'
+import * as AppGndrFeedPost from './types/app/gndr/feed/post.js'
+import * as AppGndrFeedPostgate from './types/app/gndr/feed/postgate.js'
+import * as AppGndrFeedRepost from './types/app/gndr/feed/repost.js'
+import * as AppGndrFeedSearchPosts from './types/app/gndr/feed/searchPosts.js'
+import * as AppGndrFeedSendInteractions from './types/app/gndr/feed/sendInteractions.js'
+import * as AppGndrFeedThreadgate from './types/app/gndr/feed/threadgate.js'
+import * as AppGndrGraphBlock from './types/app/gndr/graph/block.js'
+import * as AppGndrGraphDefs from './types/app/gndr/graph/defs.js'
+import * as AppGndrGraphFollow from './types/app/gndr/graph/follow.js'
+import * as AppGndrGraphGetActorStarterPacks from './types/app/gndr/graph/getActorStarterPacks.js'
+import * as AppGndrGraphGetBlocks from './types/app/gndr/graph/getBlocks.js'
+import * as AppGndrGraphGetFollowers from './types/app/gndr/graph/getFollowers.js'
+import * as AppGndrGraphGetFollows from './types/app/gndr/graph/getFollows.js'
+import * as AppGndrGraphGetKnownFollowers from './types/app/gndr/graph/getKnownFollowers.js'
+import * as AppGndrGraphGetList from './types/app/gndr/graph/getList.js'
+import * as AppGndrGraphGetListBlocks from './types/app/gndr/graph/getListBlocks.js'
+import * as AppGndrGraphGetListMutes from './types/app/gndr/graph/getListMutes.js'
+import * as AppGndrGraphGetLists from './types/app/gndr/graph/getLists.js'
+import * as AppGndrGraphGetMutes from './types/app/gndr/graph/getMutes.js'
+import * as AppGndrGraphGetRelationships from './types/app/gndr/graph/getRelationships.js'
+import * as AppGndrGraphGetStarterPack from './types/app/gndr/graph/getStarterPack.js'
+import * as AppGndrGraphGetStarterPacks from './types/app/gndr/graph/getStarterPacks.js'
+import * as AppGndrGraphGetSuggestedFollowsByActor from './types/app/gndr/graph/getSuggestedFollowsByActor.js'
+import * as AppGndrGraphList from './types/app/gndr/graph/list.js'
+import * as AppGndrGraphListblock from './types/app/gndr/graph/listblock.js'
+import * as AppBskyGraphListitem from './types/app/gndr/graph/listitem.js'
+import * as AppBskyGraphMuteActor from './types/app/gndr/graph/muteActor.js'
+import * as AppBskyGraphMuteActorList from './types/app/gndr/graph/muteActorList.js'
+import * as AppBskyGraphMuteThread from './types/app/gndr/graph/muteThread.js'
+import * as AppBskyGraphSearchStarterPacks from './types/app/gndr/graph/searchStarterPacks.js'
+import * as AppBskyGraphStarterpack from './types/app/gndr/graph/starterpack.js'
+import * as AppBskyGraphUnmuteActor from './types/app/gndr/graph/unmuteActor.js'
+import * as AppBskyGraphUnmuteActorList from './types/app/gndr/graph/unmuteActorList.js'
+import * as AppBskyGraphUnmuteThread from './types/app/gndr/graph/unmuteThread.js'
+import * as AppBskyGraphVerification from './types/app/gndr/graph/verification.js'
+import * as AppBskyLabelerDefs from './types/app/gndr/labeler/defs.js'
+import * as AppBskyLabelerGetServices from './types/app/gndr/labeler/getServices.js'
+import * as AppBskyLabelerService from './types/app/gndr/labeler/service.js'
+import * as AppBskyNotificationDeclaration from './types/app/gndr/notification/declaration.js'
+import * as AppBskyNotificationDefs from './types/app/gndr/notification/defs.js'
+import * as AppBskyNotificationGetPreferences from './types/app/gndr/notification/getPreferences.js'
+import * as AppBskyNotificationGetUnreadCount from './types/app/gndr/notification/getUnreadCount.js'
+import * as AppBskyNotificationListActivitySubscriptions from './types/app/gndr/notification/listActivitySubscriptions.js'
+import * as AppBskyNotificationListNotifications from './types/app/gndr/notification/listNotifications.js'
+import * as AppBskyNotificationPutActivitySubscription from './types/app/gndr/notification/putActivitySubscription.js'
+import * as AppBskyNotificationPutPreferences from './types/app/gndr/notification/putPreferences.js'
+import * as AppBskyNotificationPutPreferencesV2 from './types/app/gndr/notification/putPreferencesV2.js'
+import * as AppBskyNotificationRegisterPush from './types/app/gndr/notification/registerPush.js'
+import * as AppBskyNotificationUpdateSeen from './types/app/gndr/notification/updateSeen.js'
+import * as AppBskyRichtextFacet from './types/app/gndr/richtext/facet.js'
+import * as AppBskyUnspeccedDefs from './types/app/gndr/unspecced/defs.js'
+import * as AppBskyUnspeccedGetConfig from './types/app/gndr/unspecced/getConfig.js'
+import * as AppBskyUnspeccedGetPopularFeedGenerators from './types/app/gndr/unspecced/getPopularFeedGenerators.js'
+import * as AppBskyUnspeccedGetPostThreadOtherV2 from './types/app/gndr/unspecced/getPostThreadOtherV2.js'
+import * as AppBskyUnspeccedGetPostThreadV2 from './types/app/gndr/unspecced/getPostThreadV2.js'
+import * as AppBskyUnspeccedGetSuggestedFeeds from './types/app/gndr/unspecced/getSuggestedFeeds.js'
+import * as AppBskyUnspeccedGetSuggestedFeedsSkeleton from './types/app/gndr/unspecced/getSuggestedFeedsSkeleton.js'
+import * as AppBskyUnspeccedGetSuggestedStarterPacks from './types/app/gndr/unspecced/getSuggestedStarterPacks.js'
+import * as AppBskyUnspeccedGetSuggestedStarterPacksSkeleton from './types/app/gndr/unspecced/getSuggestedStarterPacksSkeleton.js'
+import * as AppBskyUnspeccedGetSuggestedUsers from './types/app/gndr/unspecced/getSuggestedUsers.js'
+import * as AppBskyUnspeccedGetSuggestedUsersSkeleton from './types/app/gndr/unspecced/getSuggestedUsersSkeleton.js'
+import * as AppBskyUnspeccedGetSuggestionsSkeleton from './types/app/gndr/unspecced/getSuggestionsSkeleton.js'
+import * as AppBskyUnspeccedGetTaggedSuggestions from './types/app/gndr/unspecced/getTaggedSuggestions.js'
+import * as AppBskyUnspeccedGetTrendingTopics from './types/app/gndr/unspecced/getTrendingTopics.js'
+import * as AppBskyUnspeccedGetTrends from './types/app/gndr/unspecced/getTrends.js'
+import * as AppBskyUnspeccedGetTrendsSkeleton from './types/app/gndr/unspecced/getTrendsSkeleton.js'
+import * as AppBskyUnspeccedSearchActorsSkeleton from './types/app/gndr/unspecced/searchActorsSkeleton.js'
+import * as AppBskyUnspeccedSearchPostsSkeleton from './types/app/gndr/unspecced/searchPostsSkeleton.js'
+import * as AppBskyUnspeccedSearchStarterPacksSkeleton from './types/app/gndr/unspecced/searchStarterPacksSkeleton.js'
+import * as AppBskyVideoDefs from './types/app/gndr/video/defs.js'
+import * as AppBskyVideoGetJobStatus from './types/app/gndr/video/getJobStatus.js'
+import * as AppBskyVideoGetUploadLimits from './types/app/gndr/video/getUploadLimits.js'
+import * as AppBskyVideoUploadVideo from './types/app/gndr/video/uploadVideo.js'
+import * as ChatBskyActorDeclaration from './types/chat/gndr/actor/declaration.js'
+import * as ChatBskyActorDefs from './types/chat/gndr/actor/defs.js'
+import * as ChatBskyActorDeleteAccount from './types/chat/gndr/actor/deleteAccount.js'
+import * as ChatBskyActorExportAccountData from './types/chat/gndr/actor/exportAccountData.js'
+import * as ChatBskyConvoAcceptConvo from './types/chat/gndr/convo/acceptConvo.js'
+import * as ChatBskyConvoAddReaction from './types/chat/gndr/convo/addReaction.js'
+import * as ChatBskyConvoDefs from './types/chat/gndr/convo/defs.js'
+import * as ChatBskyConvoDeleteMessageForSelf from './types/chat/gndr/convo/deleteMessageForSelf.js'
+import * as ChatBskyConvoGetConvo from './types/chat/gndr/convo/getConvo.js'
+import * as ChatBskyConvoGetConvoAvailability from './types/chat/gndr/convo/getConvoAvailability.js'
+import * as ChatBskyConvoGetConvoForMembers from './types/chat/gndr/convo/getConvoForMembers.js'
+import * as ChatBskyConvoGetLog from './types/chat/gndr/convo/getLog.js'
+import * as ChatBskyConvoGetMessages from './types/chat/gndr/convo/getMessages.js'
+import * as ChatBskyConvoLeaveConvo from './types/chat/gndr/convo/leaveConvo.js'
+import * as ChatBskyConvoListConvos from './types/chat/gndr/convo/listConvos.js'
+import * as ChatBskyConvoMuteConvo from './types/chat/gndr/convo/muteConvo.js'
+import * as ChatBskyConvoRemoveReaction from './types/chat/gndr/convo/removeReaction.js'
+import * as ChatBskyConvoSendMessage from './types/chat/gndr/convo/sendMessage.js'
+import * as ChatBskyConvoSendMessageBatch from './types/chat/gndr/convo/sendMessageBatch.js'
+import * as ChatBskyConvoUnmuteConvo from './types/chat/gndr/convo/unmuteConvo.js'
+import * as ChatBskyConvoUpdateAllRead from './types/chat/gndr/convo/updateAllRead.js'
+import * as ChatBskyConvoUpdateRead from './types/chat/gndr/convo/updateRead.js'
+import * as ChatBskyModerationGetActorMetadata from './types/chat/gndr/moderation/getActorMetadata.js'
+import * as ChatBskyModerationGetMessageContext from './types/chat/gndr/moderation/getMessageContext.js'
+import * as ChatBskyModerationUpdateActorAccess from './types/chat/gndr/moderation/updateActorAccess.js'
 import * as ToolsOzoneCommunicationCreateTemplate from './types/tools/ozone/communication/createTemplate.js'
 import * as ToolsOzoneCommunicationDefs from './types/tools/ozone/communication/defs.js'
 import * as ToolsOzoneCommunicationDeleteTemplate from './types/tools/ozone/communication/deleteTemplate.js'
@@ -374,139 +374,139 @@ export * as ComAtprotoTempAddReservedHandle from './types/com/atproto/temp/addRe
 export * as ComAtprotoTempCheckSignupQueue from './types/com/atproto/temp/checkSignupQueue.js'
 export * as ComAtprotoTempFetchLabels from './types/com/atproto/temp/fetchLabels.js'
 export * as ComAtprotoTempRequestPhoneVerification from './types/com/atproto/temp/requestPhoneVerification.js'
-export * as AppBskyActorDefs from './types/app/bsky/actor/defs.js'
-export * as AppBskyActorGetPreferences from './types/app/bsky/actor/getPreferences.js'
-export * as AppBskyActorGetProfile from './types/app/bsky/actor/getProfile.js'
-export * as AppBskyActorGetProfiles from './types/app/bsky/actor/getProfiles.js'
-export * as AppBskyActorGetSuggestions from './types/app/bsky/actor/getSuggestions.js'
-export * as AppBskyActorProfile from './types/app/bsky/actor/profile.js'
-export * as AppBskyActorPutPreferences from './types/app/bsky/actor/putPreferences.js'
-export * as AppBskyActorSearchActors from './types/app/bsky/actor/searchActors.js'
-export * as AppBskyActorSearchActorsTypeahead from './types/app/bsky/actor/searchActorsTypeahead.js'
-export * as AppBskyActorStatus from './types/app/bsky/actor/status.js'
-export * as AppBskyEmbedDefs from './types/app/bsky/embed/defs.js'
-export * as AppBskyEmbedExternal from './types/app/bsky/embed/external.js'
-export * as AppBskyEmbedImages from './types/app/bsky/embed/images.js'
-export * as AppBskyEmbedRecord from './types/app/bsky/embed/record.js'
-export * as AppBskyEmbedRecordWithMedia from './types/app/bsky/embed/recordWithMedia.js'
-export * as AppBskyEmbedVideo from './types/app/bsky/embed/video.js'
-export * as AppBskyFeedDefs from './types/app/bsky/feed/defs.js'
-export * as AppBskyFeedDescribeFeedGenerator from './types/app/bsky/feed/describeFeedGenerator.js'
-export * as AppBskyFeedGenerator from './types/app/bsky/feed/generator.js'
-export * as AppBskyFeedGetActorFeeds from './types/app/bsky/feed/getActorFeeds.js'
-export * as AppBskyFeedGetActorLikes from './types/app/bsky/feed/getActorLikes.js'
-export * as AppBskyFeedGetAuthorFeed from './types/app/bsky/feed/getAuthorFeed.js'
-export * as AppBskyFeedGetFeed from './types/app/bsky/feed/getFeed.js'
-export * as AppBskyFeedGetFeedGenerator from './types/app/bsky/feed/getFeedGenerator.js'
-export * as AppBskyFeedGetFeedGenerators from './types/app/bsky/feed/getFeedGenerators.js'
-export * as AppBskyFeedGetFeedSkeleton from './types/app/bsky/feed/getFeedSkeleton.js'
-export * as AppBskyFeedGetLikes from './types/app/bsky/feed/getLikes.js'
-export * as AppBskyFeedGetListFeed from './types/app/bsky/feed/getListFeed.js'
-export * as AppBskyFeedGetPosts from './types/app/bsky/feed/getPosts.js'
-export * as AppBskyFeedGetPostThread from './types/app/bsky/feed/getPostThread.js'
-export * as AppBskyFeedGetQuotes from './types/app/bsky/feed/getQuotes.js'
-export * as AppBskyFeedGetRepostedBy from './types/app/bsky/feed/getRepostedBy.js'
-export * as AppBskyFeedGetSuggestedFeeds from './types/app/bsky/feed/getSuggestedFeeds.js'
-export * as AppBskyFeedGetTimeline from './types/app/bsky/feed/getTimeline.js'
-export * as AppBskyFeedLike from './types/app/bsky/feed/like.js'
-export * as AppBskyFeedPost from './types/app/bsky/feed/post.js'
-export * as AppBskyFeedPostgate from './types/app/bsky/feed/postgate.js'
-export * as AppBskyFeedRepost from './types/app/bsky/feed/repost.js'
-export * as AppBskyFeedSearchPosts from './types/app/bsky/feed/searchPosts.js'
-export * as AppBskyFeedSendInteractions from './types/app/bsky/feed/sendInteractions.js'
-export * as AppBskyFeedThreadgate from './types/app/bsky/feed/threadgate.js'
-export * as AppBskyGraphBlock from './types/app/bsky/graph/block.js'
-export * as AppBskyGraphDefs from './types/app/bsky/graph/defs.js'
-export * as AppBskyGraphFollow from './types/app/bsky/graph/follow.js'
-export * as AppBskyGraphGetActorStarterPacks from './types/app/bsky/graph/getActorStarterPacks.js'
-export * as AppBskyGraphGetBlocks from './types/app/bsky/graph/getBlocks.js'
-export * as AppBskyGraphGetFollowers from './types/app/bsky/graph/getFollowers.js'
-export * as AppBskyGraphGetFollows from './types/app/bsky/graph/getFollows.js'
-export * as AppBskyGraphGetKnownFollowers from './types/app/bsky/graph/getKnownFollowers.js'
-export * as AppBskyGraphGetList from './types/app/bsky/graph/getList.js'
-export * as AppBskyGraphGetListBlocks from './types/app/bsky/graph/getListBlocks.js'
-export * as AppBskyGraphGetListMutes from './types/app/bsky/graph/getListMutes.js'
-export * as AppBskyGraphGetLists from './types/app/bsky/graph/getLists.js'
-export * as AppBskyGraphGetMutes from './types/app/bsky/graph/getMutes.js'
-export * as AppBskyGraphGetRelationships from './types/app/bsky/graph/getRelationships.js'
-export * as AppBskyGraphGetStarterPack from './types/app/bsky/graph/getStarterPack.js'
-export * as AppBskyGraphGetStarterPacks from './types/app/bsky/graph/getStarterPacks.js'
-export * as AppBskyGraphGetSuggestedFollowsByActor from './types/app/bsky/graph/getSuggestedFollowsByActor.js'
-export * as AppBskyGraphList from './types/app/bsky/graph/list.js'
-export * as AppBskyGraphListblock from './types/app/bsky/graph/listblock.js'
-export * as AppBskyGraphListitem from './types/app/bsky/graph/listitem.js'
-export * as AppBskyGraphMuteActor from './types/app/bsky/graph/muteActor.js'
-export * as AppBskyGraphMuteActorList from './types/app/bsky/graph/muteActorList.js'
-export * as AppBskyGraphMuteThread from './types/app/bsky/graph/muteThread.js'
-export * as AppBskyGraphSearchStarterPacks from './types/app/bsky/graph/searchStarterPacks.js'
-export * as AppBskyGraphStarterpack from './types/app/bsky/graph/starterpack.js'
-export * as AppBskyGraphUnmuteActor from './types/app/bsky/graph/unmuteActor.js'
-export * as AppBskyGraphUnmuteActorList from './types/app/bsky/graph/unmuteActorList.js'
-export * as AppBskyGraphUnmuteThread from './types/app/bsky/graph/unmuteThread.js'
-export * as AppBskyGraphVerification from './types/app/bsky/graph/verification.js'
-export * as AppBskyLabelerDefs from './types/app/bsky/labeler/defs.js'
-export * as AppBskyLabelerGetServices from './types/app/bsky/labeler/getServices.js'
-export * as AppBskyLabelerService from './types/app/bsky/labeler/service.js'
-export * as AppBskyNotificationDeclaration from './types/app/bsky/notification/declaration.js'
-export * as AppBskyNotificationDefs from './types/app/bsky/notification/defs.js'
-export * as AppBskyNotificationGetPreferences from './types/app/bsky/notification/getPreferences.js'
-export * as AppBskyNotificationGetUnreadCount from './types/app/bsky/notification/getUnreadCount.js'
-export * as AppBskyNotificationListActivitySubscriptions from './types/app/bsky/notification/listActivitySubscriptions.js'
-export * as AppBskyNotificationListNotifications from './types/app/bsky/notification/listNotifications.js'
-export * as AppBskyNotificationPutActivitySubscription from './types/app/bsky/notification/putActivitySubscription.js'
-export * as AppBskyNotificationPutPreferences from './types/app/bsky/notification/putPreferences.js'
-export * as AppBskyNotificationPutPreferencesV2 from './types/app/bsky/notification/putPreferencesV2.js'
-export * as AppBskyNotificationRegisterPush from './types/app/bsky/notification/registerPush.js'
-export * as AppBskyNotificationUpdateSeen from './types/app/bsky/notification/updateSeen.js'
-export * as AppBskyRichtextFacet from './types/app/bsky/richtext/facet.js'
-export * as AppBskyUnspeccedDefs from './types/app/bsky/unspecced/defs.js'
-export * as AppBskyUnspeccedGetConfig from './types/app/bsky/unspecced/getConfig.js'
-export * as AppBskyUnspeccedGetPopularFeedGenerators from './types/app/bsky/unspecced/getPopularFeedGenerators.js'
-export * as AppBskyUnspeccedGetPostThreadOtherV2 from './types/app/bsky/unspecced/getPostThreadOtherV2.js'
-export * as AppBskyUnspeccedGetPostThreadV2 from './types/app/bsky/unspecced/getPostThreadV2.js'
-export * as AppBskyUnspeccedGetSuggestedFeeds from './types/app/bsky/unspecced/getSuggestedFeeds.js'
-export * as AppBskyUnspeccedGetSuggestedFeedsSkeleton from './types/app/bsky/unspecced/getSuggestedFeedsSkeleton.js'
-export * as AppBskyUnspeccedGetSuggestedStarterPacks from './types/app/bsky/unspecced/getSuggestedStarterPacks.js'
-export * as AppBskyUnspeccedGetSuggestedStarterPacksSkeleton from './types/app/bsky/unspecced/getSuggestedStarterPacksSkeleton.js'
-export * as AppBskyUnspeccedGetSuggestedUsers from './types/app/bsky/unspecced/getSuggestedUsers.js'
-export * as AppBskyUnspeccedGetSuggestedUsersSkeleton from './types/app/bsky/unspecced/getSuggestedUsersSkeleton.js'
-export * as AppBskyUnspeccedGetSuggestionsSkeleton from './types/app/bsky/unspecced/getSuggestionsSkeleton.js'
-export * as AppBskyUnspeccedGetTaggedSuggestions from './types/app/bsky/unspecced/getTaggedSuggestions.js'
-export * as AppBskyUnspeccedGetTrendingTopics from './types/app/bsky/unspecced/getTrendingTopics.js'
-export * as AppBskyUnspeccedGetTrends from './types/app/bsky/unspecced/getTrends.js'
-export * as AppBskyUnspeccedGetTrendsSkeleton from './types/app/bsky/unspecced/getTrendsSkeleton.js'
-export * as AppBskyUnspeccedSearchActorsSkeleton from './types/app/bsky/unspecced/searchActorsSkeleton.js'
-export * as AppBskyUnspeccedSearchPostsSkeleton from './types/app/bsky/unspecced/searchPostsSkeleton.js'
-export * as AppBskyUnspeccedSearchStarterPacksSkeleton from './types/app/bsky/unspecced/searchStarterPacksSkeleton.js'
-export * as AppBskyVideoDefs from './types/app/bsky/video/defs.js'
-export * as AppBskyVideoGetJobStatus from './types/app/bsky/video/getJobStatus.js'
-export * as AppBskyVideoGetUploadLimits from './types/app/bsky/video/getUploadLimits.js'
-export * as AppBskyVideoUploadVideo from './types/app/bsky/video/uploadVideo.js'
-export * as ChatBskyActorDeclaration from './types/chat/bsky/actor/declaration.js'
-export * as ChatBskyActorDefs from './types/chat/bsky/actor/defs.js'
-export * as ChatBskyActorDeleteAccount from './types/chat/bsky/actor/deleteAccount.js'
-export * as ChatBskyActorExportAccountData from './types/chat/bsky/actor/exportAccountData.js'
-export * as ChatBskyConvoAcceptConvo from './types/chat/bsky/convo/acceptConvo.js'
-export * as ChatBskyConvoAddReaction from './types/chat/bsky/convo/addReaction.js'
-export * as ChatBskyConvoDefs from './types/chat/bsky/convo/defs.js'
-export * as ChatBskyConvoDeleteMessageForSelf from './types/chat/bsky/convo/deleteMessageForSelf.js'
-export * as ChatBskyConvoGetConvo from './types/chat/bsky/convo/getConvo.js'
-export * as ChatBskyConvoGetConvoAvailability from './types/chat/bsky/convo/getConvoAvailability.js'
-export * as ChatBskyConvoGetConvoForMembers from './types/chat/bsky/convo/getConvoForMembers.js'
-export * as ChatBskyConvoGetLog from './types/chat/bsky/convo/getLog.js'
-export * as ChatBskyConvoGetMessages from './types/chat/bsky/convo/getMessages.js'
-export * as ChatBskyConvoLeaveConvo from './types/chat/bsky/convo/leaveConvo.js'
-export * as ChatBskyConvoListConvos from './types/chat/bsky/convo/listConvos.js'
-export * as ChatBskyConvoMuteConvo from './types/chat/bsky/convo/muteConvo.js'
-export * as ChatBskyConvoRemoveReaction from './types/chat/bsky/convo/removeReaction.js'
-export * as ChatBskyConvoSendMessage from './types/chat/bsky/convo/sendMessage.js'
-export * as ChatBskyConvoSendMessageBatch from './types/chat/bsky/convo/sendMessageBatch.js'
-export * as ChatBskyConvoUnmuteConvo from './types/chat/bsky/convo/unmuteConvo.js'
-export * as ChatBskyConvoUpdateAllRead from './types/chat/bsky/convo/updateAllRead.js'
-export * as ChatBskyConvoUpdateRead from './types/chat/bsky/convo/updateRead.js'
-export * as ChatBskyModerationGetActorMetadata from './types/chat/bsky/moderation/getActorMetadata.js'
-export * as ChatBskyModerationGetMessageContext from './types/chat/bsky/moderation/getMessageContext.js'
-export * as ChatBskyModerationUpdateActorAccess from './types/chat/bsky/moderation/updateActorAccess.js'
+export * as AppBskyActorDefs from './types/app/gndr/actor/defs.js'
+export * as AppBskyActorGetPreferences from './types/app/gndr/actor/getPreferences.js'
+export * as AppBskyActorGetProfile from './types/app/gndr/actor/getProfile.js'
+export * as AppBskyActorGetProfiles from './types/app/gndr/actor/getProfiles.js'
+export * as AppBskyActorGetSuggestions from './types/app/gndr/actor/getSuggestions.js'
+export * as AppBskyActorProfile from './types/app/gndr/actor/profile.js'
+export * as AppBskyActorPutPreferences from './types/app/gndr/actor/putPreferences.js'
+export * as AppBskyActorSearchActors from './types/app/gndr/actor/searchActors.js'
+export * as AppBskyActorSearchActorsTypeahead from './types/app/gndr/actor/searchActorsTypeahead.js'
+export * as AppBskyActorStatus from './types/app/gndr/actor/status.js'
+export * as AppBskyEmbedDefs from './types/app/gndr/embed/defs.js'
+export * as AppBskyEmbedExternal from './types/app/gndr/embed/external.js'
+export * as AppBskyEmbedImages from './types/app/gndr/embed/images.js'
+export * as AppBskyEmbedRecord from './types/app/gndr/embed/record.js'
+export * as AppBskyEmbedRecordWithMedia from './types/app/gndr/embed/recordWithMedia.js'
+export * as AppBskyEmbedVideo from './types/app/gndr/embed/video.js'
+export * as AppBskyFeedDefs from './types/app/gndr/feed/defs.js'
+export * as AppBskyFeedDescribeFeedGenerator from './types/app/gndr/feed/describeFeedGenerator.js'
+export * as AppBskyFeedGenerator from './types/app/gndr/feed/generator.js'
+export * as AppBskyFeedGetActorFeeds from './types/app/gndr/feed/getActorFeeds.js'
+export * as AppBskyFeedGetActorLikes from './types/app/gndr/feed/getActorLikes.js'
+export * as AppBskyFeedGetAuthorFeed from './types/app/gndr/feed/getAuthorFeed.js'
+export * as AppBskyFeedGetFeed from './types/app/gndr/feed/getFeed.js'
+export * as AppBskyFeedGetFeedGenerator from './types/app/gndr/feed/getFeedGenerator.js'
+export * as AppBskyFeedGetFeedGenerators from './types/app/gndr/feed/getFeedGenerators.js'
+export * as AppBskyFeedGetFeedSkeleton from './types/app/gndr/feed/getFeedSkeleton.js'
+export * as AppBskyFeedGetLikes from './types/app/gndr/feed/getLikes.js'
+export * as AppBskyFeedGetListFeed from './types/app/gndr/feed/getListFeed.js'
+export * as AppBskyFeedGetPosts from './types/app/gndr/feed/getPosts.js'
+export * as AppBskyFeedGetPostThread from './types/app/gndr/feed/getPostThread.js'
+export * as AppBskyFeedGetQuotes from './types/app/gndr/feed/getQuotes.js'
+export * as AppBskyFeedGetRepostedBy from './types/app/gndr/feed/getRepostedBy.js'
+export * as AppBskyFeedGetSuggestedFeeds from './types/app/gndr/feed/getSuggestedFeeds.js'
+export * as AppBskyFeedGetTimeline from './types/app/gndr/feed/getTimeline.js'
+export * as AppBskyFeedLike from './types/app/gndr/feed/like.js'
+export * as AppBskyFeedPost from './types/app/gndr/feed/post.js'
+export * as AppBskyFeedPostgate from './types/app/gndr/feed/postgate.js'
+export * as AppBskyFeedRepost from './types/app/gndr/feed/repost.js'
+export * as AppBskyFeedSearchPosts from './types/app/gndr/feed/searchPosts.js'
+export * as AppBskyFeedSendInteractions from './types/app/gndr/feed/sendInteractions.js'
+export * as AppBskyFeedThreadgate from './types/app/gndr/feed/threadgate.js'
+export * as AppBskyGraphBlock from './types/app/gndr/graph/block.js'
+export * as AppBskyGraphDefs from './types/app/gndr/graph/defs.js'
+export * as AppBskyGraphFollow from './types/app/gndr/graph/follow.js'
+export * as AppBskyGraphGetActorStarterPacks from './types/app/gndr/graph/getActorStarterPacks.js'
+export * as AppBskyGraphGetBlocks from './types/app/gndr/graph/getBlocks.js'
+export * as AppBskyGraphGetFollowers from './types/app/gndr/graph/getFollowers.js'
+export * as AppBskyGraphGetFollows from './types/app/gndr/graph/getFollows.js'
+export * as AppBskyGraphGetKnownFollowers from './types/app/gndr/graph/getKnownFollowers.js'
+export * as AppBskyGraphGetList from './types/app/gndr/graph/getList.js'
+export * as AppBskyGraphGetListBlocks from './types/app/gndr/graph/getListBlocks.js'
+export * as AppBskyGraphGetListMutes from './types/app/gndr/graph/getListMutes.js'
+export * as AppBskyGraphGetLists from './types/app/gndr/graph/getLists.js'
+export * as AppBskyGraphGetMutes from './types/app/gndr/graph/getMutes.js'
+export * as AppBskyGraphGetRelationships from './types/app/gndr/graph/getRelationships.js'
+export * as AppBskyGraphGetStarterPack from './types/app/gndr/graph/getStarterPack.js'
+export * as AppBskyGraphGetStarterPacks from './types/app/gndr/graph/getStarterPacks.js'
+export * as AppBskyGraphGetSuggestedFollowsByActor from './types/app/gndr/graph/getSuggestedFollowsByActor.js'
+export * as AppBskyGraphList from './types/app/gndr/graph/list.js'
+export * as AppBskyGraphListblock from './types/app/gndr/graph/listblock.js'
+export * as AppBskyGraphListitem from './types/app/gndr/graph/listitem.js'
+export * as AppBskyGraphMuteActor from './types/app/gndr/graph/muteActor.js'
+export * as AppBskyGraphMuteActorList from './types/app/gndr/graph/muteActorList.js'
+export * as AppBskyGraphMuteThread from './types/app/gndr/graph/muteThread.js'
+export * as AppBskyGraphSearchStarterPacks from './types/app/gndr/graph/searchStarterPacks.js'
+export * as AppBskyGraphStarterpack from './types/app/gndr/graph/starterpack.js'
+export * as AppBskyGraphUnmuteActor from './types/app/gndr/graph/unmuteActor.js'
+export * as AppBskyGraphUnmuteActorList from './types/app/gndr/graph/unmuteActorList.js'
+export * as AppBskyGraphUnmuteThread from './types/app/gndr/graph/unmuteThread.js'
+export * as AppBskyGraphVerification from './types/app/gndr/graph/verification.js'
+export * as AppBskyLabelerDefs from './types/app/gndr/labeler/defs.js'
+export * as AppBskyLabelerGetServices from './types/app/gndr/labeler/getServices.js'
+export * as AppBskyLabelerService from './types/app/gndr/labeler/service.js'
+export * as AppBskyNotificationDeclaration from './types/app/gndr/notification/declaration.js'
+export * as AppBskyNotificationDefs from './types/app/gndr/notification/defs.js'
+export * as AppBskyNotificationGetPreferences from './types/app/gndr/notification/getPreferences.js'
+export * as AppBskyNotificationGetUnreadCount from './types/app/gndr/notification/getUnreadCount.js'
+export * as AppBskyNotificationListActivitySubscriptions from './types/app/gndr/notification/listActivitySubscriptions.js'
+export * as AppBskyNotificationListNotifications from './types/app/gndr/notification/listNotifications.js'
+export * as AppBskyNotificationPutActivitySubscription from './types/app/gndr/notification/putActivitySubscription.js'
+export * as AppBskyNotificationPutPreferences from './types/app/gndr/notification/putPreferences.js'
+export * as AppBskyNotificationPutPreferencesV2 from './types/app/gndr/notification/putPreferencesV2.js'
+export * as AppBskyNotificationRegisterPush from './types/app/gndr/notification/registerPush.js'
+export * as AppBskyNotificationUpdateSeen from './types/app/gndr/notification/updateSeen.js'
+export * as AppBskyRichtextFacet from './types/app/gndr/richtext/facet.js'
+export * as AppBskyUnspeccedDefs from './types/app/gndr/unspecced/defs.js'
+export * as AppBskyUnspeccedGetConfig from './types/app/gndr/unspecced/getConfig.js'
+export * as AppBskyUnspeccedGetPopularFeedGenerators from './types/app/gndr/unspecced/getPopularFeedGenerators.js'
+export * as AppBskyUnspeccedGetPostThreadOtherV2 from './types/app/gndr/unspecced/getPostThreadOtherV2.js'
+export * as AppBskyUnspeccedGetPostThreadV2 from './types/app/gndr/unspecced/getPostThreadV2.js'
+export * as AppBskyUnspeccedGetSuggestedFeeds from './types/app/gndr/unspecced/getSuggestedFeeds.js'
+export * as AppBskyUnspeccedGetSuggestedFeedsSkeleton from './types/app/gndr/unspecced/getSuggestedFeedsSkeleton.js'
+export * as AppBskyUnspeccedGetSuggestedStarterPacks from './types/app/gndr/unspecced/getSuggestedStarterPacks.js'
+export * as AppBskyUnspeccedGetSuggestedStarterPacksSkeleton from './types/app/gndr/unspecced/getSuggestedStarterPacksSkeleton.js'
+export * as AppBskyUnspeccedGetSuggestedUsers from './types/app/gndr/unspecced/getSuggestedUsers.js'
+export * as AppBskyUnspeccedGetSuggestedUsersSkeleton from './types/app/gndr/unspecced/getSuggestedUsersSkeleton.js'
+export * as AppBskyUnspeccedGetSuggestionsSkeleton from './types/app/gndr/unspecced/getSuggestionsSkeleton.js'
+export * as AppBskyUnspeccedGetTaggedSuggestions from './types/app/gndr/unspecced/getTaggedSuggestions.js'
+export * as AppBskyUnspeccedGetTrendingTopics from './types/app/gndr/unspecced/getTrendingTopics.js'
+export * as AppBskyUnspeccedGetTrends from './types/app/gndr/unspecced/getTrends.js'
+export * as AppBskyUnspeccedGetTrendsSkeleton from './types/app/gndr/unspecced/getTrendsSkeleton.js'
+export * as AppBskyUnspeccedSearchActorsSkeleton from './types/app/gndr/unspecced/searchActorsSkeleton.js'
+export * as AppBskyUnspeccedSearchPostsSkeleton from './types/app/gndr/unspecced/searchPostsSkeleton.js'
+export * as AppBskyUnspeccedSearchStarterPacksSkeleton from './types/app/gndr/unspecced/searchStarterPacksSkeleton.js'
+export * as AppBskyVideoDefs from './types/app/gndr/video/defs.js'
+export * as AppBskyVideoGetJobStatus from './types/app/gndr/video/getJobStatus.js'
+export * as AppBskyVideoGetUploadLimits from './types/app/gndr/video/getUploadLimits.js'
+export * as AppBskyVideoUploadVideo from './types/app/gndr/video/uploadVideo.js'
+export * as ChatBskyActorDeclaration from './types/chat/gndr/actor/declaration.js'
+export * as ChatBskyActorDefs from './types/chat/gndr/actor/defs.js'
+export * as ChatBskyActorDeleteAccount from './types/chat/gndr/actor/deleteAccount.js'
+export * as ChatBskyActorExportAccountData from './types/chat/gndr/actor/exportAccountData.js'
+export * as ChatBskyConvoAcceptConvo from './types/chat/gndr/convo/acceptConvo.js'
+export * as ChatBskyConvoAddReaction from './types/chat/gndr/convo/addReaction.js'
+export * as ChatBskyConvoDefs from './types/chat/gndr/convo/defs.js'
+export * as ChatBskyConvoDeleteMessageForSelf from './types/chat/gndr/convo/deleteMessageForSelf.js'
+export * as ChatBskyConvoGetConvo from './types/chat/gndr/convo/getConvo.js'
+export * as ChatBskyConvoGetConvoAvailability from './types/chat/gndr/convo/getConvoAvailability.js'
+export * as ChatBskyConvoGetConvoForMembers from './types/chat/gndr/convo/getConvoForMembers.js'
+export * as ChatBskyConvoGetLog from './types/chat/gndr/convo/getLog.js'
+export * as ChatBskyConvoGetMessages from './types/chat/gndr/convo/getMessages.js'
+export * as ChatBskyConvoLeaveConvo from './types/chat/gndr/convo/leaveConvo.js'
+export * as ChatBskyConvoListConvos from './types/chat/gndr/convo/listConvos.js'
+export * as ChatBskyConvoMuteConvo from './types/chat/gndr/convo/muteConvo.js'
+export * as ChatBskyConvoRemoveReaction from './types/chat/gndr/convo/removeReaction.js'
+export * as ChatBskyConvoSendMessage from './types/chat/gndr/convo/sendMessage.js'
+export * as ChatBskyConvoSendMessageBatch from './types/chat/gndr/convo/sendMessageBatch.js'
+export * as ChatBskyConvoUnmuteConvo from './types/chat/gndr/convo/unmuteConvo.js'
+export * as ChatBskyConvoUpdateAllRead from './types/chat/gndr/convo/updateAllRead.js'
+export * as ChatBskyConvoUpdateRead from './types/chat/gndr/convo/updateRead.js'
+export * as ChatBskyModerationGetActorMetadata from './types/chat/gndr/moderation/getActorMetadata.js'
+export * as ChatBskyModerationGetMessageContext from './types/chat/gndr/moderation/getMessageContext.js'
+export * as ChatBskyModerationUpdateActorAccess from './types/chat/gndr/moderation/updateActorAccess.js'
 export * as ToolsOzoneCommunicationCreateTemplate from './types/tools/ozone/communication/createTemplate.js'
 export * as ToolsOzoneCommunicationDefs from './types/tools/ozone/communication/defs.js'
 export * as ToolsOzoneCommunicationDeleteTemplate from './types/tools/ozone/communication/deleteTemplate.js'
@@ -566,29 +566,29 @@ export const COM_ATPROTO_MODERATION = {
   DefsReasonOther: 'com.atproto.moderation.defs#reasonOther',
   DefsReasonAppeal: 'com.atproto.moderation.defs#reasonAppeal',
 }
-export const APP_BSKY_ACTOR = {
-  StatusLive: 'app.bsky.actor.status#live',
+export const APP_GNDR_ACTOR = {
+  StatusLive: 'app.gndr.actor.status#live',
 }
-export const APP_BSKY_FEED = {
-  DefsRequestLess: 'app.bsky.feed.defs#requestLess',
-  DefsRequestMore: 'app.bsky.feed.defs#requestMore',
-  DefsClickthroughItem: 'app.bsky.feed.defs#clickthroughItem',
-  DefsClickthroughAuthor: 'app.bsky.feed.defs#clickthroughAuthor',
-  DefsClickthroughReposter: 'app.bsky.feed.defs#clickthroughReposter',
-  DefsClickthroughEmbed: 'app.bsky.feed.defs#clickthroughEmbed',
-  DefsContentModeUnspecified: 'app.bsky.feed.defs#contentModeUnspecified',
-  DefsContentModeVideo: 'app.bsky.feed.defs#contentModeVideo',
-  DefsInteractionSeen: 'app.bsky.feed.defs#interactionSeen',
-  DefsInteractionLike: 'app.bsky.feed.defs#interactionLike',
-  DefsInteractionRepost: 'app.bsky.feed.defs#interactionRepost',
-  DefsInteractionReply: 'app.bsky.feed.defs#interactionReply',
-  DefsInteractionQuote: 'app.bsky.feed.defs#interactionQuote',
-  DefsInteractionShare: 'app.bsky.feed.defs#interactionShare',
+export const APP_GNDR_FEED = {
+  DefsRequestLess: 'app.gndr.feed.defs#requestLess',
+  DefsRequestMore: 'app.gndr.feed.defs#requestMore',
+  DefsClickthroughItem: 'app.gndr.feed.defs#clickthroughItem',
+  DefsClickthroughAuthor: 'app.gndr.feed.defs#clickthroughAuthor',
+  DefsClickthroughReposter: 'app.gndr.feed.defs#clickthroughReposter',
+  DefsClickthroughEmbed: 'app.gndr.feed.defs#clickthroughEmbed',
+  DefsContentModeUnspecified: 'app.gndr.feed.defs#contentModeUnspecified',
+  DefsContentModeVideo: 'app.gndr.feed.defs#contentModeVideo',
+  DefsInteractionSeen: 'app.gndr.feed.defs#interactionSeen',
+  DefsInteractionLike: 'app.gndr.feed.defs#interactionLike',
+  DefsInteractionRepost: 'app.gndr.feed.defs#interactionRepost',
+  DefsInteractionReply: 'app.gndr.feed.defs#interactionReply',
+  DefsInteractionQuote: 'app.gndr.feed.defs#interactionQuote',
+  DefsInteractionShare: 'app.gndr.feed.defs#interactionShare',
 }
-export const APP_BSKY_GRAPH = {
-  DefsModlist: 'app.bsky.graph.defs#modlist',
-  DefsCuratelist: 'app.bsky.graph.defs#curatelist',
-  DefsReferencelist: 'app.bsky.graph.defs#referencelist',
+export const APP_GNDR_GRAPH = {
+  DefsModlist: 'app.gndr.graph.defs#modlist',
+  DefsCuratelist: 'app.gndr.graph.defs#curatelist',
+  DefsReferencelist: 'app.gndr.graph.defs#referencelist',
 }
 export const TOOLS_OZONE_MODERATION = {
   DefsReviewOpen: 'tools.ozone.moderation.defs#reviewOpen',
@@ -1748,11 +1748,11 @@ export class ComAtprotoTempNS {
 
 export class AppNS {
   _client: XrpcClient
-  bsky: AppBskyNS
+  gndr: AppBskyNS
 
   constructor(client: XrpcClient) {
     this._client = client
-    this.bsky = new AppBskyNS(client)
+    this.gndr = new AppBskyNS(client)
   }
 }
 
@@ -1798,7 +1798,7 @@ export class AppBskyActorNS {
     opts?: AppBskyActorGetPreferences.CallOptions,
   ): Promise<AppBskyActorGetPreferences.Response> {
     return this._client.call(
-      'app.bsky.actor.getPreferences',
+      'app.gndr.actor.getPreferences',
       params,
       undefined,
       opts,
@@ -1810,7 +1810,7 @@ export class AppBskyActorNS {
     opts?: AppBskyActorGetProfile.CallOptions,
   ): Promise<AppBskyActorGetProfile.Response> {
     return this._client.call(
-      'app.bsky.actor.getProfile',
+      'app.gndr.actor.getProfile',
       params,
       undefined,
       opts,
@@ -1822,7 +1822,7 @@ export class AppBskyActorNS {
     opts?: AppBskyActorGetProfiles.CallOptions,
   ): Promise<AppBskyActorGetProfiles.Response> {
     return this._client.call(
-      'app.bsky.actor.getProfiles',
+      'app.gndr.actor.getProfiles',
       params,
       undefined,
       opts,
@@ -1834,7 +1834,7 @@ export class AppBskyActorNS {
     opts?: AppBskyActorGetSuggestions.CallOptions,
   ): Promise<AppBskyActorGetSuggestions.Response> {
     return this._client.call(
-      'app.bsky.actor.getSuggestions',
+      'app.gndr.actor.getSuggestions',
       params,
       undefined,
       opts,
@@ -1846,7 +1846,7 @@ export class AppBskyActorNS {
     opts?: AppBskyActorPutPreferences.CallOptions,
   ): Promise<AppBskyActorPutPreferences.Response> {
     return this._client.call(
-      'app.bsky.actor.putPreferences',
+      'app.gndr.actor.putPreferences',
       opts?.qp,
       data,
       opts,
@@ -1858,7 +1858,7 @@ export class AppBskyActorNS {
     opts?: AppBskyActorSearchActors.CallOptions,
   ): Promise<AppBskyActorSearchActors.Response> {
     return this._client.call(
-      'app.bsky.actor.searchActors',
+      'app.gndr.actor.searchActors',
       params,
       undefined,
       opts,
@@ -1870,7 +1870,7 @@ export class AppBskyActorNS {
     opts?: AppBskyActorSearchActorsTypeahead.CallOptions,
   ): Promise<AppBskyActorSearchActorsTypeahead.Response> {
     return this._client.call(
-      'app.bsky.actor.searchActorsTypeahead',
+      'app.gndr.actor.searchActorsTypeahead',
       params,
       undefined,
       opts,
@@ -1892,7 +1892,7 @@ export class AppBskyActorProfileRecord {
     records: { uri: string; value: AppBskyActorProfile.Record }[]
   }> {
     const res = await this._client.call('com.atproto.repo.listRecords', {
-      collection: 'app.bsky.actor.profile',
+      collection: 'app.gndr.actor.profile',
       ...params,
     })
     return res.data
@@ -1902,7 +1902,7 @@ export class AppBskyActorProfileRecord {
     params: OmitKey<ComAtprotoRepoGetRecord.QueryParams, 'collection'>,
   ): Promise<{ uri: string; cid: string; value: AppBskyActorProfile.Record }> {
     const res = await this._client.call('com.atproto.repo.getRecord', {
-      collection: 'app.bsky.actor.profile',
+      collection: 'app.gndr.actor.profile',
       ...params,
     })
     return res.data
@@ -1916,7 +1916,7 @@ export class AppBskyActorProfileRecord {
     record: Un$Typed<AppBskyActorProfile.Record>,
     headers?: Record<string, string>,
   ): Promise<{ uri: string; cid: string }> {
-    const collection = 'app.bsky.actor.profile'
+    const collection = 'app.gndr.actor.profile'
     const res = await this._client.call(
       'com.atproto.repo.createRecord',
       undefined,
@@ -1939,7 +1939,7 @@ export class AppBskyActorProfileRecord {
     record: Un$Typed<AppBskyActorProfile.Record>,
     headers?: Record<string, string>,
   ): Promise<{ uri: string; cid: string }> {
-    const collection = 'app.bsky.actor.profile'
+    const collection = 'app.gndr.actor.profile'
     const res = await this._client.call(
       'com.atproto.repo.putRecord',
       undefined,
@@ -1956,7 +1956,7 @@ export class AppBskyActorProfileRecord {
     await this._client.call(
       'com.atproto.repo.deleteRecord',
       undefined,
-      { collection: 'app.bsky.actor.profile', ...params },
+      { collection: 'app.gndr.actor.profile', ...params },
       { headers },
     )
   }
@@ -1976,7 +1976,7 @@ export class AppBskyActorStatusRecord {
     records: { uri: string; value: AppBskyActorStatus.Record }[]
   }> {
     const res = await this._client.call('com.atproto.repo.listRecords', {
-      collection: 'app.bsky.actor.status',
+      collection: 'app.gndr.actor.status',
       ...params,
     })
     return res.data
@@ -1986,7 +1986,7 @@ export class AppBskyActorStatusRecord {
     params: OmitKey<ComAtprotoRepoGetRecord.QueryParams, 'collection'>,
   ): Promise<{ uri: string; cid: string; value: AppBskyActorStatus.Record }> {
     const res = await this._client.call('com.atproto.repo.getRecord', {
-      collection: 'app.bsky.actor.status',
+      collection: 'app.gndr.actor.status',
       ...params,
     })
     return res.data
@@ -2000,7 +2000,7 @@ export class AppBskyActorStatusRecord {
     record: Un$Typed<AppBskyActorStatus.Record>,
     headers?: Record<string, string>,
   ): Promise<{ uri: string; cid: string }> {
-    const collection = 'app.bsky.actor.status'
+    const collection = 'app.gndr.actor.status'
     const res = await this._client.call(
       'com.atproto.repo.createRecord',
       undefined,
@@ -2023,7 +2023,7 @@ export class AppBskyActorStatusRecord {
     record: Un$Typed<AppBskyActorStatus.Record>,
     headers?: Record<string, string>,
   ): Promise<{ uri: string; cid: string }> {
-    const collection = 'app.bsky.actor.status'
+    const collection = 'app.gndr.actor.status'
     const res = await this._client.call(
       'com.atproto.repo.putRecord',
       undefined,
@@ -2040,7 +2040,7 @@ export class AppBskyActorStatusRecord {
     await this._client.call(
       'com.atproto.repo.deleteRecord',
       undefined,
-      { collection: 'app.bsky.actor.status', ...params },
+      { collection: 'app.gndr.actor.status', ...params },
       { headers },
     )
   }
@@ -2078,7 +2078,7 @@ export class AppBskyFeedNS {
     opts?: AppBskyFeedDescribeFeedGenerator.CallOptions,
   ): Promise<AppBskyFeedDescribeFeedGenerator.Response> {
     return this._client.call(
-      'app.bsky.feed.describeFeedGenerator',
+      'app.gndr.feed.describeFeedGenerator',
       params,
       undefined,
       opts,
@@ -2090,7 +2090,7 @@ export class AppBskyFeedNS {
     opts?: AppBskyFeedGetActorFeeds.CallOptions,
   ): Promise<AppBskyFeedGetActorFeeds.Response> {
     return this._client.call(
-      'app.bsky.feed.getActorFeeds',
+      'app.gndr.feed.getActorFeeds',
       params,
       undefined,
       opts,
@@ -2102,7 +2102,7 @@ export class AppBskyFeedNS {
     opts?: AppBskyFeedGetActorLikes.CallOptions,
   ): Promise<AppBskyFeedGetActorLikes.Response> {
     return this._client
-      .call('app.bsky.feed.getActorLikes', params, undefined, opts)
+      .call('app.gndr.feed.getActorLikes', params, undefined, opts)
       .catch((e) => {
         throw AppBskyFeedGetActorLikes.toKnownErr(e)
       })
@@ -2113,7 +2113,7 @@ export class AppBskyFeedNS {
     opts?: AppBskyFeedGetAuthorFeed.CallOptions,
   ): Promise<AppBskyFeedGetAuthorFeed.Response> {
     return this._client
-      .call('app.bsky.feed.getAuthorFeed', params, undefined, opts)
+      .call('app.gndr.feed.getAuthorFeed', params, undefined, opts)
       .catch((e) => {
         throw AppBskyFeedGetAuthorFeed.toKnownErr(e)
       })
@@ -2124,7 +2124,7 @@ export class AppBskyFeedNS {
     opts?: AppBskyFeedGetFeed.CallOptions,
   ): Promise<AppBskyFeedGetFeed.Response> {
     return this._client
-      .call('app.bsky.feed.getFeed', params, undefined, opts)
+      .call('app.gndr.feed.getFeed', params, undefined, opts)
       .catch((e) => {
         throw AppBskyFeedGetFeed.toKnownErr(e)
       })
@@ -2135,7 +2135,7 @@ export class AppBskyFeedNS {
     opts?: AppBskyFeedGetFeedGenerator.CallOptions,
   ): Promise<AppBskyFeedGetFeedGenerator.Response> {
     return this._client.call(
-      'app.bsky.feed.getFeedGenerator',
+      'app.gndr.feed.getFeedGenerator',
       params,
       undefined,
       opts,
@@ -2147,7 +2147,7 @@ export class AppBskyFeedNS {
     opts?: AppBskyFeedGetFeedGenerators.CallOptions,
   ): Promise<AppBskyFeedGetFeedGenerators.Response> {
     return this._client.call(
-      'app.bsky.feed.getFeedGenerators',
+      'app.gndr.feed.getFeedGenerators',
       params,
       undefined,
       opts,
@@ -2159,7 +2159,7 @@ export class AppBskyFeedNS {
     opts?: AppBskyFeedGetFeedSkeleton.CallOptions,
   ): Promise<AppBskyFeedGetFeedSkeleton.Response> {
     return this._client
-      .call('app.bsky.feed.getFeedSkeleton', params, undefined, opts)
+      .call('app.gndr.feed.getFeedSkeleton', params, undefined, opts)
       .catch((e) => {
         throw AppBskyFeedGetFeedSkeleton.toKnownErr(e)
       })
@@ -2169,7 +2169,7 @@ export class AppBskyFeedNS {
     params?: AppBskyFeedGetLikes.QueryParams,
     opts?: AppBskyFeedGetLikes.CallOptions,
   ): Promise<AppBskyFeedGetLikes.Response> {
-    return this._client.call('app.bsky.feed.getLikes', params, undefined, opts)
+    return this._client.call('app.gndr.feed.getLikes', params, undefined, opts)
   }
 
   getListFeed(
@@ -2177,7 +2177,7 @@ export class AppBskyFeedNS {
     opts?: AppBskyFeedGetListFeed.CallOptions,
   ): Promise<AppBskyFeedGetListFeed.Response> {
     return this._client
-      .call('app.bsky.feed.getListFeed', params, undefined, opts)
+      .call('app.gndr.feed.getListFeed', params, undefined, opts)
       .catch((e) => {
         throw AppBskyFeedGetListFeed.toKnownErr(e)
       })
@@ -2187,7 +2187,7 @@ export class AppBskyFeedNS {
     params?: AppBskyFeedGetPosts.QueryParams,
     opts?: AppBskyFeedGetPosts.CallOptions,
   ): Promise<AppBskyFeedGetPosts.Response> {
-    return this._client.call('app.bsky.feed.getPosts', params, undefined, opts)
+    return this._client.call('app.gndr.feed.getPosts', params, undefined, opts)
   }
 
   getPostThread(
@@ -2195,7 +2195,7 @@ export class AppBskyFeedNS {
     opts?: AppBskyFeedGetPostThread.CallOptions,
   ): Promise<AppBskyFeedGetPostThread.Response> {
     return this._client
-      .call('app.bsky.feed.getPostThread', params, undefined, opts)
+      .call('app.gndr.feed.getPostThread', params, undefined, opts)
       .catch((e) => {
         throw AppBskyFeedGetPostThread.toKnownErr(e)
       })
@@ -2205,7 +2205,7 @@ export class AppBskyFeedNS {
     params?: AppBskyFeedGetQuotes.QueryParams,
     opts?: AppBskyFeedGetQuotes.CallOptions,
   ): Promise<AppBskyFeedGetQuotes.Response> {
-    return this._client.call('app.bsky.feed.getQuotes', params, undefined, opts)
+    return this._client.call('app.gndr.feed.getQuotes', params, undefined, opts)
   }
 
   getRepostedBy(
@@ -2213,7 +2213,7 @@ export class AppBskyFeedNS {
     opts?: AppBskyFeedGetRepostedBy.CallOptions,
   ): Promise<AppBskyFeedGetRepostedBy.Response> {
     return this._client.call(
-      'app.bsky.feed.getRepostedBy',
+      'app.gndr.feed.getRepostedBy',
       params,
       undefined,
       opts,
@@ -2225,7 +2225,7 @@ export class AppBskyFeedNS {
     opts?: AppBskyFeedGetSuggestedFeeds.CallOptions,
   ): Promise<AppBskyFeedGetSuggestedFeeds.Response> {
     return this._client.call(
-      'app.bsky.feed.getSuggestedFeeds',
+      'app.gndr.feed.getSuggestedFeeds',
       params,
       undefined,
       opts,
@@ -2237,7 +2237,7 @@ export class AppBskyFeedNS {
     opts?: AppBskyFeedGetTimeline.CallOptions,
   ): Promise<AppBskyFeedGetTimeline.Response> {
     return this._client.call(
-      'app.bsky.feed.getTimeline',
+      'app.gndr.feed.getTimeline',
       params,
       undefined,
       opts,
@@ -2249,7 +2249,7 @@ export class AppBskyFeedNS {
     opts?: AppBskyFeedSearchPosts.CallOptions,
   ): Promise<AppBskyFeedSearchPosts.Response> {
     return this._client
-      .call('app.bsky.feed.searchPosts', params, undefined, opts)
+      .call('app.gndr.feed.searchPosts', params, undefined, opts)
       .catch((e) => {
         throw AppBskyFeedSearchPosts.toKnownErr(e)
       })
@@ -2260,7 +2260,7 @@ export class AppBskyFeedNS {
     opts?: AppBskyFeedSendInteractions.CallOptions,
   ): Promise<AppBskyFeedSendInteractions.Response> {
     return this._client.call(
-      'app.bsky.feed.sendInteractions',
+      'app.gndr.feed.sendInteractions',
       opts?.qp,
       data,
       opts,
@@ -2282,7 +2282,7 @@ export class AppBskyFeedGeneratorRecord {
     records: { uri: string; value: AppBskyFeedGenerator.Record }[]
   }> {
     const res = await this._client.call('com.atproto.repo.listRecords', {
-      collection: 'app.bsky.feed.generator',
+      collection: 'app.gndr.feed.generator',
       ...params,
     })
     return res.data
@@ -2292,7 +2292,7 @@ export class AppBskyFeedGeneratorRecord {
     params: OmitKey<ComAtprotoRepoGetRecord.QueryParams, 'collection'>,
   ): Promise<{ uri: string; cid: string; value: AppBskyFeedGenerator.Record }> {
     const res = await this._client.call('com.atproto.repo.getRecord', {
-      collection: 'app.bsky.feed.generator',
+      collection: 'app.gndr.feed.generator',
       ...params,
     })
     return res.data
@@ -2306,7 +2306,7 @@ export class AppBskyFeedGeneratorRecord {
     record: Un$Typed<AppBskyFeedGenerator.Record>,
     headers?: Record<string, string>,
   ): Promise<{ uri: string; cid: string }> {
-    const collection = 'app.bsky.feed.generator'
+    const collection = 'app.gndr.feed.generator'
     const res = await this._client.call(
       'com.atproto.repo.createRecord',
       undefined,
@@ -2324,7 +2324,7 @@ export class AppBskyFeedGeneratorRecord {
     record: Un$Typed<AppBskyFeedGenerator.Record>,
     headers?: Record<string, string>,
   ): Promise<{ uri: string; cid: string }> {
-    const collection = 'app.bsky.feed.generator'
+    const collection = 'app.gndr.feed.generator'
     const res = await this._client.call(
       'com.atproto.repo.putRecord',
       undefined,
@@ -2341,7 +2341,7 @@ export class AppBskyFeedGeneratorRecord {
     await this._client.call(
       'com.atproto.repo.deleteRecord',
       undefined,
-      { collection: 'app.bsky.feed.generator', ...params },
+      { collection: 'app.gndr.feed.generator', ...params },
       { headers },
     )
   }
@@ -2361,7 +2361,7 @@ export class AppBskyFeedLikeRecord {
     records: { uri: string; value: AppBskyFeedLike.Record }[]
   }> {
     const res = await this._client.call('com.atproto.repo.listRecords', {
-      collection: 'app.bsky.feed.like',
+      collection: 'app.gndr.feed.like',
       ...params,
     })
     return res.data
@@ -2371,7 +2371,7 @@ export class AppBskyFeedLikeRecord {
     params: OmitKey<ComAtprotoRepoGetRecord.QueryParams, 'collection'>,
   ): Promise<{ uri: string; cid: string; value: AppBskyFeedLike.Record }> {
     const res = await this._client.call('com.atproto.repo.getRecord', {
-      collection: 'app.bsky.feed.like',
+      collection: 'app.gndr.feed.like',
       ...params,
     })
     return res.data
@@ -2385,7 +2385,7 @@ export class AppBskyFeedLikeRecord {
     record: Un$Typed<AppBskyFeedLike.Record>,
     headers?: Record<string, string>,
   ): Promise<{ uri: string; cid: string }> {
-    const collection = 'app.bsky.feed.like'
+    const collection = 'app.gndr.feed.like'
     const res = await this._client.call(
       'com.atproto.repo.createRecord',
       undefined,
@@ -2403,7 +2403,7 @@ export class AppBskyFeedLikeRecord {
     record: Un$Typed<AppBskyFeedLike.Record>,
     headers?: Record<string, string>,
   ): Promise<{ uri: string; cid: string }> {
-    const collection = 'app.bsky.feed.like'
+    const collection = 'app.gndr.feed.like'
     const res = await this._client.call(
       'com.atproto.repo.putRecord',
       undefined,
@@ -2420,7 +2420,7 @@ export class AppBskyFeedLikeRecord {
     await this._client.call(
       'com.atproto.repo.deleteRecord',
       undefined,
-      { collection: 'app.bsky.feed.like', ...params },
+      { collection: 'app.gndr.feed.like', ...params },
       { headers },
     )
   }
@@ -2440,7 +2440,7 @@ export class AppBskyFeedPostRecord {
     records: { uri: string; value: AppBskyFeedPost.Record }[]
   }> {
     const res = await this._client.call('com.atproto.repo.listRecords', {
-      collection: 'app.bsky.feed.post',
+      collection: 'app.gndr.feed.post',
       ...params,
     })
     return res.data
@@ -2450,7 +2450,7 @@ export class AppBskyFeedPostRecord {
     params: OmitKey<ComAtprotoRepoGetRecord.QueryParams, 'collection'>,
   ): Promise<{ uri: string; cid: string; value: AppBskyFeedPost.Record }> {
     const res = await this._client.call('com.atproto.repo.getRecord', {
-      collection: 'app.bsky.feed.post',
+      collection: 'app.gndr.feed.post',
       ...params,
     })
     return res.data
@@ -2464,7 +2464,7 @@ export class AppBskyFeedPostRecord {
     record: Un$Typed<AppBskyFeedPost.Record>,
     headers?: Record<string, string>,
   ): Promise<{ uri: string; cid: string }> {
-    const collection = 'app.bsky.feed.post'
+    const collection = 'app.gndr.feed.post'
     const res = await this._client.call(
       'com.atproto.repo.createRecord',
       undefined,
@@ -2482,7 +2482,7 @@ export class AppBskyFeedPostRecord {
     record: Un$Typed<AppBskyFeedPost.Record>,
     headers?: Record<string, string>,
   ): Promise<{ uri: string; cid: string }> {
-    const collection = 'app.bsky.feed.post'
+    const collection = 'app.gndr.feed.post'
     const res = await this._client.call(
       'com.atproto.repo.putRecord',
       undefined,
@@ -2499,7 +2499,7 @@ export class AppBskyFeedPostRecord {
     await this._client.call(
       'com.atproto.repo.deleteRecord',
       undefined,
-      { collection: 'app.bsky.feed.post', ...params },
+      { collection: 'app.gndr.feed.post', ...params },
       { headers },
     )
   }
@@ -2519,7 +2519,7 @@ export class AppBskyFeedPostgateRecord {
     records: { uri: string; value: AppBskyFeedPostgate.Record }[]
   }> {
     const res = await this._client.call('com.atproto.repo.listRecords', {
-      collection: 'app.bsky.feed.postgate',
+      collection: 'app.gndr.feed.postgate',
       ...params,
     })
     return res.data
@@ -2529,7 +2529,7 @@ export class AppBskyFeedPostgateRecord {
     params: OmitKey<ComAtprotoRepoGetRecord.QueryParams, 'collection'>,
   ): Promise<{ uri: string; cid: string; value: AppBskyFeedPostgate.Record }> {
     const res = await this._client.call('com.atproto.repo.getRecord', {
-      collection: 'app.bsky.feed.postgate',
+      collection: 'app.gndr.feed.postgate',
       ...params,
     })
     return res.data
@@ -2543,7 +2543,7 @@ export class AppBskyFeedPostgateRecord {
     record: Un$Typed<AppBskyFeedPostgate.Record>,
     headers?: Record<string, string>,
   ): Promise<{ uri: string; cid: string }> {
-    const collection = 'app.bsky.feed.postgate'
+    const collection = 'app.gndr.feed.postgate'
     const res = await this._client.call(
       'com.atproto.repo.createRecord',
       undefined,
@@ -2561,7 +2561,7 @@ export class AppBskyFeedPostgateRecord {
     record: Un$Typed<AppBskyFeedPostgate.Record>,
     headers?: Record<string, string>,
   ): Promise<{ uri: string; cid: string }> {
-    const collection = 'app.bsky.feed.postgate'
+    const collection = 'app.gndr.feed.postgate'
     const res = await this._client.call(
       'com.atproto.repo.putRecord',
       undefined,
@@ -2578,7 +2578,7 @@ export class AppBskyFeedPostgateRecord {
     await this._client.call(
       'com.atproto.repo.deleteRecord',
       undefined,
-      { collection: 'app.bsky.feed.postgate', ...params },
+      { collection: 'app.gndr.feed.postgate', ...params },
       { headers },
     )
   }
@@ -2598,7 +2598,7 @@ export class AppBskyFeedRepostRecord {
     records: { uri: string; value: AppBskyFeedRepost.Record }[]
   }> {
     const res = await this._client.call('com.atproto.repo.listRecords', {
-      collection: 'app.bsky.feed.repost',
+      collection: 'app.gndr.feed.repost',
       ...params,
     })
     return res.data
@@ -2608,7 +2608,7 @@ export class AppBskyFeedRepostRecord {
     params: OmitKey<ComAtprotoRepoGetRecord.QueryParams, 'collection'>,
   ): Promise<{ uri: string; cid: string; value: AppBskyFeedRepost.Record }> {
     const res = await this._client.call('com.atproto.repo.getRecord', {
-      collection: 'app.bsky.feed.repost',
+      collection: 'app.gndr.feed.repost',
       ...params,
     })
     return res.data
@@ -2622,7 +2622,7 @@ export class AppBskyFeedRepostRecord {
     record: Un$Typed<AppBskyFeedRepost.Record>,
     headers?: Record<string, string>,
   ): Promise<{ uri: string; cid: string }> {
-    const collection = 'app.bsky.feed.repost'
+    const collection = 'app.gndr.feed.repost'
     const res = await this._client.call(
       'com.atproto.repo.createRecord',
       undefined,
@@ -2640,7 +2640,7 @@ export class AppBskyFeedRepostRecord {
     record: Un$Typed<AppBskyFeedRepost.Record>,
     headers?: Record<string, string>,
   ): Promise<{ uri: string; cid: string }> {
-    const collection = 'app.bsky.feed.repost'
+    const collection = 'app.gndr.feed.repost'
     const res = await this._client.call(
       'com.atproto.repo.putRecord',
       undefined,
@@ -2657,7 +2657,7 @@ export class AppBskyFeedRepostRecord {
     await this._client.call(
       'com.atproto.repo.deleteRecord',
       undefined,
-      { collection: 'app.bsky.feed.repost', ...params },
+      { collection: 'app.gndr.feed.repost', ...params },
       { headers },
     )
   }
@@ -2677,7 +2677,7 @@ export class AppBskyFeedThreadgateRecord {
     records: { uri: string; value: AppBskyFeedThreadgate.Record }[]
   }> {
     const res = await this._client.call('com.atproto.repo.listRecords', {
-      collection: 'app.bsky.feed.threadgate',
+      collection: 'app.gndr.feed.threadgate',
       ...params,
     })
     return res.data
@@ -2691,7 +2691,7 @@ export class AppBskyFeedThreadgateRecord {
     value: AppBskyFeedThreadgate.Record
   }> {
     const res = await this._client.call('com.atproto.repo.getRecord', {
-      collection: 'app.bsky.feed.threadgate',
+      collection: 'app.gndr.feed.threadgate',
       ...params,
     })
     return res.data
@@ -2705,7 +2705,7 @@ export class AppBskyFeedThreadgateRecord {
     record: Un$Typed<AppBskyFeedThreadgate.Record>,
     headers?: Record<string, string>,
   ): Promise<{ uri: string; cid: string }> {
-    const collection = 'app.bsky.feed.threadgate'
+    const collection = 'app.gndr.feed.threadgate'
     const res = await this._client.call(
       'com.atproto.repo.createRecord',
       undefined,
@@ -2723,7 +2723,7 @@ export class AppBskyFeedThreadgateRecord {
     record: Un$Typed<AppBskyFeedThreadgate.Record>,
     headers?: Record<string, string>,
   ): Promise<{ uri: string; cid: string }> {
-    const collection = 'app.bsky.feed.threadgate'
+    const collection = 'app.gndr.feed.threadgate'
     const res = await this._client.call(
       'com.atproto.repo.putRecord',
       undefined,
@@ -2740,7 +2740,7 @@ export class AppBskyFeedThreadgateRecord {
     await this._client.call(
       'com.atproto.repo.deleteRecord',
       undefined,
-      { collection: 'app.bsky.feed.threadgate', ...params },
+      { collection: 'app.gndr.feed.threadgate', ...params },
       { headers },
     )
   }
@@ -2772,7 +2772,7 @@ export class AppBskyGraphNS {
     opts?: AppBskyGraphGetActorStarterPacks.CallOptions,
   ): Promise<AppBskyGraphGetActorStarterPacks.Response> {
     return this._client.call(
-      'app.bsky.graph.getActorStarterPacks',
+      'app.gndr.graph.getActorStarterPacks',
       params,
       undefined,
       opts,
@@ -2784,7 +2784,7 @@ export class AppBskyGraphNS {
     opts?: AppBskyGraphGetBlocks.CallOptions,
   ): Promise<AppBskyGraphGetBlocks.Response> {
     return this._client.call(
-      'app.bsky.graph.getBlocks',
+      'app.gndr.graph.getBlocks',
       params,
       undefined,
       opts,
@@ -2796,7 +2796,7 @@ export class AppBskyGraphNS {
     opts?: AppBskyGraphGetFollowers.CallOptions,
   ): Promise<AppBskyGraphGetFollowers.Response> {
     return this._client.call(
-      'app.bsky.graph.getFollowers',
+      'app.gndr.graph.getFollowers',
       params,
       undefined,
       opts,
@@ -2808,7 +2808,7 @@ export class AppBskyGraphNS {
     opts?: AppBskyGraphGetFollows.CallOptions,
   ): Promise<AppBskyGraphGetFollows.Response> {
     return this._client.call(
-      'app.bsky.graph.getFollows',
+      'app.gndr.graph.getFollows',
       params,
       undefined,
       opts,
@@ -2820,7 +2820,7 @@ export class AppBskyGraphNS {
     opts?: AppBskyGraphGetKnownFollowers.CallOptions,
   ): Promise<AppBskyGraphGetKnownFollowers.Response> {
     return this._client.call(
-      'app.bsky.graph.getKnownFollowers',
+      'app.gndr.graph.getKnownFollowers',
       params,
       undefined,
       opts,
@@ -2831,7 +2831,7 @@ export class AppBskyGraphNS {
     params?: AppBskyGraphGetList.QueryParams,
     opts?: AppBskyGraphGetList.CallOptions,
   ): Promise<AppBskyGraphGetList.Response> {
-    return this._client.call('app.bsky.graph.getList', params, undefined, opts)
+    return this._client.call('app.gndr.graph.getList', params, undefined, opts)
   }
 
   getListBlocks(
@@ -2839,7 +2839,7 @@ export class AppBskyGraphNS {
     opts?: AppBskyGraphGetListBlocks.CallOptions,
   ): Promise<AppBskyGraphGetListBlocks.Response> {
     return this._client.call(
-      'app.bsky.graph.getListBlocks',
+      'app.gndr.graph.getListBlocks',
       params,
       undefined,
       opts,
@@ -2851,7 +2851,7 @@ export class AppBskyGraphNS {
     opts?: AppBskyGraphGetListMutes.CallOptions,
   ): Promise<AppBskyGraphGetListMutes.Response> {
     return this._client.call(
-      'app.bsky.graph.getListMutes',
+      'app.gndr.graph.getListMutes',
       params,
       undefined,
       opts,
@@ -2862,14 +2862,14 @@ export class AppBskyGraphNS {
     params?: AppBskyGraphGetLists.QueryParams,
     opts?: AppBskyGraphGetLists.CallOptions,
   ): Promise<AppBskyGraphGetLists.Response> {
-    return this._client.call('app.bsky.graph.getLists', params, undefined, opts)
+    return this._client.call('app.gndr.graph.getLists', params, undefined, opts)
   }
 
   getMutes(
     params?: AppBskyGraphGetMutes.QueryParams,
     opts?: AppBskyGraphGetMutes.CallOptions,
   ): Promise<AppBskyGraphGetMutes.Response> {
-    return this._client.call('app.bsky.graph.getMutes', params, undefined, opts)
+    return this._client.call('app.gndr.graph.getMutes', params, undefined, opts)
   }
 
   getRelationships(
@@ -2877,7 +2877,7 @@ export class AppBskyGraphNS {
     opts?: AppBskyGraphGetRelationships.CallOptions,
   ): Promise<AppBskyGraphGetRelationships.Response> {
     return this._client
-      .call('app.bsky.graph.getRelationships', params, undefined, opts)
+      .call('app.gndr.graph.getRelationships', params, undefined, opts)
       .catch((e) => {
         throw AppBskyGraphGetRelationships.toKnownErr(e)
       })
@@ -2888,7 +2888,7 @@ export class AppBskyGraphNS {
     opts?: AppBskyGraphGetStarterPack.CallOptions,
   ): Promise<AppBskyGraphGetStarterPack.Response> {
     return this._client.call(
-      'app.bsky.graph.getStarterPack',
+      'app.gndr.graph.getStarterPack',
       params,
       undefined,
       opts,
@@ -2900,7 +2900,7 @@ export class AppBskyGraphNS {
     opts?: AppBskyGraphGetStarterPacks.CallOptions,
   ): Promise<AppBskyGraphGetStarterPacks.Response> {
     return this._client.call(
-      'app.bsky.graph.getStarterPacks',
+      'app.gndr.graph.getStarterPacks',
       params,
       undefined,
       opts,
@@ -2912,7 +2912,7 @@ export class AppBskyGraphNS {
     opts?: AppBskyGraphGetSuggestedFollowsByActor.CallOptions,
   ): Promise<AppBskyGraphGetSuggestedFollowsByActor.Response> {
     return this._client.call(
-      'app.bsky.graph.getSuggestedFollowsByActor',
+      'app.gndr.graph.getSuggestedFollowsByActor',
       params,
       undefined,
       opts,
@@ -2923,7 +2923,7 @@ export class AppBskyGraphNS {
     data?: AppBskyGraphMuteActor.InputSchema,
     opts?: AppBskyGraphMuteActor.CallOptions,
   ): Promise<AppBskyGraphMuteActor.Response> {
-    return this._client.call('app.bsky.graph.muteActor', opts?.qp, data, opts)
+    return this._client.call('app.gndr.graph.muteActor', opts?.qp, data, opts)
   }
 
   muteActorList(
@@ -2931,7 +2931,7 @@ export class AppBskyGraphNS {
     opts?: AppBskyGraphMuteActorList.CallOptions,
   ): Promise<AppBskyGraphMuteActorList.Response> {
     return this._client.call(
-      'app.bsky.graph.muteActorList',
+      'app.gndr.graph.muteActorList',
       opts?.qp,
       data,
       opts,
@@ -2942,7 +2942,7 @@ export class AppBskyGraphNS {
     data?: AppBskyGraphMuteThread.InputSchema,
     opts?: AppBskyGraphMuteThread.CallOptions,
   ): Promise<AppBskyGraphMuteThread.Response> {
-    return this._client.call('app.bsky.graph.muteThread', opts?.qp, data, opts)
+    return this._client.call('app.gndr.graph.muteThread', opts?.qp, data, opts)
   }
 
   searchStarterPacks(
@@ -2950,7 +2950,7 @@ export class AppBskyGraphNS {
     opts?: AppBskyGraphSearchStarterPacks.CallOptions,
   ): Promise<AppBskyGraphSearchStarterPacks.Response> {
     return this._client.call(
-      'app.bsky.graph.searchStarterPacks',
+      'app.gndr.graph.searchStarterPacks',
       params,
       undefined,
       opts,
@@ -2961,7 +2961,7 @@ export class AppBskyGraphNS {
     data?: AppBskyGraphUnmuteActor.InputSchema,
     opts?: AppBskyGraphUnmuteActor.CallOptions,
   ): Promise<AppBskyGraphUnmuteActor.Response> {
-    return this._client.call('app.bsky.graph.unmuteActor', opts?.qp, data, opts)
+    return this._client.call('app.gndr.graph.unmuteActor', opts?.qp, data, opts)
   }
 
   unmuteActorList(
@@ -2969,7 +2969,7 @@ export class AppBskyGraphNS {
     opts?: AppBskyGraphUnmuteActorList.CallOptions,
   ): Promise<AppBskyGraphUnmuteActorList.Response> {
     return this._client.call(
-      'app.bsky.graph.unmuteActorList',
+      'app.gndr.graph.unmuteActorList',
       opts?.qp,
       data,
       opts,
@@ -2981,7 +2981,7 @@ export class AppBskyGraphNS {
     opts?: AppBskyGraphUnmuteThread.CallOptions,
   ): Promise<AppBskyGraphUnmuteThread.Response> {
     return this._client.call(
-      'app.bsky.graph.unmuteThread',
+      'app.gndr.graph.unmuteThread',
       opts?.qp,
       data,
       opts,
@@ -3003,7 +3003,7 @@ export class AppBskyGraphBlockRecord {
     records: { uri: string; value: AppBskyGraphBlock.Record }[]
   }> {
     const res = await this._client.call('com.atproto.repo.listRecords', {
-      collection: 'app.bsky.graph.block',
+      collection: 'app.gndr.graph.block',
       ...params,
     })
     return res.data
@@ -3013,7 +3013,7 @@ export class AppBskyGraphBlockRecord {
     params: OmitKey<ComAtprotoRepoGetRecord.QueryParams, 'collection'>,
   ): Promise<{ uri: string; cid: string; value: AppBskyGraphBlock.Record }> {
     const res = await this._client.call('com.atproto.repo.getRecord', {
-      collection: 'app.bsky.graph.block',
+      collection: 'app.gndr.graph.block',
       ...params,
     })
     return res.data
@@ -3027,7 +3027,7 @@ export class AppBskyGraphBlockRecord {
     record: Un$Typed<AppBskyGraphBlock.Record>,
     headers?: Record<string, string>,
   ): Promise<{ uri: string; cid: string }> {
-    const collection = 'app.bsky.graph.block'
+    const collection = 'app.gndr.graph.block'
     const res = await this._client.call(
       'com.atproto.repo.createRecord',
       undefined,
@@ -3045,7 +3045,7 @@ export class AppBskyGraphBlockRecord {
     record: Un$Typed<AppBskyGraphBlock.Record>,
     headers?: Record<string, string>,
   ): Promise<{ uri: string; cid: string }> {
-    const collection = 'app.bsky.graph.block'
+    const collection = 'app.gndr.graph.block'
     const res = await this._client.call(
       'com.atproto.repo.putRecord',
       undefined,
@@ -3062,7 +3062,7 @@ export class AppBskyGraphBlockRecord {
     await this._client.call(
       'com.atproto.repo.deleteRecord',
       undefined,
-      { collection: 'app.bsky.graph.block', ...params },
+      { collection: 'app.gndr.graph.block', ...params },
       { headers },
     )
   }
@@ -3082,7 +3082,7 @@ export class AppBskyGraphFollowRecord {
     records: { uri: string; value: AppBskyGraphFollow.Record }[]
   }> {
     const res = await this._client.call('com.atproto.repo.listRecords', {
-      collection: 'app.bsky.graph.follow',
+      collection: 'app.gndr.graph.follow',
       ...params,
     })
     return res.data
@@ -3092,7 +3092,7 @@ export class AppBskyGraphFollowRecord {
     params: OmitKey<ComAtprotoRepoGetRecord.QueryParams, 'collection'>,
   ): Promise<{ uri: string; cid: string; value: AppBskyGraphFollow.Record }> {
     const res = await this._client.call('com.atproto.repo.getRecord', {
-      collection: 'app.bsky.graph.follow',
+      collection: 'app.gndr.graph.follow',
       ...params,
     })
     return res.data
@@ -3106,7 +3106,7 @@ export class AppBskyGraphFollowRecord {
     record: Un$Typed<AppBskyGraphFollow.Record>,
     headers?: Record<string, string>,
   ): Promise<{ uri: string; cid: string }> {
-    const collection = 'app.bsky.graph.follow'
+    const collection = 'app.gndr.graph.follow'
     const res = await this._client.call(
       'com.atproto.repo.createRecord',
       undefined,
@@ -3124,7 +3124,7 @@ export class AppBskyGraphFollowRecord {
     record: Un$Typed<AppBskyGraphFollow.Record>,
     headers?: Record<string, string>,
   ): Promise<{ uri: string; cid: string }> {
-    const collection = 'app.bsky.graph.follow'
+    const collection = 'app.gndr.graph.follow'
     const res = await this._client.call(
       'com.atproto.repo.putRecord',
       undefined,
@@ -3141,7 +3141,7 @@ export class AppBskyGraphFollowRecord {
     await this._client.call(
       'com.atproto.repo.deleteRecord',
       undefined,
-      { collection: 'app.bsky.graph.follow', ...params },
+      { collection: 'app.gndr.graph.follow', ...params },
       { headers },
     )
   }
@@ -3161,7 +3161,7 @@ export class AppBskyGraphListRecord {
     records: { uri: string; value: AppBskyGraphList.Record }[]
   }> {
     const res = await this._client.call('com.atproto.repo.listRecords', {
-      collection: 'app.bsky.graph.list',
+      collection: 'app.gndr.graph.list',
       ...params,
     })
     return res.data
@@ -3171,7 +3171,7 @@ export class AppBskyGraphListRecord {
     params: OmitKey<ComAtprotoRepoGetRecord.QueryParams, 'collection'>,
   ): Promise<{ uri: string; cid: string; value: AppBskyGraphList.Record }> {
     const res = await this._client.call('com.atproto.repo.getRecord', {
-      collection: 'app.bsky.graph.list',
+      collection: 'app.gndr.graph.list',
       ...params,
     })
     return res.data
@@ -3185,7 +3185,7 @@ export class AppBskyGraphListRecord {
     record: Un$Typed<AppBskyGraphList.Record>,
     headers?: Record<string, string>,
   ): Promise<{ uri: string; cid: string }> {
-    const collection = 'app.bsky.graph.list'
+    const collection = 'app.gndr.graph.list'
     const res = await this._client.call(
       'com.atproto.repo.createRecord',
       undefined,
@@ -3203,7 +3203,7 @@ export class AppBskyGraphListRecord {
     record: Un$Typed<AppBskyGraphList.Record>,
     headers?: Record<string, string>,
   ): Promise<{ uri: string; cid: string }> {
-    const collection = 'app.bsky.graph.list'
+    const collection = 'app.gndr.graph.list'
     const res = await this._client.call(
       'com.atproto.repo.putRecord',
       undefined,
@@ -3220,7 +3220,7 @@ export class AppBskyGraphListRecord {
     await this._client.call(
       'com.atproto.repo.deleteRecord',
       undefined,
-      { collection: 'app.bsky.graph.list', ...params },
+      { collection: 'app.gndr.graph.list', ...params },
       { headers },
     )
   }
@@ -3240,7 +3240,7 @@ export class AppBskyGraphListblockRecord {
     records: { uri: string; value: AppBskyGraphListblock.Record }[]
   }> {
     const res = await this._client.call('com.atproto.repo.listRecords', {
-      collection: 'app.bsky.graph.listblock',
+      collection: 'app.gndr.graph.listblock',
       ...params,
     })
     return res.data
@@ -3254,7 +3254,7 @@ export class AppBskyGraphListblockRecord {
     value: AppBskyGraphListblock.Record
   }> {
     const res = await this._client.call('com.atproto.repo.getRecord', {
-      collection: 'app.bsky.graph.listblock',
+      collection: 'app.gndr.graph.listblock',
       ...params,
     })
     return res.data
@@ -3268,7 +3268,7 @@ export class AppBskyGraphListblockRecord {
     record: Un$Typed<AppBskyGraphListblock.Record>,
     headers?: Record<string, string>,
   ): Promise<{ uri: string; cid: string }> {
-    const collection = 'app.bsky.graph.listblock'
+    const collection = 'app.gndr.graph.listblock'
     const res = await this._client.call(
       'com.atproto.repo.createRecord',
       undefined,
@@ -3286,7 +3286,7 @@ export class AppBskyGraphListblockRecord {
     record: Un$Typed<AppBskyGraphListblock.Record>,
     headers?: Record<string, string>,
   ): Promise<{ uri: string; cid: string }> {
-    const collection = 'app.bsky.graph.listblock'
+    const collection = 'app.gndr.graph.listblock'
     const res = await this._client.call(
       'com.atproto.repo.putRecord',
       undefined,
@@ -3303,7 +3303,7 @@ export class AppBskyGraphListblockRecord {
     await this._client.call(
       'com.atproto.repo.deleteRecord',
       undefined,
-      { collection: 'app.bsky.graph.listblock', ...params },
+      { collection: 'app.gndr.graph.listblock', ...params },
       { headers },
     )
   }
@@ -3323,7 +3323,7 @@ export class AppBskyGraphListitemRecord {
     records: { uri: string; value: AppBskyGraphListitem.Record }[]
   }> {
     const res = await this._client.call('com.atproto.repo.listRecords', {
-      collection: 'app.bsky.graph.listitem',
+      collection: 'app.gndr.graph.listitem',
       ...params,
     })
     return res.data
@@ -3333,7 +3333,7 @@ export class AppBskyGraphListitemRecord {
     params: OmitKey<ComAtprotoRepoGetRecord.QueryParams, 'collection'>,
   ): Promise<{ uri: string; cid: string; value: AppBskyGraphListitem.Record }> {
     const res = await this._client.call('com.atproto.repo.getRecord', {
-      collection: 'app.bsky.graph.listitem',
+      collection: 'app.gndr.graph.listitem',
       ...params,
     })
     return res.data
@@ -3347,7 +3347,7 @@ export class AppBskyGraphListitemRecord {
     record: Un$Typed<AppBskyGraphListitem.Record>,
     headers?: Record<string, string>,
   ): Promise<{ uri: string; cid: string }> {
-    const collection = 'app.bsky.graph.listitem'
+    const collection = 'app.gndr.graph.listitem'
     const res = await this._client.call(
       'com.atproto.repo.createRecord',
       undefined,
@@ -3365,7 +3365,7 @@ export class AppBskyGraphListitemRecord {
     record: Un$Typed<AppBskyGraphListitem.Record>,
     headers?: Record<string, string>,
   ): Promise<{ uri: string; cid: string }> {
-    const collection = 'app.bsky.graph.listitem'
+    const collection = 'app.gndr.graph.listitem'
     const res = await this._client.call(
       'com.atproto.repo.putRecord',
       undefined,
@@ -3382,7 +3382,7 @@ export class AppBskyGraphListitemRecord {
     await this._client.call(
       'com.atproto.repo.deleteRecord',
       undefined,
-      { collection: 'app.bsky.graph.listitem', ...params },
+      { collection: 'app.gndr.graph.listitem', ...params },
       { headers },
     )
   }
@@ -3402,7 +3402,7 @@ export class AppBskyGraphStarterpackRecord {
     records: { uri: string; value: AppBskyGraphStarterpack.Record }[]
   }> {
     const res = await this._client.call('com.atproto.repo.listRecords', {
-      collection: 'app.bsky.graph.starterpack',
+      collection: 'app.gndr.graph.starterpack',
       ...params,
     })
     return res.data
@@ -3416,7 +3416,7 @@ export class AppBskyGraphStarterpackRecord {
     value: AppBskyGraphStarterpack.Record
   }> {
     const res = await this._client.call('com.atproto.repo.getRecord', {
-      collection: 'app.bsky.graph.starterpack',
+      collection: 'app.gndr.graph.starterpack',
       ...params,
     })
     return res.data
@@ -3430,7 +3430,7 @@ export class AppBskyGraphStarterpackRecord {
     record: Un$Typed<AppBskyGraphStarterpack.Record>,
     headers?: Record<string, string>,
   ): Promise<{ uri: string; cid: string }> {
-    const collection = 'app.bsky.graph.starterpack'
+    const collection = 'app.gndr.graph.starterpack'
     const res = await this._client.call(
       'com.atproto.repo.createRecord',
       undefined,
@@ -3448,7 +3448,7 @@ export class AppBskyGraphStarterpackRecord {
     record: Un$Typed<AppBskyGraphStarterpack.Record>,
     headers?: Record<string, string>,
   ): Promise<{ uri: string; cid: string }> {
-    const collection = 'app.bsky.graph.starterpack'
+    const collection = 'app.gndr.graph.starterpack'
     const res = await this._client.call(
       'com.atproto.repo.putRecord',
       undefined,
@@ -3465,7 +3465,7 @@ export class AppBskyGraphStarterpackRecord {
     await this._client.call(
       'com.atproto.repo.deleteRecord',
       undefined,
-      { collection: 'app.bsky.graph.starterpack', ...params },
+      { collection: 'app.gndr.graph.starterpack', ...params },
       { headers },
     )
   }
@@ -3485,7 +3485,7 @@ export class AppBskyGraphVerificationRecord {
     records: { uri: string; value: AppBskyGraphVerification.Record }[]
   }> {
     const res = await this._client.call('com.atproto.repo.listRecords', {
-      collection: 'app.bsky.graph.verification',
+      collection: 'app.gndr.graph.verification',
       ...params,
     })
     return res.data
@@ -3499,7 +3499,7 @@ export class AppBskyGraphVerificationRecord {
     value: AppBskyGraphVerification.Record
   }> {
     const res = await this._client.call('com.atproto.repo.getRecord', {
-      collection: 'app.bsky.graph.verification',
+      collection: 'app.gndr.graph.verification',
       ...params,
     })
     return res.data
@@ -3513,7 +3513,7 @@ export class AppBskyGraphVerificationRecord {
     record: Un$Typed<AppBskyGraphVerification.Record>,
     headers?: Record<string, string>,
   ): Promise<{ uri: string; cid: string }> {
-    const collection = 'app.bsky.graph.verification'
+    const collection = 'app.gndr.graph.verification'
     const res = await this._client.call(
       'com.atproto.repo.createRecord',
       undefined,
@@ -3531,7 +3531,7 @@ export class AppBskyGraphVerificationRecord {
     record: Un$Typed<AppBskyGraphVerification.Record>,
     headers?: Record<string, string>,
   ): Promise<{ uri: string; cid: string }> {
-    const collection = 'app.bsky.graph.verification'
+    const collection = 'app.gndr.graph.verification'
     const res = await this._client.call(
       'com.atproto.repo.putRecord',
       undefined,
@@ -3548,7 +3548,7 @@ export class AppBskyGraphVerificationRecord {
     await this._client.call(
       'com.atproto.repo.deleteRecord',
       undefined,
-      { collection: 'app.bsky.graph.verification', ...params },
+      { collection: 'app.gndr.graph.verification', ...params },
       { headers },
     )
   }
@@ -3568,7 +3568,7 @@ export class AppBskyLabelerNS {
     opts?: AppBskyLabelerGetServices.CallOptions,
   ): Promise<AppBskyLabelerGetServices.Response> {
     return this._client.call(
-      'app.bsky.labeler.getServices',
+      'app.gndr.labeler.getServices',
       params,
       undefined,
       opts,
@@ -3590,7 +3590,7 @@ export class AppBskyLabelerServiceRecord {
     records: { uri: string; value: AppBskyLabelerService.Record }[]
   }> {
     const res = await this._client.call('com.atproto.repo.listRecords', {
-      collection: 'app.bsky.labeler.service',
+      collection: 'app.gndr.labeler.service',
       ...params,
     })
     return res.data
@@ -3604,7 +3604,7 @@ export class AppBskyLabelerServiceRecord {
     value: AppBskyLabelerService.Record
   }> {
     const res = await this._client.call('com.atproto.repo.getRecord', {
-      collection: 'app.bsky.labeler.service',
+      collection: 'app.gndr.labeler.service',
       ...params,
     })
     return res.data
@@ -3618,7 +3618,7 @@ export class AppBskyLabelerServiceRecord {
     record: Un$Typed<AppBskyLabelerService.Record>,
     headers?: Record<string, string>,
   ): Promise<{ uri: string; cid: string }> {
-    const collection = 'app.bsky.labeler.service'
+    const collection = 'app.gndr.labeler.service'
     const res = await this._client.call(
       'com.atproto.repo.createRecord',
       undefined,
@@ -3641,7 +3641,7 @@ export class AppBskyLabelerServiceRecord {
     record: Un$Typed<AppBskyLabelerService.Record>,
     headers?: Record<string, string>,
   ): Promise<{ uri: string; cid: string }> {
-    const collection = 'app.bsky.labeler.service'
+    const collection = 'app.gndr.labeler.service'
     const res = await this._client.call(
       'com.atproto.repo.putRecord',
       undefined,
@@ -3658,7 +3658,7 @@ export class AppBskyLabelerServiceRecord {
     await this._client.call(
       'com.atproto.repo.deleteRecord',
       undefined,
-      { collection: 'app.bsky.labeler.service', ...params },
+      { collection: 'app.gndr.labeler.service', ...params },
       { headers },
     )
   }
@@ -3678,7 +3678,7 @@ export class AppBskyNotificationNS {
     opts?: AppBskyNotificationGetPreferences.CallOptions,
   ): Promise<AppBskyNotificationGetPreferences.Response> {
     return this._client.call(
-      'app.bsky.notification.getPreferences',
+      'app.gndr.notification.getPreferences',
       params,
       undefined,
       opts,
@@ -3690,7 +3690,7 @@ export class AppBskyNotificationNS {
     opts?: AppBskyNotificationGetUnreadCount.CallOptions,
   ): Promise<AppBskyNotificationGetUnreadCount.Response> {
     return this._client.call(
-      'app.bsky.notification.getUnreadCount',
+      'app.gndr.notification.getUnreadCount',
       params,
       undefined,
       opts,
@@ -3702,7 +3702,7 @@ export class AppBskyNotificationNS {
     opts?: AppBskyNotificationListActivitySubscriptions.CallOptions,
   ): Promise<AppBskyNotificationListActivitySubscriptions.Response> {
     return this._client.call(
-      'app.bsky.notification.listActivitySubscriptions',
+      'app.gndr.notification.listActivitySubscriptions',
       params,
       undefined,
       opts,
@@ -3714,7 +3714,7 @@ export class AppBskyNotificationNS {
     opts?: AppBskyNotificationListNotifications.CallOptions,
   ): Promise<AppBskyNotificationListNotifications.Response> {
     return this._client.call(
-      'app.bsky.notification.listNotifications',
+      'app.gndr.notification.listNotifications',
       params,
       undefined,
       opts,
@@ -3726,7 +3726,7 @@ export class AppBskyNotificationNS {
     opts?: AppBskyNotificationPutActivitySubscription.CallOptions,
   ): Promise<AppBskyNotificationPutActivitySubscription.Response> {
     return this._client.call(
-      'app.bsky.notification.putActivitySubscription',
+      'app.gndr.notification.putActivitySubscription',
       opts?.qp,
       data,
       opts,
@@ -3738,7 +3738,7 @@ export class AppBskyNotificationNS {
     opts?: AppBskyNotificationPutPreferences.CallOptions,
   ): Promise<AppBskyNotificationPutPreferences.Response> {
     return this._client.call(
-      'app.bsky.notification.putPreferences',
+      'app.gndr.notification.putPreferences',
       opts?.qp,
       data,
       opts,
@@ -3750,7 +3750,7 @@ export class AppBskyNotificationNS {
     opts?: AppBskyNotificationPutPreferencesV2.CallOptions,
   ): Promise<AppBskyNotificationPutPreferencesV2.Response> {
     return this._client.call(
-      'app.bsky.notification.putPreferencesV2',
+      'app.gndr.notification.putPreferencesV2',
       opts?.qp,
       data,
       opts,
@@ -3762,7 +3762,7 @@ export class AppBskyNotificationNS {
     opts?: AppBskyNotificationRegisterPush.CallOptions,
   ): Promise<AppBskyNotificationRegisterPush.Response> {
     return this._client.call(
-      'app.bsky.notification.registerPush',
+      'app.gndr.notification.registerPush',
       opts?.qp,
       data,
       opts,
@@ -3774,7 +3774,7 @@ export class AppBskyNotificationNS {
     opts?: AppBskyNotificationUpdateSeen.CallOptions,
   ): Promise<AppBskyNotificationUpdateSeen.Response> {
     return this._client.call(
-      'app.bsky.notification.updateSeen',
+      'app.gndr.notification.updateSeen',
       opts?.qp,
       data,
       opts,
@@ -3796,7 +3796,7 @@ export class AppBskyNotificationDeclarationRecord {
     records: { uri: string; value: AppBskyNotificationDeclaration.Record }[]
   }> {
     const res = await this._client.call('com.atproto.repo.listRecords', {
-      collection: 'app.bsky.notification.declaration',
+      collection: 'app.gndr.notification.declaration',
       ...params,
     })
     return res.data
@@ -3810,7 +3810,7 @@ export class AppBskyNotificationDeclarationRecord {
     value: AppBskyNotificationDeclaration.Record
   }> {
     const res = await this._client.call('com.atproto.repo.getRecord', {
-      collection: 'app.bsky.notification.declaration',
+      collection: 'app.gndr.notification.declaration',
       ...params,
     })
     return res.data
@@ -3824,7 +3824,7 @@ export class AppBskyNotificationDeclarationRecord {
     record: Un$Typed<AppBskyNotificationDeclaration.Record>,
     headers?: Record<string, string>,
   ): Promise<{ uri: string; cid: string }> {
-    const collection = 'app.bsky.notification.declaration'
+    const collection = 'app.gndr.notification.declaration'
     const res = await this._client.call(
       'com.atproto.repo.createRecord',
       undefined,
@@ -3847,7 +3847,7 @@ export class AppBskyNotificationDeclarationRecord {
     record: Un$Typed<AppBskyNotificationDeclaration.Record>,
     headers?: Record<string, string>,
   ): Promise<{ uri: string; cid: string }> {
-    const collection = 'app.bsky.notification.declaration'
+    const collection = 'app.gndr.notification.declaration'
     const res = await this._client.call(
       'com.atproto.repo.putRecord',
       undefined,
@@ -3864,7 +3864,7 @@ export class AppBskyNotificationDeclarationRecord {
     await this._client.call(
       'com.atproto.repo.deleteRecord',
       undefined,
-      { collection: 'app.bsky.notification.declaration', ...params },
+      { collection: 'app.gndr.notification.declaration', ...params },
       { headers },
     )
   }
@@ -3890,7 +3890,7 @@ export class AppBskyUnspeccedNS {
     opts?: AppBskyUnspeccedGetConfig.CallOptions,
   ): Promise<AppBskyUnspeccedGetConfig.Response> {
     return this._client.call(
-      'app.bsky.unspecced.getConfig',
+      'app.gndr.unspecced.getConfig',
       params,
       undefined,
       opts,
@@ -3902,7 +3902,7 @@ export class AppBskyUnspeccedNS {
     opts?: AppBskyUnspeccedGetPopularFeedGenerators.CallOptions,
   ): Promise<AppBskyUnspeccedGetPopularFeedGenerators.Response> {
     return this._client.call(
-      'app.bsky.unspecced.getPopularFeedGenerators',
+      'app.gndr.unspecced.getPopularFeedGenerators',
       params,
       undefined,
       opts,
@@ -3914,7 +3914,7 @@ export class AppBskyUnspeccedNS {
     opts?: AppBskyUnspeccedGetPostThreadOtherV2.CallOptions,
   ): Promise<AppBskyUnspeccedGetPostThreadOtherV2.Response> {
     return this._client.call(
-      'app.bsky.unspecced.getPostThreadOtherV2',
+      'app.gndr.unspecced.getPostThreadOtherV2',
       params,
       undefined,
       opts,
@@ -3926,7 +3926,7 @@ export class AppBskyUnspeccedNS {
     opts?: AppBskyUnspeccedGetPostThreadV2.CallOptions,
   ): Promise<AppBskyUnspeccedGetPostThreadV2.Response> {
     return this._client.call(
-      'app.bsky.unspecced.getPostThreadV2',
+      'app.gndr.unspecced.getPostThreadV2',
       params,
       undefined,
       opts,
@@ -3938,7 +3938,7 @@ export class AppBskyUnspeccedNS {
     opts?: AppBskyUnspeccedGetSuggestedFeeds.CallOptions,
   ): Promise<AppBskyUnspeccedGetSuggestedFeeds.Response> {
     return this._client.call(
-      'app.bsky.unspecced.getSuggestedFeeds',
+      'app.gndr.unspecced.getSuggestedFeeds',
       params,
       undefined,
       opts,
@@ -3950,7 +3950,7 @@ export class AppBskyUnspeccedNS {
     opts?: AppBskyUnspeccedGetSuggestedFeedsSkeleton.CallOptions,
   ): Promise<AppBskyUnspeccedGetSuggestedFeedsSkeleton.Response> {
     return this._client.call(
-      'app.bsky.unspecced.getSuggestedFeedsSkeleton',
+      'app.gndr.unspecced.getSuggestedFeedsSkeleton',
       params,
       undefined,
       opts,
@@ -3962,7 +3962,7 @@ export class AppBskyUnspeccedNS {
     opts?: AppBskyUnspeccedGetSuggestedStarterPacks.CallOptions,
   ): Promise<AppBskyUnspeccedGetSuggestedStarterPacks.Response> {
     return this._client.call(
-      'app.bsky.unspecced.getSuggestedStarterPacks',
+      'app.gndr.unspecced.getSuggestedStarterPacks',
       params,
       undefined,
       opts,
@@ -3974,7 +3974,7 @@ export class AppBskyUnspeccedNS {
     opts?: AppBskyUnspeccedGetSuggestedStarterPacksSkeleton.CallOptions,
   ): Promise<AppBskyUnspeccedGetSuggestedStarterPacksSkeleton.Response> {
     return this._client.call(
-      'app.bsky.unspecced.getSuggestedStarterPacksSkeleton',
+      'app.gndr.unspecced.getSuggestedStarterPacksSkeleton',
       params,
       undefined,
       opts,
@@ -3986,7 +3986,7 @@ export class AppBskyUnspeccedNS {
     opts?: AppBskyUnspeccedGetSuggestedUsers.CallOptions,
   ): Promise<AppBskyUnspeccedGetSuggestedUsers.Response> {
     return this._client.call(
-      'app.bsky.unspecced.getSuggestedUsers',
+      'app.gndr.unspecced.getSuggestedUsers',
       params,
       undefined,
       opts,
@@ -3998,7 +3998,7 @@ export class AppBskyUnspeccedNS {
     opts?: AppBskyUnspeccedGetSuggestedUsersSkeleton.CallOptions,
   ): Promise<AppBskyUnspeccedGetSuggestedUsersSkeleton.Response> {
     return this._client.call(
-      'app.bsky.unspecced.getSuggestedUsersSkeleton',
+      'app.gndr.unspecced.getSuggestedUsersSkeleton',
       params,
       undefined,
       opts,
@@ -4010,7 +4010,7 @@ export class AppBskyUnspeccedNS {
     opts?: AppBskyUnspeccedGetSuggestionsSkeleton.CallOptions,
   ): Promise<AppBskyUnspeccedGetSuggestionsSkeleton.Response> {
     return this._client.call(
-      'app.bsky.unspecced.getSuggestionsSkeleton',
+      'app.gndr.unspecced.getSuggestionsSkeleton',
       params,
       undefined,
       opts,
@@ -4022,7 +4022,7 @@ export class AppBskyUnspeccedNS {
     opts?: AppBskyUnspeccedGetTaggedSuggestions.CallOptions,
   ): Promise<AppBskyUnspeccedGetTaggedSuggestions.Response> {
     return this._client.call(
-      'app.bsky.unspecced.getTaggedSuggestions',
+      'app.gndr.unspecced.getTaggedSuggestions',
       params,
       undefined,
       opts,
@@ -4034,7 +4034,7 @@ export class AppBskyUnspeccedNS {
     opts?: AppBskyUnspeccedGetTrendingTopics.CallOptions,
   ): Promise<AppBskyUnspeccedGetTrendingTopics.Response> {
     return this._client.call(
-      'app.bsky.unspecced.getTrendingTopics',
+      'app.gndr.unspecced.getTrendingTopics',
       params,
       undefined,
       opts,
@@ -4046,7 +4046,7 @@ export class AppBskyUnspeccedNS {
     opts?: AppBskyUnspeccedGetTrends.CallOptions,
   ): Promise<AppBskyUnspeccedGetTrends.Response> {
     return this._client.call(
-      'app.bsky.unspecced.getTrends',
+      'app.gndr.unspecced.getTrends',
       params,
       undefined,
       opts,
@@ -4058,7 +4058,7 @@ export class AppBskyUnspeccedNS {
     opts?: AppBskyUnspeccedGetTrendsSkeleton.CallOptions,
   ): Promise<AppBskyUnspeccedGetTrendsSkeleton.Response> {
     return this._client.call(
-      'app.bsky.unspecced.getTrendsSkeleton',
+      'app.gndr.unspecced.getTrendsSkeleton',
       params,
       undefined,
       opts,
@@ -4070,7 +4070,7 @@ export class AppBskyUnspeccedNS {
     opts?: AppBskyUnspeccedSearchActorsSkeleton.CallOptions,
   ): Promise<AppBskyUnspeccedSearchActorsSkeleton.Response> {
     return this._client
-      .call('app.bsky.unspecced.searchActorsSkeleton', params, undefined, opts)
+      .call('app.gndr.unspecced.searchActorsSkeleton', params, undefined, opts)
       .catch((e) => {
         throw AppBskyUnspeccedSearchActorsSkeleton.toKnownErr(e)
       })
@@ -4081,7 +4081,7 @@ export class AppBskyUnspeccedNS {
     opts?: AppBskyUnspeccedSearchPostsSkeleton.CallOptions,
   ): Promise<AppBskyUnspeccedSearchPostsSkeleton.Response> {
     return this._client
-      .call('app.bsky.unspecced.searchPostsSkeleton', params, undefined, opts)
+      .call('app.gndr.unspecced.searchPostsSkeleton', params, undefined, opts)
       .catch((e) => {
         throw AppBskyUnspeccedSearchPostsSkeleton.toKnownErr(e)
       })
@@ -4093,7 +4093,7 @@ export class AppBskyUnspeccedNS {
   ): Promise<AppBskyUnspeccedSearchStarterPacksSkeleton.Response> {
     return this._client
       .call(
-        'app.bsky.unspecced.searchStarterPacksSkeleton',
+        'app.gndr.unspecced.searchStarterPacksSkeleton',
         params,
         undefined,
         opts,
@@ -4116,7 +4116,7 @@ export class AppBskyVideoNS {
     opts?: AppBskyVideoGetJobStatus.CallOptions,
   ): Promise<AppBskyVideoGetJobStatus.Response> {
     return this._client.call(
-      'app.bsky.video.getJobStatus',
+      'app.gndr.video.getJobStatus',
       params,
       undefined,
       opts,
@@ -4128,7 +4128,7 @@ export class AppBskyVideoNS {
     opts?: AppBskyVideoGetUploadLimits.CallOptions,
   ): Promise<AppBskyVideoGetUploadLimits.Response> {
     return this._client.call(
-      'app.bsky.video.getUploadLimits',
+      'app.gndr.video.getUploadLimits',
       params,
       undefined,
       opts,
@@ -4139,17 +4139,17 @@ export class AppBskyVideoNS {
     data?: AppBskyVideoUploadVideo.InputSchema,
     opts?: AppBskyVideoUploadVideo.CallOptions,
   ): Promise<AppBskyVideoUploadVideo.Response> {
-    return this._client.call('app.bsky.video.uploadVideo', opts?.qp, data, opts)
+    return this._client.call('app.gndr.video.uploadVideo', opts?.qp, data, opts)
   }
 }
 
 export class ChatNS {
   _client: XrpcClient
-  bsky: ChatBskyNS
+  gndr: ChatBskyNS
 
   constructor(client: XrpcClient) {
     this._client = client
-    this.bsky = new ChatBskyNS(client)
+    this.gndr = new ChatBskyNS(client)
   }
 }
 
@@ -4181,7 +4181,7 @@ export class ChatBskyActorNS {
     opts?: ChatBskyActorDeleteAccount.CallOptions,
   ): Promise<ChatBskyActorDeleteAccount.Response> {
     return this._client.call(
-      'chat.bsky.actor.deleteAccount',
+      'chat.gndr.actor.deleteAccount',
       opts?.qp,
       data,
       opts,
@@ -4193,7 +4193,7 @@ export class ChatBskyActorNS {
     opts?: ChatBskyActorExportAccountData.CallOptions,
   ): Promise<ChatBskyActorExportAccountData.Response> {
     return this._client.call(
-      'chat.bsky.actor.exportAccountData',
+      'chat.gndr.actor.exportAccountData',
       params,
       undefined,
       opts,
@@ -4215,7 +4215,7 @@ export class ChatBskyActorDeclarationRecord {
     records: { uri: string; value: ChatBskyActorDeclaration.Record }[]
   }> {
     const res = await this._client.call('com.atproto.repo.listRecords', {
-      collection: 'chat.bsky.actor.declaration',
+      collection: 'chat.gndr.actor.declaration',
       ...params,
     })
     return res.data
@@ -4229,7 +4229,7 @@ export class ChatBskyActorDeclarationRecord {
     value: ChatBskyActorDeclaration.Record
   }> {
     const res = await this._client.call('com.atproto.repo.getRecord', {
-      collection: 'chat.bsky.actor.declaration',
+      collection: 'chat.gndr.actor.declaration',
       ...params,
     })
     return res.data
@@ -4243,7 +4243,7 @@ export class ChatBskyActorDeclarationRecord {
     record: Un$Typed<ChatBskyActorDeclaration.Record>,
     headers?: Record<string, string>,
   ): Promise<{ uri: string; cid: string }> {
-    const collection = 'chat.bsky.actor.declaration'
+    const collection = 'chat.gndr.actor.declaration'
     const res = await this._client.call(
       'com.atproto.repo.createRecord',
       undefined,
@@ -4266,7 +4266,7 @@ export class ChatBskyActorDeclarationRecord {
     record: Un$Typed<ChatBskyActorDeclaration.Record>,
     headers?: Record<string, string>,
   ): Promise<{ uri: string; cid: string }> {
-    const collection = 'chat.bsky.actor.declaration'
+    const collection = 'chat.gndr.actor.declaration'
     const res = await this._client.call(
       'com.atproto.repo.putRecord',
       undefined,
@@ -4283,7 +4283,7 @@ export class ChatBskyActorDeclarationRecord {
     await this._client.call(
       'com.atproto.repo.deleteRecord',
       undefined,
-      { collection: 'chat.bsky.actor.declaration', ...params },
+      { collection: 'chat.gndr.actor.declaration', ...params },
       { headers },
     )
   }
@@ -4301,7 +4301,7 @@ export class ChatBskyConvoNS {
     opts?: ChatBskyConvoAcceptConvo.CallOptions,
   ): Promise<ChatBskyConvoAcceptConvo.Response> {
     return this._client.call(
-      'chat.bsky.convo.acceptConvo',
+      'chat.gndr.convo.acceptConvo',
       opts?.qp,
       data,
       opts,
@@ -4313,7 +4313,7 @@ export class ChatBskyConvoNS {
     opts?: ChatBskyConvoAddReaction.CallOptions,
   ): Promise<ChatBskyConvoAddReaction.Response> {
     return this._client
-      .call('chat.bsky.convo.addReaction', opts?.qp, data, opts)
+      .call('chat.gndr.convo.addReaction', opts?.qp, data, opts)
       .catch((e) => {
         throw ChatBskyConvoAddReaction.toKnownErr(e)
       })
@@ -4324,7 +4324,7 @@ export class ChatBskyConvoNS {
     opts?: ChatBskyConvoDeleteMessageForSelf.CallOptions,
   ): Promise<ChatBskyConvoDeleteMessageForSelf.Response> {
     return this._client.call(
-      'chat.bsky.convo.deleteMessageForSelf',
+      'chat.gndr.convo.deleteMessageForSelf',
       opts?.qp,
       data,
       opts,
@@ -4336,7 +4336,7 @@ export class ChatBskyConvoNS {
     opts?: ChatBskyConvoGetConvo.CallOptions,
   ): Promise<ChatBskyConvoGetConvo.Response> {
     return this._client.call(
-      'chat.bsky.convo.getConvo',
+      'chat.gndr.convo.getConvo',
       params,
       undefined,
       opts,
@@ -4348,7 +4348,7 @@ export class ChatBskyConvoNS {
     opts?: ChatBskyConvoGetConvoAvailability.CallOptions,
   ): Promise<ChatBskyConvoGetConvoAvailability.Response> {
     return this._client.call(
-      'chat.bsky.convo.getConvoAvailability',
+      'chat.gndr.convo.getConvoAvailability',
       params,
       undefined,
       opts,
@@ -4360,7 +4360,7 @@ export class ChatBskyConvoNS {
     opts?: ChatBskyConvoGetConvoForMembers.CallOptions,
   ): Promise<ChatBskyConvoGetConvoForMembers.Response> {
     return this._client.call(
-      'chat.bsky.convo.getConvoForMembers',
+      'chat.gndr.convo.getConvoForMembers',
       params,
       undefined,
       opts,
@@ -4371,7 +4371,7 @@ export class ChatBskyConvoNS {
     params?: ChatBskyConvoGetLog.QueryParams,
     opts?: ChatBskyConvoGetLog.CallOptions,
   ): Promise<ChatBskyConvoGetLog.Response> {
-    return this._client.call('chat.bsky.convo.getLog', params, undefined, opts)
+    return this._client.call('chat.gndr.convo.getLog', params, undefined, opts)
   }
 
   getMessages(
@@ -4379,7 +4379,7 @@ export class ChatBskyConvoNS {
     opts?: ChatBskyConvoGetMessages.CallOptions,
   ): Promise<ChatBskyConvoGetMessages.Response> {
     return this._client.call(
-      'chat.bsky.convo.getMessages',
+      'chat.gndr.convo.getMessages',
       params,
       undefined,
       opts,
@@ -4390,7 +4390,7 @@ export class ChatBskyConvoNS {
     data?: ChatBskyConvoLeaveConvo.InputSchema,
     opts?: ChatBskyConvoLeaveConvo.CallOptions,
   ): Promise<ChatBskyConvoLeaveConvo.Response> {
-    return this._client.call('chat.bsky.convo.leaveConvo', opts?.qp, data, opts)
+    return this._client.call('chat.gndr.convo.leaveConvo', opts?.qp, data, opts)
   }
 
   listConvos(
@@ -4398,7 +4398,7 @@ export class ChatBskyConvoNS {
     opts?: ChatBskyConvoListConvos.CallOptions,
   ): Promise<ChatBskyConvoListConvos.Response> {
     return this._client.call(
-      'chat.bsky.convo.listConvos',
+      'chat.gndr.convo.listConvos',
       params,
       undefined,
       opts,
@@ -4409,7 +4409,7 @@ export class ChatBskyConvoNS {
     data?: ChatBskyConvoMuteConvo.InputSchema,
     opts?: ChatBskyConvoMuteConvo.CallOptions,
   ): Promise<ChatBskyConvoMuteConvo.Response> {
-    return this._client.call('chat.bsky.convo.muteConvo', opts?.qp, data, opts)
+    return this._client.call('chat.gndr.convo.muteConvo', opts?.qp, data, opts)
   }
 
   removeReaction(
@@ -4417,7 +4417,7 @@ export class ChatBskyConvoNS {
     opts?: ChatBskyConvoRemoveReaction.CallOptions,
   ): Promise<ChatBskyConvoRemoveReaction.Response> {
     return this._client
-      .call('chat.bsky.convo.removeReaction', opts?.qp, data, opts)
+      .call('chat.gndr.convo.removeReaction', opts?.qp, data, opts)
       .catch((e) => {
         throw ChatBskyConvoRemoveReaction.toKnownErr(e)
       })
@@ -4428,7 +4428,7 @@ export class ChatBskyConvoNS {
     opts?: ChatBskyConvoSendMessage.CallOptions,
   ): Promise<ChatBskyConvoSendMessage.Response> {
     return this._client.call(
-      'chat.bsky.convo.sendMessage',
+      'chat.gndr.convo.sendMessage',
       opts?.qp,
       data,
       opts,
@@ -4440,7 +4440,7 @@ export class ChatBskyConvoNS {
     opts?: ChatBskyConvoSendMessageBatch.CallOptions,
   ): Promise<ChatBskyConvoSendMessageBatch.Response> {
     return this._client.call(
-      'chat.bsky.convo.sendMessageBatch',
+      'chat.gndr.convo.sendMessageBatch',
       opts?.qp,
       data,
       opts,
@@ -4452,7 +4452,7 @@ export class ChatBskyConvoNS {
     opts?: ChatBskyConvoUnmuteConvo.CallOptions,
   ): Promise<ChatBskyConvoUnmuteConvo.Response> {
     return this._client.call(
-      'chat.bsky.convo.unmuteConvo',
+      'chat.gndr.convo.unmuteConvo',
       opts?.qp,
       data,
       opts,
@@ -4464,7 +4464,7 @@ export class ChatBskyConvoNS {
     opts?: ChatBskyConvoUpdateAllRead.CallOptions,
   ): Promise<ChatBskyConvoUpdateAllRead.Response> {
     return this._client.call(
-      'chat.bsky.convo.updateAllRead',
+      'chat.gndr.convo.updateAllRead',
       opts?.qp,
       data,
       opts,
@@ -4475,7 +4475,7 @@ export class ChatBskyConvoNS {
     data?: ChatBskyConvoUpdateRead.InputSchema,
     opts?: ChatBskyConvoUpdateRead.CallOptions,
   ): Promise<ChatBskyConvoUpdateRead.Response> {
-    return this._client.call('chat.bsky.convo.updateRead', opts?.qp, data, opts)
+    return this._client.call('chat.gndr.convo.updateRead', opts?.qp, data, opts)
   }
 }
 
@@ -4491,7 +4491,7 @@ export class ChatBskyModerationNS {
     opts?: ChatBskyModerationGetActorMetadata.CallOptions,
   ): Promise<ChatBskyModerationGetActorMetadata.Response> {
     return this._client.call(
-      'chat.bsky.moderation.getActorMetadata',
+      'chat.gndr.moderation.getActorMetadata',
       params,
       undefined,
       opts,
@@ -4503,7 +4503,7 @@ export class ChatBskyModerationNS {
     opts?: ChatBskyModerationGetMessageContext.CallOptions,
   ): Promise<ChatBskyModerationGetMessageContext.Response> {
     return this._client.call(
-      'chat.bsky.moderation.getMessageContext',
+      'chat.gndr.moderation.getMessageContext',
       params,
       undefined,
       opts,
@@ -4515,7 +4515,7 @@ export class ChatBskyModerationNS {
     opts?: ChatBskyModerationUpdateActorAccess.CallOptions,
   ): Promise<ChatBskyModerationUpdateActorAccess.Response> {
     return this._client.call(
-      'chat.bsky.moderation.updateActorAccess',
+      'chat.gndr.moderation.updateActorAccess',
       opts?.qp,
       data,
       opts,

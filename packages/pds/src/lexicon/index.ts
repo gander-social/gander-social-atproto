@@ -92,105 +92,105 @@ import * as ComAtprotoTempAddReservedHandle from './types/com/atproto/temp/addRe
 import * as ComAtprotoTempCheckSignupQueue from './types/com/atproto/temp/checkSignupQueue.js'
 import * as ComAtprotoTempFetchLabels from './types/com/atproto/temp/fetchLabels.js'
 import * as ComAtprotoTempRequestPhoneVerification from './types/com/atproto/temp/requestPhoneVerification.js'
-import * as AppBskyActorGetPreferences from './types/app/bsky/actor/getPreferences.js'
-import * as AppBskyActorGetProfile from './types/app/bsky/actor/getProfile.js'
-import * as AppBskyActorGetProfiles from './types/app/bsky/actor/getProfiles.js'
-import * as AppBskyActorGetSuggestions from './types/app/bsky/actor/getSuggestions.js'
-import * as AppBskyActorPutPreferences from './types/app/bsky/actor/putPreferences.js'
-import * as AppBskyActorSearchActors from './types/app/bsky/actor/searchActors.js'
-import * as AppBskyActorSearchActorsTypeahead from './types/app/bsky/actor/searchActorsTypeahead.js'
-import * as AppBskyFeedDescribeFeedGenerator from './types/app/bsky/feed/describeFeedGenerator.js'
-import * as AppBskyFeedGetActorFeeds from './types/app/bsky/feed/getActorFeeds.js'
-import * as AppBskyFeedGetActorLikes from './types/app/bsky/feed/getActorLikes.js'
-import * as AppBskyFeedGetAuthorFeed from './types/app/bsky/feed/getAuthorFeed.js'
-import * as AppBskyFeedGetFeed from './types/app/bsky/feed/getFeed.js'
-import * as AppBskyFeedGetFeedGenerator from './types/app/bsky/feed/getFeedGenerator.js'
-import * as AppBskyFeedGetFeedGenerators from './types/app/bsky/feed/getFeedGenerators.js'
-import * as AppBskyFeedGetFeedSkeleton from './types/app/bsky/feed/getFeedSkeleton.js'
-import * as AppBskyFeedGetLikes from './types/app/bsky/feed/getLikes.js'
-import * as AppBskyFeedGetListFeed from './types/app/bsky/feed/getListFeed.js'
-import * as AppBskyFeedGetPosts from './types/app/bsky/feed/getPosts.js'
-import * as AppBskyFeedGetPostThread from './types/app/bsky/feed/getPostThread.js'
-import * as AppBskyFeedGetQuotes from './types/app/bsky/feed/getQuotes.js'
-import * as AppBskyFeedGetRepostedBy from './types/app/bsky/feed/getRepostedBy.js'
-import * as AppBskyFeedGetSuggestedFeeds from './types/app/bsky/feed/getSuggestedFeeds.js'
-import * as AppBskyFeedGetTimeline from './types/app/bsky/feed/getTimeline.js'
-import * as AppBskyFeedSearchPosts from './types/app/bsky/feed/searchPosts.js'
-import * as AppBskyFeedSendInteractions from './types/app/bsky/feed/sendInteractions.js'
-import * as AppBskyGraphGetActorStarterPacks from './types/app/bsky/graph/getActorStarterPacks.js'
-import * as AppBskyGraphGetBlocks from './types/app/bsky/graph/getBlocks.js'
-import * as AppBskyGraphGetFollowers from './types/app/bsky/graph/getFollowers.js'
-import * as AppBskyGraphGetFollows from './types/app/bsky/graph/getFollows.js'
-import * as AppBskyGraphGetKnownFollowers from './types/app/bsky/graph/getKnownFollowers.js'
-import * as AppBskyGraphGetList from './types/app/bsky/graph/getList.js'
-import * as AppBskyGraphGetListBlocks from './types/app/bsky/graph/getListBlocks.js'
-import * as AppBskyGraphGetListMutes from './types/app/bsky/graph/getListMutes.js'
-import * as AppBskyGraphGetLists from './types/app/bsky/graph/getLists.js'
-import * as AppBskyGraphGetMutes from './types/app/bsky/graph/getMutes.js'
-import * as AppBskyGraphGetRelationships from './types/app/bsky/graph/getRelationships.js'
-import * as AppBskyGraphGetStarterPack from './types/app/bsky/graph/getStarterPack.js'
-import * as AppBskyGraphGetStarterPacks from './types/app/bsky/graph/getStarterPacks.js'
-import * as AppBskyGraphGetSuggestedFollowsByActor from './types/app/bsky/graph/getSuggestedFollowsByActor.js'
-import * as AppBskyGraphMuteActor from './types/app/bsky/graph/muteActor.js'
-import * as AppBskyGraphMuteActorList from './types/app/bsky/graph/muteActorList.js'
-import * as AppBskyGraphMuteThread from './types/app/bsky/graph/muteThread.js'
-import * as AppBskyGraphSearchStarterPacks from './types/app/bsky/graph/searchStarterPacks.js'
-import * as AppBskyGraphUnmuteActor from './types/app/bsky/graph/unmuteActor.js'
-import * as AppBskyGraphUnmuteActorList from './types/app/bsky/graph/unmuteActorList.js'
-import * as AppBskyGraphUnmuteThread from './types/app/bsky/graph/unmuteThread.js'
-import * as AppBskyLabelerGetServices from './types/app/bsky/labeler/getServices.js'
-import * as AppBskyNotificationGetPreferences from './types/app/bsky/notification/getPreferences.js'
-import * as AppBskyNotificationGetUnreadCount from './types/app/bsky/notification/getUnreadCount.js'
-import * as AppBskyNotificationListActivitySubscriptions from './types/app/bsky/notification/listActivitySubscriptions.js'
-import * as AppBskyNotificationListNotifications from './types/app/bsky/notification/listNotifications.js'
-import * as AppBskyNotificationPutActivitySubscription from './types/app/bsky/notification/putActivitySubscription.js'
-import * as AppBskyNotificationPutPreferences from './types/app/bsky/notification/putPreferences.js'
-import * as AppBskyNotificationPutPreferencesV2 from './types/app/bsky/notification/putPreferencesV2.js'
-import * as AppBskyNotificationRegisterPush from './types/app/bsky/notification/registerPush.js'
-import * as AppBskyNotificationUpdateSeen from './types/app/bsky/notification/updateSeen.js'
-import * as AppBskyUnspeccedGetConfig from './types/app/bsky/unspecced/getConfig.js'
-import * as AppBskyUnspeccedGetPopularFeedGenerators from './types/app/bsky/unspecced/getPopularFeedGenerators.js'
-import * as AppBskyUnspeccedGetPostThreadOtherV2 from './types/app/bsky/unspecced/getPostThreadOtherV2.js'
-import * as AppBskyUnspeccedGetPostThreadV2 from './types/app/bsky/unspecced/getPostThreadV2.js'
-import * as AppBskyUnspeccedGetSuggestedFeeds from './types/app/bsky/unspecced/getSuggestedFeeds.js'
-import * as AppBskyUnspeccedGetSuggestedFeedsSkeleton from './types/app/bsky/unspecced/getSuggestedFeedsSkeleton.js'
-import * as AppBskyUnspeccedGetSuggestedStarterPacks from './types/app/bsky/unspecced/getSuggestedStarterPacks.js'
-import * as AppBskyUnspeccedGetSuggestedStarterPacksSkeleton from './types/app/bsky/unspecced/getSuggestedStarterPacksSkeleton.js'
-import * as AppBskyUnspeccedGetSuggestedUsers from './types/app/bsky/unspecced/getSuggestedUsers.js'
-import * as AppBskyUnspeccedGetSuggestedUsersSkeleton from './types/app/bsky/unspecced/getSuggestedUsersSkeleton.js'
-import * as AppBskyUnspeccedGetSuggestionsSkeleton from './types/app/bsky/unspecced/getSuggestionsSkeleton.js'
-import * as AppBskyUnspeccedGetTaggedSuggestions from './types/app/bsky/unspecced/getTaggedSuggestions.js'
-import * as AppBskyUnspeccedGetTrendingTopics from './types/app/bsky/unspecced/getTrendingTopics.js'
-import * as AppBskyUnspeccedGetTrends from './types/app/bsky/unspecced/getTrends.js'
-import * as AppBskyUnspeccedGetTrendsSkeleton from './types/app/bsky/unspecced/getTrendsSkeleton.js'
-import * as AppBskyUnspeccedSearchActorsSkeleton from './types/app/bsky/unspecced/searchActorsSkeleton.js'
-import * as AppBskyUnspeccedSearchPostsSkeleton from './types/app/bsky/unspecced/searchPostsSkeleton.js'
-import * as AppBskyUnspeccedSearchStarterPacksSkeleton from './types/app/bsky/unspecced/searchStarterPacksSkeleton.js'
-import * as AppBskyVideoGetJobStatus from './types/app/bsky/video/getJobStatus.js'
-import * as AppBskyVideoGetUploadLimits from './types/app/bsky/video/getUploadLimits.js'
-import * as AppBskyVideoUploadVideo from './types/app/bsky/video/uploadVideo.js'
-import * as ChatBskyActorDeleteAccount from './types/chat/bsky/actor/deleteAccount.js'
-import * as ChatBskyActorExportAccountData from './types/chat/bsky/actor/exportAccountData.js'
-import * as ChatBskyConvoAcceptConvo from './types/chat/bsky/convo/acceptConvo.js'
-import * as ChatBskyConvoAddReaction from './types/chat/bsky/convo/addReaction.js'
-import * as ChatBskyConvoDeleteMessageForSelf from './types/chat/bsky/convo/deleteMessageForSelf.js'
-import * as ChatBskyConvoGetConvo from './types/chat/bsky/convo/getConvo.js'
-import * as ChatBskyConvoGetConvoAvailability from './types/chat/bsky/convo/getConvoAvailability.js'
-import * as ChatBskyConvoGetConvoForMembers from './types/chat/bsky/convo/getConvoForMembers.js'
-import * as ChatBskyConvoGetLog from './types/chat/bsky/convo/getLog.js'
-import * as ChatBskyConvoGetMessages from './types/chat/bsky/convo/getMessages.js'
-import * as ChatBskyConvoLeaveConvo from './types/chat/bsky/convo/leaveConvo.js'
-import * as ChatBskyConvoListConvos from './types/chat/bsky/convo/listConvos.js'
-import * as ChatBskyConvoMuteConvo from './types/chat/bsky/convo/muteConvo.js'
-import * as ChatBskyConvoRemoveReaction from './types/chat/bsky/convo/removeReaction.js'
-import * as ChatBskyConvoSendMessage from './types/chat/bsky/convo/sendMessage.js'
-import * as ChatBskyConvoSendMessageBatch from './types/chat/bsky/convo/sendMessageBatch.js'
-import * as ChatBskyConvoUnmuteConvo from './types/chat/bsky/convo/unmuteConvo.js'
-import * as ChatBskyConvoUpdateAllRead from './types/chat/bsky/convo/updateAllRead.js'
-import * as ChatBskyConvoUpdateRead from './types/chat/bsky/convo/updateRead.js'
-import * as ChatBskyModerationGetActorMetadata from './types/chat/bsky/moderation/getActorMetadata.js'
-import * as ChatBskyModerationGetMessageContext from './types/chat/bsky/moderation/getMessageContext.js'
-import * as ChatBskyModerationUpdateActorAccess from './types/chat/bsky/moderation/updateActorAccess.js'
+import * as AppBskyActorGetPreferences from './types/app/gndr/actor/getPreferences.js'
+import * as AppBskyActorGetProfile from './types/app/gndr/actor/getProfile.js'
+import * as AppBskyActorGetProfiles from './types/app/gndr/actor/getProfiles.js'
+import * as AppBskyActorGetSuggestions from './types/app/gndr/actor/getSuggestions.js'
+import * as AppBskyActorPutPreferences from './types/app/gndr/actor/putPreferences.js'
+import * as AppBskyActorSearchActors from './types/app/gndr/actor/searchActors.js'
+import * as AppBskyActorSearchActorsTypeahead from './types/app/gndr/actor/searchActorsTypeahead.js'
+import * as AppBskyFeedDescribeFeedGenerator from './types/app/gndr/feed/describeFeedGenerator.js'
+import * as AppBskyFeedGetActorFeeds from './types/app/gndr/feed/getActorFeeds.js'
+import * as AppBskyFeedGetActorLikes from './types/app/gndr/feed/getActorLikes.js'
+import * as AppBskyFeedGetAuthorFeed from './types/app/gndr/feed/getAuthorFeed.js'
+import * as AppBskyFeedGetFeed from './types/app/gndr/feed/getFeed.js'
+import * as AppBskyFeedGetFeedGenerator from './types/app/gndr/feed/getFeedGenerator.js'
+import * as AppBskyFeedGetFeedGenerators from './types/app/gndr/feed/getFeedGenerators.js'
+import * as AppBskyFeedGetFeedSkeleton from './types/app/gndr/feed/getFeedSkeleton.js'
+import * as AppBskyFeedGetLikes from './types/app/gndr/feed/getLikes.js'
+import * as AppBskyFeedGetListFeed from './types/app/gndr/feed/getListFeed.js'
+import * as AppBskyFeedGetPosts from './types/app/gndr/feed/getPosts.js'
+import * as AppBskyFeedGetPostThread from './types/app/gndr/feed/getPostThread.js'
+import * as AppBskyFeedGetQuotes from './types/app/gndr/feed/getQuotes.js'
+import * as AppBskyFeedGetRepostedBy from './types/app/gndr/feed/getRepostedBy.js'
+import * as AppBskyFeedGetSuggestedFeeds from './types/app/gndr/feed/getSuggestedFeeds.js'
+import * as AppBskyFeedGetTimeline from './types/app/gndr/feed/getTimeline.js'
+import * as AppBskyFeedSearchPosts from './types/app/gndr/feed/searchPosts.js'
+import * as AppBskyFeedSendInteractions from './types/app/gndr/feed/sendInteractions.js'
+import * as AppBskyGraphGetActorStarterPacks from './types/app/gndr/graph/getActorStarterPacks.js'
+import * as AppBskyGraphGetBlocks from './types/app/gndr/graph/getBlocks.js'
+import * as AppBskyGraphGetFollowers from './types/app/gndr/graph/getFollowers.js'
+import * as AppBskyGraphGetFollows from './types/app/gndr/graph/getFollows.js'
+import * as AppBskyGraphGetKnownFollowers from './types/app/gndr/graph/getKnownFollowers.js'
+import * as AppBskyGraphGetList from './types/app/gndr/graph/getList.js'
+import * as AppBskyGraphGetListBlocks from './types/app/gndr/graph/getListBlocks.js'
+import * as AppBskyGraphGetListMutes from './types/app/gndr/graph/getListMutes.js'
+import * as AppBskyGraphGetLists from './types/app/gndr/graph/getLists.js'
+import * as AppBskyGraphGetMutes from './types/app/gndr/graph/getMutes.js'
+import * as AppBskyGraphGetRelationships from './types/app/gndr/graph/getRelationships.js'
+import * as AppBskyGraphGetStarterPack from './types/app/gndr/graph/getStarterPack.js'
+import * as AppBskyGraphGetStarterPacks from './types/app/gndr/graph/getStarterPacks.js'
+import * as AppBskyGraphGetSuggestedFollowsByActor from './types/app/gndr/graph/getSuggestedFollowsByActor.js'
+import * as AppBskyGraphMuteActor from './types/app/gndr/graph/muteActor.js'
+import * as AppBskyGraphMuteActorList from './types/app/gndr/graph/muteActorList.js'
+import * as AppBskyGraphMuteThread from './types/app/gndr/graph/muteThread.js'
+import * as AppBskyGraphSearchStarterPacks from './types/app/gndr/graph/searchStarterPacks.js'
+import * as AppBskyGraphUnmuteActor from './types/app/gndr/graph/unmuteActor.js'
+import * as AppBskyGraphUnmuteActorList from './types/app/gndr/graph/unmuteActorList.js'
+import * as AppBskyGraphUnmuteThread from './types/app/gndr/graph/unmuteThread.js'
+import * as AppBskyLabelerGetServices from './types/app/gndr/labeler/getServices.js'
+import * as AppBskyNotificationGetPreferences from './types/app/gndr/notification/getPreferences.js'
+import * as AppBskyNotificationGetUnreadCount from './types/app/gndr/notification/getUnreadCount.js'
+import * as AppBskyNotificationListActivitySubscriptions from './types/app/gndr/notification/listActivitySubscriptions.js'
+import * as AppBskyNotificationListNotifications from './types/app/gndr/notification/listNotifications.js'
+import * as AppBskyNotificationPutActivitySubscription from './types/app/gndr/notification/putActivitySubscription.js'
+import * as AppBskyNotificationPutPreferences from './types/app/gndr/notification/putPreferences.js'
+import * as AppBskyNotificationPutPreferencesV2 from './types/app/gndr/notification/putPreferencesV2.js'
+import * as AppBskyNotificationRegisterPush from './types/app/gndr/notification/registerPush.js'
+import * as AppBskyNotificationUpdateSeen from './types/app/gndr/notification/updateSeen.js'
+import * as AppBskyUnspeccedGetConfig from './types/app/gndr/unspecced/getConfig.js'
+import * as AppBskyUnspeccedGetPopularFeedGenerators from './types/app/gndr/unspecced/getPopularFeedGenerators.js'
+import * as AppBskyUnspeccedGetPostThreadOtherV2 from './types/app/gndr/unspecced/getPostThreadOtherV2.js'
+import * as AppBskyUnspeccedGetPostThreadV2 from './types/app/gndr/unspecced/getPostThreadV2.js'
+import * as AppBskyUnspeccedGetSuggestedFeeds from './types/app/gndr/unspecced/getSuggestedFeeds.js'
+import * as AppBskyUnspeccedGetSuggestedFeedsSkeleton from './types/app/gndr/unspecced/getSuggestedFeedsSkeleton.js'
+import * as AppBskyUnspeccedGetSuggestedStarterPacks from './types/app/gndr/unspecced/getSuggestedStarterPacks.js'
+import * as AppBskyUnspeccedGetSuggestedStarterPacksSkeleton from './types/app/gndr/unspecced/getSuggestedStarterPacksSkeleton.js'
+import * as AppBskyUnspeccedGetSuggestedUsers from './types/app/gndr/unspecced/getSuggestedUsers.js'
+import * as AppBskyUnspeccedGetSuggestedUsersSkeleton from './types/app/gndr/unspecced/getSuggestedUsersSkeleton.js'
+import * as AppBskyUnspeccedGetSuggestionsSkeleton from './types/app/gndr/unspecced/getSuggestionsSkeleton.js'
+import * as AppBskyUnspeccedGetTaggedSuggestions from './types/app/gndr/unspecced/getTaggedSuggestions.js'
+import * as AppBskyUnspeccedGetTrendingTopics from './types/app/gndr/unspecced/getTrendingTopics.js'
+import * as AppBskyUnspeccedGetTrends from './types/app/gndr/unspecced/getTrends.js'
+import * as AppBskyUnspeccedGetTrendsSkeleton from './types/app/gndr/unspecced/getTrendsSkeleton.js'
+import * as AppBskyUnspeccedSearchActorsSkeleton from './types/app/gndr/unspecced/searchActorsSkeleton.js'
+import * as AppBskyUnspeccedSearchPostsSkeleton from './types/app/gndr/unspecced/searchPostsSkeleton.js'
+import * as AppBskyUnspeccedSearchStarterPacksSkeleton from './types/app/gndr/unspecced/searchStarterPacksSkeleton.js'
+import * as AppBskyVideoGetJobStatus from './types/app/gndr/video/getJobStatus.js'
+import * as AppBskyVideoGetUploadLimits from './types/app/gndr/video/getUploadLimits.js'
+import * as AppBskyVideoUploadVideo from './types/app/gndr/video/uploadVideo.js'
+import * as ChatBskyActorDeleteAccount from './types/chat/gndr/actor/deleteAccount.js'
+import * as ChatBskyActorExportAccountData from './types/chat/gndr/actor/exportAccountData.js'
+import * as ChatBskyConvoAcceptConvo from './types/chat/gndr/convo/acceptConvo.js'
+import * as ChatBskyConvoAddReaction from './types/chat/gndr/convo/addReaction.js'
+import * as ChatBskyConvoDeleteMessageForSelf from './types/chat/gndr/convo/deleteMessageForSelf.js'
+import * as ChatBskyConvoGetConvo from './types/chat/gndr/convo/getConvo.js'
+import * as ChatBskyConvoGetConvoAvailability from './types/chat/gndr/convo/getConvoAvailability.js'
+import * as ChatBskyConvoGetConvoForMembers from './types/chat/gndr/convo/getConvoForMembers.js'
+import * as ChatBskyConvoGetLog from './types/chat/gndr/convo/getLog.js'
+import * as ChatBskyConvoGetMessages from './types/chat/gndr/convo/getMessages.js'
+import * as ChatBskyConvoLeaveConvo from './types/chat/gndr/convo/leaveConvo.js'
+import * as ChatBskyConvoListConvos from './types/chat/gndr/convo/listConvos.js'
+import * as ChatBskyConvoMuteConvo from './types/chat/gndr/convo/muteConvo.js'
+import * as ChatBskyConvoRemoveReaction from './types/chat/gndr/convo/removeReaction.js'
+import * as ChatBskyConvoSendMessage from './types/chat/gndr/convo/sendMessage.js'
+import * as ChatBskyConvoSendMessageBatch from './types/chat/gndr/convo/sendMessageBatch.js'
+import * as ChatBskyConvoUnmuteConvo from './types/chat/gndr/convo/unmuteConvo.js'
+import * as ChatBskyConvoUpdateAllRead from './types/chat/gndr/convo/updateAllRead.js'
+import * as ChatBskyConvoUpdateRead from './types/chat/gndr/convo/updateRead.js'
+import * as ChatBskyModerationGetActorMetadata from './types/chat/gndr/moderation/getActorMetadata.js'
+import * as ChatBskyModerationGetMessageContext from './types/chat/gndr/moderation/getMessageContext.js'
+import * as ChatBskyModerationUpdateActorAccess from './types/chat/gndr/moderation/updateActorAccess.js'
 import * as ToolsOzoneCommunicationCreateTemplate from './types/tools/ozone/communication/createTemplate.js'
 import * as ToolsOzoneCommunicationDeleteTemplate from './types/tools/ozone/communication/deleteTemplate.js'
 import * as ToolsOzoneCommunicationListTemplates from './types/tools/ozone/communication/listTemplates.js'
@@ -242,29 +242,29 @@ export const COM_ATPROTO_MODERATION = {
   DefsReasonOther: 'com.atproto.moderation.defs#reasonOther',
   DefsReasonAppeal: 'com.atproto.moderation.defs#reasonAppeal',
 }
-export const APP_BSKY_ACTOR = {
-  StatusLive: 'app.bsky.actor.status#live',
+export const APP_GNDR_ACTOR = {
+  StatusLive: 'app.gndr.actor.status#live',
 }
-export const APP_BSKY_FEED = {
-  DefsRequestLess: 'app.bsky.feed.defs#requestLess',
-  DefsRequestMore: 'app.bsky.feed.defs#requestMore',
-  DefsClickthroughItem: 'app.bsky.feed.defs#clickthroughItem',
-  DefsClickthroughAuthor: 'app.bsky.feed.defs#clickthroughAuthor',
-  DefsClickthroughReposter: 'app.bsky.feed.defs#clickthroughReposter',
-  DefsClickthroughEmbed: 'app.bsky.feed.defs#clickthroughEmbed',
-  DefsContentModeUnspecified: 'app.bsky.feed.defs#contentModeUnspecified',
-  DefsContentModeVideo: 'app.bsky.feed.defs#contentModeVideo',
-  DefsInteractionSeen: 'app.bsky.feed.defs#interactionSeen',
-  DefsInteractionLike: 'app.bsky.feed.defs#interactionLike',
-  DefsInteractionRepost: 'app.bsky.feed.defs#interactionRepost',
-  DefsInteractionReply: 'app.bsky.feed.defs#interactionReply',
-  DefsInteractionQuote: 'app.bsky.feed.defs#interactionQuote',
-  DefsInteractionShare: 'app.bsky.feed.defs#interactionShare',
+export const APP_GNDR_FEED = {
+  DefsRequestLess: 'app.gndr.feed.defs#requestLess',
+  DefsRequestMore: 'app.gndr.feed.defs#requestMore',
+  DefsClickthroughItem: 'app.gndr.feed.defs#clickthroughItem',
+  DefsClickthroughAuthor: 'app.gndr.feed.defs#clickthroughAuthor',
+  DefsClickthroughReposter: 'app.gndr.feed.defs#clickthroughReposter',
+  DefsClickthroughEmbed: 'app.gndr.feed.defs#clickthroughEmbed',
+  DefsContentModeUnspecified: 'app.gndr.feed.defs#contentModeUnspecified',
+  DefsContentModeVideo: 'app.gndr.feed.defs#contentModeVideo',
+  DefsInteractionSeen: 'app.gndr.feed.defs#interactionSeen',
+  DefsInteractionLike: 'app.gndr.feed.defs#interactionLike',
+  DefsInteractionRepost: 'app.gndr.feed.defs#interactionRepost',
+  DefsInteractionReply: 'app.gndr.feed.defs#interactionReply',
+  DefsInteractionQuote: 'app.gndr.feed.defs#interactionQuote',
+  DefsInteractionShare: 'app.gndr.feed.defs#interactionShare',
 }
-export const APP_BSKY_GRAPH = {
-  DefsModlist: 'app.bsky.graph.defs#modlist',
-  DefsCuratelist: 'app.bsky.graph.defs#curatelist',
-  DefsReferencelist: 'app.bsky.graph.defs#referencelist',
+export const APP_GNDR_GRAPH = {
+  DefsModlist: 'app.gndr.graph.defs#modlist',
+  DefsCuratelist: 'app.gndr.graph.defs#curatelist',
+  DefsReferencelist: 'app.gndr.graph.defs#referencelist',
 }
 export const TOOLS_OZONE_MODERATION = {
   DefsReviewOpen: 'tools.ozone.moderation.defs#reviewOpen',
@@ -1391,11 +1391,11 @@ export class ComAtprotoTempNS {
 
 export class AppNS {
   _server: Server
-  bsky: AppBskyNS
+  gndr: AppBskyNS
 
   constructor(server: Server) {
     this._server = server
-    this.bsky = new AppBskyNS(server)
+    this.gndr = new AppBskyNS(server)
   }
 }
 
@@ -1440,7 +1440,7 @@ export class AppBskyActorNS {
       AppBskyActorGetPreferences.HandlerOutput
     >,
   ) {
-    const nsid = 'app.bsky.actor.getPreferences' // @ts-ignore
+    const nsid = 'app.gndr.actor.getPreferences' // @ts-ignore
     return this._server.xrpc.method(nsid, cfg)
   }
 
@@ -1452,7 +1452,7 @@ export class AppBskyActorNS {
       AppBskyActorGetProfile.HandlerOutput
     >,
   ) {
-    const nsid = 'app.bsky.actor.getProfile' // @ts-ignore
+    const nsid = 'app.gndr.actor.getProfile' // @ts-ignore
     return this._server.xrpc.method(nsid, cfg)
   }
 
@@ -1464,7 +1464,7 @@ export class AppBskyActorNS {
       AppBskyActorGetProfiles.HandlerOutput
     >,
   ) {
-    const nsid = 'app.bsky.actor.getProfiles' // @ts-ignore
+    const nsid = 'app.gndr.actor.getProfiles' // @ts-ignore
     return this._server.xrpc.method(nsid, cfg)
   }
 
@@ -1476,7 +1476,7 @@ export class AppBskyActorNS {
       AppBskyActorGetSuggestions.HandlerOutput
     >,
   ) {
-    const nsid = 'app.bsky.actor.getSuggestions' // @ts-ignore
+    const nsid = 'app.gndr.actor.getSuggestions' // @ts-ignore
     return this._server.xrpc.method(nsid, cfg)
   }
 
@@ -1488,7 +1488,7 @@ export class AppBskyActorNS {
       AppBskyActorPutPreferences.HandlerOutput
     >,
   ) {
-    const nsid = 'app.bsky.actor.putPreferences' // @ts-ignore
+    const nsid = 'app.gndr.actor.putPreferences' // @ts-ignore
     return this._server.xrpc.method(nsid, cfg)
   }
 
@@ -1500,7 +1500,7 @@ export class AppBskyActorNS {
       AppBskyActorSearchActors.HandlerOutput
     >,
   ) {
-    const nsid = 'app.bsky.actor.searchActors' // @ts-ignore
+    const nsid = 'app.gndr.actor.searchActors' // @ts-ignore
     return this._server.xrpc.method(nsid, cfg)
   }
 
@@ -1512,7 +1512,7 @@ export class AppBskyActorNS {
       AppBskyActorSearchActorsTypeahead.HandlerOutput
     >,
   ) {
-    const nsid = 'app.bsky.actor.searchActorsTypeahead' // @ts-ignore
+    const nsid = 'app.gndr.actor.searchActorsTypeahead' // @ts-ignore
     return this._server.xrpc.method(nsid, cfg)
   }
 }
@@ -1540,7 +1540,7 @@ export class AppBskyFeedNS {
       AppBskyFeedDescribeFeedGenerator.HandlerOutput
     >,
   ) {
-    const nsid = 'app.bsky.feed.describeFeedGenerator' // @ts-ignore
+    const nsid = 'app.gndr.feed.describeFeedGenerator' // @ts-ignore
     return this._server.xrpc.method(nsid, cfg)
   }
 
@@ -1552,7 +1552,7 @@ export class AppBskyFeedNS {
       AppBskyFeedGetActorFeeds.HandlerOutput
     >,
   ) {
-    const nsid = 'app.bsky.feed.getActorFeeds' // @ts-ignore
+    const nsid = 'app.gndr.feed.getActorFeeds' // @ts-ignore
     return this._server.xrpc.method(nsid, cfg)
   }
 
@@ -1564,7 +1564,7 @@ export class AppBskyFeedNS {
       AppBskyFeedGetActorLikes.HandlerOutput
     >,
   ) {
-    const nsid = 'app.bsky.feed.getActorLikes' // @ts-ignore
+    const nsid = 'app.gndr.feed.getActorLikes' // @ts-ignore
     return this._server.xrpc.method(nsid, cfg)
   }
 
@@ -1576,7 +1576,7 @@ export class AppBskyFeedNS {
       AppBskyFeedGetAuthorFeed.HandlerOutput
     >,
   ) {
-    const nsid = 'app.bsky.feed.getAuthorFeed' // @ts-ignore
+    const nsid = 'app.gndr.feed.getAuthorFeed' // @ts-ignore
     return this._server.xrpc.method(nsid, cfg)
   }
 
@@ -1588,7 +1588,7 @@ export class AppBskyFeedNS {
       AppBskyFeedGetFeed.HandlerOutput
     >,
   ) {
-    const nsid = 'app.bsky.feed.getFeed' // @ts-ignore
+    const nsid = 'app.gndr.feed.getFeed' // @ts-ignore
     return this._server.xrpc.method(nsid, cfg)
   }
 
@@ -1600,7 +1600,7 @@ export class AppBskyFeedNS {
       AppBskyFeedGetFeedGenerator.HandlerOutput
     >,
   ) {
-    const nsid = 'app.bsky.feed.getFeedGenerator' // @ts-ignore
+    const nsid = 'app.gndr.feed.getFeedGenerator' // @ts-ignore
     return this._server.xrpc.method(nsid, cfg)
   }
 
@@ -1612,7 +1612,7 @@ export class AppBskyFeedNS {
       AppBskyFeedGetFeedGenerators.HandlerOutput
     >,
   ) {
-    const nsid = 'app.bsky.feed.getFeedGenerators' // @ts-ignore
+    const nsid = 'app.gndr.feed.getFeedGenerators' // @ts-ignore
     return this._server.xrpc.method(nsid, cfg)
   }
 
@@ -1624,7 +1624,7 @@ export class AppBskyFeedNS {
       AppBskyFeedGetFeedSkeleton.HandlerOutput
     >,
   ) {
-    const nsid = 'app.bsky.feed.getFeedSkeleton' // @ts-ignore
+    const nsid = 'app.gndr.feed.getFeedSkeleton' // @ts-ignore
     return this._server.xrpc.method(nsid, cfg)
   }
 
@@ -1636,7 +1636,7 @@ export class AppBskyFeedNS {
       AppBskyFeedGetLikes.HandlerOutput
     >,
   ) {
-    const nsid = 'app.bsky.feed.getLikes' // @ts-ignore
+    const nsid = 'app.gndr.feed.getLikes' // @ts-ignore
     return this._server.xrpc.method(nsid, cfg)
   }
 
@@ -1648,7 +1648,7 @@ export class AppBskyFeedNS {
       AppBskyFeedGetListFeed.HandlerOutput
     >,
   ) {
-    const nsid = 'app.bsky.feed.getListFeed' // @ts-ignore
+    const nsid = 'app.gndr.feed.getListFeed' // @ts-ignore
     return this._server.xrpc.method(nsid, cfg)
   }
 
@@ -1660,7 +1660,7 @@ export class AppBskyFeedNS {
       AppBskyFeedGetPosts.HandlerOutput
     >,
   ) {
-    const nsid = 'app.bsky.feed.getPosts' // @ts-ignore
+    const nsid = 'app.gndr.feed.getPosts' // @ts-ignore
     return this._server.xrpc.method(nsid, cfg)
   }
 
@@ -1672,7 +1672,7 @@ export class AppBskyFeedNS {
       AppBskyFeedGetPostThread.HandlerOutput
     >,
   ) {
-    const nsid = 'app.bsky.feed.getPostThread' // @ts-ignore
+    const nsid = 'app.gndr.feed.getPostThread' // @ts-ignore
     return this._server.xrpc.method(nsid, cfg)
   }
 
@@ -1684,7 +1684,7 @@ export class AppBskyFeedNS {
       AppBskyFeedGetQuotes.HandlerOutput
     >,
   ) {
-    const nsid = 'app.bsky.feed.getQuotes' // @ts-ignore
+    const nsid = 'app.gndr.feed.getQuotes' // @ts-ignore
     return this._server.xrpc.method(nsid, cfg)
   }
 
@@ -1696,7 +1696,7 @@ export class AppBskyFeedNS {
       AppBskyFeedGetRepostedBy.HandlerOutput
     >,
   ) {
-    const nsid = 'app.bsky.feed.getRepostedBy' // @ts-ignore
+    const nsid = 'app.gndr.feed.getRepostedBy' // @ts-ignore
     return this._server.xrpc.method(nsid, cfg)
   }
 
@@ -1708,7 +1708,7 @@ export class AppBskyFeedNS {
       AppBskyFeedGetSuggestedFeeds.HandlerOutput
     >,
   ) {
-    const nsid = 'app.bsky.feed.getSuggestedFeeds' // @ts-ignore
+    const nsid = 'app.gndr.feed.getSuggestedFeeds' // @ts-ignore
     return this._server.xrpc.method(nsid, cfg)
   }
 
@@ -1720,7 +1720,7 @@ export class AppBskyFeedNS {
       AppBskyFeedGetTimeline.HandlerOutput
     >,
   ) {
-    const nsid = 'app.bsky.feed.getTimeline' // @ts-ignore
+    const nsid = 'app.gndr.feed.getTimeline' // @ts-ignore
     return this._server.xrpc.method(nsid, cfg)
   }
 
@@ -1732,7 +1732,7 @@ export class AppBskyFeedNS {
       AppBskyFeedSearchPosts.HandlerOutput
     >,
   ) {
-    const nsid = 'app.bsky.feed.searchPosts' // @ts-ignore
+    const nsid = 'app.gndr.feed.searchPosts' // @ts-ignore
     return this._server.xrpc.method(nsid, cfg)
   }
 
@@ -1744,7 +1744,7 @@ export class AppBskyFeedNS {
       AppBskyFeedSendInteractions.HandlerOutput
     >,
   ) {
-    const nsid = 'app.bsky.feed.sendInteractions' // @ts-ignore
+    const nsid = 'app.gndr.feed.sendInteractions' // @ts-ignore
     return this._server.xrpc.method(nsid, cfg)
   }
 }
@@ -1764,7 +1764,7 @@ export class AppBskyGraphNS {
       AppBskyGraphGetActorStarterPacks.HandlerOutput
     >,
   ) {
-    const nsid = 'app.bsky.graph.getActorStarterPacks' // @ts-ignore
+    const nsid = 'app.gndr.graph.getActorStarterPacks' // @ts-ignore
     return this._server.xrpc.method(nsid, cfg)
   }
 
@@ -1776,7 +1776,7 @@ export class AppBskyGraphNS {
       AppBskyGraphGetBlocks.HandlerOutput
     >,
   ) {
-    const nsid = 'app.bsky.graph.getBlocks' // @ts-ignore
+    const nsid = 'app.gndr.graph.getBlocks' // @ts-ignore
     return this._server.xrpc.method(nsid, cfg)
   }
 
@@ -1788,7 +1788,7 @@ export class AppBskyGraphNS {
       AppBskyGraphGetFollowers.HandlerOutput
     >,
   ) {
-    const nsid = 'app.bsky.graph.getFollowers' // @ts-ignore
+    const nsid = 'app.gndr.graph.getFollowers' // @ts-ignore
     return this._server.xrpc.method(nsid, cfg)
   }
 
@@ -1800,7 +1800,7 @@ export class AppBskyGraphNS {
       AppBskyGraphGetFollows.HandlerOutput
     >,
   ) {
-    const nsid = 'app.bsky.graph.getFollows' // @ts-ignore
+    const nsid = 'app.gndr.graph.getFollows' // @ts-ignore
     return this._server.xrpc.method(nsid, cfg)
   }
 
@@ -1812,7 +1812,7 @@ export class AppBskyGraphNS {
       AppBskyGraphGetKnownFollowers.HandlerOutput
     >,
   ) {
-    const nsid = 'app.bsky.graph.getKnownFollowers' // @ts-ignore
+    const nsid = 'app.gndr.graph.getKnownFollowers' // @ts-ignore
     return this._server.xrpc.method(nsid, cfg)
   }
 
@@ -1824,7 +1824,7 @@ export class AppBskyGraphNS {
       AppBskyGraphGetList.HandlerOutput
     >,
   ) {
-    const nsid = 'app.bsky.graph.getList' // @ts-ignore
+    const nsid = 'app.gndr.graph.getList' // @ts-ignore
     return this._server.xrpc.method(nsid, cfg)
   }
 
@@ -1836,7 +1836,7 @@ export class AppBskyGraphNS {
       AppBskyGraphGetListBlocks.HandlerOutput
     >,
   ) {
-    const nsid = 'app.bsky.graph.getListBlocks' // @ts-ignore
+    const nsid = 'app.gndr.graph.getListBlocks' // @ts-ignore
     return this._server.xrpc.method(nsid, cfg)
   }
 
@@ -1848,7 +1848,7 @@ export class AppBskyGraphNS {
       AppBskyGraphGetListMutes.HandlerOutput
     >,
   ) {
-    const nsid = 'app.bsky.graph.getListMutes' // @ts-ignore
+    const nsid = 'app.gndr.graph.getListMutes' // @ts-ignore
     return this._server.xrpc.method(nsid, cfg)
   }
 
@@ -1860,7 +1860,7 @@ export class AppBskyGraphNS {
       AppBskyGraphGetLists.HandlerOutput
     >,
   ) {
-    const nsid = 'app.bsky.graph.getLists' // @ts-ignore
+    const nsid = 'app.gndr.graph.getLists' // @ts-ignore
     return this._server.xrpc.method(nsid, cfg)
   }
 
@@ -1872,7 +1872,7 @@ export class AppBskyGraphNS {
       AppBskyGraphGetMutes.HandlerOutput
     >,
   ) {
-    const nsid = 'app.bsky.graph.getMutes' // @ts-ignore
+    const nsid = 'app.gndr.graph.getMutes' // @ts-ignore
     return this._server.xrpc.method(nsid, cfg)
   }
 
@@ -1884,7 +1884,7 @@ export class AppBskyGraphNS {
       AppBskyGraphGetRelationships.HandlerOutput
     >,
   ) {
-    const nsid = 'app.bsky.graph.getRelationships' // @ts-ignore
+    const nsid = 'app.gndr.graph.getRelationships' // @ts-ignore
     return this._server.xrpc.method(nsid, cfg)
   }
 
@@ -1896,7 +1896,7 @@ export class AppBskyGraphNS {
       AppBskyGraphGetStarterPack.HandlerOutput
     >,
   ) {
-    const nsid = 'app.bsky.graph.getStarterPack' // @ts-ignore
+    const nsid = 'app.gndr.graph.getStarterPack' // @ts-ignore
     return this._server.xrpc.method(nsid, cfg)
   }
 
@@ -1908,7 +1908,7 @@ export class AppBskyGraphNS {
       AppBskyGraphGetStarterPacks.HandlerOutput
     >,
   ) {
-    const nsid = 'app.bsky.graph.getStarterPacks' // @ts-ignore
+    const nsid = 'app.gndr.graph.getStarterPacks' // @ts-ignore
     return this._server.xrpc.method(nsid, cfg)
   }
 
@@ -1920,7 +1920,7 @@ export class AppBskyGraphNS {
       AppBskyGraphGetSuggestedFollowsByActor.HandlerOutput
     >,
   ) {
-    const nsid = 'app.bsky.graph.getSuggestedFollowsByActor' // @ts-ignore
+    const nsid = 'app.gndr.graph.getSuggestedFollowsByActor' // @ts-ignore
     return this._server.xrpc.method(nsid, cfg)
   }
 
@@ -1932,7 +1932,7 @@ export class AppBskyGraphNS {
       AppBskyGraphMuteActor.HandlerOutput
     >,
   ) {
-    const nsid = 'app.bsky.graph.muteActor' // @ts-ignore
+    const nsid = 'app.gndr.graph.muteActor' // @ts-ignore
     return this._server.xrpc.method(nsid, cfg)
   }
 
@@ -1944,7 +1944,7 @@ export class AppBskyGraphNS {
       AppBskyGraphMuteActorList.HandlerOutput
     >,
   ) {
-    const nsid = 'app.bsky.graph.muteActorList' // @ts-ignore
+    const nsid = 'app.gndr.graph.muteActorList' // @ts-ignore
     return this._server.xrpc.method(nsid, cfg)
   }
 
@@ -1956,7 +1956,7 @@ export class AppBskyGraphNS {
       AppBskyGraphMuteThread.HandlerOutput
     >,
   ) {
-    const nsid = 'app.bsky.graph.muteThread' // @ts-ignore
+    const nsid = 'app.gndr.graph.muteThread' // @ts-ignore
     return this._server.xrpc.method(nsid, cfg)
   }
 
@@ -1968,7 +1968,7 @@ export class AppBskyGraphNS {
       AppBskyGraphSearchStarterPacks.HandlerOutput
     >,
   ) {
-    const nsid = 'app.bsky.graph.searchStarterPacks' // @ts-ignore
+    const nsid = 'app.gndr.graph.searchStarterPacks' // @ts-ignore
     return this._server.xrpc.method(nsid, cfg)
   }
 
@@ -1980,7 +1980,7 @@ export class AppBskyGraphNS {
       AppBskyGraphUnmuteActor.HandlerOutput
     >,
   ) {
-    const nsid = 'app.bsky.graph.unmuteActor' // @ts-ignore
+    const nsid = 'app.gndr.graph.unmuteActor' // @ts-ignore
     return this._server.xrpc.method(nsid, cfg)
   }
 
@@ -1992,7 +1992,7 @@ export class AppBskyGraphNS {
       AppBskyGraphUnmuteActorList.HandlerOutput
     >,
   ) {
-    const nsid = 'app.bsky.graph.unmuteActorList' // @ts-ignore
+    const nsid = 'app.gndr.graph.unmuteActorList' // @ts-ignore
     return this._server.xrpc.method(nsid, cfg)
   }
 
@@ -2004,7 +2004,7 @@ export class AppBskyGraphNS {
       AppBskyGraphUnmuteThread.HandlerOutput
     >,
   ) {
-    const nsid = 'app.bsky.graph.unmuteThread' // @ts-ignore
+    const nsid = 'app.gndr.graph.unmuteThread' // @ts-ignore
     return this._server.xrpc.method(nsid, cfg)
   }
 }
@@ -2024,7 +2024,7 @@ export class AppBskyLabelerNS {
       AppBskyLabelerGetServices.HandlerOutput
     >,
   ) {
-    const nsid = 'app.bsky.labeler.getServices' // @ts-ignore
+    const nsid = 'app.gndr.labeler.getServices' // @ts-ignore
     return this._server.xrpc.method(nsid, cfg)
   }
 }
@@ -2044,7 +2044,7 @@ export class AppBskyNotificationNS {
       AppBskyNotificationGetPreferences.HandlerOutput
     >,
   ) {
-    const nsid = 'app.bsky.notification.getPreferences' // @ts-ignore
+    const nsid = 'app.gndr.notification.getPreferences' // @ts-ignore
     return this._server.xrpc.method(nsid, cfg)
   }
 
@@ -2056,7 +2056,7 @@ export class AppBskyNotificationNS {
       AppBskyNotificationGetUnreadCount.HandlerOutput
     >,
   ) {
-    const nsid = 'app.bsky.notification.getUnreadCount' // @ts-ignore
+    const nsid = 'app.gndr.notification.getUnreadCount' // @ts-ignore
     return this._server.xrpc.method(nsid, cfg)
   }
 
@@ -2068,7 +2068,7 @@ export class AppBskyNotificationNS {
       AppBskyNotificationListActivitySubscriptions.HandlerOutput
     >,
   ) {
-    const nsid = 'app.bsky.notification.listActivitySubscriptions' // @ts-ignore
+    const nsid = 'app.gndr.notification.listActivitySubscriptions' // @ts-ignore
     return this._server.xrpc.method(nsid, cfg)
   }
 
@@ -2080,7 +2080,7 @@ export class AppBskyNotificationNS {
       AppBskyNotificationListNotifications.HandlerOutput
     >,
   ) {
-    const nsid = 'app.bsky.notification.listNotifications' // @ts-ignore
+    const nsid = 'app.gndr.notification.listNotifications' // @ts-ignore
     return this._server.xrpc.method(nsid, cfg)
   }
 
@@ -2092,7 +2092,7 @@ export class AppBskyNotificationNS {
       AppBskyNotificationPutActivitySubscription.HandlerOutput
     >,
   ) {
-    const nsid = 'app.bsky.notification.putActivitySubscription' // @ts-ignore
+    const nsid = 'app.gndr.notification.putActivitySubscription' // @ts-ignore
     return this._server.xrpc.method(nsid, cfg)
   }
 
@@ -2104,7 +2104,7 @@ export class AppBskyNotificationNS {
       AppBskyNotificationPutPreferences.HandlerOutput
     >,
   ) {
-    const nsid = 'app.bsky.notification.putPreferences' // @ts-ignore
+    const nsid = 'app.gndr.notification.putPreferences' // @ts-ignore
     return this._server.xrpc.method(nsid, cfg)
   }
 
@@ -2116,7 +2116,7 @@ export class AppBskyNotificationNS {
       AppBskyNotificationPutPreferencesV2.HandlerOutput
     >,
   ) {
-    const nsid = 'app.bsky.notification.putPreferencesV2' // @ts-ignore
+    const nsid = 'app.gndr.notification.putPreferencesV2' // @ts-ignore
     return this._server.xrpc.method(nsid, cfg)
   }
 
@@ -2128,7 +2128,7 @@ export class AppBskyNotificationNS {
       AppBskyNotificationRegisterPush.HandlerOutput
     >,
   ) {
-    const nsid = 'app.bsky.notification.registerPush' // @ts-ignore
+    const nsid = 'app.gndr.notification.registerPush' // @ts-ignore
     return this._server.xrpc.method(nsid, cfg)
   }
 
@@ -2140,7 +2140,7 @@ export class AppBskyNotificationNS {
       AppBskyNotificationUpdateSeen.HandlerOutput
     >,
   ) {
-    const nsid = 'app.bsky.notification.updateSeen' // @ts-ignore
+    const nsid = 'app.gndr.notification.updateSeen' // @ts-ignore
     return this._server.xrpc.method(nsid, cfg)
   }
 }
@@ -2168,7 +2168,7 @@ export class AppBskyUnspeccedNS {
       AppBskyUnspeccedGetConfig.HandlerOutput
     >,
   ) {
-    const nsid = 'app.bsky.unspecced.getConfig' // @ts-ignore
+    const nsid = 'app.gndr.unspecced.getConfig' // @ts-ignore
     return this._server.xrpc.method(nsid, cfg)
   }
 
@@ -2180,7 +2180,7 @@ export class AppBskyUnspeccedNS {
       AppBskyUnspeccedGetPopularFeedGenerators.HandlerOutput
     >,
   ) {
-    const nsid = 'app.bsky.unspecced.getPopularFeedGenerators' // @ts-ignore
+    const nsid = 'app.gndr.unspecced.getPopularFeedGenerators' // @ts-ignore
     return this._server.xrpc.method(nsid, cfg)
   }
 
@@ -2192,7 +2192,7 @@ export class AppBskyUnspeccedNS {
       AppBskyUnspeccedGetPostThreadOtherV2.HandlerOutput
     >,
   ) {
-    const nsid = 'app.bsky.unspecced.getPostThreadOtherV2' // @ts-ignore
+    const nsid = 'app.gndr.unspecced.getPostThreadOtherV2' // @ts-ignore
     return this._server.xrpc.method(nsid, cfg)
   }
 
@@ -2204,7 +2204,7 @@ export class AppBskyUnspeccedNS {
       AppBskyUnspeccedGetPostThreadV2.HandlerOutput
     >,
   ) {
-    const nsid = 'app.bsky.unspecced.getPostThreadV2' // @ts-ignore
+    const nsid = 'app.gndr.unspecced.getPostThreadV2' // @ts-ignore
     return this._server.xrpc.method(nsid, cfg)
   }
 
@@ -2216,7 +2216,7 @@ export class AppBskyUnspeccedNS {
       AppBskyUnspeccedGetSuggestedFeeds.HandlerOutput
     >,
   ) {
-    const nsid = 'app.bsky.unspecced.getSuggestedFeeds' // @ts-ignore
+    const nsid = 'app.gndr.unspecced.getSuggestedFeeds' // @ts-ignore
     return this._server.xrpc.method(nsid, cfg)
   }
 
@@ -2228,7 +2228,7 @@ export class AppBskyUnspeccedNS {
       AppBskyUnspeccedGetSuggestedFeedsSkeleton.HandlerOutput
     >,
   ) {
-    const nsid = 'app.bsky.unspecced.getSuggestedFeedsSkeleton' // @ts-ignore
+    const nsid = 'app.gndr.unspecced.getSuggestedFeedsSkeleton' // @ts-ignore
     return this._server.xrpc.method(nsid, cfg)
   }
 
@@ -2240,7 +2240,7 @@ export class AppBskyUnspeccedNS {
       AppBskyUnspeccedGetSuggestedStarterPacks.HandlerOutput
     >,
   ) {
-    const nsid = 'app.bsky.unspecced.getSuggestedStarterPacks' // @ts-ignore
+    const nsid = 'app.gndr.unspecced.getSuggestedStarterPacks' // @ts-ignore
     return this._server.xrpc.method(nsid, cfg)
   }
 
@@ -2252,7 +2252,7 @@ export class AppBskyUnspeccedNS {
       AppBskyUnspeccedGetSuggestedStarterPacksSkeleton.HandlerOutput
     >,
   ) {
-    const nsid = 'app.bsky.unspecced.getSuggestedStarterPacksSkeleton' // @ts-ignore
+    const nsid = 'app.gndr.unspecced.getSuggestedStarterPacksSkeleton' // @ts-ignore
     return this._server.xrpc.method(nsid, cfg)
   }
 
@@ -2264,7 +2264,7 @@ export class AppBskyUnspeccedNS {
       AppBskyUnspeccedGetSuggestedUsers.HandlerOutput
     >,
   ) {
-    const nsid = 'app.bsky.unspecced.getSuggestedUsers' // @ts-ignore
+    const nsid = 'app.gndr.unspecced.getSuggestedUsers' // @ts-ignore
     return this._server.xrpc.method(nsid, cfg)
   }
 
@@ -2276,7 +2276,7 @@ export class AppBskyUnspeccedNS {
       AppBskyUnspeccedGetSuggestedUsersSkeleton.HandlerOutput
     >,
   ) {
-    const nsid = 'app.bsky.unspecced.getSuggestedUsersSkeleton' // @ts-ignore
+    const nsid = 'app.gndr.unspecced.getSuggestedUsersSkeleton' // @ts-ignore
     return this._server.xrpc.method(nsid, cfg)
   }
 
@@ -2288,7 +2288,7 @@ export class AppBskyUnspeccedNS {
       AppBskyUnspeccedGetSuggestionsSkeleton.HandlerOutput
     >,
   ) {
-    const nsid = 'app.bsky.unspecced.getSuggestionsSkeleton' // @ts-ignore
+    const nsid = 'app.gndr.unspecced.getSuggestionsSkeleton' // @ts-ignore
     return this._server.xrpc.method(nsid, cfg)
   }
 
@@ -2300,7 +2300,7 @@ export class AppBskyUnspeccedNS {
       AppBskyUnspeccedGetTaggedSuggestions.HandlerOutput
     >,
   ) {
-    const nsid = 'app.bsky.unspecced.getTaggedSuggestions' // @ts-ignore
+    const nsid = 'app.gndr.unspecced.getTaggedSuggestions' // @ts-ignore
     return this._server.xrpc.method(nsid, cfg)
   }
 
@@ -2312,7 +2312,7 @@ export class AppBskyUnspeccedNS {
       AppBskyUnspeccedGetTrendingTopics.HandlerOutput
     >,
   ) {
-    const nsid = 'app.bsky.unspecced.getTrendingTopics' // @ts-ignore
+    const nsid = 'app.gndr.unspecced.getTrendingTopics' // @ts-ignore
     return this._server.xrpc.method(nsid, cfg)
   }
 
@@ -2324,7 +2324,7 @@ export class AppBskyUnspeccedNS {
       AppBskyUnspeccedGetTrends.HandlerOutput
     >,
   ) {
-    const nsid = 'app.bsky.unspecced.getTrends' // @ts-ignore
+    const nsid = 'app.gndr.unspecced.getTrends' // @ts-ignore
     return this._server.xrpc.method(nsid, cfg)
   }
 
@@ -2336,7 +2336,7 @@ export class AppBskyUnspeccedNS {
       AppBskyUnspeccedGetTrendsSkeleton.HandlerOutput
     >,
   ) {
-    const nsid = 'app.bsky.unspecced.getTrendsSkeleton' // @ts-ignore
+    const nsid = 'app.gndr.unspecced.getTrendsSkeleton' // @ts-ignore
     return this._server.xrpc.method(nsid, cfg)
   }
 
@@ -2348,7 +2348,7 @@ export class AppBskyUnspeccedNS {
       AppBskyUnspeccedSearchActorsSkeleton.HandlerOutput
     >,
   ) {
-    const nsid = 'app.bsky.unspecced.searchActorsSkeleton' // @ts-ignore
+    const nsid = 'app.gndr.unspecced.searchActorsSkeleton' // @ts-ignore
     return this._server.xrpc.method(nsid, cfg)
   }
 
@@ -2360,7 +2360,7 @@ export class AppBskyUnspeccedNS {
       AppBskyUnspeccedSearchPostsSkeleton.HandlerOutput
     >,
   ) {
-    const nsid = 'app.bsky.unspecced.searchPostsSkeleton' // @ts-ignore
+    const nsid = 'app.gndr.unspecced.searchPostsSkeleton' // @ts-ignore
     return this._server.xrpc.method(nsid, cfg)
   }
 
@@ -2372,7 +2372,7 @@ export class AppBskyUnspeccedNS {
       AppBskyUnspeccedSearchStarterPacksSkeleton.HandlerOutput
     >,
   ) {
-    const nsid = 'app.bsky.unspecced.searchStarterPacksSkeleton' // @ts-ignore
+    const nsid = 'app.gndr.unspecced.searchStarterPacksSkeleton' // @ts-ignore
     return this._server.xrpc.method(nsid, cfg)
   }
 }
@@ -2392,7 +2392,7 @@ export class AppBskyVideoNS {
       AppBskyVideoGetJobStatus.HandlerOutput
     >,
   ) {
-    const nsid = 'app.bsky.video.getJobStatus' // @ts-ignore
+    const nsid = 'app.gndr.video.getJobStatus' // @ts-ignore
     return this._server.xrpc.method(nsid, cfg)
   }
 
@@ -2404,7 +2404,7 @@ export class AppBskyVideoNS {
       AppBskyVideoGetUploadLimits.HandlerOutput
     >,
   ) {
-    const nsid = 'app.bsky.video.getUploadLimits' // @ts-ignore
+    const nsid = 'app.gndr.video.getUploadLimits' // @ts-ignore
     return this._server.xrpc.method(nsid, cfg)
   }
 
@@ -2416,18 +2416,18 @@ export class AppBskyVideoNS {
       AppBskyVideoUploadVideo.HandlerOutput
     >,
   ) {
-    const nsid = 'app.bsky.video.uploadVideo' // @ts-ignore
+    const nsid = 'app.gndr.video.uploadVideo' // @ts-ignore
     return this._server.xrpc.method(nsid, cfg)
   }
 }
 
 export class ChatNS {
   _server: Server
-  bsky: ChatBskyNS
+  gndr: ChatBskyNS
 
   constructor(server: Server) {
     this._server = server
-    this.bsky = new ChatBskyNS(server)
+    this.gndr = new ChatBskyNS(server)
   }
 }
 
@@ -2460,7 +2460,7 @@ export class ChatBskyActorNS {
       ChatBskyActorDeleteAccount.HandlerOutput
     >,
   ) {
-    const nsid = 'chat.bsky.actor.deleteAccount' // @ts-ignore
+    const nsid = 'chat.gndr.actor.deleteAccount' // @ts-ignore
     return this._server.xrpc.method(nsid, cfg)
   }
 
@@ -2472,7 +2472,7 @@ export class ChatBskyActorNS {
       ChatBskyActorExportAccountData.HandlerOutput
     >,
   ) {
-    const nsid = 'chat.bsky.actor.exportAccountData' // @ts-ignore
+    const nsid = 'chat.gndr.actor.exportAccountData' // @ts-ignore
     return this._server.xrpc.method(nsid, cfg)
   }
 }
@@ -2492,7 +2492,7 @@ export class ChatBskyConvoNS {
       ChatBskyConvoAcceptConvo.HandlerOutput
     >,
   ) {
-    const nsid = 'chat.bsky.convo.acceptConvo' // @ts-ignore
+    const nsid = 'chat.gndr.convo.acceptConvo' // @ts-ignore
     return this._server.xrpc.method(nsid, cfg)
   }
 
@@ -2504,7 +2504,7 @@ export class ChatBskyConvoNS {
       ChatBskyConvoAddReaction.HandlerOutput
     >,
   ) {
-    const nsid = 'chat.bsky.convo.addReaction' // @ts-ignore
+    const nsid = 'chat.gndr.convo.addReaction' // @ts-ignore
     return this._server.xrpc.method(nsid, cfg)
   }
 
@@ -2516,7 +2516,7 @@ export class ChatBskyConvoNS {
       ChatBskyConvoDeleteMessageForSelf.HandlerOutput
     >,
   ) {
-    const nsid = 'chat.bsky.convo.deleteMessageForSelf' // @ts-ignore
+    const nsid = 'chat.gndr.convo.deleteMessageForSelf' // @ts-ignore
     return this._server.xrpc.method(nsid, cfg)
   }
 
@@ -2528,7 +2528,7 @@ export class ChatBskyConvoNS {
       ChatBskyConvoGetConvo.HandlerOutput
     >,
   ) {
-    const nsid = 'chat.bsky.convo.getConvo' // @ts-ignore
+    const nsid = 'chat.gndr.convo.getConvo' // @ts-ignore
     return this._server.xrpc.method(nsid, cfg)
   }
 
@@ -2540,7 +2540,7 @@ export class ChatBskyConvoNS {
       ChatBskyConvoGetConvoAvailability.HandlerOutput
     >,
   ) {
-    const nsid = 'chat.bsky.convo.getConvoAvailability' // @ts-ignore
+    const nsid = 'chat.gndr.convo.getConvoAvailability' // @ts-ignore
     return this._server.xrpc.method(nsid, cfg)
   }
 
@@ -2552,7 +2552,7 @@ export class ChatBskyConvoNS {
       ChatBskyConvoGetConvoForMembers.HandlerOutput
     >,
   ) {
-    const nsid = 'chat.bsky.convo.getConvoForMembers' // @ts-ignore
+    const nsid = 'chat.gndr.convo.getConvoForMembers' // @ts-ignore
     return this._server.xrpc.method(nsid, cfg)
   }
 
@@ -2564,7 +2564,7 @@ export class ChatBskyConvoNS {
       ChatBskyConvoGetLog.HandlerOutput
     >,
   ) {
-    const nsid = 'chat.bsky.convo.getLog' // @ts-ignore
+    const nsid = 'chat.gndr.convo.getLog' // @ts-ignore
     return this._server.xrpc.method(nsid, cfg)
   }
 
@@ -2576,7 +2576,7 @@ export class ChatBskyConvoNS {
       ChatBskyConvoGetMessages.HandlerOutput
     >,
   ) {
-    const nsid = 'chat.bsky.convo.getMessages' // @ts-ignore
+    const nsid = 'chat.gndr.convo.getMessages' // @ts-ignore
     return this._server.xrpc.method(nsid, cfg)
   }
 
@@ -2588,7 +2588,7 @@ export class ChatBskyConvoNS {
       ChatBskyConvoLeaveConvo.HandlerOutput
     >,
   ) {
-    const nsid = 'chat.bsky.convo.leaveConvo' // @ts-ignore
+    const nsid = 'chat.gndr.convo.leaveConvo' // @ts-ignore
     return this._server.xrpc.method(nsid, cfg)
   }
 
@@ -2600,7 +2600,7 @@ export class ChatBskyConvoNS {
       ChatBskyConvoListConvos.HandlerOutput
     >,
   ) {
-    const nsid = 'chat.bsky.convo.listConvos' // @ts-ignore
+    const nsid = 'chat.gndr.convo.listConvos' // @ts-ignore
     return this._server.xrpc.method(nsid, cfg)
   }
 
@@ -2612,7 +2612,7 @@ export class ChatBskyConvoNS {
       ChatBskyConvoMuteConvo.HandlerOutput
     >,
   ) {
-    const nsid = 'chat.bsky.convo.muteConvo' // @ts-ignore
+    const nsid = 'chat.gndr.convo.muteConvo' // @ts-ignore
     return this._server.xrpc.method(nsid, cfg)
   }
 
@@ -2624,7 +2624,7 @@ export class ChatBskyConvoNS {
       ChatBskyConvoRemoveReaction.HandlerOutput
     >,
   ) {
-    const nsid = 'chat.bsky.convo.removeReaction' // @ts-ignore
+    const nsid = 'chat.gndr.convo.removeReaction' // @ts-ignore
     return this._server.xrpc.method(nsid, cfg)
   }
 
@@ -2636,7 +2636,7 @@ export class ChatBskyConvoNS {
       ChatBskyConvoSendMessage.HandlerOutput
     >,
   ) {
-    const nsid = 'chat.bsky.convo.sendMessage' // @ts-ignore
+    const nsid = 'chat.gndr.convo.sendMessage' // @ts-ignore
     return this._server.xrpc.method(nsid, cfg)
   }
 
@@ -2648,7 +2648,7 @@ export class ChatBskyConvoNS {
       ChatBskyConvoSendMessageBatch.HandlerOutput
     >,
   ) {
-    const nsid = 'chat.bsky.convo.sendMessageBatch' // @ts-ignore
+    const nsid = 'chat.gndr.convo.sendMessageBatch' // @ts-ignore
     return this._server.xrpc.method(nsid, cfg)
   }
 
@@ -2660,7 +2660,7 @@ export class ChatBskyConvoNS {
       ChatBskyConvoUnmuteConvo.HandlerOutput
     >,
   ) {
-    const nsid = 'chat.bsky.convo.unmuteConvo' // @ts-ignore
+    const nsid = 'chat.gndr.convo.unmuteConvo' // @ts-ignore
     return this._server.xrpc.method(nsid, cfg)
   }
 
@@ -2672,7 +2672,7 @@ export class ChatBskyConvoNS {
       ChatBskyConvoUpdateAllRead.HandlerOutput
     >,
   ) {
-    const nsid = 'chat.bsky.convo.updateAllRead' // @ts-ignore
+    const nsid = 'chat.gndr.convo.updateAllRead' // @ts-ignore
     return this._server.xrpc.method(nsid, cfg)
   }
 
@@ -2684,7 +2684,7 @@ export class ChatBskyConvoNS {
       ChatBskyConvoUpdateRead.HandlerOutput
     >,
   ) {
-    const nsid = 'chat.bsky.convo.updateRead' // @ts-ignore
+    const nsid = 'chat.gndr.convo.updateRead' // @ts-ignore
     return this._server.xrpc.method(nsid, cfg)
   }
 }
@@ -2704,7 +2704,7 @@ export class ChatBskyModerationNS {
       ChatBskyModerationGetActorMetadata.HandlerOutput
     >,
   ) {
-    const nsid = 'chat.bsky.moderation.getActorMetadata' // @ts-ignore
+    const nsid = 'chat.gndr.moderation.getActorMetadata' // @ts-ignore
     return this._server.xrpc.method(nsid, cfg)
   }
 
@@ -2716,7 +2716,7 @@ export class ChatBskyModerationNS {
       ChatBskyModerationGetMessageContext.HandlerOutput
     >,
   ) {
-    const nsid = 'chat.bsky.moderation.getMessageContext' // @ts-ignore
+    const nsid = 'chat.gndr.moderation.getMessageContext' // @ts-ignore
     return this._server.xrpc.method(nsid, cfg)
   }
 
@@ -2728,7 +2728,7 @@ export class ChatBskyModerationNS {
       ChatBskyModerationUpdateActorAccess.HandlerOutput
     >,
   ) {
-    const nsid = 'chat.bsky.moderation.updateActorAccess' // @ts-ignore
+    const nsid = 'chat.gndr.moderation.updateActorAccess' // @ts-ignore
     return this._server.xrpc.method(nsid, cfg)
   }
 }

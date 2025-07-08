@@ -71,7 +71,7 @@ export class VerificationIssuer {
           } = await agent.com.atproto.repo.createRecord({
             repo: this.verifierConfig.did,
             record: verificationRecord,
-            collection: 'app.bsky.graph.verification',
+            collection: 'app.gndr.graph.verification',
           })
           grantedVerifications.push({
             ...verificationRecord,
@@ -107,7 +107,7 @@ export class VerificationIssuer {
         try {
           const atUri = new AtUri(uri)
 
-          if (atUri.collection !== 'app.bsky.graph.verification') {
+          if (atUri.collection !== 'app.gndr.graph.verification') {
             throw new Error(`Only verification records can be revoked`)
           }
 

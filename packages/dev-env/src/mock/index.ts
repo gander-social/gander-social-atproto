@@ -1,5 +1,5 @@
 import { AtpAgent, COM_ATPROTO_MODERATION } from '@atproto/api'
-import { Database } from '@atproto/bsky'
+import { Database } from '@atproto/gndr'
 import { AtUri } from '@atproto/syntax'
 import { EXAMPLE_LABELER, RecordRef, TestNetwork } from '../index'
 import * as seedThreadV2 from '../seed/thread-v2'
@@ -56,7 +56,7 @@ export async function generateMockSetup(env: TestNetwork) {
       const client: AtpAgent = env.pds.getClient()
       await client.createAccount(user)
       client.assertAuthenticated()
-      await client.app.bsky.actor.profile.create(
+      await client.app.gndr.actor.profile.create(
         { repo: client.did },
         {
           displayName: ucfirst(user.handle).slice(0, -5),
@@ -105,7 +105,7 @@ export async function generateMockSetup(env: TestNetwork) {
 
   // everybody follows everybody
   const follow = async (author: AtpAgent, subject: AtpAgent) => {
-    await author.app.bsky.graph.follow.create(
+    await author.app.gndr.graph.follow.create(
       { repo: author.accountDid },
       {
         subject: subject.accountDid,
@@ -124,7 +124,7 @@ export async function generateMockSetup(env: TestNetwork) {
   const posts: { uri: string; cid: string }[] = []
   for (let i = 0; i < postTexts.length; i++) {
     const author = picka(userAgents)
-    const post = await author.app.bsky.feed.post.create(
+    const post = await author.app.gndr.feed.post.create(
       { repo: author.did },
       {
         text: postTexts[i],
@@ -134,7 +134,7 @@ export async function generateMockSetup(env: TestNetwork) {
     posts.push(post)
     if (rand(10) === 0) {
       const reposter = picka(userAgents)
-      await reposter.app.bsky.feed.repost.create(
+      await reposter.app.gndr.feed.repost.create(
         { repo: reposter.did },
         {
           subject: picka(posts),
@@ -164,12 +164,12 @@ export async function generateMockSetup(env: TestNetwork) {
   const uploadedImg = await bob.com.atproto.repo.uploadBlob(file, {
     encoding: 'image/png',
   })
-  const labeledPost = await bob.app.bsky.feed.post.create(
+  const labeledPost = await bob.app.gndr.feed.post.create(
     { repo: bob.accountDid },
     {
       text: 'naughty post',
       embed: {
-        $type: 'app.bsky.embed.images',
+        $type: 'app.gndr.embed.images',
         images: [
           {
             image: uploadedImg.data.blob,
@@ -181,7 +181,7 @@ export async function generateMockSetup(env: TestNetwork) {
     },
   )
 
-  const filteredPost = await bob.app.bsky.feed.post.create(
+  const filteredPost = await bob.app.gndr.feed.post.create(
     { repo: bob.accountDid },
     {
       text: 'really bad post should be deleted',
@@ -189,12 +189,12 @@ export async function generateMockSetup(env: TestNetwork) {
     },
   )
 
-  await createLabel(env.bsky.db, {
+  await createLabel(env.gndr.db, {
     uri: labeledPost.uri,
     cid: labeledPost.cid,
     val: 'nudity',
   })
-  await createLabel(env.bsky.db, {
+  await createLabel(env.gndr.db, {
     uri: filteredPost.uri,
     cid: filteredPost.cid,
     val: 'dmca-violation',
@@ -204,13 +204,13 @@ export async function generateMockSetup(env: TestNetwork) {
   for (let i = 0; i < 100; i++) {
     const targetUri = picka(posts).uri
     const urip = new AtUri(targetUri)
-    const target = await alice.app.bsky.feed.post.get({
+    const target = await alice.app.gndr.feed.post.get({
       repo: urip.host,
       rkey: urip.rkey,
     })
     const author = picka(userAgents)
     posts.push(
-      await author.app.bsky.feed.post.create(
+      await author.app.gndr.feed.post.create(
         { repo: author.did },
         {
           text: picka(replyTexts),
@@ -228,7 +228,7 @@ export async function generateMockSetup(env: TestNetwork) {
   for (const post of posts) {
     for (const user of userAgents) {
       if (rand(3) === 0) {
-        await user.app.bsky.feed.like.create(
+        await user.app.gndr.feed.like.create(
           { repo: user.did },
           {
             subject: post,
@@ -242,7 +242,7 @@ export async function generateMockSetup(env: TestNetwork) {
   // a couple feed generators that returns some posts
   const fg1Uri = AtUri.make(
     alice.accountDid,
-    'app.bsky.feed.generator',
+    'app.gndr.feed.generator',
     'alice-favs',
   )
   const fg1 = await env.createFeedGen({
@@ -262,7 +262,7 @@ export async function generateMockSetup(env: TestNetwork) {
   const avatarRes = await alice.com.atproto.repo.uploadBlob(avatarImg, {
     encoding: 'image/png',
   })
-  const fgAliceRes = await alice.app.bsky.feed.generator.create(
+  const fgAliceRes = await alice.app.gndr.feed.generator.create(
     { repo: alice.accountDid, rkey: fg1Uri.rkey },
     {
       did: fg1.did,
@@ -273,19 +273,19 @@ export async function generateMockSetup(env: TestNetwork) {
     },
   )
 
-  await alice.app.bsky.feed.post.create(
+  await alice.app.gndr.feed.post.create(
     { repo: alice.accountDid },
     {
       text: 'check out my algorithm!',
       embed: {
-        $type: 'app.bsky.embed.record',
+        $type: 'app.gndr.embed.record',
         record: fgAliceRes,
       },
       createdAt: date.next().value,
     },
   )
   for (const user of [alice, bob, carla]) {
-    await user.app.bsky.feed.like.create(
+    await user.app.gndr.feed.like.create(
       { repo: user.did },
       {
         subject: fgAliceRes,
@@ -296,7 +296,7 @@ export async function generateMockSetup(env: TestNetwork) {
 
   const fg2Uri = AtUri.make(
     bob.accountDid,
-    'app.bsky.feed.generator',
+    'app.gndr.feed.generator',
     'bob-redux',
   )
   const fg2 = await env.createFeedGen({
@@ -312,7 +312,7 @@ export async function generateMockSetup(env: TestNetwork) {
       }
     },
   })
-  const fgBobRes = await bob.app.bsky.feed.generator.create(
+  const fgBobRes = await bob.app.gndr.feed.generator.create(
     { repo: bob.accountDid, rkey: fg2Uri.rkey },
     {
       did: fg2.did,
@@ -321,12 +321,12 @@ export async function generateMockSetup(env: TestNetwork) {
     },
   )
 
-  await alice.app.bsky.feed.post.create(
+  await alice.app.gndr.feed.post.create(
     { repo: alice.accountDid },
     {
       text: `bobs feed is neat too`,
       embed: {
-        $type: 'app.bsky.embed.record',
+        $type: 'app.gndr.embed.record',
         record: fgBobRes,
       },
       createdAt: date.next().value,
@@ -341,7 +341,7 @@ export async function generateMockSetup(env: TestNetwork) {
       handle: 'labeler.test',
       password: 'hunter2',
     })
-    await labeler.app.bsky.actor.profile.create(
+    await labeler.app.gndr.actor.profile.create(
       { repo: res.data.did },
       {
         displayName: 'Test Labeler',
@@ -349,7 +349,7 @@ export async function generateMockSetup(env: TestNetwork) {
       },
     )
 
-    await labeler.app.bsky.labeler.service.create(
+    await labeler.app.gndr.labeler.service.create(
       { repo: res.data.did, rkey: 'self' },
       {
         policies: {
@@ -436,25 +436,25 @@ export async function generateMockSetup(env: TestNetwork) {
         createdAt: date.next().value,
       },
     )
-    await createLabel(env.bsky.db, {
+    await createLabel(env.gndr.db, {
       uri: alice.accountDid,
       cid: '',
       val: 'rude',
       src: res.data.did,
     })
-    await createLabel(env.bsky.db, {
-      uri: `at://${alice.accountDid}/app.bsky.feed.generator/alice-favs`,
+    await createLabel(env.gndr.db, {
+      uri: `at://${alice.accountDid}/app.gndr.feed.generator/alice-favs`,
       cid: '',
       val: 'cool',
       src: res.data.did,
     })
-    await createLabel(env.bsky.db, {
+    await createLabel(env.gndr.db, {
       uri: bob.accountDid,
       cid: '',
       val: 'cool',
       src: res.data.did,
     })
-    await createLabel(env.bsky.db, {
+    await createLabel(env.gndr.db, {
       uri: carla.accountDid,
       cid: '',
       val: 'spam',
@@ -464,25 +464,25 @@ export async function generateMockSetup(env: TestNetwork) {
 
   // Create lists and add people to the lists
   {
-    const flowerLovers = await alice.app.bsky.graph.list.create(
+    const flowerLovers = await alice.app.gndr.graph.list.create(
       { repo: alice.accountDid },
       {
         name: 'Flower Lovers',
-        purpose: 'app.bsky.graph.defs#curatelist',
+        purpose: 'app.gndr.graph.defs#curatelist',
         createdAt: new Date().toISOString(),
         description: 'A list of posts about flowers',
       },
     )
-    const labelHaters = await bob.app.bsky.graph.list.create(
+    const labelHaters = await bob.app.gndr.graph.list.create(
       { repo: bob.accountDid },
       {
         name: 'Label Haters',
-        purpose: 'app.bsky.graph.defs#modlist',
+        purpose: 'app.gndr.graph.defs#modlist',
         createdAt: new Date().toISOString(),
         description: 'A list of people who hate labels',
       },
     )
-    await alice.app.bsky.graph.listitem.create(
+    await alice.app.gndr.graph.listitem.create(
       { repo: alice.accountDid },
       {
         subject: bob.accountDid,
@@ -490,7 +490,7 @@ export async function generateMockSetup(env: TestNetwork) {
         list: new RecordRef(flowerLovers.uri, flowerLovers.cid).uriStr,
       },
     )
-    await bob.app.bsky.graph.listitem.create(
+    await bob.app.gndr.graph.listitem.create(
       { repo: bob.accountDid },
       {
         subject: alice.accountDid,
@@ -500,7 +500,7 @@ export async function generateMockSetup(env: TestNetwork) {
     )
   }
 
-  await setVerifier(env.bsky.db, alice.accountDid)
+  await setVerifier(env.gndr.db, alice.accountDid)
 
   const sc = env.getSeedClient()
   await seedThreadV2.simple(sc)
@@ -513,7 +513,7 @@ export async function generateMockSetup(env: TestNetwork) {
   await seedThreadV2.bumpOpAndViewer(sc)
   await seedThreadV2.bumpGroupSorting(sc)
   await seedThreadV2.bumpFollows(sc)
-  await seedThreadV2.blockDeletionAuth(sc, env.bsky.ctx.cfg.modServiceDid)
+  await seedThreadV2.blockDeletionAuth(sc, env.gndr.ctx.cfg.modServiceDid)
   await seedThreadV2.mutes(sc)
   await seedThreadV2.threadgated(sc)
   await seedThreadV2.tags(sc)

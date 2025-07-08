@@ -110,15 +110,15 @@ export class OzoneServiceProfile {
 
     await pdsClient.com.atproto.server.activateAccount()
 
-    await pdsClient.app.bsky.actor.profile.create(
+    await pdsClient.app.gndr.actor.profile.create(
       { repo: this.did },
       {
         displayName: 'Dev-env Moderation',
-        description: `The pretend version of mod.bsky.app`,
+        description: `The pretend version of mod.gndr.app`,
       },
     )
 
-    await pdsClient.app.bsky.labeler.service.create(
+    await pdsClient.app.gndr.labeler.service.create(
       { repo: this.did, rkey: 'self' },
       {
         policies: {

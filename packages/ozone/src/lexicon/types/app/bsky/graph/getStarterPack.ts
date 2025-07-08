@@ -9,11 +9,11 @@ import {
   is$typed as _is$typed,
   type OmitKey,
 } from '../../../../util'
-import type * as AppBskyGraphDefs from './defs.js'
+import type * as AppGndrGraphDefs from './defs.js'
 
 const is$typed = _is$typed,
   validate = _validate
-const id = 'app.bsky.graph.getStarterPack'
+const id = 'app.gndr.graph.getStarterPack'
 
 export type QueryParams = {
   /** Reference (AT-URI) of the starter pack record. */
@@ -22,7 +22,7 @@ export type QueryParams = {
 export type InputSchema = undefined
 
 export interface OutputSchema {
-  starterPack: AppBskyGraphDefs.StarterPackView
+  starterPack: AppGndrGraphDefs.StarterPackView
 }
 
 export type HandlerInput = void

@@ -1,4 +1,4 @@
-import { TestBsky } from '../bsky'
+import { TestBsky } from '../gndr'
 import { EXAMPLE_LABELER } from '../const'
 import { TestNetwork } from '../network'
 import { TestNetworkNoAppView } from '../network-no-appview'
@@ -64,7 +64,7 @@ export default async (
         index: { byteStart: 0, byteEnd: 18 },
         features: [
           {
-            $type: `app.bsky.richtext.facet#mention`,
+            $type: `app.gndr.richtext.facet#mention`,
             did: alice,
           },
         ],
@@ -137,18 +137,18 @@ export default async (
   await sc.repost(dan, alicesReplyToBob.ref)
 
   if (sc.network instanceof TestNetwork) {
-    const bsky = sc.network.bsky
-    await createLabel(bsky, {
+    const gndr = sc.network.gndr
+    await createLabel(gndr, {
       val: 'test-label',
       uri: sc.posts[alice][2].ref.uriStr,
       cid: sc.posts[alice][2].ref.cidStr,
     })
-    await createLabel(bsky, {
+    await createLabel(gndr, {
       val: 'test-label',
       uri: sc.replies[bob][0].ref.uriStr,
       cid: sc.replies[bob][0].ref.cidStr,
     })
-    await createLabel(bsky, {
+    await createLabel(gndr, {
       val: 'test-label-2',
       uri: sc.replies[bob][0].ref.uriStr,
       cid: sc.replies[bob][0].ref.cidStr,
@@ -162,7 +162,7 @@ export const posts = {
   alice: ['hey there', 'again', 'yoohoo label_me'],
   bob: ['bob back at it again!', 'bobby boy here', 'yoohoo'],
   carol: ['hi im carol'],
-  dan: ['dan here!', '@alice.bluesky.xyz is the best'],
+  dan: ['dan here!', '@alice.gander.xyz is the best'],
 }
 
 export const replies = {
@@ -172,10 +172,10 @@ export const replies = {
 }
 
 const createLabel = async (
-  bsky: TestBsky,
+  gndr: TestBsky,
   opts: { uri: string; cid: string; val: string },
 ) => {
-  await bsky.db.db
+  await gndr.db.db
     .insertInto('label')
     .values({
       uri: opts.uri,

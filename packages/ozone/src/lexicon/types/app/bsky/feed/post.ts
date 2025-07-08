@@ -9,34 +9,34 @@ import {
   is$typed as _is$typed,
   type OmitKey,
 } from '../../../../util'
-import type * as AppBskyRichtextFacet from '../richtext/facet.js'
-import type * as AppBskyEmbedImages from '../embed/images.js'
-import type * as AppBskyEmbedVideo from '../embed/video.js'
-import type * as AppBskyEmbedExternal from '../embed/external.js'
-import type * as AppBskyEmbedRecord from '../embed/record.js'
-import type * as AppBskyEmbedRecordWithMedia from '../embed/recordWithMedia.js'
+import type * as AppGndrRichtextFacet from '../richtext/facet.js'
+import type * as AppGndrEmbedImages from '../embed/images.js'
+import type * as AppGndrEmbedVideo from '../embed/video.js'
+import type * as AppGndrEmbedExternal from '../embed/external.js'
+import type * as AppGndrEmbedRecord from '../embed/record.js'
+import type * as AppGndrEmbedRecordWithMedia from '../embed/recordWithMedia.js'
 import type * as ComAtprotoLabelDefs from '../../../com/atproto/label/defs.js'
 import type * as ComAtprotoRepoStrongRef from '../../../com/atproto/repo/strongRef.js'
 
 const is$typed = _is$typed,
   validate = _validate
-const id = 'app.bsky.feed.post'
+const id = 'app.gndr.feed.post'
 
 export interface Record {
-  $type: 'app.bsky.feed.post'
+  $type: 'app.gndr.feed.post'
   /** The primary post content. May be an empty string, if there are embeds. */
   text: string
-  /** DEPRECATED: replaced by app.bsky.richtext.facet. */
+  /** DEPRECATED: replaced by app.gndr.richtext.facet. */
   entities?: Entity[]
   /** Annotations of text (mentions, URLs, hashtags, etc) */
-  facets?: AppBskyRichtextFacet.Main[]
+  facets?: AppGndrRichtextFacet.Main[]
   reply?: ReplyRef
   embed?:
-    | $Typed<AppBskyEmbedImages.Main>
-    | $Typed<AppBskyEmbedVideo.Main>
-    | $Typed<AppBskyEmbedExternal.Main>
-    | $Typed<AppBskyEmbedRecord.Main>
-    | $Typed<AppBskyEmbedRecordWithMedia.Main>
+    | $Typed<AppGndrEmbedImages.Main>
+    | $Typed<AppGndrEmbedVideo.Main>
+    | $Typed<AppGndrEmbedExternal.Main>
+    | $Typed<AppGndrEmbedRecord.Main>
+    | $Typed<AppGndrEmbedRecordWithMedia.Main>
     | { $type: string }
   /** Indicates human language of post primary text content. */
   langs?: string[]
@@ -59,7 +59,7 @@ export function validateRecord<V>(v: V) {
 }
 
 export interface ReplyRef {
-  $type?: 'app.bsky.feed.post#replyRef'
+  $type?: 'app.gndr.feed.post#replyRef'
   root: ComAtprotoRepoStrongRef.Main
   parent: ComAtprotoRepoStrongRef.Main
 }
@@ -76,7 +76,7 @@ export function validateReplyRef<V>(v: V) {
 
 /** Deprecated: use facets instead. */
 export interface Entity {
-  $type?: 'app.bsky.feed.post#entity'
+  $type?: 'app.gndr.feed.post#entity'
   index: TextSlice
   /** Expected values are 'mention' and 'link'. */
   type: string
@@ -93,9 +93,9 @@ export function validateEntity<V>(v: V) {
   return validate<Entity & V>(v, id, hashEntity)
 }
 
-/** Deprecated. Use app.bsky.richtext instead -- A text segment. Start is inclusive, end is exclusive. Indices are for utf16-encoded strings. */
+/** Deprecated. Use app.gndr.richtext instead -- A text segment. Start is inclusive, end is exclusive. Indices are for utf16-encoded strings. */
 export interface TextSlice {
-  $type?: 'app.bsky.feed.post#textSlice'
+  $type?: 'app.gndr.feed.post#textSlice'
   start: number
   end: number
 }

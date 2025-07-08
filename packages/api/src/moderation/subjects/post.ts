@@ -1,10 +1,10 @@
 import {
-  AppBskyActorDefs,
-  AppBskyEmbedExternal,
-  AppBskyEmbedImages,
-  AppBskyEmbedRecord,
-  AppBskyEmbedRecordWithMedia,
-  AppBskyFeedPost,
+  AppGndrActorDefs,
+  AppGndrEmbedExternal,
+  AppGndrEmbedImages,
+  AppGndrEmbedRecord,
+  AppGndrEmbedRecordWithMedia,
+  AppGndrFeedPost,
 } from '../../client'
 import { $Typed } from '../../client/util'
 import { ModerationDecision } from '../decision'
@@ -49,35 +49,35 @@ function decideSubject(
 function decideEmbed(
   embed:
     | undefined
-    | $Typed<AppBskyEmbedRecord.View>
-    | $Typed<AppBskyEmbedRecordWithMedia.View>
+    | $Typed<AppGndrEmbedRecord.View>
+    | $Typed<AppGndrEmbedRecordWithMedia.View>
     | { $type: string },
   opts: ModerationOpts,
 ) {
   if (embed) {
     if (
-      (AppBskyEmbedRecord.isView(embed) ||
-        AppBskyEmbedRecordWithMedia.isView(embed)) &&
-      AppBskyEmbedRecord.isViewRecord(embed.record)
+      (AppGndrEmbedRecord.isView(embed) ||
+        AppGndrEmbedRecordWithMedia.isView(embed)) &&
+      AppGndrEmbedRecord.isViewRecord(embed.record)
     ) {
       // quote post
       return decideQuotedPost(embed.record, opts)
     } else if (
-      AppBskyEmbedRecordWithMedia.isView(embed) &&
-      AppBskyEmbedRecord.isViewRecord(embed.record.record)
+      AppGndrEmbedRecordWithMedia.isView(embed) &&
+      AppGndrEmbedRecord.isViewRecord(embed.record.record)
     ) {
       // quoted post with media
       return decideQuotedPost(embed.record.record, opts)
     } else if (
-      (AppBskyEmbedRecord.isView(embed) ||
-        AppBskyEmbedRecordWithMedia.isView(embed)) &&
-      AppBskyEmbedRecord.isViewBlocked(embed.record)
+      (AppGndrEmbedRecord.isView(embed) ||
+        AppGndrEmbedRecordWithMedia.isView(embed)) &&
+      AppGndrEmbedRecord.isViewBlocked(embed.record)
     ) {
       // blocked quote post
       return decideBlockedQuotedPost(embed.record, opts)
     } else if (
-      AppBskyEmbedRecordWithMedia.isView(embed) &&
-      AppBskyEmbedRecord.isViewBlocked(embed.record.record)
+      AppGndrEmbedRecordWithMedia.isView(embed) &&
+      AppGndrEmbedRecord.isViewBlocked(embed.record.record)
     ) {
       // blocked quoted post with media
       return decideBlockedQuotedPost(embed.record.record, opts)
@@ -88,7 +88,7 @@ function decideEmbed(
 }
 
 function decideQuotedPost(
-  subject: AppBskyEmbedRecord.ViewRecord,
+  subject: AppGndrEmbedRecord.ViewRecord,
   opts: ModerationOpts,
 ) {
   const acc = new ModerationDecision()
@@ -107,7 +107,7 @@ function decideQuotedPost(
 }
 
 function decideBlockedQuotedPost(
-  subject: AppBskyEmbedRecord.ViewBlocked,
+  subject: AppGndrEmbedRecord.ViewBlocked,
   opts: ModerationOpts,
 ) {
   const acc = new ModerationDecision()
@@ -143,15 +143,15 @@ function checkHiddenPost(
   }
   if (subject.embed) {
     if (
-      AppBskyEmbedRecord.isView(subject.embed) &&
-      AppBskyEmbedRecord.isViewRecord(subject.embed.record) &&
+      AppGndrEmbedRecord.isView(subject.embed) &&
+      AppGndrEmbedRecord.isViewRecord(subject.embed.record) &&
       hiddenPosts.includes(subject.embed.record.uri)
     ) {
       return true
     }
     if (
-      AppBskyEmbedRecordWithMedia.isView(subject.embed) &&
-      AppBskyEmbedRecord.isViewRecord(subject.embed.record.record) &&
+      AppGndrEmbedRecordWithMedia.isView(subject.embed) &&
+      AppGndrEmbedRecord.isViewRecord(subject.embed.record.record) &&
       hiddenPosts.includes(subject.embed.record.record.uri)
     ) {
       return true
@@ -162,7 +162,7 @@ function checkHiddenPost(
 
 function matchAllMuteWords(
   subject: ModerationSubjectPost,
-  mutedWords: AppBskyActorDefs.MutedWord[] | undefined,
+  mutedWords: AppGndrActorDefs.MutedWord[] | undefined,
 ): MuteWordMatch[] | undefined {
   if (!mutedWords?.length) {
     return
@@ -170,8 +170,8 @@ function matchAllMuteWords(
 
   const postAuthor = subject.author
 
-  if (AppBskyFeedPost.isRecord(subject.record)) {
-    const post = subject.record as AppBskyFeedPost.Record
+  if (AppGndrFeedPost.isRecord(subject.record)) {
+    const post = subject.record as AppGndrFeedPost.Record
 
     const matches = matchMuteWords({
       mutedWords,
@@ -186,7 +186,7 @@ function matchAllMuteWords(
       return matches
     }
 
-    if (post.embed && AppBskyEmbedImages.isMain(post.embed)) {
+    if (post.embed && AppGndrEmbedImages.isMain(post.embed)) {
       // post images
       for (const image of post.embed.images) {
         const matches = matchMuteWords({
@@ -206,7 +206,7 @@ function matchAllMuteWords(
   if (embed) {
     // quote post
     if (
-      (AppBskyEmbedRecord.isView(embed) ||
+      (AppGndrEmbedRecord.isView(embed) ||
         AppBskyEmbedRecordWithMedia.isView(embed)) &&
       AppBskyEmbedRecord.isViewRecord(embed.record)
     ) {

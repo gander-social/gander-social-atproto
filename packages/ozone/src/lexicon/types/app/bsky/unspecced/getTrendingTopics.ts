@@ -9,11 +9,11 @@ import {
   is$typed as _is$typed,
   type OmitKey,
 } from '../../../../util'
-import type * as AppBskyUnspeccedDefs from './defs.js'
+import type * as AppGndrUnspeccedDefs from './defs.js'
 
 const is$typed = _is$typed,
   validate = _validate
-const id = 'app.bsky.unspecced.getTrendingTopics'
+const id = 'app.gndr.unspecced.getTrendingTopics'
 
 export type QueryParams = {
   /** DID of the account making the request (not included for public/unauthenticated queries). Used to boost followed accounts in ranking. */
@@ -23,8 +23,8 @@ export type QueryParams = {
 export type InputSchema = undefined
 
 export interface OutputSchema {
-  topics: AppBskyUnspeccedDefs.TrendingTopic[]
-  suggested: AppBskyUnspeccedDefs.TrendingTopic[]
+  topics: AppGndrUnspeccedDefs.TrendingTopic[]
+  suggested: AppGndrUnspeccedDefs.TrendingTopic[]
 }
 
 export type HandlerInput = void

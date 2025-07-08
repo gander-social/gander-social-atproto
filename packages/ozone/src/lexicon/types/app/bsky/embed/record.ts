@@ -10,22 +10,22 @@ import {
   type OmitKey,
 } from '../../../../util'
 import type * as ComAtprotoRepoStrongRef from '../../../com/atproto/repo/strongRef.js'
-import type * as AppBskyFeedDefs from '../feed/defs.js'
-import type * as AppBskyGraphDefs from '../graph/defs.js'
-import type * as AppBskyLabelerDefs from '../labeler/defs.js'
-import type * as AppBskyActorDefs from '../actor/defs.js'
+import type * as AppGndrFeedDefs from '../feed/defs.js'
+import type * as AppGndrGraphDefs from '../graph/defs.js'
+import type * as AppGndrLabelerDefs from '../labeler/defs.js'
+import type * as AppGndrActorDefs from '../actor/defs.js'
 import type * as ComAtprotoLabelDefs from '../../../com/atproto/label/defs.js'
-import type * as AppBskyEmbedImages from './images.js'
-import type * as AppBskyEmbedVideo from './video.js'
-import type * as AppBskyEmbedExternal from './external.js'
-import type * as AppBskyEmbedRecordWithMedia from './recordWithMedia.js'
+import type * as AppGndrEmbedImages from './images.js'
+import type * as AppGndrEmbedVideo from './video.js'
+import type * as AppGndrEmbedExternal from './external.js'
+import type * as AppGndrEmbedRecordWithMedia from './recordWithMedia.js'
 
 const is$typed = _is$typed,
   validate = _validate
-const id = 'app.bsky.embed.record'
+const id = 'app.gndr.embed.record'
 
 export interface Main {
-  $type?: 'app.bsky.embed.record'
+  $type?: 'app.gndr.embed.record'
   record: ComAtprotoRepoStrongRef.Main
 }
 
@@ -40,16 +40,16 @@ export function validateMain<V>(v: V) {
 }
 
 export interface View {
-  $type?: 'app.bsky.embed.record#view'
+  $type?: 'app.gndr.embed.record#view'
   record:
     | $Typed<ViewRecord>
     | $Typed<ViewNotFound>
     | $Typed<ViewBlocked>
     | $Typed<ViewDetached>
-    | $Typed<AppBskyFeedDefs.GeneratorView>
-    | $Typed<AppBskyGraphDefs.ListView>
-    | $Typed<AppBskyLabelerDefs.LabelerView>
-    | $Typed<AppBskyGraphDefs.StarterPackViewBasic>
+    | $Typed<AppGndrFeedDefs.GeneratorView>
+    | $Typed<AppGndrGraphDefs.ListView>
+    | $Typed<AppGndrLabelerDefs.LabelerView>
+    | $Typed<AppGndrGraphDefs.StarterPackViewBasic>
     | { $type: string }
 }
 
@@ -64,10 +64,10 @@ export function validateView<V>(v: V) {
 }
 
 export interface ViewRecord {
-  $type?: 'app.bsky.embed.record#viewRecord'
+  $type?: 'app.gndr.embed.record#viewRecord'
   uri: string
   cid: string
-  author: AppBskyActorDefs.ProfileViewBasic
+  author: AppGndrActorDefs.ProfileViewBasic
   /** The record data itself. */
   value: { [_ in string]: unknown }
   labels?: ComAtprotoLabelDefs.Label[]
@@ -76,11 +76,11 @@ export interface ViewRecord {
   likeCount?: number
   quoteCount?: number
   embeds?: (
-    | $Typed<AppBskyEmbedImages.View>
-    | $Typed<AppBskyEmbedVideo.View>
-    | $Typed<AppBskyEmbedExternal.View>
+    | $Typed<AppGndrEmbedImages.View>
+    | $Typed<AppGndrEmbedVideo.View>
+    | $Typed<AppGndrEmbedExternal.View>
     | $Typed<View>
-    | $Typed<AppBskyEmbedRecordWithMedia.View>
+    | $Typed<AppGndrEmbedRecordWithMedia.View>
     | { $type: string }
   )[]
   indexedAt: string
@@ -97,7 +97,7 @@ export function validateViewRecord<V>(v: V) {
 }
 
 export interface ViewNotFound {
-  $type?: 'app.bsky.embed.record#viewNotFound'
+  $type?: 'app.gndr.embed.record#viewNotFound'
   uri: string
   notFound: true
 }
@@ -113,10 +113,10 @@ export function validateViewNotFound<V>(v: V) {
 }
 
 export interface ViewBlocked {
-  $type?: 'app.bsky.embed.record#viewBlocked'
+  $type?: 'app.gndr.embed.record#viewBlocked'
   uri: string
   blocked: true
-  author: AppBskyFeedDefs.BlockedAuthor
+  author: AppGndrFeedDefs.BlockedAuthor
 }
 
 const hashViewBlocked = 'viewBlocked'
@@ -130,7 +130,7 @@ export function validateViewBlocked<V>(v: V) {
 }
 
 export interface ViewDetached {
-  $type?: 'app.bsky.embed.record#viewDetached'
+  $type?: 'app.gndr.embed.record#viewDetached'
   uri: string
   detached: true
 }

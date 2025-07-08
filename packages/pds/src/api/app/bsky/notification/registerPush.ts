@@ -8,10 +8,10 @@ import { ids } from '../../../../lexicon/lexicons'
 import { getDidDoc } from '../util/resolver'
 
 export default function (server: Server, ctx: AppContext) {
-  const { bskyAppView } = ctx
-  if (!bskyAppView) return
+  const { gndrAppView } = ctx
+  if (!gndrAppView) return
 
-  server.app.bsky.notification.registerPush({
+  server.app.gndr.notification.registerPush({
     auth: ctx.authVerifier.accessStandard({
       additional: [AuthScope.SignupQueued],
     }),
@@ -27,8 +27,8 @@ export default function (server: Server, ctx: AppContext) {
         ids.AppBskyNotificationRegisterPush,
       )
 
-      if (bskyAppView.did === serviceDid) {
-        await bskyAppView.agent.app.bsky.notification.registerPush(input.body, {
+      if (gndrAppView.did === serviceDid) {
+        await gndrAppView.agent.app.gndr.notification.registerPush(input.body, {
           ...authHeaders,
           encoding: 'application/json',
         })
@@ -37,7 +37,7 @@ export default function (server: Server, ctx: AppContext) {
 
       const notifEndpoint = await getEndpoint(ctx, serviceDid)
       const agent = new AtpAgent({ service: notifEndpoint })
-      await agent.api.app.bsky.notification.registerPush(input.body, {
+      await agent.api.app.gndr.notification.registerPush(input.body, {
         ...authHeaders,
         encoding: 'application/json',
       })

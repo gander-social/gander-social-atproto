@@ -1,8 +1,8 @@
 import {
-  AppBskyActorProfile,
-  AppBskyFeedGenerator,
-  AppBskyFeedPost,
-  AppBskyGraphList,
+  AppGndrActorProfile,
+  AppGndrFeedGenerator,
+  AppGndrFeedPost,
+  AppGndrGraphList,
 } from '@atproto/api'
 import { langLogger as log } from '../logger'
 import { ContentTagger } from './content-tagger'
@@ -35,18 +35,18 @@ export class LanguageTagger extends ContentTagger {
   getTextFromRecord(recordValue: Record<string, unknown>): string | undefined {
     let text: string | undefined
 
-    if (AppBskyGraphList.isRecord(recordValue)) {
+    if (AppGndrGraphList.isRecord(recordValue)) {
       text =
         isStringProp(recordValue, 'description') ||
         isStringProp(recordValue, 'name')
     } else if (
-      AppBskyFeedGenerator.isRecord(recordValue) ||
-      AppBskyActorProfile.isRecord(recordValue)
+      AppGndrFeedGenerator.isRecord(recordValue) ||
+      AppGndrActorProfile.isRecord(recordValue)
     ) {
       text =
         isStringProp(recordValue, 'description') ||
         isStringProp(recordValue, 'displayName')
-    } else if (AppBskyFeedPost.isRecord(recordValue)) {
+    } else if (AppGndrFeedPost.isRecord(recordValue)) {
       text = isStringProp(recordValue, 'text')
     }
 
@@ -59,7 +59,7 @@ export class LanguageTagger extends ContentTagger {
     if (
       this.subject.isRepo() ||
       (this.subject.isRecord() &&
-        this.subject.uri.endsWith('/app.bsky.actor.profile/self'))
+        this.subject.uri.endsWith('/app.gndr.actor.profile/self'))
     ) {
       const feed = await this.moderationService.views.fetchAuthorFeed(
         this.subject.did,

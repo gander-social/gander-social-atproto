@@ -12,11 +12,11 @@ import {
 
 const is$typed = _is$typed,
   validate = _validate
-const id = 'app.bsky.embed.defs'
+const id = 'app.gndr.embed.defs'
 
 /** width:height represents an aspect ratio. It may be approximate, and may not correspond to absolute dimensions in any given unit. */
 export interface AspectRatio {
-  $type?: 'app.bsky.embed.defs#aspectRatio'
+  $type?: 'app.gndr.embed.defs#aspectRatio'
   width: number
   height: number
 }

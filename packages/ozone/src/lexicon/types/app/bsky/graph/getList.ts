@@ -9,11 +9,11 @@ import {
   is$typed as _is$typed,
   type OmitKey,
 } from '../../../../util'
-import type * as AppBskyGraphDefs from './defs.js'
+import type * as AppGndrGraphDefs from './defs.js'
 
 const is$typed = _is$typed,
   validate = _validate
-const id = 'app.bsky.graph.getList'
+const id = 'app.gndr.graph.getList'
 
 export type QueryParams = {
   /** Reference (AT-URI) of the list record to hydrate. */
@@ -25,8 +25,8 @@ export type InputSchema = undefined
 
 export interface OutputSchema {
   cursor?: string
-  list: AppBskyGraphDefs.ListView
-  items: AppBskyGraphDefs.ListItemView[]
+  list: AppGndrGraphDefs.ListView
+  items: AppGndrGraphDefs.ListItemView[]
 }
 
 export type HandlerInput = void

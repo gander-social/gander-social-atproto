@@ -12,7 +12,7 @@ import {
 
 const is$typed = _is$typed,
   validate = _validate
-const id = 'app.bsky.unspecced.getTaggedSuggestions'
+const id = 'app.gndr.unspecced.getTaggedSuggestions'
 
 export type QueryParams = {}
 export type InputSchema = undefined
@@ -37,7 +37,7 @@ export interface HandlerError {
 export type HandlerOutput = HandlerError | HandlerSuccess
 
 export interface Suggestion {
-  $type?: 'app.bsky.unspecced.getTaggedSuggestions#suggestion'
+  $type?: 'app.gndr.unspecced.getTaggedSuggestions#suggestion'
   tag: string
   subjectType: 'actor' | 'feed' | (string & {})
   subject: string

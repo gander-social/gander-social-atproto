@@ -20,7 +20,7 @@ dd.tracer
   })
 
 // modify tracer in order to track calls to dataplane as a service with proper resource names
-const DATAPLANE_PREFIX = '/bsky.Service/'
+const DATAPLANE_PREFIX = '/gndr.Service/'
 const origStartSpan = dd.tracer._tracer.startSpan
 dd.tracer._tracer.startSpan = function (name, options) {
   if (
@@ -34,7 +34,7 @@ dd.tracer._tracer.startSpan = function (name, options) {
   if (!uri.pathname.startsWith(DATAPLANE_PREFIX)) {
     return origStartSpan.call(this, name, options)
   }
-  options.tags['service.name'] = 'dataplane-bsky'
+  options.tags['service.name'] = 'dataplane-gndr'
   options.tags['resource.name'] = uri.pathname.slice(DATAPLANE_PREFIX.length)
   return origStartSpan.call(this, name, options)
 }
@@ -44,26 +44,26 @@ const assert = require('node:assert')
 const cluster = require('node:cluster')
 const path = require('node:path')
 
-const { BskyAppView, ServerConfig } = require('@atproto/bsky')
+const { BskyAppView, ServerConfig } = require('@atproto/gndr')
 const { Secp256k1Keypair } = require('@atproto/crypto')
 
 const main = async () => {
   const env = getEnv()
   const config = ServerConfig.readEnv()
-  assert(env.serviceSigningKey, 'must set BSKY_SERVICE_SIGNING_KEY')
+  assert(env.serviceSigningKey, 'must set GNDR_SERVICE_SIGNING_KEY')
   const signingKey = await Secp256k1Keypair.import(env.serviceSigningKey)
-  const bsky = BskyAppView.create({ config, signingKey })
-  await bsky.start()
+  const gndr = BskyAppView.create({ config, signingKey })
+  await gndr.start()
   // Graceful shutdown (see also https://aws.amazon.com/blogs/containers/graceful-shutdowns-with-ecs/)
   const shutdown = async () => {
-    await bsky.destroy()
+    await gndr.destroy()
   }
   process.on('SIGTERM', shutdown)
   process.on('disconnect', shutdown) // when clustering
 }
 
 const getEnv = () => ({
-  serviceSigningKey: process.env.BSKY_SERVICE_SIGNING_KEY || undefined,
+  serviceSigningKey: process.env.GNDR_SERVICE_SIGNING_KEY || undefined,
 })
 
 const maybeParseInt = (str) => {

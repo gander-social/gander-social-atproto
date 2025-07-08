@@ -5,7 +5,7 @@ import { InvalidRequestError } from '@atproto/xrpc-server'
 import { Database } from '../db'
 import { Member } from '../db/schema/member'
 import { ids } from '../lexicon/lexicons'
-import { ProfileViewDetailed } from '../lexicon/types/app/bsky/actor/defs'
+import { ProfileViewDetailed } from '../lexicon/types/app/gndr/actor/defs'
 import { Member as TeamMember } from '../lexicon/types/tools/ozone/team/defs'
 import { httpLogger } from '../logger'
 import { AuthHeaders } from '../mod-service/views'
@@ -217,7 +217,7 @@ export class TeamService {
     try {
       const headers = await this.createAuthHeaders(
         this.appviewDid,
-        ids.AppBskyActorGetProfiles,
+        ids.AppGndrActorGetProfiles,
       )
 
       for (const actors of chunkArray(dids, 25)) {

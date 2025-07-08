@@ -10,17 +10,17 @@ import {
   is$typed as _is$typed,
   type OmitKey,
 } from '../../../../util'
-import type * as AppBskyVideoDefs from './defs.js'
+import type * as AppGndrVideoDefs from './defs.js'
 
 const is$typed = _is$typed,
   validate = _validate
-const id = 'app.bsky.video.uploadVideo'
+const id = 'app.gndr.video.uploadVideo'
 
 export type QueryParams = {}
 export type InputSchema = string | Uint8Array | Blob
 
 export interface OutputSchema {
-  jobStatus: AppBskyVideoDefs.JobStatus
+  jobStatus: AppGndrVideoDefs.JobStatus
 }
 
 export interface HandlerInput {

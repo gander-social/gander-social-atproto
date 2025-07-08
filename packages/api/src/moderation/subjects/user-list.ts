@@ -1,5 +1,5 @@
 import { AtUri } from '@atproto/syntax'
-import { AppBskyActorDefs } from '../../client/index'
+import { AppGndrActorDefs } from '../../client/index'
 import { ModerationDecision } from '../decision'
 import { ModerationOpts, ModerationSubjectUserList } from '../types'
 import { decideAccount } from './account'
@@ -43,6 +43,6 @@ export function decideUserList(
   return acc
 }
 
-function isProfile(v: any): v is AppBskyActorDefs.ProfileViewBasic {
+function isProfile(v: any): v is AppGndrActorDefs.ProfileViewBasic {
   return v && typeof v === 'object' && 'did' in v
 }

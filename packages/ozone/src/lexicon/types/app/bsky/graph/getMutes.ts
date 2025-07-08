@@ -9,11 +9,11 @@ import {
   is$typed as _is$typed,
   type OmitKey,
 } from '../../../../util'
-import type * as AppBskyActorDefs from '../actor/defs.js'
+import type * as AppGndrActorDefs from '../actor/defs.js'
 
 const is$typed = _is$typed,
   validate = _validate
-const id = 'app.bsky.graph.getMutes'
+const id = 'app.gndr.graph.getMutes'
 
 export type QueryParams = {
   limit: number
@@ -23,7 +23,7 @@ export type InputSchema = undefined
 
 export interface OutputSchema {
   cursor?: string
-  mutes: AppBskyActorDefs.ProfileView[]
+  mutes: AppGndrActorDefs.ProfileView[]
 }
 
 export type HandlerInput = void
