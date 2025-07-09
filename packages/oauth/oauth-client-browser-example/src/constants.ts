@@ -11,14 +11,14 @@ export const PLC_DIRECTORY_URL: string | undefined =
 
 export const HANDLE_RESOLVER_URL: string =
   searchParams.get('handle_resolver') ??
-  (ENV === 'development' ? 'http://localhost:2584' : 'https://bsky.social')
+  (ENV === 'development' ? 'http://localhost:2584' : 'https://gndr.social')
 
 export const SIGN_UP_URL: string =
   searchParams.get('sign_up_url') ??
-  (ENV === 'development' ? 'http://localhost:2583' : 'https://bsky.social')
+  (ENV === 'development' ? 'http://localhost:2583' : 'https://gndr.social')
 
 export const OAUTH_SCOPE: string =
   searchParams.get('scope') ??
   (ENV === 'development'
-    ? 'atproto transition:generic transition:email transition:chat.bsky'
+    ? 'atproto transition:generic transition:email transition:chat.gndr'
     : 'atproto transition:generic')

@@ -9,26 +9,26 @@ import {
   is$typed as _is$typed,
   type OmitKey,
 } from '../../../../util'
-import type * as AppBskyRichtextFacet from '../richtext/facet.js'
+import type * as AppGndrRichtextFacet from '../richtext/facet.js'
 import type * as ComAtprotoLabelDefs from '../../../com/atproto/label/defs.js'
 
 const is$typed = _is$typed,
   validate = _validate
-const id = 'app.bsky.feed.generator'
+const id = 'app.gndr.feed.generator'
 
 export interface Record {
-  $type: 'app.bsky.feed.generator'
+  $type: 'app.gndr.feed.generator'
   did: string
   displayName: string
   description?: string
-  descriptionFacets?: AppBskyRichtextFacet.Main[]
+  descriptionFacets?: AppGndrRichtextFacet.Main[]
   avatar?: BlobRef
-  /** Declaration that a feed accepts feedback interactions from a client through app.bsky.feed.sendInteractions */
+  /** Declaration that a feed accepts feedback interactions from a client through app.gndr.feed.sendInteractions */
   acceptsInteractions?: boolean
   labels?: $Typed<ComAtprotoLabelDefs.SelfLabels> | { $type: string }
   contentMode?:
-    | 'app.bsky.feed.defs#contentModeUnspecified'
-    | 'app.bsky.feed.defs#contentModeVideo'
+    | 'app.gndr.feed.defs#contentModeUnspecified'
+    | 'app.gndr.feed.defs#contentModeVideo'
     | (string & {})
   createdAt: string
   [k: string]: unknown

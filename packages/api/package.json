@@ -2,16 +2,16 @@
   "name": "@atproto/api",
   "version": "0.15.23",
   "license": "MIT",
-  "description": "Client library for atproto and Bluesky",
+  "description": "Client library for atproto and Gander",
   "keywords": [
     "atproto",
-    "bluesky",
+    "gander",
     "api"
   ],
   "homepage": "https://atproto.com",
   "repository": {
     "type": "git",
-    "url": "https://github.com/bluesky-social/atproto",
+    "url": "https://github.com/gander-social/atproto",
     "directory": "packages/api"
   },
   "main": "dist/index.js",

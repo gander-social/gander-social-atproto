@@ -24,12 +24,12 @@ import {
 } from '@atproto/syntax'
 import { hasExplicitSlur } from '../handle/explicit-slurs'
 import * as lex from '../lexicon/lexicons'
-import * as AppBskyActorProfile from '../lexicon/types/app/bsky/actor/profile'
-import * as AppBskyFeedGenerator from '../lexicon/types/app/bsky/feed/generator'
-import * as AppBskyFeedPost from '../lexicon/types/app/bsky/feed/post'
-import * as AppBskyGraphList from '../lexicon/types/app/bsky/graph/list'
-import * as AppBskyGraphStarterpack from '../lexicon/types/app/bsky/graph/starterpack'
-import { isTag } from '../lexicon/types/app/bsky/richtext/facet'
+import * as AppGndrActorProfile from '../lexicon/types/app/gndr/actor/profile'
+import * as AppGndrFeedGenerator from '../lexicon/types/app/gndr/feed/generator'
+import * as AppGndrFeedPost from '../lexicon/types/app/gndr/feed/post'
+import * as AppGndrGraphList from '../lexicon/types/app/gndr/graph/list'
+import * as AppGndrGraphStarterpack from '../lexicon/types/app/gndr/graph/starterpack'
+import { isTag } from '../lexicon/types/app/gndr/richtext/facet'
 import { asPredicate } from '../lexicon/util'
 import {
   InvalidRecordError,
@@ -41,11 +41,11 @@ import {
   ValidationStatus,
 } from './types'
 
-const isValidFeedGenerator = asPredicate(AppBskyFeedGenerator.validateRecord)
-const isValidStarterPack = asPredicate(AppBskyGraphStarterpack.validateRecord)
-const isValidPost = asPredicate(AppBskyFeedPost.validateRecord)
-const isValidList = asPredicate(AppBskyGraphList.validateRecord)
-const isValidProfile = asPredicate(AppBskyActorProfile.validateRecord)
+const isValidFeedGenerator = asPredicate(AppGndrFeedGenerator.validateRecord)
+const isValidStarterPack = asPredicate(AppGndrGraphStarterpack.validateRecord)
+const isValidPost = asPredicate(AppGndrFeedPost.validateRecord)
+const isValidList = asPredicate(AppGndrGraphList.validateRecord)
+const isValidProfile = asPredicate(AppGndrActorProfile.validateRecord)
 
 export const assertValidRecordWithStatus = (
   record: Record<string, unknown>,
@@ -324,27 +324,27 @@ export const findBlobRefs = (
 }
 
 const CONSTRAINTS = {
-  [lex.ids.AppBskyActorProfile]: {
+  [lex.ids.AppGndrActorProfile]: {
     avatar:
-      lex.schemaDict.AppBskyActorProfile.defs.main.record.properties.avatar,
+      lex.schemaDict.AppGndrActorProfile.defs.main.record.properties.avatar,
     banner:
-      lex.schemaDict.AppBskyActorProfile.defs.main.record.properties.banner,
+      lex.schemaDict.AppGndrActorProfile.defs.main.record.properties.banner,
   },
-  [lex.ids.AppBskyFeedGenerator]: {
+  [lex.ids.AppGndrFeedGenerator]: {
     avatar:
-      lex.schemaDict.AppBskyFeedGenerator.defs.main.record.properties.avatar,
+      lex.schemaDict.AppGndrFeedGenerator.defs.main.record.properties.avatar,
   },
-  [lex.ids.AppBskyGraphList]: {
-    avatar: lex.schemaDict.AppBskyGraphList.defs.main.record.properties.avatar,
+  [lex.ids.AppGndrGraphList]: {
+    avatar: lex.schemaDict.AppGndrGraphList.defs.main.record.properties.avatar,
   },
-  [lex.ids.AppBskyFeedPost]: {
+  [lex.ids.AppGndrFeedPost]: {
     'embed/images/image':
-      lex.schemaDict.AppBskyEmbedImages.defs.image.properties.image,
+      lex.schemaDict.AppGndrEmbedImages.defs.image.properties.image,
     'embed/external/thumb':
-      lex.schemaDict.AppBskyEmbedExternal.defs.external.properties.thumb,
+      lex.schemaDict.AppGndrEmbedExternal.defs.external.properties.thumb,
     'embed/media/images/image':
-      lex.schemaDict.AppBskyEmbedImages.defs.image.properties.image,
+      lex.schemaDict.AppGndrEmbedImages.defs.image.properties.image,
     'embed/media/external/thumb':
-      lex.schemaDict.AppBskyEmbedExternal.defs.external.properties.thumb,
+      lex.schemaDict.AppGndrEmbedExternal.defs.external.properties.thumb,
   },
 }

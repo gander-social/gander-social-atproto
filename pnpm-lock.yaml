@@ -58,7 +58,7 @@ importers:
         version: 5.1.3(eslint-config-prettier@9.1.0)(eslint@8.57.0)(prettier@3.2.5)
       jest:
         specifier: ^28.1.2
-        version: 28.1.2(@types/node@18.19.67)(ts-node@10.8.2)
+        version: 28.1.2(@types/node@18.19.67)
       node-gyp:
         specifier: ^9.3.1
         version: 9.3.1
@@ -110,7 +110,7 @@ importers:
         version: link:../lex-cli
       jest:
         specifier: ^28.1.2
-        version: 28.1.2(@types/node@18.19.67)(ts-node@10.8.2)
+        version: 28.1.2(@types/node@18.19.67)
       prettier:
         specifier: ^3.2.5
         version: 3.2.5
@@ -154,175 +154,6 @@ importers:
         specifier: 3.0.0
         version: 3.0.0
     devDependencies:
-      typescript:
-        specifier: ^5.6.3
-        version: 5.8.2
-
-  packages/bsky:
-    dependencies:
-      '@atproto-labs/fetch-node':
-        specifier: workspace:*
-        version: link:../internal/fetch-node
-      '@atproto-labs/xrpc-utils':
-        specifier: workspace:*
-        version: link:../internal/xrpc-utils
-      '@atproto/api':
-        specifier: workspace:^
-        version: link:../api
-      '@atproto/common':
-        specifier: workspace:^
-        version: link:../common
-      '@atproto/crypto':
-        specifier: workspace:^
-        version: link:../crypto
-      '@atproto/did':
-        specifier: workspace:^
-        version: link:../did
-      '@atproto/identity':
-        specifier: workspace:^
-        version: link:../identity
-      '@atproto/lexicon':
-        specifier: workspace:^
-        version: link:../lexicon
-      '@atproto/repo':
-        specifier: workspace:^
-        version: link:../repo
-      '@atproto/sync':
-        specifier: workspace:^
-        version: link:../sync
-      '@atproto/syntax':
-        specifier: workspace:^
-        version: link:../syntax
-      '@atproto/xrpc-server':
-        specifier: workspace:^
-        version: link:../xrpc-server
-      '@bufbuild/protobuf':
-        specifier: ^1.5.0
-        version: 1.6.0
-      '@connectrpc/connect':
-        specifier: ^1.1.4
-        version: 1.3.0(@bufbuild/protobuf@1.6.0)
-      '@connectrpc/connect-express':
-        specifier: ^1.1.4
-        version: 1.3.0(@bufbuild/protobuf@1.6.0)(@connectrpc/connect-node@1.3.0)(@connectrpc/connect@1.3.0)
-      '@connectrpc/connect-node':
-        specifier: ^1.1.4
-        version: 1.3.0(@bufbuild/protobuf@1.6.0)(@connectrpc/connect@1.3.0)
-      '@did-plc/lib':
-        specifier: ^0.0.1
-        version: 0.0.1
-      '@types/http-errors':
-        specifier: ^2.0.1
-        version: 2.0.4
-      compression:
-        specifier: ^1.7.4
-        version: 1.7.4
-      cors:
-        specifier: ^2.8.5
-        version: 2.8.5
-      etcd3:
-        specifier: ^1.1.2
-        version: 1.1.2
-      express:
-        specifier: ^4.17.2
-        version: 4.18.2
-      http-errors:
-        specifier: ^2.0.0
-        version: 2.0.0
-      http-terminator:
-        specifier: ^3.2.0
-        version: 3.2.0
-      ioredis:
-        specifier: ^5.3.2
-        version: 5.3.2
-      jose:
-        specifier: ^5.0.1
-        version: 5.1.3
-      key-encoder:
-        specifier: ^2.0.3
-        version: 2.0.3
-      kysely:
-        specifier: ^0.22.0
-        version: 0.22.0
-      multiformats:
-        specifier: ^9.9.0
-        version: 9.9.0
-      murmurhash:
-        specifier: ^2.0.1
-        version: 2.0.1
-      p-queue:
-        specifier: ^6.6.2
-        version: 6.6.2
-      pg:
-        specifier: ^8.10.0
-        version: 8.10.0
-      pino:
-        specifier: ^8.21.0
-        version: 8.21.0
-      pino-http:
-        specifier: ^8.2.1
-        version: 8.6.1
-      sharp:
-        specifier: ^0.33.5
-        version: 0.33.5
-      statsig-node:
-        specifier: ^5.23.1
-        version: 5.23.1
-      structured-headers:
-        specifier: ^1.0.1
-        version: 1.0.1
-      typed-emitter:
-        specifier: ^2.1.0
-        version: 2.1.0
-      uint8arrays:
-        specifier: 3.0.0
-        version: 3.0.0
-      undici:
-        specifier: ^6.19.8
-        version: 6.19.8
-    devDependencies:
-      '@atproto/lex-cli':
-        specifier: workspace:^
-        version: link:../lex-cli
-      '@atproto/pds':
-        specifier: workspace:^
-        version: link:../pds
-      '@atproto/xrpc':
-        specifier: workspace:^
-        version: link:../xrpc
-      '@bufbuild/buf':
-        specifier: ^1.28.1
-        version: 1.28.1
-      '@bufbuild/protoc-gen-es':
-        specifier: ^1.5.0
-        version: 1.6.0(@bufbuild/protobuf@1.6.0)
-      '@connectrpc/protoc-gen-connect-es':
-        specifier: ^1.1.4
-        version: 1.3.0(@bufbuild/protoc-gen-es@1.6.0)(@connectrpc/connect@1.3.0)
-      '@did-plc/server':
-        specifier: ^0.0.1
-        version: 0.0.1
-      '@types/cors':
-        specifier: ^2.8.12
-        version: 2.8.12
-      '@types/express':
-        specifier: ^4.17.13
-        version: 4.17.13
-      '@types/express-serve-static-core':
-        specifier: ^4.17.36
-        version: 4.17.36
-      '@types/pg':
-        specifier: ^8.6.6
-        version: 8.6.6
-      '@types/qs':
-        specifier: ^6.9.7
-        version: 6.9.7
-      jest:
-        specifier: ^28.1.2
-        version: 28.1.2(@types/node@18.19.67)(ts-node@10.8.2)
-      ts-node:
-        specifier: ^10.8.2
-        version: 10.8.2(@swc/core@1.11.18)(@types/node@18.19.67)(typescript@5.8.2)
       typescript:
         specifier: ^5.6.3
         version: 5.8.2
@@ -408,7 +239,7 @@ importers:
     devDependencies:
       jest:
         specifier: ^28.1.2
-        version: 28.1.2(@types/node@18.19.67)(ts-node@10.8.2)
+        version: 28.1.2(@types/node@18.19.67)
       typescript:
         specifier: ^5.6.3
         version: 5.8.2
@@ -433,7 +264,7 @@ importers:
     devDependencies:
       jest:
         specifier: ^28.1.2
-        version: 28.1.2(@types/node@18.19.67)(ts-node@10.8.2)
+        version: 28.1.2(@types/node@18.19.67)
       typescript:
         specifier: ^5.6.3
         version: 5.8.2
@@ -455,7 +286,7 @@ importers:
         version: link:../common
       jest:
         specifier: ^28.1.2
-        version: 28.1.2(@types/node@18.19.67)(ts-node@10.8.2)
+        version: 28.1.2(@types/node@18.19.67)
       typescript:
         specifier: ^5.6.3
         version: 5.8.2
@@ -465,9 +296,6 @@ importers:
       '@atproto/api':
         specifier: workspace:^
         version: link:../api
-      '@atproto/bsky':
-        specifier: workspace:^
-        version: link:../bsky
       '@atproto/bsync':
         specifier: workspace:^
         version: link:../bsync
@@ -477,6 +305,9 @@ importers:
       '@atproto/crypto':
         specifier: workspace:^
         version: link:../crypto
+      '@atproto/gndr':
+        specifier: workspace:^
+        version: link:../gndr
       '@atproto/identity':
         specifier: workspace:^
         version: link:../identity
@@ -541,10 +372,179 @@ importers:
         version: 0.2.24(@swc/core@1.11.29)
       jest:
         specifier: ^28.1.2
-        version: 28.1.2(@types/node@18.19.67)(ts-node@10.8.2)
+        version: 28.1.2(@types/node@18.19.67)
       typescript:
         specifier: ^5.6.3
         version: 5.8.2
+
+  packages/gndr:
+    dependencies:
+      '@atproto-labs/fetch-node':
+        specifier: workspace:*
+        version: link:../internal/fetch-node
+      '@atproto-labs/xrpc-utils':
+        specifier: workspace:*
+        version: link:../internal/xrpc-utils
+      '@atproto/api':
+        specifier: workspace:^
+        version: link:../api
+      '@atproto/common':
+        specifier: workspace:^
+        version: link:../common
+      '@atproto/crypto':
+        specifier: workspace:^
+        version: link:../crypto
+      '@atproto/did':
+        specifier: workspace:^
+        version: link:../did
+      '@atproto/identity':
+        specifier: workspace:^
+        version: link:../identity
+      '@atproto/lexicon':
+        specifier: workspace:^
+        version: link:../lexicon
+      '@atproto/repo':
+        specifier: workspace:^
+        version: link:../repo
+      '@atproto/sync':
+        specifier: workspace:^
+        version: link:../sync
+      '@atproto/syntax':
+        specifier: workspace:^
+        version: link:../syntax
+      '@atproto/xrpc-server':
+        specifier: workspace:^
+        version: link:../xrpc-server
+      '@bufbuild/protobuf':
+        specifier: ^1.5.0
+        version: 1.6.0
+      '@connectrpc/connect':
+        specifier: ^1.1.4
+        version: 1.3.0(@bufbuild/protobuf@1.6.0)
+      '@connectrpc/connect-express':
+        specifier: ^1.1.4
+        version: 1.3.0(@bufbuild/protobuf@1.6.0)(@connectrpc/connect-node@1.3.0)(@connectrpc/connect@1.3.0)
+      '@connectrpc/connect-node':
+        specifier: ^1.1.4
+        version: 1.3.0(@bufbuild/protobuf@1.6.0)(@connectrpc/connect@1.3.0)
+      '@did-plc/lib':
+        specifier: ^0.0.1
+        version: 0.0.1
+      '@types/http-errors':
+        specifier: ^2.0.1
+        version: 2.0.4
+      compression:
+        specifier: ^1.7.4
+        version: 1.7.4
+      cors:
+        specifier: ^2.8.5
+        version: 2.8.5
+      etcd3:
+        specifier: ^1.1.2
+        version: 1.1.2
+      express:
+        specifier: ^4.17.2
+        version: 4.18.2
+      http-errors:
+        specifier: ^2.0.0
+        version: 2.0.0
+      http-terminator:
+        specifier: ^3.2.0
+        version: 3.2.0
+      ioredis:
+        specifier: ^5.3.2
+        version: 5.3.2
+      jose:
+        specifier: ^5.0.1
+        version: 5.3.0
+      key-encoder:
+        specifier: ^2.0.3
+        version: 2.0.3
+      kysely:
+        specifier: ^0.22.0
+        version: 0.22.0
+      multiformats:
+        specifier: ^9.9.0
+        version: 9.9.0
+      murmurhash:
+        specifier: ^2.0.1
+        version: 2.0.1
+      p-queue:
+        specifier: ^6.6.2
+        version: 6.6.2
+      pg:
+        specifier: ^8.10.0
+        version: 8.10.0
+      pino:
+        specifier: ^8.21.0
+        version: 8.21.0
+      pino-http:
+        specifier: ^8.2.1
+        version: 8.6.1
+      sharp:
+        specifier: ^0.33.5
+        version: 0.33.5
+      statsig-node:
+        specifier: ^5.23.1
+        version: 5.23.1
+      structured-headers:
+        specifier: ^1.0.1
+        version: 1.0.1
+      typed-emitter:
+        specifier: ^2.1.0
+        version: 2.1.0
+      uint8arrays:
+        specifier: 3.0.0
+        version: 3.0.0
+      undici:
+        specifier: ^6.19.8
+        version: 6.19.8
+    devDependencies:
+      '@atproto/lex-cli':
+        specifier: workspace:^
+        version: link:../lex-cli
+      '@atproto/pds':
+        specifier: workspace:^
+        version: link:../pds
+      '@atproto/xrpc':
+        specifier: workspace:^
+        version: link:../xrpc
+      '@bufbuild/buf':
+        specifier: ^1.28.1
+        version: 1.28.1
+      '@bufbuild/protoc-gen-es':
+        specifier: ^1.5.0
+        version: 1.6.0(@bufbuild/protobuf@1.6.0)
+      '@connectrpc/protoc-gen-connect-es':
+        specifier: ^1.1.4
+        version: 1.3.0(@bufbuild/protoc-gen-es@1.6.0)(@connectrpc/connect@1.3.0)
+      '@did-plc/server':
+        specifier: ^0.0.1
+        version: 0.0.1
+      '@types/cors':
+        specifier: ^2.8.12
+        version: 2.8.12
+      '@types/express':
+        specifier: ^4.17.13
+        version: 4.17.21
+      '@types/express-serve-static-core':
+        specifier: ^4.17.36
+        version: 4.17.36
+      '@types/pg':
+        specifier: ^8.6.6
+        version: 8.6.6
+      '@types/qs':
+        specifier: ^6.9.7
+        version: 6.9.7
+      jest:
+        specifier: ^28.1.2
+        version: 28.1.2(@types/node@18.19.67)(ts-node@10.8.2)
+      ts-node:
+        specifier: ^10.8.2
+        version: 10.8.2(@swc/core@1.11.18)(@types/node@18.19.67)(typescript@5.8.3)
+      typescript:
+        specifier: ^5.6.3
+        version: 5.8.3
 
   packages/identity:
     dependencies:
@@ -572,7 +572,7 @@ importers:
         version: 6.1.2
       jest:
         specifier: ^28.1.2
-        version: 28.1.2(@types/node@18.19.67)(ts-node@10.8.2)
+        version: 28.1.2(@types/node@18.19.67)
       typescript:
         specifier: ^5.6.3
         version: 5.8.2
@@ -781,7 +781,7 @@ importers:
     devDependencies:
       jest:
         specifier: ^28.1.2
-        version: 28.1.2(@types/node@18.19.67)(ts-node@10.8.2)
+        version: 28.1.2(@types/node@18.19.67)
       typescript:
         specifier: ^5.6.3
         version: 5.8.2
@@ -1533,12 +1533,12 @@ importers:
         specifier: ^3.23.8
         version: 3.24.2
     devDependencies:
-      '@atproto/bsky':
-        specifier: workspace:^
-        version: link:../bsky
       '@atproto/dev-env':
         specifier: workspace:^
         version: link:../dev-env
+      '@atproto/gndr':
+        specifier: workspace:^
+        version: link:../gndr
       '@atproto/lex-cli':
         specifier: workspace:^
         version: link:../lex-cli
@@ -1623,7 +1623,7 @@ importers:
     devDependencies:
       jest:
         specifier: ^28.1.2
-        version: 28.1.2(@types/node@18.19.67)(ts-node@10.8.2)
+        version: 28.1.2(@types/node@18.19.67)
       typescript:
         specifier: ^5.6.3
         version: 5.8.2
@@ -1663,7 +1663,7 @@ importers:
         version: 8.5.4
       jest:
         specifier: ^28.1.2
-        version: 28.1.2(@types/node@18.19.67)(ts-node@10.8.2)
+        version: 28.1.2(@types/node@18.19.67)
       typescript:
         specifier: ^5.6.3
         version: 5.8.2
@@ -1672,7 +1672,7 @@ importers:
     devDependencies:
       jest:
         specifier: ^28.1.2
-        version: 28.1.2(@types/node@18.19.67)(ts-node@10.8.2)
+        version: 28.1.2(@types/node@18.19.67)
       typescript:
         specifier: ^5.6.3
         version: 5.8.2
@@ -1749,7 +1749,7 @@ importers:
         version: 6.1.2
       jest:
         specifier: ^28.1.2
-        version: 28.1.2(@types/node@18.19.67)(ts-node@10.8.2)
+        version: 28.1.2(@types/node@18.19.67)
       jose:
         specifier: ^4.15.4
         version: 4.15.4
@@ -1763,23 +1763,23 @@ importers:
         specifier: ^5.6.3
         version: 5.8.2
 
-  services/bsky:
-    dependencies:
-      '@atproto/bsky':
-        specifier: workspace:^
-        version: link:../../packages/bsky
-      '@atproto/crypto':
-        specifier: workspace:^
-        version: link:../../packages/crypto
-      dd-trace:
-        specifier: 3.13.2
-        version: 3.13.2
-
   services/bsync:
     dependencies:
       '@atproto/bsync':
         specifier: workspace:^
         version: link:../../packages/bsync
+      dd-trace:
+        specifier: 3.13.2
+        version: 3.13.2
+
+  services/gndr:
+    dependencies:
+      '@atproto/crypto':
+        specifier: workspace:^
+        version: link:../../packages/crypto
+      '@atproto/gndr':
+        specifier: workspace:^
+        version: link:../../packages/gndr
       dd-trace:
         specifier: 3.13.2
         version: 3.13.2
@@ -6120,7 +6120,7 @@ packages:
       slash: 3.0.0
     dev: true
 
-  /@jest/core@28.1.3(ts-node@10.8.2):
+  /@jest/core@28.1.3:
     resolution: {integrity: sha512-CIKBrlaKOzA7YG19BEqCw3SLIsEwjZkeJzf5bdooVnW4bH5cktqe3JX+G2YV1aK5vP8N9na1IGWFzYaTp6k6NA==}
     engines: {node: ^12.13.0 || ^14.15.0 || ^16.10.0 || >=17.0.0}
     peerDependencies:
@@ -6154,6 +6154,49 @@ packages:
       jest-validate: 28.1.3
       jest-watcher: 28.1.3
       micromatch: 4.0.5
+      pretty-format: 28.1.3
+      rimraf: 3.0.2
+      slash: 3.0.0
+      strip-ansi: 6.0.1
+    transitivePeerDependencies:
+      - supports-color
+      - ts-node
+    dev: true
+
+  /@jest/core@28.1.3(ts-node@10.8.2):
+    resolution: {integrity: sha512-CIKBrlaKOzA7YG19BEqCw3SLIsEwjZkeJzf5bdooVnW4bH5cktqe3JX+G2YV1aK5vP8N9na1IGWFzYaTp6k6NA==}
+    engines: {node: ^12.13.0 || ^14.15.0 || ^16.10.0 || >=17.0.0}
+    peerDependencies:
+      node-notifier: ^8.0.1 || ^9.0.0 || ^10.0.0
+    peerDependenciesMeta:
+      node-notifier:
+        optional: true
+    dependencies:
+      '@jest/console': 28.1.3
+      '@jest/reporters': 28.1.3
+      '@jest/test-result': 28.1.3
+      '@jest/transform': 28.1.3
+      '@jest/types': 28.1.3
+      '@types/node': 18.19.67
+      ansi-escapes: 4.3.2
+      chalk: 4.1.2
+      ci-info: 3.8.0
+      exit: 0.1.2
+      graceful-fs: 4.2.11
+      jest-changed-files: 28.1.3
+      jest-config: 28.1.3(@types/node@18.19.67)(ts-node@10.8.2)
+      jest-haste-map: 28.1.3
+      jest-message-util: 28.1.3
+      jest-regex-util: 28.0.2
+      jest-resolve: 28.1.3
+      jest-resolve-dependencies: 28.1.3
+      jest-runner: 28.1.3
+      jest-runtime: 28.1.3
+      jest-snapshot: 28.1.3
+      jest-util: 28.1.3
+      jest-validate: 28.1.3
+      jest-watcher: 28.1.3
+      micromatch: 4.0.8
       pretty-format: 28.1.3
       rimraf: 3.0.2
       slash: 3.0.0
@@ -8838,7 +8881,7 @@ packages:
   /@typescript/vfs@1.5.0:
     resolution: {integrity: sha512-AJS307bPgbsZZ9ggCT3wwpg3VbTKMFNHfaY/uF0ahSkYYrPF2dSSKDNIDIQAHm9qJqbLvCsSJH7yN4Vs/CsMMg==}
     dependencies:
-      debug: 4.3.4
+      debug: 4.3.7
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -10456,7 +10499,6 @@ packages:
         optional: true
     dependencies:
       ms: 2.1.3
-    dev: true
 
   /decamelize-keys@1.1.1:
     resolution: {integrity: sha512-WiPxgEirIV0/eIOMcnFBA3/IJZAZqKnwAwWyvvdi4lsr1WCN22nhdf/3db3DoZcUjTV2SqfzIwNyp6y2xs3nmg==}
@@ -12717,7 +12759,7 @@ packages:
     dependencies:
       '@ioredis/commands': 1.2.0
       cluster-key-slot: 1.1.2
-      debug: 4.3.4
+      debug: 4.3.7
       denque: 2.1.0
       lodash.defaults: 4.2.0
       lodash.isarguments: 3.1.0
@@ -13162,6 +13204,34 @@ packages:
       - supports-color
     dev: true
 
+  /jest-cli@28.1.3(@types/node@18.19.67):
+    resolution: {integrity: sha512-roY3kvrv57Azn1yPgdTebPAXvdR2xfezaKKYzVxZ6It/5NCxzJym6tUI5P1zkdWhfUYkxEI9uZWcQdaFLo8mJQ==}
+    engines: {node: ^12.13.0 || ^14.15.0 || ^16.10.0 || >=17.0.0}
+    hasBin: true
+    peerDependencies:
+      node-notifier: ^8.0.1 || ^9.0.0 || ^10.0.0
+    peerDependenciesMeta:
+      node-notifier:
+        optional: true
+    dependencies:
+      '@jest/core': 28.1.3
+      '@jest/test-result': 28.1.3
+      '@jest/types': 28.1.3
+      chalk: 4.1.2
+      exit: 0.1.2
+      graceful-fs: 4.2.11
+      import-local: 3.1.0
+      jest-config: 28.1.3(@types/node@18.19.67)(ts-node@10.8.2)
+      jest-util: 28.1.3
+      jest-validate: 28.1.3
+      prompts: 2.4.2
+      yargs: 17.7.2
+    transitivePeerDependencies:
+      - '@types/node'
+      - supports-color
+      - ts-node
+    dev: true
+
   /jest-cli@28.1.3(@types/node@18.19.67)(ts-node@10.8.2):
     resolution: {integrity: sha512-roY3kvrv57Azn1yPgdTebPAXvdR2xfezaKKYzVxZ6It/5NCxzJym6tUI5P1zkdWhfUYkxEI9uZWcQdaFLo8mJQ==}
     engines: {node: ^12.13.0 || ^14.15.0 || ^16.10.0 || >=17.0.0}
@@ -13536,6 +13606,26 @@ packages:
       '@types/node': 18.19.67
       merge-stream: 2.0.0
       supports-color: 8.1.1
+    dev: true
+
+  /jest@28.1.2(@types/node@18.19.67):
+    resolution: {integrity: sha512-Tuf05DwLeCh2cfWCQbcz9UxldoDyiR1E9Igaei5khjonKncYdc6LDfynKCEWozK0oLE3GD+xKAo2u8x/0s6GOg==}
+    engines: {node: ^12.13.0 || ^14.15.0 || ^16.10.0 || >=17.0.0}
+    hasBin: true
+    peerDependencies:
+      node-notifier: ^8.0.1 || ^9.0.0 || ^10.0.0
+    peerDependenciesMeta:
+      node-notifier:
+        optional: true
+    dependencies:
+      '@jest/core': 28.1.3
+      '@jest/types': 28.1.3
+      import-local: 3.1.0
+      jest-cli: 28.1.3(@types/node@18.19.67)
+    transitivePeerDependencies:
+      - '@types/node'
+      - supports-color
+      - ts-node
     dev: true
 
   /jest@28.1.2(@types/node@18.19.67)(ts-node@10.8.2):
@@ -17370,6 +17460,38 @@ packages:
       diff: 4.0.2
       make-error: 1.3.6
       typescript: 5.8.2
+      v8-compile-cache-lib: 3.0.1
+      yn: 3.1.1
+    dev: true
+
+  /ts-node@10.8.2(@swc/core@1.11.18)(@types/node@18.19.67)(typescript@5.8.3):
+    resolution: {integrity: sha512-LYdGnoGddf1D6v8REPtIH+5iq/gTDuZqv2/UJUU7tKjuEU8xVZorBM+buCGNjj+pGEud+sOoM4CX3/YzINpENA==}
+    hasBin: true
+    peerDependencies:
+      '@swc/core': '>=1.2.50'
+      '@swc/wasm': '>=1.2.50'
+      '@types/node': '*'
+      typescript: '>=2.7'
+    peerDependenciesMeta:
+      '@swc/core':
+        optional: true
+      '@swc/wasm':
+        optional: true
+    dependencies:
+      '@cspotcode/source-map-support': 0.8.1
+      '@swc/core': 1.11.18
+      '@tsconfig/node10': 1.0.9
+      '@tsconfig/node12': 1.0.11
+      '@tsconfig/node14': 1.0.3
+      '@tsconfig/node16': 1.0.4
+      '@types/node': 18.19.67
+      acorn: 8.14.1
+      acorn-walk: 8.2.0
+      arg: 4.1.3
+      create-require: 1.1.1
+      diff: 4.0.2
+      make-error: 1.3.6
+      typescript: 5.8.3
       v8-compile-cache-lib: 3.0.1
       yn: 3.1.1
     dev: true

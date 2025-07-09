@@ -6,7 +6,7 @@ import { ActorStoreTransactor } from '../../../../actor-store/actor-store-transa
 import { AppContext } from '../../../../context'
 import { Server } from '../../../../lexicon'
 import { ids } from '../../../../lexicon/lexicons'
-import { Record as ProfileRecord } from '../../../../lexicon/types/app/bsky/actor/profile'
+import { Record as ProfileRecord } from '../../../../lexicon/types/app/gndr/actor/profile'
 import { dbLogger } from '../../../../logger'
 import {
   BadCommitSwapError,
@@ -72,7 +72,7 @@ export default function (server: Server, ctx: AppContext) {
           const isUpdate = current !== null
 
           // @TODO temporaray hack for legacy blob refs in profiles - remove after migrating legacy blobs
-          if (isUpdate && collection === ids.AppBskyActorProfile) {
+          if (isUpdate && collection === ids.AppGndrActorProfile) {
             await updateProfileLegacyBlobRef(actorTxn, record)
           }
           const writeInfo = {

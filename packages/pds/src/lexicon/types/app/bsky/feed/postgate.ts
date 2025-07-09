@@ -12,10 +12,10 @@ import {
 
 const is$typed = _is$typed,
   validate = _validate
-const id = 'app.bsky.feed.postgate'
+const id = 'app.gndr.feed.postgate'
 
 export interface Record {
-  $type: 'app.bsky.feed.postgate'
+  $type: 'app.gndr.feed.postgate'
   createdAt: string
   /** Reference (AT-URI) to the post record. */
   post: string
@@ -38,7 +38,7 @@ export function validateRecord<V>(v: V) {
 
 /** Disables embedding of this post. */
 export interface DisableRule {
-  $type?: 'app.bsky.feed.postgate#disableRule'
+  $type?: 'app.gndr.feed.postgate#disableRule'
 }
 
 const hashDisableRule = 'disableRule'

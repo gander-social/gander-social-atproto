@@ -9,11 +9,11 @@ import {
   is$typed as _is$typed,
   type OmitKey,
 } from '../../../../util'
-import type * as AppBskyVideoDefs from './defs.js'
+import type * as AppGndrVideoDefs from './defs.js'
 
 const is$typed = _is$typed,
   validate = _validate
-const id = 'app.bsky.video.getJobStatus'
+const id = 'app.gndr.video.getJobStatus'
 
 export type QueryParams = {
   jobId: string
@@ -21,7 +21,7 @@ export type QueryParams = {
 export type InputSchema = undefined
 
 export interface OutputSchema {
-  jobStatus: AppBskyVideoDefs.JobStatus
+  jobStatus: AppGndrVideoDefs.JobStatus
 }
 
 export type HandlerInput = void

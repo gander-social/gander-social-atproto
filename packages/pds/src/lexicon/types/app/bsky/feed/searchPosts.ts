@@ -9,11 +9,11 @@ import {
   is$typed as _is$typed,
   type OmitKey,
 } from '../../../../util'
-import type * as AppBskyFeedDefs from './defs.js'
+import type * as AppGndrFeedDefs from './defs.js'
 
 const is$typed = _is$typed,
   validate = _validate
-const id = 'app.bsky.feed.searchPosts'
+const id = 'app.gndr.feed.searchPosts'
 
 export type QueryParams = {
   /** Search query string; syntax, phrase, boolean, and faceting is unspecified, but Lucene query syntax is recommended. */
@@ -46,7 +46,7 @@ export interface OutputSchema {
   cursor?: string
   /** Count of search hits. Optional, may be rounded/truncated, and may not be possible to paginate through all hits. */
   hitsTotal?: number
-  posts: AppBskyFeedDefs.PostView[]
+  posts: AppGndrFeedDefs.PostView[]
 }
 
 export type HandlerInput = void

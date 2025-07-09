@@ -12,10 +12,10 @@ import {
 
 const is$typed = _is$typed,
   validate = _validate
-const id = 'app.bsky.feed.threadgate'
+const id = 'app.gndr.feed.threadgate'
 
 export interface Record {
-  $type: 'app.bsky.feed.threadgate'
+  $type: 'app.gndr.feed.threadgate'
   /** Reference (AT-URI) to the post record. */
   post: string
   /** List of rules defining who can reply to this post. If value is an empty array, no one can reply. If value is undefined, anyone can reply. */
@@ -44,7 +44,7 @@ export function validateRecord<V>(v: V) {
 
 /** Allow replies from actors mentioned in your post. */
 export interface MentionRule {
-  $type?: 'app.bsky.feed.threadgate#mentionRule'
+  $type?: 'app.gndr.feed.threadgate#mentionRule'
 }
 
 const hashMentionRule = 'mentionRule'
@@ -59,7 +59,7 @@ export function validateMentionRule<V>(v: V) {
 
 /** Allow replies from actors who follow you. */
 export interface FollowerRule {
-  $type?: 'app.bsky.feed.threadgate#followerRule'
+  $type?: 'app.gndr.feed.threadgate#followerRule'
 }
 
 const hashFollowerRule = 'followerRule'
@@ -74,7 +74,7 @@ export function validateFollowerRule<V>(v: V) {
 
 /** Allow replies from actors you follow. */
 export interface FollowingRule {
-  $type?: 'app.bsky.feed.threadgate#followingRule'
+  $type?: 'app.gndr.feed.threadgate#followingRule'
 }
 
 const hashFollowingRule = 'followingRule'
@@ -89,7 +89,7 @@ export function validateFollowingRule<V>(v: V) {
 
 /** Allow replies from actors on a list. */
 export interface ListRule {
-  $type?: 'app.bsky.feed.threadgate#listRule'
+  $type?: 'app.gndr.feed.threadgate#listRule'
   list: string
 }
 

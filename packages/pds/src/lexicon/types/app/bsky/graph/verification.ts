@@ -12,10 +12,10 @@ import {
 
 const is$typed = _is$typed,
   validate = _validate
-const id = 'app.bsky.graph.verification'
+const id = 'app.gndr.graph.verification'
 
 export interface Record {
-  $type: 'app.bsky.graph.verification'
+  $type: 'app.gndr.graph.verification'
   /** DID of the subject the verification applies to. */
   subject: string
   /** Handle of the subject the verification applies to at the moment of verifying, which might not be the same at the time of viewing. The verification is only valid if the current handle matches the one at the time of verifying. */

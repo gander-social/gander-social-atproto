@@ -12,7 +12,7 @@ import {
 
 const is$typed = _is$typed,
   validate = _validate
-const id = 'chat.bsky.moderation.updateActorAccess'
+const id = 'chat.gndr.moderation.updateActorAccess'
 
 export type QueryParams = {}
 

@@ -1,6 +1,6 @@
 {
   "lexicon": 1,
-  "id": "app.bsky.unspecced.getPostThreadV2",
+  "id": "app.gndr.unspecced.getPostThreadV2",
   "defs": {
     "main": {
       "type": "query",
@@ -62,7 +62,7 @@
             },
             "threadgate": {
               "type": "ref",
-              "ref": "app.bsky.feed.defs#threadgateView"
+              "ref": "app.gndr.feed.defs#threadgateView"
             },
             "hasOtherReplies": {
               "type": "boolean",
@@ -87,10 +87,10 @@
         "value": {
           "type": "union",
           "refs": [
-            "app.bsky.unspecced.defs#threadItemPost",
-            "app.bsky.unspecced.defs#threadItemNoUnauthenticated",
-            "app.bsky.unspecced.defs#threadItemNotFound",
-            "app.bsky.unspecced.defs#threadItemBlocked"
+            "app.gndr.unspecced.defs#threadItemPost",
+            "app.gndr.unspecced.defs#threadItemNoUnauthenticated",
+            "app.gndr.unspecced.defs#threadItemNotFound",
+            "app.gndr.unspecced.defs#threadItemBlocked"
           ]
         }
       }

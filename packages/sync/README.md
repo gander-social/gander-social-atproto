@@ -26,7 +26,7 @@ import { IdResolver } from '@atproto/identity'
 const idResolver = new IdResolver()
 const firehose = new Firehose({
   idResolver,
-  service: 'wss://bsky.network',
+  service: 'wss://gndr.network',
   handleEvt: async (evt) => {
     if (evt.event === 'identity') {
       // ...
@@ -68,7 +68,7 @@ const runner = new MemoryRunner({
 const firehose = new Firehose({
   idResolver,
   runner,
-  service: 'wss://bsky.network',
+  service: 'wss://gndr.network',
   handleEvt: async (evt) => {
     // ...
   },

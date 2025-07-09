@@ -1,9 +1,9 @@
 import {
-  AppBskyEmbedExternal,
-  AppBskyEmbedImages,
-  AppBskyEmbedRecordWithMedia,
-  AppBskyEmbedVideo,
-  AppBskyFeedPost,
+  AppGndrEmbedExternal,
+  AppGndrEmbedImages,
+  AppGndrEmbedRecordWithMedia,
+  AppGndrEmbedVideo,
+  AppGndrFeedPost,
 } from '@atproto/api'
 import { ids } from '../lexicon/lexicons'
 import { langLogger as log } from '../logger'
@@ -17,7 +17,7 @@ export class EmbedTagger extends ContentTagger {
       !!this.subjectStatus &&
       !this.tagAlreadyExists() &&
       this.subject.isRecord() &&
-      this.subject.parsedUri.collection === ids.AppBskyFeedPost
+      this.subject.parsedUri.collection === ids.AppGndrFeedPost
     )
   }
 
@@ -28,24 +28,24 @@ export class EmbedTagger extends ContentTagger {
         return []
       }
       const tags: string[] = []
-      const result = AppBskyFeedPost.validateRecord(recordValue)
+      const result = AppGndrFeedPost.validateRecord(recordValue)
 
       if (result.success) {
-        const embedContent = AppBskyEmbedRecordWithMedia.isMain(
+        const embedContent = AppGndrEmbedRecordWithMedia.isMain(
           result.value.embed,
         )
           ? result.value.embed.media
           : result.value.embed
 
-        if (AppBskyEmbedImages.isMain(embedContent)) {
+        if (AppGndrEmbedImages.isMain(embedContent)) {
           tags.push(`${this.tagPrefix}image`)
         }
 
-        if (AppBskyEmbedVideo.isMain(embedContent)) {
+        if (AppGndrEmbedVideo.isMain(embedContent)) {
           tags.push(`${this.tagPrefix}video`)
         }
 
-        if (AppBskyEmbedExternal.isMain(embedContent)) {
+        if (AppGndrEmbedExternal.isMain(embedContent)) {
           tags.push(`${this.tagPrefix}external`)
         }
       }

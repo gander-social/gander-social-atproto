@@ -5,8 +5,8 @@ import * as syntax from '@atproto/syntax'
 import { AtUri, ensureValidAtUri } from '@atproto/syntax'
 import { countAll, notSoftDeletedClause } from '../../db/util'
 import { ids } from '../../lexicon/lexicons'
-import { Record as ProfileRecord } from '../../lexicon/types/app/bsky/actor/profile'
-import { Record as PostRecord } from '../../lexicon/types/app/bsky/feed/post'
+import { Record as ProfileRecord } from '../../lexicon/types/app/gndr/actor/profile'
+import { Record as PostRecord } from '../../lexicon/types/app/gndr/feed/post'
 import { StatusAttr } from '../../lexicon/types/com/atproto/admin/defs'
 import { LocalRecords } from '../../read-after-write/types'
 import { ActorDb, Backlink } from '../db'
@@ -251,7 +251,7 @@ export class RecordReader {
     const row = await this.db.db
       .selectFrom('record')
       .leftJoin('repo_block', 'repo_block.cid', 'record.cid')
-      .where('record.collection', '=', ids.AppBskyActorProfile)
+      .where('record.collection', '=', ids.AppGndrActorProfile)
       .where('record.rkey', '=', 'self')
       .selectAll()
       .executeTakeFirst()
@@ -296,14 +296,14 @@ export class RecordReader {
       result.count++
 
       const uri = new AtUri(cur.uri)
-      if (uri.collection === ids.AppBskyActorProfile && uri.rkey === 'self') {
+      if (uri.collection === ids.AppGndrActorProfile && uri.rkey === 'self') {
         result.profile = {
           uri,
           cid: CID.parse(cur.cid),
           indexedAt: cur.indexedAt,
           record: cborToLexRecord(cur.content) as ProfileRecord,
         }
-      } else if (uri.collection === ids.AppBskyFeedPost) {
+      } else if (uri.collection === ids.AppGndrFeedPost) {
         result.posts.push({
           uri,
           cid: CID.parse(cur.cid),
@@ -322,8 +322,8 @@ export class RecordReader {
 
 export const getBacklinks = (uri: AtUri, record: RepoRecord): Backlink[] => {
   if (
-    record?.['$type'] === ids.AppBskyGraphFollow ||
-    record?.['$type'] === ids.AppBskyGraphBlock
+    record?.['$type'] === ids.AppGndrGraphFollow ||
+    record?.['$type'] === ids.AppGndrGraphBlock
   ) {
     const subject = record['subject']
     if (typeof subject !== 'string') {
@@ -343,8 +343,8 @@ export const getBacklinks = (uri: AtUri, record: RepoRecord): Backlink[] => {
     ]
   }
   if (
-    record?.['$type'] === ids.AppBskyFeedLike ||
-    record?.['$type'] === ids.AppBskyFeedRepost
+    record?.['$type'] === ids.AppGndrFeedLike ||
+    record?.['$type'] === ids.AppGndrFeedRepost
   ) {
     const subject = record['subject']
     if (typeof subject?.['uri'] !== 'string') {

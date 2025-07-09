@@ -12,7 +12,7 @@ import {
 
 const is$typed = _is$typed,
   validate = _validate
-const id = 'app.bsky.graph.unmuteActorList'
+const id = 'app.gndr.graph.unmuteActorList'
 
 export type QueryParams = {}
 

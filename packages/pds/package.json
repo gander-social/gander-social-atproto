@@ -10,7 +10,7 @@
   "homepage": "https://atproto.com",
   "repository": {
     "type": "git",
-    "url": "https://github.com/bluesky-social/atproto",
+    "url": "https://github.com/gander-social/atproto",
     "directory": "packages/pds"
   },
   "main": "dist/index.js",
@@ -76,7 +76,7 @@
   },
   "devDependencies": {
     "@atproto/api": "workspace:^",
-    "@atproto/bsky": "workspace:^",
+    "@atproto/gndr": "workspace:^",
     "@atproto/dev-env": "workspace:^",
     "@atproto/lex-cli": "workspace:^",
     "@atproto/oauth-client-browser-example": "workspace:*",

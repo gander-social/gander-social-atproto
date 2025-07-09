@@ -56,7 +56,7 @@ describe('operations', () => {
       })
       const tryPutOperation1 = unauthedClient.putOperation({
         actorDid: 'did:example:a',
-        namespace: 'app.bsky.some.col',
+        namespace: 'app.gndr.some.col',
         key: 'key1',
         method: Method.CREATE,
         payload: validPayload0,
@@ -72,7 +72,7 @@ describe('operations', () => {
       })
       const tryPutOperation2 = badauthedClient.putOperation({
         actorDid: 'did:example:a',
-        namespace: 'app.bsky.some.col',
+        namespace: 'app.gndr.some.col',
         key: 'key1',
         method: Method.CREATE,
         payload: validPayload0,
@@ -100,7 +100,7 @@ describe('operations', () => {
       await expect(
         client.putOperation({
           actorDid: 'bad-did',
-          namespace: 'app.bsky.some.col',
+          namespace: 'app.gndr.some.col',
           key: 'key1',
           method: Method.CREATE,
           payload: validPayload0,
@@ -114,7 +114,7 @@ describe('operations', () => {
       await expect(
         client.putOperation({
           actorDid: 'did:example:a',
-          namespace: 'app.bsky.some.col',
+          namespace: 'app.gndr.some.col',
           key: '',
           method: Method.CREATE,
           payload: validPayload0,
@@ -125,7 +125,7 @@ describe('operations', () => {
       await expect(
         client.putOperation({
           actorDid: 'did:example:a',
-          namespace: 'app.bsky.some.col',
+          namespace: 'app.gndr.some.col',
           key: 'key1',
           method: Method.UNSPECIFIED,
           payload: validPayload0,
@@ -136,7 +136,7 @@ describe('operations', () => {
       await expect(
         client.putOperation({
           actorDid: 'did:example:a',
-          namespace: 'app.bsky.some.col',
+          namespace: 'app.gndr.some.col',
           key: 'key1',
           method: Method.CREATE,
           payload: invalidPayload,
@@ -150,7 +150,7 @@ describe('operations', () => {
       await expect(
         client.putOperation({
           actorDid: 'did:example:a',
-          namespace: 'app.bsky.some.col',
+          namespace: 'app.gndr.some.col',
           key: 'key1',
           method: Method.UPDATE,
           payload: invalidPayload,
@@ -164,7 +164,7 @@ describe('operations', () => {
       await expect(
         client.putOperation({
           actorDid: 'did:example:a',
-          namespace: 'app.bsky.some.col',
+          namespace: 'app.gndr.some.col',
           key: 'key1',
           method: Method.DELETE,
           payload: validPayload0,
@@ -180,14 +180,14 @@ describe('operations', () => {
     it('puts operations.', async () => {
       const res1 = await client.putOperation({
         actorDid: 'did:example:a',
-        namespace: 'app.bsky.some.col',
+        namespace: 'app.gndr.some.col',
         key: 'key1',
         method: Method.CREATE,
         payload: validPayload0,
       })
       const res2 = await client.putOperation({
         actorDid: 'did:example:a',
-        namespace: 'app.bsky.other.col#id',
+        namespace: 'app.gndr.other.col#id',
         key: 'key1',
         method: Method.UPDATE,
         payload: validPayload1,
@@ -199,7 +199,7 @@ describe('operations', () => {
         {
           id: 1,
           actorDid: 'did:example:a',
-          namespace: 'app.bsky.some.col',
+          namespace: 'app.gndr.some.col',
           key: 'key1',
           method: Method.CREATE,
           payload: validPayload0,
@@ -208,7 +208,7 @@ describe('operations', () => {
         {
           id: 2,
           actorDid: 'did:example:a',
-          namespace: 'app.bsky.other.col#id',
+          namespace: 'app.gndr.other.col#id',
           key: 'key1',
           method: Method.UPDATE,
           payload: validPayload1,
@@ -220,7 +220,7 @@ describe('operations', () => {
     it('returns the operations on creation.', async () => {
       const res = await client.putOperation({
         actorDid: 'did:example:a',
-        namespace: 'app.bsky.some.col',
+        namespace: 'app.gndr.some.col',
         key: 'key1',
         method: Method.CREATE,
         payload: validPayload0,
@@ -231,7 +231,7 @@ describe('operations', () => {
       // Compare each field individually to avoid custom serialization by proto response objects.
       expect(op.id).toBe('3')
       expect(op.actorDid).toBe('did:example:a')
-      expect(op.namespace).toBe('app.bsky.some.col')
+      expect(op.namespace).toBe('app.gndr.some.col')
       expect(op.key).toBe('key1')
       expect(op.method).toBe(Method.CREATE)
       expect(op.payload).toEqual(new Uint8Array(validPayload0))
@@ -266,7 +266,7 @@ describe('operations', () => {
       for (let i = 0; i < 100; ++i) {
         await client.putOperation({
           actorDid: `did:example:${i}`,
-          namespace: 'app.bsky.some.col',
+          namespace: 'app.gndr.some.col',
           key: 'key1',
           method: Method.CREATE,
           payload: validPayload0,
@@ -295,7 +295,7 @@ describe('operations', () => {
       await wait(100) // would be complete by now if it wasn't long-polling for an item
       const { operation } = await client.putOperation({
         actorDid: 'did:example:a',
-        namespace: 'app.bsky.some.col',
+        namespace: 'app.gndr.some.col',
         key: 'key1',
         method: Method.CREATE,
         payload: validPayload0,

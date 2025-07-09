@@ -4,7 +4,7 @@ import { Server } from '../../lexicon'
 import { ids } from '../../lexicon/lexicons'
 
 export default function (server: Server, ctx: AppContext) {
-  server.chat.bsky.moderation.getMessageContext({
+  server.chat.gndr.moderation.getMessageContext({
     auth: ctx.authVerifier.modOrAdminToken,
     handler: async ({ params, auth }) => {
       if (!ctx.chatAgent) {
@@ -29,9 +29,9 @@ export default function (server: Server, ctx: AppContext) {
       }
 
       const res =
-        await ctx.chatAgent.api.chat.bsky.moderation.getMessageContext(
+        await ctx.chatAgent.api.chat.gndr.moderation.getMessageContext(
           { ...params, before, after },
-          await ctx.chatAuth(ids.ChatBskyModerationGetMessageContext),
+          await ctx.chatAuth(ids.ChatGndrModerationGetMessageContext),
         )
       return {
         encoding: 'application/json',

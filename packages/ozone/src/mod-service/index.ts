@@ -635,7 +635,7 @@ export class ModerationService {
     takedownId: number,
     isSuspend = false,
   ) {
-    const takedownRef = `BSKY-${
+    const takedownRef = `GNDR-${
       isSuspend ? 'SUSPEND' : 'TAKEDOWN'
     }-${takedownId}`
 
@@ -715,7 +715,7 @@ export class ModerationService {
       create: [TAKEDOWN_LABEL],
     })
 
-    const takedownRef = `BSKY-TAKEDOWN-${takedownId}`
+    const takedownRef = `GNDR-TAKEDOWN-${takedownId}`
     const blobCids = subject.blobCids
     if (blobCids && blobCids.length > 0) {
       const blobValues: Insertable<BlobPushEvent>[] = []

@@ -9,11 +9,11 @@ import {
   is$typed as _is$typed,
   type OmitKey,
 } from '../../../../util'
-import type * as ChatBskyConvoDefs from './defs.js'
+import type * as ChatGndrConvoDefs from './defs.js'
 
 const is$typed = _is$typed,
   validate = _validate
-const id = 'chat.bsky.convo.deleteMessageForSelf'
+const id = 'chat.gndr.convo.deleteMessageForSelf'
 
 export type QueryParams = {}
 
@@ -22,7 +22,7 @@ export interface InputSchema {
   messageId: string
 }
 
-export type OutputSchema = ChatBskyConvoDefs.DeletedMessageView
+export type OutputSchema = ChatGndrConvoDefs.DeletedMessageView
 
 export interface HandlerInput {
   encoding: 'application/json'

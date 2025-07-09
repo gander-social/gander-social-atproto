@@ -26,7 +26,7 @@ export interface ModerationEvent {
   subjectType:
     | 'com.atproto.admin.defs#repoRef'
     | 'com.atproto.repo.strongRef'
-    | 'chat.bsky.convo.defs#messageRef'
+    | 'chat.gndr.convo.defs#messageRef'
   subjectDid: string
   subjectUri: string | null
   subjectCid: string | null

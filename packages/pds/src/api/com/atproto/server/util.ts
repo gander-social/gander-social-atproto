@@ -8,8 +8,8 @@ import { httpLogger } from '../../../../logger'
 
 // generate an invite code preceded by the hostname
 // with '.'s replaced by '-'s so it is not mistakable for a link
-// ex: bsky-app-abc23-567xy
-// regex: bsky-app-[a-z2-7]{5}-[a-z2-7]{5}
+// ex: gndr-app-abc23-567xy
+// regex: gndr-app-[a-z2-7]{5}-[a-z2-7]{5}
 export const genInvCode = (cfg: ServerConfig): string => {
   return cfg.service.hostname.replaceAll('.', '-') + '-' + getRandomToken()
 }

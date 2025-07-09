@@ -36,8 +36,8 @@ describe('labels from 3p labelers', () => {
       serverDid: ozoneDid,
       dbPostgresSchema: `ozone_admin_third_party_labeler_third_party`,
       dbPostgresUrl: ozone.ctx.cfg.db.postgresUrl,
-      appviewUrl: network.bsky.url,
-      appviewDid: network.bsky.ctx.cfg.serverDid,
+      appviewUrl: network.gndr.url,
+      appviewDid: network.gndr.ctx.cfg.serverDid,
       appviewPushEvents: true,
       pdsUrl: network.pds.url,
       pdsDid: network.pds.ctx.cfg.service.did,
@@ -95,7 +95,7 @@ describe('labels from 3p labelers', () => {
         src,
       })
     })
-    await network.bsky.db.db.insertInto('label').values(labelEntries).execute()
+    await network.gndr.db.db.insertInto('label').values(labelEntries).execute()
   }
 
   const labelAccount = async (

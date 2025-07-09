@@ -65,7 +65,7 @@ Object {
     },
     "relatedRecords": Array [
       Object {
-        "$type": "app.bsky.actor.profile",
+        "$type": "app.gndr.actor.profile",
         "avatar": Object {
           "$type": "blob",
           "mimeType": "image/jpeg",

@@ -9,11 +9,11 @@ import {
   is$typed as _is$typed,
   type OmitKey,
 } from '../../../../util'
-import type * as AppBskyUnspeccedDefs from './defs.js'
+import type * as AppGndrUnspeccedDefs from './defs.js'
 
 const is$typed = _is$typed,
   validate = _validate
-const id = 'app.bsky.unspecced.searchActorsSkeleton'
+const id = 'app.gndr.unspecced.searchActorsSkeleton'
 
 export type QueryParams = {
   /** Search query string; syntax, phrase, boolean, and faceting is unspecified, but Lucene query syntax is recommended. For typeahead search, only simple term match is supported, not full syntax. */
@@ -32,7 +32,7 @@ export interface OutputSchema {
   cursor?: string
   /** Count of search hits. Optional, may be rounded/truncated, and may not be possible to paginate through all hits. */
   hitsTotal?: number
-  actors: AppBskyUnspeccedDefs.SkeletonSearchActor[]
+  actors: AppGndrUnspeccedDefs.SkeletonSearchActor[]
 }
 
 export type HandlerInput = void

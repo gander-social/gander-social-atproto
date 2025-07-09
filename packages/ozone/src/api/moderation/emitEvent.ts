@@ -64,7 +64,7 @@ const handleModerationEvent = async ({
     // Non admins should not be able to take down feed generators
     if (
       !access.isAdmin &&
-      subject.recordPath?.includes('app.bsky.feed.generator/')
+      subject.recordPath?.includes('app.gndr.feed.generator/')
     ) {
       throw new AuthRequiredError(
         'Must be a full admin to take this type of action on feed generators',

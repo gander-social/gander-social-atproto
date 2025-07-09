@@ -10,16 +10,16 @@ import {
   type OmitKey,
 } from '../../../../util'
 import type * as ComAtprotoLabelDefs from '../../../com/atproto/label/defs.js'
-import type * as AppBskyActorDefs from '../actor/defs.js'
-import type * as AppBskyRichtextFacet from '../richtext/facet.js'
-import type * as AppBskyFeedDefs from '../feed/defs.js'
+import type * as AppGndrActorDefs from '../actor/defs.js'
+import type * as AppGndrRichtextFacet from '../richtext/facet.js'
+import type * as AppGndrFeedDefs from '../feed/defs.js'
 
 const is$typed = _is$typed,
   validate = _validate
-const id = 'app.bsky.graph.defs'
+const id = 'app.gndr.graph.defs'
 
 export interface ListViewBasic {
-  $type?: 'app.bsky.graph.defs#listViewBasic'
+  $type?: 'app.gndr.graph.defs#listViewBasic'
   uri: string
   cid: string
   name: string
@@ -42,14 +42,14 @@ export function validateListViewBasic<V>(v: V) {
 }
 
 export interface ListView {
-  $type?: 'app.bsky.graph.defs#listView'
+  $type?: 'app.gndr.graph.defs#listView'
   uri: string
   cid: string
-  creator: AppBskyActorDefs.ProfileView
+  creator: AppGndrActorDefs.ProfileView
   name: string
   purpose: ListPurpose
   description?: string
-  descriptionFacets?: AppBskyRichtextFacet.Main[]
+  descriptionFacets?: AppGndrRichtextFacet.Main[]
   avatar?: string
   listItemCount?: number
   labels?: ComAtprotoLabelDefs.Label[]
@@ -68,9 +68,9 @@ export function validateListView<V>(v: V) {
 }
 
 export interface ListItemView {
-  $type?: 'app.bsky.graph.defs#listItemView'
+  $type?: 'app.gndr.graph.defs#listItemView'
   uri: string
-  subject: AppBskyActorDefs.ProfileView
+  subject: AppGndrActorDefs.ProfileView
 }
 
 const hashListItemView = 'listItemView'
@@ -84,14 +84,14 @@ export function validateListItemView<V>(v: V) {
 }
 
 export interface StarterPackView {
-  $type?: 'app.bsky.graph.defs#starterPackView'
+  $type?: 'app.gndr.graph.defs#starterPackView'
   uri: string
   cid: string
   record: { [_ in string]: unknown }
-  creator: AppBskyActorDefs.ProfileViewBasic
+  creator: AppGndrActorDefs.ProfileViewBasic
   list?: ListViewBasic
   listItemsSample?: ListItemView[]
-  feeds?: AppBskyFeedDefs.GeneratorView[]
+  feeds?: AppGndrFeedDefs.GeneratorView[]
   joinedWeekCount?: number
   joinedAllTimeCount?: number
   labels?: ComAtprotoLabelDefs.Label[]
@@ -109,11 +109,11 @@ export function validateStarterPackView<V>(v: V) {
 }
 
 export interface StarterPackViewBasic {
-  $type?: 'app.bsky.graph.defs#starterPackViewBasic'
+  $type?: 'app.gndr.graph.defs#starterPackViewBasic'
   uri: string
   cid: string
   record: { [_ in string]: unknown }
-  creator: AppBskyActorDefs.ProfileViewBasic
+  creator: AppGndrActorDefs.ProfileViewBasic
   listItemCount?: number
   joinedWeekCount?: number
   joinedAllTimeCount?: number
@@ -132,9 +132,9 @@ export function validateStarterPackViewBasic<V>(v: V) {
 }
 
 export type ListPurpose =
-  | 'app.bsky.graph.defs#modlist'
-  | 'app.bsky.graph.defs#curatelist'
-  | 'app.bsky.graph.defs#referencelist'
+  | 'app.gndr.graph.defs#modlist'
+  | 'app.gndr.graph.defs#curatelist'
+  | 'app.gndr.graph.defs#referencelist'
   | (string & {})
 
 /** A list of actors to apply an aggregate moderation action (mute/block) on. */
@@ -145,7 +145,7 @@ export const CURATELIST = `${id}#curatelist`
 export const REFERENCELIST = `${id}#referencelist`
 
 export interface ListViewerState {
-  $type?: 'app.bsky.graph.defs#listViewerState'
+  $type?: 'app.gndr.graph.defs#listViewerState'
   muted?: boolean
   blocked?: string
 }
@@ -162,7 +162,7 @@ export function validateListViewerState<V>(v: V) {
 
 /** indicates that a handle or DID could not be resolved */
 export interface NotFoundActor {
-  $type?: 'app.bsky.graph.defs#notFoundActor'
+  $type?: 'app.gndr.graph.defs#notFoundActor'
   actor: string
   notFound: true
 }
@@ -179,7 +179,7 @@ export function validateNotFoundActor<V>(v: V) {
 
 /** lists the bi-directional graph relationships between one actor (not indicated in the object), and the target actors (the DID included in the object) */
 export interface Relationship {
-  $type?: 'app.bsky.graph.defs#relationship'
+  $type?: 'app.gndr.graph.defs#relationship'
   did: string
   /** if the actor follows this DID, this is the AT-URI of the follow record */
   following?: string

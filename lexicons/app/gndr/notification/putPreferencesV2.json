@@ -1,6 +1,6 @@
 {
   "lexicon": 1,
-  "id": "app.bsky.notification.putPreferencesV2",
+  "id": "app.gndr.notification.putPreferencesV2",
   "defs": {
     "main": {
       "type": "procedure",
@@ -12,55 +12,55 @@
           "properties": {
             "chat": {
               "type": "ref",
-              "ref": "app.bsky.notification.defs#chatPreference"
+              "ref": "app.gndr.notification.defs#chatPreference"
             },
             "follow": {
               "type": "ref",
-              "ref": "app.bsky.notification.defs#filterablePreference"
+              "ref": "app.gndr.notification.defs#filterablePreference"
             },
             "like": {
               "type": "ref",
-              "ref": "app.bsky.notification.defs#filterablePreference"
+              "ref": "app.gndr.notification.defs#filterablePreference"
             },
             "likeViaRepost": {
               "type": "ref",
-              "ref": "app.bsky.notification.defs#filterablePreference"
+              "ref": "app.gndr.notification.defs#filterablePreference"
             },
             "mention": {
               "type": "ref",
-              "ref": "app.bsky.notification.defs#filterablePreference"
+              "ref": "app.gndr.notification.defs#filterablePreference"
             },
             "quote": {
               "type": "ref",
-              "ref": "app.bsky.notification.defs#filterablePreference"
+              "ref": "app.gndr.notification.defs#filterablePreference"
             },
             "reply": {
               "type": "ref",
-              "ref": "app.bsky.notification.defs#filterablePreference"
+              "ref": "app.gndr.notification.defs#filterablePreference"
             },
             "repost": {
               "type": "ref",
-              "ref": "app.bsky.notification.defs#filterablePreference"
+              "ref": "app.gndr.notification.defs#filterablePreference"
             },
             "repostViaRepost": {
               "type": "ref",
-              "ref": "app.bsky.notification.defs#filterablePreference"
+              "ref": "app.gndr.notification.defs#filterablePreference"
             },
             "starterpackJoined": {
               "type": "ref",
-              "ref": "app.bsky.notification.defs#preference"
+              "ref": "app.gndr.notification.defs#preference"
             },
             "subscribedPost": {
               "type": "ref",
-              "ref": "app.bsky.notification.defs#preference"
+              "ref": "app.gndr.notification.defs#preference"
             },
             "unverified": {
               "type": "ref",
-              "ref": "app.bsky.notification.defs#preference"
+              "ref": "app.gndr.notification.defs#preference"
             },
             "verified": {
               "type": "ref",
-              "ref": "app.bsky.notification.defs#preference"
+              "ref": "app.gndr.notification.defs#preference"
             }
           }
         }
@@ -73,7 +73,7 @@
           "properties": {
             "preferences": {
               "type": "ref",
-              "ref": "app.bsky.notification.defs#preferences"
+              "ref": "app.gndr.notification.defs#preferences"
             }
           }
         }

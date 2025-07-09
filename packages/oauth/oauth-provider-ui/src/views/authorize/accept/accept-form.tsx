@@ -148,7 +148,7 @@ function ScopeDescription({ scope }: ScopeDescriptionProps) {
       return <Trans>Read your email address</Trans>
     case 'transition:generic':
       return <Trans>Access your account data (except chat messages)</Trans>
-    case 'transition:chat.bsky':
+    case 'transition:chat.gndr':
       return <Trans>Access your chat messages</Trans>
     default:
       return scope

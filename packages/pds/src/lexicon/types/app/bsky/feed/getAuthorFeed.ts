@@ -9,11 +9,11 @@ import {
   is$typed as _is$typed,
   type OmitKey,
 } from '../../../../util'
-import type * as AppBskyFeedDefs from './defs.js'
+import type * as AppGndrFeedDefs from './defs.js'
 
 const is$typed = _is$typed,
   validate = _validate
-const id = 'app.bsky.feed.getAuthorFeed'
+const id = 'app.gndr.feed.getAuthorFeed'
 
 export type QueryParams = {
   actor: string
@@ -33,7 +33,7 @@ export type InputSchema = undefined
 
 export interface OutputSchema {
   cursor?: string
-  feed: AppBskyFeedDefs.FeedViewPost[]
+  feed: AppGndrFeedDefs.FeedViewPost[]
 }
 
 export type HandlerInput = void

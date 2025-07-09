@@ -68,7 +68,7 @@ describe('admin get records view', () => {
         cid: sc.posts[sc.dids.alice][0].ref.cidStr,
       },
     })
-    await network.bsky.ctx.dataplane.takedownRecord({
+    await network.gndr.ctx.dataplane.takedownRecord({
       recordUri: sc.posts[sc.dids.alice][0].ref.uriStr,
     })
   })

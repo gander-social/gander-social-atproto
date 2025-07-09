@@ -1,5 +1,5 @@
-import { AppBskyFeedPost } from '@atproto/api'
-import type { DatabaseSchema } from '@atproto/bsky'
+import { AppGndrFeedPost } from '@atproto/api'
+import type { DatabaseSchema } from '@atproto/gndr'
 import { TestNetwork } from '../network'
 import { TestNetworkNoAppView } from '../network-no-appview'
 import { RecordRef, SeedClient } from './client'
@@ -57,7 +57,7 @@ async function createUsers<T extends readonly string[]>(
 
 type ReplyFn = (
   replyAuthor: User,
-  overridesOrCb?: Partial<AppBskyFeedPost.Record> | ReplyCb,
+  overridesOrCb?: Partial<AppGndrFeedPost.Record> | ReplyCb,
   maybeReplyCb?: ReplyCb,
 ) => Promise<void>
 
@@ -80,10 +80,10 @@ const rootReplyFnBuilder = <T extends TestNetworkNoAppView>(
   let index = 0
   return async (
     replyAuthor: User,
-    overridesOrCb?: Partial<AppBskyFeedPost.Record> | ReplyCb,
+    overridesOrCb?: Partial<AppGndrFeedPost.Record> | ReplyCb,
     maybeReplyCb?: ReplyCb,
   ) => {
-    let overrides: Partial<AppBskyFeedPost.Record> | undefined
+    let overrides: Partial<AppGndrFeedPost.Record> | undefined
     let replyCb: ReplyCb | undefined
     if (overridesOrCb && typeof overridesOrCb === 'function') {
       replyCb = overridesOrCb
@@ -115,10 +115,10 @@ const rootReplyFnBuilder = <T extends TestNetworkNoAppView>(
 const createThread = async <T extends TestNetworkNoAppView>(
   sc: SeedClient<T>,
   rootAuthor: User,
-  overridesOrCb?: Partial<AppBskyFeedPost.Record> | ReplyCb,
+  overridesOrCb?: Partial<AppGndrFeedPost.Record> | ReplyCb,
   maybeReplyCb?: ReplyCb,
 ) => {
-  let overrides: Partial<AppBskyFeedPost.Record> | undefined
+  let overrides: Partial<AppGndrFeedPost.Record> | undefined
   let replyCb: ReplyCb | undefined
   if (overridesOrCb && typeof overridesOrCb === 'function') {
     replyCb = overridesOrCb
@@ -712,7 +712,7 @@ export async function blockDeletionAuth(
   await sc.block(blocker.did, blocked.did)
   await sc.block(op.did, opBlocked.did)
 
-  const db = sc.network.bsky.db.db
+  const db = sc.network.gndr.db.db
   await createLabel(db, {
     src: labelerDid,
     uri: auth.did,
@@ -791,7 +791,7 @@ export async function threadgated(sc: SeedClient<TestNetwork>) {
     })
   })
 
-  await sc.agent.app.bsky.feed.threadgate.create(
+  await sc.agent.app.gndr.feed.threadgate.create(
     {
       repo: op.did,
       rkey: root.ref.uri.rkey,
@@ -852,7 +852,7 @@ export async function tags(sc: SeedClient<TestNetwork>) {
 
   await sc.follow(viewer.did, following.did)
 
-  const db = sc.network.bsky.db.db
+  const db = sc.network.gndr.db.db
   await createTag(db, { uri: r['1'].ref.uriStr, val: TAG_BUMP_DOWN })
   await createTag(db, { uri: r['0.1'].ref.uriStr, val: TAG_BUMP_DOWN })
   await createTag(db, { uri: r['1.1'].ref.uriStr, val: TAG_BUMP_DOWN })

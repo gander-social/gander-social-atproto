@@ -1,6 +1,6 @@
 {
   "lexicon": 1,
-  "id": "app.bsky.notification.declaration",
+  "id": "app.gndr.notification.declaration",
   "defs": {
     "main": {
       "type": "record",

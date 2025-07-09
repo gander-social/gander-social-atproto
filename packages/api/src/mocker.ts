@@ -1,10 +1,10 @@
 import {
-  AppBskyActorDefs,
-  AppBskyEmbedRecord,
-  AppBskyFeedDefs,
-  AppBskyFeedPost,
-  AppBskyGraphDefs,
-  AppBskyNotificationListNotifications,
+  AppGndrActorDefs,
+  AppGndrEmbedRecord,
+  AppGndrFeedDefs,
+  AppGndrFeedPost,
+  AppGndrGraphDefs,
+  AppGndrNotificationListNotifications,
   ComAtprotoLabelDefs,
 } from './client'
 import { $Typed, Un$Typed } from './client/util'
@@ -19,12 +19,12 @@ export const mock = {
     embed,
   }: {
     text: string
-    facets?: AppBskyFeedPost.Record['facets']
-    reply?: AppBskyFeedPost.ReplyRef
-    embed?: AppBskyFeedPost.Record['embed']
-  }): $Typed<AppBskyFeedPost.Record> {
+    facets?: AppGndrFeedPost.Record['facets']
+    reply?: AppGndrFeedPost.ReplyRef
+    embed?: AppGndrFeedPost.Record['embed']
+  }): $Typed<AppGndrFeedPost.Record> {
     return {
-      $type: 'app.bsky.feed.post',
+      $type: 'app.gndr.feed.post',
       text,
       facets,
       reply,
@@ -44,18 +44,18 @@ export const mock = {
     viewer,
     labels,
   }: {
-    record: AppBskyFeedPost.Record
-    author: AppBskyActorDefs.ProfileViewBasic
-    embed?: AppBskyFeedDefs.PostView['embed']
+    record: AppGndrFeedPost.Record
+    author: AppGndrActorDefs.ProfileViewBasic
+    embed?: AppGndrFeedDefs.PostView['embed']
     replyCount?: number
     repostCount?: number
     likeCount?: number
-    viewer?: AppBskyFeedDefs.ViewerState
+    viewer?: AppGndrFeedDefs.ViewerState
     labels?: ComAtprotoLabelDefs.Label[]
-  }): $Typed<AppBskyFeedDefs.PostView> {
+  }): $Typed<AppGndrFeedDefs.PostView> {
     return {
-      $type: 'app.bsky.feed.defs#postView',
-      uri: `at://${author.did}/app.bsky.feed.post/fake`,
+      $type: 'app.gndr.feed.defs#postView',
+      uri: `at://${author.did}/app.gndr.feed.post/fake`,
       cid: FAKE_CID,
       author,
       record,
@@ -74,15 +74,15 @@ export const mock = {
     author,
     labels,
   }: {
-    record: AppBskyFeedPost.Record
-    author: AppBskyActorDefs.ProfileViewBasic
+    record: AppGndrFeedPost.Record
+    author: AppGndrActorDefs.ProfileViewBasic
     labels?: ComAtprotoLabelDefs.Label[]
-  }): $Typed<AppBskyEmbedRecord.View> {
+  }): $Typed<AppGndrEmbedRecord.View> {
     return {
-      $type: 'app.bsky.embed.record#view',
+      $type: 'app.gndr.embed.record#view',
       record: {
-        $type: 'app.bsky.embed.record#viewRecord',
-        uri: `at://${author.did}/app.bsky.feed.post/fake`,
+        $type: 'app.gndr.embed.record#viewRecord',
+        uri: `at://${author.did}/app.gndr.feed.post/fake`,
         cid: FAKE_CID,
         author,
         value: record,
@@ -102,9 +102,9 @@ export const mock = {
     handle: string
     displayName?: string
     description?: string
-    viewer?: AppBskyActorDefs.ViewerState
+    viewer?: AppGndrActorDefs.ViewerState
     labels?: ComAtprotoLabelDefs.Label[]
-  }): AppBskyActorDefs.ProfileViewBasic {
+  }): AppGndrActorDefs.ProfileViewBasic {
     return {
       did: `did:web:${handle}`,
       handle,
@@ -126,13 +126,13 @@ export const mock = {
     followedBy,
   }: {
     muted?: boolean
-    mutedByList?: AppBskyGraphDefs.ListViewBasic
+    mutedByList?: AppGndrGraphDefs.ListViewBasic
     blockedBy?: boolean
     blocking?: string
-    blockingByList?: AppBskyGraphDefs.ListViewBasic
+    blockingByList?: AppGndrGraphDefs.ListViewBasic
     following?: string
     followedBy?: string
-  }): AppBskyActorDefs.ViewerState {
+  }): AppGndrActorDefs.ViewerState {
     return {
       muted,
       mutedByList,
@@ -144,12 +144,12 @@ export const mock = {
     }
   },
 
-  listViewBasic({ name }: { name: string }): AppBskyGraphDefs.ListViewBasic {
+  listViewBasic({ name }: { name: string }): AppGndrGraphDefs.ListViewBasic {
     return {
-      uri: 'at://did:plc:fake/app.bsky.graph.list/fake',
+      uri: 'at://did:plc:fake/app.gndr.graph.list/fake',
       cid: FAKE_CID,
       name,
-      purpose: 'app.bsky.graph.defs#modlist',
+      purpose: 'app.gndr.graph.defs#modlist',
       indexedAt: new Date().toISOString(),
     }
   },
@@ -159,16 +159,16 @@ export const mock = {
     record,
     labels,
   }: {
-    record: AppBskyFeedPost.Record
-    author: Un$Typed<AppBskyActorDefs.ProfileViewBasic>
+    record: AppGndrFeedPost.Record
+    author: Un$Typed<AppGndrActorDefs.ProfileViewBasic>
     labels?: ComAtprotoLabelDefs.Label[]
-  }): AppBskyNotificationListNotifications.Notification {
+  }): AppGndrNotificationListNotifications.Notification {
     return {
-      uri: `at://${author.did}/app.bsky.feed.post/fake`,
+      uri: `at://${author.did}/app.gndr.feed.post/fake`,
       cid: FAKE_CID,
       author,
       reason: 'reply',
-      reasonSubject: `at://${author.did}/app.bsky.feed.post/fake-parent`,
+      reasonSubject: `at://${author.did}/app.gndr.feed.post/fake-parent`,
       record,
       isRead: false,
       indexedAt: new Date().toISOString(),
@@ -181,17 +181,17 @@ export const mock = {
     subjectDid,
     labels,
   }: {
-    author: Un$Typed<AppBskyActorDefs.ProfileViewBasic>
+    author: Un$Typed<AppGndrActorDefs.ProfileViewBasic>
     subjectDid: string
     labels?: ComAtprotoLabelDefs.Label[]
-  }): AppBskyNotificationListNotifications.Notification {
+  }): AppGndrNotificationListNotifications.Notification {
     return {
-      uri: `at://${author.did}/app.bsky.graph.follow/fake`,
+      uri: `at://${author.did}/app.gndr.graph.follow/fake`,
       cid: FAKE_CID,
       author,
       reason: 'follow',
       record: {
-        $type: 'app.bsky.graph.follow',
+        $type: 'app.gndr.graph.follow',
         createdAt: new Date().toISOString(),
         subject: subjectDid,
       },

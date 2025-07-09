@@ -12,10 +12,10 @@ import {
 
 const is$typed = _is$typed,
   validate = _validate
-const id = 'app.bsky.graph.block'
+const id = 'app.gndr.graph.block'
 
 export interface Record {
-  $type: 'app.bsky.graph.block'
+  $type: 'app.gndr.graph.block'
   /** DID of the account to be blocked. */
   subject: string
   createdAt: string

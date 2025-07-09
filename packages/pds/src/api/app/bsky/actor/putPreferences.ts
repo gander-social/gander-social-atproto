@@ -4,9 +4,9 @@ import { AppContext } from '../../../../context'
 import { Server } from '../../../../lexicon'
 
 export default function (server: Server, ctx: AppContext) {
-  if (!ctx.bskyAppView) return
+  if (!ctx.gndrAppView) return
 
-  server.app.bsky.actor.putPreferences({
+  server.app.gndr.actor.putPreferences({
     auth: ctx.authVerifier.accessStandard({ checkTakedown: true }),
     handler: async ({ auth, input }) => {
       const { preferences } = input.body
@@ -22,7 +22,7 @@ export default function (server: Server, ctx: AppContext) {
       await ctx.actorStore.transact(requester, async (actorTxn) => {
         await actorTxn.pref.putPreferences(
           checkedPreferences,
-          'app.bsky',
+          'app.gndr',
           auth.credentials.scope,
         )
       })

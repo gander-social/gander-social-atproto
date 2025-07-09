@@ -68,7 +68,7 @@ export interface ModerationPrefs {
   adultContentEnabled: boolean
   labels: Record<string, LabelPreference>
   labelers: ModerationPrefsLabeler[]
-  mutedWords: AppBskyActorDefs.MutedWord[]
+  mutedWords: AppGndrActorDefs.MutedWord[]
   hiddenPosts: string[]
 }
 
@@ -97,21 +97,21 @@ To gather the label definitions (`labelDefs`) see the _Labelers_ section below.
 
 ## Labelers
 
-Labelers are services that provide moderation labels. Your application will typically have 1+ top-level labelers set with the ability to do "takedowns" on content. This is controlled via this static function, though the default is to use Bluesky's moderation:
+Labelers are services that provide moderation labels. Your application will typically have 1+ top-level labelers set with the ability to do "takedowns" on content. This is controlled via this static function, though the default is to use Gander's moderation:
 
 ```typescript
-BskyAgent.configure({
+GndrAgent.configure({
   appLabelers: ['did:web:my-labeler.com'],
 })
 ```
 
 Users may also add their own labelers. The active labelers are controlled via an HTTP header which is automatically set by the agent when `getPreferences` is called, or when the labeler preferences are changed.
 
-Labelers publish a `app.bsky.labeler.service` record that looks like this:
+Labelers publish a `app.gndr.labeler.service` record that looks like this:
 
 ```js
 {
-  $type: 'app.bsky.labeler.service',
+  $type: 'app.gndr.labeler.service',
   policies: {
     // the list of label values the labeler will publish
     labelValues: [
@@ -139,7 +139,7 @@ Labelers publish a `app.bsky.labeler.service` record that looks like this:
 }
 ```
 
-The label value definition are custom labels which only apply to that labeler. Your client needs to sync those definitions in order to correctly interpret them. To do that, call `app.bsky.labeler.getService()` (or the `getServices` batch variant) periodically to fetch their definitions. We recommend caching the response (at time our writing the official client uses a TTL of 6 hours).
+The label value definition are custom labels which only apply to that labeler. Your client needs to sync those definitions in order to correctly interpret them. To do that, call `app.gndr.labeler.getService()` (or the `getServices` batch variant) periodically to fetch their definitions. We recommend caching the response (at time our writing the official client uses a TTL of 6 hours).
 
 Here is how to do this:
 

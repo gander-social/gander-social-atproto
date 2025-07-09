@@ -1,7 +1,7 @@
 import { Selectable } from 'kysely'
 import {
   $Typed,
-  AppBskyActorDefs,
+  AppGndrActorDefs,
   AtUri,
   ToolsOzoneModerationDefs,
   ToolsOzoneVerificationDefs,
@@ -134,7 +134,7 @@ export class VerificationService {
       | $Typed<ToolsOzoneModerationDefs.RepoViewDetail>
       | $Typed<ToolsOzoneModerationDefs.RepoViewNotFound>
     >,
-    profiles: Map<string, AppBskyActorDefs.ProfileViewDetailed>,
+    profiles: Map<string, AppGndrActorDefs.ProfileViewDetailed>,
   ): $Typed<ToolsOzoneVerificationDefs.VerificationView>[] {
     return verifications.map((verification) => {
       const issuerRepo = repos.get(verification.issuer)
@@ -157,13 +157,13 @@ export class VerificationService {
         subjectRepo,
         subjectProfile: subjectProfile
           ? {
-              $type: 'app.bsky.actor.defs#profileViewDetailed',
+              $type: 'app.gndr.actor.defs#profileViewDetailed',
               ...subjectProfile,
             }
           : undefined,
         issuerProfile: issuerProfile
           ? {
-              $type: 'app.bsky.actor.defs#profileViewDetailed',
+              $type: 'app.gndr.actor.defs#profileViewDetailed',
               ...issuerProfile,
             }
           : undefined,

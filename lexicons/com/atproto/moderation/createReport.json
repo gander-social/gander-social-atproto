@@ -78,7 +78,7 @@
       "properties": {
         "name": {
           "type": "string",
-          "description": "Name/identifier of the source (e.g., 'bsky-app/android', 'bsky-web/chrome')"
+          "description": "Name/identifier of the source (e.g., 'gndr-app/android', 'gndr-web/chrome')"
         },
         "meta": {
           "type": "unknown",

@@ -9,11 +9,11 @@ import {
   is$typed as _is$typed,
   type OmitKey,
 } from '../../../../util'
-import type * as AppBskyActorDefs from './defs.js'
+import type * as AppGndrActorDefs from './defs.js'
 
 const is$typed = _is$typed,
   validate = _validate
-const id = 'app.bsky.actor.searchActorsTypeahead'
+const id = 'app.gndr.actor.searchActorsTypeahead'
 
 export type QueryParams = {
   /** DEPRECATED: use 'q' instead. */
@@ -25,7 +25,7 @@ export type QueryParams = {
 export type InputSchema = undefined
 
 export interface OutputSchema {
-  actors: AppBskyActorDefs.ProfileViewBasic[]
+  actors: AppGndrActorDefs.ProfileViewBasic[]
 }
 
 export type HandlerInput = void

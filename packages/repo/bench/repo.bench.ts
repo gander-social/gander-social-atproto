@@ -26,15 +26,15 @@ describe('Repo Benchmarks', () => {
       await repo.applyCommit(
         {
           action: WriteOpAction.Create,
-          collection: 'app.bsky.post',
+          collection: 'app.gndr.post',
           rkey: TID.nextStr(),
           value: {
-            $type: 'app.bsky.post',
+            $type: 'app.gndr.post',
             text: util.randomStr(150),
             reply: {
-              root: 'at://did:plc:1234abdefeoi23/app.bsky.post/12345678912345',
+              root: 'at://did:plc:1234abdefeoi23/app.gndr.post/12345678912345',
               parent:
-                'at://did:plc:1234abdefeoi23/app.bsky.post/12345678912345',
+                'at://did:plc:1234abdefeoi23/app.gndr.post/12345678912345',
             },
             createdAt: new Date().toISOString(),
           },

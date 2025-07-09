@@ -12,10 +12,10 @@ import {
 
 const is$typed = _is$typed,
   validate = _validate
-const id = 'app.bsky.notification.declaration'
+const id = 'app.gndr.notification.declaration'
 
 export interface Record {
-  $type: 'app.bsky.notification.declaration'
+  $type: 'app.gndr.notification.declaration'
   /** A declaration of the user's preference for allowing activity subscriptions from other users. Absence of a record implies 'followers'. */
   allowSubscriptions: 'followers' | 'mutuals' | 'none' | (string & {})
   [k: string]: unknown

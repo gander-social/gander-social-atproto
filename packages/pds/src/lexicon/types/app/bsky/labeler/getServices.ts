@@ -9,11 +9,11 @@ import {
   is$typed as _is$typed,
   type OmitKey,
 } from '../../../../util'
-import type * as AppBskyLabelerDefs from './defs.js'
+import type * as AppGndrLabelerDefs from './defs.js'
 
 const is$typed = _is$typed,
   validate = _validate
-const id = 'app.bsky.labeler.getServices'
+const id = 'app.gndr.labeler.getServices'
 
 export type QueryParams = {
   dids: string[]
@@ -23,8 +23,8 @@ export type InputSchema = undefined
 
 export interface OutputSchema {
   views: (
-    | $Typed<AppBskyLabelerDefs.LabelerView>
-    | $Typed<AppBskyLabelerDefs.LabelerViewDetailed>
+    | $Typed<AppGndrLabelerDefs.LabelerView>
+    | $Typed<AppGndrLabelerDefs.LabelerViewDetailed>
     | { $type: string }
   )[]
 }

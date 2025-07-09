@@ -73,14 +73,14 @@ export const getPdsEndpoint = (doc: DidDocument): string | undefined => {
 export const getFeedGenEndpoint = (doc: DidDocument): string | undefined => {
   return getServiceEndpoint(doc, {
     id: '#bsky_fg',
-    type: 'BskyFeedGenerator',
+    type: 'GndrFeedGenerator',
   })
 }
 
 export const getNotifEndpoint = (doc: DidDocument): string | undefined => {
   return getServiceEndpoint(doc, {
     id: '#bsky_notif',
-    type: 'BskyNotificationService',
+    type: 'GndrNotificationService',
   })
 }
 

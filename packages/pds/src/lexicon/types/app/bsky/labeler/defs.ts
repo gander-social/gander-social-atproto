@@ -9,19 +9,19 @@ import {
   is$typed as _is$typed,
   type OmitKey,
 } from '../../../../util'
-import type * as AppBskyActorDefs from '../actor/defs.js'
+import type * as AppGndrActorDefs from '../actor/defs.js'
 import type * as ComAtprotoLabelDefs from '../../../com/atproto/label/defs.js'
 import type * as ComAtprotoModerationDefs from '../../../com/atproto/moderation/defs.js'
 
 const is$typed = _is$typed,
   validate = _validate
-const id = 'app.bsky.labeler.defs'
+const id = 'app.gndr.labeler.defs'
 
 export interface LabelerView {
-  $type?: 'app.bsky.labeler.defs#labelerView'
+  $type?: 'app.gndr.labeler.defs#labelerView'
   uri: string
   cid: string
-  creator: AppBskyActorDefs.ProfileView
+  creator: AppGndrActorDefs.ProfileView
   likeCount?: number
   viewer?: LabelerViewerState
   indexedAt: string
@@ -39,10 +39,10 @@ export function validateLabelerView<V>(v: V) {
 }
 
 export interface LabelerViewDetailed {
-  $type?: 'app.bsky.labeler.defs#labelerViewDetailed'
+  $type?: 'app.gndr.labeler.defs#labelerViewDetailed'
   uri: string
   cid: string
-  creator: AppBskyActorDefs.ProfileView
+  creator: AppGndrActorDefs.ProfileView
   policies: LabelerPolicies
   likeCount?: number
   viewer?: LabelerViewerState
@@ -67,7 +67,7 @@ export function validateLabelerViewDetailed<V>(v: V) {
 }
 
 export interface LabelerViewerState {
-  $type?: 'app.bsky.labeler.defs#labelerViewerState'
+  $type?: 'app.gndr.labeler.defs#labelerViewerState'
   like?: string
 }
 
@@ -82,7 +82,7 @@ export function validateLabelerViewerState<V>(v: V) {
 }
 
 export interface LabelerPolicies {
-  $type?: 'app.bsky.labeler.defs#labelerPolicies'
+  $type?: 'app.gndr.labeler.defs#labelerPolicies'
   /** The label values which this labeler publishes. May include global or custom labels. */
   labelValues: ComAtprotoLabelDefs.LabelValue[]
   /** Label values created by this labeler and scoped exclusively to it. Labels defined here will override global label definitions for this labeler. */

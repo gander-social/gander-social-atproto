@@ -8,8 +8,8 @@ import { BlobNotFoundError } from '@atproto/repo'
 import { AtUri } from '@atproto/syntax'
 import { AppContext } from '../src/context'
 import { ids, lexicons } from '../src/lexicon/lexicons'
-import { isMain as isImagesEmbed } from '../src/lexicon/types/app/bsky/embed/images'
-import * as Post from '../src/lexicon/types/app/bsky/feed/post'
+import { isMain as isImagesEmbed } from '../src/lexicon/types/app/gndr/embed/images'
+import * as Post from '../src/lexicon/types/app/gndr/feed/post'
 import { forSnapshot, paginateAll } from './_util'
 
 describe('crud operations', () => {
@@ -74,21 +74,21 @@ describe('crud operations', () => {
   it('creates records', async () => {
     const res = await aliceAgent.api.com.atproto.repo.createRecord({
       repo: aliceAgent.accountDid,
-      collection: 'app.bsky.feed.post',
+      collection: 'app.gndr.feed.post',
       record: {
-        $type: 'app.bsky.feed.post',
+        $type: 'app.gndr.feed.post',
         text: 'Hello, world!',
         createdAt: new Date().toISOString(),
       },
     })
     const uri = new AtUri(res.data.uri)
     expect(res.data.uri).toBe(
-      `at://${aliceAgent.accountDid}/app.bsky.feed.post/${uri.rkey}`,
+      `at://${aliceAgent.accountDid}/app.gndr.feed.post/${uri.rkey}`,
     )
 
     const res1 = await agent.api.com.atproto.repo.listRecords({
       repo: aliceAgent.accountDid,
-      collection: 'app.bsky.feed.post',
+      collection: 'app.gndr.feed.post',
     })
     expect(res1.data.records.length).toBe(1)
     expect(res1.data.records[0].uri).toBe(uri.toString())
@@ -96,7 +96,7 @@ describe('crud operations', () => {
       'Hello, world!',
     )
 
-    const res2 = await agent.app.bsky.feed.post.list({
+    const res2 = await agent.app.gndr.feed.post.list({
       repo: aliceAgent.accountDid,
     })
     expect(res2.records.length).toBe(1)
@@ -105,13 +105,13 @@ describe('crud operations', () => {
 
     const res3 = await agent.api.com.atproto.repo.getRecord({
       repo: aliceAgent.accountDid,
-      collection: 'app.bsky.feed.post',
+      collection: 'app.gndr.feed.post',
       rkey: uri.rkey,
     })
     expect(res3.data.uri).toBe(uri.toString())
     expect((res3.data.value as Post.Record).text).toBe('Hello, world!')
 
-    const res4 = await agent.app.bsky.feed.post.get({
+    const res4 = await agent.app.gndr.feed.post.get({
       repo: aliceAgent.accountDid,
       rkey: uri.rkey,
     })
@@ -120,38 +120,38 @@ describe('crud operations', () => {
 
     await aliceAgent.api.com.atproto.repo.deleteRecord({
       repo: aliceAgent.accountDid,
-      collection: 'app.bsky.feed.post',
+      collection: 'app.gndr.feed.post',
       rkey: uri.rkey,
     })
     const res5 = await agent.api.com.atproto.repo.listRecords({
       repo: aliceAgent.accountDid,
-      collection: 'app.bsky.feed.post',
+      collection: 'app.gndr.feed.post',
     })
     expect(res5.data.records.length).toBe(0)
   })
 
   it('CRUDs records with the semantic sugars', async () => {
-    const res1 = await aliceAgent.app.bsky.feed.post.create(
+    const res1 = await aliceAgent.app.gndr.feed.post.create(
       { repo: aliceAgent.accountDid },
       {
-        $type: 'app.bsky.feed.post',
+        $type: 'app.gndr.feed.post',
         text: 'Hello, world!',
         createdAt: new Date().toISOString(),
       },
     )
     const uri = new AtUri(res1.uri)
 
-    const res2 = await agent.app.bsky.feed.post.list({
+    const res2 = await agent.app.gndr.feed.post.list({
       repo: aliceAgent.accountDid,
     })
     expect(res2.records.length).toBe(1)
 
-    await aliceAgent.app.bsky.feed.post.delete({
+    await aliceAgent.app.gndr.feed.post.delete({
       repo: aliceAgent.accountDid,
       rkey: uri.rkey,
     })
 
-    const res3 = await agent.app.bsky.feed.post.list({
+    const res3 = await agent.app.gndr.feed.post.list({
       repo: aliceAgent.accountDid,
     })
     expect(res3.records.length).toBe(0)
@@ -168,21 +168,21 @@ describe('crud operations', () => {
       ctx.blobstore(aliceAgent.accountDid).getBytes(uploaded.ref),
     ).rejects.toThrow(BlobNotFoundError)
     // Associate image with post, image should be placed in blobstore
-    const res = await aliceAgent.app.bsky.feed.post.create(
+    const res = await aliceAgent.app.gndr.feed.post.create(
       { repo: aliceAgent.accountDid },
       {
-        $type: 'app.bsky.feed.post',
+        $type: 'app.gndr.feed.post',
         text: "Here's a key!",
         createdAt: new Date().toISOString(),
         embed: {
-          $type: 'app.bsky.embed.images',
+          $type: 'app.gndr.embed.images',
           images: [{ image: uploaded, alt: '' }],
         },
       },
     )
     // Ensure image is on post record
     const postUri = new AtUri(res.uri)
-    const post = await aliceAgent.app.bsky.feed.post.get({
+    const post = await aliceAgent.app.gndr.feed.post.get({
       rkey: postUri.rkey,
       repo: aliceAgent.accountDid,
     })
@@ -193,14 +193,14 @@ describe('crud operations', () => {
     // Ensure that the uploaded image is now in the blobstore, i.e. doesn't throw BlobNotFoundError
     await ctx.blobstore(aliceAgent.accountDid).getBytes(uploaded.ref)
     // Cleanup
-    await aliceAgent.app.bsky.feed.post.delete({
+    await aliceAgent.app.gndr.feed.post.delete({
       rkey: postUri.rkey,
       repo: aliceAgent.accountDid,
     })
   })
 
   it('creates records with the correct key described by the schema', async () => {
-    const res1 = await aliceAgent.app.bsky.actor.profile.create(
+    const res1 = await aliceAgent.app.gndr.actor.profile.create(
       { repo: aliceAgent.accountDid },
       {
         displayName: 'alice',
@@ -220,10 +220,10 @@ describe('crud operations', () => {
 
     beforeAll(async () => {
       const createPost = async (text: string) => {
-        const res = await aliceAgent.app.bsky.feed.post.create(
+        const res = await aliceAgent.app.gndr.feed.post.create(
           { repo: aliceAgent.accountDid },
           {
-            $type: 'app.bsky.feed.post',
+            $type: 'app.gndr.feed.post',
             text,
             createdAt: new Date().toISOString(),
           },
@@ -239,7 +239,7 @@ describe('crud operations', () => {
 
     afterAll(async () => {
       for (const uri of [uri1, uri2, uri3, uri4, uri5]) {
-        await aliceAgent.app.bsky.feed.post.delete({
+        await aliceAgent.app.gndr.feed.post.delete({
           repo: aliceAgent.accountDid,
           rkey: uri.rkey,
         })
@@ -249,7 +249,7 @@ describe('crud operations', () => {
     it('in forwards order', async () => {
       const results = (results) => results.flatMap((res) => res.records)
       const paginator = async (cursor?: string) => {
-        const res = await agent.app.bsky.feed.post.list({
+        const res = await agent.app.gndr.feed.post.list({
           repo: aliceAgent.accountDid,
           cursor,
           limit: 2,
@@ -262,7 +262,7 @@ describe('crud operations', () => {
         expect(res.records.length).toBeLessThanOrEqual(2),
       )
 
-      const full = await agent.app.bsky.feed.post.list({
+      const full = await agent.app.gndr.feed.post.list({
         repo: aliceAgent.accountDid,
       })
 
@@ -273,7 +273,7 @@ describe('crud operations', () => {
     it('in reverse order', async () => {
       const results = (results) => results.flatMap((res) => res.records)
       const paginator = async (cursor?: string) => {
-        const res = await agent.app.bsky.feed.post.list({
+        const res = await agent.app.gndr.feed.post.list({
           repo: aliceAgent.accountDid,
           reverse: true,
           cursor,
@@ -287,7 +287,7 @@ describe('crud operations', () => {
         expect(res.records.length).toBeLessThanOrEqual(2),
       )
 
-      const full = await agent.app.bsky.feed.post.list({
+      const full = await agent.app.gndr.feed.post.list({
         repo: aliceAgent.accountDid,
         reverse: true,
       })
@@ -297,10 +297,10 @@ describe('crud operations', () => {
     })
 
     it('reverses', async () => {
-      const forwards = await agent.app.bsky.feed.post.list({
+      const forwards = await agent.app.gndr.feed.post.list({
         repo: aliceAgent.accountDid,
       })
-      const reverse = await agent.app.bsky.feed.post.list({
+      const reverse = await agent.app.gndr.feed.post.list({
         repo: aliceAgent.accountDid,
         reverse: true,
       })
@@ -317,7 +317,7 @@ describe('crud operations', () => {
       const { repo } = aliceAgent.api.com.atproto
       const { data: post } = await repo.createRecord({
         repo: aliceAgent.accountDid,
-        collection: ids.AppBskyFeedPost,
+        collection: ids.AppGndrFeedPost,
         record: { text: 'post', createdAt: new Date().toISOString() },
       })
       const uri = new AtUri(post.uri)
@@ -338,7 +338,7 @@ describe('crud operations', () => {
       const { repo } = aliceAgent.api.com.atproto
       const { data: post } = await repo.createRecord({
         repo: aliceAgent.accountDid,
-        collection: ids.AppBskyFeedPost,
+        collection: ids.AppGndrFeedPost,
         record: { text: 'post', createdAt: new Date().toISOString() },
       })
       const uri = new AtUri(post.uri)
@@ -366,12 +366,12 @@ describe('crud operations', () => {
       const record = { text: 'post', createdAt: new Date().toISOString() }
       const { data: post1 } = await repo.createRecord({
         repo: aliceAgent.accountDid,
-        collection: ids.AppBskyFeedPost,
+        collection: ids.AppGndrFeedPost,
         record,
       })
       const { data: post2 } = await repo.createRecord({
         repo: aliceAgent.accountDid,
-        collection: ids.AppBskyFeedPost,
+        collection: ids.AppGndrFeedPost,
         record,
       })
       const uri1 = new AtUri(post1.uri)
@@ -393,7 +393,7 @@ describe('crud operations', () => {
 
   describe('putRecord', () => {
     const profilePath = {
-      collection: ids.AppBskyActorProfile,
+      collection: ids.AppGndrActorProfile,
       rkey: 'self',
     }
 
@@ -413,7 +413,7 @@ describe('crud operations', () => {
         },
       })
       expect(put.uri).toEqual(
-        `at://${bobAgent.accountDid}/${ids.AppBskyActorProfile}/self`,
+        `at://${bobAgent.accountDid}/${ids.AppGndrActorProfile}/self`,
       )
 
       const { data: profile } = await repo.getRecord({
@@ -421,7 +421,7 @@ describe('crud operations', () => {
         repo: bobAgent.accountDid,
       })
       expect(profile.value).toEqual({
-        $type: ids.AppBskyActorProfile,
+        $type: ids.AppGndrActorProfile,
         displayName: 'Robert',
       })
     })
@@ -437,7 +437,7 @@ describe('crud operations', () => {
         },
       })
       expect(put.uri).toEqual(
-        `at://${bobAgent.accountDid}/${ids.AppBskyActorProfile}/self`,
+        `at://${bobAgent.accountDid}/${ids.AppGndrActorProfile}/self`,
       )
 
       const { data: profile } = await repo.getRecord({
@@ -445,7 +445,7 @@ describe('crud operations', () => {
         repo: bobAgent.accountDid,
       })
       expect(profile.value).toEqual({
-        $type: ids.AppBskyActorProfile,
+        $type: ids.AppGndrActorProfile,
         displayName: 'Robert',
         description: 'Dog lover',
       })
@@ -465,7 +465,7 @@ describe('crud operations', () => {
         },
       })
       expect(put.uri).toEqual(
-        `at://${bobAgent.accountDid}/${ids.AppBskyActorProfile}/self`,
+        `at://${bobAgent.accountDid}/${ids.AppGndrActorProfile}/self`,
       )
 
       const rootRes2 = await bobAgent.api.com.atproto.sync.getLatestCommit({
@@ -480,7 +480,7 @@ describe('crud operations', () => {
       const { repo } = aliceAgent.api.com.atproto
       const put = repo.putRecord({
         repo: bobAgent.accountDid,
-        collection: ids.AppBskyGraphFollow,
+        collection: ids.AppGndrGraphFollow,
         rkey: TID.nextStr(),
         record: {
           subject: aliceAgent.accountDid,
@@ -501,14 +501,14 @@ describe('crud operations', () => {
         },
       })
       await expect(put).rejects.toThrow(
-        'Invalid app.bsky.actor.profile record: Record/description must be a string',
+        'Invalid app.gndr.actor.profile record: Record/description must be a string',
       )
       const { data: profile } = await repo.getRecord({
         ...profilePath,
         repo: bobAgent.accountDid,
       })
       expect(profile.value).toEqual({
-        $type: ids.AppBskyActorProfile,
+        $type: ids.AppGndrActorProfile,
         displayName: 'Robert',
         description: 'Dog lover',
       })
@@ -549,7 +549,7 @@ describe('crud operations', () => {
   it('defaults an undefined $type on records', async () => {
     const res = await aliceAgent.api.com.atproto.repo.createRecord({
       repo: aliceAgent.accountDid,
-      collection: 'app.bsky.feed.post',
+      collection: 'app.gndr.feed.post',
       record: {
         text: 'blah',
         createdAt: new Date().toISOString(),
@@ -590,11 +590,11 @@ describe('crud operations', () => {
     await expect(
       aliceAgent.api.com.atproto.repo.createRecord({
         repo: aliceAgent.accountDid,
-        collection: 'app.bsky.feed.post',
-        record: { $type: 'app.bsky.feed.like' },
+        collection: 'app.gndr.feed.post',
+        record: { $type: 'app.gndr.feed.like' },
       }),
     ).rejects.toThrow(
-      'Invalid $type: expected app.bsky.feed.post, got app.bsky.feed.like',
+      'Invalid $type: expected app.gndr.feed.post, got app.gndr.feed.like',
     )
   })
 
@@ -602,9 +602,9 @@ describe('crud operations', () => {
     await expect(
       aliceAgent.api.com.atproto.repo.createRecord({
         repo: aliceAgent.accountDid,
-        collection: 'app.bsky.feed.generator',
+        collection: 'app.gndr.feed.generator',
         record: {
-          $type: 'app.bsky.feed.generator',
+          $type: 'app.gndr.feed.generator',
           did: 'did:web:dummy.example.com',
           displayName: 'dummy',
           createdAt: new Date().toISOString(),
@@ -618,29 +618,29 @@ describe('crud operations', () => {
     await expect(
       aliceAgent.api.com.atproto.repo.createRecord({
         repo: aliceAgent.accountDid,
-        collection: 'app.bsky.feed.post',
-        record: { $type: 'app.bsky.feed.post' },
+        collection: 'app.gndr.feed.post',
+        record: { $type: 'app.gndr.feed.post' },
       }),
     ).rejects.toThrow(
-      'Invalid app.bsky.feed.post record: Record must have the property "text"',
+      'Invalid app.gndr.feed.post record: Record must have the property "text"',
     )
   })
 
   it('validates datetimes more rigorously than lex sdk', async () => {
     const postRecord = {
-      $type: 'app.bsky.feed.post',
+      $type: 'app.gndr.feed.post',
       text: 'test',
       createdAt: '1985-04-12T23:20:50.123',
     }
-    lexicons.assertValidRecord('app.bsky.feed.post', postRecord)
+    lexicons.assertValidRecord('app.gndr.feed.post', postRecord)
     await expect(
       aliceAgent.api.com.atproto.repo.createRecord({
         repo: aliceAgent.accountDid,
-        collection: 'app.bsky.feed.post',
+        collection: 'app.gndr.feed.post',
         record: postRecord,
       }),
     ).rejects.toThrow(
-      'Invalid app.bsky.feed.post record: createdAt must be an valid atproto datetime (both RFC-3339 and ISO-8601)',
+      'Invalid app.gndr.feed.post record: createdAt must be an valid atproto datetime (both RFC-3339 and ISO-8601)',
     )
   })
 
@@ -770,9 +770,9 @@ describe('crud operations', () => {
         writes: [
           {
             $type: `${ids.ComAtprotoRepoApplyWrites}#create`,
-            collection: ids.AppBskyFeedPost,
+            collection: ids.AppGndrFeedPost,
             value: {
-              $type: ids.AppBskyFeedPost,
+              $type: ids.AppGndrFeedPost,
               text: '👋',
               createdAt: new Date().toISOString(),
             },
@@ -897,7 +897,7 @@ describe('crud operations', () => {
       })
       const { data: post } = await repo.createRecord({
         repo: aliceAgent.accountDid,
-        collection: ids.AppBskyFeedPost,
+        collection: ids.AppGndrFeedPost,
         swapCommit: commit.cid,
         record: postRecord(),
       })
@@ -918,12 +918,12 @@ describe('crud operations', () => {
       // Update repo, change head
       await repo.createRecord({
         repo: aliceAgent.accountDid,
-        collection: ids.AppBskyFeedPost,
+        collection: ids.AppGndrFeedPost,
         record: postRecord(),
       })
       const attemptCreate = repo.createRecord({
         repo: aliceAgent.accountDid,
-        collection: ids.AppBskyFeedPost,
+        collection: ids.AppGndrFeedPost,
         swapCommit: staleCommit.cid,
         record: postRecord(),
       })
@@ -936,7 +936,7 @@ describe('crud operations', () => {
       const { repo, sync } = aliceAgent.api.com.atproto
       const { data: post } = await repo.createRecord({
         repo: aliceAgent.accountDid,
-        collection: ids.AppBskyFeedPost,
+        collection: ids.AppGndrFeedPost,
         record: postRecord(),
       })
       const { data: commit } = await sync.getLatestCommit({
@@ -964,7 +964,7 @@ describe('crud operations', () => {
       })
       const { data: post } = await repo.createRecord({
         repo: aliceAgent.accountDid,
-        collection: ids.AppBskyFeedPost,
+        collection: ids.AppGndrFeedPost,
         record: postRecord(),
       })
       const uri = new AtUri(post.uri)
@@ -989,7 +989,7 @@ describe('crud operations', () => {
       const { repo } = aliceAgent.api.com.atproto
       const { data: post } = await repo.createRecord({
         repo: aliceAgent.accountDid,
-        collection: ids.AppBskyFeedPost,
+        collection: ids.AppGndrFeedPost,
         record: postRecord(),
       })
       const uri = new AtUri(post.uri)
@@ -1011,7 +1011,7 @@ describe('crud operations', () => {
       const { repo } = aliceAgent.api.com.atproto
       const { data: post } = await repo.createRecord({
         repo: aliceAgent.accountDid,
-        collection: ids.AppBskyFeedPost,
+        collection: ids.AppGndrFeedPost,
         record: postRecord(),
       })
       const uri = new AtUri(post.uri)
@@ -1039,14 +1039,14 @@ describe('crud operations', () => {
       })
       const { data: profile } = await repo.putRecord({
         repo: aliceAgent.accountDid,
-        collection: ids.AppBskyActorProfile,
+        collection: ids.AppGndrActorProfile,
         rkey: 'self',
         swapCommit: commit.cid,
         record: profileRecord(),
       })
       const { data: checkProfile } = await repo.getRecord({
         repo: aliceAgent.accountDid,
-        collection: ids.AppBskyActorProfile,
+        collection: ids.AppGndrActorProfile,
         rkey: 'self',
       })
       expect(checkProfile.cid).toEqual(profile.cid)
@@ -1060,12 +1060,12 @@ describe('crud operations', () => {
       // Update repo, change head
       await repo.createRecord({
         repo: aliceAgent.accountDid,
-        collection: ids.AppBskyFeedPost,
+        collection: ids.AppGndrFeedPost,
         record: postRecord(),
       })
       const attemptPut = repo.putRecord({
         repo: aliceAgent.accountDid,
-        collection: ids.AppBskyActorProfile,
+        collection: ids.AppGndrActorProfile,
         rkey: 'self',
         swapCommit: staleCommit.cid,
         record: profileRecord(),
@@ -1078,34 +1078,34 @@ describe('crud operations', () => {
       // Start with missing profile record, to test swapRecord=null
       await repo.deleteRecord({
         repo: aliceAgent.accountDid,
-        collection: ids.AppBskyActorProfile,
+        collection: ids.AppGndrActorProfile,
         rkey: 'self',
       })
       // Test swapRecord w/ null (ensures create)
       const { data: profile1 } = await repo.putRecord({
         repo: aliceAgent.accountDid,
-        collection: ids.AppBskyActorProfile,
+        collection: ids.AppGndrActorProfile,
         rkey: 'self',
         swapRecord: null,
         record: profileRecord(),
       })
       const { data: checkProfile1 } = await repo.getRecord({
         repo: aliceAgent.accountDid,
-        collection: ids.AppBskyActorProfile,
+        collection: ids.AppGndrActorProfile,
         rkey: 'self',
       })
       expect(checkProfile1.cid).toEqual(profile1.cid)
       // Test swapRecord w/ cid (ensures update)
       const { data: profile2 } = await repo.putRecord({
         repo: aliceAgent.accountDid,
-        collection: ids.AppBskyActorProfile,
+        collection: ids.AppGndrActorProfile,
         rkey: 'self',
         swapRecord: profile1.cid,
         record: profileRecord(),
       })
       const { data: checkProfile2 } = await repo.getRecord({
         repo: aliceAgent.accountDid,
-        collection: ids.AppBskyActorProfile,
+        collection: ids.AppGndrActorProfile,
         rkey: 'self',
       })
       expect(checkProfile2.cid).toEqual(profile2.cid)
@@ -1116,7 +1116,7 @@ describe('crud operations', () => {
       // Test swapRecord w/ null (ensures create)
       const attemptPut1 = repo.putRecord({
         repo: aliceAgent.accountDid,
-        collection: ids.AppBskyActorProfile,
+        collection: ids.AppGndrActorProfile,
         rkey: 'self',
         swapRecord: null,
         record: profileRecord(),
@@ -1125,7 +1125,7 @@ describe('crud operations', () => {
       // Test swapRecord w/ cid (ensures update)
       const attemptPut2 = repo.putRecord({
         repo: aliceAgent.accountDid,
-        collection: ids.AppBskyActorProfile,
+        collection: ids.AppGndrActorProfile,
         rkey: 'self',
         swapRecord: (await cidForCbor({})).toString(),
         record: profileRecord(),
@@ -1144,8 +1144,8 @@ describe('crud operations', () => {
         writes: [
           {
             $type: `${ids.ComAtprotoRepoApplyWrites}#create`,
-            collection: ids.AppBskyFeedPost,
-            value: { $type: ids.AppBskyFeedPost, ...postRecord() },
+            collection: ids.AppGndrFeedPost,
+            value: { $type: ids.AppGndrFeedPost, ...postRecord() },
           },
         ],
       })
@@ -1159,7 +1159,7 @@ describe('crud operations', () => {
       // Update repo, change head
       await repo.createRecord({
         repo: aliceAgent.accountDid,
-        collection: ids.AppBskyFeedPost,
+        collection: ids.AppGndrFeedPost,
         record: postRecord(),
       })
       const attemptApplyWrite = repo.applyWrites({
@@ -1168,8 +1168,8 @@ describe('crud operations', () => {
         writes: [
           {
             $type: `${ids.ComAtprotoRepoApplyWrites}#create`,
-            collection: ids.AppBskyFeedPost,
-            value: { $type: ids.AppBskyFeedPost, ...postRecord() },
+            collection: ids.AppGndrFeedPost,
+            value: { $type: ids.AppGndrFeedPost, ...postRecord() },
           },
         ],
       })
@@ -1187,7 +1187,7 @@ describe('crud operations', () => {
         {},
         passthroughBody({
           repo: aliceAgent.accountDid,
-          collection: 'app.bsky.feed.post',
+          collection: 'app.gndr.feed.post',
           record: {
             text: 'x',
             createdAt: new Date().toISOString(),
@@ -1211,40 +1211,40 @@ describe('crud operations', () => {
     const now = new Date().toISOString()
     const uriA = AtUri.make(
       bobAgent.accountDid,
-      'app.bsky.feed.post',
+      'app.gndr.feed.post',
       TID.nextStr(),
     )
     const cidA = await cidForCbor({ post: 'a' })
     const uriB = AtUri.make(
       bobAgent.accountDid,
-      'app.bsky.feed.post',
+      'app.gndr.feed.post',
       TID.nextStr(),
     )
     const cidB = await cidForCbor({ post: 'b' })
 
     const { data: like1 } = await aliceAgent.api.com.atproto.repo.createRecord({
       repo: aliceAgent.accountDid,
-      collection: 'app.bsky.feed.like',
+      collection: 'app.gndr.feed.like',
       record: {
-        $type: 'app.bsky.feed.like',
+        $type: 'app.gndr.feed.like',
         subject: { uri: uriA.toString(), cid: cidA.toString() },
         createdAt: now,
       },
     })
     const { data: like2 } = await aliceAgent.api.com.atproto.repo.createRecord({
       repo: aliceAgent.accountDid,
-      collection: 'app.bsky.feed.like',
+      collection: 'app.gndr.feed.like',
       record: {
-        $type: 'app.bsky.feed.like',
+        $type: 'app.gndr.feed.like',
         subject: { uri: uriB.toString(), cid: cidB.toString() },
         createdAt: now,
       },
     })
     const { data: like3 } = await aliceAgent.api.com.atproto.repo.createRecord({
       repo: aliceAgent.accountDid,
-      collection: 'app.bsky.feed.like',
+      collection: 'app.gndr.feed.like',
       record: {
-        $type: 'app.bsky.feed.like',
+        $type: 'app.gndr.feed.like',
         subject: { uri: uriA.toString(), cid: cidA.toString() },
         createdAt: now,
       },
@@ -1252,7 +1252,7 @@ describe('crud operations', () => {
 
     const getLike1 = aliceAgent.api.com.atproto.repo.getRecord({
       repo: aliceAgent.accountDid,
-      collection: 'app.bsky.feed.like',
+      collection: 'app.gndr.feed.like',
       rkey: new AtUri(like1.uri).rkey,
     })
 
@@ -1260,7 +1260,7 @@ describe('crud operations', () => {
 
     const getLike2 = aliceAgent.api.com.atproto.repo.getRecord({
       repo: aliceAgent.accountDid,
-      collection: 'app.bsky.feed.like',
+      collection: 'app.gndr.feed.like',
       rkey: new AtUri(like2.uri).rkey,
     })
 
@@ -1268,7 +1268,7 @@ describe('crud operations', () => {
 
     const getLike3 = aliceAgent.api.com.atproto.repo.getRecord({
       repo: aliceAgent.accountDid,
-      collection: 'app.bsky.feed.like',
+      collection: 'app.gndr.feed.like',
       rkey: new AtUri(like3.uri).rkey,
     })
 
@@ -1279,13 +1279,13 @@ describe('crud operations', () => {
     const now = new Date().toISOString()
     const uriA = AtUri.make(
       bobAgent.accountDid,
-      'app.bsky.feed.post',
+      'app.gndr.feed.post',
       TID.nextStr(),
     )
     const cidA = await cidForCbor({ post: 'a' })
     const uriB = AtUri.make(
       bobAgent.accountDid,
-      'app.bsky.feed.post',
+      'app.gndr.feed.post',
       TID.nextStr(),
     )
     const cidB = await cidForCbor({ post: 'b' })
@@ -1293,9 +1293,9 @@ describe('crud operations', () => {
     const { data: repost1 } =
       await aliceAgent.api.com.atproto.repo.createRecord({
         repo: aliceAgent.accountDid,
-        collection: 'app.bsky.feed.repost',
+        collection: 'app.gndr.feed.repost',
         record: {
-          $type: 'app.bsky.feed.repost',
+          $type: 'app.gndr.feed.repost',
           subject: { uri: uriA.toString(), cid: cidA.toString() },
           createdAt: now,
         },
@@ -1303,9 +1303,9 @@ describe('crud operations', () => {
     const { data: repost2 } =
       await aliceAgent.api.com.atproto.repo.createRecord({
         repo: aliceAgent.accountDid,
-        collection: 'app.bsky.feed.repost',
+        collection: 'app.gndr.feed.repost',
         record: {
-          $type: 'app.bsky.feed.repost',
+          $type: 'app.gndr.feed.repost',
           subject: { uri: uriB.toString(), cid: cidB.toString() },
           createdAt: now,
         },
@@ -1313,9 +1313,9 @@ describe('crud operations', () => {
     const { data: repost3 } =
       await aliceAgent.api.com.atproto.repo.createRecord({
         repo: aliceAgent.accountDid,
-        collection: 'app.bsky.feed.repost',
+        collection: 'app.gndr.feed.repost',
         record: {
-          $type: 'app.bsky.feed.repost',
+          $type: 'app.gndr.feed.repost',
           subject: { uri: uriA.toString(), cid: cidA.toString() },
           createdAt: now,
         },
@@ -1323,7 +1323,7 @@ describe('crud operations', () => {
 
     const getRepost1 = aliceAgent.api.com.atproto.repo.getRecord({
       repo: aliceAgent.accountDid,
-      collection: 'app.bsky.feed.repost',
+      collection: 'app.gndr.feed.repost',
       rkey: new AtUri(repost1.uri).rkey,
     })
 
@@ -1331,7 +1331,7 @@ describe('crud operations', () => {
 
     const getRepost2 = aliceAgent.api.com.atproto.repo.getRecord({
       repo: aliceAgent.accountDid,
-      collection: 'app.bsky.feed.repost',
+      collection: 'app.gndr.feed.repost',
       rkey: new AtUri(repost2.uri).rkey,
     })
 
@@ -1339,7 +1339,7 @@ describe('crud operations', () => {
 
     const getRepost3 = aliceAgent.api.com.atproto.repo.getRecord({
       repo: aliceAgent.accountDid,
-      collection: 'app.bsky.feed.repost',
+      collection: 'app.gndr.feed.repost',
       rkey: new AtUri(repost3.uri).rkey,
     })
 
@@ -1352,9 +1352,9 @@ describe('crud operations', () => {
     const { data: block1 } = await aliceAgent.api.com.atproto.repo.createRecord(
       {
         repo: aliceAgent.accountDid,
-        collection: 'app.bsky.graph.block',
+        collection: 'app.gndr.graph.block',
         record: {
-          $type: 'app.bsky.graph.block',
+          $type: 'app.gndr.graph.block',
           subject: bobAgent.accountDid,
           createdAt: now,
         },
@@ -1363,9 +1363,9 @@ describe('crud operations', () => {
 
     const { data: block2 } = await bobAgent.api.com.atproto.repo.createRecord({
       repo: bobAgent.accountDid,
-      collection: 'app.bsky.graph.block',
+      collection: 'app.gndr.graph.block',
       record: {
-        $type: 'app.bsky.graph.block',
+        $type: 'app.gndr.graph.block',
         subject: aliceAgent.accountDid,
         createdAt: now,
       },
@@ -1374,9 +1374,9 @@ describe('crud operations', () => {
     const { data: block3 } = await aliceAgent.api.com.atproto.repo.createRecord(
       {
         repo: aliceAgent.accountDid,
-        collection: 'app.bsky.graph.block',
+        collection: 'app.gndr.graph.block',
         record: {
-          $type: 'app.bsky.graph.block',
+          $type: 'app.gndr.graph.block',
           subject: bobAgent.accountDid,
           createdAt: now,
         },
@@ -1385,7 +1385,7 @@ describe('crud operations', () => {
 
     const getBlock1 = aliceAgent.api.com.atproto.repo.getRecord({
       repo: aliceAgent.accountDid,
-      collection: 'app.bsky.graph.block',
+      collection: 'app.gndr.graph.block',
       rkey: new AtUri(block1.uri).rkey,
     })
 
@@ -1393,7 +1393,7 @@ describe('crud operations', () => {
 
     const getBlock2 = aliceAgent.api.com.atproto.repo.getRecord({
       repo: bobAgent.accountDid,
-      collection: 'app.bsky.graph.block',
+      collection: 'app.gndr.graph.block',
       rkey: new AtUri(block2.uri).rkey,
     })
 
@@ -1401,7 +1401,7 @@ describe('crud operations', () => {
 
     const getBlock3 = aliceAgent.api.com.atproto.repo.getRecord({
       repo: aliceAgent.accountDid,
-      collection: 'app.bsky.graph.block',
+      collection: 'app.gndr.graph.block',
       rkey: new AtUri(block3.uri).rkey,
     })
 
@@ -1414,18 +1414,18 @@ describe('crud operations', () => {
     const { data: follow1 } =
       await aliceAgent.api.com.atproto.repo.createRecord({
         repo: aliceAgent.accountDid,
-        collection: 'app.bsky.graph.follow',
+        collection: 'app.gndr.graph.follow',
         record: {
-          $type: 'app.bsky.graph.follow',
+          $type: 'app.gndr.graph.follow',
           subject: bobAgent.accountDid,
           createdAt: now,
         },
       })
     const { data: follow2 } = await bobAgent.api.com.atproto.repo.createRecord({
       repo: bobAgent.accountDid,
-      collection: 'app.bsky.graph.follow',
+      collection: 'app.gndr.graph.follow',
       record: {
-        $type: 'app.bsky.graph.follow',
+        $type: 'app.gndr.graph.follow',
         subject: aliceAgent.accountDid,
         createdAt: now,
       },
@@ -1433,9 +1433,9 @@ describe('crud operations', () => {
     const { data: follow3 } =
       await aliceAgent.api.com.atproto.repo.createRecord({
         repo: aliceAgent.accountDid,
-        collection: 'app.bsky.graph.follow',
+        collection: 'app.gndr.graph.follow',
         record: {
-          $type: 'app.bsky.graph.follow',
+          $type: 'app.gndr.graph.follow',
           subject: bobAgent.accountDid,
           createdAt: now,
         },
@@ -1443,7 +1443,7 @@ describe('crud operations', () => {
 
     const getFollow1 = aliceAgent.api.com.atproto.repo.getRecord({
       repo: aliceAgent.accountDid,
-      collection: 'app.bsky.graph.follow',
+      collection: 'app.gndr.graph.follow',
       rkey: new AtUri(follow1.uri).rkey,
     })
 
@@ -1451,7 +1451,7 @@ describe('crud operations', () => {
 
     const getFollow2 = aliceAgent.api.com.atproto.repo.getRecord({
       repo: bobAgent.accountDid,
-      collection: 'app.bsky.graph.follow',
+      collection: 'app.gndr.graph.follow',
       rkey: new AtUri(follow2.uri).rkey,
     })
 
@@ -1459,7 +1459,7 @@ describe('crud operations', () => {
 
     const getFollow3 = aliceAgent.api.com.atproto.repo.getRecord({
       repo: aliceAgent.accountDid,
-      collection: 'app.bsky.graph.follow',
+      collection: 'app.gndr.graph.follow',
       rkey: new AtUri(follow3.uri).rkey,
     })
 
@@ -1470,20 +1470,20 @@ describe('crud operations', () => {
   // --------------
 
   it("doesn't serve taken-down record", async () => {
-    const created = await aliceAgent.app.bsky.feed.post.create(
+    const created = await aliceAgent.app.gndr.feed.post.create(
       { repo: aliceAgent.accountDid },
       {
-        $type: 'app.bsky.feed.post',
+        $type: 'app.gndr.feed.post',
         text: 'Hello, world!',
         createdAt: new Date().toISOString(),
       },
     )
     const postUri = new AtUri(created.uri)
-    const post = await agent.app.bsky.feed.post.get({
+    const post = await agent.app.gndr.feed.post.get({
       repo: aliceAgent.accountDid,
       rkey: postUri.rkey,
     })
-    const posts = await agent.app.bsky.feed.post.list({
+    const posts = await agent.app.gndr.feed.post.list({
       repo: aliceAgent.accountDid,
     })
     expect(posts.records.map((r) => r.uri)).toContain(post.uri)
@@ -1504,12 +1504,12 @@ describe('crud operations', () => {
       },
     )
 
-    const postTakedownPromise = agent.app.bsky.feed.post.get({
+    const postTakedownPromise = agent.app.gndr.feed.post.get({
       repo: aliceAgent.accountDid,
       rkey: postUri.rkey,
     })
     await expect(postTakedownPromise).rejects.toThrow('Could not locate record')
-    const postsTakedown = await agent.app.bsky.feed.post.list({
+    const postsTakedown = await agent.app.gndr.feed.post.list({
       repo: aliceAgent.accountDid,
     })
     expect(postsTakedown.records.map((r) => r.uri)).not.toContain(post.uri)
@@ -1528,7 +1528,7 @@ describe('crud operations', () => {
   })
 
   it("doesn't serve taken-down actor", async () => {
-    const posts = await agent.app.bsky.feed.post.list({
+    const posts = await agent.app.gndr.feed.post.list({
       repo: aliceAgent.accountDid,
     })
     expect(posts.records.length).toBeGreaterThan(0)
@@ -1549,7 +1549,7 @@ describe('crud operations', () => {
       },
     )
 
-    const tryListPosts = agent.app.bsky.feed.post.list({
+    const tryListPosts = agent.app.gndr.feed.post.list({
       repo: aliceAgent.accountDid,
     })
     await expect(tryListPosts).rejects.toThrow(/Could not find repo/)

@@ -28,7 +28,7 @@ describe('did cache', () => {
     did = await plcClient.createDid({
       signingKey: signingKey.did(),
       handle: 'alice.test',
-      pds: 'https://bsky.social',
+      pds: 'https://gndr.social',
       rotationKeys: [rotationKey.did()],
       signer: rotationKey,
     })

@@ -3,7 +3,7 @@ import getPort from 'get-port'
 import * as uint8arrays from 'uint8arrays'
 import { wait } from '@atproto/common-web'
 import { createServiceJwt } from '@atproto/xrpc-server'
-import { TestBsky } from './bsky'
+import { TestGndr } from './gndr'
 import { EXAMPLE_LABELER } from './const'
 import { IntrospectServer } from './introspect'
 import { TestNetworkNoAppView } from './network-no-appview'
@@ -21,7 +21,7 @@ export class TestNetwork extends TestNetworkNoAppView {
   constructor(
     public plc: TestPlc,
     public pds: TestPds,
-    public bsky: TestBsky,
+    public gndr: TestGndr,
     public ozone: TestOzone,
     public introspect?: IntrospectServer,
   ) {
@@ -40,7 +40,7 @@ export class TestNetwork extends TestNetworkNoAppView {
 
     const plc = await TestPlc.create(params.plc ?? {})
 
-    const bskyPort = params.bsky?.port ?? (await getPort())
+    const bskyPort = params.gndr?.port ?? (await getPort())
     const pdsPort = params.pds?.port ?? (await getPort())
     const ozonePort = params.ozone?.port ?? (await getPort())
 
@@ -55,7 +55,7 @@ export class TestNetwork extends TestNetworkNoAppView {
     const { did: ozoneDid, key: ozoneKey } =
       await ozoneServiceProfile.createDidAndKey()
 
-    const bsky = await TestBsky.create({
+    const gndr = await TestGndr.create({
       port: bskyPort,
       plcUrl: plc.url,
       pdsPort,
@@ -65,15 +65,15 @@ export class TestNetwork extends TestNetworkNoAppView {
       redisHost,
       modServiceDid: ozoneDid,
       labelsFromIssuerDids: [ozoneDid, EXAMPLE_LABELER],
-      ...params.bsky,
+      ...params.gndr,
     })
 
     const modServiceUrl = `http://localhost:${ozonePort}`
     const pdsProps = {
       port: pdsPort,
       didPlcUrl: plc.url,
-      bskyAppViewUrl: bsky.url,
-      bskyAppViewDid: bsky.ctx.cfg.serverDid,
+      bskyAppViewUrl: gndr.url,
+      bskyAppViewDid: gndr.ctx.cfg.serverDid,
       modServiceUrl,
       modServiceDid: ozoneDid,
       ...params.pds,
@@ -88,8 +88,8 @@ export class TestNetwork extends TestNetworkNoAppView {
       serverDid: ozoneDid,
       dbPostgresSchema: `ozone_${dbPostgresSchema || 'db'}`,
       dbPostgresUrl,
-      appviewUrl: bsky.url,
-      appviewDid: bsky.ctx.cfg.serverDid,
+      appviewUrl: gndr.url,
+      appviewDid: gndr.ctx.cfg.serverDid,
       appviewPushEvents: true,
       pdsUrl: pds.url,
       pdsDid: pds.ctx.cfg.service.did,
@@ -118,9 +118,9 @@ export class TestNetwork extends TestNetworkNoAppView {
 
     await ozone.addAdminDid(ozoneDid)
 
-    mockNetworkUtilities(pds, bsky)
+    mockNetworkUtilities(pds, gndr)
     await pds.processAll()
-    await bsky.sub.processAll()
+    await gndr.sub.processAll()
     await thirdPartyPds.close()
 
     // Weird but if we do this before pds.processAll() somehow appview loses this user and tests in different parts fail because appview doesn't return this user in various contexts anymore
@@ -136,16 +136,16 @@ export class TestNetwork extends TestNetworkNoAppView {
         params.introspect.port,
         plc,
         pds,
-        bsky,
+        gndr,
         ozone,
       )
     }
 
-    return new TestNetwork(plc, pds, bsky, ozone, introspect)
+    return new TestNetwork(plc, pds, gndr, ozone, introspect)
   }
 
   async processFullSubscription(timeout = 5000) {
-    const sub = this.bsky.sub
+    const sub = this.gndr.sub
     const start = Date.now()
     const lastSeq = await this.pds.ctx.sequencer.curr()
     if (!lastSeq) return
@@ -172,7 +172,7 @@ export class TestNetwork extends TestNetworkNoAppView {
     const keypair = await this.pds.ctx.actorStore.keypair(did)
     const jwt = await createServiceJwt({
       iss: did,
-      aud: aud ?? this.bsky.ctx.cfg.serverDid,
+      aud: aud ?? this.gndr.ctx.cfg.serverDid,
       lxm,
       keypair,
     })
@@ -199,7 +199,7 @@ export class TestNetwork extends TestNetworkNoAppView {
   async close() {
     await Promise.all(this.feedGens.map((fg) => fg.close()))
     await this.ozone.close()
-    await this.bsky.close()
+    await this.gndr.close()
     await this.pds.close()
     await this.plc.close()
     await this.introspect?.close()

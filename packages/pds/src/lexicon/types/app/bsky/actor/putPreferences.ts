@@ -9,16 +9,16 @@ import {
   is$typed as _is$typed,
   type OmitKey,
 } from '../../../../util'
-import type * as AppBskyActorDefs from './defs.js'
+import type * as AppGndrActorDefs from './defs.js'
 
 const is$typed = _is$typed,
   validate = _validate
-const id = 'app.bsky.actor.putPreferences'
+const id = 'app.gndr.actor.putPreferences'
 
 export type QueryParams = {}
 
 export interface InputSchema {
-  preferences: AppBskyActorDefs.Preferences
+  preferences: AppGndrActorDefs.Preferences
 }
 
 export interface HandlerInput {

@@ -9,11 +9,11 @@ import {
   is$typed as _is$typed,
   type OmitKey,
 } from '../../../../util'
-import type * as AppBskyActorDefs from '../actor/defs.js'
+import type * as AppGndrActorDefs from '../actor/defs.js'
 
 const is$typed = _is$typed,
   validate = _validate
-const id = 'app.bsky.graph.getKnownFollowers'
+const id = 'app.gndr.graph.getKnownFollowers'
 
 export type QueryParams = {
   actor: string
@@ -23,9 +23,9 @@ export type QueryParams = {
 export type InputSchema = undefined
 
 export interface OutputSchema {
-  subject: AppBskyActorDefs.ProfileView
+  subject: AppGndrActorDefs.ProfileView
   cursor?: string
-  followers: AppBskyActorDefs.ProfileView[]
+  followers: AppGndrActorDefs.ProfileView[]
 }
 
 export type HandlerInput = void

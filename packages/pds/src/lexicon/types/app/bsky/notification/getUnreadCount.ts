@@ -12,7 +12,7 @@ import {
 
 const is$typed = _is$typed,
   validate = _validate
-const id = 'app.bsky.notification.getUnreadCount'
+const id = 'app.gndr.notification.getUnreadCount'
 
 export type QueryParams = {
   priority?: boolean

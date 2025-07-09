@@ -4,15 +4,15 @@
 
 ### Minor Changes
 
-- [#3792](https://github.com/bluesky-social/atproto/pull/3792) [`f36ab48d9`](https://github.com/bluesky-social/atproto/commit/f36ab48d910fc4a3afcd22138ba014c814beb93b) Thanks [@matthieusieben](https://github.com/matthieusieben)! - Rename `ResponseType.AuthRequired` into `ResponseType.AuthenticationRequired` to match actual error name.
+- [#3792](https://github.com/gander-social/atproto/pull/3792) [`f36ab48d9`](https://github.com/gander-social/atproto/commit/f36ab48d910fc4a3afcd22138ba014c814beb93b) Thanks [@matthieusieben](https://github.com/matthieusieben)! - Rename `ResponseType.AuthRequired` into `ResponseType.AuthenticationRequired` to match actual error name.
 
-- [#3792](https://github.com/bluesky-social/atproto/pull/3792) [`f36ab48d9`](https://github.com/bluesky-social/atproto/commit/f36ab48d910fc4a3afcd22138ba014c814beb93b) Thanks [@matthieusieben](https://github.com/matthieusieben)! - Remove un-necessary `ResponseTypeNames` in favor of `ResponseType`.
+- [#3792](https://github.com/gander-social/atproto/pull/3792) [`f36ab48d9`](https://github.com/gander-social/atproto/commit/f36ab48d910fc4a3afcd22138ba014c814beb93b) Thanks [@matthieusieben](https://github.com/matthieusieben)! - Remove un-necessary `ResponseTypeNames` in favor of `ResponseType`.
 
 ### Patch Changes
 
-- [#3792](https://github.com/bluesky-social/atproto/pull/3792) [`f36ab48d9`](https://github.com/bluesky-social/atproto/commit/f36ab48d910fc4a3afcd22138ba014c814beb93b) Thanks [@matthieusieben](https://github.com/matthieusieben)! - Add missing `NotAcceptable` key in `ResponseTypeStrings`
+- [#3792](https://github.com/gander-social/atproto/pull/3792) [`f36ab48d9`](https://github.com/gander-social/atproto/commit/f36ab48d910fc4a3afcd22138ba014c814beb93b) Thanks [@matthieusieben](https://github.com/matthieusieben)! - Add missing `NotAcceptable` key in `ResponseTypeStrings`
 
-- Updated dependencies [[`cc485d296`](https://github.com/bluesky-social/atproto/commit/cc485d29638488928b5efec3d4b0627040589812)]:
+- Updated dependencies [[`cc485d296`](https://github.com/gander-social/atproto/commit/cc485d29638488928b5efec3d4b0627040589812)]:
   - @atproto/lexicon@0.4.11
 
 ## 0.6.12
@@ -40,23 +40,23 @@
 
 ### Patch Changes
 
-- Updated dependencies [[`c53d943c8`](https://github.com/bluesky-social/atproto/commit/c53d943c8be5b8886254e020970a68c0f745b14c), [`c53d943c8`](https://github.com/bluesky-social/atproto/commit/c53d943c8be5b8886254e020970a68c0f745b14c)]:
+- Updated dependencies [[`c53d943c8`](https://github.com/gander-social/atproto/commit/c53d943c8be5b8886254e020970a68c0f745b14c), [`c53d943c8`](https://github.com/gander-social/atproto/commit/c53d943c8be5b8886254e020970a68c0f745b14c)]:
   - @atproto/lexicon@0.4.7
 
 ## 0.6.8
 
 ### Patch Changes
 
-- [#3220](https://github.com/bluesky-social/atproto/pull/3220) [`61dc0d60e`](https://github.com/bluesky-social/atproto/commit/61dc0d60e19b88c6427a54c6d95a391b5f4da7bd) Thanks [@matthieusieben](https://github.com/matthieusieben)! - Apply new linting rules regarding import order
+- [#3220](https://github.com/gander-social/atproto/pull/3220) [`61dc0d60e`](https://github.com/gander-social/atproto/commit/61dc0d60e19b88c6427a54c6d95a391b5f4da7bd) Thanks [@matthieusieben](https://github.com/matthieusieben)! - Apply new linting rules regarding import order
 
-- Updated dependencies [[`61dc0d60e`](https://github.com/bluesky-social/atproto/commit/61dc0d60e19b88c6427a54c6d95a391b5f4da7bd)]:
+- Updated dependencies [[`61dc0d60e`](https://github.com/gander-social/atproto/commit/61dc0d60e19b88c6427a54c6d95a391b5f4da7bd)]:
   - @atproto/lexicon@0.4.6
 
 ## 0.6.7
 
 ### Patch Changes
 
-- [#3456](https://github.com/bluesky-social/atproto/pull/3456) [`fb64d50ee`](https://github.com/bluesky-social/atproto/commit/fb64d50ee220316b9f1183e5c3259629489734c9) Thanks [@matthieusieben](https://github.com/matthieusieben)! - Explicitly allow "undefined" values in `headers`
+- [#3456](https://github.com/gander-social/atproto/pull/3456) [`fb64d50ee`](https://github.com/gander-social/atproto/commit/fb64d50ee220316b9f1183e5c3259629489734c9) Thanks [@matthieusieben](https://github.com/matthieusieben)! - Explicitly allow "undefined" values in `headers`
 
 ## 0.6.6
 
@@ -69,46 +69,46 @@
 
 ### Patch Changes
 
-- Updated dependencies [[`9fd65ba0f`](https://github.com/bluesky-social/atproto/commit/9fd65ba0fa4caca59fd0e6156145e4c2618e3a95)]:
+- Updated dependencies [[`9fd65ba0f`](https://github.com/gander-social/atproto/commit/9fd65ba0fa4caca59fd0e6156145e4c2618e3a95)]:
   - @atproto/lexicon@0.4.4
 
 ## 0.6.4
 
 ### Patch Changes
 
-- Updated dependencies [[`bac9be2d3`](https://github.com/bluesky-social/atproto/commit/bac9be2d3ec904d1f984a871f43cf89aca17289d)]:
+- Updated dependencies [[`bac9be2d3`](https://github.com/gander-social/atproto/commit/bac9be2d3ec904d1f984a871f43cf89aca17289d)]:
   - @atproto/lexicon@0.4.3
 
 ## 0.6.3
 
 ### Patch Changes
 
-- [#2770](https://github.com/bluesky-social/atproto/pull/2770) [`a07b21151`](https://github.com/bluesky-social/atproto/commit/a07b21151f1850340c4b7797ebb11521b1a6cdf3) Thanks [@matthieusieben](https://github.com/matthieusieben)! - Add NotAcceptable response type
+- [#2770](https://github.com/gander-social/atproto/pull/2770) [`a07b21151`](https://github.com/gander-social/atproto/commit/a07b21151f1850340c4b7797ebb11521b1a6cdf3) Thanks [@matthieusieben](https://github.com/matthieusieben)! - Add NotAcceptable response type
 
-- Updated dependencies [[`87a1f2426`](https://github.com/bluesky-social/atproto/commit/87a1f24262e0e644b6cf31cc7a0446d9127ffa94)]:
+- Updated dependencies [[`87a1f2426`](https://github.com/gander-social/atproto/commit/87a1f24262e0e644b6cf31cc7a0446d9127ffa94)]:
   - @atproto/lexicon@0.4.2
 
 ## 0.6.2
 
 ### Patch Changes
 
-- [#2464](https://github.com/bluesky-social/atproto/pull/2464) [`98711a147`](https://github.com/bluesky-social/atproto/commit/98711a147a8674337f605c6368f39fc10c2fae93) Thanks [@matthieusieben](https://github.com/matthieusieben)! - Add UnsupportedMediaType response type
+- [#2464](https://github.com/gander-social/atproto/pull/2464) [`98711a147`](https://github.com/gander-social/atproto/commit/98711a147a8674337f605c6368f39fc10c2fae93) Thanks [@matthieusieben](https://github.com/matthieusieben)! - Add UnsupportedMediaType response type
 
 ## 0.6.1
 
 ### Patch Changes
 
-- [#2714](https://github.com/bluesky-social/atproto/pull/2714) [`d9ffa3c46`](https://github.com/bluesky-social/atproto/commit/d9ffa3c460924010d7002b616cb7a0c66111cc6c) Thanks [@matthieusieben](https://github.com/matthieusieben)! - Improve handling of fetchHandler errors when turning them into `XrpcError`.
+- [#2714](https://github.com/gander-social/atproto/pull/2714) [`d9ffa3c46`](https://github.com/gander-social/atproto/commit/d9ffa3c460924010d7002b616cb7a0c66111cc6c) Thanks [@matthieusieben](https://github.com/matthieusieben)! - Improve handling of fetchHandler errors when turning them into `XrpcError`.
 
-- [#2714](https://github.com/bluesky-social/atproto/pull/2714) [`d9ffa3c46`](https://github.com/bluesky-social/atproto/commit/d9ffa3c460924010d7002b616cb7a0c66111cc6c) Thanks [@matthieusieben](https://github.com/matthieusieben)! - Add ability to instantiate XrpcClient from FetchHandlerObject type
+- [#2714](https://github.com/gander-social/atproto/pull/2714) [`d9ffa3c46`](https://github.com/gander-social/atproto/commit/d9ffa3c460924010d7002b616cb7a0c66111cc6c) Thanks [@matthieusieben](https://github.com/matthieusieben)! - Add ability to instantiate XrpcClient from FetchHandlerObject type
 
-- [#2714](https://github.com/bluesky-social/atproto/pull/2714) [`d9ffa3c46`](https://github.com/bluesky-social/atproto/commit/d9ffa3c460924010d7002b616cb7a0c66111cc6c) Thanks [@matthieusieben](https://github.com/matthieusieben)! - Add global headers to `XrpcClient` instances
+- [#2714](https://github.com/gander-social/atproto/pull/2714) [`d9ffa3c46`](https://github.com/gander-social/atproto/commit/d9ffa3c460924010d7002b616cb7a0c66111cc6c) Thanks [@matthieusieben](https://github.com/matthieusieben)! - Add global headers to `XrpcClient` instances
 
 ## 0.6.0
 
 ### Minor Changes
 
-- [#2483](https://github.com/bluesky-social/atproto/pull/2483) [`b934b396b`](https://github.com/bluesky-social/atproto/commit/b934b396b13ba32bf2bf7e75ecdf6871e5f310dd) Thanks [@matthieusieben](https://github.com/matthieusieben)!
+- [#2483](https://github.com/gander-social/atproto/pull/2483) [`b934b396b`](https://github.com/gander-social/atproto/commit/b934b396b13ba32bf2bf7e75ecdf6871e5f310dd) Thanks [@matthieusieben](https://github.com/matthieusieben)!
 
   #### Motivation
 
@@ -117,7 +117,7 @@
   "launched" and documented quite yet, so you can keep using the current app
   password authentication system. When we do "launch" OAuth support and begin
   encouraging its usage in the near future (see the [OAuth
-  Roadmap](https://github.com/bluesky-social/atproto/discussions/2656)), these
+  Roadmap](https://github.com/gander-social/atproto/discussions/2656)), these
   changes will make it easier to migrate.
 
   In addition, the redesigned session management system fixes a bug that could
@@ -135,7 +135,7 @@
   be implemented in the fetch handler itself rather than by the calling code.
 
   A new abstract class named `Agent`, has been added to `@atproto/api`. This class
-  will be the base class for all Bluesky agents classes in the `@atproto`
+  will be the base class for all Gander agents classes in the `@atproto`
   ecosystem. It is meant to be extended by implementations that provide session
   management and fetch handling.
 
@@ -218,11 +218,11 @@
       deprecation).
     - `AtpAgent` extends `Agent`: adds password based session management.
     - `Agent` extends `AtpBaseClient`: this abstract class that adds syntactic sugar
-      methods `app.bsky` lexicons. It also adds abstract session management
+      methods `app.gndr` lexicons. It also adds abstract session management
       methods and adds atproto specific utilities
       (`labelers` & `proxy` headers, cloning capability)
     - `AtpBaseClient` extends `XrpcClient`: automatically code that adds fully
-      typed lexicon defined namespaces (`instance.app.bsky.feed.getPosts()`) to
+      typed lexicon defined namespaces (`instance.app.gndr.feed.getPosts()`) to
       the `XrpcClient`.
     - `XrpcClient` is the base class.
 
@@ -668,22 +668,22 @@
   );
   ```
 
-- [#2483](https://github.com/bluesky-social/atproto/pull/2483) [`b934b396b`](https://github.com/bluesky-social/atproto/commit/b934b396b13ba32bf2bf7e75ecdf6871e5f310dd) Thanks [@matthieusieben](https://github.com/matthieusieben)! - Add the ability to use `fetch()` compatible `BodyInit` body when making XRPC calls.
+- [#2483](https://github.com/gander-social/atproto/pull/2483) [`b934b396b`](https://github.com/gander-social/atproto/commit/b934b396b13ba32bf2bf7e75ecdf6871e5f310dd) Thanks [@matthieusieben](https://github.com/matthieusieben)! - Add the ability to use `fetch()` compatible `BodyInit` body when making XRPC calls.
 
 ### Patch Changes
 
-- Updated dependencies [[`b934b396b`](https://github.com/bluesky-social/atproto/commit/b934b396b13ba32bf2bf7e75ecdf6871e5f310dd), [`2bdf75d7a`](https://github.com/bluesky-social/atproto/commit/2bdf75d7a63924c10e7a311f16cb447d595b933e)]:
+- Updated dependencies [[`b934b396b`](https://github.com/gander-social/atproto/commit/b934b396b13ba32bf2bf7e75ecdf6871e5f310dd), [`2bdf75d7a`](https://github.com/gander-social/atproto/commit/2bdf75d7a63924c10e7a311f16cb447d595b933e)]:
   - @atproto/lexicon@0.4.1
 
 ## 0.5.0
 
 ### Minor Changes
 
-- [#2169](https://github.com/bluesky-social/atproto/pull/2169) [`f689bd51a`](https://github.com/bluesky-social/atproto/commit/f689bd51a2f4e02d4eca40eb2568a1fcb95494e9) Thanks [@matthieusieben](https://github.com/matthieusieben)! - Build system rework, stop bundling dependencies.
+- [#2169](https://github.com/gander-social/atproto/pull/2169) [`f689bd51a`](https://github.com/gander-social/atproto/commit/f689bd51a2f4e02d4eca40eb2568a1fcb95494e9) Thanks [@matthieusieben](https://github.com/matthieusieben)! - Build system rework, stop bundling dependencies.
 
 ### Patch Changes
 
-- Updated dependencies [[`f689bd51a`](https://github.com/bluesky-social/atproto/commit/f689bd51a2f4e02d4eca40eb2568a1fcb95494e9)]:
+- Updated dependencies [[`f689bd51a`](https://github.com/gander-social/atproto/commit/f689bd51a2f4e02d4eca40eb2568a1fcb95494e9)]:
   - @atproto/lexicon@0.4.0
 
 ## 0.4.3
@@ -711,13 +711,13 @@
 
 ### Minor Changes
 
-- [#1801](https://github.com/bluesky-social/atproto/pull/1801) [`ce49743d`](https://github.com/bluesky-social/atproto/commit/ce49743d7f8800d33116b88001d7b512553c2c89) Thanks [@gaearon](https://github.com/gaearon)! - Methods that accepts lexicons now take `LexiconDoc` type instead of `unknown`
+- [#1801](https://github.com/gander-social/atproto/pull/1801) [`ce49743d`](https://github.com/gander-social/atproto/commit/ce49743d7f8800d33116b88001d7b512553c2c89) Thanks [@gaearon](https://github.com/gaearon)! - Methods that accepts lexicons now take `LexiconDoc` type instead of `unknown`
 
 ### Patch Changes
 
-- [#1788](https://github.com/bluesky-social/atproto/pull/1788) [`84e2d4d2`](https://github.com/bluesky-social/atproto/commit/84e2d4d2b6694f344d80c18672c78b650189d423) Thanks [@bnewbold](https://github.com/bnewbold)! - update license to "MIT or Apache2"
+- [#1788](https://github.com/gander-social/atproto/pull/1788) [`84e2d4d2`](https://github.com/gander-social/atproto/commit/84e2d4d2b6694f344d80c18672c78b650189d423) Thanks [@bnewbold](https://github.com/bnewbold)! - update license to "MIT or Apache2"
 
-- Updated dependencies [[`ce49743d`](https://github.com/bluesky-social/atproto/commit/ce49743d7f8800d33116b88001d7b512553c2c89), [`84e2d4d2`](https://github.com/bluesky-social/atproto/commit/84e2d4d2b6694f344d80c18672c78b650189d423)]:
+- Updated dependencies [[`ce49743d`](https://github.com/gander-social/atproto/commit/ce49743d7f8800d33116b88001d7b512553c2c89), [`84e2d4d2`](https://github.com/gander-social/atproto/commit/84e2d4d2b6694f344d80c18672c78b650189d423)]:
   - @atproto/lexicon@0.3.0
 
 ## 0.3.3

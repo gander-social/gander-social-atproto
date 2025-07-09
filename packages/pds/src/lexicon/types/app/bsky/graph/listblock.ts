@@ -12,10 +12,10 @@ import {
 
 const is$typed = _is$typed,
   validate = _validate
-const id = 'app.bsky.graph.listblock'
+const id = 'app.gndr.graph.listblock'
 
 export interface Record {
-  $type: 'app.bsky.graph.listblock'
+  $type: 'app.gndr.graph.listblock'
   /** Reference (AT-URI) to the mod list record. */
   subject: string
   createdAt: string

@@ -9,11 +9,11 @@ import {
   is$typed as _is$typed,
   type OmitKey,
 } from '../../../../util'
-import type * as AppBskyFeedDefs from './defs.js'
+import type * as AppGndrFeedDefs from './defs.js'
 
 const is$typed = _is$typed,
   validate = _validate
-const id = 'app.bsky.feed.getFeedSkeleton'
+const id = 'app.gndr.feed.getFeedSkeleton'
 
 export type QueryParams = {
   /** Reference to feed generator record describing the specific feed being requested. */
@@ -25,7 +25,7 @@ export type InputSchema = undefined
 
 export interface OutputSchema {
   cursor?: string
-  feed: AppBskyFeedDefs.SkeletonFeedPost[]
+  feed: AppGndrFeedDefs.SkeletonFeedPost[]
   /** Unique identifier per request that may be passed back alongside interactions. */
   reqId?: string
 }

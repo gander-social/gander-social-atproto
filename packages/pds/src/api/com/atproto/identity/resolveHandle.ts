@@ -27,10 +27,10 @@ export default function (server: Server, ctx: AppContext) {
     let did: string | undefined
 
     // Either ask appview to resolve, or perform resolution, but don't do both.
-    if (ctx.bskyAppView) {
+    if (ctx.gndrAppView) {
       try {
         const result =
-          await ctx.bskyAppView.agent.com.atproto.identity.resolveHandle({
+          await ctx.gndrAppView.agent.com.atproto.identity.resolveHandle({
             handle,
           })
         did = result.data.did

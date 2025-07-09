@@ -1,4 +1,4 @@
-import { AtpAgent, BSKY_LABELER_DID } from '@atproto/api'
+import { AtpAgent, GNDR_LABELER_DID } from '@atproto/api'
 import {
   ModeratorClient,
   RecordRef,
@@ -25,7 +25,7 @@ describe('admin get lists', () => {
     })
     ozone = network.ozone
     agent = ozone.getClient()
-    appviewAgent = network.bsky.getClient()
+    appviewAgent = network.gndr.getClient()
     sc = network.getSeedClient()
     modClient = ozone.getModClient()
     await basicSeed(sc)
@@ -35,17 +35,17 @@ describe('admin get lists', () => {
   })
 
   afterAll(async () => {
-    AtpAgent.configure({ appLabelers: [BSKY_LABELER_DID] })
+    AtpAgent.configure({ appLabelers: [GNDR_LABELER_DID] })
     await network.close()
   })
 
   const getAlicesList = async () => {
     const [{ data: fromOzone }, { data: fromAppview }] = await Promise.all([
-      agent.api.app.bsky.graph.getLists(
+      agent.api.app.gndr.graph.getLists(
         { actor: sc.dids.alice },
-        { headers: await ozone.modHeaders(ids.AppBskyGraphGetLists) },
+        { headers: await ozone.modHeaders(ids.AppGndrGraphGetLists) },
       ),
-      appviewAgent.api.app.bsky.graph.getLists({ actor: sc.dids.alice }),
+      appviewAgent.api.app.gndr.graph.getLists({ actor: sc.dids.alice }),
     ])
 
     return { fromOzone, fromAppview }
@@ -89,7 +89,7 @@ describe('admin get lists', () => {
     expect(beforeTakedown.fromAppview.lists[0].uri).toEqual(alicesList.uriStr)
 
     // Takedown alice's list using a !takedown label
-    await network.bsky.db.db
+    await network.gndr.db.db
       .insertInto('label')
       .values({
         src: ozone.ctx.cfg.service.did,

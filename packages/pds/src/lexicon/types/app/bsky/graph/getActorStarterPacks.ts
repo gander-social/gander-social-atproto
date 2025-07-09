@@ -9,11 +9,11 @@ import {
   is$typed as _is$typed,
   type OmitKey,
 } from '../../../../util'
-import type * as AppBskyGraphDefs from './defs.js'
+import type * as AppGndrGraphDefs from './defs.js'
 
 const is$typed = _is$typed,
   validate = _validate
-const id = 'app.bsky.graph.getActorStarterPacks'
+const id = 'app.gndr.graph.getActorStarterPacks'
 
 export type QueryParams = {
   actor: string
@@ -24,7 +24,7 @@ export type InputSchema = undefined
 
 export interface OutputSchema {
   cursor?: string
-  starterPacks: AppBskyGraphDefs.StarterPackViewBasic[]
+  starterPacks: AppGndrGraphDefs.StarterPackViewBasic[]
 }
 
 export type HandlerInput = void

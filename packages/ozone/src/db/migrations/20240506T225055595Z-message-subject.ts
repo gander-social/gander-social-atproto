@@ -5,7 +5,7 @@ export async function up(db: Kysely<unknown>): Promise<void> {
     .alterTable('moderation_event')
     .addColumn('subjectMessageId', 'varchar')
     .execute()
-  // support lookup for chat.bsky.moderation.getMessageContext
+  // support lookup for chat.gndr.moderation.getMessageContext
   await db.schema
     .createIndex('moderation_event_message_id_index')
     .on('moderation_event')

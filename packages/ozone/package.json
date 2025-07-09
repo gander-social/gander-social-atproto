@@ -2,15 +2,15 @@
   "name": "@atproto/ozone",
   "version": "0.1.128",
   "license": "MIT",
-  "description": "Backend service for moderating the Bluesky network.",
+  "description": "Backend service for moderating the Gander network.",
   "keywords": [
     "atproto",
-    "bluesky"
+    "gander"
   ],
   "homepage": "https://atproto.com",
   "repository": {
     "type": "git",
-    "url": "https://github.com/bluesky-social/atproto",
+    "url": "https://github.com/gander-social/atproto",
     "directory": "packages/ozone"
   },
   "main": "dist/index.js",

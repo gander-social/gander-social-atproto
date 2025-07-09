@@ -12,10 +12,10 @@ import {
 
 const is$typed = _is$typed,
   validate = _validate
-const id = 'app.bsky.notification.defs'
+const id = 'app.gndr.notification.defs'
 
 export interface RecordDeleted {
-  $type?: 'app.bsky.notification.defs#recordDeleted'
+  $type?: 'app.gndr.notification.defs#recordDeleted'
 }
 
 const hashRecordDeleted = 'recordDeleted'
@@ -29,7 +29,7 @@ export function validateRecordDeleted<V>(v: V) {
 }
 
 export interface ChatPreference {
-  $type?: 'app.bsky.notification.defs#chatPreference'
+  $type?: 'app.gndr.notification.defs#chatPreference'
   include: 'all' | 'accepted' | (string & {})
   push: boolean
 }
@@ -45,7 +45,7 @@ export function validateChatPreference<V>(v: V) {
 }
 
 export interface FilterablePreference {
-  $type?: 'app.bsky.notification.defs#filterablePreference'
+  $type?: 'app.gndr.notification.defs#filterablePreference'
   include: 'all' | 'follows' | (string & {})
   list: boolean
   push: boolean
@@ -62,7 +62,7 @@ export function validateFilterablePreference<V>(v: V) {
 }
 
 export interface Preference {
-  $type?: 'app.bsky.notification.defs#preference'
+  $type?: 'app.gndr.notification.defs#preference'
   list: boolean
   push: boolean
 }
@@ -78,7 +78,7 @@ export function validatePreference<V>(v: V) {
 }
 
 export interface Preferences {
-  $type?: 'app.bsky.notification.defs#preferences'
+  $type?: 'app.gndr.notification.defs#preferences'
   chat: ChatPreference
   follow: FilterablePreference
   like: FilterablePreference
@@ -105,7 +105,7 @@ export function validatePreferences<V>(v: V) {
 }
 
 export interface ActivitySubscription {
-  $type?: 'app.bsky.notification.defs#activitySubscription'
+  $type?: 'app.gndr.notification.defs#activitySubscription'
   post: boolean
   reply: boolean
 }
@@ -122,7 +122,7 @@ export function validateActivitySubscription<V>(v: V) {
 
 /** Object used to store activity subscription data in stash. */
 export interface SubjectActivitySubscription {
-  $type?: 'app.bsky.notification.defs#subjectActivitySubscription'
+  $type?: 'app.gndr.notification.defs#subjectActivitySubscription'
   subject: string
   activitySubscription: ActivitySubscription
 }

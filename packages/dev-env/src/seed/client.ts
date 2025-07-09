@@ -2,14 +2,14 @@ import fs from 'node:fs/promises'
 import path from 'node:path'
 import { CID } from 'multiformats/cid'
 import {
-  AppBskyFeedLike,
-  AppBskyFeedPost,
-  AppBskyFeedRepost,
-  AppBskyGraphBlock,
-  AppBskyGraphFollow,
-  AppBskyGraphList,
-  AppBskyGraphVerification,
-  AppBskyRichtextFacet,
+  AppGndrFeedLike,
+  AppGndrFeedPost,
+  AppGndrFeedRepost,
+  AppGndrGraphBlock,
+  AppGndrGraphFollow,
+  AppGndrGraphList,
+  AppGndrGraphVerification,
+  AppGndrRichtextFacet,
   AtpAgent,
   ComAtprotoModerationCreateReport,
 } from '@atproto/api'
@@ -193,7 +193,7 @@ export class SeedClient<
     }
 
     {
-      const res = await this.agent.app.bsky.actor.profile.create(
+      const res = await this.agent.app.gndr.actor.profile.create(
         { repo: by },
         {
           displayName,
@@ -225,7 +225,7 @@ export class SeedClient<
     const res = await this.agent.com.atproto.repo.putRecord(
       {
         repo: by,
-        collection: 'app.bsky.actor.profile',
+        collection: 'app.gndr.actor.profile',
         rkey: 'self',
         record,
       },
@@ -242,9 +242,9 @@ export class SeedClient<
   async follow(
     from: string,
     to: string,
-    overrides?: Partial<AppBskyGraphFollow.Record>,
+    overrides?: Partial<AppGndrGraphFollow.Record>,
   ) {
-    const res = await this.agent.app.bsky.graph.follow.create(
+    const res = await this.agent.app.gndr.graph.follow.create(
       { repo: from },
       {
         subject: to,
@@ -263,7 +263,7 @@ export class SeedClient<
     if (!follow) {
       throw new Error('follow does not exist')
     }
-    await this.agent.app.bsky.graph.follow.delete(
+    await this.agent.app.gndr.graph.follow.delete(
       { repo: from, rkey: follow.uri.rkey },
       this.getHeaders(from),
     )
@@ -273,9 +273,9 @@ export class SeedClient<
   async block(
     from: string,
     to: string,
-    overrides?: Partial<AppBskyGraphBlock.Record>,
+    overrides?: Partial<AppGndrGraphBlock.Record>,
   ) {
-    const res = await this.agent.app.bsky.graph.block.create(
+    const res = await this.agent.app.gndr.graph.block.create(
       { repo: from },
       {
         subject: to,
@@ -294,7 +294,7 @@ export class SeedClient<
     if (!block) {
       throw new Error('block does not exist')
     }
-    await this.agent.app.bsky.graph.block.delete(
+    await this.agent.app.gndr.graph.block.delete(
       { repo: from, rkey: block.uri.rkey },
       this.getHeaders(from),
     )
@@ -302,7 +302,7 @@ export class SeedClient<
   }
 
   async mute(from: string, to: string) {
-    await this.agent.app.bsky.graph.muteActor(
+    await this.agent.app.gndr.graph.muteActor(
       {
         actor: to,
       },
@@ -316,13 +316,13 @@ export class SeedClient<
   async post(
     by: string,
     text: string,
-    facets?: AppBskyRichtextFacet.Main[],
+    facets?: AppGndrRichtextFacet.Main[],
     images?: ImageRef[],
     quote?: RecordRef,
-    overrides?: Partial<AppBskyFeedPost.Record>,
+    overrides?: Partial<AppGndrFeedPost.Record>,
   ) {
     const imageEmbed = images && {
-      $type: 'app.bsky.embed.images',
+      $type: 'app.gndr.embed.images',
       images,
     }
     const recordEmbed = quote && {
@@ -331,14 +331,14 @@ export class SeedClient<
     const embed =
       imageEmbed && recordEmbed
         ? {
-            $type: 'app.bsky.embed.recordWithMedia',
+            $type: 'app.gndr.embed.recordWithMedia',
             record: recordEmbed,
             media: imageEmbed,
           }
         : recordEmbed
-          ? { $type: 'app.bsky.embed.record', ...recordEmbed }
+          ? { $type: 'app.gndr.embed.record', ...recordEmbed }
           : imageEmbed
-    const res = await this.agent.app.bsky.feed.post.create(
+    const res = await this.agent.app.gndr.feed.post.create(
       { repo: by },
       {
         text: text,
@@ -361,7 +361,7 @@ export class SeedClient<
   }
 
   async deletePost(by: string, uri: AtUri) {
-    await this.agent.app.bsky.feed.post.delete(
+    await this.agent.app.gndr.feed.post.delete(
       {
         repo: by,
         rkey: uri.rkey,
@@ -386,9 +386,9 @@ export class SeedClient<
   async like(
     by: string,
     subject: RecordRef,
-    overrides?: Partial<AppBskyFeedLike.Record>,
+    overrides?: Partial<AppGndrFeedLike.Record>,
   ) {
-    const res = await this.agent.app.bsky.feed.like.create(
+    const res = await this.agent.app.gndr.feed.like.create(
       { repo: by },
       {
         subject: subject.raw,
@@ -407,17 +407,17 @@ export class SeedClient<
     root: RecordRef,
     parent: RecordRef,
     text: string,
-    facets?: AppBskyRichtextFacet.Main[],
+    facets?: AppGndrRichtextFacet.Main[],
     images?: ImageRef[],
-    overrides?: Partial<AppBskyFeedPost.Record>,
+    overrides?: Partial<AppGndrFeedPost.Record>,
   ) {
     const embed = images
       ? {
-          $type: 'app.bsky.embed.images',
+          $type: 'app.gndr.embed.images',
           images,
         }
       : undefined
-    const res = await this.agent.app.bsky.feed.post.create(
+    const res = await this.agent.app.gndr.feed.post.create(
       { repo: by },
       {
         text: text,
@@ -445,9 +445,9 @@ export class SeedClient<
   async repost(
     by: string,
     subject: RecordRef,
-    overrides?: Partial<AppBskyFeedRepost.Record>,
+    overrides?: Partial<AppGndrFeedRepost.Record>,
   ) {
-    const res = await this.agent.app.bsky.feed.repost.create(
+    const res = await this.agent.app.gndr.feed.repost.create(
       { repo: by },
       {
         subject: subject.raw,
@@ -466,18 +466,18 @@ export class SeedClient<
     by: string,
     name: string,
     purpose: 'mod' | 'curate' | 'reference',
-    overrides?: Partial<AppBskyGraphList.Record>,
+    overrides?: Partial<AppGndrGraphList.Record>,
   ) {
-    const res = await this.agent.app.bsky.graph.list.create(
+    const res = await this.agent.app.gndr.graph.list.create(
       { repo: by },
       {
         name,
         purpose:
           purpose === 'mod'
-            ? 'app.bsky.graph.defs#modlist'
+            ? 'app.gndr.graph.defs#modlist'
             : purpose === 'curate'
-              ? 'app.bsky.graph.defs#curatelist'
-              : 'app.bsky.graph.defs#referencelist',
+              ? 'app.gndr.graph.defs#curatelist'
+              : 'app.gndr.graph.defs#referencelist',
         createdAt: new Date().toISOString(),
         ...(overrides || {}),
       },
@@ -493,7 +493,7 @@ export class SeedClient<
   }
 
   async createFeedGen(by: string, feedDid: string, name: string) {
-    const res = await this.agent.app.bsky.feed.generator.create(
+    const res = await this.agent.app.gndr.feed.generator.create(
       { repo: by },
       {
         did: feedDid,
@@ -521,7 +521,7 @@ export class SeedClient<
     for (const did of actors) {
       await this.addToList(by, did, list)
     }
-    const res = await this.agent.app.bsky.graph.starterpack.create(
+    const res = await this.agent.app.gndr.graph.starterpack.create(
       { repo: by },
       {
         name,
@@ -543,7 +543,7 @@ export class SeedClient<
   }
 
   async addToList(by: string, subject: string, list: RecordRef) {
-    const res = await this.agent.app.bsky.graph.listitem.create(
+    const res = await this.agent.app.gndr.graph.listitem.create(
       { repo: by },
       { subject, list: list.uriStr, createdAt: new Date().toISOString() },
       this.getHeaders(by),
@@ -561,7 +561,7 @@ export class SeedClient<
     if (!foundList) return
     const foundItem = foundList.items[subject]
     if (!foundItem) return
-    await this.agent.app.bsky.graph.listitem.delete(
+    await this.agent.app.gndr.graph.listitem.delete(
       { repo: by, rkey: foundItem.uri.rkey },
       this.getHeaders(by),
     )
@@ -590,9 +590,9 @@ export class SeedClient<
     subject: string,
     handle: string,
     displayName: string,
-    overrides?: Partial<AppBskyGraphVerification.Record>,
+    overrides?: Partial<AppGndrGraphVerification.Record>,
   ) {
-    const res = await this.agent.app.bsky.graph.verification.create(
+    const res = await this.agent.app.gndr.graph.verification.create(
       { repo: by },
       {
         subject,
@@ -614,7 +614,7 @@ export class SeedClient<
       throw new Error('verification does not exist')
     }
 
-    await this.agent.app.bsky.graph.verification.delete(
+    await this.agent.app.gndr.graph.verification.delete(
       { repo: by, rkey: verification.rkey },
       this.getHeaders(by),
     )

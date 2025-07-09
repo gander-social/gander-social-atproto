@@ -26,7 +26,7 @@ describe('handle validation', () => {
     expectValid('a234567890123456789.test')
     expectValid('john2.test')
     expectValid('john-john.test')
-    expectValid('john.bsky.app')
+    expectValid('john.gndr.app')
     expectValid('jo.hn')
     expectValid('a.co')
     expectValid('a.org')
@@ -39,7 +39,7 @@ describe('handle validation', () => {
     expectValid('short.' + 'o'.repeat(63) + '.test')
     expectValid('jaymome-johnber123456.test')
     expectValid('jay.mome-johnber123456.test')
-    expectValid('john.test.bsky.app')
+    expectValid('john.test.gndr.app')
 
     // NOTE: this probably isn't ever going to be a real domain, but my read of
     // the RFC is that it would be possible

@@ -25,7 +25,7 @@ export class TestFeedGen {
     const app = express()
     const lexServer = createLexiconServer()
 
-    lexServer.app.bsky.feed.getFeedSkeleton(async (args) => {
+    lexServer.app.gndr.feed.getFeedSkeleton(async (args) => {
       const handler = feeds[args.params.feed]
       if (!handler) {
         throw new InvalidRequestError('unknown feed', 'UnknownFeed')
@@ -33,7 +33,7 @@ export class TestFeedGen {
       return handler(args)
     })
 
-    lexServer.app.bsky.feed.describeFeedGenerator(async () => {
+    lexServer.app.gndr.feed.describeFeedGenerator(async () => {
       return {
         encoding: 'application/json',
         body: {
@@ -76,7 +76,7 @@ const createFgDid = async (plcUrl: string, port: number): Promise<string> => {
       alsoKnownAs: [],
       services: {
         bsky_fg: {
-          type: 'BskyFeedGenerator',
+          type: 'GndrFeedGenerator',
           endpoint: `http://localhost:${port}`,
         },
       },

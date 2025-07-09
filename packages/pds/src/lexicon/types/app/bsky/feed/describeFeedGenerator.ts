@@ -12,7 +12,7 @@ import {
 
 const is$typed = _is$typed,
   validate = _validate
-const id = 'app.bsky.feed.describeFeedGenerator'
+const id = 'app.gndr.feed.describeFeedGenerator'
 
 export type QueryParams = {}
 export type InputSchema = undefined
@@ -39,7 +39,7 @@ export interface HandlerError {
 export type HandlerOutput = HandlerError | HandlerSuccess
 
 export interface Feed {
-  $type?: 'app.bsky.feed.describeFeedGenerator#feed'
+  $type?: 'app.gndr.feed.describeFeedGenerator#feed'
   uri: string
 }
 
@@ -54,7 +54,7 @@ export function validateFeed<V>(v: V) {
 }
 
 export interface Links {
-  $type?: 'app.bsky.feed.describeFeedGenerator#links'
+  $type?: 'app.gndr.feed.describeFeedGenerator#links'
   privacyPolicy?: string
   termsOfService?: string
 }

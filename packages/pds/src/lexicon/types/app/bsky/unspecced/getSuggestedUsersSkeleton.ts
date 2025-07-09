@@ -12,7 +12,7 @@ import {
 
 const is$typed = _is$typed,
   validate = _validate
-const id = 'app.bsky.unspecced.getSuggestedUsersSkeleton'
+const id = 'app.gndr.unspecced.getSuggestedUsersSkeleton'
 
 export type QueryParams = {
   /** DID of the account making the request (not included for public/unauthenticated queries). */

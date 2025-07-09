@@ -24,9 +24,9 @@ export default function (server: Server, ctx: AppContext) {
         }
       }
 
-      const res = await ctx.appviewAgent.api.app.bsky.actor.searchActors(
+      const res = await ctx.appviewAgent.api.app.gndr.actor.searchActors(
         params,
-        await ctx.appviewAuth(ids.AppBskyActorSearchActors),
+        await ctx.appviewAuth(ids.AppGndrActorSearchActors),
       )
       const repoMap = await modService.views.repos(
         res.data.actors.map((a) => a.did),

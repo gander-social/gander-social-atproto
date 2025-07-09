@@ -9,7 +9,7 @@ import {
   is$typed as _is$typed,
   type OmitKey,
 } from '../../../../util'
-import type * as AppBskyActorDefs from '../../../app/bsky/actor/defs.js'
+import type * as AppGndrActorDefs from '../../../app/gndr/actor/defs.js'
 
 const is$typed = _is$typed,
   validate = _validate
@@ -19,7 +19,7 @@ export interface Member {
   $type?: 'tools.ozone.team.defs#member'
   did: string
   disabled?: boolean
-  profile?: AppBskyActorDefs.ProfileViewDetailed
+  profile?: AppGndrActorDefs.ProfileViewDetailed
   createdAt?: string
   updatedAt?: string
   lastUpdatedBy?: string

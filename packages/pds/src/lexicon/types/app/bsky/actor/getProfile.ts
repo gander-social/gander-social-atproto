@@ -9,18 +9,18 @@ import {
   is$typed as _is$typed,
   type OmitKey,
 } from '../../../../util'
-import type * as AppBskyActorDefs from './defs.js'
+import type * as AppGndrActorDefs from './defs.js'
 
 const is$typed = _is$typed,
   validate = _validate
-const id = 'app.bsky.actor.getProfile'
+const id = 'app.gndr.actor.getProfile'
 
 export type QueryParams = {
   /** Handle or DID of account to fetch profile of. */
   actor: string
 }
 export type InputSchema = undefined
-export type OutputSchema = AppBskyActorDefs.ProfileViewDetailed
+export type OutputSchema = AppGndrActorDefs.ProfileViewDetailed
 export type HandlerInput = void
 
 export interface HandlerSuccess {

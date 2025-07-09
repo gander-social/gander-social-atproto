@@ -12,7 +12,7 @@ import {
 
 const is$typed = _is$typed,
   validate = _validate
-const id = 'app.bsky.video.getUploadLimits'
+const id = 'app.gndr.video.getUploadLimits'
 
 export type QueryParams = {}
 export type InputSchema = undefined

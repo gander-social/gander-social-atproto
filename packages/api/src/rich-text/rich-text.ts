@@ -91,16 +91,16 @@ F: 0 1 2 3 4 5 6 7 8 910   // string indices
    ^-------^               // target slice {start: 0, end: 5}
  */
 
-import { AppBskyFeedPost, AppBskyRichtextFacet, AtpBaseClient } from '../client'
+import { AppGndrFeedPost, AppGndrRichtextFacet, AtpBaseClient } from '../client'
 import { detectFacets } from './detection'
 import { sanitizeRichText } from './sanitization'
 import { UnicodeString } from './unicode'
 
-export type Facet = AppBskyRichtextFacet.Main
-export type FacetLink = AppBskyRichtextFacet.Link
-export type FacetMention = AppBskyRichtextFacet.Mention
-export type FacetTag = AppBskyRichtextFacet.Tag
-export type Entity = AppBskyFeedPost.Entity
+export type Facet = AppGndrRichtextFacet.Main
+export type FacetLink = AppGndrRichtextFacet.Link
+export type FacetMention = AppGndrRichtextFacet.Mention
+export type FacetTag = AppGndrRichtextFacet.Tag
+export type Entity = AppGndrFeedPost.Entity
 
 export interface RichTextProps {
   text: string
@@ -122,7 +122,7 @@ export class RichTextSegment {
   ) {}
 
   get link(): FacetLink | undefined {
-    return this.facet?.features.find(AppBskyRichtextFacet.isLink)
+    return this.facet?.features.find(AppGndrRichtextFacet.isLink)
   }
 
   isLink() {
@@ -130,7 +130,7 @@ export class RichTextSegment {
   }
 
   get mention(): FacetMention | undefined {
-    return this.facet?.features.find(AppBskyRichtextFacet.isMention)
+    return this.facet?.features.find(AppGndrRichtextFacet.isMention)
   }
 
   isMention() {
@@ -138,7 +138,7 @@ export class RichTextSegment {
   }
 
   get tag(): FacetTag | undefined {
-    return this.facet?.features.find(AppBskyRichtextFacet.isTag)
+    return this.facet?.features.find(AppGndrRichtextFacet.isTag)
   }
 
   isTag() {
@@ -341,7 +341,7 @@ export class RichText {
       const promises: Promise<void>[] = []
       for (const facet of this.facets) {
         for (const feature of facet.features) {
-          if (AppBskyRichtextFacet.isMention(feature)) {
+          if (AppGndrRichtextFacet.isMention(feature)) {
             promises.push(
               agent.com.atproto.identity
                 .resolveHandle({ handle: feature.did })
@@ -383,22 +383,22 @@ function entitiesToFacets(text: UnicodeString, entities: Entity[]): Facet[] {
   for (const ent of entities) {
     if (ent.type === 'link') {
       facets.push({
-        $type: 'app.bsky.richtext.facet',
+        $type: 'app.gndr.richtext.facet',
         index: {
           byteStart: text.utf16IndexToUtf8Index(ent.index.start),
           byteEnd: text.utf16IndexToUtf8Index(ent.index.end),
         },
-        features: [{ $type: 'app.bsky.richtext.facet#link', uri: ent.value }],
+        features: [{ $type: 'app.gndr.richtext.facet#link', uri: ent.value }],
       })
     } else if (ent.type === 'mention') {
       facets.push({
-        $type: 'app.bsky.richtext.facet',
+        $type: 'app.gndr.richtext.facet',
         index: {
           byteStart: text.utf16IndexToUtf8Index(ent.index.start),
           byteEnd: text.utf16IndexToUtf8Index(ent.index.end),
         },
         features: [
-          { $type: 'app.bsky.richtext.facet#mention', did: ent.value },
+          { $type: 'app.gndr.richtext.facet#mention', did: ent.value },
         ],
       })
     }

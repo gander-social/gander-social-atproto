@@ -393,30 +393,30 @@ describe('moderation-events', () => {
       ] = await Promise.all([
         modClient.queryEvents({
           types: ['tools.ozone.moderation.defs#modEventReport'],
-          collections: ['app.bsky.graph.starterpack'],
+          collections: ['app.gndr.graph.starterpack'],
         }),
         modClient.queryEvents({
           subject: sc.dids.alice,
           includeAllUserRecords: true,
           types: ['tools.ozone.moderation.defs#modEventReport'],
-          collections: ['app.bsky.graph.starterpack'],
+          collections: ['app.gndr.graph.starterpack'],
         }),
         modClient.queryEvents({
           subject: sc.dids.bob,
           includeAllUserRecords: true,
           types: ['tools.ozone.moderation.defs#modEventReport'],
-          collections: ['app.bsky.graph.starterpack'],
+          collections: ['app.gndr.graph.starterpack'],
         }),
         modClient.queryEvents({
           types: ['tools.ozone.moderation.defs#modEventReport'],
-          collections: ['app.bsky.feed.post'],
+          collections: ['app.gndr.feed.post'],
         }),
       ])
 
       expect(onlyStarterPackReports.events.length).toEqual(1)
       assert(isStrongRef(onlyStarterPackReports.events[0].subject))
       expect(onlyStarterPackReports.events[0].subject.uri).toContain(
-        'app.bsky.graph.starterpack',
+        'app.gndr.graph.starterpack',
       )
 
       expect(onlyAlicesStarterPackReports.events.length).toEqual(1)

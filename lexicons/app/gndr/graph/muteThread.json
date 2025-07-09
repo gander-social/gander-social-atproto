@@ -1,10 +1,10 @@
 {
   "lexicon": 1,
-  "id": "app.bsky.graph.muteThread",
+  "id": "app.gndr.graph.muteThread",
   "defs": {
     "main": {
       "type": "procedure",
-      "description": "Mutes a thread preventing notifications from the thread and any of its children. Mutes are private in Bluesky. Requires auth.",
+      "description": "Mutes a thread preventing notifications from the thread and any of its children. Mutes are private in Gander. Requires auth.",
       "input": {
         "encoding": "application/json",
         "schema": {

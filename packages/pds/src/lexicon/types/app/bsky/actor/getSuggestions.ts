@@ -9,11 +9,11 @@ import {
   is$typed as _is$typed,
   type OmitKey,
 } from '../../../../util'
-import type * as AppBskyActorDefs from './defs.js'
+import type * as AppGndrActorDefs from './defs.js'
 
 const is$typed = _is$typed,
   validate = _validate
-const id = 'app.bsky.actor.getSuggestions'
+const id = 'app.gndr.actor.getSuggestions'
 
 export type QueryParams = {
   limit: number
@@ -23,7 +23,7 @@ export type InputSchema = undefined
 
 export interface OutputSchema {
   cursor?: string
-  actors: AppBskyActorDefs.ProfileView[]
+  actors: AppGndrActorDefs.ProfileView[]
   /** Snowflake for this recommendation, use when submitting recommendation events. */
   recId?: number
 }

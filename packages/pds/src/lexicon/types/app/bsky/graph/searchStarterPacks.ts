@@ -9,11 +9,11 @@ import {
   is$typed as _is$typed,
   type OmitKey,
 } from '../../../../util'
-import type * as AppBskyGraphDefs from './defs.js'
+import type * as AppGndrGraphDefs from './defs.js'
 
 const is$typed = _is$typed,
   validate = _validate
-const id = 'app.bsky.graph.searchStarterPacks'
+const id = 'app.gndr.graph.searchStarterPacks'
 
 export type QueryParams = {
   /** Search query string. Syntax, phrase, boolean, and faceting is unspecified, but Lucene query syntax is recommended. */
@@ -25,7 +25,7 @@ export type InputSchema = undefined
 
 export interface OutputSchema {
   cursor?: string
-  starterPacks: AppBskyGraphDefs.StarterPackViewBasic[]
+  starterPacks: AppGndrGraphDefs.StarterPackViewBasic[]
 }
 
 export type HandlerInput = void

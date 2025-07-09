@@ -9,32 +9,32 @@ import {
   is$typed as _is$typed,
   type OmitKey,
 } from '../../../../util'
-import type * as AppBskyActorDefs from '../actor/defs.js'
-import type * as AppBskyEmbedImages from '../embed/images.js'
-import type * as AppBskyEmbedVideo from '../embed/video.js'
-import type * as AppBskyEmbedExternal from '../embed/external.js'
-import type * as AppBskyEmbedRecord from '../embed/record.js'
-import type * as AppBskyEmbedRecordWithMedia from '../embed/recordWithMedia.js'
+import type * as AppGndrActorDefs from '../actor/defs.js'
+import type * as AppGndrEmbedImages from '../embed/images.js'
+import type * as AppGndrEmbedVideo from '../embed/video.js'
+import type * as AppGndrEmbedExternal from '../embed/external.js'
+import type * as AppGndrEmbedRecord from '../embed/record.js'
+import type * as AppGndrEmbedRecordWithMedia from '../embed/recordWithMedia.js'
 import type * as ComAtprotoLabelDefs from '../../../com/atproto/label/defs.js'
-import type * as AppBskyRichtextFacet from '../richtext/facet.js'
-import type * as AppBskyGraphDefs from '../graph/defs.js'
+import type * as AppGndrRichtextFacet from '../richtext/facet.js'
+import type * as AppGndrGraphDefs from '../graph/defs.js'
 
 const is$typed = _is$typed,
   validate = _validate
-const id = 'app.bsky.feed.defs'
+const id = 'app.gndr.feed.defs'
 
 export interface PostView {
-  $type?: 'app.bsky.feed.defs#postView'
+  $type?: 'app.gndr.feed.defs#postView'
   uri: string
   cid: string
-  author: AppBskyActorDefs.ProfileViewBasic
+  author: AppGndrActorDefs.ProfileViewBasic
   record: { [_ in string]: unknown }
   embed?:
-    | $Typed<AppBskyEmbedImages.View>
-    | $Typed<AppBskyEmbedVideo.View>
-    | $Typed<AppBskyEmbedExternal.View>
-    | $Typed<AppBskyEmbedRecord.View>
-    | $Typed<AppBskyEmbedRecordWithMedia.View>
+    | $Typed<AppGndrEmbedImages.View>
+    | $Typed<AppGndrEmbedVideo.View>
+    | $Typed<AppGndrEmbedExternal.View>
+    | $Typed<AppGndrEmbedRecord.View>
+    | $Typed<AppGndrEmbedRecordWithMedia.View>
     | { $type: string }
   replyCount?: number
   repostCount?: number
@@ -58,7 +58,7 @@ export function validatePostView<V>(v: V) {
 
 /** Metadata about the requesting account's relationship with the subject content. Only has meaningful content for authed requests. */
 export interface ViewerState {
-  $type?: 'app.bsky.feed.defs#viewerState'
+  $type?: 'app.gndr.feed.defs#viewerState'
   repost?: string
   like?: string
   threadMuted?: boolean
@@ -79,7 +79,7 @@ export function validateViewerState<V>(v: V) {
 
 /** Metadata about this post within the context of the thread it is in. */
 export interface ThreadContext {
-  $type?: 'app.bsky.feed.defs#threadContext'
+  $type?: 'app.gndr.feed.defs#threadContext'
   rootAuthorLike?: string
 }
 
@@ -94,7 +94,7 @@ export function validateThreadContext<V>(v: V) {
 }
 
 export interface FeedViewPost {
-  $type?: 'app.bsky.feed.defs#feedViewPost'
+  $type?: 'app.gndr.feed.defs#feedViewPost'
   post: PostView
   reply?: ReplyRef
   reason?: $Typed<ReasonRepost> | $Typed<ReasonPin> | { $type: string }
@@ -115,7 +115,7 @@ export function validateFeedViewPost<V>(v: V) {
 }
 
 export interface ReplyRef {
-  $type?: 'app.bsky.feed.defs#replyRef'
+  $type?: 'app.gndr.feed.defs#replyRef'
   root:
     | $Typed<PostView>
     | $Typed<NotFoundPost>
@@ -126,7 +126,7 @@ export interface ReplyRef {
     | $Typed<NotFoundPost>
     | $Typed<BlockedPost>
     | { $type: string }
-  grandparentAuthor?: AppBskyActorDefs.ProfileViewBasic
+  grandparentAuthor?: AppGndrActorDefs.ProfileViewBasic
 }
 
 const hashReplyRef = 'replyRef'
@@ -140,8 +140,8 @@ export function validateReplyRef<V>(v: V) {
 }
 
 export interface ReasonRepost {
-  $type?: 'app.bsky.feed.defs#reasonRepost'
-  by: AppBskyActorDefs.ProfileViewBasic
+  $type?: 'app.gndr.feed.defs#reasonRepost'
+  by: AppGndrActorDefs.ProfileViewBasic
   uri?: string
   cid?: string
   indexedAt: string
@@ -158,7 +158,7 @@ export function validateReasonRepost<V>(v: V) {
 }
 
 export interface ReasonPin {
-  $type?: 'app.bsky.feed.defs#reasonPin'
+  $type?: 'app.gndr.feed.defs#reasonPin'
 }
 
 const hashReasonPin = 'reasonPin'
@@ -172,7 +172,7 @@ export function validateReasonPin<V>(v: V) {
 }
 
 export interface ThreadViewPost {
-  $type?: 'app.bsky.feed.defs#threadViewPost'
+  $type?: 'app.gndr.feed.defs#threadViewPost'
   post: PostView
   parent?:
     | $Typed<ThreadViewPost>
@@ -199,7 +199,7 @@ export function validateThreadViewPost<V>(v: V) {
 }
 
 export interface NotFoundPost {
-  $type?: 'app.bsky.feed.defs#notFoundPost'
+  $type?: 'app.gndr.feed.defs#notFoundPost'
   uri: string
   notFound: true
 }
@@ -215,7 +215,7 @@ export function validateNotFoundPost<V>(v: V) {
 }
 
 export interface BlockedPost {
-  $type?: 'app.bsky.feed.defs#blockedPost'
+  $type?: 'app.gndr.feed.defs#blockedPost'
   uri: string
   blocked: true
   author: BlockedAuthor
@@ -232,9 +232,9 @@ export function validateBlockedPost<V>(v: V) {
 }
 
 export interface BlockedAuthor {
-  $type?: 'app.bsky.feed.defs#blockedAuthor'
+  $type?: 'app.gndr.feed.defs#blockedAuthor'
   did: string
-  viewer?: AppBskyActorDefs.ViewerState
+  viewer?: AppGndrActorDefs.ViewerState
 }
 
 const hashBlockedAuthor = 'blockedAuthor'
@@ -248,22 +248,22 @@ export function validateBlockedAuthor<V>(v: V) {
 }
 
 export interface GeneratorView {
-  $type?: 'app.bsky.feed.defs#generatorView'
+  $type?: 'app.gndr.feed.defs#generatorView'
   uri: string
   cid: string
   did: string
-  creator: AppBskyActorDefs.ProfileView
+  creator: AppGndrActorDefs.ProfileView
   displayName: string
   description?: string
-  descriptionFacets?: AppBskyRichtextFacet.Main[]
+  descriptionFacets?: AppGndrRichtextFacet.Main[]
   avatar?: string
   likeCount?: number
   acceptsInteractions?: boolean
   labels?: ComAtprotoLabelDefs.Label[]
   viewer?: GeneratorViewerState
   contentMode?:
-    | 'app.bsky.feed.defs#contentModeUnspecified'
-    | 'app.bsky.feed.defs#contentModeVideo'
+    | 'app.gndr.feed.defs#contentModeUnspecified'
+    | 'app.gndr.feed.defs#contentModeVideo'
     | (string & {})
   indexedAt: string
 }
@@ -279,7 +279,7 @@ export function validateGeneratorView<V>(v: V) {
 }
 
 export interface GeneratorViewerState {
-  $type?: 'app.bsky.feed.defs#generatorViewerState'
+  $type?: 'app.gndr.feed.defs#generatorViewerState'
   like?: string
 }
 
@@ -294,7 +294,7 @@ export function validateGeneratorViewerState<V>(v: V) {
 }
 
 export interface SkeletonFeedPost {
-  $type?: 'app.bsky.feed.defs#skeletonFeedPost'
+  $type?: 'app.gndr.feed.defs#skeletonFeedPost'
   post: string
   reason?:
     | $Typed<SkeletonReasonRepost>
@@ -315,7 +315,7 @@ export function validateSkeletonFeedPost<V>(v: V) {
 }
 
 export interface SkeletonReasonRepost {
-  $type?: 'app.bsky.feed.defs#skeletonReasonRepost'
+  $type?: 'app.gndr.feed.defs#skeletonReasonRepost'
   repost: string
 }
 
@@ -330,7 +330,7 @@ export function validateSkeletonReasonRepost<V>(v: V) {
 }
 
 export interface SkeletonReasonPin {
-  $type?: 'app.bsky.feed.defs#skeletonReasonPin'
+  $type?: 'app.gndr.feed.defs#skeletonReasonPin'
 }
 
 const hashSkeletonReasonPin = 'skeletonReasonPin'
@@ -344,11 +344,11 @@ export function validateSkeletonReasonPin<V>(v: V) {
 }
 
 export interface ThreadgateView {
-  $type?: 'app.bsky.feed.defs#threadgateView'
+  $type?: 'app.gndr.feed.defs#threadgateView'
   uri?: string
   cid?: string
   record?: { [_ in string]: unknown }
-  lists?: AppBskyGraphDefs.ListViewBasic[]
+  lists?: AppGndrGraphDefs.ListViewBasic[]
 }
 
 const hashThreadgateView = 'threadgateView'
@@ -362,21 +362,21 @@ export function validateThreadgateView<V>(v: V) {
 }
 
 export interface Interaction {
-  $type?: 'app.bsky.feed.defs#interaction'
+  $type?: 'app.gndr.feed.defs#interaction'
   item?: string
   event?:
-    | 'app.bsky.feed.defs#requestLess'
-    | 'app.bsky.feed.defs#requestMore'
-    | 'app.bsky.feed.defs#clickthroughItem'
-    | 'app.bsky.feed.defs#clickthroughAuthor'
-    | 'app.bsky.feed.defs#clickthroughReposter'
-    | 'app.bsky.feed.defs#clickthroughEmbed'
-    | 'app.bsky.feed.defs#interactionSeen'
-    | 'app.bsky.feed.defs#interactionLike'
-    | 'app.bsky.feed.defs#interactionRepost'
-    | 'app.bsky.feed.defs#interactionReply'
-    | 'app.bsky.feed.defs#interactionQuote'
-    | 'app.bsky.feed.defs#interactionShare'
+    | 'app.gndr.feed.defs#requestLess'
+    | 'app.gndr.feed.defs#requestMore'
+    | 'app.gndr.feed.defs#clickthroughItem'
+    | 'app.gndr.feed.defs#clickthroughAuthor'
+    | 'app.gndr.feed.defs#clickthroughReposter'
+    | 'app.gndr.feed.defs#clickthroughEmbed'
+    | 'app.gndr.feed.defs#interactionSeen'
+    | 'app.gndr.feed.defs#interactionLike'
+    | 'app.gndr.feed.defs#interactionRepost'
+    | 'app.gndr.feed.defs#interactionReply'
+    | 'app.gndr.feed.defs#interactionQuote'
+    | 'app.gndr.feed.defs#interactionShare'
     | (string & {})
   /** Context on a feed item that was originally supplied by the feed generator on getFeedSkeleton. */
   feedContext?: string
@@ -408,7 +408,7 @@ export const CLICKTHROUGHREPOSTER = `${id}#clickthroughReposter`
 export const CLICKTHROUGHEMBED = `${id}#clickthroughEmbed`
 /** Declares the feed generator returns any types of posts. */
 export const CONTENTMODEUNSPECIFIED = `${id}#contentModeUnspecified`
-/** Declares the feed generator returns posts containing app.bsky.embed.video embeds. */
+/** Declares the feed generator returns posts containing app.gndr.embed.video embeds. */
 export const CONTENTMODEVIDEO = `${id}#contentModeVideo`
 /** Feed item was seen by user */
 export const INTERACTIONSEEN = `${id}#interactionSeen`

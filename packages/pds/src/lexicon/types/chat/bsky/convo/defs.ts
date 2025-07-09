@@ -9,16 +9,16 @@ import {
   is$typed as _is$typed,
   type OmitKey,
 } from '../../../../util'
-import type * as AppBskyRichtextFacet from '../../../app/bsky/richtext/facet.js'
-import type * as AppBskyEmbedRecord from '../../../app/bsky/embed/record.js'
-import type * as ChatBskyActorDefs from '../actor/defs.js'
+import type * as AppGndrRichtextFacet from '../../../app/gndr/richtext/facet.js'
+import type * as AppGndrEmbedRecord from '../../../app/gndr/embed/record.js'
+import type * as ChatGndrActorDefs from '../actor/defs.js'
 
 const is$typed = _is$typed,
   validate = _validate
-const id = 'chat.bsky.convo.defs'
+const id = 'chat.gndr.convo.defs'
 
 export interface MessageRef {
-  $type?: 'chat.bsky.convo.defs#messageRef'
+  $type?: 'chat.gndr.convo.defs#messageRef'
   did: string
   convoId: string
   messageId: string
@@ -35,11 +35,11 @@ export function validateMessageRef<V>(v: V) {
 }
 
 export interface MessageInput {
-  $type?: 'chat.bsky.convo.defs#messageInput'
+  $type?: 'chat.gndr.convo.defs#messageInput'
   text: string
   /** Annotations of text (mentions, URLs, hashtags, etc) */
-  facets?: AppBskyRichtextFacet.Main[]
-  embed?: $Typed<AppBskyEmbedRecord.Main> | { $type: string }
+  facets?: AppGndrRichtextFacet.Main[]
+  embed?: $Typed<AppGndrEmbedRecord.Main> | { $type: string }
 }
 
 const hashMessageInput = 'messageInput'
@@ -53,13 +53,13 @@ export function validateMessageInput<V>(v: V) {
 }
 
 export interface MessageView {
-  $type?: 'chat.bsky.convo.defs#messageView'
+  $type?: 'chat.gndr.convo.defs#messageView'
   id: string
   rev: string
   text: string
   /** Annotations of text (mentions, URLs, hashtags, etc) */
-  facets?: AppBskyRichtextFacet.Main[]
-  embed?: $Typed<AppBskyEmbedRecord.View> | { $type: string }
+  facets?: AppGndrRichtextFacet.Main[]
+  embed?: $Typed<AppGndrEmbedRecord.View> | { $type: string }
   /** Reactions to this message, in ascending order of creation time. */
   reactions?: ReactionView[]
   sender: MessageViewSender
@@ -77,7 +77,7 @@ export function validateMessageView<V>(v: V) {
 }
 
 export interface DeletedMessageView {
-  $type?: 'chat.bsky.convo.defs#deletedMessageView'
+  $type?: 'chat.gndr.convo.defs#deletedMessageView'
   id: string
   rev: string
   sender: MessageViewSender
@@ -95,7 +95,7 @@ export function validateDeletedMessageView<V>(v: V) {
 }
 
 export interface MessageViewSender {
-  $type?: 'chat.bsky.convo.defs#messageViewSender'
+  $type?: 'chat.gndr.convo.defs#messageViewSender'
   did: string
 }
 
@@ -110,7 +110,7 @@ export function validateMessageViewSender<V>(v: V) {
 }
 
 export interface ReactionView {
-  $type?: 'chat.bsky.convo.defs#reactionView'
+  $type?: 'chat.gndr.convo.defs#reactionView'
   value: string
   sender: ReactionViewSender
   createdAt: string
@@ -127,7 +127,7 @@ export function validateReactionView<V>(v: V) {
 }
 
 export interface ReactionViewSender {
-  $type?: 'chat.bsky.convo.defs#reactionViewSender'
+  $type?: 'chat.gndr.convo.defs#reactionViewSender'
   did: string
 }
 
@@ -142,7 +142,7 @@ export function validateReactionViewSender<V>(v: V) {
 }
 
 export interface MessageAndReactionView {
-  $type?: 'chat.bsky.convo.defs#messageAndReactionView'
+  $type?: 'chat.gndr.convo.defs#messageAndReactionView'
   message: MessageView
   reaction: ReactionView
 }
@@ -158,10 +158,10 @@ export function validateMessageAndReactionView<V>(v: V) {
 }
 
 export interface ConvoView {
-  $type?: 'chat.bsky.convo.defs#convoView'
+  $type?: 'chat.gndr.convo.defs#convoView'
   id: string
   rev: string
-  members: ChatBskyActorDefs.ProfileViewBasic[]
+  members: ChatGndrActorDefs.ProfileViewBasic[]
   lastMessage?:
     | $Typed<MessageView>
     | $Typed<DeletedMessageView>
@@ -183,7 +183,7 @@ export function validateConvoView<V>(v: V) {
 }
 
 export interface LogBeginConvo {
-  $type?: 'chat.bsky.convo.defs#logBeginConvo'
+  $type?: 'chat.gndr.convo.defs#logBeginConvo'
   rev: string
   convoId: string
 }
@@ -199,7 +199,7 @@ export function validateLogBeginConvo<V>(v: V) {
 }
 
 export interface LogAcceptConvo {
-  $type?: 'chat.bsky.convo.defs#logAcceptConvo'
+  $type?: 'chat.gndr.convo.defs#logAcceptConvo'
   rev: string
   convoId: string
 }
@@ -215,7 +215,7 @@ export function validateLogAcceptConvo<V>(v: V) {
 }
 
 export interface LogLeaveConvo {
-  $type?: 'chat.bsky.convo.defs#logLeaveConvo'
+  $type?: 'chat.gndr.convo.defs#logLeaveConvo'
   rev: string
   convoId: string
 }
@@ -231,7 +231,7 @@ export function validateLogLeaveConvo<V>(v: V) {
 }
 
 export interface LogMuteConvo {
-  $type?: 'chat.bsky.convo.defs#logMuteConvo'
+  $type?: 'chat.gndr.convo.defs#logMuteConvo'
   rev: string
   convoId: string
 }
@@ -247,7 +247,7 @@ export function validateLogMuteConvo<V>(v: V) {
 }
 
 export interface LogUnmuteConvo {
-  $type?: 'chat.bsky.convo.defs#logUnmuteConvo'
+  $type?: 'chat.gndr.convo.defs#logUnmuteConvo'
   rev: string
   convoId: string
 }
@@ -263,7 +263,7 @@ export function validateLogUnmuteConvo<V>(v: V) {
 }
 
 export interface LogCreateMessage {
-  $type?: 'chat.bsky.convo.defs#logCreateMessage'
+  $type?: 'chat.gndr.convo.defs#logCreateMessage'
   rev: string
   convoId: string
   message: $Typed<MessageView> | $Typed<DeletedMessageView> | { $type: string }
@@ -280,7 +280,7 @@ export function validateLogCreateMessage<V>(v: V) {
 }
 
 export interface LogDeleteMessage {
-  $type?: 'chat.bsky.convo.defs#logDeleteMessage'
+  $type?: 'chat.gndr.convo.defs#logDeleteMessage'
   rev: string
   convoId: string
   message: $Typed<MessageView> | $Typed<DeletedMessageView> | { $type: string }
@@ -297,7 +297,7 @@ export function validateLogDeleteMessage<V>(v: V) {
 }
 
 export interface LogReadMessage {
-  $type?: 'chat.bsky.convo.defs#logReadMessage'
+  $type?: 'chat.gndr.convo.defs#logReadMessage'
   rev: string
   convoId: string
   message: $Typed<MessageView> | $Typed<DeletedMessageView> | { $type: string }
@@ -314,7 +314,7 @@ export function validateLogReadMessage<V>(v: V) {
 }
 
 export interface LogAddReaction {
-  $type?: 'chat.bsky.convo.defs#logAddReaction'
+  $type?: 'chat.gndr.convo.defs#logAddReaction'
   rev: string
   convoId: string
   message: $Typed<MessageView> | $Typed<DeletedMessageView> | { $type: string }
@@ -332,7 +332,7 @@ export function validateLogAddReaction<V>(v: V) {
 }
 
 export interface LogRemoveReaction {
-  $type?: 'chat.bsky.convo.defs#logRemoveReaction'
+  $type?: 'chat.gndr.convo.defs#logRemoveReaction'
   rev: string
   convoId: string
   message: $Typed<MessageView> | $Typed<DeletedMessageView> | { $type: string }

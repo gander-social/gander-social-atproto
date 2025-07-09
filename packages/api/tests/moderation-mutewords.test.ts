@@ -85,7 +85,7 @@ describe(`matchMuteWords`, () => {
   describe(`early exits`, () => {
     it(`match: single character 希`, () => {
       /**
-       * @see https://bsky.app/profile/mukuuji.bsky.social/post/3klji4fvsdk2c
+       * @see https://gndr.app/profile/mukuuji.gndr.social/post/3klji4fvsdk2c
        */
       const rt = new RichText({
         text: `改善希望です`,
@@ -299,16 +299,16 @@ describe(`matchMuteWords`, () => {
       })
     })
 
-    describe(`apostrophes: Bluesky's`, () => {
+    describe(`apostrophes: Gander's`, () => {
       const rt = new RichText({
-        text: `Yay, Bluesky's mutewords work`,
+        text: `Yay, Gander's mutewords work`,
       })
       rt.detectFacetsWithoutResolution()
 
-      it(`match: Bluesky's`, () => {
+      it(`match: Gander's`, () => {
         const match = matchMuteWords({
           mutedWords: [
-            { value: `Bluesky's`, targets: ['content'], actorTarget: 'all' },
+            { value: `Gander's`, targets: ['content'], actorTarget: 'all' },
           ],
           text: rt.text,
           facets: rt.facets,
@@ -318,10 +318,10 @@ describe(`matchMuteWords`, () => {
         expect(match).toBeTruthy()
       })
 
-      it(`match: Bluesky`, () => {
+      it(`match: Gander`, () => {
         const match = matchMuteWords({
           mutedWords: [
-            { value: 'Bluesky', targets: ['content'], actorTarget: 'all' },
+            { value: 'Gander', targets: ['content'], actorTarget: 'all' },
           ],
           text: rt.text,
           facets: rt.facets,
@@ -331,10 +331,10 @@ describe(`matchMuteWords`, () => {
         expect(match).toBeTruthy()
       })
 
-      it(`match: bluesky`, () => {
+      it(`match: gander`, () => {
         const match = matchMuteWords({
           mutedWords: [
-            { value: 'bluesky', targets: ['content'], actorTarget: 'all' },
+            { value: 'gander', targets: ['content'], actorTarget: 'all' },
           ],
           text: rt.text,
           facets: rt.facets,
@@ -344,10 +344,10 @@ describe(`matchMuteWords`, () => {
         expect(match).toBeTruthy()
       })
 
-      it(`match: blueskys`, () => {
+      it(`match: ganders`, () => {
         const match = matchMuteWords({
           mutedWords: [
-            { value: 'blueskys', targets: ['content'], actorTarget: 'all' },
+            { value: 'ganders', targets: ['content'], actorTarget: 'all' },
           ],
           text: rt.text,
           facets: rt.facets,
@@ -812,11 +812,11 @@ describe(`matchMuteWords`, () => {
           {
             features: [
               {
-                $type: 'app.bsky.richtext.facet#tag',
+                $type: 'app.gndr.richtext.facet#tag',
                 tag: 'good',
               },
               {
-                $type: 'app.bsky.richtext.facet#tag',
+                $type: 'app.gndr.richtext.facet#tag',
                 tag: 'bad',
               },
             ],
@@ -845,7 +845,7 @@ describe(`matchMuteWords`, () => {
                 foo: 'bar',
               },
               {
-                $type: 'app.bsky.richtext.facet#tag',
+                $type: 'app.gndr.richtext.facet#tag',
                 tag: 'bad',
               },
             ],

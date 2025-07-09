@@ -1,9 +1,9 @@
 import {
-  AppBskyActorDefs,
-  AppBskyFeedDefs,
-  AppBskyGraphDefs,
-  AppBskyNotificationListNotifications,
-  ChatBskyActorDefs,
+  AppGndrActorDefs,
+  AppGndrFeedDefs,
+  AppGndrGraphDefs,
+  AppGndrNotificationListNotifications,
+  ChatGndrActorDefs,
   ComAtprotoLabelDefs,
 } from '../client/index'
 import { KnownLabelValue } from './const/labels'
@@ -86,21 +86,21 @@ export type LabelDefinitionMap = Record<
 // =
 
 export type ModerationSubjectProfile =
-  | AppBskyActorDefs.ProfileViewBasic
-  | AppBskyActorDefs.ProfileView
-  | AppBskyActorDefs.ProfileViewDetailed
-  | ChatBskyActorDefs.ProfileViewBasic
+  | AppGndrActorDefs.ProfileViewBasic
+  | AppGndrActorDefs.ProfileView
+  | AppGndrActorDefs.ProfileViewDetailed
+  | ChatGndrActorDefs.ProfileViewBasic
 
-export type ModerationSubjectPost = AppBskyFeedDefs.PostView
+export type ModerationSubjectPost = AppGndrFeedDefs.PostView
 
 export type ModerationSubjectNotification =
-  AppBskyNotificationListNotifications.Notification
+  AppGndrNotificationListNotifications.Notification
 
-export type ModerationSubjectFeedGenerator = AppBskyFeedDefs.GeneratorView
+export type ModerationSubjectFeedGenerator = AppGndrFeedDefs.GeneratorView
 
 export type ModerationSubjectUserList =
-  | AppBskyGraphDefs.ListViewBasic
-  | AppBskyGraphDefs.ListView
+  | AppGndrGraphDefs.ListViewBasic
+  | AppGndrGraphDefs.ListView
 
 export type ModerationSubject =
   | ModerationSubjectProfile
@@ -114,7 +114,7 @@ export type ModerationSubject =
 
 export type ModerationCauseSource =
   | { type: 'user' }
-  | { type: 'list'; list: AppBskyGraphDefs.ListViewBasic }
+  | { type: 'list'; list: AppGndrGraphDefs.ListViewBasic }
   | { type: 'labeler'; did: string }
 
 export type ModerationCause =
@@ -177,7 +177,7 @@ export interface ModerationPrefs {
   adultContentEnabled: boolean
   labels: Record<string, LabelPreference>
   labelers: ModerationPrefsLabeler[]
-  mutedWords: AppBskyActorDefs.MutedWord[]
+  mutedWords: AppGndrActorDefs.MutedWord[]
   hiddenPosts: string[]
 }
 

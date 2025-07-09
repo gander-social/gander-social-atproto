@@ -1,4 +1,4 @@
-export * from './bsky'
+export * from './gndr'
 export * from './bsync'
 export * from './network'
 export * from './network-no-appview'

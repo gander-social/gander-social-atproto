@@ -12,7 +12,7 @@ import {
 
 const is$typed = _is$typed,
   validate = _validate
-const id = 'chat.bsky.actor.deleteAccount'
+const id = 'chat.gndr.actor.deleteAccount'
 
 export type QueryParams = {}
 export type InputSchema = undefined

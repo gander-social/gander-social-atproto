@@ -9,11 +9,11 @@ import {
   is$typed as _is$typed,
   type OmitKey,
 } from '../../../../util'
-import type * as AppBskyActorDefs from '../actor/defs.js'
+import type * as AppGndrActorDefs from '../actor/defs.js'
 
 const is$typed = _is$typed,
   validate = _validate
-const id = 'app.bsky.unspecced.getSuggestedUsers'
+const id = 'app.gndr.unspecced.getSuggestedUsers'
 
 export type QueryParams = {
   /** Category of users to get suggestions for. */
@@ -23,7 +23,7 @@ export type QueryParams = {
 export type InputSchema = undefined
 
 export interface OutputSchema {
-  actors: AppBskyActorDefs.ProfileView[]
+  actors: AppGndrActorDefs.ProfileView[]
 }
 
 export type HandlerInput = void

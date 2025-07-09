@@ -31,7 +31,7 @@ export default function (server: Server, ctx: AppContext) {
       }
     }
 
-    if (!ctx.cfg.bskyAppView) {
+    if (!ctx.cfg.gndrAppView) {
       throw new InvalidRequestError(`Could not locate record`)
     }
 

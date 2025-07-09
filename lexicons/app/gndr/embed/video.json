@@ -1,7 +1,7 @@
 {
   "lexicon": 1,
-  "id": "app.bsky.embed.video",
-  "description": "A video embedded in a Bluesky record (eg, a post).",
+  "id": "app.gndr.embed.video",
+  "description": "A video embedded in a Gander record (eg, a post).",
   "defs": {
     "main": {
       "type": "object",
@@ -26,7 +26,7 @@
         },
         "aspectRatio": {
           "type": "ref",
-          "ref": "app.bsky.embed.defs#aspectRatio"
+          "ref": "app.gndr.embed.defs#aspectRatio"
         }
       }
     },
@@ -59,7 +59,7 @@
         },
         "aspectRatio": {
           "type": "ref",
-          "ref": "app.bsky.embed.defs#aspectRatio"
+          "ref": "app.gndr.embed.defs#aspectRatio"
         }
       }
     }

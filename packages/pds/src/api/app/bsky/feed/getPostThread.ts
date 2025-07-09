@@ -7,12 +7,12 @@ import { ids } from '../../../../lexicon/lexicons'
 import {
   ThreadViewPost,
   isThreadViewPost,
-} from '../../../../lexicon/types/app/bsky/feed/defs'
+} from '../../../../lexicon/types/app/gndr/feed/defs'
 import {
   OutputSchema,
   QueryParams,
-} from '../../../../lexicon/types/app/bsky/feed/getPostThread'
-import { Record as PostRecord } from '../../../../lexicon/types/app/bsky/feed/post'
+} from '../../../../lexicon/types/app/gndr/feed/getPostThread'
+import { Record as PostRecord } from '../../../../lexicon/types/app/gndr/feed/post'
 import { $Typed } from '../../../../lexicon/util'
 import {
   LocalRecords,
@@ -25,9 +25,9 @@ import {
 } from '../../../../read-after-write'
 
 export default function (server: Server, ctx: AppContext) {
-  if (!ctx.bskyAppView) return
+  if (!ctx.gndrAppView) return
 
-  server.app.bsky.feed.getPostThread({
+  server.app.gndr.feed.getPostThread({
     auth: ctx.authVerifier.accessStandard(),
     handler: async (reqCtx) => {
       try {
@@ -158,7 +158,7 @@ const threadPostView = async (
   const postView = await localViewer.getPost(descript)
   if (!postView) return null
   return {
-    $type: 'app.bsky.feed.defs#threadViewPost',
+    $type: 'app.gndr.feed.defs#threadViewPost',
     post: postView,
   }
 }
@@ -191,11 +191,11 @@ const readAfterWriteNotFound = async (
   const highestParent = getHighestParent(thread)
   if (highestParent) {
     try {
-      assert(ctx.bskyAppView)
+      assert(ctx.gndrAppView)
       const parentsRes =
-        await ctx.bskyAppView.agent.app.bsky.feed.getPostThread(
+        await ctx.gndrAppView.agent.app.gndr.feed.getPostThread(
           { uri: highestParent, parentHeight: params.parentHeight, depth: 0 },
-          await ctx.appviewAuthHeaders(requester, ids.AppBskyFeedGetPostThread),
+          await ctx.appviewAuthHeaders(requester, ids.AppGndrFeedGetPostThread),
         )
       thread.parent = parentsRes.data.thread
     } catch (err) {
