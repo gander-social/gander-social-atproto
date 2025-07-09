@@ -39,7 +39,7 @@ describe('gndr actor likes feed views', () => {
       {
         headers: await network.serviceHeaders(
           bob,
-          ids.AppBskyFeedGetActorLikes,
+          ids.AppGndrFeedGetActorLikes,
         ),
       },
     )
@@ -52,7 +52,7 @@ describe('gndr actor likes feed views', () => {
         {
           headers: await network.serviceHeaders(
             carol,
-            ids.AppBskyFeedGetActorLikes,
+            ids.AppGndrFeedGetActorLikes,
           ),
         },
       ),
@@ -80,7 +80,7 @@ describe('gndr actor likes feed views', () => {
       {
         headers: await network.serviceHeaders(
           bob,
-          ids.AppBskyFeedGetActorLikes,
+          ids.AppGndrFeedGetActorLikes,
         ),
       },
     )
@@ -119,7 +119,7 @@ describe('gndr actor likes feed views', () => {
       {
         headers: await network.serviceHeaders(
           bob,
-          ids.AppBskyFeedGetActorLikes,
+          ids.AppGndrFeedGetActorLikes,
         ),
       },
     )

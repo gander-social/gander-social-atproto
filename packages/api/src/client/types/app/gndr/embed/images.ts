@@ -9,7 +9,7 @@ import {
   is$typed as _is$typed,
   type OmitKey,
 } from '../../../../util'
-import type * as AppBskyEmbedDefs from './defs.js'
+import type * as AppGndrEmbedDefs from './defs.js'
 
 const is$typed = _is$typed,
   validate = _validate
@@ -35,7 +35,7 @@ export interface Image {
   image: BlobRef
   /** Alt text description of the image, for accessibility. */
   alt: string
-  aspectRatio?: AppBskyEmbedDefs.AspectRatio
+  aspectRatio?: AppGndrEmbedDefs.AspectRatio
 }
 
 const hashImage = 'image'
@@ -71,7 +71,7 @@ export interface ViewImage {
   fullsize: string
   /** Alt text description of the image, for accessibility. */
   alt: string
-  aspectRatio?: AppBskyEmbedDefs.AspectRatio
+  aspectRatio?: AppGndrEmbedDefs.AspectRatio
 }
 
 const hashViewImage = 'viewImage'

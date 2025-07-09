@@ -109,7 +109,7 @@ Object {
                 },
               },
             ],
-            "text": "@alice.bluesky.xyz is the best",
+            "text": "@alice..xyz is the best",
           },
         },
       },

@@ -1,4 +1,4 @@
-import { AppBskyFeedPost, AtpAgent, Un$Typed } from '@atproto/api'
+import { AppGndrFeedPost, AtpAgent, Un$Typed } from '@atproto/api'
 import { SeedClient, TestNetwork, basicSeed } from '@atproto/dev-env'
 import { RecordWithMedia } from '../../dist/views/types'
 import { ids } from '../../src/lexicon/lexicons'
@@ -40,7 +40,7 @@ describe('pds posts views', () => {
       {
         headers: await network.serviceHeaders(
           sc.dids.alice,
-          ids.AppBskyFeedGetPosts,
+          ids.AppGndrFeedGetPosts,
         ),
       },
     )
@@ -64,7 +64,7 @@ describe('pds posts views', () => {
       {
         headers: await network.serviceHeaders(
           sc.dids.alice,
-          ids.AppBskyFeedGetPosts,
+          ids.AppGndrFeedGetPosts,
         ),
       },
     )
@@ -96,7 +96,7 @@ describe('pds posts views', () => {
   })
 
   it('allows for creating posts with tags', async () => {
-    const post: Un$Typed<AppBskyFeedPost.Record> = {
+    const post: Un$Typed<AppGndrFeedPost.Record> = {
       text: 'hello world',
       tags: ['javascript', 'hehe'],
       createdAt: new Date().toISOString(),

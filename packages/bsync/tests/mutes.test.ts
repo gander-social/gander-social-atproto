@@ -68,12 +68,12 @@ describe('mutes', () => {
       await client.addMuteOperation({
         type: MuteOperation_Type.ADD,
         actorDid: 'did:example:c',
-        subject: 'at://did:example:d/app.bsky.graph.list/rkey1',
+        subject: 'at://did:example:d/app.gndr.graph.list/rkey1',
       })
       expect(await dumpMuteState(bsync.ctx.db)).toEqual({
         'did:example:a': ['did:example:b', 'did:example:c'],
         'did:example:b': ['did:example:c'],
-        'did:example:c': ['at://did:example:d/app.bsky.graph.list/rkey1'],
+        'did:example:c': ['at://did:example:d/app.gndr.graph.list/rkey1'],
       })
     })
 
@@ -291,7 +291,7 @@ describe('mutes', () => {
           await client.addMuteOperation({
             type: MuteOperation_Type.ADD,
             actorDid: `did:example:${i}`,
-            subject: `at://did:example:0/app.bsky.graph.list/rkey${j}`,
+            subject: `at://did:example:0/app.gndr.graph.list/rkey${j}`,
           })
         }
       }

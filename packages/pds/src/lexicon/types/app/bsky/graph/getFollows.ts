@@ -9,7 +9,7 @@ import {
   is$typed as _is$typed,
   type OmitKey,
 } from '../../../../util'
-import type * as AppBskyActorDefs from '../actor/defs.js'
+import type * as AppGndrActorDefs from '../actor/defs.js'
 
 const is$typed = _is$typed,
   validate = _validate
@@ -23,9 +23,9 @@ export type QueryParams = {
 export type InputSchema = undefined
 
 export interface OutputSchema {
-  subject: AppBskyActorDefs.ProfileView
+  subject: AppGndrActorDefs.ProfileView
   cursor?: string
-  follows: AppBskyActorDefs.ProfileView[]
+  follows: AppGndrActorDefs.ProfileView[]
 }
 
 export type HandlerInput = void

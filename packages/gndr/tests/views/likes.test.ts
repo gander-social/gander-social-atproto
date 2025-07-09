@@ -49,7 +49,7 @@ describe('pds like views', () => {
   it('fetches post likes', async () => {
     const alicePost = await agent.api.app.gndr.feed.getLikes(
       { uri: sc.posts[alice][1].ref.uriStr },
-      { headers: await network.serviceHeaders(alice, ids.AppBskyFeedGetLikes) },
+      { headers: await network.serviceHeaders(alice, ids.AppGndrFeedGetLikes) },
     )
 
     expect(forSnapshot(alicePost.data)).toMatchSnapshot()
@@ -61,7 +61,7 @@ describe('pds like views', () => {
   it('fetches reply likes', async () => {
     const bobReply = await agent.api.app.gndr.feed.getLikes(
       { uri: sc.replies[bob][0].ref.uriStr },
-      { headers: await network.serviceHeaders(alice, ids.AppBskyFeedGetLikes) },
+      { headers: await network.serviceHeaders(alice, ids.AppGndrFeedGetLikes) },
     )
 
     expect(forSnapshot(bobReply.data)).toMatchSnapshot()
@@ -80,7 +80,7 @@ describe('pds like views', () => {
           limit: 2,
         },
         {
-          headers: await network.serviceHeaders(alice, ids.AppBskyFeedGetLikes),
+          headers: await network.serviceHeaders(alice, ids.AppGndrFeedGetLikes),
         },
       )
       return res.data
@@ -93,7 +93,7 @@ describe('pds like views', () => {
 
     const full = await agent.api.app.gndr.feed.getLikes(
       { uri: sc.posts[alice][1].ref.uriStr },
-      { headers: await network.serviceHeaders(alice, ids.AppBskyFeedGetLikes) },
+      { headers: await network.serviceHeaders(alice, ids.AppGndrFeedGetLikes) },
     )
 
     expect(full.data.likes.length).toEqual(4)
@@ -103,7 +103,7 @@ describe('pds like views', () => {
   it('fetches post likes unauthed', async () => {
     const { data: authed } = await agent.api.app.gndr.feed.getLikes(
       { uri: sc.posts[alice][1].ref.uriStr },
-      { headers: await network.serviceHeaders(alice, ids.AppBskyFeedGetLikes) },
+      { headers: await network.serviceHeaders(alice, ids.AppGndrFeedGetLikes) },
     )
     const { data: unauthed } = await agent.api.app.gndr.feed.getLikes({
       uri: sc.posts[alice][1].ref.uriStr,
@@ -125,7 +125,7 @@ describe('pds like views', () => {
 
     const beforeBlock = await agent.app.gndr.feed.getLikes(
       { uri: sc.posts[alice][1].ref.uriStr },
-      { headers: await network.serviceHeaders(alice, ids.AppBskyFeedGetLikes) },
+      { headers: await network.serviceHeaders(alice, ids.AppGndrFeedGetLikes) },
     )
 
     expect(beforeBlock.data.likes.map((like) => like.actor.did)).toStrictEqual([
@@ -141,7 +141,7 @@ describe('pds like views', () => {
 
     const afterBlock = await agent.app.gndr.feed.getLikes(
       { uri: sc.posts[alice][1].ref.uriStr },
-      { headers: await network.serviceHeaders(alice, ids.AppBskyFeedGetLikes) },
+      { headers: await network.serviceHeaders(alice, ids.AppGndrFeedGetLikes) },
     )
 
     expect(afterBlock.data.likes.map((like) => like.actor.did)).toStrictEqual([
@@ -158,7 +158,7 @@ describe('pds like views', () => {
 
     const beforeBlock = await agent.app.gndr.feed.getLikes(
       { uri: sc.posts[alice][1].ref.uriStr },
-      { headers: await network.serviceHeaders(bob, ids.AppBskyFeedGetLikes) },
+      { headers: await network.serviceHeaders(bob, ids.AppGndrFeedGetLikes) },
     )
 
     expect(beforeBlock.data.likes.map((like) => like.actor.did)).toStrictEqual([
@@ -175,7 +175,7 @@ describe('pds like views', () => {
 
     const afterBlock = await agent.app.gndr.feed.getLikes(
       { uri: sc.posts[alice][1].ref.uriStr },
-      { headers: await network.serviceHeaders(bob, ids.AppBskyFeedGetLikes) },
+      { headers: await network.serviceHeaders(bob, ids.AppGndrFeedGetLikes) },
     )
 
     expect(afterBlock.data.likes.map((like) => like.actor.did)).toStrictEqual([

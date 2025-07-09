@@ -1,4 +1,4 @@
-import { TestBsky } from '../gndr'
+import { TestGndr } from '../gndr'
 import { EXAMPLE_LABELER } from '../const'
 import { TestNetwork } from '../network'
 import { TestNetworkNoAppView } from '../network-no-appview'
@@ -172,7 +172,7 @@ export const replies = {
 }
 
 const createLabel = async (
-  gndr: TestBsky,
+  gndr: TestGndr,
   opts: { uri: string; cid: string; val: string },
 ) => {
   await gndr.db.db

@@ -24,7 +24,7 @@ export default function (server: Server, ctx: AppContext) {
       const authHeaders = await ctx.serviceAuthHeaders(
         did,
         serviceDid,
-        ids.AppBskyNotificationRegisterPush,
+        ids.AppGndrNotificationRegisterPush,
       )
 
       if (gndrAppView.did === serviceDid) {

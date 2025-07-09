@@ -10,7 +10,7 @@ import { Notification } from '../../db/tables/notification'
 import { countAll, excluded } from '../../db/util'
 import { RecordProcessor } from '../processor'
 
-const lexId = lex.ids.AppBskyFeedLike
+const lexId = lex.ids.AppGndrFeedLike
 
 type Notif = Insertable<Notification>
 type IndexedLike = Selectable<DatabaseSchemaType['like']>

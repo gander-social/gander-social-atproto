@@ -8,7 +8,7 @@ import { Database } from '../../db'
 import { DatabaseSchema, DatabaseSchemaType } from '../../db/database-schema'
 import { RecordProcessor } from '../processor'
 
-const lexId = lex.ids.AppBskyGraphListblock
+const lexId = lex.ids.AppGndrGraphListblock
 type IndexedListBlock = Selectable<DatabaseSchemaType['list_block']>
 
 const insertFn = async (

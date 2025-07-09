@@ -2,7 +2,7 @@
 
 This API is a client for ATProtocol servers. It communicates using HTTP. It includes:
 
-- ✔️ APIs for ATProto and Bluesky.
+- ✔️ APIs for ATProto and Gander.
 - ✔️ Validation and complete typescript types.
 - ✔️ Session management.
 - ✔️ A RichText library.
@@ -174,13 +174,13 @@ if (agent instanceof AtpAgent) {
 The package includes a complete types system which includes validation and type-guards. For example, to validate a post record:
 
 ```typescript
-import { AppBskyFeedPost } from '@atproto/api'
+import { AppGndrFeedPost } from '@atproto/api'
 
 const post = {...}
-if (AppBskyFeedPost.isRecord(post)) {
-  // typescript now recognizes `post` as a AppBskyFeedPost.Record
+if (AppGndrFeedPost.isRecord(post)) {
+  // typescript now recognizes `post` as a AppGndrFeedPost.Record
   // however -- we still need to validate it
-  const res = AppBskyFeedPost.validateRecord(post)
+  const res = AppGndrFeedPost.validateRecord(post)
   if (res.success) {
     // a valid record
   } else {

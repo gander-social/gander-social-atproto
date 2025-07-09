@@ -71,7 +71,7 @@ describe('timeline views', () => {
       {
         headers: await network.serviceHeaders(
           alice,
-          ids.AppBskyFeedGetTimeline,
+          ids.AppGndrFeedGetTimeline,
         ),
       },
     )
@@ -82,7 +82,7 @@ describe('timeline views', () => {
     const bobTL = await agent.api.app.gndr.feed.getTimeline(
       { algorithm: REVERSE_CHRON },
       {
-        headers: await network.serviceHeaders(bob, ids.AppBskyFeedGetTimeline),
+        headers: await network.serviceHeaders(bob, ids.AppGndrFeedGetTimeline),
       },
     )
 
@@ -94,7 +94,7 @@ describe('timeline views', () => {
       {
         headers: await network.serviceHeaders(
           carol,
-          ids.AppBskyFeedGetTimeline,
+          ids.AppGndrFeedGetTimeline,
         ),
       },
     )
@@ -105,7 +105,7 @@ describe('timeline views', () => {
     const danTL = await agent.api.app.gndr.feed.getTimeline(
       { algorithm: REVERSE_CHRON },
       {
-        headers: await network.serviceHeaders(dan, ids.AppBskyFeedGetTimeline),
+        headers: await network.serviceHeaders(dan, ids.AppGndrFeedGetTimeline),
       },
     )
 
@@ -119,7 +119,7 @@ describe('timeline views', () => {
       {
         headers: await network.serviceHeaders(
           alice,
-          ids.AppBskyFeedGetTimeline,
+          ids.AppGndrFeedGetTimeline,
         ),
       },
     )
@@ -128,7 +128,7 @@ describe('timeline views', () => {
       {
         headers: await network.serviceHeaders(
           alice,
-          ids.AppBskyFeedGetTimeline,
+          ids.AppGndrFeedGetTimeline,
         ),
       },
     )
@@ -147,7 +147,7 @@ describe('timeline views', () => {
         {
           headers: await network.serviceHeaders(
             carol,
-            ids.AppBskyFeedGetTimeline,
+            ids.AppGndrFeedGetTimeline,
           ),
         },
       )
@@ -166,7 +166,7 @@ describe('timeline views', () => {
       {
         headers: await network.serviceHeaders(
           carol,
-          ids.AppBskyFeedGetTimeline,
+          ids.AppGndrFeedGetTimeline,
         ),
       },
     )
@@ -181,7 +181,7 @@ describe('timeline views', () => {
       {
         headers: await network.serviceHeaders(
           alice,
-          ids.AppBskyFeedGetTimeline,
+          ids.AppGndrFeedGetTimeline,
         ),
       },
     )
@@ -190,7 +190,7 @@ describe('timeline views', () => {
       {
         headers: await network.serviceHeaders(
           alice,
-          ids.AppBskyFeedGetTimeline,
+          ids.AppGndrFeedGetTimeline,
         ),
       },
     )
@@ -205,7 +205,7 @@ describe('timeline views', () => {
       {
         headers: await network.serviceHeaders(
           carol,
-          ids.AppBskyFeedGetTimeline,
+          ids.AppGndrFeedGetTimeline,
         ),
       },
     )
@@ -242,7 +242,7 @@ describe('timeline views', () => {
       {
         headers: await network.serviceHeaders(
           alice,
-          ids.AppBskyFeedGetTimeline,
+          ids.AppGndrFeedGetTimeline,
         ),
       },
     )
@@ -273,7 +273,7 @@ describe('timeline views', () => {
       {
         headers: await network.serviceHeaders(
           alice,
-          ids.AppBskyFeedGetTimeline,
+          ids.AppGndrFeedGetTimeline,
         ),
       },
     )
@@ -296,7 +296,7 @@ describe('timeline views', () => {
       {
         headers: await network.serviceHeaders(
           alice,
-          ids.AppBskyFeedGetTimeline,
+          ids.AppGndrFeedGetTimeline,
         ),
       },
     )

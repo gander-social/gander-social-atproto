@@ -426,7 +426,7 @@ export class Hydrator {
     const urisLayer1 = nestedRecordUrisFromPosts(postsLayer0)
     const urisLayer1ByCollection = urisByCollection(urisLayer1)
     const embedPostUrisLayer1 =
-      urisLayer1ByCollection.get(ids.AppBskyFeedPost) ?? []
+      urisLayer1ByCollection.get(ids.AppGndrFeedPost) ?? []
     const postsLayer1 = await this.feed.getPosts(
       [...embedPostUrisLayer1, ...additionalRootUris],
       ctx.includeTakedowns,
@@ -441,7 +441,7 @@ export class Hydrator {
     )
     const urisLayer2ByCollection = urisByCollection(urisLayer2)
     const embedPostUrisLayer2 =
-      urisLayer2ByCollection.get(ids.AppBskyFeedPost) ?? []
+      urisLayer2ByCollection.get(ids.AppGndrFeedPost) ?? []
 
     const [postsLayer2, threadgates] = await Promise.all([
       this.feed.getPosts(
@@ -456,20 +456,20 @@ export class Hydrator {
     // collect list/feedgen embeds, lists in threadgates, post record hydration
     const threadgateListUris = getListUrisFromThreadgates(threadgates)
     const nestedListUris = [
-      ...(urisLayer1ByCollection.get(ids.AppBskyGraphList) ?? []),
-      ...(urisLayer2ByCollection.get(ids.AppBskyGraphList) ?? []),
+      ...(urisLayer1ByCollection.get(ids.AppGndrGraphList) ?? []),
+      ...(urisLayer2ByCollection.get(ids.AppGndrGraphList) ?? []),
     ]
     const nestedFeedGenUris = [
-      ...(urisLayer1ByCollection.get(ids.AppBskyFeedGenerator) ?? []),
-      ...(urisLayer2ByCollection.get(ids.AppBskyFeedGenerator) ?? []),
+      ...(urisLayer1ByCollection.get(ids.AppGndrFeedGenerator) ?? []),
+      ...(urisLayer2ByCollection.get(ids.AppGndrFeedGenerator) ?? []),
     ]
     const nestedLabelerDids = [
-      ...(urisLayer1ByCollection.get(ids.AppBskyLabelerService) ?? []),
-      ...(urisLayer2ByCollection.get(ids.AppBskyLabelerService) ?? []),
+      ...(urisLayer1ByCollection.get(ids.AppGndrLabelerService) ?? []),
+      ...(urisLayer2ByCollection.get(ids.AppGndrLabelerService) ?? []),
     ].map(didFromUri)
     const nestedStarterPackUris = [
-      ...(urisLayer1ByCollection.get(ids.AppBskyGraphStarterpack) ?? []),
-      ...(urisLayer2ByCollection.get(ids.AppBskyGraphStarterpack) ?? []),
+      ...(urisLayer1ByCollection.get(ids.AppGndrGraphStarterpack) ?? []),
+      ...(urisLayer2ByCollection.get(ids.AppGndrGraphStarterpack) ?? []),
     ]
     const posts =
       mergeManyMaps(postsLayer0, postsLayer1, postsLayer2) ?? postsLayer0
@@ -898,11 +898,11 @@ export class Hydrator {
   ): Promise<HydrationState> {
     const uris = notifs.map((notif) => notif.uri)
     const collections = urisByCollection(uris)
-    const postUris = collections.get(ids.AppBskyFeedPost) ?? []
-    const likeUris = collections.get(ids.AppBskyFeedLike) ?? []
-    const repostUris = collections.get(ids.AppBskyFeedRepost) ?? []
-    const followUris = collections.get(ids.AppBskyGraphFollow) ?? []
-    const verificationUris = collections.get(ids.AppBskyGraphVerification) ?? []
+    const postUris = collections.get(ids.AppGndrFeedPost) ?? []
+    const likeUris = collections.get(ids.AppGndrFeedLike) ?? []
+    const repostUris = collections.get(ids.AppGndrFeedRepost) ?? []
+    const followUris = collections.get(ids.AppGndrGraphFollow) ?? []
+    const verificationUris = collections.get(ids.AppGndrGraphVerification) ?? []
     const [
       posts,
       likes,
@@ -1074,91 +1074,91 @@ export class Hydrator {
   async getRecord(uri: string, includeTakedowns = false) {
     const parsed = new AtUri(uri)
     const collection = parsed.collection
-    if (collection === ids.AppBskyFeedPost) {
+    if (collection === ids.AppGndrFeedPost) {
       return (
         (await this.feed.getPosts([uri], includeTakedowns)).get(uri) ??
         undefined
       )
-    } else if (collection === ids.AppBskyFeedRepost) {
+    } else if (collection === ids.AppGndrFeedRepost) {
       return (
         (await this.feed.getReposts([uri], includeTakedowns)).get(uri) ??
         undefined
       )
-    } else if (collection === ids.AppBskyFeedLike) {
+    } else if (collection === ids.AppGndrFeedLike) {
       return (
         (await this.feed.getLikes([uri], includeTakedowns)).get(uri) ??
         undefined
       )
-    } else if (collection === ids.AppBskyGraphFollow) {
+    } else if (collection === ids.AppGndrGraphFollow) {
       return (
         (await this.graph.getFollows([uri], includeTakedowns)).get(uri) ??
         undefined
       )
-    } else if (collection === ids.AppBskyGraphList) {
+    } else if (collection === ids.AppGndrGraphList) {
       return (
         (await this.graph.getLists([uri], includeTakedowns)).get(uri) ??
         undefined
       )
-    } else if (collection === ids.AppBskyGraphListitem) {
+    } else if (collection === ids.AppGndrGraphListitem) {
       return (
         (await this.graph.getListItems([uri], includeTakedowns)).get(uri) ??
         undefined
       )
-    } else if (collection === ids.AppBskyGraphBlock) {
+    } else if (collection === ids.AppGndrGraphBlock) {
       return (
         (await this.graph.getBlocks([uri], includeTakedowns)).get(uri) ??
         undefined
       )
-    } else if (collection === ids.AppBskyGraphStarterpack) {
+    } else if (collection === ids.AppGndrGraphStarterpack) {
       return (
         (await this.graph.getStarterPacks([uri], includeTakedowns)).get(uri) ??
         undefined
       )
-    } else if (collection === ids.AppBskyFeedGenerator) {
+    } else if (collection === ids.AppGndrFeedGenerator) {
       return (
         (await this.feed.getFeedGens([uri], includeTakedowns)).get(uri) ??
         undefined
       )
-    } else if (collection === ids.AppBskyFeedThreadgate) {
+    } else if (collection === ids.AppGndrFeedThreadgate) {
       return (
         (await this.feed.getThreadgateRecords([uri], includeTakedowns)).get(
           uri,
         ) ?? undefined
       )
-    } else if (collection === ids.AppBskyFeedPostgate) {
+    } else if (collection === ids.AppGndrFeedPostgate) {
       return (
         (await this.feed.getPostgateRecords([uri], includeTakedowns)).get(
           uri,
         ) ?? undefined
       )
-    } else if (collection === ids.AppBskyLabelerService) {
+    } else if (collection === ids.AppGndrLabelerService) {
       if (parsed.rkey !== 'self') return
       const did = parsed.hostname
       return (
         (await this.label.getLabelers([did], includeTakedowns)).get(did) ??
         undefined
       )
-    } else if (collection === ids.ChatBskyActorDeclaration) {
+    } else if (collection === ids.ChatGndrActorDeclaration) {
       if (parsed.rkey !== 'self') return
       return (
         (await this.actor.getChatDeclarations([uri], includeTakedowns)).get(
           uri,
         ) ?? undefined
       )
-    } else if (collection === ids.AppBskyNotificationDeclaration) {
+    } else if (collection === ids.AppGndrNotificationDeclaration) {
       if (parsed.rkey !== 'self') return
       return (
         (
           await this.actor.getNotificationDeclarations([uri], includeTakedowns)
         ).get(uri) ?? undefined
       )
-    } else if (collection === ids.AppBskyActorStatus) {
+    } else if (collection === ids.AppGndrActorStatus) {
       if (parsed.rkey !== 'self') return
       return (
         (await this.actor.getStatus([uri], includeTakedowns)).get(uri) ??
         undefined
       )
-    } else if (collection === ids.AppBskyActorProfile) {
+    } else if (collection === ids.AppGndrActorProfile) {
       const did = parsed.hostname
       const actor = (
         await this.actor.getActors([did], { includeTakedowns })
@@ -1258,7 +1258,7 @@ const labelSubjectsForDid = (dids: string[]) => {
   return [
     ...dids,
     ...dids.map((did) =>
-      AtUri.make(did, ids.AppBskyActorProfile, 'self').toString(),
+      AtUri.make(did, ids.AppGndrActorProfile, 'self').toString(),
     ),
   ]
 }

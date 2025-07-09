@@ -1,6 +1,6 @@
 import {
-  AppBskyFeedPost,
-  AppBskyRichtextFacet,
+  AppGndrFeedPost,
+  AppGndrRichtextFacet,
   AtUri,
   AtpAgent,
   RichText,
@@ -29,7 +29,7 @@ describe('pds posts record creation', () => {
   })
 
   it('allows for creating posts with tags', async () => {
-    const post: Un$Typed<AppBskyFeedPost.Record> = {
+    const post: Un$Typed<AppGndrFeedPost.Record> = {
       text: 'hello world',
       tags: ['javascript', 'hehe'],
       createdAt: new Date().toISOString(),
@@ -53,7 +53,7 @@ describe('pds posts record creation', () => {
     const rt = new RichText({ text: 'hello #world' })
     await rt.detectFacets(agent)
 
-    const post: Un$Typed<AppBskyFeedPost.Record> = {
+    const post: Un$Typed<AppGndrFeedPost.Record> = {
       text: rt.text,
       facets: rt.facets,
       createdAt: new Date().toISOString(),
@@ -72,7 +72,7 @@ describe('pds posts record creation', () => {
     expect(record).toBeTruthy()
     expect(
       record.facets?.every((f) => {
-        return AppBskyRichtextFacet.isTag(f.features[0])
+        return AppGndrRichtextFacet.isTag(f.features[0])
       }),
     ).toBeTruthy()
   })

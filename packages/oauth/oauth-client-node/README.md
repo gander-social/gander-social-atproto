@@ -118,7 +118,7 @@ app.get('/atproto-oauth-callback', async (req, res, next) => {
 
     // Make Authenticated API calls
     const profile = await agent.getProfile({ actor: agent.did })
-    console.log('Bsky profile:', profile.data)
+    console.log('Gndr profile:', profile.data)
 
     res.json({ ok: true })
   } catch (err) {
@@ -140,7 +140,7 @@ async function worker() {
 
   // Make Authenticated API calls
   const profile = await agent.getProfile({ actor: agent.did })
-  console.log('Bsky profile:', profile.data)
+  console.log('Gndr profile:', profile.data)
 }
 ```
 
@@ -429,7 +429,7 @@ app.get('/atproto-oauth-callback', async (req, res) => {
 
       const profile = await agent.getProfile({ actor: agent.did })
 
-      console.log('Bsky profile:', profile.data)
+      console.log('Gndr profile:', profile.data)
     } catch (err) {
       // Silent sign-in failed, retry without prompt=none
       if (

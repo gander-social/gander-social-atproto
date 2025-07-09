@@ -32,7 +32,7 @@ export interface OutputSchema {
     | $Typed<AppGndrFeedDefs.NotFoundPost>
     | $Typed<AppGndrFeedDefs.BlockedPost>
     | { $type: string }
-  threadgate?: AppBskyFeedDefs.ThreadgateView
+  threadgate?: AppGndrFeedDefs.ThreadgateView
 }
 
 export interface CallOptions {

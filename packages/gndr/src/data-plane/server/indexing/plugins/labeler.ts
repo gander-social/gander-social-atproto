@@ -8,7 +8,7 @@ import { Database } from '../../db'
 import { DatabaseSchema, DatabaseSchemaType } from '../../db/database-schema'
 import { RecordProcessor } from '../processor'
 
-const lexId = lex.ids.AppBskyLabelerService
+const lexId = lex.ids.AppGndrLabelerService
 type IndexedLabeler = Selectable<DatabaseSchemaType['labeler']>
 
 const insertFn = async (

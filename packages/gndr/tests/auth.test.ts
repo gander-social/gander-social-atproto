@@ -36,7 +36,7 @@ describe('auth', () => {
       const jwt = await createServiceJwt({
         iss: issuer,
         aud: network.gndr.ctx.cfg.serverDid,
-        lxm: ids.AppBskyActorGetProfile,
+        lxm: ids.AppGndrActorGetProfile,
         keypair,
       })
       return agent.api.app.gndr.actor.getProfile(
@@ -76,7 +76,7 @@ describe('auth', () => {
     const jwt = await createServiceJwt({
       iss: alice,
       aud: network.gndr.ctx.cfg.serverDid,
-      lxm: ids.AppBskyFeedGetTimeline,
+      lxm: ids.AppGndrFeedGetTimeline,
       keypair: bobKeypair,
     })
 

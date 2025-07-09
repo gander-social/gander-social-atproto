@@ -179,7 +179,7 @@ export default (db: Database): Partial<ServiceImpl<typeof Service>> => ({
       .selectFrom('private_data')
       .selectAll()
       .where('actorDid', 'in', dids)
-      .where('namespace', '=', Namespaces.AppBskyNotificationDefsPreferences)
+      .where('namespace', '=', Namespaces.AppGndrNotificationDefsPreferences)
       .where('key', '=', 'self')
       .execute()
 

@@ -8,7 +8,7 @@ Object {
   "handle": "bob.test",
   "issuer": "user(0)",
   "issuerProfile": Object {
-    "$type": "app.bsky.actor.defs#profileViewDetailed",
+    "$type": "app.gndr.actor.defs#profileViewDetailed",
     "associated": Object {
       "activitySubscription": Object {
         "allowSubscriptions": "followers",
@@ -18,7 +18,7 @@ Object {
       "lists": 0,
       "starterPacks": 0,
     },
-    "avatar": "https://bsky.public.url/img/avatar/plain/user(3)/cids(0)@jpeg",
+    "avatar": "https://gndr.public.url/img/avatar/plain/user(3)/cids(0)@jpeg",
     "createdAt": "1970-01-01T00:00:00.000Z",
     "description": "its me!",
     "did": "user(0)",
@@ -66,7 +66,7 @@ Object {
     "moderation": Object {},
     "relatedRecords": Array [
       Object {
-        "$type": "app.bsky.actor.profile",
+        "$type": "app.gndr.actor.profile",
         "avatar": Object {
           "$type": "blob",
           "mimeType": "image/jpeg",
@@ -94,7 +94,7 @@ Object {
   },
   "subject": "user(1)",
   "subjectProfile": Object {
-    "$type": "app.bsky.actor.defs#profileViewDetailed",
+    "$type": "app.gndr.actor.defs#profileViewDetailed",
     "associated": Object {
       "activitySubscription": Object {
         "allowSubscriptions": "followers",
@@ -104,7 +104,7 @@ Object {
       "lists": 0,
       "starterPacks": 0,
     },
-    "avatar": "https://bsky.public.url/img/avatar/plain/user(2)/cids(0)@jpeg",
+    "avatar": "https://gndr.public.url/img/avatar/plain/user(2)/cids(0)@jpeg",
     "createdAt": "1970-01-01T00:00:00.000Z",
     "description": "hi im bob label_me",
     "did": "user(1)",
@@ -144,7 +144,7 @@ Object {
     "moderation": Object {},
     "relatedRecords": Array [
       Object {
-        "$type": "app.bsky.actor.profile",
+        "$type": "app.gndr.actor.profile",
         "avatar": Object {
           "$type": "blob",
           "mimeType": "image/jpeg",
@@ -172,7 +172,7 @@ Object {
   "handle": "carol.test",
   "issuer": "user(0)",
   "issuerProfile": Object {
-    "$type": "app.bsky.actor.defs#profileViewDetailed",
+    "$type": "app.gndr.actor.defs#profileViewDetailed",
     "associated": Object {
       "activitySubscription": Object {
         "allowSubscriptions": "followers",
@@ -182,7 +182,7 @@ Object {
       "lists": 0,
       "starterPacks": 0,
     },
-    "avatar": "https://bsky.public.url/img/avatar/plain/user(2)/cids(0)@jpeg",
+    "avatar": "https://gndr.public.url/img/avatar/plain/user(2)/cids(0)@jpeg",
     "createdAt": "1970-01-01T00:00:00.000Z",
     "description": "its me!",
     "did": "user(0)",
@@ -230,7 +230,7 @@ Object {
     "moderation": Object {},
     "relatedRecords": Array [
       Object {
-        "$type": "app.bsky.actor.profile",
+        "$type": "app.gndr.actor.profile",
         "avatar": Object {
           "$type": "blob",
           "mimeType": "image/jpeg",
@@ -261,7 +261,7 @@ Object {
   "revokedBy": "user(0)",
   "subject": "user(1)",
   "subjectProfile": Object {
-    "$type": "app.bsky.actor.defs#profileViewDetailed",
+    "$type": "app.gndr.actor.defs#profileViewDetailed",
     "associated": Object {
       "activitySubscription": Object {
         "allowSubscriptions": "followers",

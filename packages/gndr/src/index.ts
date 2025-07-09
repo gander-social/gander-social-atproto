@@ -41,7 +41,7 @@ export { BackgroundQueue } from './data-plane/server/background'
 export { Database } from './data-plane/server/db'
 export { Redis } from './redis'
 
-export class BskyAppView {
+export class GndrAppView {
   public ctx: AppContext
   public app: express.Application
   public server?: http.Server
@@ -55,7 +55,7 @@ export class BskyAppView {
   static create(opts: {
     config: ServerConfig
     signingKey: Keypair
-  }): BskyAppView {
+  }): GndrAppView {
     const { config, signingKey } = opts
     const app = express()
     app.use(cors({ maxAge: DAY / SECOND }))
@@ -206,7 +206,7 @@ export class BskyAppView {
     app.use(server.xrpc.router)
     app.use(error.handler)
 
-    return new BskyAppView({ ctx, app })
+    return new GndrAppView({ ctx, app })
   }
 
   async start(): Promise<http.Server> {
@@ -231,4 +231,4 @@ export class BskyAppView {
   }
 }
 
-export default BskyAppView
+export default GndrAppView

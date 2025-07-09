@@ -44,7 +44,7 @@ const assert = require('node:assert')
 const cluster = require('node:cluster')
 const path = require('node:path')
 
-const { BskyAppView, ServerConfig } = require('@atproto/gndr')
+const { GndrAppView, ServerConfig } = require('@atproto/gndr')
 const { Secp256k1Keypair } = require('@atproto/crypto')
 
 const main = async () => {
@@ -52,7 +52,7 @@ const main = async () => {
   const config = ServerConfig.readEnv()
   assert(env.serviceSigningKey, 'must set GNDR_SERVICE_SIGNING_KEY')
   const signingKey = await Secp256k1Keypair.import(env.serviceSigningKey)
-  const gndr = BskyAppView.create({ config, signingKey })
+  const gndr = GndrAppView.create({ config, signingKey })
   await gndr.start()
   // Graceful shutdown (see also https://aws.amazon.com/blogs/containers/graceful-shutdowns-with-ecs/)
   const shutdown = async () => {

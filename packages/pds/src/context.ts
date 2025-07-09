@@ -37,7 +37,7 @@ import {
   createSecretKeyObject,
 } from './auth-verifier'
 import { BackgroundQueue } from './background'
-import { BskyAppView } from './gndr-app-view'
+import { GndrAppView } from './gndr-app-view'
 import { ServerConfig, ServerSecrets } from './config'
 import { Crawlers } from './crawlers'
 import { DidSqliteCache } from './did-cache'
@@ -64,7 +64,7 @@ export type AppContextOptions = {
   backgroundQueue: BackgroundQueue
   redisScratch?: Redis
   crawlers: Crawlers
-  gndrAppView?: BskyAppView
+  gndrAppView?: GndrAppView
   moderationAgent?: AtpAgent
   reportingAgent?: AtpAgent
   entrywayAgent?: AtpAgent
@@ -91,7 +91,7 @@ export class AppContext {
   public backgroundQueue: BackgroundQueue
   public redisScratch?: Redis
   public crawlers: Crawlers
-  public gndrAppView?: BskyAppView
+  public gndrAppView?: GndrAppView
   public moderationAgent: AtpAgent | undefined
   public reportingAgent: AtpAgent | undefined
   public entrywayAgent: AtpAgent | undefined
@@ -197,7 +197,7 @@ export class AppContext {
       : undefined
 
     const gndrAppView = cfg.gndrAppView
-      ? new BskyAppView(cfg.gndrAppView)
+      ? new GndrAppView(cfg.gndrAppView)
       : undefined
 
     const moderationAgent = cfg.modService

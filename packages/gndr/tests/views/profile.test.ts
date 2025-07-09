@@ -1,6 +1,6 @@
 import assert from 'node:assert'
 import fs from 'node:fs/promises'
-import { AppBskyEmbedExternal, AtpAgent } from '@atproto/api'
+import { AppGndrEmbedExternal, AtpAgent } from '@atproto/api'
 import { HOUR, MINUTE } from '@atproto/common'
 import { SeedClient, TestNetwork, basicSeed } from '@atproto/dev-env'
 import { ids } from '../../src/lexicon/lexicons'
@@ -43,7 +43,7 @@ describe('pds profile views', () => {
       {
         headers: await network.serviceHeaders(
           alice,
-          ids.AppBskyActorGetProfile,
+          ids.AppGndrActorGetProfile,
         ),
       },
     )
@@ -55,7 +55,7 @@ describe('pds profile views', () => {
     const aliceForBob = await agent.api.app.gndr.actor.getProfile(
       { actor: alice },
       {
-        headers: await network.serviceHeaders(bob, ids.AppBskyActorGetProfile),
+        headers: await network.serviceHeaders(bob, ids.AppGndrActorGetProfile),
       },
     )
 
@@ -71,7 +71,7 @@ describe('pds profile views', () => {
     const aliceForBob = await agent.api.app.gndr.actor.getProfile(
       { actor: alice },
       {
-        headers: await network.serviceHeaders(bob, ids.AppBskyActorGetProfile),
+        headers: await network.serviceHeaders(bob, ids.AppGndrActorGetProfile),
       },
     )
 
@@ -82,7 +82,7 @@ describe('pds profile views', () => {
     const danForBob = await agent.api.app.gndr.actor.getProfile(
       { actor: dan },
       {
-        headers: await network.serviceHeaders(bob, ids.AppBskyActorGetProfile),
+        headers: await network.serviceHeaders(bob, ids.AppGndrActorGetProfile),
       },
     )
 
@@ -104,7 +104,7 @@ describe('pds profile views', () => {
         ],
       },
       {
-        headers: await network.serviceHeaders(bob, ids.AppBskyActorGetProfiles),
+        headers: await network.serviceHeaders(bob, ids.AppGndrActorGetProfiles),
       },
     )
 
@@ -153,7 +153,7 @@ describe('pds profile views', () => {
       {
         headers: await network.serviceHeaders(
           alice,
-          ids.AppBskyActorGetProfile,
+          ids.AppGndrActorGetProfile,
         ),
       },
     )
@@ -165,14 +165,14 @@ describe('pds profile views', () => {
     const byDid = await agent.api.app.gndr.actor.getProfile(
       { actor: alice },
       {
-        headers: await network.serviceHeaders(bob, ids.AppBskyActorGetProfile),
+        headers: await network.serviceHeaders(bob, ids.AppGndrActorGetProfile),
       },
     )
 
     const byHandle = await agent.api.app.gndr.actor.getProfile(
       { actor: sc.accounts[alice].handle },
       {
-        headers: await network.serviceHeaders(bob, ids.AppBskyActorGetProfile),
+        headers: await network.serviceHeaders(bob, ids.AppGndrActorGetProfile),
       },
     )
 
@@ -183,7 +183,7 @@ describe('pds profile views', () => {
     const { data: authed } = await agent.api.app.gndr.actor.getProfile(
       { actor: alice },
       {
-        headers: await network.serviceHeaders(bob, ids.AppBskyActorGetProfile),
+        headers: await network.serviceHeaders(bob, ids.AppGndrActorGetProfile),
       },
     )
     const { data: unauthed } = await agent.api.app.gndr.actor.getProfile({
@@ -198,7 +198,7 @@ describe('pds profile views', () => {
         actors: [alice, 'bob.test', 'missing.test'],
       },
       {
-        headers: await network.serviceHeaders(bob, ids.AppBskyActorGetProfiles),
+        headers: await network.serviceHeaders(bob, ids.AppGndrActorGetProfiles),
       },
     )
     const { data: unauthed } = await agent.api.app.gndr.actor.getProfiles({
@@ -215,7 +215,7 @@ describe('pds profile views', () => {
     const promise = agent.api.app.gndr.actor.getProfile(
       { actor: alice },
       {
-        headers: await network.serviceHeaders(bob, ids.AppBskyActorGetProfile),
+        headers: await network.serviceHeaders(bob, ids.AppGndrActorGetProfile),
       },
     )
 
@@ -228,7 +228,7 @@ describe('pds profile views', () => {
   })
 
   describe('status', () => {
-    const embed: AppBskyEmbedExternal.Main = {
+    const embed: AppGndrEmbedExternal.Main = {
       $type: 'app.gndr.embed.external',
       external: {
         uri: 'https://example.com',
@@ -243,7 +243,7 @@ describe('pds profile views', () => {
         {
           headers: await network.serviceHeaders(
             alice,
-            ids.AppBskyActorGetProfile,
+            ids.AppGndrActorGetProfile,
           ),
         },
       )
@@ -254,7 +254,7 @@ describe('pds profile views', () => {
       await sc.agent.com.atproto.repo.createRecord(
         {
           repo: alice,
-          collection: ids.AppBskyActorStatus,
+          collection: ids.AppGndrActorStatus,
           rkey: 'self',
           record: {
             status: 'app.gndr.actor.status#live',
@@ -275,7 +275,7 @@ describe('pds profile views', () => {
         {
           headers: await network.serviceHeaders(
             alice,
-            ids.AppBskyActorGetProfile,
+            ids.AppGndrActorGetProfile,
           ),
         },
       )
@@ -286,7 +286,7 @@ describe('pds profile views', () => {
       await sc.agent.com.atproto.repo.putRecord(
         {
           repo: alice,
-          collection: ids.AppBskyActorStatus,
+          collection: ids.AppGndrActorStatus,
           rkey: 'self',
           record: {
             status: 'app.gndr.actor.status#live',
@@ -307,7 +307,7 @@ describe('pds profile views', () => {
         {
           headers: await network.serviceHeaders(
             alice,
-            ids.AppBskyActorGetProfile,
+            ids.AppGndrActorGetProfile,
           ),
         },
       )
@@ -322,7 +322,7 @@ describe('pds profile views', () => {
       await sc.agent.com.atproto.repo.putRecord(
         {
           repo: alice,
-          collection: ids.AppBskyActorStatus,
+          collection: ids.AppGndrActorStatus,
           rkey: 'self',
           record: {
             status: 'app.gndr.actor.status#live',
@@ -343,7 +343,7 @@ describe('pds profile views', () => {
         {
           headers: await network.serviceHeaders(
             alice,
-            ids.AppBskyActorGetProfile,
+            ids.AppGndrActorGetProfile,
           ),
         },
       )
@@ -379,7 +379,7 @@ describe('pds profile views', () => {
         await sc.agent.com.atproto.repo.putRecord(
           {
             repo: alice,
-            collection: ids.AppBskyActorStatus,
+            collection: ids.AppGndrActorStatus,
             rkey: 'self',
             record: {
               status: 'app.gndr.actor.status#live',
@@ -402,7 +402,7 @@ describe('pds profile views', () => {
           {
             headers: await network.serviceHeaders(
               alice,
-              ids.AppBskyActorGetProfile,
+              ids.AppGndrActorGetProfile,
             ),
           },
         )
@@ -417,7 +417,7 @@ describe('pds profile views', () => {
     return await pdsAgent.api.com.atproto.repo.putRecord(
       {
         repo: did,
-        collection: ids.AppBskyActorProfile,
+        collection: ids.AppGndrActorProfile,
         rkey: 'self',
         record,
       },

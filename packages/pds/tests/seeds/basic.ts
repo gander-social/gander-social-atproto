@@ -1,10 +1,10 @@
-import { EXAMPLE_LABELER, SeedClient, TestBsky } from '@atproto/dev-env'
+import { EXAMPLE_LABELER, SeedClient, TestGndr } from '@atproto/dev-env'
 import { ids } from '../../src/lexicon/lexicons'
 import usersSeed from './users'
 
 export default async (
   sc: SeedClient,
-  opts?: { inviteCode?: string; addModLabels?: TestBsky },
+  opts?: { inviteCode?: string; addModLabels?: TestGndr },
 ) => {
   await usersSeed(sc, opts)
 
@@ -61,7 +61,7 @@ export default async (
         index: { byteStart: 0, byteEnd: 18 },
         features: [
           {
-            $type: `${ids.AppBskyRichtextFacet}#mention` as const,
+            $type: `${ids.AppGndrRichtextFacet}#mention` as const,
             did: alice,
           },
         ],
@@ -154,7 +154,7 @@ export const replies = {
 }
 
 const createLabel = async (
-  gndr: TestBsky,
+  gndr: TestGndr,
   opts: { did: string; val: string },
 ) => {
   await gndr.db.db

@@ -1,7 +1,7 @@
 import events from 'node:events'
 import http from 'node:http'
 import express from 'express'
-import { TestBsky } from './gndr'
+import { TestGndr } from './gndr'
 import { TestOzone } from './ozone'
 import { TestPds } from './pds'
 import { TestPlc } from './plc'
@@ -16,7 +16,7 @@ export class IntrospectServer {
     port: number,
     plc: TestPlc,
     pds: TestPds,
-    gndr: TestBsky,
+    gndr: TestGndr,
     ozone: TestOzone,
   ) {
     const app = express()

@@ -10,7 +10,7 @@ import {
   is$typed as _is$typed,
   type OmitKey,
 } from '../../../../util'
-import type * as AppBskyUnspeccedDefs from './defs.js'
+import type * as AppGndrUnspeccedDefs from './defs.js'
 
 const is$typed = _is$typed,
   validate = _validate
@@ -28,7 +28,7 @@ export type InputSchema = undefined
 
 export interface OutputSchema {
   cursor?: string
-  actors: AppBskyUnspeccedDefs.SkeletonSearchActor[]
+  actors: AppGndrUnspeccedDefs.SkeletonSearchActor[]
   /** DID of the account these suggestions are relative to. If this is returned undefined, suggestions are based on the viewer. */
   relativeToDid?: string
   /** Snowflake for this recommendation, use when submitting recommendation events. */

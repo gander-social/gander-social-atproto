@@ -186,4 +186,4 @@ export default (db: Database): Partial<ServiceImpl<typeof Service>> => ({
 })
 
 const isListUri = (uri: string) =>
-  new AtUri(uri).collection === ids.AppBskyGraphList
+  new AtUri(uri).collection === ids.AppGndrGraphList

@@ -9,10 +9,10 @@ import {
   is$typed as _is$typed,
   type OmitKey,
 } from '../../../../util'
-import type * as AppBskyEmbedRecord from './record.js'
-import type * as AppBskyEmbedImages from './images.js'
-import type * as AppBskyEmbedVideo from './video.js'
-import type * as AppBskyEmbedExternal from './external.js'
+import type * as AppGndrEmbedRecord from './record.js'
+import type * as AppGndrEmbedImages from './images.js'
+import type * as AppGndrEmbedVideo from './video.js'
+import type * as AppGndrEmbedExternal from './external.js'
 
 const is$typed = _is$typed,
   validate = _validate
@@ -20,11 +20,11 @@ const id = 'app.gndr.embed.recordWithMedia'
 
 export interface Main {
   $type?: 'app.gndr.embed.recordWithMedia'
-  record: AppBskyEmbedRecord.Main
+  record: AppGndrEmbedRecord.Main
   media:
-    | $Typed<AppBskyEmbedImages.Main>
-    | $Typed<AppBskyEmbedVideo.Main>
-    | $Typed<AppBskyEmbedExternal.Main>
+    | $Typed<AppGndrEmbedImages.Main>
+    | $Typed<AppGndrEmbedVideo.Main>
+    | $Typed<AppGndrEmbedExternal.Main>
     | { $type: string }
 }
 
@@ -40,11 +40,11 @@ export function validateMain<V>(v: V) {
 
 export interface View {
   $type?: 'app.gndr.embed.recordWithMedia#view'
-  record: AppBskyEmbedRecord.View
+  record: AppGndrEmbedRecord.View
   media:
-    | $Typed<AppBskyEmbedImages.View>
-    | $Typed<AppBskyEmbedVideo.View>
-    | $Typed<AppBskyEmbedExternal.View>
+    | $Typed<AppGndrEmbedImages.View>
+    | $Typed<AppGndrEmbedVideo.View>
+    | $Typed<AppGndrEmbedExternal.View>
     | { $type: string }
 }
 

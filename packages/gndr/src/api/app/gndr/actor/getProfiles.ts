@@ -19,7 +19,7 @@ export default function (server: Server, ctx: AppContext) {
       lxmCheck: (method) => {
         if (!method) return false
         return (
-          method === ids.AppBskyActorGetProfiles ||
+          method === ids.AppGndrActorGetProfiles ||
           method.startsWith('chat.gndr.')
         )
       },

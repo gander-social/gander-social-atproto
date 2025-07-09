@@ -9,7 +9,7 @@ import {
   is$typed as _is$typed,
   type OmitKey,
 } from '../../../../util'
-import type * as AppBskyRichtextFacet from '../richtext/facet.js'
+import type * as AppGndrRichtextFacet from '../richtext/facet.js'
 
 const is$typed = _is$typed,
   validate = _validate
@@ -20,7 +20,7 @@ export interface Record {
   /** Display name for starter pack; can not be empty. */
   name: string
   description?: string
-  descriptionFacets?: AppBskyRichtextFacet.Main[]
+  descriptionFacets?: AppGndrRichtextFacet.Main[]
   /** Reference (AT-URI) to the list record. */
   list: string
   feeds?: FeedItem[]

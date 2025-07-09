@@ -325,7 +325,7 @@ export class Views {
     if (!actor) return
     const profileUri = AtUri.make(
       did,
-      ids.AppBskyActorProfile,
+      ids.AppGndrActorProfile,
       'self',
     ).toString()
     const labels = [
@@ -732,7 +732,7 @@ export class Views {
     const viewer = state.labelerViewers?.get(did)
     const aggs = state.labelerAggs?.get(did)
 
-    const uri = AtUri.make(did, ids.AppBskyLabelerService, 'self').toString()
+    const uri = AtUri.make(did, ids.AppGndrLabelerService, 'self').toString()
     const labels = [
       ...(state.labels?.getBySubject(uri) ?? []),
       ...this.selfLabels({
@@ -2121,7 +2121,7 @@ export class Views {
       return this.embedDetached(uri)
     }
 
-    if (parsedUri.collection === ids.AppBskyFeedPost) {
+    if (parsedUri.collection === ids.AppGndrFeedPost) {
       const view = this.embedPostView(uri, state, depth)
       if (!view) return this.embedNotFound(uri)
       const postgateRecordUri = postUriToPostgateUri(parsedUri.toString())
@@ -2130,28 +2130,28 @@ export class Views {
         return this.embedDetached(uri)
       }
       return this.recordEmbedWrapper(view, withTypeTag)
-    } else if (parsedUri.collection === ids.AppBskyFeedGenerator) {
+    } else if (parsedUri.collection === ids.AppGndrFeedGenerator) {
       const view = this.feedGenerator(uri, state)
       if (!view) return this.embedNotFound(uri)
       return this.recordEmbedWrapper(
         { ...view, $type: 'app.gndr.feed.defs#generatorView' },
         withTypeTag,
       )
-    } else if (parsedUri.collection === ids.AppBskyGraphList) {
+    } else if (parsedUri.collection === ids.AppGndrGraphList) {
       const view = this.list(uri, state)
       if (!view) return this.embedNotFound(uri)
       return this.recordEmbedWrapper(
         { ...view, $type: 'app.gndr.graph.defs#listView' },
         withTypeTag,
       )
-    } else if (parsedUri.collection === ids.AppBskyLabelerService) {
+    } else if (parsedUri.collection === ids.AppGndrLabelerService) {
       const view = this.labeler(parsedUri.hostname, state)
       if (!view) return this.embedNotFound(uri)
       return this.recordEmbedWrapper(
         { ...view, $type: 'app.gndr.labeler.defs#labelerView' },
         withTypeTag,
       )
-    } else if (parsedUri.collection === ids.AppBskyGraphStarterpack) {
+    } else if (parsedUri.collection === ids.AppGndrGraphStarterpack) {
       const view = this.starterPackBasic(uri, state)
       if (!view) return this.embedNotFound(uri)
       return this.recordEmbedWrapper(
@@ -2293,22 +2293,22 @@ export class Views {
       | undefined
       | null
 
-    if (uri.collection === ids.AppBskyFeedPost) {
+    if (uri.collection === ids.AppGndrFeedPost) {
       recordInfo = state.posts?.get(notif.uri)
-    } else if (uri.collection === ids.AppBskyFeedLike) {
+    } else if (uri.collection === ids.AppGndrFeedLike) {
       recordInfo = state.likes?.get(notif.uri)
-    } else if (uri.collection === ids.AppBskyFeedRepost) {
+    } else if (uri.collection === ids.AppGndrFeedRepost) {
       recordInfo = state.reposts?.get(notif.uri)
-    } else if (uri.collection === ids.AppBskyGraphFollow) {
+    } else if (uri.collection === ids.AppGndrGraphFollow) {
       recordInfo = state.follows?.get(notif.uri)
-    } else if (uri.collection === ids.AppBskyGraphVerification) {
+    } else if (uri.collection === ids.AppGndrGraphVerification) {
       // When a verification record is removed, the record won't be found,
       // both for the `verified` and `unverified` notifications.
       recordInfo = state.verifications?.get(notif.uri) ?? {
         record: notificationDeletedRecord,
         cid: notificationDeletedRecordCid,
       }
-    } else if (uri.collection === ids.AppBskyActorProfile) {
+    } else if (uri.collection === ids.AppGndrActorProfile) {
       const actor = state.actors?.get(authorDid)
       recordInfo =
         actor && actor.profile && actor.profileCid

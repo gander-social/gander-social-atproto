@@ -19,7 +19,7 @@ export default function (server: Server, ctx: AppContext) {
       // Notification preferences are created automatically on the dataplane on signup, so we just update.
       await ctx.stashClient.update({
         actorDid,
-        namespace: Namespaces.AppBskyNotificationDefsPreferences,
+        namespace: Namespaces.AppGndrNotificationDefsPreferences,
         key: 'self',
         payload: preferences,
       })

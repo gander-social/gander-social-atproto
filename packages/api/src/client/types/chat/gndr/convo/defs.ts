@@ -9,9 +9,9 @@ import {
   is$typed as _is$typed,
   type OmitKey,
 } from '../../../../util'
-import type * as AppBskyRichtextFacet from '../../../app/gndr/richtext/facet.js'
-import type * as AppBskyEmbedRecord from '../../../app/gndr/embed/record.js'
-import type * as ChatBskyActorDefs from '../actor/defs.js'
+import type * as AppGndrRichtextFacet from '../../../app/gndr/richtext/facet.js'
+import type * as AppGndrEmbedRecord from '../../../app/gndr/embed/record.js'
+import type * as ChatGndrActorDefs from '../actor/defs.js'
 
 const is$typed = _is$typed,
   validate = _validate
@@ -38,8 +38,8 @@ export interface MessageInput {
   $type?: 'chat.gndr.convo.defs#messageInput'
   text: string
   /** Annotations of text (mentions, URLs, hashtags, etc) */
-  facets?: AppBskyRichtextFacet.Main[]
-  embed?: $Typed<AppBskyEmbedRecord.Main> | { $type: string }
+  facets?: AppGndrRichtextFacet.Main[]
+  embed?: $Typed<AppGndrEmbedRecord.Main> | { $type: string }
 }
 
 const hashMessageInput = 'messageInput'
@@ -58,8 +58,8 @@ export interface MessageView {
   rev: string
   text: string
   /** Annotations of text (mentions, URLs, hashtags, etc) */
-  facets?: AppBskyRichtextFacet.Main[]
-  embed?: $Typed<AppBskyEmbedRecord.View> | { $type: string }
+  facets?: AppGndrRichtextFacet.Main[]
+  embed?: $Typed<AppGndrEmbedRecord.View> | { $type: string }
   /** Reactions to this message, in ascending order of creation time. */
   reactions?: ReactionView[]
   sender: MessageViewSender
@@ -161,7 +161,7 @@ export interface ConvoView {
   $type?: 'chat.gndr.convo.defs#convoView'
   id: string
   rev: string
-  members: ChatBskyActorDefs.ProfileViewBasic[]
+  members: ChatGndrActorDefs.ProfileViewBasic[]
   lastMessage?:
     | $Typed<MessageView>
     | $Typed<DeletedMessageView>

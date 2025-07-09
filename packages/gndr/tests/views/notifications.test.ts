@@ -1,4 +1,4 @@
-import { AppBskyNotificationDeclaration, AtpAgent } from '@atproto/api'
+import { AppGndrNotificationDeclaration, AtpAgent } from '@atproto/api'
 import { SeedClient, TestNetwork, basicSeed } from '@atproto/dev-env'
 import { delayCursor } from '../../src/api/app/gndr/notification/listNotifications'
 import { ids } from '../../src/lexicon/lexicons'
@@ -121,7 +121,7 @@ describe('notification views', () => {
         {
           headers: await network.serviceHeaders(
             alice,
-            ids.AppBskyNotificationGetUnreadCount,
+            ids.AppGndrNotificationGetUnreadCount,
           ),
         },
       )
@@ -133,7 +133,7 @@ describe('notification views', () => {
       {
         headers: await network.serviceHeaders(
           sc.dids.bob,
-          ids.AppBskyNotificationGetUnreadCount,
+          ids.AppGndrNotificationGetUnreadCount,
         ),
       },
     )
@@ -158,7 +158,7 @@ describe('notification views', () => {
         {
           headers: await network.serviceHeaders(
             alice,
-            ids.AppBskyNotificationGetUnreadCount,
+            ids.AppGndrNotificationGetUnreadCount,
           ),
         },
       )
@@ -170,7 +170,7 @@ describe('notification views', () => {
       {
         headers: await network.serviceHeaders(
           sc.dids.bob,
-          ids.AppBskyNotificationGetUnreadCount,
+          ids.AppGndrNotificationGetUnreadCount,
         ),
       },
     )
@@ -190,7 +190,7 @@ describe('notification views', () => {
       {
         headers: await network.serviceHeaders(
           sc.dids.alice,
-          ids.AppBskyNotificationListNotifications,
+          ids.AppGndrNotificationListNotifications,
         ),
       },
     )
@@ -212,7 +212,7 @@ describe('notification views', () => {
       {
         headers: await network.serviceHeaders(
           sc.dids.dan,
-          ids.AppBskyNotificationListNotifications,
+          ids.AppGndrNotificationListNotifications,
         ),
       },
     )
@@ -227,7 +227,7 @@ describe('notification views', () => {
       {
         headers: await network.serviceHeaders(
           alice,
-          ids.AppBskyNotificationListNotifications,
+          ids.AppGndrNotificationListNotifications,
         ),
       },
     )
@@ -245,7 +245,7 @@ describe('notification views', () => {
       {
         headers: await network.serviceHeaders(
           alice,
-          ids.AppBskyNotificationListNotifications,
+          ids.AppGndrNotificationListNotifications,
         ),
       },
     )
@@ -271,7 +271,7 @@ describe('notification views', () => {
       {
         headers: await network.serviceHeaders(
           op,
-          ids.AppBskyNotificationListNotifications,
+          ids.AppGndrNotificationListNotifications,
         ),
       },
     )
@@ -288,7 +288,7 @@ describe('notification views', () => {
       {
         headers: await network.serviceHeaders(
           reposter,
-          ids.AppBskyNotificationListNotifications,
+          ids.AppGndrNotificationListNotifications,
         ),
       },
     )
@@ -316,7 +316,7 @@ describe('notification views', () => {
       {
         headers: await network.serviceHeaders(
           op,
-          ids.AppBskyNotificationListNotifications,
+          ids.AppGndrNotificationListNotifications,
         ),
       },
     )
@@ -333,7 +333,7 @@ describe('notification views', () => {
       {
         headers: await network.serviceHeaders(
           reposter,
-          ids.AppBskyNotificationListNotifications,
+          ids.AppGndrNotificationListNotifications,
         ),
       },
     )
@@ -362,7 +362,7 @@ describe('notification views', () => {
       {
         headers: await network.serviceHeaders(
           op,
-          ids.AppBskyNotificationListNotifications,
+          ids.AppGndrNotificationListNotifications,
         ),
       },
     )
@@ -379,7 +379,7 @@ describe('notification views', () => {
       {
         headers: await network.serviceHeaders(
           reposter,
-          ids.AppBskyNotificationListNotifications,
+          ids.AppGndrNotificationListNotifications,
         ),
       },
     )
@@ -407,7 +407,7 @@ describe('notification views', () => {
       {
         headers: await network.serviceHeaders(
           sc.dids.bob,
-          ids.AppBskyNotificationListNotifications,
+          ids.AppGndrNotificationListNotifications,
         ),
       },
     )
@@ -422,7 +422,7 @@ describe('notification views', () => {
       {
         headers: await network.serviceHeaders(
           sc.dids.bob,
-          ids.AppBskyNotificationListNotifications,
+          ids.AppGndrNotificationListNotifications,
         ),
       },
     )
@@ -437,7 +437,7 @@ describe('notification views', () => {
       {
         headers: await network.serviceHeaders(
           alice,
-          ids.AppBskyNotificationListNotifications,
+          ids.AppGndrNotificationListNotifications,
         ),
       },
     )
@@ -460,7 +460,7 @@ describe('notification views', () => {
         {
           headers: await network.serviceHeaders(
             alice,
-            ids.AppBskyNotificationListNotifications,
+            ids.AppGndrNotificationListNotifications,
           ),
         },
       )
@@ -477,7 +477,7 @@ describe('notification views', () => {
       {
         headers: await network.serviceHeaders(
           alice,
-          ids.AppBskyNotificationListNotifications,
+          ids.AppGndrNotificationListNotifications,
         ),
       },
     )
@@ -492,7 +492,7 @@ describe('notification views', () => {
       {
         headers: await network.serviceHeaders(
           alice,
-          ids.AppBskyNotificationListNotifications,
+          ids.AppGndrNotificationListNotifications,
         ),
       },
     )
@@ -502,7 +502,7 @@ describe('notification views', () => {
       {
         headers: await network.serviceHeaders(
           alice,
-          ids.AppBskyNotificationUpdateSeen,
+          ids.AppGndrNotificationUpdateSeen,
         ),
         encoding: 'application/json',
       },
@@ -512,7 +512,7 @@ describe('notification views', () => {
       {
         headers: await network.serviceHeaders(
           alice,
-          ids.AppBskyNotificationListNotifications,
+          ids.AppGndrNotificationListNotifications,
         ),
       },
     )
@@ -524,7 +524,7 @@ describe('notification views', () => {
       {
         headers: await network.serviceHeaders(
           alice,
-          ids.AppBskyNotificationGetUnreadCount,
+          ids.AppGndrNotificationGetUnreadCount,
         ),
       },
     )
@@ -540,7 +540,7 @@ describe('notification views', () => {
       {
         headers: await network.serviceHeaders(
           alice,
-          ids.AppBskyNotificationUpdateSeen,
+          ids.AppGndrNotificationUpdateSeen,
         ),
         encoding: 'application/json',
       },
@@ -553,7 +553,7 @@ describe('notification views', () => {
       {
         headers: await network.serviceHeaders(
           alice,
-          ids.AppBskyNotificationListNotifications,
+          ids.AppGndrNotificationListNotifications,
         ),
       },
     )
@@ -563,7 +563,7 @@ describe('notification views', () => {
       {
         headers: await network.serviceHeaders(
           alice,
-          ids.AppBskyNotificationUpdateSeen,
+          ids.AppGndrNotificationUpdateSeen,
         ),
         encoding: 'application/json',
       },
@@ -573,7 +573,7 @@ describe('notification views', () => {
       {
         headers: await network.serviceHeaders(
           alice,
-          ids.AppBskyNotificationListNotifications,
+          ids.AppGndrNotificationListNotifications,
         ),
       },
     )
@@ -589,7 +589,7 @@ describe('notification views', () => {
       {
         headers: await network.serviceHeaders(
           alice,
-          ids.AppBskyNotificationUpdateSeen,
+          ids.AppGndrNotificationUpdateSeen,
         ),
         encoding: 'application/json',
       },
@@ -612,7 +612,7 @@ describe('notification views', () => {
       {
         headers: await network.serviceHeaders(
           alice,
-          ids.AppBskyNotificationListNotifications,
+          ids.AppGndrNotificationListNotifications,
         ),
       },
     )
@@ -621,7 +621,7 @@ describe('notification views', () => {
       {
         headers: await network.serviceHeaders(
           alice,
-          ids.AppBskyNotificationGetUnreadCount,
+          ids.AppGndrNotificationGetUnreadCount,
         ),
       },
     )
@@ -647,7 +647,7 @@ describe('notification views', () => {
       {
         headers: await network.serviceHeaders(
           sc.dids.carol,
-          ids.AppBskyNotificationListNotifications,
+          ids.AppGndrNotificationListNotifications,
         ),
       },
     )
@@ -663,7 +663,7 @@ describe('notification views', () => {
       {
         headers: await network.serviceHeaders(
           sc.dids.carol,
-          ids.AppBskyNotificationListNotifications,
+          ids.AppGndrNotificationListNotifications,
         ),
       },
     )
@@ -677,7 +677,7 @@ describe('notification views', () => {
         encoding: 'application/json',
         headers: await network.serviceHeaders(
           sc.dids.carol,
-          ids.AppBskyNotificationPutPreferences,
+          ids.AppGndrNotificationPutPreferences,
         ),
       },
     )
@@ -687,7 +687,7 @@ describe('notification views', () => {
       {
         headers: await network.serviceHeaders(
           sc.dids.carol,
-          ids.AppBskyNotificationListNotifications,
+          ids.AppGndrNotificationListNotifications,
         ),
       },
     )
@@ -704,7 +704,7 @@ describe('notification views', () => {
         encoding: 'application/json',
         headers: await network.serviceHeaders(
           sc.dids.carol,
-          ids.AppBskyNotificationPutPreferences,
+          ids.AppGndrNotificationPutPreferences,
         ),
       },
     )
@@ -719,7 +719,7 @@ describe('notification views', () => {
       {
         headers: await network.serviceHeaders(
           sc.dids.alice,
-          ids.AppBskyNotificationListNotifications,
+          ids.AppGndrNotificationListNotifications,
         ),
       },
     )
@@ -735,7 +735,7 @@ describe('notification views', () => {
       {
         headers: await network.serviceHeaders(
           sc.dids.alice,
-          ids.AppBskyNotificationListNotifications,
+          ids.AppGndrNotificationListNotifications,
         ),
       },
     )
@@ -752,7 +752,7 @@ describe('notification views', () => {
         {
           headers: await network.serviceHeaders(
             alice,
-            ids.AppBskyNotificationListNotifications,
+            ids.AppGndrNotificationListNotifications,
           ),
         },
       )
@@ -769,7 +769,7 @@ describe('notification views', () => {
       {
         headers: await network.serviceHeaders(
           alice,
-          ids.AppBskyNotificationListNotifications,
+          ids.AppGndrNotificationListNotifications,
         ),
       },
     )
@@ -847,7 +847,7 @@ describe('notification views', () => {
             {
               headers: await delayNetwork.serviceHeaders(
                 delayAlice,
-                ids.AppBskyNotificationListNotifications,
+                ids.AppGndrNotificationListNotifications,
               ),
             },
           )
@@ -864,7 +864,7 @@ describe('notification views', () => {
           {
             headers: await delayNetwork.serviceHeaders(
               delayAlice,
-              ids.AppBskyNotificationListNotifications,
+              ids.AppGndrNotificationListNotifications,
             ),
           },
         )
@@ -900,7 +900,7 @@ describe('notification views', () => {
           {
             headers: await delayNetwork.serviceHeaders(
               delayAlice,
-              ids.AppBskyNotificationListNotifications,
+              ids.AppGndrNotificationListNotifications,
             ),
           },
         )
@@ -1003,7 +1003,7 @@ describe('notification views', () => {
           {
             headers: await network.serviceHeaders(
               actorDid,
-              ids.AppBskyNotificationGetPreferences,
+              ids.AppGndrNotificationGetPreferences,
             ),
           },
         )
@@ -1016,7 +1016,7 @@ describe('notification views', () => {
           .where(
             'namespace',
             '=',
-            Namespaces.AppBskyNotificationDefsPreferences,
+            Namespaces.AppGndrNotificationDefsPreferences,
           )
           .where('key', '=', 'self')
           .executeTakeFirst()
@@ -1025,14 +1025,14 @@ describe('notification views', () => {
         } else {
           expect(dbResult).toStrictEqual({
             actorDid: actorDid,
-            namespace: Namespaces.AppBskyNotificationDefsPreferences,
+            namespace: Namespaces.AppGndrNotificationDefsPreferences,
             key: 'self',
             indexedAt: expect.any(String),
             payload: expect.anything(), // Better to compare payload parsed.
             updatedAt: expect.any(String),
           })
           expect(JSON.parse(dbResult.payload)).toStrictEqual({
-            $type: Namespaces.AppBskyNotificationDefsPreferences,
+            $type: Namespaces.AppGndrNotificationDefsPreferences,
             ...expectedDb,
           })
         }
@@ -1063,7 +1063,7 @@ describe('notification views', () => {
           encoding: 'application/json',
           headers: await network.serviceHeaders(
             actorDid,
-            ids.AppBskyNotificationPutPreferencesV2,
+            ids.AppGndrNotificationPutPreferencesV2,
           ),
         },
       )
@@ -1102,7 +1102,7 @@ describe('notification views', () => {
             encoding: 'application/json',
             headers: await network.serviceHeaders(
               actorDid,
-              ids.AppBskyNotificationPutPreferencesV2,
+              ids.AppGndrNotificationPutPreferencesV2,
             ),
           },
         )
@@ -1116,20 +1116,20 @@ describe('notification views', () => {
           .where(
             'namespace',
             '=',
-            Namespaces.AppBskyNotificationDefsPreferences,
+            Namespaces.AppGndrNotificationDefsPreferences,
           )
           .where('key', '=', 'self')
           .executeTakeFirstOrThrow()
         expect(dbResult).toStrictEqual({
           actorDid: actorDid,
-          namespace: Namespaces.AppBskyNotificationDefsPreferences,
+          namespace: Namespaces.AppGndrNotificationDefsPreferences,
           key: 'self',
           indexedAt: expect.any(String),
           payload: expect.anything(), // Better to compare payload parsed.
           updatedAt: expect.any(String),
         })
         expect(JSON.parse(dbResult.payload)).toStrictEqual({
-          $type: Namespaces.AppBskyNotificationDefsPreferences,
+          $type: Namespaces.AppGndrNotificationDefsPreferences,
           ...expected,
         })
       }
@@ -1193,11 +1193,11 @@ describe('notification views', () => {
       await pdsAgent.com.atproto.repo.createRecord(
         {
           repo: actor,
-          collection: ids.AppBskyNotificationDeclaration,
+          collection: ids.AppGndrNotificationDeclaration,
           rkey: 'self',
           record: {
             allowSubscriptions: value,
-          } as AppBskyNotificationDeclaration.Record,
+          } as AppGndrNotificationDeclaration.Record,
         },
         { headers: sc.getHeaders(actor), encoding: 'application/json' },
       )
@@ -1216,7 +1216,7 @@ describe('notification views', () => {
         {
           headers: await network.serviceHeaders(
             actor,
-            ids.AppBskyNotificationPutActivitySubscription,
+            ids.AppGndrNotificationPutActivitySubscription,
           ),
         },
       )
@@ -1225,7 +1225,7 @@ describe('notification views', () => {
       agent.app.gndr.notification.listActivitySubscriptions(params ?? {}, {
         headers: await network.serviceHeaders(
           actor,
-          ids.AppBskyNotificationListActivitySubscriptions,
+          ids.AppGndrNotificationListActivitySubscriptions,
         ),
       })
 
@@ -1235,7 +1235,7 @@ describe('notification views', () => {
         {
           headers: await network.serviceHeaders(
             actor,
-            ids.AppBskyActorGetProfile,
+            ids.AppGndrActorGetProfile,
           ),
         },
       )
@@ -1248,7 +1248,7 @@ describe('notification views', () => {
         {
           headers: await network.serviceHeaders(
             actor,
-            ids.AppBskyActorGetProfile,
+            ids.AppGndrActorGetProfile,
           ),
         },
       )

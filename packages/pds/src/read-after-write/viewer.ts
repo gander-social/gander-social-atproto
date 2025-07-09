@@ -2,7 +2,7 @@ import { AtUri, INVALID_HANDLE } from '@atproto/syntax'
 import { createServiceAuthHeaders } from '@atproto/xrpc-server'
 import { AccountManager } from '../account-manager/account-manager'
 import { ActorStoreReader } from '../actor-store/actor-store-reader'
-import { BskyAppView } from '../gndr-app-view'
+import { GndrAppView } from '../gndr-app-view'
 import { ImageUrlBuilder } from '../image/image-url-builder'
 import { ids } from '../lexicon/lexicons'
 import {
@@ -52,7 +52,7 @@ export class LocalViewer {
     public readonly actorStoreReader: ActorStoreReader,
     public readonly accountManager: AccountManager,
     public readonly imageUrlBuilder: ImageUrlBuilder,
-    public readonly gndrAppView?: BskyAppView,
+    public readonly gndrAppView?: GndrAppView,
   ) {}
 
   get did() {
@@ -62,7 +62,7 @@ export class LocalViewer {
   static creator(
     accountManager: AccountManager,
     imageUrlBuilder: ImageUrlBuilder,
-    gndrAppView?: BskyAppView,
+    gndrAppView?: GndrAppView,
   ): LocalViewerCreator {
     return (actorStore) =>
       new LocalViewer(actorStore, accountManager, imageUrlBuilder, gndrAppView)
@@ -228,10 +228,10 @@ export class LocalViewer {
       return null
     }
     const collection = new AtUri(embed.record.uri).collection
-    if (collection === ids.AppBskyFeedPost) {
+    if (collection === ids.AppGndrFeedPost) {
       const res = await this.gndrAppView.agent.app.gndr.feed.getPosts(
         { uris: [embed.record.uri] },
-        await this.serviceAuthHeaders(this.did, ids.AppBskyFeedGetPosts),
+        await this.serviceAuthHeaders(this.did, ids.AppGndrFeedGetPosts),
       )
       const post = res.data.posts[0]
       if (!post) return null
@@ -245,22 +245,22 @@ export class LocalViewer {
         embeds: post.embed ? [post.embed] : undefined,
         indexedAt: post.indexedAt,
       }
-    } else if (collection === ids.AppBskyFeedGenerator) {
+    } else if (collection === ids.AppGndrFeedGenerator) {
       const res = await this.gndrAppView.agent.app.gndr.feed.getFeedGenerator(
         { feed: embed.record.uri },
         await this.serviceAuthHeaders(
           this.did,
-          ids.AppBskyFeedGetFeedGenerator,
+          ids.AppGndrFeedGetFeedGenerator,
         ),
       )
       return {
         $type: 'app.gndr.feed.defs#generatorView',
         ...res.data.view,
       }
-    } else if (collection === ids.AppBskyGraphList) {
+    } else if (collection === ids.AppGndrGraphList) {
       const res = await this.gndrAppView.agent.app.gndr.graph.getList(
         { list: embed.record.uri },
-        await this.serviceAuthHeaders(this.did, ids.AppBskyGraphGetList),
+        await this.serviceAuthHeaders(this.did, ids.AppGndrGraphGetList),
       )
       return {
         $type: 'app.gndr.graph.defs#listView',

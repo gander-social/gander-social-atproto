@@ -317,7 +317,7 @@ describe('crud operations', () => {
       const { repo } = aliceAgent.api.com.atproto
       const { data: post } = await repo.createRecord({
         repo: aliceAgent.accountDid,
-        collection: ids.AppBskyFeedPost,
+        collection: ids.AppGndrFeedPost,
         record: { text: 'post', createdAt: new Date().toISOString() },
       })
       const uri = new AtUri(post.uri)
@@ -338,7 +338,7 @@ describe('crud operations', () => {
       const { repo } = aliceAgent.api.com.atproto
       const { data: post } = await repo.createRecord({
         repo: aliceAgent.accountDid,
-        collection: ids.AppBskyFeedPost,
+        collection: ids.AppGndrFeedPost,
         record: { text: 'post', createdAt: new Date().toISOString() },
       })
       const uri = new AtUri(post.uri)
@@ -366,12 +366,12 @@ describe('crud operations', () => {
       const record = { text: 'post', createdAt: new Date().toISOString() }
       const { data: post1 } = await repo.createRecord({
         repo: aliceAgent.accountDid,
-        collection: ids.AppBskyFeedPost,
+        collection: ids.AppGndrFeedPost,
         record,
       })
       const { data: post2 } = await repo.createRecord({
         repo: aliceAgent.accountDid,
-        collection: ids.AppBskyFeedPost,
+        collection: ids.AppGndrFeedPost,
         record,
       })
       const uri1 = new AtUri(post1.uri)
@@ -393,7 +393,7 @@ describe('crud operations', () => {
 
   describe('putRecord', () => {
     const profilePath = {
-      collection: ids.AppBskyActorProfile,
+      collection: ids.AppGndrActorProfile,
       rkey: 'self',
     }
 
@@ -413,7 +413,7 @@ describe('crud operations', () => {
         },
       })
       expect(put.uri).toEqual(
-        `at://${bobAgent.accountDid}/${ids.AppBskyActorProfile}/self`,
+        `at://${bobAgent.accountDid}/${ids.AppGndrActorProfile}/self`,
       )
 
       const { data: profile } = await repo.getRecord({
@@ -421,7 +421,7 @@ describe('crud operations', () => {
         repo: bobAgent.accountDid,
       })
       expect(profile.value).toEqual({
-        $type: ids.AppBskyActorProfile,
+        $type: ids.AppGndrActorProfile,
         displayName: 'Robert',
       })
     })
@@ -437,7 +437,7 @@ describe('crud operations', () => {
         },
       })
       expect(put.uri).toEqual(
-        `at://${bobAgent.accountDid}/${ids.AppBskyActorProfile}/self`,
+        `at://${bobAgent.accountDid}/${ids.AppGndrActorProfile}/self`,
       )
 
       const { data: profile } = await repo.getRecord({
@@ -445,7 +445,7 @@ describe('crud operations', () => {
         repo: bobAgent.accountDid,
       })
       expect(profile.value).toEqual({
-        $type: ids.AppBskyActorProfile,
+        $type: ids.AppGndrActorProfile,
         displayName: 'Robert',
         description: 'Dog lover',
       })
@@ -465,7 +465,7 @@ describe('crud operations', () => {
         },
       })
       expect(put.uri).toEqual(
-        `at://${bobAgent.accountDid}/${ids.AppBskyActorProfile}/self`,
+        `at://${bobAgent.accountDid}/${ids.AppGndrActorProfile}/self`,
       )
 
       const rootRes2 = await bobAgent.api.com.atproto.sync.getLatestCommit({
@@ -480,7 +480,7 @@ describe('crud operations', () => {
       const { repo } = aliceAgent.api.com.atproto
       const put = repo.putRecord({
         repo: bobAgent.accountDid,
-        collection: ids.AppBskyGraphFollow,
+        collection: ids.AppGndrGraphFollow,
         rkey: TID.nextStr(),
         record: {
           subject: aliceAgent.accountDid,
@@ -508,7 +508,7 @@ describe('crud operations', () => {
         repo: bobAgent.accountDid,
       })
       expect(profile.value).toEqual({
-        $type: ids.AppBskyActorProfile,
+        $type: ids.AppGndrActorProfile,
         displayName: 'Robert',
         description: 'Dog lover',
       })
@@ -770,9 +770,9 @@ describe('crud operations', () => {
         writes: [
           {
             $type: `${ids.ComAtprotoRepoApplyWrites}#create`,
-            collection: ids.AppBskyFeedPost,
+            collection: ids.AppGndrFeedPost,
             value: {
-              $type: ids.AppBskyFeedPost,
+              $type: ids.AppGndrFeedPost,
               text: '👋',
               createdAt: new Date().toISOString(),
             },
@@ -897,7 +897,7 @@ describe('crud operations', () => {
       })
       const { data: post } = await repo.createRecord({
         repo: aliceAgent.accountDid,
-        collection: ids.AppBskyFeedPost,
+        collection: ids.AppGndrFeedPost,
         swapCommit: commit.cid,
         record: postRecord(),
       })
@@ -918,12 +918,12 @@ describe('crud operations', () => {
       // Update repo, change head
       await repo.createRecord({
         repo: aliceAgent.accountDid,
-        collection: ids.AppBskyFeedPost,
+        collection: ids.AppGndrFeedPost,
         record: postRecord(),
       })
       const attemptCreate = repo.createRecord({
         repo: aliceAgent.accountDid,
-        collection: ids.AppBskyFeedPost,
+        collection: ids.AppGndrFeedPost,
         swapCommit: staleCommit.cid,
         record: postRecord(),
       })
@@ -936,7 +936,7 @@ describe('crud operations', () => {
       const { repo, sync } = aliceAgent.api.com.atproto
       const { data: post } = await repo.createRecord({
         repo: aliceAgent.accountDid,
-        collection: ids.AppBskyFeedPost,
+        collection: ids.AppGndrFeedPost,
         record: postRecord(),
       })
       const { data: commit } = await sync.getLatestCommit({
@@ -964,7 +964,7 @@ describe('crud operations', () => {
       })
       const { data: post } = await repo.createRecord({
         repo: aliceAgent.accountDid,
-        collection: ids.AppBskyFeedPost,
+        collection: ids.AppGndrFeedPost,
         record: postRecord(),
       })
       const uri = new AtUri(post.uri)
@@ -989,7 +989,7 @@ describe('crud operations', () => {
       const { repo } = aliceAgent.api.com.atproto
       const { data: post } = await repo.createRecord({
         repo: aliceAgent.accountDid,
-        collection: ids.AppBskyFeedPost,
+        collection: ids.AppGndrFeedPost,
         record: postRecord(),
       })
       const uri = new AtUri(post.uri)
@@ -1011,7 +1011,7 @@ describe('crud operations', () => {
       const { repo } = aliceAgent.api.com.atproto
       const { data: post } = await repo.createRecord({
         repo: aliceAgent.accountDid,
-        collection: ids.AppBskyFeedPost,
+        collection: ids.AppGndrFeedPost,
         record: postRecord(),
       })
       const uri = new AtUri(post.uri)
@@ -1039,14 +1039,14 @@ describe('crud operations', () => {
       })
       const { data: profile } = await repo.putRecord({
         repo: aliceAgent.accountDid,
-        collection: ids.AppBskyActorProfile,
+        collection: ids.AppGndrActorProfile,
         rkey: 'self',
         swapCommit: commit.cid,
         record: profileRecord(),
       })
       const { data: checkProfile } = await repo.getRecord({
         repo: aliceAgent.accountDid,
-        collection: ids.AppBskyActorProfile,
+        collection: ids.AppGndrActorProfile,
         rkey: 'self',
       })
       expect(checkProfile.cid).toEqual(profile.cid)
@@ -1060,12 +1060,12 @@ describe('crud operations', () => {
       // Update repo, change head
       await repo.createRecord({
         repo: aliceAgent.accountDid,
-        collection: ids.AppBskyFeedPost,
+        collection: ids.AppGndrFeedPost,
         record: postRecord(),
       })
       const attemptPut = repo.putRecord({
         repo: aliceAgent.accountDid,
-        collection: ids.AppBskyActorProfile,
+        collection: ids.AppGndrActorProfile,
         rkey: 'self',
         swapCommit: staleCommit.cid,
         record: profileRecord(),
@@ -1078,34 +1078,34 @@ describe('crud operations', () => {
       // Start with missing profile record, to test swapRecord=null
       await repo.deleteRecord({
         repo: aliceAgent.accountDid,
-        collection: ids.AppBskyActorProfile,
+        collection: ids.AppGndrActorProfile,
         rkey: 'self',
       })
       // Test swapRecord w/ null (ensures create)
       const { data: profile1 } = await repo.putRecord({
         repo: aliceAgent.accountDid,
-        collection: ids.AppBskyActorProfile,
+        collection: ids.AppGndrActorProfile,
         rkey: 'self',
         swapRecord: null,
         record: profileRecord(),
       })
       const { data: checkProfile1 } = await repo.getRecord({
         repo: aliceAgent.accountDid,
-        collection: ids.AppBskyActorProfile,
+        collection: ids.AppGndrActorProfile,
         rkey: 'self',
       })
       expect(checkProfile1.cid).toEqual(profile1.cid)
       // Test swapRecord w/ cid (ensures update)
       const { data: profile2 } = await repo.putRecord({
         repo: aliceAgent.accountDid,
-        collection: ids.AppBskyActorProfile,
+        collection: ids.AppGndrActorProfile,
         rkey: 'self',
         swapRecord: profile1.cid,
         record: profileRecord(),
       })
       const { data: checkProfile2 } = await repo.getRecord({
         repo: aliceAgent.accountDid,
-        collection: ids.AppBskyActorProfile,
+        collection: ids.AppGndrActorProfile,
         rkey: 'self',
       })
       expect(checkProfile2.cid).toEqual(profile2.cid)
@@ -1116,7 +1116,7 @@ describe('crud operations', () => {
       // Test swapRecord w/ null (ensures create)
       const attemptPut1 = repo.putRecord({
         repo: aliceAgent.accountDid,
-        collection: ids.AppBskyActorProfile,
+        collection: ids.AppGndrActorProfile,
         rkey: 'self',
         swapRecord: null,
         record: profileRecord(),
@@ -1125,7 +1125,7 @@ describe('crud operations', () => {
       // Test swapRecord w/ cid (ensures update)
       const attemptPut2 = repo.putRecord({
         repo: aliceAgent.accountDid,
-        collection: ids.AppBskyActorProfile,
+        collection: ids.AppGndrActorProfile,
         rkey: 'self',
         swapRecord: (await cidForCbor({})).toString(),
         record: profileRecord(),
@@ -1144,8 +1144,8 @@ describe('crud operations', () => {
         writes: [
           {
             $type: `${ids.ComAtprotoRepoApplyWrites}#create`,
-            collection: ids.AppBskyFeedPost,
-            value: { $type: ids.AppBskyFeedPost, ...postRecord() },
+            collection: ids.AppGndrFeedPost,
+            value: { $type: ids.AppGndrFeedPost, ...postRecord() },
           },
         ],
       })
@@ -1159,7 +1159,7 @@ describe('crud operations', () => {
       // Update repo, change head
       await repo.createRecord({
         repo: aliceAgent.accountDid,
-        collection: ids.AppBskyFeedPost,
+        collection: ids.AppGndrFeedPost,
         record: postRecord(),
       })
       const attemptApplyWrite = repo.applyWrites({
@@ -1168,8 +1168,8 @@ describe('crud operations', () => {
         writes: [
           {
             $type: `${ids.ComAtprotoRepoApplyWrites}#create`,
-            collection: ids.AppBskyFeedPost,
-            value: { $type: ids.AppBskyFeedPost, ...postRecord() },
+            collection: ids.AppGndrFeedPost,
+            value: { $type: ids.AppGndrFeedPost, ...postRecord() },
           },
         ],
       })

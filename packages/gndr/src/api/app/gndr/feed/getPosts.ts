@@ -20,7 +20,7 @@ export default function (server: Server, ctx: AppContext) {
       lxmCheck: (method) => {
         if (!method) return false
         return (
-          method === ids.AppBskyFeedGetPosts || method.startsWith('chat.gndr.')
+          method === ids.AppGndrFeedGetPosts || method.startsWith('chat.gndr.')
         )
       },
     }),

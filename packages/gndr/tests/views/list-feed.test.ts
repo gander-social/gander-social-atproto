@@ -46,7 +46,7 @@ describe('list feed views', () => {
       {
         headers: await network.serviceHeaders(
           carol,
-          ids.AppBskyFeedGetListFeed,
+          ids.AppGndrFeedGetListFeed,
         ),
       },
     )
@@ -70,7 +70,7 @@ describe('list feed views', () => {
         {
           headers: await network.serviceHeaders(
             carol,
-            ids.AppBskyFeedGetListFeed,
+            ids.AppGndrFeedGetListFeed,
           ),
         },
       )
@@ -87,7 +87,7 @@ describe('list feed views', () => {
       {
         headers: await network.serviceHeaders(
           carol,
-          ids.AppBskyFeedGetListFeed,
+          ids.AppGndrFeedGetListFeed,
         ),
       },
     )
@@ -102,7 +102,7 @@ describe('list feed views', () => {
       {
         headers: await network.serviceHeaders(
           alice,
-          ids.AppBskyFeedGetListFeed,
+          ids.AppGndrFeedGetListFeed,
         ),
       },
     )

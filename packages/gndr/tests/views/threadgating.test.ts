@@ -42,7 +42,7 @@ describe('views with thread gating', () => {
   ) => {
     const res = await agent.api.app.gndr.feed.getPosts(
       { uris: [uri] },
-      { headers: await network.serviceHeaders(user, ids.AppBskyFeedGetPosts) },
+      { headers: await network.serviceHeaders(user, ids.AppGndrFeedGetPosts) },
     )
     expect(res.data.posts[0].viewer?.replyDisabled).toBe(blocked)
   }
@@ -65,7 +65,7 @@ describe('views with thread gating', () => {
       {
         headers: await network.serviceHeaders(
           sc.dids.alice,
-          ids.AppBskyFeedGetPostThread,
+          ids.AppGndrFeedGetPostThread,
         ),
       },
     )
@@ -99,7 +99,7 @@ describe('views with thread gating', () => {
       {
         headers: await network.serviceHeaders(
           sc.dids.carol,
-          ids.AppBskyNotificationListNotifications,
+          ids.AppGndrNotificationListNotifications,
         ),
       },
     )
@@ -158,7 +158,7 @@ describe('views with thread gating', () => {
       {
         headers: await network.serviceHeaders(
           sc.dids.alice,
-          ids.AppBskyFeedGetPostThread,
+          ids.AppGndrFeedGetPostThread,
         ),
       },
     )
@@ -172,7 +172,7 @@ describe('views with thread gating', () => {
       {
         headers: await network.serviceHeaders(
           sc.dids.dan,
-          ids.AppBskyFeedGetPostThread,
+          ids.AppGndrFeedGetPostThread,
         ),
       },
     )
@@ -219,7 +219,7 @@ describe('views with thread gating', () => {
       {
         headers: await network.serviceHeaders(
           sc.dids.dan,
-          ids.AppBskyFeedGetPostThread,
+          ids.AppGndrFeedGetPostThread,
         ),
       },
     )
@@ -233,7 +233,7 @@ describe('views with thread gating', () => {
       {
         headers: await network.serviceHeaders(
           sc.dids.alice,
-          ids.AppBskyFeedGetPostThread,
+          ids.AppGndrFeedGetPostThread,
         ),
       },
     )
@@ -283,7 +283,7 @@ describe('views with thread gating', () => {
       {
         headers: await network.serviceHeaders(
           sc.dids.dan,
-          ids.AppBskyFeedGetPostThread,
+          ids.AppGndrFeedGetPostThread,
         ),
       },
     )
@@ -297,7 +297,7 @@ describe('views with thread gating', () => {
       {
         headers: await network.serviceHeaders(
           sc.dids.alice,
-          ids.AppBskyFeedGetPostThread,
+          ids.AppGndrFeedGetPostThread,
         ),
       },
     )
@@ -385,7 +385,7 @@ describe('views with thread gating', () => {
       {
         headers: await network.serviceHeaders(
           sc.dids.bob,
-          ids.AppBskyFeedGetPostThread,
+          ids.AppGndrFeedGetPostThread,
         ),
       },
     )
@@ -399,7 +399,7 @@ describe('views with thread gating', () => {
       {
         headers: await network.serviceHeaders(
           sc.dids.alice,
-          ids.AppBskyFeedGetPostThread,
+          ids.AppGndrFeedGetPostThread,
         ),
       },
     )
@@ -413,7 +413,7 @@ describe('views with thread gating', () => {
       {
         headers: await network.serviceHeaders(
           sc.dids.dan,
-          ids.AppBskyFeedGetPostThread,
+          ids.AppGndrFeedGetPostThread,
         ),
       },
     )
@@ -461,7 +461,7 @@ describe('views with thread gating', () => {
       {
         headers: await network.serviceHeaders(
           sc.dids.alice,
-          ids.AppBskyFeedGetPostThread,
+          ids.AppGndrFeedGetPostThread,
         ),
       },
     )
@@ -524,7 +524,7 @@ describe('views with thread gating', () => {
       {
         headers: await network.serviceHeaders(
           sc.dids.eve,
-          ids.AppBskyFeedGetPostThread,
+          ids.AppGndrFeedGetPostThread,
         ),
       },
     )
@@ -540,7 +540,7 @@ describe('views with thread gating', () => {
       {
         headers: await network.serviceHeaders(
           sc.dids.bob,
-          ids.AppBskyFeedGetPostThread,
+          ids.AppGndrFeedGetPostThread,
         ),
       },
     )
@@ -556,7 +556,7 @@ describe('views with thread gating', () => {
       {
         headers: await network.serviceHeaders(
           sc.dids.alice,
-          ids.AppBskyFeedGetPostThread,
+          ids.AppGndrFeedGetPostThread,
         ),
       },
     )
@@ -572,7 +572,7 @@ describe('views with thread gating', () => {
       {
         headers: await network.serviceHeaders(
           sc.dids.dan,
-          ids.AppBskyFeedGetPostThread,
+          ids.AppGndrFeedGetPostThread,
         ),
       },
     )
@@ -614,7 +614,7 @@ describe('views with thread gating', () => {
       {
         headers: await network.serviceHeaders(
           sc.dids.alice,
-          ids.AppBskyFeedGetPostThread,
+          ids.AppGndrFeedGetPostThread,
         ),
       },
     )
@@ -673,7 +673,7 @@ describe('views with thread gating', () => {
       {
         headers: await network.serviceHeaders(
           sc.dids.dan,
-          ids.AppBskyFeedGetPostThread,
+          ids.AppGndrFeedGetPostThread,
         ),
       },
     )
@@ -687,7 +687,7 @@ describe('views with thread gating', () => {
       {
         headers: await network.serviceHeaders(
           sc.dids.alice,
-          ids.AppBskyFeedGetPostThread,
+          ids.AppGndrFeedGetPostThread,
         ),
       },
     )
@@ -727,7 +727,7 @@ describe('views with thread gating', () => {
       {
         headers: await network.serviceHeaders(
           sc.dids.carol,
-          ids.AppBskyFeedGetPostThread,
+          ids.AppGndrFeedGetPostThread,
         ),
       },
     )
@@ -771,7 +771,7 @@ describe('views with thread gating', () => {
       {
         headers: await network.serviceHeaders(
           sc.dids.alice,
-          ids.AppBskyFeedGetPostThread,
+          ids.AppGndrFeedGetPostThread,
         ),
       },
     )
@@ -789,7 +789,7 @@ describe('views with thread gating', () => {
       {
         headers: await network.serviceHeaders(
           sc.dids.alice,
-          ids.AppBskyFeedGetAuthorFeed,
+          ids.AppGndrFeedGetAuthorFeed,
         ),
       },
     )
@@ -818,7 +818,7 @@ describe('views with thread gating', () => {
       {
         headers: await network.serviceHeaders(
           sc.dids.alice,
-          ids.AppBskyFeedGetPostThread,
+          ids.AppGndrFeedGetPostThread,
         ),
       },
     )
@@ -834,7 +834,7 @@ describe('views with thread gating', () => {
       {
         headers: await network.serviceHeaders(
           sc.dids.alice,
-          ids.AppBskyFeedGetPostThread,
+          ids.AppGndrFeedGetPostThread,
         ),
       },
     )

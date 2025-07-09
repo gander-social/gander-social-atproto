@@ -1,5 +1,5 @@
 import assert from 'node:assert'
-import { AppBskyFeedGetPostThread, AtUri, AtpAgent } from '@atproto/api'
+import { AppGndrFeedGetPostThread, AtUri, AtpAgent } from '@atproto/api'
 import { SeedClient, TestNetwork, basicSeed } from '@atproto/dev-env'
 import { ids } from '../../src/lexicon/lexicons'
 import { isThreadViewPost } from '../../src/lexicon/types/app/gndr/feed/defs'
@@ -53,7 +53,7 @@ describe('appview thread views', () => {
       {
         headers: await network.serviceHeaders(
           bob,
-          ids.AppBskyFeedGetPostThread,
+          ids.AppGndrFeedGetPostThread,
         ),
       },
     )
@@ -67,7 +67,7 @@ describe('appview thread views', () => {
       {
         headers: await network.serviceHeaders(
           bob,
-          ids.AppBskyFeedGetPostThread,
+          ids.AppGndrFeedGetPostThread,
         ),
       },
     )
@@ -87,7 +87,7 @@ describe('appview thread views', () => {
       {
         headers: await network.serviceHeaders(
           bob,
-          ids.AppBskyFeedGetPostThread,
+          ids.AppGndrFeedGetPostThread,
         ),
       },
     )
@@ -101,7 +101,7 @@ describe('appview thread views', () => {
       {
         headers: await network.serviceHeaders(
           bob,
-          ids.AppBskyFeedGetPostThread,
+          ids.AppGndrFeedGetPostThread,
         ),
       },
     )
@@ -115,13 +115,13 @@ describe('appview thread views', () => {
       {
         headers: await network.serviceHeaders(
           bob,
-          ids.AppBskyFeedGetPostThread,
+          ids.AppGndrFeedGetPostThread,
         ),
       },
     )
 
     await expect(promise).rejects.toThrow(
-      AppBskyFeedGetPostThread.NotFoundError,
+      AppGndrFeedGetPostThread.NotFoundError,
     )
   })
 
@@ -131,7 +131,7 @@ describe('appview thread views', () => {
       {
         headers: await network.serviceHeaders(
           bob,
-          ids.AppBskyFeedGetPostThread,
+          ids.AppGndrFeedGetPostThread,
         ),
       },
     )
@@ -175,7 +175,7 @@ describe('appview thread views', () => {
       {
         headers: await network.serviceHeaders(
           bob,
-          ids.AppBskyFeedGetPostThread,
+          ids.AppGndrFeedGetPostThread,
         ),
       },
     )
@@ -189,7 +189,7 @@ describe('appview thread views', () => {
       {
         headers: await network.serviceHeaders(
           bob,
-          ids.AppBskyFeedGetPostThread,
+          ids.AppGndrFeedGetPostThread,
         ),
       },
     )
@@ -200,7 +200,7 @@ describe('appview thread views', () => {
       {
         headers: await network.serviceHeaders(
           bob,
-          ids.AppBskyFeedGetPostThread,
+          ids.AppGndrFeedGetPostThread,
         ),
       },
     )
@@ -236,7 +236,7 @@ describe('appview thread views', () => {
         {
           headers: await network.serviceHeaders(
             alice,
-            ids.AppBskyFeedGetPostThread,
+            ids.AppGndrFeedGetPostThread,
           ),
         },
       )
@@ -259,7 +259,7 @@ describe('appview thread views', () => {
         {
           headers: await network.serviceHeaders(
             alice,
-            ids.AppBskyFeedGetPostThread,
+            ids.AppGndrFeedGetPostThread,
           ),
         },
       )
@@ -273,7 +273,7 @@ describe('appview thread views', () => {
       {
         headers: await network.serviceHeaders(
           bob,
-          ids.AppBskyFeedGetPostThread,
+          ids.AppGndrFeedGetPostThread,
         ),
       },
     )
@@ -308,13 +308,13 @@ describe('appview thread views', () => {
         {
           headers: await network.serviceHeaders(
             bob,
-            ids.AppBskyFeedGetPostThread,
+            ids.AppGndrFeedGetPostThread,
           ),
         },
       )
 
       await expect(promise).rejects.toThrow(
-        AppBskyFeedGetPostThread.NotFoundError,
+        AppGndrFeedGetPostThread.NotFoundError,
       )
 
       // Cleanup
@@ -334,7 +334,7 @@ describe('appview thread views', () => {
         {
           headers: await network.serviceHeaders(
             bob,
-            ids.AppBskyFeedGetPostThread,
+            ids.AppGndrFeedGetPostThread,
           ),
         },
       )
@@ -358,7 +358,7 @@ describe('appview thread views', () => {
         {
           headers: await network.serviceHeaders(
             bob,
-            ids.AppBskyFeedGetPostThread,
+            ids.AppGndrFeedGetPostThread,
           ),
         },
       )
@@ -382,13 +382,13 @@ describe('appview thread views', () => {
         {
           headers: await network.serviceHeaders(
             bob,
-            ids.AppBskyFeedGetPostThread,
+            ids.AppGndrFeedGetPostThread,
           ),
         },
       )
 
       await expect(promise).rejects.toThrow(
-        AppBskyFeedGetPostThread.NotFoundError,
+        AppGndrFeedGetPostThread.NotFoundError,
       )
 
       // Cleanup
@@ -403,7 +403,7 @@ describe('appview thread views', () => {
         {
           headers: await network.serviceHeaders(
             bob,
-            ids.AppBskyFeedGetPostThread,
+            ids.AppGndrFeedGetPostThread,
           ),
         },
       )
@@ -423,7 +423,7 @@ describe('appview thread views', () => {
         {
           headers: await network.serviceHeaders(
             bob,
-            ids.AppBskyFeedGetPostThread,
+            ids.AppGndrFeedGetPostThread,
           ),
         },
       )
@@ -442,7 +442,7 @@ describe('appview thread views', () => {
         {
           headers: await network.serviceHeaders(
             bob,
-            ids.AppBskyFeedGetPostThread,
+            ids.AppGndrFeedGetPostThread,
           ),
         },
       )
@@ -473,7 +473,7 @@ describe('appview thread views', () => {
         {
           headers: await network.serviceHeaders(
             bob,
-            ids.AppBskyFeedGetPostThread,
+            ids.AppGndrFeedGetPostThread,
           ),
         },
       )
@@ -515,7 +515,7 @@ describe('appview thread views', () => {
         {
           headers: await network.serviceHeaders(
             carol,
-            ids.AppBskyFeedGetPostThread,
+            ids.AppGndrFeedGetPostThread,
           ),
         },
       )
@@ -534,7 +534,7 @@ describe('appview thread views', () => {
         {
           headers: await network.serviceHeaders(
             carol,
-            ids.AppBskyFeedGetPostThread,
+            ids.AppGndrFeedGetPostThread,
           ),
         },
       )
@@ -573,7 +573,7 @@ describe('appview thread views', () => {
         {
           headers: await network.serviceHeaders(
             carol,
-            ids.AppBskyFeedGetPostThread,
+            ids.AppGndrFeedGetPostThread,
           ),
         },
       )
@@ -600,7 +600,7 @@ describe('appview thread views', () => {
         {
           headers: await network.serviceHeaders(
             carol,
-            ids.AppBskyFeedGetPostThread,
+            ids.AppGndrFeedGetPostThread,
           ),
         },
       )

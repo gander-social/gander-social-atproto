@@ -9,27 +9,27 @@ import { PostRecordMeta, Record } from '../../../proto/gndr_pb'
 import { Database } from '../db'
 
 export default (db: Database): Partial<ServiceImpl<typeof Service>> => ({
-  getBlockRecords: getRecords(db, ids.AppBskyGraphBlock),
-  getFeedGeneratorRecords: getRecords(db, ids.AppBskyFeedGenerator),
-  getFollowRecords: getRecords(db, ids.AppBskyGraphFollow),
-  getLikeRecords: getRecords(db, ids.AppBskyFeedLike),
-  getListBlockRecords: getRecords(db, ids.AppBskyGraphListblock),
-  getListItemRecords: getRecords(db, ids.AppBskyGraphListitem),
-  getListRecords: getRecords(db, ids.AppBskyGraphList),
+  getBlockRecords: getRecords(db, ids.AppGndrGraphBlock),
+  getFeedGeneratorRecords: getRecords(db, ids.AppGndrFeedGenerator),
+  getFollowRecords: getRecords(db, ids.AppGndrGraphFollow),
+  getLikeRecords: getRecords(db, ids.AppGndrFeedLike),
+  getListBlockRecords: getRecords(db, ids.AppGndrGraphListblock),
+  getListItemRecords: getRecords(db, ids.AppGndrGraphListitem),
+  getListRecords: getRecords(db, ids.AppGndrGraphList),
   getPostRecords: getPostRecords(db),
-  getProfileRecords: getRecords(db, ids.AppBskyActorProfile),
-  getRepostRecords: getRecords(db, ids.AppBskyFeedRepost),
-  getThreadGateRecords: getRecords(db, ids.AppBskyFeedThreadgate),
-  getPostgateRecords: getRecords(db, ids.AppBskyFeedPostgate),
-  getLabelerRecords: getRecords(db, ids.AppBskyLabelerService),
-  getActorChatDeclarationRecords: getRecords(db, ids.ChatBskyActorDeclaration),
+  getProfileRecords: getRecords(db, ids.AppGndrActorProfile),
+  getRepostRecords: getRecords(db, ids.AppGndrFeedRepost),
+  getThreadGateRecords: getRecords(db, ids.AppGndrFeedThreadgate),
+  getPostgateRecords: getRecords(db, ids.AppGndrFeedPostgate),
+  getLabelerRecords: getRecords(db, ids.AppGndrLabelerService),
+  getActorChatDeclarationRecords: getRecords(db, ids.ChatGndrActorDeclaration),
   getNotificationDeclarationRecords: getRecords(
     db,
-    ids.AppBskyNotificationDeclaration,
+    ids.AppGndrNotificationDeclaration,
   ),
-  getStarterPackRecords: getRecords(db, ids.AppBskyGraphStarterpack),
-  getVerificationRecords: getRecords(db, ids.AppBskyGraphVerification),
-  getStatusRecords: getRecords(db, ids.AppBskyActorStatus),
+  getStarterPackRecords: getRecords(db, ids.AppGndrGraphStarterpack),
+  getVerificationRecords: getRecords(db, ids.AppGndrGraphVerification),
+  getStatusRecords: getRecords(db, ids.AppGndrActorStatus),
 })
 
 export const getRecords =
@@ -72,7 +72,7 @@ export const getRecords =
   }
 
 export const getPostRecords = (db: Database) => {
-  const getBaseRecords = getRecords(db, ids.AppBskyFeedPost)
+  const getBaseRecords = getRecords(db, ids.AppGndrFeedPost)
   return async (req: {
     uris: string[]
   }): Promise<{ records: Record[]; meta: PostRecordMeta[] }> => {

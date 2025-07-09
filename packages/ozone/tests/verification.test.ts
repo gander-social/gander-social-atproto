@@ -43,7 +43,7 @@ describe('verification', () => {
     }
 
     await network.processAll()
-    await network.bsky.db.db
+    await network.gndr.db.db
       .updateTable('actor')
       .set({ trustedVerifier: true })
       .where('did', 'in', [sc.dids.alice])

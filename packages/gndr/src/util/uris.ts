@@ -11,8 +11,8 @@ import {
  */
 export function postUriToThreadgateUri(postUri: string) {
   const urip = new AtUri(postUri)
-  if (urip.collection === ids.AppBskyFeedPost) {
-    urip.collection = ids.AppBskyFeedThreadgate
+  if (urip.collection === ids.AppGndrFeedPost) {
+    urip.collection = ids.AppGndrFeedThreadgate
   }
   return urip.toString()
 }
@@ -23,8 +23,8 @@ export function postUriToThreadgateUri(postUri: string) {
  */
 export function postUriToPostgateUri(postUri: string) {
   const urip = new AtUri(postUri)
-  if (urip.collection === ids.AppBskyFeedPost) {
-    urip.collection = ids.AppBskyFeedPostgate
+  if (urip.collection === ids.AppGndrFeedPost) {
+    urip.collection = ids.AppGndrFeedPostgate
   }
   return urip.toString()
 }

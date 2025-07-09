@@ -63,7 +63,7 @@ const createRoutes = (db: Database) => (router: ConnectRouter) =>
             .execute()
         } else {
           const uri = new AtUri(subject)
-          if (uri.collection === ids.AppBskyGraphList) {
+          if (uri.collection === ids.AppGndrGraphList) {
             await db.db
               .insertInto('list_mute')
               .values({
@@ -94,7 +94,7 @@ const createRoutes = (db: Database) => (router: ConnectRouter) =>
             .execute()
         } else {
           const uri = new AtUri(subject)
-          if (uri.collection === ids.AppBskyGraphList) {
+          if (uri.collection === ids.AppGndrGraphList) {
             await db.db
               .deleteFrom('list_mute')
               .where('mutedByDid', '=', actorDid)
@@ -165,7 +165,7 @@ const createRoutes = (db: Database) => (router: ConnectRouter) =>
       // maintain bespoke indexes for certain namespaces
       if (
         namespace ===
-        Namespaces.AppBskyNotificationDefsSubjectActivitySubscription
+        Namespaces.AppGndrNotificationDefsSubjectActivitySubscription
       ) {
         await handleSubjectActivitySubscriptionOperation(db, req, now).catch(
           (err: unknown) =>

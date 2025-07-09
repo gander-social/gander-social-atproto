@@ -35,7 +35,7 @@ describe('pds follow views', () => {
       {
         headers: await network.serviceHeaders(
           alice,
-          ids.AppBskyGraphGetFollowers,
+          ids.AppGndrGraphGetFollowers,
         ),
       },
     )
@@ -47,7 +47,7 @@ describe('pds follow views', () => {
       {
         headers: await network.serviceHeaders(
           alice,
-          ids.AppBskyGraphGetFollowers,
+          ids.AppGndrGraphGetFollowers,
         ),
       },
     )
@@ -59,7 +59,7 @@ describe('pds follow views', () => {
       {
         headers: await network.serviceHeaders(
           alice,
-          ids.AppBskyGraphGetFollowers,
+          ids.AppGndrGraphGetFollowers,
         ),
       },
     )
@@ -71,7 +71,7 @@ describe('pds follow views', () => {
       {
         headers: await network.serviceHeaders(
           alice,
-          ids.AppBskyGraphGetFollowers,
+          ids.AppGndrGraphGetFollowers,
         ),
       },
     )
@@ -83,7 +83,7 @@ describe('pds follow views', () => {
       {
         headers: await network.serviceHeaders(
           alice,
-          ids.AppBskyGraphGetFollowers,
+          ids.AppGndrGraphGetFollowers,
         ),
       },
     )
@@ -97,7 +97,7 @@ describe('pds follow views', () => {
       {
         headers: await network.serviceHeaders(
           alice,
-          ids.AppBskyGraphGetFollowers,
+          ids.AppGndrGraphGetFollowers,
         ),
       },
     )
@@ -106,7 +106,7 @@ describe('pds follow views', () => {
       {
         headers: await network.serviceHeaders(
           alice,
-          ids.AppBskyGraphGetFollowers,
+          ids.AppGndrGraphGetFollowers,
         ),
       },
     )
@@ -125,7 +125,7 @@ describe('pds follow views', () => {
         {
           headers: await network.serviceHeaders(
             alice,
-            ids.AppBskyGraphGetFollowers,
+            ids.AppGndrGraphGetFollowers,
           ),
         },
       )
@@ -142,7 +142,7 @@ describe('pds follow views', () => {
       {
         headers: await network.serviceHeaders(
           alice,
-          ids.AppBskyGraphGetFollowers,
+          ids.AppGndrGraphGetFollowers,
         ),
       },
     )
@@ -157,7 +157,7 @@ describe('pds follow views', () => {
       {
         headers: await network.serviceHeaders(
           alice,
-          ids.AppBskyGraphGetFollowers,
+          ids.AppGndrGraphGetFollowers,
         ),
       },
     )
@@ -178,7 +178,7 @@ describe('pds follow views', () => {
       {
         headers: await network.serviceHeaders(
           alice,
-          ids.AppBskyGraphGetFollowers,
+          ids.AppGndrGraphGetFollowers,
         ),
       },
     )
@@ -198,7 +198,7 @@ describe('pds follow views', () => {
       {
         headers: await network.serviceHeaders(
           alice,
-          ids.AppBskyGraphGetFollows,
+          ids.AppGndrGraphGetFollows,
         ),
       },
     )
@@ -210,7 +210,7 @@ describe('pds follow views', () => {
       {
         headers: await network.serviceHeaders(
           alice,
-          ids.AppBskyGraphGetFollows,
+          ids.AppGndrGraphGetFollows,
         ),
       },
     )
@@ -222,7 +222,7 @@ describe('pds follow views', () => {
       {
         headers: await network.serviceHeaders(
           alice,
-          ids.AppBskyGraphGetFollows,
+          ids.AppGndrGraphGetFollows,
         ),
       },
     )
@@ -234,7 +234,7 @@ describe('pds follow views', () => {
       {
         headers: await network.serviceHeaders(
           alice,
-          ids.AppBskyGraphGetFollows,
+          ids.AppGndrGraphGetFollows,
         ),
       },
     )
@@ -246,7 +246,7 @@ describe('pds follow views', () => {
       {
         headers: await network.serviceHeaders(
           alice,
-          ids.AppBskyGraphGetFollows,
+          ids.AppGndrGraphGetFollows,
         ),
       },
     )
@@ -260,7 +260,7 @@ describe('pds follow views', () => {
       {
         headers: await network.serviceHeaders(
           alice,
-          ids.AppBskyGraphGetFollows,
+          ids.AppGndrGraphGetFollows,
         ),
       },
     )
@@ -269,7 +269,7 @@ describe('pds follow views', () => {
       {
         headers: await network.serviceHeaders(
           alice,
-          ids.AppBskyGraphGetFollows,
+          ids.AppGndrGraphGetFollows,
         ),
       },
     )
@@ -288,7 +288,7 @@ describe('pds follow views', () => {
         {
           headers: await network.serviceHeaders(
             alice,
-            ids.AppBskyGraphGetFollows,
+            ids.AppGndrGraphGetFollows,
           ),
         },
       )
@@ -305,7 +305,7 @@ describe('pds follow views', () => {
       {
         headers: await network.serviceHeaders(
           alice,
-          ids.AppBskyGraphGetFollows,
+          ids.AppGndrGraphGetFollows,
         ),
       },
     )
@@ -320,7 +320,7 @@ describe('pds follow views', () => {
       {
         headers: await network.serviceHeaders(
           alice,
-          ids.AppBskyGraphGetFollows,
+          ids.AppGndrGraphGetFollows,
         ),
       },
     )
@@ -341,7 +341,7 @@ describe('pds follow views', () => {
       {
         headers: await network.serviceHeaders(
           alice,
-          ids.AppBskyGraphGetFollows,
+          ids.AppGndrGraphGetFollows,
         ),
       },
     )

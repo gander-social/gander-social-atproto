@@ -195,7 +195,7 @@ const readAfterWriteNotFound = async (
       const parentsRes =
         await ctx.gndrAppView.agent.app.gndr.feed.getPostThread(
           { uri: highestParent, parentHeight: params.parentHeight, depth: 0 },
-          await ctx.appviewAuthHeaders(requester, ids.AppBskyFeedGetPostThread),
+          await ctx.appviewAuthHeaders(requester, ids.AppGndrFeedGetPostThread),
         )
       thread.parent = parentsRes.data.thread
     } catch (err) {

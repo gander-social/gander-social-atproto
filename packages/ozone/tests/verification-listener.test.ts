@@ -54,11 +54,11 @@ describe('verification-listener', () => {
       commit: {
         rev: 'xyz',
         operation: 'create',
-        collection: 'app.bsky.graph.verification',
+        collection: 'app.gndr.graph.verification',
         rkey: 'abcdefg',
         cid: 'xyz',
         record: {
-          $type: 'app.bsky.graph.verification',
+          $type: 'app.gndr.graph.verification',
           subject: sc.dids.alice,
           handle: sc.accounts[sc.dids.alice].handle,
           displayName: 'Alice',
@@ -73,7 +73,7 @@ describe('verification-listener', () => {
       commit: {
         rev: 'yza',
         operation: 'delete',
-        collection: 'app.bsky.graph.verification',
+        collection: 'app.gndr.graph.verification',
         rkey: 'abcdefg',
       },
     }

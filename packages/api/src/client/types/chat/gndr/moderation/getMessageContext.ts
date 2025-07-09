@@ -10,7 +10,7 @@ import {
   is$typed as _is$typed,
   type OmitKey,
 } from '../../../../util'
-import type * as ChatBskyConvoDefs from '../convo/defs.js'
+import type * as ChatGndrConvoDefs from '../convo/defs.js'
 
 const is$typed = _is$typed,
   validate = _validate
@@ -27,8 +27,8 @@ export type InputSchema = undefined
 
 export interface OutputSchema {
   messages: (
-    | $Typed<ChatBskyConvoDefs.MessageView>
-    | $Typed<ChatBskyConvoDefs.DeletedMessageView>
+    | $Typed<ChatGndrConvoDefs.MessageView>
+    | $Typed<ChatGndrConvoDefs.DeletedMessageView>
     | { $type: string }
   )[]
 }

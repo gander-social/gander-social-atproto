@@ -62,7 +62,7 @@ describe('getSuggestedStarterPacks', () => {
         {
           headers: await network.serviceHeaders(
             users.viewer.did,
-            ids.AppBskyUnspeccedGetSuggestedStarterPacks,
+            ids.AppGndrUnspeccedGetSuggestedStarterPacks,
           ),
         },
       )
@@ -76,7 +76,7 @@ describe('getSuggestedStarterPacks', () => {
         {
           headers: await network.serviceHeaders(
             users.viewerBlocker.did,
-            ids.AppBskyUnspeccedGetSuggestedStarterPacks,
+            ids.AppGndrUnspeccedGetSuggestedStarterPacks,
           ),
         },
       )

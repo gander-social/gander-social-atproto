@@ -1,5 +1,5 @@
 import assert from 'node:assert'
-import { AppBskyFeedDefs, AtUri, AtpAgent } from '@atproto/api'
+import { AppGndrFeedDefs, AtUri, AtpAgent } from '@atproto/api'
 import { SeedClient, TestNetwork, basicSeed } from '@atproto/dev-env'
 import { ids } from '../../src/lexicon/lexicons'
 
@@ -73,7 +73,7 @@ describe('pds thread views', () => {
       {
         headers: await network.serviceHeaders(
           carol,
-          ids.AppBskyFeedGetTimeline,
+          ids.AppGndrFeedGetTimeline,
         ),
       },
     )
@@ -88,8 +88,8 @@ describe('pds thread views', () => {
       throw new Error('sliceA or sliceB is undefined')
     }
 
-    assert(AppBskyFeedDefs.isBlockedPost(sliceB.reply?.parent))
-    assert(AppBskyFeedDefs.isBlockedPost(sliceB.reply?.root))
+    assert(AppGndrFeedDefs.isBlockedPost(sliceB.reply?.parent))
+    assert(AppGndrFeedDefs.isBlockedPost(sliceB.reply?.root))
 
     await pdsAgent.api.app.gndr.graph.block.delete(
       { repo: alice, rkey: new AtUri(block.uri).rkey },
@@ -116,7 +116,7 @@ describe('pds thread views', () => {
       {
         headers: await network.serviceHeaders(
           carol,
-          ids.AppBskyFeedGetTimeline,
+          ids.AppGndrFeedGetTimeline,
         ),
       },
     )
@@ -130,9 +130,9 @@ describe('pds thread views', () => {
       throw new Error('sliceC is undefined')
     }
 
-    assert(AppBskyFeedDefs.isPostView(sliceC.reply.parent))
+    assert(AppGndrFeedDefs.isPostView(sliceC.reply.parent))
     expect(sliceC.reply.parent.uri).toEqual(B.ref.uriStr)
-    assert(AppBskyFeedDefs.isBlockedPost(sliceC.reply.root))
+    assert(AppGndrFeedDefs.isBlockedPost(sliceC.reply.root))
     expect(sliceC.reply.root.uri).toEqual(A.ref.uriStr)
 
     await pdsAgent.api.app.gndr.graph.block.delete(
@@ -161,7 +161,7 @@ describe('pds thread views', () => {
       {
         headers: await network.serviceHeaders(
           carol,
-          ids.AppBskyFeedGetTimeline,
+          ids.AppGndrFeedGetTimeline,
         ),
       },
     )
@@ -198,7 +198,7 @@ describe('pds thread views', () => {
       {
         headers: await network.serviceHeaders(
           carol,
-          ids.AppBskyFeedGetTimeline,
+          ids.AppGndrFeedGetTimeline,
         ),
       },
     )
@@ -236,7 +236,7 @@ describe('pds thread views', () => {
       {
         headers: await network.serviceHeaders(
           carol,
-          ids.AppBskyFeedGetTimeline,
+          ids.AppGndrFeedGetTimeline,
         ),
       },
     )
@@ -250,9 +250,9 @@ describe('pds thread views', () => {
       throw new Error('sliceD is undefined')
     }
 
-    assert(AppBskyFeedDefs.isPostView(sliceD.reply.parent))
+    assert(AppGndrFeedDefs.isPostView(sliceD.reply.parent))
     expect(sliceD.reply.parent.uri).toEqual(C.ref.uriStr)
-    assert(AppBskyFeedDefs.isBlockedPost(sliceD.reply.root))
+    assert(AppGndrFeedDefs.isBlockedPost(sliceD.reply.root))
     expect(sliceD.reply.root.uri).toEqual(A.ref.uriStr)
 
     await pdsAgent.api.app.gndr.graph.block.delete(
@@ -280,7 +280,7 @@ describe('pds thread views', () => {
     const timeline = await agent.api.app.gndr.feed.getTimeline(
       { limit: LIMIT },
       {
-        headers: await network.serviceHeaders(dan, ids.AppBskyFeedGetTimeline),
+        headers: await network.serviceHeaders(dan, ids.AppGndrFeedGetTimeline),
       },
     )
 
@@ -293,9 +293,9 @@ describe('pds thread views', () => {
       throw new Error('sliceD is undefined')
     }
 
-    assert(AppBskyFeedDefs.isPostView(sliceD.reply.parent))
+    assert(AppGndrFeedDefs.isPostView(sliceD.reply.parent))
     expect(sliceD.reply.parent.uri).toEqual(C.ref.uriStr)
-    assert(AppBskyFeedDefs.isBlockedPost(sliceD.reply.root))
+    assert(AppGndrFeedDefs.isBlockedPost(sliceD.reply.root))
     expect(sliceD.reply.root.uri).toEqual(A.ref.uriStr)
 
     await pdsAgent.api.app.gndr.graph.block.delete(
@@ -325,7 +325,7 @@ describe('pds thread views', () => {
       {
         headers: await network.serviceHeaders(
           carol,
-          ids.AppBskyFeedGetTimeline,
+          ids.AppGndrFeedGetTimeline,
         ),
       },
     )
@@ -339,12 +339,12 @@ describe('pds thread views', () => {
       throw new Error('sliceD is undefined')
     }
 
-    assert(AppBskyFeedDefs.isPostView(sliceD.reply.parent))
+    assert(AppGndrFeedDefs.isPostView(sliceD.reply.parent))
     expect(sliceD.reply.parent.uri).toEqual(C.ref.uriStr)
     /*
      * We don't walk the reply ancestors past whats available in the ReplyRef
      */
-    assert(AppBskyFeedDefs.isPostView(sliceD.reply.root))
+    assert(AppGndrFeedDefs.isPostView(sliceD.reply.root))
     expect(sliceD.reply.root.uri).toEqual(A.ref.uriStr)
 
     await pdsAgent.api.app.gndr.graph.block.delete(
@@ -372,7 +372,7 @@ describe('pds thread views', () => {
     const timeline = await agent.api.app.gndr.feed.getTimeline(
       { limit: LIMIT },
       {
-        headers: await network.serviceHeaders(dan, ids.AppBskyFeedGetTimeline),
+        headers: await network.serviceHeaders(dan, ids.AppGndrFeedGetTimeline),
       },
     )
 
@@ -385,13 +385,13 @@ describe('pds thread views', () => {
       throw new Error('sliceD is undefined')
     }
 
-    assert(AppBskyFeedDefs.isPostView(sliceD.reply.parent))
+    assert(AppGndrFeedDefs.isPostView(sliceD.reply.parent))
     expect(sliceD.reply.parent.uri).toEqual(C.ref.uriStr)
 
     /*
      * We don't walk the reply ancestors past whats available in the ReplyRef
      */
-    assert(AppBskyFeedDefs.isPostView(sliceD.reply.root))
+    assert(AppGndrFeedDefs.isPostView(sliceD.reply.root))
     expect(sliceD.reply.root.uri).toEqual(A.ref.uriStr)
 
     await pdsAgent.api.app.gndr.graph.block.delete(
@@ -421,7 +421,7 @@ describe('pds thread views', () => {
       {
         headers: await network.serviceHeaders(
           carol,
-          ids.AppBskyFeedGetTimeline,
+          ids.AppGndrFeedGetTimeline,
         ),
       },
     )
@@ -436,9 +436,9 @@ describe('pds thread views', () => {
       throw new Error('sliceD or sliceC is undefined')
     }
 
-    assert(AppBskyFeedDefs.isBlockedPost(sliceD.reply?.root))
-    assert(AppBskyFeedDefs.isPostView(sliceC.reply?.parent))
-    assert(AppBskyFeedDefs.isPostView(sliceC.reply?.root))
+    assert(AppGndrFeedDefs.isBlockedPost(sliceD.reply?.root))
+    assert(AppGndrFeedDefs.isPostView(sliceC.reply?.parent))
+    assert(AppGndrFeedDefs.isPostView(sliceC.reply?.root))
 
     await pdsAgent.api.app.gndr.graph.block.delete(
       { repo: alice, rkey: new AtUri(block.uri).rkey },
@@ -474,7 +474,7 @@ describe('pds thread views', () => {
     const timeline = await agent.api.app.gndr.feed.getTimeline(
       { limit: LIMIT },
       {
-        headers: await network.serviceHeaders(dan, ids.AppBskyFeedGetTimeline),
+        headers: await network.serviceHeaders(dan, ids.AppGndrFeedGetTimeline),
       },
     )
 
@@ -490,9 +490,9 @@ describe('pds thread views', () => {
       throw new Error('sliceD is undefined')
     }
 
-    assert(AppBskyFeedDefs.isPostView(sliceD.reply.parent))
+    assert(AppGndrFeedDefs.isPostView(sliceD.reply.parent))
     expect(sliceD.reply.parent.uri).toEqual(C.ref.uriStr)
-    assert(AppBskyFeedDefs.isBlockedPost(sliceD.reply.root))
+    assert(AppGndrFeedDefs.isBlockedPost(sliceD.reply.root))
     expect(sliceD.reply.root.uri).toEqual(A.ref.uriStr)
 
     await pdsAgent.api.app.gndr.graph.block.delete(

@@ -24,7 +24,7 @@ export type InputSchema = undefined
 
 export interface OutputSchema {
   cursor?: string
-  feeds: AppBskyFeedDefs.GeneratorView[]
+  feeds: AppGndrFeedDefs.GeneratorView[]
 }
 
 export interface CallOptions {

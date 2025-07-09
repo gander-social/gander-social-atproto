@@ -9,15 +9,15 @@ import {
   is$typed as _is$typed,
   type OmitKey,
 } from '../../../../util'
-import type * as AppBskyActorDefs from '../actor/defs.js'
-import type * as AppBskyEmbedImages from '../embed/images.js'
-import type * as AppBskyEmbedVideo from '../embed/video.js'
-import type * as AppBskyEmbedExternal from '../embed/external.js'
-import type * as AppBskyEmbedRecord from '../embed/record.js'
-import type * as AppBskyEmbedRecordWithMedia from '../embed/recordWithMedia.js'
+import type * as AppGndrActorDefs from '../actor/defs.js'
+import type * as AppGndrEmbedImages from '../embed/images.js'
+import type * as AppGndrEmbedVideo from '../embed/video.js'
+import type * as AppGndrEmbedExternal from '../embed/external.js'
+import type * as AppGndrEmbedRecord from '../embed/record.js'
+import type * as AppGndrEmbedRecordWithMedia from '../embed/recordWithMedia.js'
 import type * as ComAtprotoLabelDefs from '../../../com/atproto/label/defs.js'
-import type * as AppBskyRichtextFacet from '../richtext/facet.js'
-import type * as AppBskyGraphDefs from '../graph/defs.js'
+import type * as AppGndrRichtextFacet from '../richtext/facet.js'
+import type * as AppGndrGraphDefs from '../graph/defs.js'
 
 const is$typed = _is$typed,
   validate = _validate
@@ -27,14 +27,14 @@ export interface PostView {
   $type?: 'app.gndr.feed.defs#postView'
   uri: string
   cid: string
-  author: AppBskyActorDefs.ProfileViewBasic
+  author: AppGndrActorDefs.ProfileViewBasic
   record: { [_ in string]: unknown }
   embed?:
-    | $Typed<AppBskyEmbedImages.View>
-    | $Typed<AppBskyEmbedVideo.View>
-    | $Typed<AppBskyEmbedExternal.View>
-    | $Typed<AppBskyEmbedRecord.View>
-    | $Typed<AppBskyEmbedRecordWithMedia.View>
+    | $Typed<AppGndrEmbedImages.View>
+    | $Typed<AppGndrEmbedVideo.View>
+    | $Typed<AppGndrEmbedExternal.View>
+    | $Typed<AppGndrEmbedRecord.View>
+    | $Typed<AppGndrEmbedRecordWithMedia.View>
     | { $type: string }
   replyCount?: number
   repostCount?: number
@@ -126,7 +126,7 @@ export interface ReplyRef {
     | $Typed<NotFoundPost>
     | $Typed<BlockedPost>
     | { $type: string }
-  grandparentAuthor?: AppBskyActorDefs.ProfileViewBasic
+  grandparentAuthor?: AppGndrActorDefs.ProfileViewBasic
 }
 
 const hashReplyRef = 'replyRef'
@@ -141,7 +141,7 @@ export function validateReplyRef<V>(v: V) {
 
 export interface ReasonRepost {
   $type?: 'app.gndr.feed.defs#reasonRepost'
-  by: AppBskyActorDefs.ProfileViewBasic
+  by: AppGndrActorDefs.ProfileViewBasic
   uri?: string
   cid?: string
   indexedAt: string
@@ -234,7 +234,7 @@ export function validateBlockedPost<V>(v: V) {
 export interface BlockedAuthor {
   $type?: 'app.gndr.feed.defs#blockedAuthor'
   did: string
-  viewer?: AppBskyActorDefs.ViewerState
+  viewer?: AppGndrActorDefs.ViewerState
 }
 
 const hashBlockedAuthor = 'blockedAuthor'
@@ -252,10 +252,10 @@ export interface GeneratorView {
   uri: string
   cid: string
   did: string
-  creator: AppBskyActorDefs.ProfileView
+  creator: AppGndrActorDefs.ProfileView
   displayName: string
   description?: string
-  descriptionFacets?: AppBskyRichtextFacet.Main[]
+  descriptionFacets?: AppGndrRichtextFacet.Main[]
   avatar?: string
   likeCount?: number
   acceptsInteractions?: boolean
@@ -348,7 +348,7 @@ export interface ThreadgateView {
   uri?: string
   cid?: string
   record?: { [_ in string]: unknown }
-  lists?: AppBskyGraphDefs.ListViewBasic[]
+  lists?: AppGndrGraphDefs.ListViewBasic[]
 }
 
 const hashThreadgateView = 'threadgateView'

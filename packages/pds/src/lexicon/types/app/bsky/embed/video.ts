@@ -9,7 +9,7 @@ import {
   is$typed as _is$typed,
   type OmitKey,
 } from '../../../../util'
-import type * as AppBskyEmbedDefs from './defs.js'
+import type * as AppGndrEmbedDefs from './defs.js'
 
 const is$typed = _is$typed,
   validate = _validate
@@ -22,7 +22,7 @@ export interface Main {
   captions?: Caption[]
   /** Alt text description of the video, for accessibility. */
   alt?: string
-  aspectRatio?: AppBskyEmbedDefs.AspectRatio
+  aspectRatio?: AppGndrEmbedDefs.AspectRatio
 }
 
 const hashMain = 'main'
@@ -57,7 +57,7 @@ export interface View {
   playlist: string
   thumbnail?: string
   alt?: string
-  aspectRatio?: AppBskyEmbedDefs.AspectRatio
+  aspectRatio?: AppGndrEmbedDefs.AspectRatio
 }
 
 const hashView = 'view'

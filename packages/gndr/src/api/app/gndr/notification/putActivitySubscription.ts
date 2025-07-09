@@ -21,7 +21,7 @@ export default function (server: Server, ctx: AppContext) {
       const stashInput = {
         actorDid,
         namespace:
-          Namespaces.AppBskyNotificationDefsSubjectActivitySubscription,
+          Namespaces.AppGndrNotificationDefsSubjectActivitySubscription,
         payload: {
           subject,
           activitySubscription,

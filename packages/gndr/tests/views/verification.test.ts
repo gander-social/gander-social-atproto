@@ -270,7 +270,7 @@ describe('verification views', () => {
       { actor },
       {
         headers: {
-          ...(await network.serviceHeaders(alice, ids.AppBskyActorGetProfile)),
+          ...(await network.serviceHeaders(alice, ids.AppGndrActorGetProfile)),
           'atproto-accept-labelers': `${labelerDid};redact`,
         },
       },

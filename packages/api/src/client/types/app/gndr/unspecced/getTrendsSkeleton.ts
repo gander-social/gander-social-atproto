@@ -10,7 +10,7 @@ import {
   is$typed as _is$typed,
   type OmitKey,
 } from '../../../../util'
-import type * as AppBskyUnspeccedDefs from './defs.js'
+import type * as AppGndrUnspeccedDefs from './defs.js'
 
 const is$typed = _is$typed,
   validate = _validate
@@ -24,7 +24,7 @@ export type QueryParams = {
 export type InputSchema = undefined
 
 export interface OutputSchema {
-  trends: AppBskyUnspeccedDefs.SkeletonTrend[]
+  trends: AppGndrUnspeccedDefs.SkeletonTrend[]
 }
 
 export interface CallOptions {

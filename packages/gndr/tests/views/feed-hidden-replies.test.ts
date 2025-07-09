@@ -59,7 +59,7 @@ describe('feed hidden replies', () => {
         {
           headers: await network.serviceHeaders(
             users.poster.did,
-            ids.AppBskyNotificationListNotifications,
+            ids.AppGndrNotificationListNotifications,
           ),
         },
       )
@@ -106,7 +106,7 @@ describe('feed hidden replies', () => {
         {
           headers: await network.serviceHeaders(
             users.poster.did,
-            ids.AppBskyNotificationListNotifications,
+            ids.AppGndrNotificationListNotifications,
           ),
         },
       )
@@ -128,7 +128,7 @@ describe('feed hidden replies', () => {
         {
           headers: await network.serviceHeaders(
             users.replier.did,
-            ids.AppBskyNotificationListNotifications,
+            ids.AppGndrNotificationListNotifications,
           ),
         },
       )
@@ -155,7 +155,7 @@ describe('feed hidden replies', () => {
         {
           headers: await network.serviceHeaders(
             users.poster.did,
-            ids.AppBskyNotificationListNotifications,
+            ids.AppGndrNotificationListNotifications,
           ),
         },
       )
@@ -191,7 +191,7 @@ describe('feed hidden replies', () => {
         {
           headers: await network.serviceHeaders(
             users.poster.did,
-            ids.AppBskyNotificationListNotifications,
+            ids.AppGndrNotificationListNotifications,
           ),
         },
       )
@@ -217,7 +217,7 @@ describe('feed hidden replies', () => {
         {
           headers: await network.serviceHeaders(
             users.replier.did,
-            ids.AppBskyNotificationListNotifications,
+            ids.AppGndrNotificationListNotifications,
           ),
         },
       )

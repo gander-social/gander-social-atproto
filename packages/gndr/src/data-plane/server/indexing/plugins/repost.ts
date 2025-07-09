@@ -10,7 +10,7 @@ import { Notification } from '../../db/tables/notification'
 import { countAll, excluded } from '../../db/util'
 import { RecordProcessor } from '../processor'
 
-const lexId = lex.ids.AppBskyFeedRepost
+const lexId = lex.ids.AppGndrFeedRepost
 type Notif = Insertable<Notification>
 type IndexedRepost = Selectable<DatabaseSchemaType['repost']>
 

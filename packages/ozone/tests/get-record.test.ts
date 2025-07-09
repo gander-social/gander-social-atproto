@@ -69,7 +69,7 @@ describe('admin get record view', () => {
         cid: sc.posts[sc.dids.alice][0].ref.cidStr,
       },
     })
-    await network.bsky.ctx.dataplane.takedownRecord({
+    await network.gndr.ctx.dataplane.takedownRecord({
       recordUri: sc.posts[sc.dids.alice][0].ref.uriStr,
     })
   })
@@ -98,7 +98,7 @@ describe('admin get record view', () => {
       {
         uri: AtUri.make(
           sc.dids.alice,
-          'app.bsky.feed.post',
+          'app.gndr.feed.post',
           'badrkey',
         ).toString(),
       },

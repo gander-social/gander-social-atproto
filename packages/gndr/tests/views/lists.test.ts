@@ -96,7 +96,7 @@ describe('gndr actor likes feed views', () => {
         list: curateList,
       },
       {
-        headers: await network.serviceHeaders(frankie, ids.AppBskyGraphGetList),
+        headers: await network.serviceHeaders(frankie, ids.AppGndrGraphGetList),
       },
     )
     expect(curView.data.items.length).toBe(2)
@@ -105,7 +105,7 @@ describe('gndr actor likes feed views', () => {
     const refView = await agent.api.app.gndr.graph.getList(
       { list: referenceList },
       {
-        headers: await network.serviceHeaders(frankie, ids.AppBskyGraphGetList),
+        headers: await network.serviceHeaders(frankie, ids.AppGndrGraphGetList),
       },
     )
     expect(refView.data.items.length).toBe(2)
@@ -117,14 +117,14 @@ describe('gndr actor likes feed views', () => {
       {
         list: curateList,
       },
-      { headers: await network.serviceHeaders(greta, ids.AppBskyGraphGetList) },
+      { headers: await network.serviceHeaders(greta, ids.AppGndrGraphGetList) },
     )
     expect(curView.data.items.length).toBe(2)
     expect(forSnapshot(curView.data.items)).toMatchSnapshot()
 
     const refView = await agent.api.app.gndr.graph.getList(
       { list: referenceList },
-      { headers: await network.serviceHeaders(greta, ids.AppBskyGraphGetList) },
+      { headers: await network.serviceHeaders(greta, ids.AppGndrGraphGetList) },
     )
     expect(refView.data.items.length).toBe(2)
     expect(forSnapshot(refView.data.items)).toMatchSnapshot()
@@ -147,14 +147,14 @@ describe('gndr actor likes feed views', () => {
   it('does include users with creator block relationship in reference lists for creator', async () => {
     const curView = await agent.api.app.gndr.graph.getList(
       { list: curateList },
-      { headers: await network.serviceHeaders(eve, ids.AppBskyGraphGetList) },
+      { headers: await network.serviceHeaders(eve, ids.AppGndrGraphGetList) },
     )
     expect(curView.data.items.length).toBe(3)
     expect(forSnapshot(curView.data.items)).toMatchSnapshot()
 
     const refView = await agent.api.app.gndr.graph.getList(
       { list: referenceList },
-      { headers: await network.serviceHeaders(eve, ids.AppBskyGraphGetList) },
+      { headers: await network.serviceHeaders(eve, ids.AppGndrGraphGetList) },
     )
     expect(refView.data.items.length).toBe(3)
     expect(forSnapshot(refView.data.items)).toMatchSnapshot()
@@ -169,7 +169,7 @@ describe('gndr actor likes feed views', () => {
 
     const view = await agent.api.app.gndr.graph.getList(
       { list: blockList.uriStr },
-      { headers: await network.serviceHeaders(alice, ids.AppBskyGraphGetList) },
+      { headers: await network.serviceHeaders(alice, ids.AppGndrGraphGetList) },
     )
     expect(view.data.items.length).toBe(2)
     expect(forSnapshot(view.data.items)).toMatchSnapshot()

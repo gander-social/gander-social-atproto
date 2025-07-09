@@ -9,7 +9,7 @@ import {
   is$typed as _is$typed,
   type OmitKey,
 } from '../../../../util'
-import type * as AppBskyActorDefs from '../actor/defs.js'
+import type * as AppGndrActorDefs from '../actor/defs.js'
 import type * as ComAtprotoLabelDefs from '../../../com/atproto/label/defs.js'
 
 const is$typed = _is$typed,
@@ -52,7 +52,7 @@ export interface Notification {
   $type?: 'app.gndr.notification.listNotifications#notification'
   uri: string
   cid: string
-  author: AppBskyActorDefs.ProfileView
+  author: AppGndrActorDefs.ProfileView
   /** The reason why this notification was delivered - e.g. your post was liked, or you received a new follower. */
   reason:
     | 'like'

@@ -10,7 +10,7 @@ import {
   is$typed as _is$typed,
   type OmitKey,
 } from '../../../../util'
-import type * as ChatBskyConvoDefs from './defs.js'
+import type * as ChatGndrConvoDefs from './defs.js'
 
 const is$typed = _is$typed,
   validate = _validate
@@ -24,16 +24,16 @@ export type InputSchema = undefined
 export interface OutputSchema {
   cursor?: string
   logs: (
-    | $Typed<ChatBskyConvoDefs.LogBeginConvo>
-    | $Typed<ChatBskyConvoDefs.LogAcceptConvo>
-    | $Typed<ChatBskyConvoDefs.LogLeaveConvo>
-    | $Typed<ChatBskyConvoDefs.LogMuteConvo>
-    | $Typed<ChatBskyConvoDefs.LogUnmuteConvo>
-    | $Typed<ChatBskyConvoDefs.LogCreateMessage>
-    | $Typed<ChatBskyConvoDefs.LogDeleteMessage>
-    | $Typed<ChatBskyConvoDefs.LogReadMessage>
-    | $Typed<ChatBskyConvoDefs.LogAddReaction>
-    | $Typed<ChatBskyConvoDefs.LogRemoveReaction>
+    | $Typed<ChatGndrConvoDefs.LogBeginConvo>
+    | $Typed<ChatGndrConvoDefs.LogAcceptConvo>
+    | $Typed<ChatGndrConvoDefs.LogLeaveConvo>
+    | $Typed<ChatGndrConvoDefs.LogMuteConvo>
+    | $Typed<ChatGndrConvoDefs.LogUnmuteConvo>
+    | $Typed<ChatGndrConvoDefs.LogCreateMessage>
+    | $Typed<ChatGndrConvoDefs.LogDeleteMessage>
+    | $Typed<ChatGndrConvoDefs.LogReadMessage>
+    | $Typed<ChatGndrConvoDefs.LogAddReaction>
+    | $Typed<ChatGndrConvoDefs.LogRemoveReaction>
     | { $type: string }
   )[]
 }

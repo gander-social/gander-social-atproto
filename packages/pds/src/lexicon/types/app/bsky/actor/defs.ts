@@ -10,12 +10,12 @@ import {
   type OmitKey,
 } from '../../../../util'
 import type * as ComAtprotoLabelDefs from '../../../com/atproto/label/defs.js'
-import type * as AppBskyGraphDefs from '../graph/defs.js'
+import type * as AppGndrGraphDefs from '../graph/defs.js'
 import type * as ComAtprotoRepoStrongRef from '../../../com/atproto/repo/strongRef.js'
-import type * as AppBskyNotificationDefs from '../notification/defs.js'
-import type * as AppBskyFeedThreadgate from '../feed/threadgate.js'
-import type * as AppBskyFeedPostgate from '../feed/postgate.js'
-import type * as AppBskyEmbedExternal from '../embed/external.js'
+import type * as AppGndrNotificationDefs from '../notification/defs.js'
+import type * as AppGndrFeedThreadgate from '../feed/threadgate.js'
+import type * as AppGndrFeedPostgate from '../feed/postgate.js'
+import type * as AppGndrEmbedExternal from '../embed/external.js'
 
 const is$typed = _is$typed,
   validate = _validate
@@ -83,7 +83,7 @@ export interface ProfileViewDetailed {
   followsCount?: number
   postsCount?: number
   associated?: ProfileAssociated
-  joinedViaStarterPack?: AppBskyGraphDefs.StarterPackViewBasic
+  joinedViaStarterPack?: AppGndrGraphDefs.StarterPackViewBasic
   indexedAt?: string
   createdAt?: string
   viewer?: ViewerState
@@ -162,14 +162,14 @@ export function validateProfileAssociatedActivitySubscription<V>(v: V) {
 export interface ViewerState {
   $type?: 'app.gndr.actor.defs#viewerState'
   muted?: boolean
-  mutedByList?: AppBskyGraphDefs.ListViewBasic
+  mutedByList?: AppGndrGraphDefs.ListViewBasic
   blockedBy?: boolean
   blocking?: string
-  blockingByList?: AppBskyGraphDefs.ListViewBasic
+  blockingByList?: AppGndrGraphDefs.ListViewBasic
   following?: string
   followedBy?: string
   knownFollowers?: KnownFollowers
-  activitySubscription?: AppBskyNotificationDefs.ActivitySubscription
+  activitySubscription?: AppGndrNotificationDefs.ActivitySubscription
 }
 
 const hashViewerState = 'viewerState'
@@ -254,7 +254,7 @@ export type Preferences = (
   | $Typed<InterestsPref>
   | $Typed<MutedWordsPref>
   | $Typed<HiddenPostsPref>
-  | $Typed<BskyAppStatePref>
+  | $Typed<GndrAppStatePref>
   | $Typed<LabelersPref>
   | $Typed<PostInteractionSettingsPref>
   | $Typed<VerificationPrefs>
@@ -515,39 +515,39 @@ export function validateLabelerPrefItem<V>(v: V) {
 }
 
 /** A grab bag of state that's specific to the gndr.app program. Third-party apps shouldn't use this. */
-export interface BskyAppStatePref {
+export interface GndrAppStatePref {
   $type?: 'app.gndr.actor.defs#gndrAppStatePref'
-  activeProgressGuide?: BskyAppProgressGuide
+  activeProgressGuide?: GndrAppProgressGuide
   /** An array of tokens which identify nudges (modals, popups, tours, highlight dots) that should be shown to the user. */
   queuedNudges?: string[]
   /** Storage for NUXs the user has encountered. */
   nuxs?: Nux[]
 }
 
-const hashBskyAppStatePref = 'gndrAppStatePref'
+const hashGndrAppStatePref = 'gndrAppStatePref'
 
-export function isBskyAppStatePref<V>(v: V) {
-  return is$typed(v, id, hashBskyAppStatePref)
+export function isGndrAppStatePref<V>(v: V) {
+  return is$typed(v, id, hashGndrAppStatePref)
 }
 
-export function validateBskyAppStatePref<V>(v: V) {
-  return validate<BskyAppStatePref & V>(v, id, hashBskyAppStatePref)
+export function validateGndrAppStatePref<V>(v: V) {
+  return validate<GndrAppStatePref & V>(v, id, hashGndrAppStatePref)
 }
 
 /** If set, an active progress guide. Once completed, can be set to undefined. Should have unspecced fields tracking progress. */
-export interface BskyAppProgressGuide {
+export interface GndrAppProgressGuide {
   $type?: 'app.gndr.actor.defs#gndrAppProgressGuide'
   guide: string
 }
 
-const hashBskyAppProgressGuide = 'gndrAppProgressGuide'
+const hashGndrAppProgressGuide = 'gndrAppProgressGuide'
 
-export function isBskyAppProgressGuide<V>(v: V) {
-  return is$typed(v, id, hashBskyAppProgressGuide)
+export function isGndrAppProgressGuide<V>(v: V) {
+  return is$typed(v, id, hashGndrAppProgressGuide)
 }
 
-export function validateBskyAppProgressGuide<V>(v: V) {
-  return validate<BskyAppProgressGuide & V>(v, id, hashBskyAppProgressGuide)
+export function validateGndrAppProgressGuide<V>(v: V) {
+  return validate<GndrAppProgressGuide & V>(v, id, hashGndrAppProgressGuide)
 }
 
 /** A new user experiences (NUX) storage object */
@@ -593,15 +593,15 @@ export interface PostInteractionSettingsPref {
   $type?: 'app.gndr.actor.defs#postInteractionSettingsPref'
   /** Matches threadgate record. List of rules defining who can reply to this users posts. If value is an empty array, no one can reply. If value is undefined, anyone can reply. */
   threadgateAllowRules?: (
-    | $Typed<AppBskyFeedThreadgate.MentionRule>
-    | $Typed<AppBskyFeedThreadgate.FollowerRule>
-    | $Typed<AppBskyFeedThreadgate.FollowingRule>
-    | $Typed<AppBskyFeedThreadgate.ListRule>
+    | $Typed<AppGndrFeedThreadgate.MentionRule>
+    | $Typed<AppGndrFeedThreadgate.FollowerRule>
+    | $Typed<AppGndrFeedThreadgate.FollowingRule>
+    | $Typed<AppGndrFeedThreadgate.ListRule>
     | { $type: string }
   )[]
   /** Matches postgate record. List of rules defining who can embed this users posts. If value is an empty array or is undefined, no particular rules apply and anyone can embed. */
   postgateEmbeddingRules?: (
-    | $Typed<AppBskyFeedPostgate.DisableRule>
+    | $Typed<AppGndrFeedPostgate.DisableRule>
     | { $type: string }
   )[]
 }
@@ -625,7 +625,7 @@ export interface StatusView {
   /** The status for the account. */
   status: 'app.gndr.actor.status#live' | (string & {})
   record: { [_ in string]: unknown }
-  embed?: $Typed<AppBskyEmbedExternal.View> | { $type: string }
+  embed?: $Typed<AppGndrEmbedExternal.View> | { $type: string }
   /** The date when this status will expire. The application might choose to no longer return the status after expiration. */
   expiresAt?: string
   /** True if the status is not expired, false if it is expired. Only present if expiration was set. */

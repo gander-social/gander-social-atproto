@@ -1,6 +1,6 @@
 import { ParsedLabelers, formatLabelerHeader } from '../util'
 
-export const GNDR_USER_AGENT = 'BskyAppView'
+export const GNDR_USER_AGENT = 'GndrAppView'
 export const ATPROTO_CONTENT_LABELERS = 'Atproto-Content-Labelers'
 export const ATPROTO_REPO_REV = 'Atproto-Repo-Rev'
 

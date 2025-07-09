@@ -25,7 +25,7 @@ describe('admin get lists', () => {
     })
     ozone = network.ozone
     agent = ozone.getClient()
-    appviewAgent = network.bsky.getClient()
+    appviewAgent = network.gndr.getClient()
     sc = network.getSeedClient()
     modClient = ozone.getModClient()
     await basicSeed(sc)
@@ -41,11 +41,11 @@ describe('admin get lists', () => {
 
   const getAlicesList = async () => {
     const [{ data: fromOzone }, { data: fromAppview }] = await Promise.all([
-      agent.api.app.bsky.graph.getLists(
+      agent.api.app.gndr.graph.getLists(
         { actor: sc.dids.alice },
         { headers: await ozone.modHeaders(ids.AppGndrGraphGetLists) },
       ),
-      appviewAgent.api.app.bsky.graph.getLists({ actor: sc.dids.alice }),
+      appviewAgent.api.app.gndr.graph.getLists({ actor: sc.dids.alice }),
     ])
 
     return { fromOzone, fromAppview }
@@ -89,7 +89,7 @@ describe('admin get lists', () => {
     expect(beforeTakedown.fromAppview.lists[0].uri).toEqual(alicesList.uriStr)
 
     // Takedown alice's list using a !takedown label
-    await network.bsky.db.db
+    await network.gndr.db.db
       .insertInto('label')
       .values({
         src: ozone.ctx.cfg.service.did,

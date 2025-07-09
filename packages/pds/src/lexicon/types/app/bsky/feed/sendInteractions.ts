@@ -9,7 +9,7 @@ import {
   is$typed as _is$typed,
   type OmitKey,
 } from '../../../../util'
-import type * as AppBskyFeedDefs from './defs.js'
+import type * as AppGndrFeedDefs from './defs.js'
 
 const is$typed = _is$typed,
   validate = _validate
@@ -18,7 +18,7 @@ const id = 'app.gndr.feed.sendInteractions'
 export type QueryParams = {}
 
 export interface InputSchema {
-  interactions: AppBskyFeedDefs.Interaction[]
+  interactions: AppGndrFeedDefs.Interaction[]
 }
 
 export interface OutputSchema {}

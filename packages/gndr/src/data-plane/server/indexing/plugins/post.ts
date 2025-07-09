@@ -70,7 +70,7 @@ type IndexedPost = {
   threadgate?: GateRecord
 }
 
-const lexId = lex.ids.AppBskyFeedPost
+const lexId = lex.ids.AppGndrFeedPost
 
 const REPLY_NOTIF_DEPTH = 5
 
@@ -198,7 +198,7 @@ const insertFn = async (
       embeds.push(recordEmbed)
       await db.insertInto('post_embed_record').values(recordEmbed).execute()
 
-      if (embedUri.collection === lex.ids.AppBskyFeedPost) {
+      if (embedUri.collection === lex.ids.AppGndrFeedPost) {
         const quote = {
           uri: uri.toString(),
           cid: cid.toString(),
@@ -317,7 +317,7 @@ const notifsForInsert = (obj: IndexedPost) => {
     for (const embed of obj.embeds ?? []) {
       if ('embedUri' in embed) {
         const embedUri = new AtUri(embed.embedUri)
-        if (embedUri.collection === lex.ids.AppBskyFeedPost) {
+        if (embedUri.collection === lex.ids.AppGndrFeedPost) {
           maybeNotify({
             did: embedUri.host,
             reason: 'quote',
@@ -428,7 +428,7 @@ const deleteFn = async (
     const embedUri = new AtUri(deletedPosts.embedUri)
     deletedEmbeds.push(deletedPosts)
 
-    if (embedUri.collection === lex.ids.AppBskyFeedPost) {
+    if (embedUri.collection === lex.ids.AppGndrFeedPost) {
       await db.deleteFrom('quote').where('uri', '=', uriStr).execute()
       await db
         .insertInto('post_agg')
@@ -534,7 +534,7 @@ function separateEmbeds(
     return []
   }
   if (isEmbedRecordWithMedia(embed)) {
-    return [{ $type: lex.ids.AppBskyEmbedRecord, ...embed.record }, embed.media]
+    return [{ $type: lex.ids.AppGndrEmbedRecord, ...embed.record }, embed.media]
   }
   return [embed]
 }

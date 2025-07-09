@@ -4541,7 +4541,7 @@ export const schemaDict = {
       },
     },
   },
-  AppBskyActorDefs: {
+  AppGndrActorDefs: {
     lexicon: 1,
     id: 'app.gndr.actor.defs',
     defs: {
@@ -5327,7 +5327,7 @@ export const schemaDict = {
       },
     },
   },
-  AppBskyActorGetPreferences: {
+  AppGndrActorGetPreferences: {
     lexicon: 1,
     id: 'app.gndr.actor.getPreferences',
     defs: {
@@ -5355,7 +5355,7 @@ export const schemaDict = {
       },
     },
   },
-  AppBskyActorGetProfile: {
+  AppGndrActorGetProfile: {
     lexicon: 1,
     id: 'app.gndr.actor.getProfile',
     defs: {
@@ -5384,7 +5384,7 @@ export const schemaDict = {
       },
     },
   },
-  AppBskyActorGetProfiles: {
+  AppGndrActorGetProfiles: {
     lexicon: 1,
     id: 'app.gndr.actor.getProfiles',
     defs: {
@@ -5424,7 +5424,7 @@ export const schemaDict = {
       },
     },
   },
-  AppBskyActorGetSuggestions: {
+  AppGndrActorGetSuggestions: {
     lexicon: 1,
     id: 'app.gndr.actor.getSuggestions',
     defs: {
@@ -5473,7 +5473,7 @@ export const schemaDict = {
       },
     },
   },
-  AppBskyActorProfile: {
+  AppGndrActorProfile: {
     lexicon: 1,
     id: 'app.gndr.actor.profile',
     defs: {
@@ -5532,7 +5532,7 @@ export const schemaDict = {
       },
     },
   },
-  AppBskyActorPutPreferences: {
+  AppGndrActorPutPreferences: {
     lexicon: 1,
     id: 'app.gndr.actor.putPreferences',
     defs: {
@@ -5555,7 +5555,7 @@ export const schemaDict = {
       },
     },
   },
-  AppBskyActorSearchActors: {
+  AppGndrActorSearchActors: {
     lexicon: 1,
     id: 'app.gndr.actor.searchActors',
     defs: {
@@ -5608,7 +5608,7 @@ export const schemaDict = {
       },
     },
   },
-  AppBskyActorSearchActorsTypeahead: {
+  AppGndrActorSearchActorsTypeahead: {
     lexicon: 1,
     id: 'app.gndr.actor.searchActorsTypeahead',
     defs: {
@@ -5654,7 +5654,7 @@ export const schemaDict = {
       },
     },
   },
-  AppBskyActorStatus: {
+  AppGndrActorStatus: {
     lexicon: 1,
     id: 'app.gndr.actor.status',
     defs: {
@@ -5696,7 +5696,7 @@ export const schemaDict = {
       },
     },
   },
-  AppBskyEmbedDefs: {
+  AppGndrEmbedDefs: {
     lexicon: 1,
     id: 'app.gndr.embed.defs',
     defs: {
@@ -5718,7 +5718,7 @@ export const schemaDict = {
       },
     },
   },
-  AppBskyEmbedExternal: {
+  AppGndrEmbedExternal: {
     lexicon: 1,
     id: 'app.gndr.embed.external',
     defs: {
@@ -5787,7 +5787,7 @@ export const schemaDict = {
       },
     },
   },
-  AppBskyEmbedImages: {
+  AppGndrEmbedImages: {
     lexicon: 1,
     id: 'app.gndr.embed.images',
     description: 'A set of images embedded in a Gander record (eg, a post).',
@@ -5869,7 +5869,7 @@ export const schemaDict = {
       },
     },
   },
-  AppBskyEmbedRecord: {
+  AppGndrEmbedRecord: {
     lexicon: 1,
     id: 'app.gndr.embed.record',
     description:
@@ -6010,7 +6010,7 @@ export const schemaDict = {
       },
     },
   },
-  AppBskyEmbedRecordWithMedia: {
+  AppGndrEmbedRecordWithMedia: {
     lexicon: 1,
     id: 'app.gndr.embed.recordWithMedia',
     description:
@@ -6054,7 +6054,7 @@ export const schemaDict = {
       },
     },
   },
-  AppBskyEmbedVideo: {
+  AppGndrEmbedVideo: {
     lexicon: 1,
     id: 'app.gndr.embed.video',
     description: 'A video embedded in a Gander record (eg, a post).',
@@ -6135,7 +6135,7 @@ export const schemaDict = {
       },
     },
   },
-  AppBskyFeedDefs: {
+  AppGndrFeedDefs: {
     lexicon: 1,
     id: 'app.gndr.feed.defs',
     defs: {
@@ -6644,7 +6644,7 @@ export const schemaDict = {
       },
     },
   },
-  AppBskyFeedDescribeFeedGenerator: {
+  AppGndrFeedDescribeFeedGenerator: {
     lexicon: 1,
     id: 'app.gndr.feed.describeFeedGenerator',
     defs: {
@@ -6700,7 +6700,7 @@ export const schemaDict = {
       },
     },
   },
-  AppBskyFeedGenerator: {
+  AppGndrFeedGenerator: {
     lexicon: 1,
     id: 'app.gndr.feed.generator',
     defs: {
@@ -6765,7 +6765,7 @@ export const schemaDict = {
       },
     },
   },
-  AppBskyFeedGetActorFeeds: {
+  AppGndrFeedGetActorFeeds: {
     lexicon: 1,
     id: 'app.gndr.feed.getActorFeeds',
     defs: {
@@ -6814,7 +6814,7 @@ export const schemaDict = {
       },
     },
   },
-  AppBskyFeedGetActorLikes: {
+  AppGndrFeedGetActorLikes: {
     lexicon: 1,
     id: 'app.gndr.feed.getActorLikes',
     defs: {
@@ -6871,7 +6871,7 @@ export const schemaDict = {
       },
     },
   },
-  AppBskyFeedGetAuthorFeed: {
+  AppGndrFeedGetAuthorFeed: {
     lexicon: 1,
     id: 'app.gndr.feed.getAuthorFeed',
     defs: {
@@ -6945,7 +6945,7 @@ export const schemaDict = {
       },
     },
   },
-  AppBskyFeedGetFeed: {
+  AppGndrFeedGetFeed: {
     lexicon: 1,
     id: 'app.gndr.feed.getFeed',
     defs: {
@@ -6999,7 +6999,7 @@ export const schemaDict = {
       },
     },
   },
-  AppBskyFeedGetFeedGenerator: {
+  AppGndrFeedGetFeedGenerator: {
     lexicon: 1,
     id: 'app.gndr.feed.getFeedGenerator',
     defs: {
@@ -7044,7 +7044,7 @@ export const schemaDict = {
       },
     },
   },
-  AppBskyFeedGetFeedGenerators: {
+  AppGndrFeedGetFeedGenerators: {
     lexicon: 1,
     id: 'app.gndr.feed.getFeedGenerators',
     defs: {
@@ -7083,7 +7083,7 @@ export const schemaDict = {
       },
     },
   },
-  AppBskyFeedGetFeedSkeleton: {
+  AppGndrFeedGetFeedSkeleton: {
     lexicon: 1,
     id: 'app.gndr.feed.getFeedSkeleton',
     defs: {
@@ -7145,7 +7145,7 @@ export const schemaDict = {
       },
     },
   },
-  AppBskyFeedGetLikes: {
+  AppGndrFeedGetLikes: {
     lexicon: 1,
     id: 'app.gndr.feed.getLikes',
     defs: {
@@ -7227,7 +7227,7 @@ export const schemaDict = {
       },
     },
   },
-  AppBskyFeedGetListFeed: {
+  AppGndrFeedGetListFeed: {
     lexicon: 1,
     id: 'app.gndr.feed.getListFeed',
     defs: {
@@ -7282,7 +7282,7 @@ export const schemaDict = {
       },
     },
   },
-  AppBskyFeedGetPosts: {
+  AppGndrFeedGetPosts: {
     lexicon: 1,
     id: 'app.gndr.feed.getPosts',
     defs: {
@@ -7324,7 +7324,7 @@ export const schemaDict = {
       },
     },
   },
-  AppBskyFeedGetPostThread: {
+  AppGndrFeedGetPostThread: {
     lexicon: 1,
     id: 'app.gndr.feed.getPostThread',
     defs: {
@@ -7388,7 +7388,7 @@ export const schemaDict = {
       },
     },
   },
-  AppBskyFeedGetQuotes: {
+  AppGndrFeedGetQuotes: {
     lexicon: 1,
     id: 'app.gndr.feed.getQuotes',
     defs: {
@@ -7451,7 +7451,7 @@ export const schemaDict = {
       },
     },
   },
-  AppBskyFeedGetRepostedBy: {
+  AppGndrFeedGetRepostedBy: {
     lexicon: 1,
     id: 'app.gndr.feed.getRepostedBy',
     defs: {
@@ -7514,7 +7514,7 @@ export const schemaDict = {
       },
     },
   },
-  AppBskyFeedGetSuggestedFeeds: {
+  AppGndrFeedGetSuggestedFeeds: {
     lexicon: 1,
     id: 'app.gndr.feed.getSuggestedFeeds',
     defs: {
@@ -7558,7 +7558,7 @@ export const schemaDict = {
       },
     },
   },
-  AppBskyFeedGetTimeline: {
+  AppGndrFeedGetTimeline: {
     lexicon: 1,
     id: 'app.gndr.feed.getTimeline',
     defs: {
@@ -7607,7 +7607,7 @@ export const schemaDict = {
       },
     },
   },
-  AppBskyFeedLike: {
+  AppGndrFeedLike: {
     lexicon: 1,
     id: 'app.gndr.feed.like',
     defs: {
@@ -7636,7 +7636,7 @@ export const schemaDict = {
       },
     },
   },
-  AppBskyFeedPost: {
+  AppGndrFeedPost: {
     lexicon: 1,
     id: 'app.gndr.feed.post',
     defs: {
@@ -7772,7 +7772,7 @@ export const schemaDict = {
       },
     },
   },
-  AppBskyFeedPostgate: {
+  AppGndrFeedPostgate: {
     lexicon: 1,
     id: 'app.gndr.feed.postgate',
     defs: {
@@ -7824,7 +7824,7 @@ export const schemaDict = {
       },
     },
   },
-  AppBskyFeedRepost: {
+  AppGndrFeedRepost: {
     lexicon: 1,
     id: 'app.gndr.feed.repost',
     defs: {
@@ -7854,7 +7854,7 @@ export const schemaDict = {
       },
     },
   },
-  AppBskyFeedSearchPosts: {
+  AppGndrFeedSearchPosts: {
     lexicon: 1,
     id: 'app.gndr.feed.searchPosts',
     defs: {
@@ -7971,7 +7971,7 @@ export const schemaDict = {
       },
     },
   },
-  AppBskyFeedSendInteractions: {
+  AppGndrFeedSendInteractions: {
     lexicon: 1,
     id: 'app.gndr.feed.sendInteractions',
     defs: {
@@ -8005,7 +8005,7 @@ export const schemaDict = {
       },
     },
   },
-  AppBskyFeedThreadgate: {
+  AppGndrFeedThreadgate: {
     lexicon: 1,
     id: 'app.gndr.feed.threadgate',
     defs: {
@@ -8082,7 +8082,7 @@ export const schemaDict = {
       },
     },
   },
-  AppBskyGraphBlock: {
+  AppGndrGraphBlock: {
     lexicon: 1,
     id: 'app.gndr.graph.block',
     defs: {
@@ -8109,7 +8109,7 @@ export const schemaDict = {
       },
     },
   },
-  AppBskyGraphDefs: {
+  AppGndrGraphDefs: {
     lexicon: 1,
     id: 'app.gndr.graph.defs',
     defs: {
@@ -8415,7 +8415,7 @@ export const schemaDict = {
       },
     },
   },
-  AppBskyGraphFollow: {
+  AppGndrGraphFollow: {
     lexicon: 1,
     id: 'app.gndr.graph.follow',
     defs: {
@@ -8441,7 +8441,7 @@ export const schemaDict = {
       },
     },
   },
-  AppBskyGraphGetActorStarterPacks: {
+  AppGndrGraphGetActorStarterPacks: {
     lexicon: 1,
     id: 'app.gndr.graph.getActorStarterPacks',
     defs: {
@@ -8489,7 +8489,7 @@ export const schemaDict = {
       },
     },
   },
-  AppBskyGraphGetBlocks: {
+  AppGndrGraphGetBlocks: {
     lexicon: 1,
     id: 'app.gndr.graph.getBlocks',
     defs: {
@@ -8533,7 +8533,7 @@ export const schemaDict = {
       },
     },
   },
-  AppBskyGraphGetFollowers: {
+  AppGndrGraphGetFollowers: {
     lexicon: 1,
     id: 'app.gndr.graph.getFollowers',
     defs: {
@@ -8586,7 +8586,7 @@ export const schemaDict = {
       },
     },
   },
-  AppBskyGraphGetFollows: {
+  AppGndrGraphGetFollows: {
     lexicon: 1,
     id: 'app.gndr.graph.getFollows',
     defs: {
@@ -8639,7 +8639,7 @@ export const schemaDict = {
       },
     },
   },
-  AppBskyGraphGetKnownFollowers: {
+  AppGndrGraphGetKnownFollowers: {
     lexicon: 1,
     id: 'app.gndr.graph.getKnownFollowers',
     defs: {
@@ -8692,7 +8692,7 @@ export const schemaDict = {
       },
     },
   },
-  AppBskyGraphGetList: {
+  AppGndrGraphGetList: {
     lexicon: 1,
     id: 'app.gndr.graph.getList',
     defs: {
@@ -8746,7 +8746,7 @@ export const schemaDict = {
       },
     },
   },
-  AppBskyGraphGetListBlocks: {
+  AppGndrGraphGetListBlocks: {
     lexicon: 1,
     id: 'app.gndr.graph.getListBlocks',
     defs: {
@@ -8790,7 +8790,7 @@ export const schemaDict = {
       },
     },
   },
-  AppBskyGraphGetListMutes: {
+  AppGndrGraphGetListMutes: {
     lexicon: 1,
     id: 'app.gndr.graph.getListMutes',
     defs: {
@@ -8834,7 +8834,7 @@ export const schemaDict = {
       },
     },
   },
-  AppBskyGraphGetLists: {
+  AppGndrGraphGetLists: {
     lexicon: 1,
     id: 'app.gndr.graph.getLists',
     defs: {
@@ -8884,7 +8884,7 @@ export const schemaDict = {
       },
     },
   },
-  AppBskyGraphGetMutes: {
+  AppGndrGraphGetMutes: {
     lexicon: 1,
     id: 'app.gndr.graph.getMutes',
     defs: {
@@ -8928,7 +8928,7 @@ export const schemaDict = {
       },
     },
   },
-  AppBskyGraphGetRelationships: {
+  AppGndrGraphGetRelationships: {
     lexicon: 1,
     id: 'app.gndr.graph.getRelationships',
     defs: {
@@ -8990,7 +8990,7 @@ export const schemaDict = {
       },
     },
   },
-  AppBskyGraphGetStarterPack: {
+  AppGndrGraphGetStarterPack: {
     lexicon: 1,
     id: 'app.gndr.graph.getStarterPack',
     defs: {
@@ -9024,7 +9024,7 @@ export const schemaDict = {
       },
     },
   },
-  AppBskyGraphGetStarterPacks: {
+  AppGndrGraphGetStarterPacks: {
     lexicon: 1,
     id: 'app.gndr.graph.getStarterPacks',
     defs: {
@@ -9064,7 +9064,7 @@ export const schemaDict = {
       },
     },
   },
-  AppBskyGraphGetSuggestedFollowsByActor: {
+  AppGndrGraphGetSuggestedFollowsByActor: {
     lexicon: 1,
     id: 'app.gndr.graph.getSuggestedFollowsByActor',
     defs: {
@@ -9112,7 +9112,7 @@ export const schemaDict = {
       },
     },
   },
-  AppBskyGraphList: {
+  AppGndrGraphList: {
     lexicon: 1,
     id: 'app.gndr.graph.list',
     defs: {
@@ -9167,7 +9167,7 @@ export const schemaDict = {
       },
     },
   },
-  AppBskyGraphListblock: {
+  AppGndrGraphListblock: {
     lexicon: 1,
     id: 'app.gndr.graph.listblock',
     defs: {
@@ -9194,7 +9194,7 @@ export const schemaDict = {
       },
     },
   },
-  AppBskyGraphListitem: {
+  AppGndrGraphListitem: {
     lexicon: 1,
     id: 'app.gndr.graph.listitem',
     defs: {
@@ -9227,7 +9227,7 @@ export const schemaDict = {
       },
     },
   },
-  AppBskyGraphMuteActor: {
+  AppGndrGraphMuteActor: {
     lexicon: 1,
     id: 'app.gndr.graph.muteActor',
     defs: {
@@ -9251,7 +9251,7 @@ export const schemaDict = {
       },
     },
   },
-  AppBskyGraphMuteActorList: {
+  AppGndrGraphMuteActorList: {
     lexicon: 1,
     id: 'app.gndr.graph.muteActorList',
     defs: {
@@ -9275,7 +9275,7 @@ export const schemaDict = {
       },
     },
   },
-  AppBskyGraphMuteThread: {
+  AppGndrGraphMuteThread: {
     lexicon: 1,
     id: 'app.gndr.graph.muteThread',
     defs: {
@@ -9299,7 +9299,7 @@ export const schemaDict = {
       },
     },
   },
-  AppBskyGraphSearchStarterPacks: {
+  AppGndrGraphSearchStarterPacks: {
     lexicon: 1,
     id: 'app.gndr.graph.searchStarterPacks',
     defs: {
@@ -9349,7 +9349,7 @@ export const schemaDict = {
       },
     },
   },
-  AppBskyGraphStarterpack: {
+  AppGndrGraphStarterpack: {
     lexicon: 1,
     id: 'app.gndr.graph.starterpack',
     defs: {
@@ -9413,7 +9413,7 @@ export const schemaDict = {
       },
     },
   },
-  AppBskyGraphUnmuteActor: {
+  AppGndrGraphUnmuteActor: {
     lexicon: 1,
     id: 'app.gndr.graph.unmuteActor',
     defs: {
@@ -9436,7 +9436,7 @@ export const schemaDict = {
       },
     },
   },
-  AppBskyGraphUnmuteActorList: {
+  AppGndrGraphUnmuteActorList: {
     lexicon: 1,
     id: 'app.gndr.graph.unmuteActorList',
     defs: {
@@ -9459,7 +9459,7 @@ export const schemaDict = {
       },
     },
   },
-  AppBskyGraphUnmuteThread: {
+  AppGndrGraphUnmuteThread: {
     lexicon: 1,
     id: 'app.gndr.graph.unmuteThread',
     defs: {
@@ -9482,7 +9482,7 @@ export const schemaDict = {
       },
     },
   },
-  AppBskyGraphVerification: {
+  AppGndrGraphVerification: {
     lexicon: 1,
     id: 'app.gndr.graph.verification',
     defs: {
@@ -9521,7 +9521,7 @@ export const schemaDict = {
       },
     },
   },
-  AppBskyLabelerDefs: {
+  AppGndrLabelerDefs: {
     lexicon: 1,
     id: 'app.gndr.labeler.defs',
     defs: {
@@ -9665,7 +9665,7 @@ export const schemaDict = {
       },
     },
   },
-  AppBskyLabelerGetServices: {
+  AppGndrLabelerGetServices: {
     lexicon: 1,
     id: 'app.gndr.labeler.getServices',
     defs: {
@@ -9711,7 +9711,7 @@ export const schemaDict = {
       },
     },
   },
-  AppBskyLabelerService: {
+  AppGndrLabelerService: {
     lexicon: 1,
     id: 'app.gndr.labeler.service',
     defs: {
@@ -9767,7 +9767,7 @@ export const schemaDict = {
       },
     },
   },
-  AppBskyNotificationDeclaration: {
+  AppGndrNotificationDeclaration: {
     lexicon: 1,
     id: 'app.gndr.notification.declaration',
     defs: {
@@ -9791,7 +9791,7 @@ export const schemaDict = {
       },
     },
   },
-  AppBskyNotificationDefs: {
+  AppGndrNotificationDefs: {
     lexicon: 1,
     id: 'app.gndr.notification.defs',
     defs: {
@@ -9942,7 +9942,7 @@ export const schemaDict = {
       },
     },
   },
-  AppBskyNotificationGetPreferences: {
+  AppGndrNotificationGetPreferences: {
     lexicon: 1,
     id: 'app.gndr.notification.getPreferences',
     defs: {
@@ -9970,7 +9970,7 @@ export const schemaDict = {
       },
     },
   },
-  AppBskyNotificationGetUnreadCount: {
+  AppGndrNotificationGetUnreadCount: {
     lexicon: 1,
     id: 'app.gndr.notification.getUnreadCount',
     defs: {
@@ -10005,7 +10005,7 @@ export const schemaDict = {
       },
     },
   },
-  AppBskyNotificationListActivitySubscriptions: {
+  AppGndrNotificationListActivitySubscriptions: {
     lexicon: 1,
     id: 'app.gndr.notification.listActivitySubscriptions',
     defs: {
@@ -10049,7 +10049,7 @@ export const schemaDict = {
       },
     },
   },
-  AppBskyNotificationListNotifications: {
+  AppGndrNotificationListNotifications: {
     lexicon: 1,
     id: 'app.gndr.notification.listNotifications',
     defs: {
@@ -10182,7 +10182,7 @@ export const schemaDict = {
       },
     },
   },
-  AppBskyNotificationPutActivitySubscription: {
+  AppGndrNotificationPutActivitySubscription: {
     lexicon: 1,
     id: 'app.gndr.notification.putActivitySubscription',
     defs: {
@@ -10227,7 +10227,7 @@ export const schemaDict = {
       },
     },
   },
-  AppBskyNotificationPutPreferences: {
+  AppGndrNotificationPutPreferences: {
     lexicon: 1,
     id: 'app.gndr.notification.putPreferences',
     defs: {
@@ -10250,7 +10250,7 @@ export const schemaDict = {
       },
     },
   },
-  AppBskyNotificationPutPreferencesV2: {
+  AppGndrNotificationPutPreferencesV2: {
     lexicon: 1,
     id: 'app.gndr.notification.putPreferencesV2',
     defs: {
@@ -10334,7 +10334,7 @@ export const schemaDict = {
       },
     },
   },
-  AppBskyNotificationRegisterPush: {
+  AppGndrNotificationRegisterPush: {
     lexicon: 1,
     id: 'app.gndr.notification.registerPush',
     defs: {
@@ -10368,7 +10368,7 @@ export const schemaDict = {
       },
     },
   },
-  AppBskyNotificationUpdateSeen: {
+  AppGndrNotificationUpdateSeen: {
     lexicon: 1,
     id: 'app.gndr.notification.updateSeen',
     defs: {
@@ -10392,7 +10392,7 @@ export const schemaDict = {
       },
     },
   },
-  AppBskyRichtextFacet: {
+  AppGndrRichtextFacet: {
     lexicon: 1,
     id: 'app.gndr.richtext.facet',
     defs: {
@@ -10473,7 +10473,7 @@ export const schemaDict = {
       },
     },
   },
-  AppBskyUnspeccedDefs: {
+  AppGndrUnspeccedDefs: {
     lexicon: 1,
     id: 'app.gndr.unspecced.defs',
     defs: {
@@ -10673,7 +10673,7 @@ export const schemaDict = {
       },
     },
   },
-  AppBskyUnspeccedGetConfig: {
+  AppGndrUnspeccedGetConfig: {
     lexicon: 1,
     id: 'app.gndr.unspecced.getConfig',
     defs: {
@@ -10718,7 +10718,7 @@ export const schemaDict = {
       },
     },
   },
-  AppBskyUnspeccedGetPopularFeedGenerators: {
+  AppGndrUnspeccedGetPopularFeedGenerators: {
     lexicon: 1,
     id: 'app.gndr.unspecced.getPopularFeedGenerators',
     defs: {
@@ -10764,7 +10764,7 @@ export const schemaDict = {
       },
     },
   },
-  AppBskyUnspeccedGetPostThreadOtherV2: {
+  AppGndrUnspeccedGetPostThreadOtherV2: {
     lexicon: 1,
     id: 'app.gndr.unspecced.getPostThreadOtherV2',
     defs: {
@@ -10830,7 +10830,7 @@ export const schemaDict = {
       },
     },
   },
-  AppBskyUnspeccedGetPostThreadV2: {
+  AppGndrUnspeccedGetPostThreadV2: {
     lexicon: 1,
     id: 'app.gndr.unspecced.getPostThreadV2',
     defs: {
@@ -10937,7 +10937,7 @@ export const schemaDict = {
       },
     },
   },
-  AppBskyUnspeccedGetSuggestedFeeds: {
+  AppGndrUnspeccedGetSuggestedFeeds: {
     lexicon: 1,
     id: 'app.gndr.unspecced.getSuggestedFeeds',
     defs: {
@@ -10974,7 +10974,7 @@ export const schemaDict = {
       },
     },
   },
-  AppBskyUnspeccedGetSuggestedFeedsSkeleton: {
+  AppGndrUnspeccedGetSuggestedFeedsSkeleton: {
     lexicon: 1,
     id: 'app.gndr.unspecced.getSuggestedFeedsSkeleton',
     defs: {
@@ -11018,7 +11018,7 @@ export const schemaDict = {
       },
     },
   },
-  AppBskyUnspeccedGetSuggestedStarterPacks: {
+  AppGndrUnspeccedGetSuggestedStarterPacks: {
     lexicon: 1,
     id: 'app.gndr.unspecced.getSuggestedStarterPacks',
     defs: {
@@ -11055,7 +11055,7 @@ export const schemaDict = {
       },
     },
   },
-  AppBskyUnspeccedGetSuggestedStarterPacksSkeleton: {
+  AppGndrUnspeccedGetSuggestedStarterPacksSkeleton: {
     lexicon: 1,
     id: 'app.gndr.unspecced.getSuggestedStarterPacksSkeleton',
     defs: {
@@ -11099,7 +11099,7 @@ export const schemaDict = {
       },
     },
   },
-  AppBskyUnspeccedGetSuggestedUsers: {
+  AppGndrUnspeccedGetSuggestedUsers: {
     lexicon: 1,
     id: 'app.gndr.unspecced.getSuggestedUsers',
     defs: {
@@ -11140,7 +11140,7 @@ export const schemaDict = {
       },
     },
   },
-  AppBskyUnspeccedGetSuggestedUsersSkeleton: {
+  AppGndrUnspeccedGetSuggestedUsersSkeleton: {
     lexicon: 1,
     id: 'app.gndr.unspecced.getSuggestedUsersSkeleton',
     defs: {
@@ -11188,7 +11188,7 @@ export const schemaDict = {
       },
     },
   },
-  AppBskyUnspeccedGetSuggestionsSkeleton: {
+  AppGndrUnspeccedGetSuggestionsSkeleton: {
     lexicon: 1,
     id: 'app.gndr.unspecced.getSuggestionsSkeleton',
     defs: {
@@ -11255,7 +11255,7 @@ export const schemaDict = {
       },
     },
   },
-  AppBskyUnspeccedGetTaggedSuggestions: {
+  AppGndrUnspeccedGetTaggedSuggestions: {
     lexicon: 1,
     id: 'app.gndr.unspecced.getTaggedSuggestions',
     defs: {
@@ -11303,7 +11303,7 @@ export const schemaDict = {
       },
     },
   },
-  AppBskyUnspeccedGetTrendingTopics: {
+  AppGndrUnspeccedGetTrendingTopics: {
     lexicon: 1,
     id: 'app.gndr.unspecced.getTrendingTopics',
     defs: {
@@ -11353,7 +11353,7 @@ export const schemaDict = {
       },
     },
   },
-  AppBskyUnspeccedGetTrends: {
+  AppGndrUnspeccedGetTrends: {
     lexicon: 1,
     id: 'app.gndr.unspecced.getTrends',
     defs: {
@@ -11390,7 +11390,7 @@ export const schemaDict = {
       },
     },
   },
-  AppBskyUnspeccedGetTrendsSkeleton: {
+  AppGndrUnspeccedGetTrendsSkeleton: {
     lexicon: 1,
     id: 'app.gndr.unspecced.getTrendsSkeleton',
     defs: {
@@ -11434,7 +11434,7 @@ export const schemaDict = {
       },
     },
   },
-  AppBskyUnspeccedSearchActorsSkeleton: {
+  AppGndrUnspeccedSearchActorsSkeleton: {
     lexicon: 1,
     id: 'app.gndr.unspecced.searchActorsSkeleton',
     defs: {
@@ -11505,7 +11505,7 @@ export const schemaDict = {
       },
     },
   },
-  AppBskyUnspeccedSearchPostsSkeleton: {
+  AppGndrUnspeccedSearchPostsSkeleton: {
     lexicon: 1,
     id: 'app.gndr.unspecced.searchPostsSkeleton',
     defs: {
@@ -11627,7 +11627,7 @@ export const schemaDict = {
       },
     },
   },
-  AppBskyUnspeccedSearchStarterPacksSkeleton: {
+  AppGndrUnspeccedSearchStarterPacksSkeleton: {
     lexicon: 1,
     id: 'app.gndr.unspecced.searchStarterPacksSkeleton',
     defs: {
@@ -11694,7 +11694,7 @@ export const schemaDict = {
       },
     },
   },
-  AppBskyVideoDefs: {
+  AppGndrVideoDefs: {
     lexicon: 1,
     id: 'app.gndr.video.defs',
     defs: {
@@ -11734,7 +11734,7 @@ export const schemaDict = {
       },
     },
   },
-  AppBskyVideoGetJobStatus: {
+  AppGndrVideoGetJobStatus: {
     lexicon: 1,
     id: 'app.gndr.video.getJobStatus',
     defs: {
@@ -11766,7 +11766,7 @@ export const schemaDict = {
       },
     },
   },
-  AppBskyVideoGetUploadLimits: {
+  AppGndrVideoGetUploadLimits: {
     lexicon: 1,
     id: 'app.gndr.video.getUploadLimits',
     defs: {
@@ -11800,7 +11800,7 @@ export const schemaDict = {
       },
     },
   },
-  AppBskyVideoUploadVideo: {
+  AppGndrVideoUploadVideo: {
     lexicon: 1,
     id: 'app.gndr.video.uploadVideo',
     defs: {
@@ -11826,7 +11826,7 @@ export const schemaDict = {
       },
     },
   },
-  ChatBskyActorDeclaration: {
+  ChatGndrActorDeclaration: {
     lexicon: 1,
     id: 'chat.gndr.actor.declaration',
     defs: {
@@ -11847,7 +11847,7 @@ export const schemaDict = {
       },
     },
   },
-  ChatBskyActorDefs: {
+  ChatGndrActorDefs: {
     lexicon: 1,
     id: 'chat.gndr.actor.defs',
     defs: {
@@ -11900,7 +11900,7 @@ export const schemaDict = {
       },
     },
   },
-  ChatBskyActorDeleteAccount: {
+  ChatGndrActorDeleteAccount: {
     lexicon: 1,
     id: 'chat.gndr.actor.deleteAccount',
     defs: {
@@ -11916,7 +11916,7 @@ export const schemaDict = {
       },
     },
   },
-  ChatBskyActorExportAccountData: {
+  ChatGndrActorExportAccountData: {
     lexicon: 1,
     id: 'chat.gndr.actor.exportAccountData',
     defs: {
@@ -11928,7 +11928,7 @@ export const schemaDict = {
       },
     },
   },
-  ChatBskyConvoAcceptConvo: {
+  ChatGndrConvoAcceptConvo: {
     lexicon: 1,
     id: 'chat.gndr.convo.acceptConvo',
     defs: {
@@ -11962,7 +11962,7 @@ export const schemaDict = {
       },
     },
   },
-  ChatBskyConvoAddReaction: {
+  ChatGndrConvoAddReaction: {
     lexicon: 1,
     id: 'chat.gndr.convo.addReaction',
     defs: {
@@ -12025,7 +12025,7 @@ export const schemaDict = {
       },
     },
   },
-  ChatBskyConvoDefs: {
+  ChatGndrConvoDefs: {
     lexicon: 1,
     id: 'chat.gndr.convo.defs',
     defs: {
@@ -12390,7 +12390,7 @@ export const schemaDict = {
       },
     },
   },
-  ChatBskyConvoDeleteMessageForSelf: {
+  ChatGndrConvoDeleteMessageForSelf: {
     lexicon: 1,
     id: 'chat.gndr.convo.deleteMessageForSelf',
     defs: {
@@ -12421,7 +12421,7 @@ export const schemaDict = {
       },
     },
   },
-  ChatBskyConvoGetConvo: {
+  ChatGndrConvoGetConvo: {
     lexicon: 1,
     id: 'chat.gndr.convo.getConvo',
     defs: {
@@ -12452,7 +12452,7 @@ export const schemaDict = {
       },
     },
   },
-  ChatBskyConvoGetConvoAvailability: {
+  ChatGndrConvoGetConvoAvailability: {
     lexicon: 1,
     id: 'chat.gndr.convo.getConvoAvailability',
     defs: {
@@ -12494,7 +12494,7 @@ export const schemaDict = {
       },
     },
   },
-  ChatBskyConvoGetConvoForMembers: {
+  ChatGndrConvoGetConvoForMembers: {
     lexicon: 1,
     id: 'chat.gndr.convo.getConvoForMembers',
     defs: {
@@ -12531,7 +12531,7 @@ export const schemaDict = {
       },
     },
   },
-  ChatBskyConvoGetLog: {
+  ChatGndrConvoGetLog: {
     lexicon: 1,
     id: 'chat.gndr.convo.getLog',
     defs: {
@@ -12579,7 +12579,7 @@ export const schemaDict = {
       },
     },
   },
-  ChatBskyConvoGetMessages: {
+  ChatGndrConvoGetMessages: {
     lexicon: 1,
     id: 'chat.gndr.convo.getMessages',
     defs: {
@@ -12628,7 +12628,7 @@ export const schemaDict = {
       },
     },
   },
-  ChatBskyConvoLeaveConvo: {
+  ChatGndrConvoLeaveConvo: {
     lexicon: 1,
     id: 'chat.gndr.convo.leaveConvo',
     defs: {
@@ -12664,7 +12664,7 @@ export const schemaDict = {
       },
     },
   },
-  ChatBskyConvoListConvos: {
+  ChatGndrConvoListConvos: {
     lexicon: 1,
     id: 'chat.gndr.convo.listConvos',
     defs: {
@@ -12714,7 +12714,7 @@ export const schemaDict = {
       },
     },
   },
-  ChatBskyConvoMuteConvo: {
+  ChatGndrConvoMuteConvo: {
     lexicon: 1,
     id: 'chat.gndr.convo.muteConvo',
     defs: {
@@ -12748,7 +12748,7 @@ export const schemaDict = {
       },
     },
   },
-  ChatBskyConvoRemoveReaction: {
+  ChatGndrConvoRemoveReaction: {
     lexicon: 1,
     id: 'chat.gndr.convo.removeReaction',
     defs: {
@@ -12806,7 +12806,7 @@ export const schemaDict = {
       },
     },
   },
-  ChatBskyConvoSendMessage: {
+  ChatGndrConvoSendMessage: {
     lexicon: 1,
     id: 'chat.gndr.convo.sendMessage',
     defs: {
@@ -12838,7 +12838,7 @@ export const schemaDict = {
       },
     },
   },
-  ChatBskyConvoSendMessageBatch: {
+  ChatGndrConvoSendMessageBatch: {
     lexicon: 1,
     id: 'chat.gndr.convo.sendMessageBatch',
     defs: {
@@ -12893,7 +12893,7 @@ export const schemaDict = {
       },
     },
   },
-  ChatBskyConvoUnmuteConvo: {
+  ChatGndrConvoUnmuteConvo: {
     lexicon: 1,
     id: 'chat.gndr.convo.unmuteConvo',
     defs: {
@@ -12927,7 +12927,7 @@ export const schemaDict = {
       },
     },
   },
-  ChatBskyConvoUpdateAllRead: {
+  ChatGndrConvoUpdateAllRead: {
     lexicon: 1,
     id: 'chat.gndr.convo.updateAllRead',
     defs: {
@@ -12961,7 +12961,7 @@ export const schemaDict = {
       },
     },
   },
-  ChatBskyConvoUpdateRead: {
+  ChatGndrConvoUpdateRead: {
     lexicon: 1,
     id: 'chat.gndr.convo.updateRead',
     defs: {
@@ -12998,7 +12998,7 @@ export const schemaDict = {
       },
     },
   },
-  ChatBskyModerationGetActorMetadata: {
+  ChatGndrModerationGetActorMetadata: {
     lexicon: 1,
     id: 'chat.gndr.moderation.getActorMetadata',
     defs: {
@@ -13061,7 +13061,7 @@ export const schemaDict = {
       },
     },
   },
-  ChatBskyModerationGetMessageContext: {
+  ChatGndrModerationGetMessageContext: {
     lexicon: 1,
     id: 'chat.gndr.moderation.getMessageContext',
     defs: {
@@ -13111,7 +13111,7 @@ export const schemaDict = {
       },
     },
   },
-  ChatBskyModerationUpdateActorAccess: {
+  ChatGndrModerationUpdateActorAccess: {
     lexicon: 1,
     id: 'chat.gndr.moderation.updateActorAccess',
     defs: {
@@ -13274,151 +13274,151 @@ export const ids = {
   ComAtprotoTempFetchLabels: 'com.atproto.temp.fetchLabels',
   ComAtprotoTempRequestPhoneVerification:
     'com.atproto.temp.requestPhoneVerification',
-  AppBskyActorDefs: 'app.gndr.actor.defs',
-  AppBskyActorGetPreferences: 'app.gndr.actor.getPreferences',
-  AppBskyActorGetProfile: 'app.gndr.actor.getProfile',
-  AppBskyActorGetProfiles: 'app.gndr.actor.getProfiles',
-  AppBskyActorGetSuggestions: 'app.gndr.actor.getSuggestions',
-  AppBskyActorProfile: 'app.gndr.actor.profile',
-  AppBskyActorPutPreferences: 'app.gndr.actor.putPreferences',
-  AppBskyActorSearchActors: 'app.gndr.actor.searchActors',
-  AppBskyActorSearchActorsTypeahead: 'app.gndr.actor.searchActorsTypeahead',
-  AppBskyActorStatus: 'app.gndr.actor.status',
-  AppBskyEmbedDefs: 'app.gndr.embed.defs',
-  AppBskyEmbedExternal: 'app.gndr.embed.external',
-  AppBskyEmbedImages: 'app.gndr.embed.images',
-  AppBskyEmbedRecord: 'app.gndr.embed.record',
-  AppBskyEmbedRecordWithMedia: 'app.gndr.embed.recordWithMedia',
-  AppBskyEmbedVideo: 'app.gndr.embed.video',
-  AppBskyFeedDefs: 'app.gndr.feed.defs',
-  AppBskyFeedDescribeFeedGenerator: 'app.gndr.feed.describeFeedGenerator',
-  AppBskyFeedGenerator: 'app.gndr.feed.generator',
-  AppBskyFeedGetActorFeeds: 'app.gndr.feed.getActorFeeds',
-  AppBskyFeedGetActorLikes: 'app.gndr.feed.getActorLikes',
-  AppBskyFeedGetAuthorFeed: 'app.gndr.feed.getAuthorFeed',
-  AppBskyFeedGetFeed: 'app.gndr.feed.getFeed',
-  AppBskyFeedGetFeedGenerator: 'app.gndr.feed.getFeedGenerator',
-  AppBskyFeedGetFeedGenerators: 'app.gndr.feed.getFeedGenerators',
-  AppBskyFeedGetFeedSkeleton: 'app.gndr.feed.getFeedSkeleton',
-  AppBskyFeedGetLikes: 'app.gndr.feed.getLikes',
-  AppBskyFeedGetListFeed: 'app.gndr.feed.getListFeed',
-  AppBskyFeedGetPosts: 'app.gndr.feed.getPosts',
-  AppBskyFeedGetPostThread: 'app.gndr.feed.getPostThread',
-  AppBskyFeedGetQuotes: 'app.gndr.feed.getQuotes',
-  AppBskyFeedGetRepostedBy: 'app.gndr.feed.getRepostedBy',
-  AppBskyFeedGetSuggestedFeeds: 'app.gndr.feed.getSuggestedFeeds',
-  AppBskyFeedGetTimeline: 'app.gndr.feed.getTimeline',
-  AppBskyFeedLike: 'app.gndr.feed.like',
-  AppBskyFeedPost: 'app.gndr.feed.post',
-  AppBskyFeedPostgate: 'app.gndr.feed.postgate',
-  AppBskyFeedRepost: 'app.gndr.feed.repost',
-  AppBskyFeedSearchPosts: 'app.gndr.feed.searchPosts',
-  AppBskyFeedSendInteractions: 'app.gndr.feed.sendInteractions',
-  AppBskyFeedThreadgate: 'app.gndr.feed.threadgate',
-  AppBskyGraphBlock: 'app.gndr.graph.block',
-  AppBskyGraphDefs: 'app.gndr.graph.defs',
-  AppBskyGraphFollow: 'app.gndr.graph.follow',
-  AppBskyGraphGetActorStarterPacks: 'app.gndr.graph.getActorStarterPacks',
-  AppBskyGraphGetBlocks: 'app.gndr.graph.getBlocks',
-  AppBskyGraphGetFollowers: 'app.gndr.graph.getFollowers',
-  AppBskyGraphGetFollows: 'app.gndr.graph.getFollows',
-  AppBskyGraphGetKnownFollowers: 'app.gndr.graph.getKnownFollowers',
-  AppBskyGraphGetList: 'app.gndr.graph.getList',
-  AppBskyGraphGetListBlocks: 'app.gndr.graph.getListBlocks',
-  AppBskyGraphGetListMutes: 'app.gndr.graph.getListMutes',
-  AppBskyGraphGetLists: 'app.gndr.graph.getLists',
-  AppBskyGraphGetMutes: 'app.gndr.graph.getMutes',
-  AppBskyGraphGetRelationships: 'app.gndr.graph.getRelationships',
-  AppBskyGraphGetStarterPack: 'app.gndr.graph.getStarterPack',
-  AppBskyGraphGetStarterPacks: 'app.gndr.graph.getStarterPacks',
-  AppBskyGraphGetSuggestedFollowsByActor:
+  AppGndrActorDefs: 'app.gndr.actor.defs',
+  AppGndrActorGetPreferences: 'app.gndr.actor.getPreferences',
+  AppGndrActorGetProfile: 'app.gndr.actor.getProfile',
+  AppGndrActorGetProfiles: 'app.gndr.actor.getProfiles',
+  AppGndrActorGetSuggestions: 'app.gndr.actor.getSuggestions',
+  AppGndrActorProfile: 'app.gndr.actor.profile',
+  AppGndrActorPutPreferences: 'app.gndr.actor.putPreferences',
+  AppGndrActorSearchActors: 'app.gndr.actor.searchActors',
+  AppGndrActorSearchActorsTypeahead: 'app.gndr.actor.searchActorsTypeahead',
+  AppGndrActorStatus: 'app.gndr.actor.status',
+  AppGndrEmbedDefs: 'app.gndr.embed.defs',
+  AppGndrEmbedExternal: 'app.gndr.embed.external',
+  AppGndrEmbedImages: 'app.gndr.embed.images',
+  AppGndrEmbedRecord: 'app.gndr.embed.record',
+  AppGndrEmbedRecordWithMedia: 'app.gndr.embed.recordWithMedia',
+  AppGndrEmbedVideo: 'app.gndr.embed.video',
+  AppGndrFeedDefs: 'app.gndr.feed.defs',
+  AppGndrFeedDescribeFeedGenerator: 'app.gndr.feed.describeFeedGenerator',
+  AppGndrFeedGenerator: 'app.gndr.feed.generator',
+  AppGndrFeedGetActorFeeds: 'app.gndr.feed.getActorFeeds',
+  AppGndrFeedGetActorLikes: 'app.gndr.feed.getActorLikes',
+  AppGndrFeedGetAuthorFeed: 'app.gndr.feed.getAuthorFeed',
+  AppGndrFeedGetFeed: 'app.gndr.feed.getFeed',
+  AppGndrFeedGetFeedGenerator: 'app.gndr.feed.getFeedGenerator',
+  AppGndrFeedGetFeedGenerators: 'app.gndr.feed.getFeedGenerators',
+  AppGndrFeedGetFeedSkeleton: 'app.gndr.feed.getFeedSkeleton',
+  AppGndrFeedGetLikes: 'app.gndr.feed.getLikes',
+  AppGndrFeedGetListFeed: 'app.gndr.feed.getListFeed',
+  AppGndrFeedGetPosts: 'app.gndr.feed.getPosts',
+  AppGndrFeedGetPostThread: 'app.gndr.feed.getPostThread',
+  AppGndrFeedGetQuotes: 'app.gndr.feed.getQuotes',
+  AppGndrFeedGetRepostedBy: 'app.gndr.feed.getRepostedBy',
+  AppGndrFeedGetSuggestedFeeds: 'app.gndr.feed.getSuggestedFeeds',
+  AppGndrFeedGetTimeline: 'app.gndr.feed.getTimeline',
+  AppGndrFeedLike: 'app.gndr.feed.like',
+  AppGndrFeedPost: 'app.gndr.feed.post',
+  AppGndrFeedPostgate: 'app.gndr.feed.postgate',
+  AppGndrFeedRepost: 'app.gndr.feed.repost',
+  AppGndrFeedSearchPosts: 'app.gndr.feed.searchPosts',
+  AppGndrFeedSendInteractions: 'app.gndr.feed.sendInteractions',
+  AppGndrFeedThreadgate: 'app.gndr.feed.threadgate',
+  AppGndrGraphBlock: 'app.gndr.graph.block',
+  AppGndrGraphDefs: 'app.gndr.graph.defs',
+  AppGndrGraphFollow: 'app.gndr.graph.follow',
+  AppGndrGraphGetActorStarterPacks: 'app.gndr.graph.getActorStarterPacks',
+  AppGndrGraphGetBlocks: 'app.gndr.graph.getBlocks',
+  AppGndrGraphGetFollowers: 'app.gndr.graph.getFollowers',
+  AppGndrGraphGetFollows: 'app.gndr.graph.getFollows',
+  AppGndrGraphGetKnownFollowers: 'app.gndr.graph.getKnownFollowers',
+  AppGndrGraphGetList: 'app.gndr.graph.getList',
+  AppGndrGraphGetListBlocks: 'app.gndr.graph.getListBlocks',
+  AppGndrGraphGetListMutes: 'app.gndr.graph.getListMutes',
+  AppGndrGraphGetLists: 'app.gndr.graph.getLists',
+  AppGndrGraphGetMutes: 'app.gndr.graph.getMutes',
+  AppGndrGraphGetRelationships: 'app.gndr.graph.getRelationships',
+  AppGndrGraphGetStarterPack: 'app.gndr.graph.getStarterPack',
+  AppGndrGraphGetStarterPacks: 'app.gndr.graph.getStarterPacks',
+  AppGndrGraphGetSuggestedFollowsByActor:
     'app.gndr.graph.getSuggestedFollowsByActor',
-  AppBskyGraphList: 'app.gndr.graph.list',
-  AppBskyGraphListblock: 'app.gndr.graph.listblock',
-  AppBskyGraphListitem: 'app.gndr.graph.listitem',
-  AppBskyGraphMuteActor: 'app.gndr.graph.muteActor',
-  AppBskyGraphMuteActorList: 'app.gndr.graph.muteActorList',
-  AppBskyGraphMuteThread: 'app.gndr.graph.muteThread',
-  AppBskyGraphSearchStarterPacks: 'app.gndr.graph.searchStarterPacks',
-  AppBskyGraphStarterpack: 'app.gndr.graph.starterpack',
-  AppBskyGraphUnmuteActor: 'app.gndr.graph.unmuteActor',
-  AppBskyGraphUnmuteActorList: 'app.gndr.graph.unmuteActorList',
-  AppBskyGraphUnmuteThread: 'app.gndr.graph.unmuteThread',
-  AppBskyGraphVerification: 'app.gndr.graph.verification',
-  AppBskyLabelerDefs: 'app.gndr.labeler.defs',
-  AppBskyLabelerGetServices: 'app.gndr.labeler.getServices',
-  AppBskyLabelerService: 'app.gndr.labeler.service',
-  AppBskyNotificationDeclaration: 'app.gndr.notification.declaration',
-  AppBskyNotificationDefs: 'app.gndr.notification.defs',
-  AppBskyNotificationGetPreferences: 'app.gndr.notification.getPreferences',
-  AppBskyNotificationGetUnreadCount: 'app.gndr.notification.getUnreadCount',
-  AppBskyNotificationListActivitySubscriptions:
+  AppGndrGraphList: 'app.gndr.graph.list',
+  AppGndrGraphListblock: 'app.gndr.graph.listblock',
+  AppGndrGraphListitem: 'app.gndr.graph.listitem',
+  AppGndrGraphMuteActor: 'app.gndr.graph.muteActor',
+  AppGndrGraphMuteActorList: 'app.gndr.graph.muteActorList',
+  AppGndrGraphMuteThread: 'app.gndr.graph.muteThread',
+  AppGndrGraphSearchStarterPacks: 'app.gndr.graph.searchStarterPacks',
+  AppGndrGraphStarterpack: 'app.gndr.graph.starterpack',
+  AppGndrGraphUnmuteActor: 'app.gndr.graph.unmuteActor',
+  AppGndrGraphUnmuteActorList: 'app.gndr.graph.unmuteActorList',
+  AppGndrGraphUnmuteThread: 'app.gndr.graph.unmuteThread',
+  AppGndrGraphVerification: 'app.gndr.graph.verification',
+  AppGndrLabelerDefs: 'app.gndr.labeler.defs',
+  AppGndrLabelerGetServices: 'app.gndr.labeler.getServices',
+  AppGndrLabelerService: 'app.gndr.labeler.service',
+  AppGndrNotificationDeclaration: 'app.gndr.notification.declaration',
+  AppGndrNotificationDefs: 'app.gndr.notification.defs',
+  AppGndrNotificationGetPreferences: 'app.gndr.notification.getPreferences',
+  AppGndrNotificationGetUnreadCount: 'app.gndr.notification.getUnreadCount',
+  AppGndrNotificationListActivitySubscriptions:
     'app.gndr.notification.listActivitySubscriptions',
-  AppBskyNotificationListNotifications:
+  AppGndrNotificationListNotifications:
     'app.gndr.notification.listNotifications',
-  AppBskyNotificationPutActivitySubscription:
+  AppGndrNotificationPutActivitySubscription:
     'app.gndr.notification.putActivitySubscription',
-  AppBskyNotificationPutPreferences: 'app.gndr.notification.putPreferences',
-  AppBskyNotificationPutPreferencesV2: 'app.gndr.notification.putPreferencesV2',
-  AppBskyNotificationRegisterPush: 'app.gndr.notification.registerPush',
-  AppBskyNotificationUpdateSeen: 'app.gndr.notification.updateSeen',
-  AppBskyRichtextFacet: 'app.gndr.richtext.facet',
-  AppBskyUnspeccedDefs: 'app.gndr.unspecced.defs',
-  AppBskyUnspeccedGetConfig: 'app.gndr.unspecced.getConfig',
-  AppBskyUnspeccedGetPopularFeedGenerators:
+  AppGndrNotificationPutPreferences: 'app.gndr.notification.putPreferences',
+  AppGndrNotificationPutPreferencesV2: 'app.gndr.notification.putPreferencesV2',
+  AppGndrNotificationRegisterPush: 'app.gndr.notification.registerPush',
+  AppGndrNotificationUpdateSeen: 'app.gndr.notification.updateSeen',
+  AppGndrRichtextFacet: 'app.gndr.richtext.facet',
+  AppGndrUnspeccedDefs: 'app.gndr.unspecced.defs',
+  AppGndrUnspeccedGetConfig: 'app.gndr.unspecced.getConfig',
+  AppGndrUnspeccedGetPopularFeedGenerators:
     'app.gndr.unspecced.getPopularFeedGenerators',
-  AppBskyUnspeccedGetPostThreadOtherV2:
+  AppGndrUnspeccedGetPostThreadOtherV2:
     'app.gndr.unspecced.getPostThreadOtherV2',
-  AppBskyUnspeccedGetPostThreadV2: 'app.gndr.unspecced.getPostThreadV2',
-  AppBskyUnspeccedGetSuggestedFeeds: 'app.gndr.unspecced.getSuggestedFeeds',
-  AppBskyUnspeccedGetSuggestedFeedsSkeleton:
+  AppGndrUnspeccedGetPostThreadV2: 'app.gndr.unspecced.getPostThreadV2',
+  AppGndrUnspeccedGetSuggestedFeeds: 'app.gndr.unspecced.getSuggestedFeeds',
+  AppGndrUnspeccedGetSuggestedFeedsSkeleton:
     'app.gndr.unspecced.getSuggestedFeedsSkeleton',
-  AppBskyUnspeccedGetSuggestedStarterPacks:
+  AppGndrUnspeccedGetSuggestedStarterPacks:
     'app.gndr.unspecced.getSuggestedStarterPacks',
-  AppBskyUnspeccedGetSuggestedStarterPacksSkeleton:
+  AppGndrUnspeccedGetSuggestedStarterPacksSkeleton:
     'app.gndr.unspecced.getSuggestedStarterPacksSkeleton',
-  AppBskyUnspeccedGetSuggestedUsers: 'app.gndr.unspecced.getSuggestedUsers',
-  AppBskyUnspeccedGetSuggestedUsersSkeleton:
+  AppGndrUnspeccedGetSuggestedUsers: 'app.gndr.unspecced.getSuggestedUsers',
+  AppGndrUnspeccedGetSuggestedUsersSkeleton:
     'app.gndr.unspecced.getSuggestedUsersSkeleton',
-  AppBskyUnspeccedGetSuggestionsSkeleton:
+  AppGndrUnspeccedGetSuggestionsSkeleton:
     'app.gndr.unspecced.getSuggestionsSkeleton',
-  AppBskyUnspeccedGetTaggedSuggestions:
+  AppGndrUnspeccedGetTaggedSuggestions:
     'app.gndr.unspecced.getTaggedSuggestions',
-  AppBskyUnspeccedGetTrendingTopics: 'app.gndr.unspecced.getTrendingTopics',
-  AppBskyUnspeccedGetTrends: 'app.gndr.unspecced.getTrends',
-  AppBskyUnspeccedGetTrendsSkeleton: 'app.gndr.unspecced.getTrendsSkeleton',
-  AppBskyUnspeccedSearchActorsSkeleton:
+  AppGndrUnspeccedGetTrendingTopics: 'app.gndr.unspecced.getTrendingTopics',
+  AppGndrUnspeccedGetTrends: 'app.gndr.unspecced.getTrends',
+  AppGndrUnspeccedGetTrendsSkeleton: 'app.gndr.unspecced.getTrendsSkeleton',
+  AppGndrUnspeccedSearchActorsSkeleton:
     'app.gndr.unspecced.searchActorsSkeleton',
-  AppBskyUnspeccedSearchPostsSkeleton: 'app.gndr.unspecced.searchPostsSkeleton',
-  AppBskyUnspeccedSearchStarterPacksSkeleton:
+  AppGndrUnspeccedSearchPostsSkeleton: 'app.gndr.unspecced.searchPostsSkeleton',
+  AppGndrUnspeccedSearchStarterPacksSkeleton:
     'app.gndr.unspecced.searchStarterPacksSkeleton',
-  AppBskyVideoDefs: 'app.gndr.video.defs',
-  AppBskyVideoGetJobStatus: 'app.gndr.video.getJobStatus',
-  AppBskyVideoGetUploadLimits: 'app.gndr.video.getUploadLimits',
-  AppBskyVideoUploadVideo: 'app.gndr.video.uploadVideo',
-  ChatBskyActorDeclaration: 'chat.gndr.actor.declaration',
-  ChatBskyActorDefs: 'chat.gndr.actor.defs',
-  ChatBskyActorDeleteAccount: 'chat.gndr.actor.deleteAccount',
-  ChatBskyActorExportAccountData: 'chat.gndr.actor.exportAccountData',
-  ChatBskyConvoAcceptConvo: 'chat.gndr.convo.acceptConvo',
-  ChatBskyConvoAddReaction: 'chat.gndr.convo.addReaction',
-  ChatBskyConvoDefs: 'chat.gndr.convo.defs',
-  ChatBskyConvoDeleteMessageForSelf: 'chat.gndr.convo.deleteMessageForSelf',
-  ChatBskyConvoGetConvo: 'chat.gndr.convo.getConvo',
-  ChatBskyConvoGetConvoAvailability: 'chat.gndr.convo.getConvoAvailability',
-  ChatBskyConvoGetConvoForMembers: 'chat.gndr.convo.getConvoForMembers',
-  ChatBskyConvoGetLog: 'chat.gndr.convo.getLog',
-  ChatBskyConvoGetMessages: 'chat.gndr.convo.getMessages',
-  ChatBskyConvoLeaveConvo: 'chat.gndr.convo.leaveConvo',
-  ChatBskyConvoListConvos: 'chat.gndr.convo.listConvos',
-  ChatBskyConvoMuteConvo: 'chat.gndr.convo.muteConvo',
-  ChatBskyConvoRemoveReaction: 'chat.gndr.convo.removeReaction',
-  ChatBskyConvoSendMessage: 'chat.gndr.convo.sendMessage',
-  ChatBskyConvoSendMessageBatch: 'chat.gndr.convo.sendMessageBatch',
-  ChatBskyConvoUnmuteConvo: 'chat.gndr.convo.unmuteConvo',
-  ChatBskyConvoUpdateAllRead: 'chat.gndr.convo.updateAllRead',
-  ChatBskyConvoUpdateRead: 'chat.gndr.convo.updateRead',
-  ChatBskyModerationGetActorMetadata: 'chat.gndr.moderation.getActorMetadata',
-  ChatBskyModerationGetMessageContext: 'chat.gndr.moderation.getMessageContext',
-  ChatBskyModerationUpdateActorAccess: 'chat.gndr.moderation.updateActorAccess',
+  AppGndrVideoDefs: 'app.gndr.video.defs',
+  AppGndrVideoGetJobStatus: 'app.gndr.video.getJobStatus',
+  AppGndrVideoGetUploadLimits: 'app.gndr.video.getUploadLimits',
+  AppGndrVideoUploadVideo: 'app.gndr.video.uploadVideo',
+  ChatGndrActorDeclaration: 'chat.gndr.actor.declaration',
+  ChatGndrActorDefs: 'chat.gndr.actor.defs',
+  ChatGndrActorDeleteAccount: 'chat.gndr.actor.deleteAccount',
+  ChatGndrActorExportAccountData: 'chat.gndr.actor.exportAccountData',
+  ChatGndrConvoAcceptConvo: 'chat.gndr.convo.acceptConvo',
+  ChatGndrConvoAddReaction: 'chat.gndr.convo.addReaction',
+  ChatGndrConvoDefs: 'chat.gndr.convo.defs',
+  ChatGndrConvoDeleteMessageForSelf: 'chat.gndr.convo.deleteMessageForSelf',
+  ChatGndrConvoGetConvo: 'chat.gndr.convo.getConvo',
+  ChatGndrConvoGetConvoAvailability: 'chat.gndr.convo.getConvoAvailability',
+  ChatGndrConvoGetConvoForMembers: 'chat.gndr.convo.getConvoForMembers',
+  ChatGndrConvoGetLog: 'chat.gndr.convo.getLog',
+  ChatGndrConvoGetMessages: 'chat.gndr.convo.getMessages',
+  ChatGndrConvoLeaveConvo: 'chat.gndr.convo.leaveConvo',
+  ChatGndrConvoListConvos: 'chat.gndr.convo.listConvos',
+  ChatGndrConvoMuteConvo: 'chat.gndr.convo.muteConvo',
+  ChatGndrConvoRemoveReaction: 'chat.gndr.convo.removeReaction',
+  ChatGndrConvoSendMessage: 'chat.gndr.convo.sendMessage',
+  ChatGndrConvoSendMessageBatch: 'chat.gndr.convo.sendMessageBatch',
+  ChatGndrConvoUnmuteConvo: 'chat.gndr.convo.unmuteConvo',
+  ChatGndrConvoUpdateAllRead: 'chat.gndr.convo.updateAllRead',
+  ChatGndrConvoUpdateRead: 'chat.gndr.convo.updateRead',
+  ChatGndrModerationGetActorMetadata: 'chat.gndr.moderation.getActorMetadata',
+  ChatGndrModerationGetMessageContext: 'chat.gndr.moderation.getMessageContext',
+  ChatGndrModerationUpdateActorAccess: 'chat.gndr.moderation.updateActorAccess',
 } as const

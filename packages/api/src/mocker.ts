@@ -181,10 +181,10 @@ export const mock = {
     subjectDid,
     labels,
   }: {
-    author: Un$Typed<AppBskyActorDefs.ProfileViewBasic>
+    author: Un$Typed<AppGndrActorDefs.ProfileViewBasic>
     subjectDid: string
     labels?: ComAtprotoLabelDefs.Label[]
-  }): AppBskyNotificationListNotifications.Notification {
+  }): AppGndrNotificationListNotifications.Notification {
     return {
       uri: `at://${author.did}/app.gndr.graph.follow/fake`,
       cid: FAKE_CID,

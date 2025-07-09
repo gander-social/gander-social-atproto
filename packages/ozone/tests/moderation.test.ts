@@ -35,7 +35,7 @@ describe('moderation', () => {
   let ozone: TestOzone
   let mockInvalidator: MockInvalidator
   let agent: AtpAgent
-  let bskyAgent: AtpAgent
+  let gndrAgent: AtpAgent
   let pdsAgent: AtpAgent
   let sc: SeedClient
   let modClient: ModeratorClient
@@ -72,7 +72,7 @@ describe('moderation', () => {
     })
     ozone = network.ozone
     agent = network.ozone.getClient()
-    bskyAgent = network.bsky.getClient()
+    gndrAgent = network.gndr.getClient()
     pdsAgent = network.pds.getClient()
     sc = network.getSeedClient()
     modClient = network.ozone.getModClient()
@@ -597,13 +597,13 @@ describe('moderation', () => {
       )
       expect(pdsRes1.data.takedown?.applied).toBe(true)
 
-      const bskyRes1 = await bskyAgent.api.com.atproto.admin.getSubjectStatus(
+      const gndrRes1 = await gndrAgent.api.com.atproto.admin.getSubjectStatus(
         {
           did: sc.dids.bob,
         },
         { headers: network.pds.adminAuthHeaders() },
       )
-      expect(bskyRes1.data.takedown?.applied).toBe(true)
+      expect(gndrRes1.data.takedown?.applied).toBe(true)
 
       const takedownLabel1 = await getLabel(sc.dids.bob, TAKEDOWN_LABEL)
       expect(takedownLabel1).toBeDefined()
@@ -622,13 +622,13 @@ describe('moderation', () => {
       )
       expect(pdsRes2.data.takedown?.applied).toBe(false)
 
-      const bskyRes2 = await bskyAgent.api.com.atproto.admin.getSubjectStatus(
+      const gndrRes2 = await gndrAgent.api.com.atproto.admin.getSubjectStatus(
         {
           did: sc.dids.bob,
         },
-        { headers: network.bsky.adminAuthHeaders() },
+        { headers: network.gndr.adminAuthHeaders() },
       )
-      expect(bskyRes2.data.takedown?.applied).toBe(false)
+      expect(gndrRes2.data.takedown?.applied).toBe(false)
 
       const takedownLabel2 = await getLabel(sc.dids.bob, TAKEDOWN_LABEL)
       expect(takedownLabel2).toBeUndefined()
@@ -804,7 +804,7 @@ describe('moderation', () => {
     let blob: ImageRef
     let imageUri: string
     beforeAll(async () => {
-      const { ctx } = network.bsky
+      const { ctx } = network.gndr
       post = sc.posts[sc.dids.carol][0]
       blob = post.images[1]
       imageUri = ctx.views.imgUriBuilder
@@ -813,7 +813,7 @@ describe('moderation', () => {
           sc.dids.carol,
           blob.image.ref.toString(),
         )
-        .replace(ctx.cfg.publicUrl || '', network.bsky.url)
+        .replace(ctx.cfg.publicUrl || '', network.gndr.url)
       // Warm image server cache
       await fetch(imageUri)
       const cached = await fetch(imageUri)
@@ -837,7 +837,7 @@ describe('moderation', () => {
 
     it('prevents resolution of blob', async () => {
       const blobPath = `/blob/${sc.dids.carol}/${blob.image.ref.toString()}`
-      const resolveBlob = await fetch(`${network.bsky.url}${blobPath}`)
+      const resolveBlob = await fetch(`${network.gndr.url}${blobPath}`)
       expect(resolveBlob.status).toEqual(404)
       expect(await resolveBlob.json()).toEqual({
         error: 'NotFoundError',
@@ -845,7 +845,7 @@ describe('moderation', () => {
       })
     })
 
-    // @TODO add back in with image invalidation, see bluesky-social/atproto#2087
+    // @TODO add back in with image invalidation, see gander-social/atproto#2087
     it.skip('prevents image blob from being served, even when cached.', async () => {
       const fetchImage = await fetch(imageUri)
       expect(fetchImage.status).toEqual(404)
@@ -887,7 +887,7 @@ describe('moderation', () => {
 
       // Can resolve blob
       const blobPath = `/blob/${sc.dids.carol}/${blob.image.ref.toString()}`
-      const resolveBlob = await fetch(`${network.bsky.url}${blobPath}`)
+      const resolveBlob = await fetch(`${network.gndr.url}${blobPath}`)
       expect(resolveBlob.status).toEqual(200)
 
       // Can fetch through image server

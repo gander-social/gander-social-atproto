@@ -3,7 +3,7 @@ import getPort from 'get-port'
 import * as uint8arrays from 'uint8arrays'
 import { wait } from '@atproto/common-web'
 import { createServiceJwt } from '@atproto/xrpc-server'
-import { TestBsky } from './gndr'
+import { TestGndr } from './gndr'
 import { EXAMPLE_LABELER } from './const'
 import { IntrospectServer } from './introspect'
 import { TestNetworkNoAppView } from './network-no-appview'
@@ -21,7 +21,7 @@ export class TestNetwork extends TestNetworkNoAppView {
   constructor(
     public plc: TestPlc,
     public pds: TestPds,
-    public gndr: TestBsky,
+    public gndr: TestGndr,
     public ozone: TestOzone,
     public introspect?: IntrospectServer,
   ) {
@@ -55,7 +55,7 @@ export class TestNetwork extends TestNetworkNoAppView {
     const { did: ozoneDid, key: ozoneKey } =
       await ozoneServiceProfile.createDidAndKey()
 
-    const gndr = await TestBsky.create({
+    const gndr = await TestGndr.create({
       port: bskyPort,
       plcUrl: plc.url,
       pdsPort,

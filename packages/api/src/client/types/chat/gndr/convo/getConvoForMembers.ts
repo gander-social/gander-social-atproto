@@ -10,7 +10,7 @@ import {
   is$typed as _is$typed,
   type OmitKey,
 } from '../../../../util'
-import type * as ChatBskyConvoDefs from './defs.js'
+import type * as ChatGndrConvoDefs from './defs.js'
 
 const is$typed = _is$typed,
   validate = _validate
@@ -22,7 +22,7 @@ export type QueryParams = {
 export type InputSchema = undefined
 
 export interface OutputSchema {
-  convo: ChatBskyConvoDefs.ConvoView
+  convo: ChatGndrConvoDefs.ConvoView
 }
 
 export interface CallOptions {

@@ -9,7 +9,7 @@ import {
   is$typed as _is$typed,
   type OmitKey,
 } from '../../../../util'
-import type * as AppBskyActorDefs from '../actor/defs.js'
+import type * as AppGndrActorDefs from '../actor/defs.js'
 
 const is$typed = _is$typed,
   validate = _validate
@@ -21,7 +21,7 @@ export type QueryParams = {
 export type InputSchema = undefined
 
 export interface OutputSchema {
-  suggestions: AppBskyActorDefs.ProfileView[]
+  suggestions: AppGndrActorDefs.ProfileView[]
   /** If true, response has fallen-back to generic results, and is not scoped using relativeToDid */
   isFallback?: boolean
   /** Snowflake for this recommendation, use when submitting recommendation events. */

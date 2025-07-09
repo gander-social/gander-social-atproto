@@ -7,7 +7,7 @@ import { Database } from '../../db'
 import { DatabaseSchema, DatabaseSchemaType } from '../../db/database-schema'
 import { RecordProcessor } from '../processor'
 
-const lexId = lex.ids.AppBskyActorProfile
+const lexId = lex.ids.AppGndrActorProfile
 type IndexedProfile = DatabaseSchemaType['profile']
 
 const insertFn = async (

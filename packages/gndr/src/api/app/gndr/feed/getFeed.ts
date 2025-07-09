@@ -1,4 +1,4 @@
-import { AppBskyFeedGetFeedSkeleton, AtpAgent } from '@atproto/api'
+import { AppGndrFeedGetFeedSkeleton, AtpAgent } from '@atproto/api'
 import { mapDefined, noUndefinedVals } from '@atproto/common'
 import { ResponseType, XRPCError } from '@atproto/xrpc'
 import {
@@ -42,8 +42,8 @@ export default function (server: Server, ctx: AppContext) {
     auth: ctx.authVerifier.standardOptionalParameterized({
       lxmCheck: (method) => {
         return (
-          method === ids.AppBskyFeedGetFeedSkeleton ||
-          method === ids.AppBskyFeedGetFeed
+          method === ids.AppGndrFeedGetFeedSkeleton ||
+          method === ids.AppGndrFeedGetFeed
         )
       },
       skipAudCheck: true,
@@ -197,7 +197,7 @@ const skeletonFromFeedGen = async (
   const services = unpackIdentityServices(identity.services)
   const fgEndpoint = getServiceEndpoint(services, {
     id: 'gndr_fg',
-    type: 'BskyFeedGenerator',
+    type: 'GndrFeedGenerator',
   })
   if (!fgEndpoint) {
     throw new InvalidRequestError(
@@ -236,7 +236,7 @@ const skeletonFromFeedGen = async (
       }
     }
   } catch (err) {
-    if (err instanceof AppBskyFeedGetFeedSkeleton.UnknownFeedError) {
+    if (err instanceof AppGndrFeedGetFeedSkeleton.UnknownFeedError) {
       throw new InvalidRequestError(err.message, 'UnknownFeed')
     }
     if (err instanceof XRPCError) {

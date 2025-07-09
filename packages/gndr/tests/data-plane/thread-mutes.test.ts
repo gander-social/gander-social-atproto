@@ -38,7 +38,7 @@ describe('thread mutes', () => {
         encoding: 'application/json',
         headers: await network.serviceHeaders(
           alice,
-          ids.AppBskyGraphMuteThread,
+          ids.AppGndrGraphMuteThread,
         ),
       },
     )
@@ -50,7 +50,7 @@ describe('thread mutes', () => {
         uris: [rootPost.uriStr, replyPost.uriStr],
       },
       {
-        headers: await network.serviceHeaders(alice, ids.AppBskyFeedGetPosts),
+        headers: await network.serviceHeaders(alice, ids.AppGndrFeedGetPosts),
       },
     )
     expect(res.data.posts[0].viewer?.threadMuted).toBe(true)
@@ -67,7 +67,7 @@ describe('thread mutes', () => {
       {
         headers: await network.serviceHeaders(
           alice,
-          ids.AppBskyNotificationListNotifications,
+          ids.AppGndrNotificationListNotifications,
         ),
       },
     )
@@ -84,7 +84,7 @@ describe('thread mutes', () => {
       {
         headers: await network.serviceHeaders(
           alice,
-          ids.AppBskyNotificationListNotifications,
+          ids.AppGndrNotificationListNotifications,
         ),
       },
     )
@@ -101,7 +101,7 @@ describe('thread mutes', () => {
       {
         headers: await network.serviceHeaders(
           alice,
-          ids.AppBskyNotificationListNotifications,
+          ids.AppGndrNotificationListNotifications,
         ),
       },
     )
@@ -118,7 +118,7 @@ describe('thread mutes', () => {
       {
         headers: await network.serviceHeaders(
           alice,
-          ids.AppBskyNotificationListNotifications,
+          ids.AppGndrNotificationListNotifications,
         ),
       },
     )
@@ -132,7 +132,7 @@ describe('thread mutes', () => {
         encoding: 'application/json',
         headers: await network.serviceHeaders(
           alice,
-          ids.AppBskyGraphUnmuteThread,
+          ids.AppGndrGraphUnmuteThread,
         ),
       },
     )
@@ -144,7 +144,7 @@ describe('thread mutes', () => {
         uris: [rootPost.uriStr, replyPost.uriStr],
       },
       {
-        headers: await network.serviceHeaders(alice, ids.AppBskyFeedGetPosts),
+        headers: await network.serviceHeaders(alice, ids.AppGndrFeedGetPosts),
       },
     )
     expect(res.data.posts[0].viewer?.threadMuted).toBe(false)
@@ -163,7 +163,7 @@ describe('thread mutes', () => {
       {
         headers: await network.serviceHeaders(
           alice,
-          ids.AppBskyNotificationListNotifications,
+          ids.AppGndrNotificationListNotifications,
         ),
       },
     )

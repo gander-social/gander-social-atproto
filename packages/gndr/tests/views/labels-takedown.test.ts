@@ -1,5 +1,5 @@
 import assert from 'node:assert'
-import { AppBskyLabelerDefs, AtpAgent } from '@atproto/api'
+import { AppGndrLabelerDefs, AtpAgent } from '@atproto/api'
 import { RecordRef, SeedClient, TestNetwork, basicSeed } from '@atproto/dev-env'
 import { ids } from '../../src/lexicon/lexicons'
 
@@ -73,7 +73,7 @@ describe('gndr takedown labels', () => {
     await sc.agent.api.com.atproto.repo.createRecord(
       {
         repo: sc.dids.labeler1,
-        collection: ids.AppBskyLabelerService,
+        collection: ids.AppGndrLabelerService,
         rkey: 'self',
         record: {
           policies: { labelValues: ['spam'] },
@@ -93,7 +93,7 @@ describe('gndr takedown labels', () => {
     await sc.agent.api.com.atproto.repo.createRecord(
       {
         repo: sc.dids.labeler2,
-        collection: ids.AppBskyLabelerService,
+        collection: ids.AppGndrLabelerService,
         rkey: 'self',
         record: {
           policies: { labelValues: ['spam'] },
@@ -191,7 +191,7 @@ describe('gndr takedown labels', () => {
       {
         headers: await network.serviceHeaders(
           sc.dids.carol,
-          ids.AppBskyActorGetProfile,
+          ids.AppGndrActorGetProfile,
         ),
       },
     )
@@ -210,7 +210,7 @@ describe('gndr takedown labels', () => {
       {
         headers: await network.serviceHeaders(
           sc.dids.alice,
-          ids.AppBskyActorGetProfile,
+          ids.AppGndrActorGetProfile,
         ),
       },
     )
@@ -234,7 +234,7 @@ describe('gndr takedown labels', () => {
       dids: [sc.dids.labeler1, sc.dids.labeler2],
     })
     expect(res.data.views.length).toBe(1)
-    assert(AppBskyLabelerDefs.isLabelerView(res.data.views[0]))
+    assert(AppGndrLabelerDefs.isLabelerView(res.data.views[0]))
     expect(res.data.views[0].creator.did).toBe(sc.dids.labeler2)
   })
 

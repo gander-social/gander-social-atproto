@@ -40,19 +40,19 @@ describe('ozone query labels', () => {
       },
       {
         src: EXAMPLE_LABELER,
-        uri: 'at://did:example:blah/app.bsky.feed.post/1234abcde',
+        uri: 'at://did:example:blah/app.gndr.feed.post/1234abcde',
         val: 'spam',
         cts: new Date().toISOString(),
       },
       {
         src: EXAMPLE_LABELER,
-        uri: 'at://did:example:blah/app.bsky.feed.post/1234abcfg',
+        uri: 'at://did:example:blah/app.gndr.feed.post/1234abcfg',
         val: 'spam',
         cts: new Date().toISOString(),
       },
       {
         src: EXAMPLE_LABELER,
-        uri: 'at://did:example:blah/app.bsky.actor.profile/self',
+        uri: 'at://did:example:blah/app.gndr.actor.profile/self',
         val: 'spam',
         cts: new Date().toISOString(),
       },
@@ -96,8 +96,8 @@ describe('ozone query labels', () => {
   it('returns all labels that match one of multiple exact uris', async () => {
     const res = await agent.api.com.atproto.label.queryLabels({
       uriPatterns: [
-        'at://did:example:blah/app.bsky.feed.post/1234abcfg',
-        'at://did:example:blah/app.bsky.actor.profile/self',
+        'at://did:example:blah/app.gndr.feed.post/1234abcfg',
+        'at://did:example:blah/app.gndr.actor.profile/self',
       ],
     })
     expect(res.data.labels).toEqual(labels.slice(3, 5))
@@ -105,18 +105,18 @@ describe('ozone query labels', () => {
 
   it('returns all labels that match one of multiple uris, exact & glob', async () => {
     const res = await agent.api.com.atproto.label.queryLabels({
-      uriPatterns: ['at://did:example:blah/app.bsky*', 'did:example:blah'],
+      uriPatterns: ['at://did:example:blah/app.gndr*', 'did:example:blah'],
     })
     expect(res.data.labels).toEqual(labels.slice(0, 5))
   })
 
   it('paginates', async () => {
     const res1 = await agent.api.com.atproto.label.queryLabels({
-      uriPatterns: ['at://did:example:blah/app.bsky*', 'did:example:blah'],
+      uriPatterns: ['at://did:example:blah/app.gndr*', 'did:example:blah'],
       limit: 3,
     })
     const res2 = await agent.api.com.atproto.label.queryLabels({
-      uriPatterns: ['at://did:example:blah/app.bsky*', 'did:example:blah'],
+      uriPatterns: ['at://did:example:blah/app.gndr*', 'did:example:blah'],
       limit: 3,
       cursor: res1.data.cursor,
     })

@@ -4912,7 +4912,7 @@ export const schemaDict = {
             'lex:app.gndr.actor.defs#interestsPref',
             'lex:app.gndr.actor.defs#mutedWordsPref',
             'lex:app.gndr.actor.defs#hiddenPostsPref',
-            'lex:app.gndr.actor.defs#bskyAppStatePref',
+            'lex:app.gndr.actor.defs#gndrAppStatePref',
             'lex:app.gndr.actor.defs#labelersPref',
             'lex:app.gndr.actor.defs#postInteractionSettingsPref',
             'lex:app.gndr.actor.defs#verificationPrefs',
@@ -5179,14 +5179,14 @@ export const schemaDict = {
           },
         },
       },
-      bskyAppStatePref: {
+      gndrAppStatePref: {
         description:
           "A grab bag of state that's specific to the gndr.app program. Third-party apps shouldn't use this.",
         type: 'object',
         properties: {
           activeProgressGuide: {
             type: 'ref',
-            ref: 'lex:app.gndr.actor.defs#bskyAppProgressGuide',
+            ref: 'lex:app.gndr.actor.defs#gndrAppProgressGuide',
           },
           queuedNudges: {
             description:
@@ -5209,7 +5209,7 @@ export const schemaDict = {
           },
         },
       },
-      bskyAppProgressGuide: {
+      gndrAppProgressGuide: {
         description:
           'If set, an active progress guide. Once completed, can be set to undefined. Should have unspecced fields tracking progress.',
         type: 'object',

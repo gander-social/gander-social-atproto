@@ -109,7 +109,7 @@ describe('gndr needs-review labels', () => {
         {
           headers: await network.serviceHeaders(
             sc.dids.alice,
-            ids.AppBskyNotificationListNotifications,
+            ids.AppGndrNotificationListNotifications,
           ),
         },
       )
@@ -142,7 +142,7 @@ describe('gndr needs-review labels', () => {
         {
           headers: await network.serviceHeaders(
             sc.dids.geoff,
-            ids.AppBskyFeedGetPostThread,
+            ids.AppGndrFeedGetPostThread,
           ),
         },
       )
@@ -166,7 +166,7 @@ describe('gndr needs-review labels', () => {
         {
           headers: await network.serviceHeaders(
             sc.dids.bob, // follows geoff
-            ids.AppBskyFeedGetPostThread,
+            ids.AppGndrFeedGetPostThread,
           ),
         },
       )
@@ -240,7 +240,7 @@ describe('gndr needs-review labels', () => {
         {
           headers: await network.serviceHeaders(
             sc.dids.alice,
-            ids.AppBskyNotificationListNotifications,
+            ids.AppGndrNotificationListNotifications,
           ),
         },
       )
@@ -273,7 +273,7 @@ describe('gndr needs-review labels', () => {
         {
           headers: await network.serviceHeaders(
             sc.dids.geoff,
-            ids.AppBskyFeedGetPostThread,
+            ids.AppGndrFeedGetPostThread,
           ),
         },
       )
@@ -297,7 +297,7 @@ describe('gndr needs-review labels', () => {
         {
           headers: await network.serviceHeaders(
             sc.dids.bob, // follows geoff
-            ids.AppBskyFeedGetPostThread,
+            ids.AppGndrFeedGetPostThread,
           ),
         },
       )

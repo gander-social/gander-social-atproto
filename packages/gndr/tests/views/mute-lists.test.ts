@@ -101,7 +101,7 @@ describe('gndr views with mutes from mute lists', () => {
         encoding: 'application/json',
         headers: await network.serviceHeaders(
           dan,
-          ids.AppBskyGraphMuteActorList,
+          ids.AppGndrGraphMuteActorList,
         ),
       },
     )
@@ -113,7 +113,7 @@ describe('gndr views with mutes from mute lists', () => {
       {
         headers: await network.serviceHeaders(
           dan,
-          ids.AppBskyFeedGetPostThread,
+          ids.AppGndrFeedGetPostThread,
         ),
       },
     )
@@ -129,7 +129,7 @@ describe('gndr views with mutes from mute lists', () => {
       {
         headers: await network.serviceHeaders(
           dan,
-          ids.AppBskyFeedGetAuthorFeed,
+          ids.AppGndrFeedGetAuthorFeed,
         ),
       },
     )
@@ -142,7 +142,7 @@ describe('gndr views with mutes from mute lists', () => {
     const res = await agent.api.app.gndr.feed.getTimeline(
       { limit: 100 },
       {
-        headers: await network.serviceHeaders(dan, ids.AppBskyFeedGetTimeline),
+        headers: await network.serviceHeaders(dan, ids.AppGndrFeedGetTimeline),
       },
     )
     expect(
@@ -160,7 +160,7 @@ describe('gndr views with mutes from mute lists', () => {
       {
         headers: await network.serviceHeaders(
           alice,
-          ids.AppBskyFeedGetListFeed,
+          ids.AppGndrFeedGetListFeed,
         ),
       },
     )
@@ -173,7 +173,7 @@ describe('gndr views with mutes from mute lists', () => {
     const res = await agent.api.app.gndr.actor.getProfile(
       { actor: carol },
       {
-        headers: await network.serviceHeaders(dan, ids.AppBskyActorGetProfile),
+        headers: await network.serviceHeaders(dan, ids.AppGndrActorGetProfile),
       },
     )
     expect(res.data.viewer?.muted).toBe(true)
@@ -184,7 +184,7 @@ describe('gndr views with mutes from mute lists', () => {
     const res = await agent.api.app.gndr.actor.getProfiles(
       { actors: [alice, carol] },
       {
-        headers: await network.serviceHeaders(dan, ids.AppBskyActorGetProfiles),
+        headers: await network.serviceHeaders(dan, ids.AppGndrActorGetProfiles),
       },
     )
     expect(res.data.profiles[0].viewer?.muted).toBe(false)
@@ -197,7 +197,7 @@ describe('gndr views with mutes from mute lists', () => {
     const res = await agent.api.app.gndr.actor.getProfile(
       { actor: dan }, // dan subscribes to list that contains himself
       {
-        headers: await network.serviceHeaders(dan, ids.AppBskyActorGetProfile),
+        headers: await network.serviceHeaders(dan, ids.AppGndrActorGetProfile),
       },
     )
     expect(res.data.viewer?.muted).toBe(false)
@@ -212,7 +212,7 @@ describe('gndr views with mutes from mute lists', () => {
       {
         headers: await network.serviceHeaders(
           dan,
-          ids.AppBskyNotificationListNotifications,
+          ids.AppGndrNotificationListNotifications,
         ),
       },
     )
@@ -235,7 +235,7 @@ describe('gndr views with mutes from mute lists', () => {
       {
         headers: await network.serviceHeaders(
           dan,
-          ids.AppBskyActorGetSuggestions,
+          ids.AppGndrActorGetSuggestions,
         ),
       },
     )
@@ -253,7 +253,7 @@ describe('gndr views with mutes from mute lists', () => {
   it('returns the contents of a list', async () => {
     const res = await agent.api.app.gndr.graph.getList(
       { list: listUri },
-      { headers: await network.serviceHeaders(dan, ids.AppBskyGraphGetList) },
+      { headers: await network.serviceHeaders(dan, ids.AppGndrGraphGetList) },
     )
     expect(forSnapshot(res.data)).toMatchSnapshot()
   })
@@ -261,15 +261,15 @@ describe('gndr views with mutes from mute lists', () => {
   it('paginates getList', async () => {
     const full = await agent.api.app.gndr.graph.getList(
       { list: listUri },
-      { headers: await network.serviceHeaders(dan, ids.AppBskyGraphGetList) },
+      { headers: await network.serviceHeaders(dan, ids.AppGndrGraphGetList) },
     )
     const first = await agent.api.app.gndr.graph.getList(
       { list: listUri, limit: 1 },
-      { headers: await network.serviceHeaders(dan, ids.AppBskyGraphGetList) },
+      { headers: await network.serviceHeaders(dan, ids.AppGndrGraphGetList) },
     )
     const second = await agent.api.app.gndr.graph.getList(
       { list: listUri, cursor: first.data.cursor },
-      { headers: await network.serviceHeaders(dan, ids.AppBskyGraphGetList) },
+      { headers: await network.serviceHeaders(dan, ids.AppGndrGraphGetList) },
     )
     const combined = [...first.data.items, ...second.data.items]
     expect(combined).toEqual(full.data.items)
@@ -294,7 +294,7 @@ describe('gndr views with mutes from mute lists', () => {
 
     const res = await agent.api.app.gndr.graph.getLists(
       { actor: alice },
-      { headers: await network.serviceHeaders(dan, ids.AppBskyGraphGetLists) },
+      { headers: await network.serviceHeaders(dan, ids.AppGndrGraphGetLists) },
     )
     expect(forSnapshot(res.data)).toMatchSnapshot()
   })
@@ -302,15 +302,15 @@ describe('gndr views with mutes from mute lists', () => {
   it('paginates getLists', async () => {
     const full = await agent.api.app.gndr.graph.getLists(
       { actor: alice },
-      { headers: await network.serviceHeaders(dan, ids.AppBskyGraphGetLists) },
+      { headers: await network.serviceHeaders(dan, ids.AppGndrGraphGetLists) },
     )
     const first = await agent.api.app.gndr.graph.getLists(
       { actor: alice, limit: 1 },
-      { headers: await network.serviceHeaders(dan, ids.AppBskyGraphGetLists) },
+      { headers: await network.serviceHeaders(dan, ids.AppGndrGraphGetLists) },
     )
     const second = await agent.api.app.gndr.graph.getLists(
       { actor: alice, cursor: first.data.cursor },
-      { headers: await network.serviceHeaders(dan, ids.AppBskyGraphGetLists) },
+      { headers: await network.serviceHeaders(dan, ids.AppGndrGraphGetLists) },
     )
     const combined = [...first.data.lists, ...second.data.lists]
     expect(combined).toEqual(full.data.lists)
@@ -325,7 +325,7 @@ describe('gndr views with mutes from mute lists', () => {
         encoding: 'application/json',
         headers: await network.serviceHeaders(
           dan,
-          ids.AppBskyGraphMuteActorList,
+          ids.AppGndrGraphMuteActorList,
         ),
       },
     )
@@ -335,7 +335,7 @@ describe('gndr views with mutes from mute lists', () => {
       {
         headers: await network.serviceHeaders(
           dan,
-          ids.AppBskyGraphGetListMutes,
+          ids.AppGndrGraphGetListMutes,
         ),
       },
     )
@@ -348,7 +348,7 @@ describe('gndr views with mutes from mute lists', () => {
       {
         headers: await network.serviceHeaders(
           dan,
-          ids.AppBskyGraphGetListMutes,
+          ids.AppGndrGraphGetListMutes,
         ),
       },
     )
@@ -357,7 +357,7 @@ describe('gndr views with mutes from mute lists', () => {
       {
         headers: await network.serviceHeaders(
           dan,
-          ids.AppBskyGraphGetListMutes,
+          ids.AppGndrGraphGetListMutes,
         ),
       },
     )
@@ -366,7 +366,7 @@ describe('gndr views with mutes from mute lists', () => {
       {
         headers: await network.serviceHeaders(
           dan,
-          ids.AppBskyGraphGetListMutes,
+          ids.AppGndrGraphGetListMutes,
         ),
       },
     )
@@ -383,7 +383,7 @@ describe('gndr views with mutes from mute lists', () => {
         encoding: 'application/json',
         headers: await network.serviceHeaders(
           dan,
-          ids.AppBskyGraphUnmuteActorList,
+          ids.AppGndrGraphUnmuteActorList,
         ),
       },
     )
@@ -393,7 +393,7 @@ describe('gndr views with mutes from mute lists', () => {
       {
         headers: await network.serviceHeaders(
           dan,
-          ids.AppBskyGraphGetListMutes,
+          ids.AppGndrGraphGetListMutes,
         ),
       },
     )
@@ -421,7 +421,7 @@ describe('gndr views with mutes from mute lists', () => {
 
     const got = await agent.api.app.gndr.graph.getList(
       { list: listUri },
-      { headers: await network.serviceHeaders(alice, ids.AppBskyGraphGetList) },
+      { headers: await network.serviceHeaders(alice, ids.AppGndrGraphGetList) },
     )
     expect(got.data.list.name).toBe('updated alice mutes')
     expect(got.data.list.description).toBe('new descript')
@@ -440,7 +440,7 @@ describe('gndr views with mutes from mute lists', () => {
     await network.processAll()
     const res = await agent.api.app.gndr.feed.getPosts(
       { uris: [postRef.ref.uriStr] },
-      { headers: await network.serviceHeaders(alice, ids.AppBskyFeedGetPosts) },
+      { headers: await network.serviceHeaders(alice, ids.AppGndrFeedGetPosts) },
     )
     expect(res.data.posts.length).toBe(1)
     expect(forSnapshot(res.data.posts[0])).toMatchSnapshot()
@@ -466,7 +466,7 @@ describe('gndr views with mutes from mute lists', () => {
     const res = await agent.api.app.gndr.feed.getTimeline(
       { limit: 100 },
       {
-        headers: await network.serviceHeaders(dan, ids.AppBskyFeedGetTimeline),
+        headers: await network.serviceHeaders(dan, ids.AppGndrFeedGetTimeline),
       },
     )
     expect(
@@ -488,7 +488,7 @@ describe('gndr views with mutes from mute lists', () => {
     const res = await agent.api.app.gndr.feed.getTimeline(
       { limit: 100 },
       {
-        headers: await network.serviceHeaders(dan, ids.AppBskyFeedGetTimeline),
+        headers: await network.serviceHeaders(dan, ids.AppGndrFeedGetTimeline),
       },
     )
     expect(

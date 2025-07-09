@@ -2,8 +2,8 @@ import { Timestamp } from '@bufbuild/protobuf'
 import { ServiceImpl } from '@connectrpc/connect'
 import { Selectable, sql } from 'kysely'
 import {
-  AppBskyNotificationDeclaration,
-  ChatBskyActorDeclaration,
+  AppGndrNotificationDeclaration,
+  ChatGndrActorDeclaration,
 } from '@atproto/api'
 import { keyBy } from '@atproto/common'
 import { parseRecordBytes } from '../../../hydration/util'
@@ -91,7 +91,7 @@ export default (db: Database): Partial<ServiceImpl<typeof Service>> => ({
 
       const status = statuses.records[i]
 
-      const chatDeclaration = parseRecordBytes<ChatBskyActorDeclaration.Record>(
+      const chatDeclaration = parseRecordBytes<ChatGndrActorDeclaration.Record>(
         chatDeclarations.records[i].record,
       )
 
@@ -107,7 +107,7 @@ export default (db: Database): Partial<ServiceImpl<typeof Service>> => ({
       }, {} as VerifiedBy)
 
       const activitySubscription = () => {
-        const record = parseRecordBytes<AppBskyNotificationDeclaration.Record>(
+        const record = parseRecordBytes<AppGndrNotificationDeclaration.Record>(
           notifDeclarations.records[i].record,
         )
 

@@ -9,7 +9,7 @@ import {
   is$typed as _is$typed,
   type OmitKey,
 } from '../../../../util'
-import type * as AppBskyNotificationDefs from './defs.js'
+import type * as AppGndrNotificationDefs from './defs.js'
 
 const is$typed = _is$typed,
   validate = _validate
@@ -19,12 +19,12 @@ export type QueryParams = {}
 
 export interface InputSchema {
   subject: string
-  activitySubscription: AppBskyNotificationDefs.ActivitySubscription
+  activitySubscription: AppGndrNotificationDefs.ActivitySubscription
 }
 
 export interface OutputSchema {
   subject: string
-  activitySubscription?: AppBskyNotificationDefs.ActivitySubscription
+  activitySubscription?: AppGndrNotificationDefs.ActivitySubscription
 }
 
 export interface HandlerInput {

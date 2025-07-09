@@ -27,12 +27,12 @@ export const createRouter = (ctx: AppContext): Router => {
         service: [
           {
             id: '#gndr_notif',
-            type: 'BskyNotificationService',
+            type: 'GndrNotificationService',
             serviceEndpoint,
           },
           {
             id: '#gndr_appview',
-            type: 'BskyAppView',
+            type: 'GndrAppView',
             serviceEndpoint,
           },
         ],

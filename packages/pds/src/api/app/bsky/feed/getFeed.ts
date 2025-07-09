@@ -31,7 +31,7 @@ export default function (server: Server, ctx: AppContext) {
       return pipethrough(ctx, req, {
         iss: requester,
         aud: feedDid,
-        lxm: ids.AppBskyFeedGetFeedSkeleton,
+        lxm: ids.AppGndrFeedGetFeedSkeleton,
       })
     },
   })

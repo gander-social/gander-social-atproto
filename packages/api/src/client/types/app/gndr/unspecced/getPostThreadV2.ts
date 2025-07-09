@@ -10,8 +10,8 @@ import {
   is$typed as _is$typed,
   type OmitKey,
 } from '../../../../util'
-import type * as AppBskyFeedDefs from '../feed/defs.js'
-import type * as AppBskyUnspeccedDefs from './defs.js'
+import type * as AppGndrFeedDefs from '../feed/defs.js'
+import type * as AppGndrUnspeccedDefs from './defs.js'
 
 const is$typed = _is$typed,
   validate = _validate
@@ -36,7 +36,7 @@ export type InputSchema = undefined
 export interface OutputSchema {
   /** A flat list of thread items. The depth of each item is indicated by the depth property inside the item. */
   thread: ThreadItem[]
-  threadgate?: AppBskyFeedDefs.ThreadgateView
+  threadgate?: AppGndrFeedDefs.ThreadgateView
   /** Whether this thread has additional replies. If true, a call can be made to the `getPostThreadOtherV2` endpoint to retrieve them. */
   hasOtherReplies: boolean
 }
@@ -62,10 +62,10 @@ export interface ThreadItem {
   /** The nesting level of this item in the thread. Depth 0 means the anchor item. Items above have negative depths, items below have positive depths. */
   depth: number
   value:
-    | $Typed<AppBskyUnspeccedDefs.ThreadItemPost>
-    | $Typed<AppBskyUnspeccedDefs.ThreadItemNoUnauthenticated>
-    | $Typed<AppBskyUnspeccedDefs.ThreadItemNotFound>
-    | $Typed<AppBskyUnspeccedDefs.ThreadItemBlocked>
+    | $Typed<AppGndrUnspeccedDefs.ThreadItemPost>
+    | $Typed<AppGndrUnspeccedDefs.ThreadItemNoUnauthenticated>
+    | $Typed<AppGndrUnspeccedDefs.ThreadItemNotFound>
+    | $Typed<AppGndrUnspeccedDefs.ThreadItemBlocked>
     | { $type: string }
 }
 

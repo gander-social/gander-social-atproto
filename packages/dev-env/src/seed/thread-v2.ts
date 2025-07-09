@@ -1,4 +1,4 @@
-import { AppBskyFeedPost } from '@atproto/api'
+import { AppGndrFeedPost } from '@atproto/api'
 import type { DatabaseSchema } from '@atproto/gndr'
 import { TestNetwork } from '../network'
 import { TestNetworkNoAppView } from '../network-no-appview'
@@ -57,7 +57,7 @@ async function createUsers<T extends readonly string[]>(
 
 type ReplyFn = (
   replyAuthor: User,
-  overridesOrCb?: Partial<AppBskyFeedPost.Record> | ReplyCb,
+  overridesOrCb?: Partial<AppGndrFeedPost.Record> | ReplyCb,
   maybeReplyCb?: ReplyCb,
 ) => Promise<void>
 
@@ -80,10 +80,10 @@ const rootReplyFnBuilder = <T extends TestNetworkNoAppView>(
   let index = 0
   return async (
     replyAuthor: User,
-    overridesOrCb?: Partial<AppBskyFeedPost.Record> | ReplyCb,
+    overridesOrCb?: Partial<AppGndrFeedPost.Record> | ReplyCb,
     maybeReplyCb?: ReplyCb,
   ) => {
-    let overrides: Partial<AppBskyFeedPost.Record> | undefined
+    let overrides: Partial<AppGndrFeedPost.Record> | undefined
     let replyCb: ReplyCb | undefined
     if (overridesOrCb && typeof overridesOrCb === 'function') {
       replyCb = overridesOrCb
@@ -115,10 +115,10 @@ const rootReplyFnBuilder = <T extends TestNetworkNoAppView>(
 const createThread = async <T extends TestNetworkNoAppView>(
   sc: SeedClient<T>,
   rootAuthor: User,
-  overridesOrCb?: Partial<AppBskyFeedPost.Record> | ReplyCb,
+  overridesOrCb?: Partial<AppGndrFeedPost.Record> | ReplyCb,
   maybeReplyCb?: ReplyCb,
 ) => {
-  let overrides: Partial<AppBskyFeedPost.Record> | undefined
+  let overrides: Partial<AppGndrFeedPost.Record> | undefined
   let replyCb: ReplyCb | undefined
   if (overridesOrCb && typeof overridesOrCb === 'function') {
     replyCb = overridesOrCb

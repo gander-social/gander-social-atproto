@@ -1,5 +1,5 @@
 import assert from 'node:assert'
-import { AppBskyUnspeccedDefs, AtpAgent } from '@atproto/api'
+import { AppGndrUnspeccedDefs, AtpAgent } from '@atproto/api'
 import { SeedClient, TestNetwork, seedThreadV2 } from '@atproto/dev-env'
 import { ids } from '../../src/lexicon/lexicons'
 import { ThreadItemPost } from '../../src/lexicon/types/app/gndr/unspecced/defs'
@@ -90,7 +90,7 @@ describe('appview thread views v2', () => {
         {
           headers: await network.serviceHeaders(
             seed.users.op.did,
-            ids.AppBskyUnspeccedGetPostThreadV2,
+            ids.AppGndrUnspeccedGetPostThreadV2,
           ),
         },
       )
@@ -116,7 +116,7 @@ describe('appview thread views v2', () => {
         {
           headers: await network.serviceHeaders(
             seed.users.op.did,
-            ids.AppBskyUnspeccedGetPostThreadV2,
+            ids.AppGndrUnspeccedGetPostThreadV2,
           ),
         },
       )
@@ -138,7 +138,7 @@ describe('appview thread views v2', () => {
         {
           headers: await network.serviceHeaders(
             seed.users.op.did,
-            ids.AppBskyUnspeccedGetPostThreadV2,
+            ids.AppGndrUnspeccedGetPostThreadV2,
           ),
         },
       )
@@ -160,7 +160,7 @@ describe('appview thread views v2', () => {
         {
           headers: await network.serviceHeaders(
             seed.users.op.did,
-            ids.AppBskyUnspeccedGetPostThreadV2,
+            ids.AppGndrUnspeccedGetPostThreadV2,
           ),
         },
       )
@@ -181,7 +181,7 @@ describe('appview thread views v2', () => {
         {
           headers: await network.serviceHeaders(
             seed.users.op.did,
-            ids.AppBskyUnspeccedGetPostThreadV2,
+            ids.AppGndrUnspeccedGetPostThreadV2,
           ),
         },
       )
@@ -203,7 +203,7 @@ describe('appview thread views v2', () => {
         {
           headers: await network.serviceHeaders(
             seed.users.op.did,
-            ids.AppBskyUnspeccedGetPostThreadV2,
+            ids.AppGndrUnspeccedGetPostThreadV2,
           ),
         },
       )
@@ -225,7 +225,7 @@ describe('appview thread views v2', () => {
         {
           headers: await network.serviceHeaders(
             seed.users.op.did,
-            ids.AppBskyUnspeccedGetPostThreadV2,
+            ids.AppGndrUnspeccedGetPostThreadV2,
           ),
         },
       )
@@ -284,7 +284,7 @@ describe('appview thread views v2', () => {
             {
               headers: await network.serviceHeaders(
                 seed.users.op.did,
-                ids.AppBskyUnspeccedGetPostThreadV2,
+                ids.AppGndrUnspeccedGetPostThreadV2,
               ),
             },
           )
@@ -327,7 +327,7 @@ describe('appview thread views v2', () => {
           {
             headers: await network.serviceHeaders(
               seed.users.op.did,
-              ids.AppBskyUnspeccedGetPostThreadV2,
+              ids.AppGndrUnspeccedGetPostThreadV2,
             ),
           },
         )
@@ -361,7 +361,7 @@ describe('appview thread views v2', () => {
           {
             headers: await network.serviceHeaders(
               seed.users.op.did,
-              ids.AppBskyUnspeccedGetPostThreadV2,
+              ids.AppGndrUnspeccedGetPostThreadV2,
             ),
           },
         )
@@ -388,7 +388,7 @@ describe('appview thread views v2', () => {
           {
             headers: await network.serviceHeaders(
               seed.users.op.did,
-              ids.AppBskyUnspeccedGetPostThreadV2,
+              ids.AppGndrUnspeccedGetPostThreadV2,
             ),
           },
         )
@@ -411,7 +411,7 @@ describe('appview thread views v2', () => {
           {
             headers: await network.serviceHeaders(
               seed.users.op.did,
-              ids.AppBskyUnspeccedGetPostThreadV2,
+              ids.AppGndrUnspeccedGetPostThreadV2,
             ),
           },
         )
@@ -587,7 +587,7 @@ describe('appview thread views v2', () => {
           {
             headers: await network.serviceHeaders(
               seed.users.op.did,
-              ids.AppBskyUnspeccedGetPostThreadV2,
+              ids.AppGndrUnspeccedGetPostThreadV2,
             ),
           },
         )
@@ -626,7 +626,7 @@ describe('appview thread views v2', () => {
         {
           headers: await network.serviceHeaders(
             seed.users.op.did,
-            ids.AppBskyUnspeccedGetPostThreadV2,
+            ids.AppGndrUnspeccedGetPostThreadV2,
           ),
         },
       )
@@ -774,7 +774,7 @@ describe('appview thread views v2', () => {
           {
             headers: await network.serviceHeaders(
               seed.users.op.did,
-              ids.AppBskyUnspeccedGetPostThreadV2,
+              ids.AppGndrUnspeccedGetPostThreadV2,
             ),
           },
         )
@@ -878,7 +878,7 @@ describe('appview thread views v2', () => {
             {
               headers: await network.serviceHeaders(
                 seed.users.op.did,
-                ids.AppBskyUnspeccedGetPostThreadV2,
+                ids.AppGndrUnspeccedGetPostThreadV2,
               ),
             },
           )
@@ -931,7 +931,7 @@ describe('appview thread views v2', () => {
               {
                 headers: await network.serviceHeaders(
                   seed.users.viewer.did,
-                  ids.AppBskyUnspeccedGetPostThreadV2,
+                  ids.AppGndrUnspeccedGetPostThreadV2,
                 ),
               },
             )
@@ -1083,7 +1083,7 @@ describe('appview thread views v2', () => {
               {
                 headers: await network.serviceHeaders(
                   seed.users.viewer.did,
-                  ids.AppBskyUnspeccedGetPostThreadV2,
+                  ids.AppGndrUnspeccedGetPostThreadV2,
                 ),
               },
             )
@@ -1122,7 +1122,7 @@ describe('appview thread views v2', () => {
             {
               headers: await network.serviceHeaders(
                 viewer,
-                ids.AppBskyUnspeccedGetPostThreadV2,
+                ids.AppGndrUnspeccedGetPostThreadV2,
               ),
             },
           )
@@ -1217,7 +1217,7 @@ describe('appview thread views v2', () => {
             headers: await network.serviceHeaders(
               // Use `blocked`, who was blocked by `blocker`, author of '0'.
               seed.users.blocked.did,
-              ids.AppBskyUnspeccedGetPostThreadV2,
+              ids.AppGndrUnspeccedGetPostThreadV2,
             ),
           },
         )
@@ -1240,7 +1240,7 @@ describe('appview thread views v2', () => {
             headers: await network.serviceHeaders(
               // Use `blocked`, who was blocked by `blocker`, author of '0'.
               seed.users.blocked.did,
-              ids.AppBskyUnspeccedGetPostThreadV2,
+              ids.AppGndrUnspeccedGetPostThreadV2,
             ),
           },
         )
@@ -1265,7 +1265,7 @@ describe('appview thread views v2', () => {
             headers: await network.serviceHeaders(
               // Use `blocked`, who was blocked by `blocker`, author of '0'.
               seed.users.blocked.did,
-              ids.AppBskyUnspeccedGetPostThreadV2,
+              ids.AppGndrUnspeccedGetPostThreadV2,
             ),
           },
         )
@@ -1299,7 +1299,7 @@ describe('appview thread views v2', () => {
             headers: await network.serviceHeaders(
               // Use `alice` who is a 3rd party between `op` and `opBlocked`.
               seed.users.alice.did,
-              ids.AppBskyUnspeccedGetPostThreadV2,
+              ids.AppGndrUnspeccedGetPostThreadV2,
             ),
           },
         )
@@ -1324,7 +1324,7 @@ describe('appview thread views v2', () => {
             headers: await network.serviceHeaders(
               // Use `alice` who is a 3rd party between `op` and `opBlocked`.
               seed.users.alice.did,
-              ids.AppBskyUnspeccedGetPostThreadV2,
+              ids.AppGndrUnspeccedGetPostThreadV2,
             ),
           },
         )
@@ -1364,7 +1364,7 @@ describe('appview thread views v2', () => {
             headers: await network.serviceHeaders(
               // Use `alice` who is a 3rd party between `op` and `opBlocked`.
               seed.users.alice.did,
-              ids.AppBskyUnspeccedGetPostThreadV2,
+              ids.AppGndrUnspeccedGetPostThreadV2,
             ),
           },
         )
@@ -1396,7 +1396,7 @@ describe('appview thread views v2', () => {
             headers: await network.serviceHeaders(
               // Use `alice` who is a 3rd party between `op` and `opBlocked`.
               seed.users.alice.did,
-              ids.AppBskyUnspeccedGetPostThreadV2,
+              ids.AppGndrUnspeccedGetPostThreadV2,
             ),
           },
         )
@@ -1436,7 +1436,7 @@ describe('appview thread views v2', () => {
           {
             headers: await network.serviceHeaders(
               seed.users.op.did,
-              ids.AppBskyUnspeccedGetPostThreadV2,
+              ids.AppGndrUnspeccedGetPostThreadV2,
             ),
           },
         )
@@ -1460,7 +1460,7 @@ describe('appview thread views v2', () => {
           {
             headers: await network.serviceHeaders(
               seed.users.op.did,
-              ids.AppBskyUnspeccedGetPostThreadV2,
+              ids.AppGndrUnspeccedGetPostThreadV2,
             ),
           },
         )
@@ -1616,7 +1616,7 @@ describe('appview thread views v2', () => {
             headers: await network.serviceHeaders(
               // Fetching as `op` mutes `opMuted`.
               seed.users.op.did,
-              ids.AppBskyUnspeccedGetPostThreadV2,
+              ids.AppGndrUnspeccedGetPostThreadV2,
             ),
           },
         )
@@ -1648,7 +1648,7 @@ describe('appview thread views v2', () => {
             headers: await network.serviceHeaders(
               // Fetching as `op` mutes `opMuted`.
               seed.users.op.did,
-              ids.AppBskyUnspeccedGetPostThreadOtherV2,
+              ids.AppGndrUnspeccedGetPostThreadOtherV2,
             ),
           },
         )
@@ -1675,7 +1675,7 @@ describe('appview thread views v2', () => {
             headers: await network.serviceHeaders(
               // Fetching as `muter` mutes `muted`.
               seed.users.muter.did,
-              ids.AppBskyUnspeccedGetPostThreadV2,
+              ids.AppGndrUnspeccedGetPostThreadV2,
             ),
           },
         )
@@ -1707,7 +1707,7 @@ describe('appview thread views v2', () => {
             headers: await network.serviceHeaders(
               // Fetching as `muter` mutes `muted`.
               seed.users.muter.did,
-              ids.AppBskyUnspeccedGetPostThreadOtherV2,
+              ids.AppGndrUnspeccedGetPostThreadOtherV2,
             ),
           },
         )
@@ -1731,7 +1731,7 @@ describe('appview thread views v2', () => {
           {
             headers: await network.serviceHeaders(
               seed.users.opMuted.did,
-              ids.AppBskyUnspeccedGetPostThreadV2,
+              ids.AppGndrUnspeccedGetPostThreadV2,
             ),
           },
         )
@@ -1759,7 +1759,7 @@ describe('appview thread views v2', () => {
         {
           headers: await network.serviceHeaders(
             seed.users.op.did,
-            ids.AppBskyUnspeccedGetPostThreadV2,
+            ids.AppGndrUnspeccedGetPostThreadV2,
           ),
         },
       )
@@ -1795,7 +1795,7 @@ describe('appview thread views v2', () => {
         {
           headers: await network.serviceHeaders(
             seed.users.op.did,
-            ids.AppBskyUnspeccedGetPostThreadOtherV2,
+            ids.AppGndrUnspeccedGetPostThreadOtherV2,
           ),
         },
       )
@@ -1826,7 +1826,7 @@ describe('appview thread views v2', () => {
           headers: await network.serviceHeaders(
             // `alice` does not get its own reply as hidden.
             seed.users.alice.did,
-            ids.AppBskyUnspeccedGetPostThreadV2,
+            ids.AppGndrUnspeccedGetPostThreadV2,
           ),
         },
       )
@@ -1889,7 +1889,7 @@ describe('appview thread views v2', () => {
           headers: await network.serviceHeaders(
             // `viewer` also gets the replies as hidden.
             seed.users.viewer.did,
-            ids.AppBskyUnspeccedGetPostThreadV2,
+            ids.AppGndrUnspeccedGetPostThreadV2,
           ),
         },
       )
@@ -1932,7 +1932,7 @@ describe('appview thread views v2', () => {
           headers: await network.serviceHeaders(
             // `viewer` also gets the replies as hidden.
             seed.users.viewer.did,
-            ids.AppBskyUnspeccedGetPostThreadOtherV2,
+            ids.AppGndrUnspeccedGetPostThreadOtherV2,
           ),
         },
       )
@@ -1972,7 +1972,7 @@ describe('appview thread views v2', () => {
           {
             headers: await network.serviceHeaders(
               seed.users.viewer.did,
-              ids.AppBskyUnspeccedGetPostThreadV2,
+              ids.AppGndrUnspeccedGetPostThreadV2,
             ),
           },
         )
@@ -2008,7 +2008,7 @@ describe('appview thread views v2', () => {
           {
             headers: await network.serviceHeaders(
               seed.users.viewer.did,
-              ids.AppBskyUnspeccedGetPostThreadOtherV2,
+              ids.AppGndrUnspeccedGetPostThreadOtherV2,
             ),
           },
         )
@@ -2035,7 +2035,7 @@ describe('appview thread views v2', () => {
           {
             headers: await network.serviceHeaders(
               seed.users.viewer.did,
-              ids.AppBskyUnspeccedGetPostThreadV2,
+              ids.AppGndrUnspeccedGetPostThreadV2,
             ),
           },
         )
@@ -2070,7 +2070,7 @@ describe('appview thread views v2', () => {
           {
             headers: await network.serviceHeaders(
               seed.users.viewer.did,
-              ids.AppBskyUnspeccedGetPostThreadOtherV2,
+              ids.AppGndrUnspeccedGetPostThreadOtherV2,
             ),
           },
         )
@@ -2093,7 +2093,7 @@ function assertPosts(
 ): asserts t is ThreadItemValuePost[] {
   t.forEach((i) => {
     assert(
-      AppBskyUnspeccedDefs.isThreadItemPost(i.value),
+      AppGndrUnspeccedDefs.isThreadItemPost(i.value),
       `Expected thread item to have a post as value`,
     )
   })
@@ -2104,7 +2104,7 @@ function assertHiddenPosts(
 ): asserts t is ThreadOtherItemValuePost[] {
   t.forEach((i) => {
     assert(
-      AppBskyUnspeccedDefs.isThreadItemPost(i.value),
+      AppGndrUnspeccedDefs.isThreadItemPost(i.value),
       `Expected thread item to have a hidden post as value`,
     )
   })

@@ -9,7 +9,7 @@ import {
   is$typed as _is$typed,
   type OmitKey,
 } from '../../../../util'
-import type * as AppBskyActorDefs from '../actor/defs.js'
+import type * as AppGndrActorDefs from '../actor/defs.js'
 
 const is$typed = _is$typed,
   validate = _validate
@@ -51,7 +51,7 @@ export interface Like {
   $type?: 'app.gndr.feed.getLikes#like'
   indexedAt: string
   createdAt: string
-  actor: AppBskyActorDefs.ProfileView
+  actor: AppGndrActorDefs.ProfileView
 }
 
 const hashLike = 'like'

@@ -9,7 +9,7 @@ import {
   is$typed as _is$typed,
   type OmitKey,
 } from '../../../../util'
-import type * as AppBskyFeedDefs from './defs.js'
+import type * as AppGndrFeedDefs from './defs.js'
 
 const is$typed = _is$typed,
   validate = _validate
@@ -22,7 +22,7 @@ export type QueryParams = {
 export type InputSchema = undefined
 
 export interface OutputSchema {
-  view: AppBskyFeedDefs.GeneratorView
+  view: AppGndrFeedDefs.GeneratorView
   /** Indicates whether the feed generator service has been online recently, or else seems to be inactive. */
   isOnline: boolean
   /** Indicates whether the feed generator service is compatible with the record declaration. */

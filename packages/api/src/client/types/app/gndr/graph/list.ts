@@ -9,8 +9,8 @@ import {
   is$typed as _is$typed,
   type OmitKey,
 } from '../../../../util'
-import type * as AppBskyGraphDefs from './defs.js'
-import type * as AppBskyRichtextFacet from '../richtext/facet.js'
+import type * as AppGndrGraphDefs from './defs.js'
+import type * as AppGndrRichtextFacet from '../richtext/facet.js'
 import type * as ComAtprotoLabelDefs from '../../../com/atproto/label/defs.js'
 
 const is$typed = _is$typed,
@@ -19,11 +19,11 @@ const id = 'app.gndr.graph.list'
 
 export interface Record {
   $type: 'app.gndr.graph.list'
-  purpose: AppBskyGraphDefs.ListPurpose
+  purpose: AppGndrGraphDefs.ListPurpose
   /** Display name for list; can not be empty. */
   name: string
   description?: string
-  descriptionFacets?: AppBskyRichtextFacet.Main[]
+  descriptionFacets?: AppGndrRichtextFacet.Main[]
   avatar?: BlobRef
   labels?: $Typed<ComAtprotoLabelDefs.SelfLabels> | { $type: string }
   createdAt: string

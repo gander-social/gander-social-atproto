@@ -108,10 +108,10 @@
       const clients = new Map(
         [
           {
-            client_id: 'https://bsky.app/oauth-client.json',
-            client_name: 'Bluesky',
-            client_uri: 'https://bsky.app',
-            logo_uri: 'https://web-cdn.bsky.app/static/apple-touch-icon.png',
+            client_id: 'https://gndr.app/oauth-client.json',
+            client_name: 'Gander',
+            client_uri: 'https://gndr.app',
+            logo_uri: 'https://web-cdn.gndr.app/static/apple-touch-icon.png',
           },
         ].map((c) => [c.client_id, c]),
       )
@@ -155,7 +155,7 @@
               tokenId: 'token1',
               createdAt: '2023-10-01T00:00:00.000Z',
               updatedAt: '2025-10-01T00:00:00.000Z',
-              clientId: 'https://bsky.app/oauth-client.json',
+              clientId: 'https://gndr.app/oauth-client.json',
               scope: 'atproto transition:generic transition:chat.gndr',
             },
           ],
@@ -167,7 +167,7 @@
               tokenId: 'token2',
               createdAt: '2023-10-01T00:00:00.000Z',
               updatedAt: '2023-10-01T00:00:00.000Z',
-              clientId: 'https://bsky.app/oauth-client.json',
+              clientId: 'https://gndr.app/oauth-client.json',
               scope:
                 'atproto transition:generic transition:email transition:chat.gndr',
             },
@@ -314,29 +314,29 @@
       })
 
       window.__customizationData = {
-        availableUserDomains: ['.bsky.social', '.bsky.team'],
+        availableUserDomains: ['.gndr.social', '.gndr.team'],
         inviteCodeRequired: false,
         hcaptchaSiteKey: undefined,
-        name: 'Bluesky',
+        name: 'Gander',
         links: [
           {
             title: { en: 'Home', fr: 'Accueil' },
-            href: 'https://bsky.social/',
+            href: 'https://gndr.social/',
             rel: 'canonical', // prevents the login page from being indexed by search engines
           },
           {
             title: { en: 'Terms of Service' },
-            href: 'https://bsky.social/about/support/tos',
+            href: 'https://gndr.social/about/support/tos',
             rel: 'terms-of-service',
           },
           {
             title: { en: 'Privacy Policy' },
-            href: 'https://bsky.social/about/support/privacy-policy',
+            href: 'https://gndr.social/about/support/privacy-policy',
             rel: 'privacy-policy',
           },
           {
             title: { en: 'Support' },
-            href: 'https://blueskyweb.zendesk.com/hc/en-us',
+            href: 'https://ganderweb.zendesk.com/hc/en-us',
             rel: 'help',
           },
         ],

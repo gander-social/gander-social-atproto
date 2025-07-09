@@ -7,7 +7,7 @@ export type AppViewOptions = {
   cdnUrlPattern?: string
 }
 
-export class BskyAppView {
+export class GndrAppView {
   public did: string
   public url: string
   public agent: AtpAgent

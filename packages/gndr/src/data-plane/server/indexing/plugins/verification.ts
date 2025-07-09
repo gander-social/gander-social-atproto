@@ -8,7 +8,7 @@ import { Database } from '../../db'
 import { DatabaseSchema, DatabaseSchemaType } from '../../db/database-schema'
 import { RecordProcessor } from '../processor'
 
-const lexId = lex.ids.AppBskyGraphVerification
+const lexId = lex.ids.AppGndrGraphVerification
 type IndexedVerification = Selectable<DatabaseSchemaType['verification']>
 
 const insertFn = async (

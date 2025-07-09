@@ -143,7 +143,7 @@ describe('appeal account takedown', () => {
       agent.com.atproto.repo.createRecord(
         {
           repo: auth.did,
-          collection: ids.AppBskyFeedPost,
+          collection: ids.AppGndrFeedPost,
           // rkey: 'self',
           record: {
             text: 'test',

@@ -113,7 +113,7 @@ describe('pds views with blocking from block lists', () => {
       {
         headers: await network.serviceHeaders(
           dan,
-          ids.AppBskyFeedGetPostThread,
+          ids.AppGndrFeedGetPostThread,
         ),
       },
     )
@@ -129,7 +129,7 @@ describe('pds views with blocking from block lists', () => {
       {
         headers: await network.serviceHeaders(
           carol,
-          ids.AppBskyFeedGetPostThread,
+          ids.AppGndrFeedGetPostThread,
         ),
       },
     )
@@ -149,7 +149,7 @@ describe('pds views with blocking from block lists', () => {
       {
         headers: await network.serviceHeaders(
           dan,
-          ids.AppBskyFeedGetPostThread,
+          ids.AppGndrFeedGetPostThread,
         ),
       },
     )
@@ -163,7 +163,7 @@ describe('pds views with blocking from block lists', () => {
       {
         headers: await network.serviceHeaders(
           carol,
-          ids.AppBskyFeedGetPostThread,
+          ids.AppGndrFeedGetPostThread,
         ),
       },
     )
@@ -177,7 +177,7 @@ describe('pds views with blocking from block lists', () => {
       {
         headers: await network.serviceHeaders(
           dan,
-          ids.AppBskyFeedGetPostThread,
+          ids.AppGndrFeedGetPostThread,
         ),
       },
     )
@@ -190,7 +190,7 @@ describe('pds views with blocking from block lists', () => {
       {
         headers: await network.serviceHeaders(
           dan,
-          ids.AppBskyFeedGetAuthorFeed,
+          ids.AppGndrFeedGetAuthorFeed,
         ),
       },
     )
@@ -203,7 +203,7 @@ describe('pds views with blocking from block lists', () => {
       {
         headers: await network.serviceHeaders(
           carol,
-          ids.AppBskyFeedGetAuthorFeed,
+          ids.AppGndrFeedGetAuthorFeed,
         ),
       },
     )
@@ -218,7 +218,7 @@ describe('pds views with blocking from block lists', () => {
       {
         headers: await network.serviceHeaders(
           carol,
-          ids.AppBskyFeedGetTimeline,
+          ids.AppGndrFeedGetTimeline,
         ),
       },
     )
@@ -229,7 +229,7 @@ describe('pds views with blocking from block lists', () => {
     const resDan = await agent.api.app.gndr.feed.getTimeline(
       { limit: 100 },
       {
-        headers: await network.serviceHeaders(dan, ids.AppBskyFeedGetTimeline),
+        headers: await network.serviceHeaders(dan, ids.AppGndrFeedGetTimeline),
       },
     )
     expect(
@@ -245,7 +245,7 @@ describe('pds views with blocking from block lists', () => {
       {
         headers: await network.serviceHeaders(
           carol,
-          ids.AppBskyActorGetProfile,
+          ids.AppGndrActorGetProfile,
         ),
       },
     )
@@ -256,7 +256,7 @@ describe('pds views with blocking from block lists', () => {
     const resDan = await agent.api.app.gndr.actor.getProfile(
       { actor: carol },
       {
-        headers: await network.serviceHeaders(dan, ids.AppBskyActorGetProfile),
+        headers: await network.serviceHeaders(dan, ids.AppGndrActorGetProfile),
       },
     )
     expect(resDan.data.viewer?.blocking).toBeDefined()
@@ -272,7 +272,7 @@ describe('pds views with blocking from block lists', () => {
       {
         headers: await network.serviceHeaders(
           carol,
-          ids.AppBskyActorGetProfiles,
+          ids.AppGndrActorGetProfiles,
         ),
       },
     )
@@ -286,7 +286,7 @@ describe('pds views with blocking from block lists', () => {
     const resDan = await agent.api.app.gndr.actor.getProfiles(
       { actors: [alice, carol] },
       {
-        headers: await network.serviceHeaders(dan, ids.AppBskyActorGetProfiles),
+        headers: await network.serviceHeaders(dan, ids.AppGndrActorGetProfiles),
       },
     )
     expect(resDan.data.profiles[0].viewer?.blocking).toBeUndefined()
@@ -303,7 +303,7 @@ describe('pds views with blocking from block lists', () => {
     const res = await agent.api.app.gndr.actor.getProfile(
       { actor: dan }, // dan subscribes to list that contains himself
       {
-        headers: await network.serviceHeaders(dan, ids.AppBskyActorGetProfile),
+        headers: await network.serviceHeaders(dan, ids.AppGndrActorGetProfile),
       },
     )
     expect(res.data.viewer?.blocking).toBeUndefined()
@@ -319,7 +319,7 @@ describe('pds views with blocking from block lists', () => {
       {
         headers: await network.serviceHeaders(
           carol,
-          ids.AppBskyNotificationListNotifications,
+          ids.AppGndrNotificationListNotifications,
         ),
       },
     )
@@ -334,7 +334,7 @@ describe('pds views with blocking from block lists', () => {
       {
         headers: await network.serviceHeaders(
           carol,
-          ids.AppBskyNotificationListNotifications,
+          ids.AppGndrNotificationListNotifications,
         ),
       },
     )
@@ -351,7 +351,7 @@ describe('pds views with blocking from block lists', () => {
       {
         headers: await network.serviceHeaders(
           carol,
-          ids.AppBskyActorSearchActors,
+          ids.AppGndrActorSearchActors,
         ),
       },
     )
@@ -364,7 +364,7 @@ describe('pds views with blocking from block lists', () => {
       {
         headers: await network.serviceHeaders(
           dan,
-          ids.AppBskyActorSearchActors,
+          ids.AppGndrActorSearchActors,
         ),
       },
     )
@@ -379,7 +379,7 @@ describe('pds views with blocking from block lists', () => {
       {
         headers: await network.serviceHeaders(
           carol,
-          ids.AppBskyActorSearchActorsTypeahead,
+          ids.AppGndrActorSearchActorsTypeahead,
         ),
       },
     )
@@ -392,7 +392,7 @@ describe('pds views with blocking from block lists', () => {
       {
         headers: await network.serviceHeaders(
           dan,
-          ids.AppBskyActorSearchActorsTypeahead,
+          ids.AppGndrActorSearchActorsTypeahead,
         ),
       },
     )
@@ -407,7 +407,7 @@ describe('pds views with blocking from block lists', () => {
       {
         headers: await network.serviceHeaders(
           carol,
-          ids.AppBskyActorSearchActorsTypeahead,
+          ids.AppGndrActorSearchActorsTypeahead,
         ),
       },
     )
@@ -420,7 +420,7 @@ describe('pds views with blocking from block lists', () => {
       {
         headers: await network.serviceHeaders(
           dan,
-          ids.AppBskyActorSearchActorsTypeahead,
+          ids.AppGndrActorSearchActorsTypeahead,
         ),
       },
     )
@@ -440,7 +440,7 @@ describe('pds views with blocking from block lists', () => {
       {
         headers: await network.serviceHeaders(
           carol,
-          ids.AppBskyActorGetSuggestions,
+          ids.AppGndrActorGetSuggestions,
         ),
       },
     )
@@ -453,7 +453,7 @@ describe('pds views with blocking from block lists', () => {
       {
         headers: await network.serviceHeaders(
           dan,
-          ids.AppBskyActorGetSuggestions,
+          ids.AppGndrActorGetSuggestions,
         ),
       },
     )
@@ -463,7 +463,7 @@ describe('pds views with blocking from block lists', () => {
   it('returns the contents of a list', async () => {
     const res = await agent.api.app.gndr.graph.getList(
       { list: listUri },
-      { headers: await network.serviceHeaders(dan, ids.AppBskyGraphGetList) },
+      { headers: await network.serviceHeaders(dan, ids.AppGndrGraphGetList) },
     )
     expect(forSnapshot(res.data)).toMatchSnapshot()
   })
@@ -471,15 +471,15 @@ describe('pds views with blocking from block lists', () => {
   it('paginates getList', async () => {
     const full = await agent.api.app.gndr.graph.getList(
       { list: listUri },
-      { headers: await network.serviceHeaders(dan, ids.AppBskyGraphGetList) },
+      { headers: await network.serviceHeaders(dan, ids.AppGndrGraphGetList) },
     )
     const first = await agent.api.app.gndr.graph.getList(
       { list: listUri, limit: 1 },
-      { headers: await network.serviceHeaders(dan, ids.AppBskyGraphGetList) },
+      { headers: await network.serviceHeaders(dan, ids.AppGndrGraphGetList) },
     )
     const second = await agent.api.app.gndr.graph.getList(
       { list: listUri, cursor: first.data.cursor },
-      { headers: await network.serviceHeaders(dan, ids.AppBskyGraphGetList) },
+      { headers: await network.serviceHeaders(dan, ids.AppGndrGraphGetList) },
     )
     const combined = [...first.data.items, ...second.data.items]
     expect(combined).toEqual(full.data.items)
@@ -503,7 +503,7 @@ describe('pds views with blocking from block lists', () => {
 
     const res = await agent.api.app.gndr.graph.getLists(
       { actor: alice },
-      { headers: await network.serviceHeaders(dan, ids.AppBskyGraphGetLists) },
+      { headers: await network.serviceHeaders(dan, ids.AppGndrGraphGetLists) },
     )
     expect(forSnapshot(res.data)).toMatchSnapshot()
   })
@@ -511,15 +511,15 @@ describe('pds views with blocking from block lists', () => {
   it('paginates getLists', async () => {
     const full = await agent.api.app.gndr.graph.getLists(
       { actor: alice },
-      { headers: await network.serviceHeaders(dan, ids.AppBskyGraphGetLists) },
+      { headers: await network.serviceHeaders(dan, ids.AppGndrGraphGetLists) },
     )
     const first = await agent.api.app.gndr.graph.getLists(
       { actor: alice, limit: 1 },
-      { headers: await network.serviceHeaders(dan, ids.AppBskyGraphGetLists) },
+      { headers: await network.serviceHeaders(dan, ids.AppGndrGraphGetLists) },
     )
     const second = await agent.api.app.gndr.graph.getLists(
       { actor: alice, cursor: first.data.cursor },
-      { headers: await network.serviceHeaders(dan, ids.AppBskyGraphGetLists) },
+      { headers: await network.serviceHeaders(dan, ids.AppGndrGraphGetLists) },
     )
     const combined = [...first.data.lists, ...second.data.lists]
     expect(combined).toEqual(full.data.lists)
@@ -541,7 +541,7 @@ describe('pds views with blocking from block lists', () => {
       {
         headers: await network.serviceHeaders(
           dan,
-          ids.AppBskyGraphGetListBlocks,
+          ids.AppGndrGraphGetListBlocks,
         ),
       },
     )
@@ -554,7 +554,7 @@ describe('pds views with blocking from block lists', () => {
       {
         headers: await network.serviceHeaders(
           dan,
-          ids.AppBskyGraphGetListBlocks,
+          ids.AppGndrGraphGetListBlocks,
         ),
       },
     )
@@ -563,7 +563,7 @@ describe('pds views with blocking from block lists', () => {
       {
         headers: await network.serviceHeaders(
           dan,
-          ids.AppBskyGraphGetListBlocks,
+          ids.AppGndrGraphGetListBlocks,
         ),
       },
     )
@@ -572,7 +572,7 @@ describe('pds views with blocking from block lists', () => {
       {
         headers: await network.serviceHeaders(
           dan,
-          ids.AppBskyGraphGetListBlocks,
+          ids.AppGndrGraphGetListBlocks,
         ),
       },
     )
@@ -602,7 +602,7 @@ describe('pds views with blocking from block lists', () => {
       {
         headers: await network.serviceHeaders(
           carol,
-          ids.AppBskyFeedGetTimeline,
+          ids.AppGndrFeedGetTimeline,
         ),
       },
     )
@@ -613,7 +613,7 @@ describe('pds views with blocking from block lists', () => {
     const resDan = await agent.api.app.gndr.feed.getTimeline(
       { limit: 100 },
       {
-        headers: await network.serviceHeaders(dan, ids.AppBskyFeedGetTimeline),
+        headers: await network.serviceHeaders(dan, ids.AppGndrFeedGetTimeline),
       },
     )
     expect(
@@ -639,7 +639,7 @@ describe('pds views with blocking from block lists', () => {
       {
         headers: await network.serviceHeaders(
           carol,
-          ids.AppBskyFeedGetTimeline,
+          ids.AppGndrFeedGetTimeline,
         ),
       },
     )
@@ -650,7 +650,7 @@ describe('pds views with blocking from block lists', () => {
     const resDan = await agent.api.app.gndr.feed.getTimeline(
       { limit: 100 },
       {
-        headers: await network.serviceHeaders(dan, ids.AppBskyFeedGetTimeline),
+        headers: await network.serviceHeaders(dan, ids.AppGndrFeedGetTimeline),
       },
     )
     expect(

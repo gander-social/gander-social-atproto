@@ -18,7 +18,7 @@ export type PdsConfig = Partial<pds.ServerEnvironment> & {
   migration?: string
 }
 
-export type BskyConfig = Partial<gndr.ServerConfig> & {
+export type GndrConfig = Partial<gndr.ServerConfig> & {
   plcUrl: string
   repoProvider: string
   dbPostgresUrl: string
@@ -47,7 +47,7 @@ export type TestServerParams = {
   dbPostgresSchema: string
   pds: Partial<PdsConfig>
   plc: Partial<PlcConfig>
-  gndr: Partial<BskyConfig>
+  gndr: Partial<GndrConfig>
   ozone: Partial<OzoneConfig>
   introspect: Partial<IntrospectConfig>
 }

@@ -9,7 +9,7 @@ import {
   is$typed as _is$typed,
   type OmitKey,
 } from '../../../../util'
-import type * as AppBskyActorDefs from '../actor/defs.js'
+import type * as AppGndrActorDefs from '../actor/defs.js'
 import type * as ComAtprotoLabelDefs from '../../../com/atproto/label/defs.js'
 import type * as ComAtprotoModerationDefs from '../../../com/atproto/moderation/defs.js'
 
@@ -21,7 +21,7 @@ export interface LabelerView {
   $type?: 'app.gndr.labeler.defs#labelerView'
   uri: string
   cid: string
-  creator: AppBskyActorDefs.ProfileView
+  creator: AppGndrActorDefs.ProfileView
   likeCount?: number
   viewer?: LabelerViewerState
   indexedAt: string
@@ -42,7 +42,7 @@ export interface LabelerViewDetailed {
   $type?: 'app.gndr.labeler.defs#labelerViewDetailed'
   uri: string
   cid: string
-  creator: AppBskyActorDefs.ProfileView
+  creator: AppGndrActorDefs.ProfileView
   policies: LabelerPolicies
   likeCount?: number
   viewer?: LabelerViewerState

@@ -76,7 +76,7 @@ const createFgDid = async (plcUrl: string, port: number): Promise<string> => {
       alsoKnownAs: [],
       services: {
         bsky_fg: {
-          type: 'BskyFeedGenerator',
+          type: 'GndrFeedGenerator',
           endpoint: `http://localhost:${port}`,
         },
       },

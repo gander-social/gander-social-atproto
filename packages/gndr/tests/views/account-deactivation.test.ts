@@ -73,7 +73,7 @@ describe('gndr account deactivation', () => {
       {
         headers: await network.serviceHeaders(
           sc.dids.bob,
-          ids.AppBskyFeedGetTimeline,
+          ids.AppGndrFeedGetTimeline,
         ),
       },
     )

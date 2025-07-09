@@ -9,7 +9,7 @@ import {
   is$typed as _is$typed,
   type OmitKey,
 } from '../../../../util'
-import type * as AppBskyGraphDefs from '../graph/defs.js'
+import type * as AppGndrGraphDefs from '../graph/defs.js'
 
 const is$typed = _is$typed,
   validate = _validate
@@ -21,7 +21,7 @@ export type QueryParams = {
 export type InputSchema = undefined
 
 export interface OutputSchema {
-  starterPacks: AppBskyGraphDefs.StarterPackView[]
+  starterPacks: AppGndrGraphDefs.StarterPackView[]
 }
 
 export type HandlerInput = void

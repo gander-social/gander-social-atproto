@@ -60,7 +60,7 @@ export class TestPds {
       homeUrl: 'https://gndr.social/',
       termsOfServiceUrl: 'https://gndr.social/about/support/tos',
       privacyPolicyUrl: 'https://gndr.social/about/support/privacy-policy',
-      supportUrl: 'https://blueskyweb.zendesk.com/hc/en-us',
+      supportUrl: 'https://ganderweb.zendesk.com/hc/en-us',
       ...config,
     }
     const cfg = pds.envToCfg(env)

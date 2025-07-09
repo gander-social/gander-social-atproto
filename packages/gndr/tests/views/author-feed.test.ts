@@ -73,7 +73,7 @@ describe('pds author feed views', () => {
       {
         headers: await network.serviceHeaders(
           alice,
-          ids.AppBskyFeedGetAuthorFeed,
+          ids.AppGndrFeedGetAuthorFeed,
         ),
       },
     )
@@ -85,7 +85,7 @@ describe('pds author feed views', () => {
       {
         headers: await network.serviceHeaders(
           bob,
-          ids.AppBskyFeedGetAuthorFeed,
+          ids.AppGndrFeedGetAuthorFeed,
         ),
       },
     )
@@ -97,7 +97,7 @@ describe('pds author feed views', () => {
       {
         headers: await network.serviceHeaders(
           carol,
-          ids.AppBskyFeedGetAuthorFeed,
+          ids.AppGndrFeedGetAuthorFeed,
         ),
       },
     )
@@ -109,7 +109,7 @@ describe('pds author feed views', () => {
       {
         headers: await network.serviceHeaders(
           dan,
-          ids.AppBskyFeedGetAuthorFeed,
+          ids.AppGndrFeedGetAuthorFeed,
         ),
       },
     )
@@ -123,7 +123,7 @@ describe('pds author feed views', () => {
       {
         headers: await network.serviceHeaders(
           carol,
-          ids.AppBskyFeedGetAuthorFeed,
+          ids.AppGndrFeedGetAuthorFeed,
         ),
       },
     )
@@ -149,7 +149,7 @@ describe('pds author feed views', () => {
         {
           headers: await network.serviceHeaders(
             dan,
-            ids.AppBskyFeedGetAuthorFeed,
+            ids.AppGndrFeedGetAuthorFeed,
           ),
         },
       )
@@ -166,7 +166,7 @@ describe('pds author feed views', () => {
       {
         headers: await network.serviceHeaders(
           dan,
-          ids.AppBskyFeedGetAuthorFeed,
+          ids.AppGndrFeedGetAuthorFeed,
         ),
       },
     )
@@ -181,7 +181,7 @@ describe('pds author feed views', () => {
       {
         headers: await network.serviceHeaders(
           alice,
-          ids.AppBskyFeedGetAuthorFeed,
+          ids.AppGndrFeedGetAuthorFeed,
         ),
       },
     )
@@ -215,7 +215,7 @@ describe('pds author feed views', () => {
       {
         headers: await network.serviceHeaders(
           carol,
-          ids.AppBskyFeedGetAuthorFeed,
+          ids.AppGndrFeedGetAuthorFeed,
         ),
       },
     )
@@ -231,7 +231,7 @@ describe('pds author feed views', () => {
       {
         headers: await network.serviceHeaders(
           carol,
-          ids.AppBskyFeedGetAuthorFeed,
+          ids.AppGndrFeedGetAuthorFeed,
         ),
       },
     )
@@ -255,7 +255,7 @@ describe('pds author feed views', () => {
       {
         headers: await network.serviceHeaders(
           carol,
-          ids.AppBskyFeedGetAuthorFeed,
+          ids.AppGndrFeedGetAuthorFeed,
         ),
       },
     )
@@ -275,7 +275,7 @@ describe('pds author feed views', () => {
           {
             headers: await network.serviceHeaders(
               carol,
-              ids.AppBskyFeedGetAuthorFeed,
+              ids.AppGndrFeedGetAuthorFeed,
             ),
           },
         ),
@@ -511,7 +511,7 @@ describe('pds author feed views', () => {
         {
           headers: await network.serviceHeaders(
             alice,
-            ids.AppBskyFeedGetAuthorFeed,
+            ids.AppGndrFeedGetAuthorFeed,
           ),
         },
       )
@@ -541,7 +541,7 @@ describe('pds author feed views', () => {
         {
           headers: await network.serviceHeaders(
             alice,
-            ids.AppBskyFeedGetAuthorFeed,
+            ids.AppGndrFeedGetAuthorFeed,
           ),
         },
       )
@@ -564,7 +564,7 @@ describe('pds author feed views', () => {
         {
           headers: await network.serviceHeaders(
             alice,
-            ids.AppBskyFeedGetAuthorFeed,
+            ids.AppGndrFeedGetAuthorFeed,
           ),
         },
       )
@@ -586,7 +586,7 @@ describe('pds author feed views', () => {
         {
           headers: await network.serviceHeaders(
             alice,
-            ids.AppBskyFeedGetAuthorFeed,
+            ids.AppGndrFeedGetAuthorFeed,
           ),
         },
       )
@@ -629,7 +629,7 @@ describe('pds author feed views', () => {
         {
           headers: await network.serviceHeaders(
             alice,
-            ids.AppBskyFeedGetAuthorFeed,
+            ids.AppGndrFeedGetAuthorFeed,
           ),
         },
       )

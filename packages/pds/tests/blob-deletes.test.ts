@@ -192,7 +192,7 @@ async function updateProfile(
   return await sc.agent.api.com.atproto.repo.putRecord(
     {
       repo: did,
-      collection: ids.AppBskyActorProfile,
+      collection: ids.AppGndrActorProfile,
       rkey: 'self',
       record: {
         avatar: avatar,

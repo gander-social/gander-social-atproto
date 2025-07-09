@@ -9,7 +9,7 @@ import {
   is$typed as _is$typed,
   type OmitKey,
 } from '../../../../util'
-import type * as AppBskyLabelerDefs from './defs.js'
+import type * as AppGndrLabelerDefs from './defs.js'
 import type * as ComAtprotoLabelDefs from '../../../com/atproto/label/defs.js'
 import type * as ComAtprotoModerationDefs from '../../../com/atproto/moderation/defs.js'
 
@@ -19,7 +19,7 @@ const id = 'app.gndr.labeler.service'
 
 export interface Record {
   $type: 'app.gndr.labeler.service'
-  policies: AppBskyLabelerDefs.LabelerPolicies
+  policies: AppGndrLabelerDefs.LabelerPolicies
   labels?: $Typed<ComAtprotoLabelDefs.SelfLabels> | { $type: string }
   createdAt: string
   /** The set of report reason 'codes' which are in-scope for this service to review and action. These usually align to policy categories. If not defined (distinct from empty array), all reason types are allowed. */

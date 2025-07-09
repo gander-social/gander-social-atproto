@@ -61,7 +61,7 @@ describe('getTrends', () => {
       const { data } = await agent.app.gndr.unspecced.getTrends(undefined, {
         headers: await network.serviceHeaders(
           users.viewer.did,
-          ids.AppBskyUnspeccedGetTrends,
+          ids.AppGndrUnspeccedGetTrends,
         ),
       })
       const trendA = data.trends.find((t) => t.topic === 'a')
@@ -79,7 +79,7 @@ describe('getTrends', () => {
       const { data } = await agent.app.gndr.unspecced.getTrends(undefined, {
         headers: await network.serviceHeaders(
           users.viewerBlocker.did,
-          ids.AppBskyUnspeccedGetTrends,
+          ids.AppGndrUnspeccedGetTrends,
         ),
       })
       const trendA = data.trends.find((t) => t.topic === 'a')

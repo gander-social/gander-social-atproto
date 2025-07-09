@@ -2,15 +2,15 @@
   "name": "@atproto/bsync",
   "version": "0.0.20",
   "license": "MIT",
-  "description": "Sychronizing service for app.bsky App View (Bluesky API)",
+  "description": "Sychronizing service for app.gndr App View (Gander API)",
   "keywords": [
     "atproto",
-    "bluesky"
+    "gander"
   ],
   "homepage": "https://atproto.com",
   "repository": {
     "type": "git",
-    "url": "https://github.com/bluesky-social/atproto",
+    "url": "https://github.com/gander-social/atproto",
     "directory": "packages/bsync"
   },
   "main": "dist/index.js",

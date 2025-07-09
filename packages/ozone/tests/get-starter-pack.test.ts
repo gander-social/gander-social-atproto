@@ -50,7 +50,7 @@ describe('admin get starter pack view', () => {
 
   describe('getStarterPack()', () => {
     it('gets a starterpack by uri', async () => {
-      const result = await agent.api.app.bsky.graph.getStarterPack(
+      const result = await agent.api.app.gndr.graph.getStarterPack(
         { starterPack: sp1.uriStr },
         { headers: await ozone.modHeaders(ids.AppGndrGraphGetStarterPack) },
       )
@@ -59,9 +59,9 @@ describe('admin get starter pack view', () => {
 
     it('gets a starterpack while taken down', async () => {
       // Validate that appview returns starterpacks before takedown
-      const appviewAgent = network.bsky.getClient()
+      const appviewAgent = network.gndr.getClient()
       const beforeTakedownFromAppview =
-        await appviewAgent.api.app.bsky.graph.getStarterPack(
+        await appviewAgent.api.app.gndr.graph.getStarterPack(
           { starterPack: sp1.uriStr },
           {
             headers: await network.serviceHeaders(
@@ -75,7 +75,7 @@ describe('admin get starter pack view', () => {
         forSnapshot(beforeTakedownFromAppview.data.starterPack),
       ).toMatchSnapshot()
 
-      await network.bsky.db.db
+      await network.gndr.db.db
         .insertInto('label')
         .values({
           src: ozone.ctx.cfg.service.did,
@@ -88,7 +88,7 @@ describe('admin get starter pack view', () => {
         .execute()
 
       const afterTakedownFromOzone =
-        await agent.api.app.bsky.graph.getStarterPack(
+        await agent.api.app.gndr.graph.getStarterPack(
           { starterPack: sp1.uriStr },
           { headers: await ozone.modHeaders(ids.AppGndrGraphGetStarterPack) },
         )
@@ -100,7 +100,7 @@ describe('admin get starter pack view', () => {
 
       // validate that appview does not return starterpack after takedown
       await expect(
-        appviewAgent.api.app.bsky.graph.getStarterPack(
+        appviewAgent.api.app.gndr.graph.getStarterPack(
           { starterPack: sp1.uriStr },
           {
             headers: await network.serviceHeaders(

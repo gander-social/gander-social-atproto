@@ -1,10 +1,10 @@
-import { BskyAppView } from '../gndr-app-view'
+import { GndrAppView } from '../gndr-app-view'
 import { ids } from '../lexicon/lexicons'
 
 export class ImageUrlBuilder {
   constructor(
     readonly pdsHostname: string,
-    readonly gndrAppView?: BskyAppView,
+    readonly gndrAppView?: GndrAppView,
   ) {}
 
   build(pattern: string, did: string, cid: string): string {

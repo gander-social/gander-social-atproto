@@ -9,7 +9,7 @@ import {
   is$typed as _is$typed,
   type OmitKey,
 } from '../../../../util'
-import type * as AppBskyActorDefs from '../../../app/gndr/actor/defs.js'
+import type * as AppGndrActorDefs from '../../../app/gndr/actor/defs.js'
 import type * as ComAtprotoLabelDefs from '../../../com/atproto/label/defs.js'
 
 const is$typed = _is$typed,
@@ -22,12 +22,12 @@ export interface ProfileViewBasic {
   handle: string
   displayName?: string
   avatar?: string
-  associated?: AppBskyActorDefs.ProfileAssociated
-  viewer?: AppBskyActorDefs.ViewerState
+  associated?: AppGndrActorDefs.ProfileAssociated
+  viewer?: AppGndrActorDefs.ViewerState
   labels?: ComAtprotoLabelDefs.Label[]
   /** Set to true when the actor cannot actively participate in conversations */
   chatDisabled?: boolean
-  verification?: AppBskyActorDefs.VerificationState
+  verification?: AppGndrActorDefs.VerificationState
 }
 
 const hashProfileViewBasic = 'profileViewBasic'

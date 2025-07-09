@@ -9,7 +9,7 @@ import {
   is$typed as _is$typed,
   type OmitKey,
 } from '../../../../util'
-import type * as AppBskyRichtextFacet from '../richtext/facet.js'
+import type * as AppGndrRichtextFacet from '../richtext/facet.js'
 import type * as ComAtprotoLabelDefs from '../../../com/atproto/label/defs.js'
 
 const is$typed = _is$typed,
@@ -21,7 +21,7 @@ export interface Record {
   did: string
   displayName: string
   description?: string
-  descriptionFacets?: AppBskyRichtextFacet.Main[]
+  descriptionFacets?: AppGndrRichtextFacet.Main[]
   avatar?: BlobRef
   /** Declaration that a feed accepts feedback interactions from a client through app.gndr.feed.sendInteractions */
   acceptsInteractions?: boolean

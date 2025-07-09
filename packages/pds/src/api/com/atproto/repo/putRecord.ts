@@ -72,7 +72,7 @@ export default function (server: Server, ctx: AppContext) {
           const isUpdate = current !== null
 
           // @TODO temporaray hack for legacy blob refs in profiles - remove after migrating legacy blobs
-          if (isUpdate && collection === ids.AppBskyActorProfile) {
+          if (isUpdate && collection === ids.AppGndrActorProfile) {
             await updateProfileLegacyBlobRef(actorTxn, record)
           }
           const writeInfo = {

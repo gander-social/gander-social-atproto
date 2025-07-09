@@ -44,7 +44,7 @@ describe('suggested follows', () => {
       {
         headers: await network.serviceHeaders(
           sc.dids.carol,
-          ids.AppBskyGraphGetSuggestedFollowsByActor,
+          ids.AppGndrGraphGetSuggestedFollowsByActor,
         ),
       },
     )
@@ -65,7 +65,7 @@ describe('suggested follows', () => {
       {
         headers: await network.serviceHeaders(
           sc.dids.fred,
-          ids.AppBskyGraphGetSuggestedFollowsByActor,
+          ids.AppGndrGraphGetSuggestedFollowsByActor,
         ),
       },
     )
@@ -90,7 +90,7 @@ describe('suggested follows', () => {
       {
         headers: await network.serviceHeaders(
           sc.dids.carol,
-          ids.AppBskyGraphGetSuggestedFollowsByActor,
+          ids.AppGndrGraphGetSuggestedFollowsByActor,
         ),
       },
     )
@@ -120,7 +120,7 @@ describe('suggested follows', () => {
       {
         headers: await network.serviceHeaders(
           sc.dids.carol,
-          ids.AppBskyGraphGetSuggestedFollowsByActor,
+          ids.AppGndrGraphGetSuggestedFollowsByActor,
         ),
       },
     )
@@ -150,7 +150,7 @@ describe('suggested follows', () => {
       {
         headers: await network.serviceHeaders(
           sc.dids.carol,
-          ids.AppBskyGraphGetSuggestedFollowsByActor,
+          ids.AppGndrGraphGetSuggestedFollowsByActor,
         ),
       },
     )

@@ -1,4 +1,4 @@
-import AtpAgent, { AppBskyEmbedRecord } from '@atproto/api'
+import AtpAgent, { AppGndrEmbedRecord } from '@atproto/api'
 import { SeedClient, TestNetwork } from '@atproto/dev-env'
 import { ids } from '../src/lexicon/lexicons'
 import { Users, postgatesSeed } from './seed/postgates'
@@ -57,14 +57,14 @@ describe('postgates', () => {
         {
           headers: await network.serviceHeaders(
             users.viewer.did,
-            ids.AppBskyFeedGetPostThread,
+            ids.AppGndrFeedGetPostThread,
           ),
         },
       )
 
       expect(
         // @ts-ignore I know more than you
-        AppBskyEmbedRecord.isViewDetached(root.data.thread.post.embed.record),
+        AppGndrEmbedRecord.isViewDetached(root.data.thread.post.embed.record),
       ).toBe(true)
     })
 
@@ -96,14 +96,14 @@ describe('postgates', () => {
         {
           headers: await network.serviceHeaders(
             users.viewer.did,
-            ids.AppBskyFeedGetPostThread,
+            ids.AppGndrFeedGetPostThread,
           ),
         },
       )
 
       expect(
         // @ts-ignore I know more than you
-        AppBskyEmbedRecord.isViewDetached(root.data.thread.post.embed.record),
+        AppGndrEmbedRecord.isViewDetached(root.data.thread.post.embed.record),
       ).toBe(false)
     })
   })
@@ -130,7 +130,7 @@ describe('postgates', () => {
         {
           headers: await network.serviceHeaders(
             users.viewer.did,
-            ids.AppBskyFeedGetPostThread,
+            ids.AppGndrFeedGetPostThread,
           ),
         },
       )
@@ -171,14 +171,14 @@ describe('postgates', () => {
         {
           headers: await network.serviceHeaders(
             users.viewer.did,
-            ids.AppBskyFeedGetPostThread,
+            ids.AppGndrFeedGetPostThread,
           ),
         },
       )
 
       expect(
         // @ts-ignore I know more than you
-        AppBskyEmbedRecord.isViewDetached(root.data.thread.post.embed.record),
+        AppGndrEmbedRecord.isViewDetached(root.data.thread.post.embed.record),
       ).toBe(true)
     })
   })

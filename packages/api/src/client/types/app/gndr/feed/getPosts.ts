@@ -23,7 +23,7 @@ export type QueryParams = {
 export type InputSchema = undefined
 
 export interface OutputSchema {
-  posts: AppBskyFeedDefs.PostView[]
+  posts: AppGndrFeedDefs.PostView[]
 }
 
 export interface CallOptions {

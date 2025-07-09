@@ -10,7 +10,7 @@ import {
   is$typed as _is$typed,
   type OmitKey,
 } from '../../../../util'
-import type * as AppBskyNotificationDefs from './defs.js'
+import type * as AppGndrNotificationDefs from './defs.js'
 
 const is$typed = _is$typed,
   validate = _validate
@@ -20,7 +20,7 @@ export type QueryParams = {}
 export type InputSchema = undefined
 
 export interface OutputSchema {
-  preferences: AppBskyNotificationDefs.Preferences
+  preferences: AppGndrNotificationDefs.Preferences
 }
 
 export interface CallOptions {

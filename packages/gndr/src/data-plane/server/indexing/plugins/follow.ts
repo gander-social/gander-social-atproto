@@ -9,7 +9,7 @@ import { DatabaseSchema, DatabaseSchemaType } from '../../db/database-schema'
 import { countAll, excluded } from '../../db/util'
 import { RecordProcessor } from '../processor'
 
-const lexId = lex.ids.AppBskyGraphFollow
+const lexId = lex.ids.AppGndrGraphFollow
 type IndexedFollow = Selectable<DatabaseSchemaType['follow']>
 
 const insertFn = async (

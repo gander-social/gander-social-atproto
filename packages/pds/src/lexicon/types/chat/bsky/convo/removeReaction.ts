@@ -9,7 +9,7 @@ import {
   is$typed as _is$typed,
   type OmitKey,
 } from '../../../../util'
-import type * as ChatBskyConvoDefs from './defs.js'
+import type * as ChatGndrConvoDefs from './defs.js'
 
 const is$typed = _is$typed,
   validate = _validate
@@ -24,7 +24,7 @@ export interface InputSchema {
 }
 
 export interface OutputSchema {
-  message: ChatBskyConvoDefs.MessageView
+  message: ChatGndrConvoDefs.MessageView
 }
 
 export interface HandlerInput {

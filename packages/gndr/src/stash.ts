@@ -10,9 +10,9 @@ import { Method } from './proto/bsync_pb'
 type PickNSID<T extends { $type?: string }> = Exclude<T['$type'], undefined>
 
 export const Namespaces = {
-  AppBskyNotificationDefsPreferences:
+  AppGndrNotificationDefsPreferences:
     'app.gndr.notification.defs#preferences' satisfies PickNSID<Preferences>,
-  AppBskyNotificationDefsSubjectActivitySubscription:
+  AppGndrNotificationDefsSubjectActivitySubscription:
     'app.gndr.notification.defs#subjectActivitySubscription' satisfies PickNSID<SubjectActivitySubscription>,
 }
 

@@ -66,7 +66,7 @@ describe('handle invalidation', () => {
       {
         headers: await network.serviceHeaders(
           alice,
-          ids.AppBskyActorGetProfile,
+          ids.AppGndrActorGetProfile,
         ),
       },
     )
@@ -86,7 +86,7 @@ describe('handle invalidation', () => {
       {
         headers: await network.serviceHeaders(
           alice,
-          ids.AppBskyActorGetProfile,
+          ids.AppGndrActorGetProfile,
         ),
       },
     )
@@ -106,7 +106,7 @@ describe('handle invalidation', () => {
       {
         headers: await network.serviceHeaders(
           alice,
-          ids.AppBskyActorGetProfile,
+          ids.AppGndrActorGetProfile,
         ),
       },
     )
@@ -131,7 +131,7 @@ describe('handle invalidation', () => {
       {
         headers: await network.serviceHeaders(
           alice,
-          ids.AppBskyActorGetProfile,
+          ids.AppGndrActorGetProfile,
         ),
       },
     )
@@ -142,7 +142,7 @@ describe('handle invalidation', () => {
       {
         headers: await network.serviceHeaders(
           alice,
-          ids.AppBskyActorGetProfile,
+          ids.AppGndrActorGetProfile,
         ),
       },
     )

@@ -15,7 +15,7 @@ import {
   FeedViewPost,
   SkeletonFeedPost,
 } from '../src/lexicon/types/app/gndr/feed/defs'
-import * as AppBskyFeedGetFeedSkeleton from '../src/lexicon/types/app/gndr/feed/getFeedSkeleton'
+import * as AppGndrFeedGetFeedSkeleton from '../src/lexicon/types/app/gndr/feed/getFeedSkeleton'
 import { forSnapshot, paginateAll } from './_util'
 
 describe('feed generation', () => {
@@ -206,7 +206,7 @@ describe('feed generation', () => {
     await pdsAgent.api.com.atproto.repo.putRecord(
       {
         repo: alice,
-        collection: ids.AppBskyFeedGenerator,
+        collection: ids.AppGndrFeedGenerator,
         rkey: 'odd',
         record: {
           did: gen.did,
@@ -233,7 +233,7 @@ describe('feed generation', () => {
         {
           headers: await network.serviceHeaders(
             sc.dids.bob,
-            ids.AppBskyFeedGetActorFeeds,
+            ids.AppGndrFeedGetActorFeeds,
           ),
         },
       )
@@ -273,7 +273,7 @@ describe('feed generation', () => {
       {
         headers: await network.serviceHeaders(
           sc.dids.bob,
-          ids.AppBskyFeedGetPosts,
+          ids.AppGndrFeedGetPosts,
         ),
       },
     )
@@ -300,7 +300,7 @@ describe('feed generation', () => {
       {
         headers: await network.serviceHeaders(
           sc.dids.bob,
-          ids.AppBskyFeedGetPosts,
+          ids.AppGndrFeedGetPosts,
         ),
       },
     )
@@ -359,7 +359,7 @@ describe('feed generation', () => {
       {
         headers: await network.serviceHeaders(
           sc.dids.bob,
-          ids.AppBskyFeedGetPosts,
+          ids.AppGndrFeedGetPosts,
         ),
       },
     )
@@ -389,7 +389,7 @@ describe('feed generation', () => {
       {
         headers: await network.serviceHeaders(
           sc.dids.bob,
-          ids.AppBskyFeedGetPosts,
+          ids.AppGndrFeedGetPosts,
         ),
       },
     )
@@ -404,7 +404,7 @@ describe('feed generation', () => {
         {
           headers: await network.serviceHeaders(
             sc.dids.bob,
-            ids.AppBskyFeedGetFeedGenerator,
+            ids.AppGndrFeedGetFeedGenerator,
           ),
         },
       )
@@ -419,7 +419,7 @@ describe('feed generation', () => {
         {
           headers: await network.serviceHeaders(
             sc.dids.bob,
-            ids.AppBskyFeedGetFeedGenerator,
+            ids.AppGndrFeedGetFeedGenerator,
           ),
         },
       )
@@ -435,7 +435,7 @@ describe('feed generation', () => {
         {
           headers: await network.serviceHeaders(
             sc.dids.bob,
-            ids.AppBskyFeedGetFeedGenerator,
+            ids.AppGndrFeedGetFeedGenerator,
           ),
         },
       )
@@ -449,7 +449,7 @@ describe('feed generation', () => {
         {
           headers: await network.serviceHeaders(
             sc.dids.bob,
-            ids.AppBskyFeedGetFeedGenerator,
+            ids.AppGndrFeedGetFeedGenerator,
           ),
         },
       )
@@ -491,7 +491,7 @@ describe('feed generation', () => {
         {
           headers: await network.serviceHeaders(
             sc.dids.alice,
-            ids.AppBskyFeedGetFeedGenerator,
+            ids.AppGndrFeedGetFeedGenerator,
           ),
         },
       )
@@ -507,7 +507,7 @@ describe('feed generation', () => {
         {
           headers: await network.serviceHeaders(
             sc.dids.bob,
-            ids.AppBskyFeedGetFeedGenerators,
+            ids.AppGndrFeedGetFeedGenerators,
           ),
         },
       )
@@ -523,7 +523,7 @@ describe('feed generation', () => {
         {
           headers: await network.serviceHeaders(
             sc.dids.bob,
-            ids.AppBskyFeedGetSuggestedFeeds,
+            ids.AppGndrFeedGetSuggestedFeeds,
           ),
         },
       )
@@ -539,7 +539,7 @@ describe('feed generation', () => {
         {
           headers: await network.serviceHeaders(
             sc.dids.bob,
-            ids.AppBskyUnspeccedGetPopularFeedGenerators,
+            ids.AppGndrUnspeccedGetPopularFeedGenerators,
           ),
         },
       )
@@ -557,7 +557,7 @@ describe('feed generation', () => {
         {
           headers: await network.serviceHeaders(
             sc.dids.bob,
-            ids.AppBskyUnspeccedGetPopularFeedGenerators,
+            ids.AppGndrUnspeccedGetPopularFeedGenerators,
           ),
         },
       )
@@ -571,7 +571,7 @@ describe('feed generation', () => {
           {
             headers: await network.serviceHeaders(
               sc.dids.bob,
-              ids.AppBskyUnspeccedGetPopularFeedGenerators,
+              ids.AppGndrUnspeccedGetPopularFeedGenerators,
             ),
           },
         )
@@ -581,7 +581,7 @@ describe('feed generation', () => {
           {
             headers: await network.serviceHeaders(
               sc.dids.bob,
-              ids.AppBskyUnspeccedGetPopularFeedGenerators,
+              ids.AppGndrUnspeccedGetPopularFeedGenerators,
             ),
           },
         )
@@ -591,7 +591,7 @@ describe('feed generation', () => {
           {
             headers: await network.serviceHeaders(
               sc.dids.bob,
-              ids.AppBskyUnspeccedGetPopularFeedGenerators,
+              ids.AppGndrUnspeccedGetPopularFeedGenerators,
             ),
           },
         )
@@ -608,7 +608,7 @@ describe('feed generation', () => {
         {
           headers: await network.serviceHeaders(
             alice,
-            ids.AppBskyFeedGetFeed,
+            ids.AppGndrFeedGetFeed,
             gen.did,
           ),
         },
@@ -639,7 +639,7 @@ describe('feed generation', () => {
           {
             headers: await network.serviceHeaders(
               alice,
-              ids.AppBskyFeedGetFeed,
+              ids.AppGndrFeedGetFeed,
               gen.did,
             ),
           },
@@ -666,7 +666,7 @@ describe('feed generation', () => {
         {
           headers: await network.serviceHeaders(
             alice,
-            ids.AppBskyFeedGetFeed,
+            ids.AppGndrFeedGetFeed,
             gen.did,
           ),
         },
@@ -687,7 +687,7 @@ describe('feed generation', () => {
         {
           headers: await network.serviceHeaders(
             alice,
-            ids.AppBskyFeedGetFeed,
+            ids.AppGndrFeedGetFeed,
             gen.did,
           ),
         },
@@ -703,7 +703,7 @@ describe('feed generation', () => {
         {
           headers: await network.serviceHeaders(
             alice,
-            ids.AppBskyFeedGetFeed,
+            ids.AppGndrFeedGetFeed,
             gen.did,
           ),
         },
@@ -717,7 +717,7 @@ describe('feed generation', () => {
       const tryGetFeed = agent.api.app.gndr.feed.getFeed(
         { feed: feedUriPrime },
         {
-          headers: await network.serviceHeaders(alice, ids.AppBskyFeedGetFeed),
+          headers: await network.serviceHeaders(alice, ids.AppGndrFeedGetFeed),
         },
       )
       await expect(tryGetFeed).resolves.toBeDefined()
@@ -729,7 +729,7 @@ describe('feed generation', () => {
         {
           headers: await network.serviceHeaders(
             alice,
-            ids.AppBskyFeedGetFeedSkeleton,
+            ids.AppGndrFeedGetFeedSkeleton,
             gen.did,
           ),
         },
@@ -737,7 +737,7 @@ describe('feed generation', () => {
       expect(feed.data['$auth']?.['aud']).toEqual(gen.did)
       expect(feed.data['$auth']?.['iss']).toEqual(alice)
       expect(feed.data['$auth']?.['lxm']).toEqual(
-        ids.AppBskyFeedGetFeedSkeleton,
+        ids.AppGndrFeedGetFeedSkeleton,
       )
     })
 
@@ -757,7 +757,7 @@ describe('feed generation', () => {
         {
           headers: await network.serviceHeaders(
             alice,
-            ids.AppBskyFeedGetFeed,
+            ids.AppGndrFeedGetFeed,
             gen.did,
           ),
         },
@@ -774,7 +774,7 @@ describe('feed generation', () => {
         {
           headers: await network.serviceHeaders(
             alice,
-            ids.AppBskyFeedGetFeed,
+            ids.AppGndrFeedGetFeed,
             gen.did,
           ),
         },
@@ -794,9 +794,9 @@ describe('feed generation', () => {
         | 'needs-auth',
     ): MethodHandler<
       void,
-      AppBskyFeedGetFeedSkeleton.QueryParams,
-      AppBskyFeedGetFeedSkeleton.HandlerInput,
-      AppBskyFeedGetFeedSkeleton.HandlerOutput
+      AppGndrFeedGetFeedSkeleton.QueryParams,
+      AppGndrFeedGetFeedSkeleton.HandlerInput,
+      AppGndrFeedGetFeedSkeleton.HandlerOutput
     > =>
     async ({ req, params }) => {
       if (feedName === 'needs-auth' && !req.headers.authorization) {

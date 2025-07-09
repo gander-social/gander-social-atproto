@@ -1,4 +1,4 @@
-import { AppBskyNotificationDeclaration } from '@atproto/api'
+import { AppGndrNotificationDeclaration } from '@atproto/api'
 import { mapDefined } from '@atproto/common'
 import { DataPlaneClient } from '../data-plane/client'
 import { Record as ProfileRecord } from '../lexicon/types/app/gndr/actor/profile'
@@ -16,7 +16,7 @@ import {
 } from './util'
 
 type AllowActivitySubscriptions = Extract<
-  AppBskyNotificationDeclaration.Record['allowSubscriptions'],
+  AppGndrNotificationDeclaration.Record['allowSubscriptions'],
   'followers' | 'mutuals' | 'none'
 >
 

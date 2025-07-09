@@ -32,7 +32,7 @@ describe('notif service proxy', () => {
     await plc.updateData(notifDid, network.pds.ctx.plcRotationKey, (x) => {
       const addr = notifServer.address() as AddressInfo
       x.services['gndr_notif'] = {
-        type: 'BskyNotificationService',
+        type: 'GndrNotificationService',
         endpoint: `http://localhost:${addr.port}`,
       }
       return x

@@ -1,11 +1,11 @@
 import { sql } from 'kysely'
 import { CID } from 'multiformats/cid'
 import {
-  AppBskyActorProfile,
-  AppBskyFeedLike,
-  AppBskyFeedPost,
-  AppBskyFeedRepost,
-  AppBskyGraphFollow,
+  AppGndrActorProfile,
+  AppGndrFeedLike,
+  AppGndrFeedPost,
+  AppGndrFeedRepost,
+  AppGndrGraphFollow,
   AtpAgent,
 } from '@atproto/api'
 import { TID, cidForCbor } from '@atproto/common'
@@ -46,49 +46,49 @@ describe('indexing', () => {
     const createdAt = new Date().toISOString()
     const createRecord = await prepareCreate({
       did: sc.dids.alice,
-      collection: ids.AppBskyFeedPost,
+      collection: ids.AppGndrFeedPost,
       record: {
-        $type: ids.AppBskyFeedPost,
+        $type: ids.AppGndrFeedPost,
         text: '@bob.test how are you?',
         facets: [
           {
             index: { byteStart: 0, byteEnd: 9 },
             features: [
               {
-                $type: `${ids.AppBskyRichtextFacet}#mention`,
+                $type: `${ids.AppGndrRichtextFacet}#mention`,
                 did: sc.dids.bob,
               },
             ],
           },
         ],
         createdAt,
-      } as AppBskyFeedPost.Record,
+      } as AppGndrFeedPost.Record,
     })
     const [uri] = createRecord
     const updateRecord = await prepareUpdate({
       did: sc.dids.alice,
-      collection: ids.AppBskyFeedPost,
+      collection: ids.AppGndrFeedPost,
       rkey: uri.rkey,
       record: {
-        $type: ids.AppBskyFeedPost,
+        $type: ids.AppGndrFeedPost,
         text: '@carol.test how are you?',
         facets: [
           {
             index: { byteStart: 0, byteEnd: 11 },
             features: [
               {
-                $type: `${ids.AppBskyRichtextFacet}#mention`,
+                $type: `${ids.AppGndrRichtextFacet}#mention`,
                 did: sc.dids.carol,
               },
             ],
           },
         ],
         createdAt,
-      } as AppBskyFeedPost.Record,
+      } as AppGndrFeedPost.Record,
     })
     const deleteRecord = prepareDelete({
       did: sc.dids.alice,
-      collection: ids.AppBskyFeedPost,
+      collection: ids.AppGndrFeedPost,
       rkey: uri.rkey,
     })
 
@@ -100,7 +100,7 @@ describe('indexing', () => {
       {
         headers: await network.serviceHeaders(
           sc.dids.alice,
-          ids.AppBskyFeedGetPostThread,
+          ids.AppGndrFeedGetPostThread,
         ),
       },
     )
@@ -115,7 +115,7 @@ describe('indexing', () => {
       {
         headers: await network.serviceHeaders(
           sc.dids.alice,
-          ids.AppBskyFeedGetPostThread,
+          ids.AppGndrFeedGetPostThread,
         ),
       },
     )
@@ -130,7 +130,7 @@ describe('indexing', () => {
       {
         headers: await network.serviceHeaders(
           sc.dids.alice,
-          ids.AppBskyFeedGetPostThread,
+          ids.AppGndrFeedGetPostThread,
         ),
       },
     )
@@ -149,26 +149,26 @@ describe('indexing', () => {
   it('indexes profiles.', async () => {
     const createRecord = await prepareCreate({
       did: sc.dids.dan,
-      collection: ids.AppBskyActorProfile,
+      collection: ids.AppGndrActorProfile,
       rkey: 'self',
       record: {
-        $type: ids.AppBskyActorProfile,
+        $type: ids.AppGndrActorProfile,
         displayName: 'dan',
-      } as AppBskyActorProfile.Record,
+      } as AppGndrActorProfile.Record,
     })
     const [uri] = createRecord
     const updateRecord = await prepareUpdate({
       did: sc.dids.dan,
-      collection: ids.AppBskyActorProfile,
+      collection: ids.AppGndrActorProfile,
       rkey: uri.rkey,
       record: {
-        $type: ids.AppBskyActorProfile,
+        $type: ids.AppGndrActorProfile,
         displayName: 'danny',
-      } as AppBskyActorProfile.Record,
+      } as AppGndrActorProfile.Record,
     })
     const deleteRecord = prepareDelete({
       did: sc.dids.dan,
-      collection: ids.AppBskyActorProfile,
+      collection: ids.AppGndrActorProfile,
       rkey: uri.rkey,
     })
 
@@ -180,7 +180,7 @@ describe('indexing', () => {
       {
         headers: await network.serviceHeaders(
           sc.dids.alice,
-          ids.AppBskyActorGetProfile,
+          ids.AppGndrActorGetProfile,
         ),
       },
     )
@@ -194,7 +194,7 @@ describe('indexing', () => {
       {
         headers: await network.serviceHeaders(
           sc.dids.alice,
-          ids.AppBskyActorGetProfile,
+          ids.AppGndrActorGetProfile,
         ),
       },
     )
@@ -208,7 +208,7 @@ describe('indexing', () => {
       {
         headers: await network.serviceHeaders(
           sc.dids.alice,
-          ids.AppBskyActorGetProfile,
+          ids.AppGndrActorGetProfile,
         ),
       },
     )
@@ -219,12 +219,12 @@ describe('indexing', () => {
     const createdAt = new Date().toISOString()
     const originalPost = await prepareCreate({
       did: sc.dids.alice,
-      collection: ids.AppBskyFeedPost,
+      collection: ids.AppGndrFeedPost,
       record: {
-        $type: ids.AppBskyFeedPost,
+        $type: ids.AppGndrFeedPost,
         text: 'original post',
         createdAt,
-      } as AppBskyFeedPost.Record,
+      } as AppGndrFeedPost.Record,
     })
     const originalPostRef = {
       uri: originalPost[0].toString(),
@@ -232,34 +232,34 @@ describe('indexing', () => {
     }
     const reply = await prepareCreate({
       did: sc.dids.bob,
-      collection: ids.AppBskyFeedPost,
+      collection: ids.AppGndrFeedPost,
       record: {
-        $type: ids.AppBskyFeedPost,
+        $type: ids.AppGndrFeedPost,
         text: 'reply post',
         reply: {
           root: originalPostRef,
           parent: originalPostRef,
         },
         createdAt,
-      } as AppBskyFeedPost.Record,
+      } as AppGndrFeedPost.Record,
     })
     const like = await prepareCreate({
       did: sc.dids.bob,
-      collection: ids.AppBskyFeedLike,
+      collection: ids.AppGndrFeedLike,
       record: {
-        $type: ids.AppBskyFeedLike,
+        $type: ids.AppGndrFeedLike,
         subject: originalPostRef,
         createdAt,
-      } as AppBskyFeedLike.Record,
+      } as AppGndrFeedLike.Record,
     })
     const repost = await prepareCreate({
       did: sc.dids.bob,
-      collection: ids.AppBskyFeedRepost,
+      collection: ids.AppGndrFeedRepost,
       record: {
-        $type: ids.AppBskyFeedRepost,
+        $type: ids.AppGndrFeedRepost,
         subject: originalPostRef,
         createdAt,
-      } as AppBskyFeedRepost.Record,
+      } as AppGndrFeedRepost.Record,
     })
     // reply, like, and repost indexed orior to the original post
     await network.gndr.sub.indexingSvc.indexRecord(...reply)
@@ -298,12 +298,12 @@ describe('indexing', () => {
 
     const originalPost = await prepareCreate({
       did: sc.dids.bob,
-      collection: ids.AppBskyFeedPost,
+      collection: ids.AppGndrFeedPost,
       record: {
-        $type: ids.AppBskyFeedPost,
+        $type: ids.AppGndrFeedPost,
         text: 'original post',
         createdAt,
-      } as AppBskyFeedPost.Record,
+      } as AppGndrFeedPost.Record,
     })
 
     const originalPostRef = {
@@ -314,41 +314,41 @@ describe('indexing', () => {
     // own actions
     const ownLike = await prepareCreate({
       did: sc.dids.bob,
-      collection: ids.AppBskyFeedLike,
+      collection: ids.AppGndrFeedLike,
       record: {
-        $type: ids.AppBskyFeedLike,
+        $type: ids.AppGndrFeedLike,
         subject: originalPostRef,
         createdAt,
-      } as AppBskyFeedLike.Record,
+      } as AppGndrFeedLike.Record,
     })
     const ownRepost = await prepareCreate({
       did: sc.dids.bob,
-      collection: ids.AppBskyFeedRepost,
+      collection: ids.AppGndrFeedRepost,
       record: {
-        $type: ids.AppBskyFeedRepost,
+        $type: ids.AppGndrFeedRepost,
         subject: originalPostRef,
         createdAt,
-      } as AppBskyFeedRepost.Record,
+      } as AppGndrFeedRepost.Record,
     })
 
     // other actions
     const aliceLike = await prepareCreate({
       did: sc.dids.alice,
-      collection: ids.AppBskyFeedLike,
+      collection: ids.AppGndrFeedLike,
       record: {
-        $type: ids.AppBskyFeedLike,
+        $type: ids.AppGndrFeedLike,
         subject: originalPostRef,
         createdAt,
-      } as AppBskyFeedLike.Record,
+      } as AppGndrFeedLike.Record,
     })
     const aliceRepost = await prepareCreate({
       did: sc.dids.alice,
-      collection: ids.AppBskyFeedRepost,
+      collection: ids.AppGndrFeedRepost,
       record: {
-        $type: ids.AppBskyFeedRepost,
+        $type: ids.AppGndrFeedRepost,
         subject: originalPostRef,
         createdAt,
-      } as AppBskyFeedRepost.Record,
+      } as AppGndrFeedRepost.Record,
     })
 
     await network.gndr.sub.indexingSvc.indexRecord(...originalPost)
@@ -365,7 +365,7 @@ describe('indexing', () => {
       {
         headers: await network.serviceHeaders(
           sc.dids.bob,
-          ids.AppBskyNotificationListNotifications,
+          ids.AppGndrNotificationListNotifications,
         ),
       },
     )
@@ -398,12 +398,12 @@ describe('indexing', () => {
     const unknownDid = 'did:example:unknown'
     const follow = await prepareCreate({
       did: sc.dids.bob,
-      collection: ids.AppBskyGraphFollow,
+      collection: ids.AppGndrGraphFollow,
       record: {
-        $type: ids.AppBskyGraphFollow,
+        $type: ids.AppGndrGraphFollow,
         subject: unknownDid,
         createdAt,
-      } as AppBskyGraphFollow.Record,
+      } as AppGndrGraphFollow.Record,
     })
     await network.gndr.sub.indexingSvc.indexRecord(...follow)
     await network.gndr.sub.background.processAll()
@@ -443,7 +443,7 @@ describe('indexing', () => {
         {
           headers: await network.serviceHeaders(
             sc.dids.alice,
-            ids.AppBskyActorGetProfile,
+            ids.AppGndrActorGetProfile,
           ),
         },
       )
@@ -452,7 +452,7 @@ describe('indexing', () => {
         {
           headers: await network.serviceHeaders(
             sc.dids.alice,
-            ids.AppBskyFeedGetAuthorFeed,
+            ids.AppGndrFeedGetAuthorFeed,
           ),
         },
       )
@@ -461,7 +461,7 @@ describe('indexing', () => {
         {
           headers: await network.serviceHeaders(
             sc.dids.alice,
-            ids.AppBskyGraphGetFollows,
+            ids.AppGndrGraphGetFollows,
           ),
         },
       )
@@ -478,7 +478,7 @@ describe('indexing', () => {
         {
           headers: await network.serviceHeaders(
             sc.dids.alice,
-            ids.AppBskyActorGetProfile,
+            ids.AppGndrActorGetProfile,
           ),
         },
       )
@@ -487,7 +487,7 @@ describe('indexing', () => {
         {
           headers: await network.serviceHeaders(
             sc.dids.alice,
-            ids.AppBskyFeedGetAuthorFeed,
+            ids.AppGndrFeedGetAuthorFeed,
           ),
         },
       )
@@ -496,7 +496,7 @@ describe('indexing', () => {
         {
           headers: await network.serviceHeaders(
             sc.dids.alice,
-            ids.AppBskyGraphGetFollows,
+            ids.AppGndrGraphGetFollows,
           ),
         },
       )
@@ -510,7 +510,7 @@ describe('indexing', () => {
       await pdsAgent.api.com.atproto.repo.putRecord(
         {
           repo: sc.dids.alice,
-          collection: ids.AppBskyActorProfile,
+          collection: ids.AppGndrActorProfile,
           rkey: 'self',
           record: { description: 'freshening things up' },
         },
@@ -537,7 +537,7 @@ describe('indexing', () => {
         {
           headers: await network.serviceHeaders(
             sc.dids.alice,
-            ids.AppBskyActorGetProfile,
+            ids.AppGndrActorGetProfile,
           ),
         },
       )
@@ -546,7 +546,7 @@ describe('indexing', () => {
         {
           headers: await network.serviceHeaders(
             sc.dids.alice,
-            ids.AppBskyFeedGetAuthorFeed,
+            ids.AppGndrFeedGetAuthorFeed,
           ),
         },
       )
@@ -555,7 +555,7 @@ describe('indexing', () => {
         {
           headers: await network.serviceHeaders(
             sc.dids.alice,
-            ids.AppBskyGraphGetFollows,
+            ids.AppGndrGraphGetFollows,
           ),
         },
       )
@@ -573,12 +573,12 @@ describe('indexing', () => {
       const writes = await Promise.all([
         repoPrepare.prepareCreate({
           did: sc.dids.alice,
-          collection: ids.AppBskyFeedPost,
+          collection: ids.AppGndrFeedPost,
           record: { text: 'valid', createdAt: new Date().toISOString() },
         }),
         repoPrepare.prepareCreate({
           did: sc.dids.alice,
-          collection: ids.AppBskyFeedPost,
+          collection: ids.AppGndrFeedPost,
           record: { text: 0 },
           validate: false,
         }),
@@ -605,7 +605,7 @@ describe('indexing', () => {
         {
           headers: await network.serviceHeaders(
             sc.dids.alice,
-            ids.AppBskyFeedGetPostThread,
+            ids.AppGndrFeedGetPostThread,
           ),
         },
       )
@@ -615,7 +615,7 @@ describe('indexing', () => {
         {
           headers: await network.serviceHeaders(
             sc.dids.alice,
-            ids.AppBskyFeedGetPostThread,
+            ids.AppGndrFeedGetPostThread,
           ),
         },
       )
@@ -630,7 +630,7 @@ describe('indexing', () => {
         {
           headers: await network.serviceHeaders(
             sc.dids.alice,
-            ids.AppBskyActorGetProfile,
+            ids.AppGndrActorGetProfile,
           ),
         },
       )
@@ -684,12 +684,12 @@ describe('indexing', () => {
       const did = agent.accountDid
       const follow = await prepareCreate({
         did: sc.dids.bob,
-        collection: ids.AppBskyGraphFollow,
+        collection: ids.AppGndrGraphFollow,
         record: {
-          $type: ids.AppBskyGraphFollow,
+          $type: ids.AppGndrGraphFollow,
           subject: did,
           createdAt: now,
-        } as AppBskyGraphFollow.Record,
+        } as AppGndrGraphFollow.Record,
       })
       await network.gndr.sub.indexingSvc.indexRecord(...follow)
       await network.gndr.sub.indexingSvc.indexHandle(did, now)
@@ -713,7 +713,7 @@ describe('indexing', () => {
         {
           headers: await network.serviceHeaders(
             sc.dids.bob,
-            ids.AppBskyActorGetProfile,
+            ids.AppGndrActorGetProfile,
           ),
         },
       )
@@ -724,7 +724,7 @@ describe('indexing', () => {
         {
           headers: await network.serviceHeaders(
             sc.dids.bob,
-            ids.AppBskyActorGetProfile,
+            ids.AppGndrActorGetProfile,
           ),
         },
       )
@@ -738,7 +738,7 @@ describe('indexing', () => {
         {
           headers: await network.serviceHeaders(
             sc.dids.bob,
-            ids.AppBskyActorGetProfile,
+            ids.AppGndrActorGetProfile,
           ),
         },
       )
@@ -761,7 +761,7 @@ describe('indexing', () => {
         {
           headers: await network.serviceHeaders(
             sc.dids.bob,
-            ids.AppBskyActorGetProfile,
+            ids.AppGndrActorGetProfile,
           ),
         },
       )

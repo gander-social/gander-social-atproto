@@ -1035,12 +1035,12 @@ export class Agent extends XrpcClient {
     })
   }
 
-  async setInterestsPref(pref: Partial<BskyInterestsPreference>) {
+  async setInterestsPref(pref: Partial<GndrInterestsPreference>) {
     await this.updatePreferences((prefs) => {
       const existing = prefs.findLast(predicate.isValidInterestsPref)
 
       return prefs
-        .filter((p) => !AppBskyActorDefs.isInterestsPref(p))
+        .filter((p) => !AppGndrActorDefs.isInterestsPref(p))
         .concat({
           ...existing,
           ...pref,
@@ -1065,7 +1065,7 @@ export class Agent extends XrpcClient {
     await this.updatePreferences((prefs) => {
       let mutedWordsPref = prefs.findLast(predicate.isValidMutedWordsPref)
 
-      const newMutedWord: AppBskyActorDefs.MutedWord = {
+      const newMutedWord: AppGndrActorDefs.MutedWord = {
         id: TID.nextStr(),
         value: sanitizedValue,
         targets: mutedWord.targets || [],
@@ -1091,7 +1091,7 @@ export class Agent extends XrpcClient {
       }
 
       return prefs
-        .filter((p) => !AppBskyActorDefs.isMutedWordsPref(p))
+        .filter((p) => !AppGndrActorDefs.isMutedWordsPref(p))
         .concat(mutedWordsPref)
     })
   }
@@ -1099,7 +1099,7 @@ export class Agent extends XrpcClient {
   /**
    * Convenience method to add muted words to user preferences
    */
-  async addMutedWords(newMutedWords: AppBskyActorDefs.MutedWord[]) {
+  async addMutedWords(newMutedWords: AppGndrActorDefs.MutedWord[]) {
     await Promise.all(newMutedWords.map((word) => this.addMutedWord(word)))
   }
 
@@ -1118,7 +1118,7 @@ export class Agent extends XrpcClient {
   /**
    * Update a muted word in user preferences.
    */
-  async updateMutedWord(mutedWord: AppBskyActorDefs.MutedWord) {
+  async updateMutedWord(mutedWord: AppGndrActorDefs.MutedWord) {
     await this.updatePreferences((prefs) => {
       const mutedWordsPref = prefs.findLast(predicate.isValidMutedWordsPref)
 
@@ -1152,7 +1152,7 @@ export class Agent extends XrpcClient {
         )
 
         return prefs
-          .filter((p) => !AppBskyActorDefs.isMutedWordsPref(p))
+          .filter((p) => !AppGndrActorDefs.isMutedWordsPref(p))
           .concat(mutedWordsPref)
       }
 
@@ -1163,7 +1163,7 @@ export class Agent extends XrpcClient {
   /**
    * Remove a muted word from user preferences.
    */
-  async removeMutedWord(mutedWord: AppBskyActorDefs.MutedWord) {
+  async removeMutedWord(mutedWord: AppGndrActorDefs.MutedWord) {
     await this.updatePreferences((prefs) => {
       const mutedWordsPref = prefs.findLast(predicate.isValidMutedWordsPref)
 
@@ -1185,7 +1185,7 @@ export class Agent extends XrpcClient {
         )
 
         return prefs
-          .filter((p) => !AppBskyActorDefs.isMutedWordsPref(p))
+          .filter((p) => !AppGndrActorDefs.isMutedWordsPref(p))
           .concat(mutedWordsPref)
       }
 
@@ -1196,7 +1196,7 @@ export class Agent extends XrpcClient {
   /**
    * Convenience method to remove muted words from user preferences
    */
-  async removeMutedWords(mutedWords: AppBskyActorDefs.MutedWord[]) {
+  async removeMutedWords(mutedWords: AppGndrActorDefs.MutedWord[]) {
     await Promise.all(mutedWords.map((word) => this.removeMutedWord(word)))
   }
 
@@ -1210,21 +1210,21 @@ export class Agent extends XrpcClient {
 
   async gndrAppQueueNudges(nudges: string | string[]) {
     await this.updatePreferences((prefs) => {
-      const pref = prefs.findLast(predicate.isValidBskyAppStatePref) || {
+      const pref = prefs.findLast(predicate.isValidGndrAppStatePref) || {
         $type: 'app.gndr.actor.defs#gndrAppStatePref',
       }
 
       pref.queuedNudges = (pref.queuedNudges || []).concat(nudges)
 
       return prefs
-        .filter((p) => !AppBskyActorDefs.isBskyAppStatePref(p))
+        .filter((p) => !AppGndrActorDefs.isGndrAppStatePref(p))
         .concat(pref)
     })
   }
 
   async gndrAppDismissNudges(nudges: string | string[]) {
     await this.updatePreferences((prefs) => {
-      const pref = prefs.findLast(predicate.isValidBskyAppStatePref) || {
+      const pref = prefs.findLast(predicate.isValidGndrAppStatePref) || {
         $type: 'app.gndr.actor.defs#gndrAppStatePref',
       }
 
@@ -1234,28 +1234,28 @@ export class Agent extends XrpcClient {
       )
 
       return prefs
-        .filter((p) => !AppBskyActorDefs.isBskyAppStatePref(p))
+        .filter((p) => !AppGndrActorDefs.isGndrAppStatePref(p))
         .concat(pref)
     })
   }
 
   async gndrAppSetActiveProgressGuide(
-    guide: AppBskyActorDefs.BskyAppProgressGuide | undefined,
+    guide: AppGndrActorDefs.GndrAppProgressGuide | undefined,
   ) {
     if (guide) {
-      const result = AppBskyActorDefs.validateBskyAppProgressGuide(guide)
+      const result = AppGndrActorDefs.validateGndrAppProgressGuide(guide)
       if (!result.success) throw result.error
     }
 
     await this.updatePreferences((prefs) => {
-      const pref = prefs.findLast(predicate.isValidBskyAppStatePref) || {
+      const pref = prefs.findLast(predicate.isValidGndrAppStatePref) || {
         $type: 'app.gndr.actor.defs#gndrAppStatePref',
       }
 
       pref.activeProgressGuide = guide
 
       return prefs
-        .filter((p) => !AppBskyActorDefs.isBskyAppStatePref(p))
+        .filter((p) => !AppGndrActorDefs.isGndrAppStatePref(p))
         .concat(pref)
     })
   }
@@ -1267,7 +1267,7 @@ export class Agent extends XrpcClient {
     validateNux(nux)
 
     await this.updatePreferences((prefs) => {
-      const pref = prefs.findLast(predicate.isValidBskyAppStatePref) || {
+      const pref = prefs.findLast(predicate.isValidGndrAppStatePref) || {
         $type: 'app.gndr.actor.defs#gndrAppStatePref',
       }
 
@@ -1277,7 +1277,7 @@ export class Agent extends XrpcClient {
         return n.id === nux.id
       })
 
-      let next: AppBskyActorDefs.Nux
+      let next: AppGndrActorDefs.Nux
 
       if (existing) {
         next = {
@@ -1294,7 +1294,7 @@ export class Agent extends XrpcClient {
       pref.nuxs = pref.nuxs.filter((n) => n.id !== nux.id).concat(next)
 
       return prefs
-        .filter((p) => !AppBskyActorDefs.isBskyAppStatePref(p))
+        .filter((p) => !AppGndrActorDefs.isGndrAppStatePref(p))
         .concat(pref)
     })
   }
@@ -1304,23 +1304,23 @@ export class Agent extends XrpcClient {
    */
   async gndrAppRemoveNuxs(ids: string[]) {
     await this.updatePreferences((prefs) => {
-      const pref = prefs.findLast(predicate.isValidBskyAppStatePref) || {
+      const pref = prefs.findLast(predicate.isValidGndrAppStatePref) || {
         $type: 'app.gndr.actor.defs#gndrAppStatePref',
       }
 
       pref.nuxs = (pref.nuxs || []).filter((nux) => !ids.includes(nux.id))
 
       return prefs
-        .filter((p) => !AppBskyActorDefs.isBskyAppStatePref(p))
+        .filter((p) => !AppGndrActorDefs.isGndrAppStatePref(p))
         .concat(pref)
     })
   }
 
   async setPostInteractionSettings(
-    settings: AppBskyActorDefs.PostInteractionSettingsPref,
+    settings: AppGndrActorDefs.PostInteractionSettingsPref,
   ) {
     const result =
-      AppBskyActorDefs.validatePostInteractionSettingsPref(settings)
+      AppGndrActorDefs.validatePostInteractionSettingsPref(settings)
     // Fool-proofing (should not be needed because of type safety)
     if (!result.success) throw result.error
 
@@ -1338,13 +1338,13 @@ export class Agent extends XrpcClient {
       pref.postgateEmbeddingRules = settings.postgateEmbeddingRules
 
       return prefs
-        .filter((p) => !AppBskyActorDefs.isPostInteractionSettingsPref(p))
+        .filter((p) => !AppGndrActorDefs.isPostInteractionSettingsPref(p))
         .concat(pref)
     })
   }
 
-  async setVerificationPrefs(settings: AppBskyActorDefs.VerificationPrefs) {
-    const result = AppBskyActorDefs.validateVerificationPrefs(settings)
+  async setVerificationPrefs(settings: AppGndrActorDefs.VerificationPrefs) {
+    const result = AppGndrActorDefs.validateVerificationPrefs(settings)
     // Fool-proofing (should not be needed because of type safety)
     if (!result.success) throw result.error
 
@@ -1357,7 +1357,7 @@ export class Agent extends XrpcClient {
       pref.hideBadges = settings.hideBadges
 
       return prefs
-        .filter((p) => !AppBskyActorDefs.isVerificationPrefs(p))
+        .filter((p) => !AppGndrActorDefs.isVerificationPrefs(p))
         .concat(pref)
     })
   }
@@ -1370,14 +1370,14 @@ export class Agent extends XrpcClient {
    * This function updates the preferences of a user and allows for a callback function to be executed
    * before the update.
    * @param cb - cb is a callback function that takes in a single parameter of type
-   * AppBskyActorDefs.Preferences and returns either a boolean or void. This callback function is used to
+   * AppGndrActorDefs.Preferences and returns either a boolean or void. This callback function is used to
    * update the preferences of the user. The function is called with the current preferences as an
    * argument and if the callback returns false, the preferences are not updated.
    */
   private async updatePreferences(
     cb: (
-      prefs: AppBskyActorDefs.Preferences,
-    ) => AppBskyActorDefs.Preferences | false,
+      prefs: AppGndrActorDefs.Preferences,
+    ) => AppGndrActorDefs.Preferences | false,
   ) {
     try {
       await this.#prefsLock.acquireAsync()
@@ -1410,7 +1410,7 @@ export class Agent extends XrpcClient {
       pref.items = [...hiddenItems]
 
       return prefs
-        .filter((p) => !AppBskyActorDefs.isHiddenPostsPref(p))
+        .filter((p) => !AppGndrActorDefs.isHiddenPostsPref(p))
         .concat(pref)
     })
   }
@@ -1437,7 +1437,7 @@ export class Agent extends XrpcClient {
       feedsPref.pinned = res.pinned
 
       return prefs
-        .filter((pref) => !AppBskyActorDefs.isSavedFeedsPref(pref))
+        .filter((pref) => !AppGndrActorDefs.isSavedFeedsPref(pref))
         .concat(feedsPref)
     })
     return res
@@ -1445,10 +1445,10 @@ export class Agent extends XrpcClient {
 
   private async updateSavedFeedsV2Preferences(
     cb: (
-      savedFeedsPref: AppBskyActorDefs.SavedFeed[],
-    ) => AppBskyActorDefs.SavedFeed[],
-  ): Promise<AppBskyActorDefs.SavedFeed[]> {
-    let maybeMutatedSavedFeeds: AppBskyActorDefs.SavedFeed[] = []
+      savedFeedsPref: AppGndrActorDefs.SavedFeed[],
+    ) => AppGndrActorDefs.SavedFeed[],
+  ): Promise<AppGndrActorDefs.SavedFeed[]> {
+    let maybeMutatedSavedFeeds: AppGndrActorDefs.SavedFeed[] = []
 
     await this.updatePreferences((prefs) => {
       const existingV2Pref = prefs.findLast(
@@ -1470,7 +1470,7 @@ export class Agent extends XrpcClient {
       maybeMutatedSavedFeeds = newSavedFeeds
 
       let updatedPrefs = prefs
-        .filter((pref) => !AppBskyActorDefs.isSavedFeedsPrefV2(pref))
+        .filter((pref) => !AppGndrActorDefs.isSavedFeedsPrefV2(pref))
         .concat(existingV2Pref)
 
       /*
@@ -1491,7 +1491,7 @@ export class Agent extends XrpcClient {
           pinned: Array.from(new Set([...pinned, ...v2Compat.pinned])),
         }
         updatedPrefs = updatedPrefs
-          .filter((pref) => !AppBskyActorDefs.isSavedFeedsPref(pref))
+          .filter((pref) => !AppGndrActorDefs.isSavedFeedsPref(pref))
           .concat(existingV1Pref)
       }
 
@@ -1508,8 +1508,8 @@ export class Agent extends XrpcClient {
  * Helper to transform the legacy content preferences.
  */
 function adjustLegacyContentLabelPref(
-  pref: AppBskyActorDefs.ContentLabelPref,
-): AppBskyActorDefs.ContentLabelPref {
+  pref: AppGndrActorDefs.ContentLabelPref,
+): AppGndrActorDefs.ContentLabelPref {
   let visibility = pref.visibility
 
   // adjust legacy values
@@ -1525,7 +1525,7 @@ function adjustLegacyContentLabelPref(
  * the user's preferences.
  */
 function remapLegacyLabels(
-  labels: BskyPreferences['moderationPrefs']['labels'],
+  labels: GndrPreferences['moderationPrefs']['labels'],
 ) {
   const _labels = { ...labels }
   const legacyToNewMap: Record<string, string | undefined> = {
@@ -1548,19 +1548,19 @@ function remapLegacyLabels(
  * A helper to get the currently enabled labelers from the full preferences array
  */
 function prefsArrayToLabelerDids(
-  prefs: AppBskyActorDefs.Preferences,
+  prefs: AppGndrActorDefs.Preferences,
 ): string[] {
   const labelersPref = prefs.findLast(predicate.isValidLabelersPref)
   let dids: string[] = []
   if (labelersPref) {
-    dids = (labelersPref as AppBskyActorDefs.LabelersPref).labelers.map(
+    dids = (labelersPref as AppGndrActorDefs.LabelersPref).labelers.map(
       (labeler) => labeler.did,
     )
   }
   return dids
 }
 
-function isBskyPrefs(v: any): v is BskyPreferences {
+function isGndrPrefs(v: any): v is GndrPreferences {
   return (
     v &&
     typeof v === 'object' &&
@@ -1573,7 +1573,7 @@ function isModPrefs(v: any): v is ModerationPrefs {
   return v && typeof v === 'object' && 'labelers' in v
 }
 
-function migrateLegacyMutedWordsItems(items: AppBskyActorDefs.MutedWord[]) {
+function migrateLegacyMutedWordsItems(items: AppGndrActorDefs.MutedWord[]) {
   return items.map((item) => ({
     ...item,
     id: item.id || TID.nextStr(),
@@ -1581,8 +1581,8 @@ function migrateLegacyMutedWordsItems(items: AppBskyActorDefs.MutedWord[]) {
 }
 
 function matchMutedWord(
-  existingWord: AppBskyActorDefs.MutedWord,
-  newWord: AppBskyActorDefs.MutedWord,
+  existingWord: AppGndrActorDefs.MutedWord,
+  newWord: AppGndrActorDefs.MutedWord,
 ): boolean {
   // id is undefined in legacy implementation
   const existingId = existingWord.id

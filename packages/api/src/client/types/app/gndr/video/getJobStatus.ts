@@ -10,7 +10,7 @@ import {
   is$typed as _is$typed,
   type OmitKey,
 } from '../../../../util'
-import type * as AppBskyVideoDefs from './defs.js'
+import type * as AppGndrVideoDefs from './defs.js'
 
 const is$typed = _is$typed,
   validate = _validate
@@ -22,7 +22,7 @@ export type QueryParams = {
 export type InputSchema = undefined
 
 export interface OutputSchema {
-  jobStatus: AppBskyVideoDefs.JobStatus
+  jobStatus: AppGndrVideoDefs.JobStatus
 }
 
 export interface CallOptions {

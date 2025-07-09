@@ -9,7 +9,7 @@ import {
   is$typed as _is$typed,
   type OmitKey,
 } from '../../../../util'
-import type * as AppBskyFeedDefs from './defs.js'
+import type * as AppGndrFeedDefs from './defs.js'
 
 const is$typed = _is$typed,
   validate = _validate
@@ -27,11 +27,11 @@ export type InputSchema = undefined
 
 export interface OutputSchema {
   thread:
-    | $Typed<AppBskyFeedDefs.ThreadViewPost>
-    | $Typed<AppBskyFeedDefs.NotFoundPost>
-    | $Typed<AppBskyFeedDefs.BlockedPost>
+    | $Typed<AppGndrFeedDefs.ThreadViewPost>
+    | $Typed<AppGndrFeedDefs.NotFoundPost>
+    | $Typed<AppGndrFeedDefs.BlockedPost>
     | { $type: string }
-  threadgate?: AppBskyFeedDefs.ThreadgateView
+  threadgate?: AppGndrFeedDefs.ThreadgateView
 }
 
 export type HandlerInput = void

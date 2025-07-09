@@ -33,9 +33,9 @@ describe('duplicate record', () => {
   }
 
   it('dedupes reposts', async () => {
-    const subject = AtUri.make(did, lex.ids.AppBskyFeedPost, TID.nextStr())
+    const subject = AtUri.make(did, lex.ids.AppGndrFeedPost, TID.nextStr())
     const subjectCid = await cidForCbor({ test: 'blah' })
-    const coll = lex.ids.AppBskyFeedRepost
+    const coll = lex.ids.AppGndrFeedRepost
     const uris: AtUri[] = []
     for (let i = 0; i < 5; i++) {
       const repost = {
@@ -73,9 +73,9 @@ describe('duplicate record', () => {
   })
 
   it('dedupes like', async () => {
-    const subject = AtUri.make(did, lex.ids.AppBskyFeedPost, TID.nextStr())
+    const subject = AtUri.make(did, lex.ids.AppGndrFeedPost, TID.nextStr())
     const subjectCid = await cidForCbor({ test: 'blah' })
-    const coll = lex.ids.AppBskyFeedLike
+    const coll = lex.ids.AppGndrFeedLike
     const uris: AtUri[] = []
     for (let i = 0; i < 5; i++) {
       const like = {
@@ -119,7 +119,7 @@ describe('duplicate record', () => {
   })
 
   it('dedupes follows', async () => {
-    const coll = lex.ids.AppBskyGraphFollow
+    const coll = lex.ids.AppGndrGraphFollow
     const uris: AtUri[] = []
     for (let i = 0; i < 5; i++) {
       const follow = {

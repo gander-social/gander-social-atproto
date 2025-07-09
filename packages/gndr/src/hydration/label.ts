@@ -174,7 +174,7 @@ export class LabelHydrator {
 }
 
 const labelerDidToUri = (did: string): string => {
-  return AtUri.make(did, ids.AppBskyLabelerService, 'self').toString()
+  return AtUri.make(did, ids.AppGndrLabelerService, 'self').toString()
 }
 
 const IMPERSONATION_LABEL = 'impersonation'

@@ -10,9 +10,9 @@ import {
   type OmitKey,
 } from '../../../../util'
 import type * as ComAtprotoLabelDefs from '../../../com/atproto/label/defs.js'
-import type * as AppBskyActorDefs from '../actor/defs.js'
-import type * as AppBskyRichtextFacet from '../richtext/facet.js'
-import type * as AppBskyFeedDefs from '../feed/defs.js'
+import type * as AppGndrActorDefs from '../actor/defs.js'
+import type * as AppGndrRichtextFacet from '../richtext/facet.js'
+import type * as AppGndrFeedDefs from '../feed/defs.js'
 
 const is$typed = _is$typed,
   validate = _validate
@@ -45,11 +45,11 @@ export interface ListView {
   $type?: 'app.gndr.graph.defs#listView'
   uri: string
   cid: string
-  creator: AppBskyActorDefs.ProfileView
+  creator: AppGndrActorDefs.ProfileView
   name: string
   purpose: ListPurpose
   description?: string
-  descriptionFacets?: AppBskyRichtextFacet.Main[]
+  descriptionFacets?: AppGndrRichtextFacet.Main[]
   avatar?: string
   listItemCount?: number
   labels?: ComAtprotoLabelDefs.Label[]
@@ -70,7 +70,7 @@ export function validateListView<V>(v: V) {
 export interface ListItemView {
   $type?: 'app.gndr.graph.defs#listItemView'
   uri: string
-  subject: AppBskyActorDefs.ProfileView
+  subject: AppGndrActorDefs.ProfileView
 }
 
 const hashListItemView = 'listItemView'
@@ -88,10 +88,10 @@ export interface StarterPackView {
   uri: string
   cid: string
   record: { [_ in string]: unknown }
-  creator: AppBskyActorDefs.ProfileViewBasic
+  creator: AppGndrActorDefs.ProfileViewBasic
   list?: ListViewBasic
   listItemsSample?: ListItemView[]
-  feeds?: AppBskyFeedDefs.GeneratorView[]
+  feeds?: AppGndrFeedDefs.GeneratorView[]
   joinedWeekCount?: number
   joinedAllTimeCount?: number
   labels?: ComAtprotoLabelDefs.Label[]
@@ -113,7 +113,7 @@ export interface StarterPackViewBasic {
   uri: string
   cid: string
   record: { [_ in string]: unknown }
-  creator: AppBskyActorDefs.ProfileViewBasic
+  creator: AppGndrActorDefs.ProfileViewBasic
   listItemCount?: number
   joinedWeekCount?: number
   joinedAllTimeCount?: number

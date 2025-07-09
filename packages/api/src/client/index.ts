@@ -160,79 +160,79 @@ import * as AppGndrGraphGetStarterPacks from './types/app/gndr/graph/getStarterP
 import * as AppGndrGraphGetSuggestedFollowsByActor from './types/app/gndr/graph/getSuggestedFollowsByActor.js'
 import * as AppGndrGraphList from './types/app/gndr/graph/list.js'
 import * as AppGndrGraphListblock from './types/app/gndr/graph/listblock.js'
-import * as AppBskyGraphListitem from './types/app/gndr/graph/listitem.js'
-import * as AppBskyGraphMuteActor from './types/app/gndr/graph/muteActor.js'
-import * as AppBskyGraphMuteActorList from './types/app/gndr/graph/muteActorList.js'
-import * as AppBskyGraphMuteThread from './types/app/gndr/graph/muteThread.js'
-import * as AppBskyGraphSearchStarterPacks from './types/app/gndr/graph/searchStarterPacks.js'
-import * as AppBskyGraphStarterpack from './types/app/gndr/graph/starterpack.js'
-import * as AppBskyGraphUnmuteActor from './types/app/gndr/graph/unmuteActor.js'
-import * as AppBskyGraphUnmuteActorList from './types/app/gndr/graph/unmuteActorList.js'
-import * as AppBskyGraphUnmuteThread from './types/app/gndr/graph/unmuteThread.js'
-import * as AppBskyGraphVerification from './types/app/gndr/graph/verification.js'
-import * as AppBskyLabelerDefs from './types/app/gndr/labeler/defs.js'
-import * as AppBskyLabelerGetServices from './types/app/gndr/labeler/getServices.js'
-import * as AppBskyLabelerService from './types/app/gndr/labeler/service.js'
-import * as AppBskyNotificationDeclaration from './types/app/gndr/notification/declaration.js'
-import * as AppBskyNotificationDefs from './types/app/gndr/notification/defs.js'
-import * as AppBskyNotificationGetPreferences from './types/app/gndr/notification/getPreferences.js'
-import * as AppBskyNotificationGetUnreadCount from './types/app/gndr/notification/getUnreadCount.js'
-import * as AppBskyNotificationListActivitySubscriptions from './types/app/gndr/notification/listActivitySubscriptions.js'
-import * as AppBskyNotificationListNotifications from './types/app/gndr/notification/listNotifications.js'
-import * as AppBskyNotificationPutActivitySubscription from './types/app/gndr/notification/putActivitySubscription.js'
-import * as AppBskyNotificationPutPreferences from './types/app/gndr/notification/putPreferences.js'
-import * as AppBskyNotificationPutPreferencesV2 from './types/app/gndr/notification/putPreferencesV2.js'
-import * as AppBskyNotificationRegisterPush from './types/app/gndr/notification/registerPush.js'
-import * as AppBskyNotificationUpdateSeen from './types/app/gndr/notification/updateSeen.js'
-import * as AppBskyRichtextFacet from './types/app/gndr/richtext/facet.js'
-import * as AppBskyUnspeccedDefs from './types/app/gndr/unspecced/defs.js'
-import * as AppBskyUnspeccedGetConfig from './types/app/gndr/unspecced/getConfig.js'
-import * as AppBskyUnspeccedGetPopularFeedGenerators from './types/app/gndr/unspecced/getPopularFeedGenerators.js'
-import * as AppBskyUnspeccedGetPostThreadOtherV2 from './types/app/gndr/unspecced/getPostThreadOtherV2.js'
-import * as AppBskyUnspeccedGetPostThreadV2 from './types/app/gndr/unspecced/getPostThreadV2.js'
-import * as AppBskyUnspeccedGetSuggestedFeeds from './types/app/gndr/unspecced/getSuggestedFeeds.js'
-import * as AppBskyUnspeccedGetSuggestedFeedsSkeleton from './types/app/gndr/unspecced/getSuggestedFeedsSkeleton.js'
-import * as AppBskyUnspeccedGetSuggestedStarterPacks from './types/app/gndr/unspecced/getSuggestedStarterPacks.js'
-import * as AppBskyUnspeccedGetSuggestedStarterPacksSkeleton from './types/app/gndr/unspecced/getSuggestedStarterPacksSkeleton.js'
-import * as AppBskyUnspeccedGetSuggestedUsers from './types/app/gndr/unspecced/getSuggestedUsers.js'
-import * as AppBskyUnspeccedGetSuggestedUsersSkeleton from './types/app/gndr/unspecced/getSuggestedUsersSkeleton.js'
-import * as AppBskyUnspeccedGetSuggestionsSkeleton from './types/app/gndr/unspecced/getSuggestionsSkeleton.js'
-import * as AppBskyUnspeccedGetTaggedSuggestions from './types/app/gndr/unspecced/getTaggedSuggestions.js'
-import * as AppBskyUnspeccedGetTrendingTopics from './types/app/gndr/unspecced/getTrendingTopics.js'
-import * as AppBskyUnspeccedGetTrends from './types/app/gndr/unspecced/getTrends.js'
-import * as AppBskyUnspeccedGetTrendsSkeleton from './types/app/gndr/unspecced/getTrendsSkeleton.js'
-import * as AppBskyUnspeccedSearchActorsSkeleton from './types/app/gndr/unspecced/searchActorsSkeleton.js'
-import * as AppBskyUnspeccedSearchPostsSkeleton from './types/app/gndr/unspecced/searchPostsSkeleton.js'
-import * as AppBskyUnspeccedSearchStarterPacksSkeleton from './types/app/gndr/unspecced/searchStarterPacksSkeleton.js'
-import * as AppBskyVideoDefs from './types/app/gndr/video/defs.js'
-import * as AppBskyVideoGetJobStatus from './types/app/gndr/video/getJobStatus.js'
-import * as AppBskyVideoGetUploadLimits from './types/app/gndr/video/getUploadLimits.js'
-import * as AppBskyVideoUploadVideo from './types/app/gndr/video/uploadVideo.js'
-import * as ChatBskyActorDeclaration from './types/chat/gndr/actor/declaration.js'
-import * as ChatBskyActorDefs from './types/chat/gndr/actor/defs.js'
-import * as ChatBskyActorDeleteAccount from './types/chat/gndr/actor/deleteAccount.js'
-import * as ChatBskyActorExportAccountData from './types/chat/gndr/actor/exportAccountData.js'
-import * as ChatBskyConvoAcceptConvo from './types/chat/gndr/convo/acceptConvo.js'
-import * as ChatBskyConvoAddReaction from './types/chat/gndr/convo/addReaction.js'
-import * as ChatBskyConvoDefs from './types/chat/gndr/convo/defs.js'
-import * as ChatBskyConvoDeleteMessageForSelf from './types/chat/gndr/convo/deleteMessageForSelf.js'
-import * as ChatBskyConvoGetConvo from './types/chat/gndr/convo/getConvo.js'
-import * as ChatBskyConvoGetConvoAvailability from './types/chat/gndr/convo/getConvoAvailability.js'
-import * as ChatBskyConvoGetConvoForMembers from './types/chat/gndr/convo/getConvoForMembers.js'
-import * as ChatBskyConvoGetLog from './types/chat/gndr/convo/getLog.js'
-import * as ChatBskyConvoGetMessages from './types/chat/gndr/convo/getMessages.js'
-import * as ChatBskyConvoLeaveConvo from './types/chat/gndr/convo/leaveConvo.js'
-import * as ChatBskyConvoListConvos from './types/chat/gndr/convo/listConvos.js'
-import * as ChatBskyConvoMuteConvo from './types/chat/gndr/convo/muteConvo.js'
-import * as ChatBskyConvoRemoveReaction from './types/chat/gndr/convo/removeReaction.js'
-import * as ChatBskyConvoSendMessage from './types/chat/gndr/convo/sendMessage.js'
-import * as ChatBskyConvoSendMessageBatch from './types/chat/gndr/convo/sendMessageBatch.js'
-import * as ChatBskyConvoUnmuteConvo from './types/chat/gndr/convo/unmuteConvo.js'
-import * as ChatBskyConvoUpdateAllRead from './types/chat/gndr/convo/updateAllRead.js'
-import * as ChatBskyConvoUpdateRead from './types/chat/gndr/convo/updateRead.js'
-import * as ChatBskyModerationGetActorMetadata from './types/chat/gndr/moderation/getActorMetadata.js'
-import * as ChatBskyModerationGetMessageContext from './types/chat/gndr/moderation/getMessageContext.js'
-import * as ChatBskyModerationUpdateActorAccess from './types/chat/gndr/moderation/updateActorAccess.js'
+import * as AppGndrGraphListitem from './types/app/gndr/graph/listitem.js'
+import * as AppGndrGraphMuteActor from './types/app/gndr/graph/muteActor.js'
+import * as AppGndrGraphMuteActorList from './types/app/gndr/graph/muteActorList.js'
+import * as AppGndrGraphMuteThread from './types/app/gndr/graph/muteThread.js'
+import * as AppGndrGraphSearchStarterPacks from './types/app/gndr/graph/searchStarterPacks.js'
+import * as AppGndrGraphStarterpack from './types/app/gndr/graph/starterpack.js'
+import * as AppGndrGraphUnmuteActor from './types/app/gndr/graph/unmuteActor.js'
+import * as AppGndrGraphUnmuteActorList from './types/app/gndr/graph/unmuteActorList.js'
+import * as AppGndrGraphUnmuteThread from './types/app/gndr/graph/unmuteThread.js'
+import * as AppGndrGraphVerification from './types/app/gndr/graph/verification.js'
+import * as AppGndrLabelerDefs from './types/app/gndr/labeler/defs.js'
+import * as AppGndrLabelerGetServices from './types/app/gndr/labeler/getServices.js'
+import * as AppGndrLabelerService from './types/app/gndr/labeler/service.js'
+import * as AppGndrNotificationDeclaration from './types/app/gndr/notification/declaration.js'
+import * as AppGndrNotificationDefs from './types/app/gndr/notification/defs.js'
+import * as AppGndrNotificationGetPreferences from './types/app/gndr/notification/getPreferences.js'
+import * as AppGndrNotificationGetUnreadCount from './types/app/gndr/notification/getUnreadCount.js'
+import * as AppGndrNotificationListActivitySubscriptions from './types/app/gndr/notification/listActivitySubscriptions.js'
+import * as AppGndrNotificationListNotifications from './types/app/gndr/notification/listNotifications.js'
+import * as AppGndrNotificationPutActivitySubscription from './types/app/gndr/notification/putActivitySubscription.js'
+import * as AppGndrNotificationPutPreferences from './types/app/gndr/notification/putPreferences.js'
+import * as AppGndrNotificationPutPreferencesV2 from './types/app/gndr/notification/putPreferencesV2.js'
+import * as AppGndrNotificationRegisterPush from './types/app/gndr/notification/registerPush.js'
+import * as AppGndrNotificationUpdateSeen from './types/app/gndr/notification/updateSeen.js'
+import * as AppGndrRichtextFacet from './types/app/gndr/richtext/facet.js'
+import * as AppGndrUnspeccedDefs from './types/app/gndr/unspecced/defs.js'
+import * as AppGndrUnspeccedGetConfig from './types/app/gndr/unspecced/getConfig.js'
+import * as AppGndrUnspeccedGetPopularFeedGenerators from './types/app/gndr/unspecced/getPopularFeedGenerators.js'
+import * as AppGndrUnspeccedGetPostThreadOtherV2 from './types/app/gndr/unspecced/getPostThreadOtherV2.js'
+import * as AppGndrUnspeccedGetPostThreadV2 from './types/app/gndr/unspecced/getPostThreadV2.js'
+import * as AppGndrUnspeccedGetSuggestedFeeds from './types/app/gndr/unspecced/getSuggestedFeeds.js'
+import * as AppGndrUnspeccedGetSuggestedFeedsSkeleton from './types/app/gndr/unspecced/getSuggestedFeedsSkeleton.js'
+import * as AppGndrUnspeccedGetSuggestedStarterPacks from './types/app/gndr/unspecced/getSuggestedStarterPacks.js'
+import * as AppGndrUnspeccedGetSuggestedStarterPacksSkeleton from './types/app/gndr/unspecced/getSuggestedStarterPacksSkeleton.js'
+import * as AppGndrUnspeccedGetSuggestedUsers from './types/app/gndr/unspecced/getSuggestedUsers.js'
+import * as AppGndrUnspeccedGetSuggestedUsersSkeleton from './types/app/gndr/unspecced/getSuggestedUsersSkeleton.js'
+import * as AppGndrUnspeccedGetSuggestionsSkeleton from './types/app/gndr/unspecced/getSuggestionsSkeleton.js'
+import * as AppGndrUnspeccedGetTaggedSuggestions from './types/app/gndr/unspecced/getTaggedSuggestions.js'
+import * as AppGndrUnspeccedGetTrendingTopics from './types/app/gndr/unspecced/getTrendingTopics.js'
+import * as AppGndrUnspeccedGetTrends from './types/app/gndr/unspecced/getTrends.js'
+import * as AppGndrUnspeccedGetTrendsSkeleton from './types/app/gndr/unspecced/getTrendsSkeleton.js'
+import * as AppGndrUnspeccedSearchActorsSkeleton from './types/app/gndr/unspecced/searchActorsSkeleton.js'
+import * as AppGndrUnspeccedSearchPostsSkeleton from './types/app/gndr/unspecced/searchPostsSkeleton.js'
+import * as AppGndrUnspeccedSearchStarterPacksSkeleton from './types/app/gndr/unspecced/searchStarterPacksSkeleton.js'
+import * as AppGndrVideoDefs from './types/app/gndr/video/defs.js'
+import * as AppGndrVideoGetJobStatus from './types/app/gndr/video/getJobStatus.js'
+import * as AppGndrVideoGetUploadLimits from './types/app/gndr/video/getUploadLimits.js'
+import * as AppGndrVideoUploadVideo from './types/app/gndr/video/uploadVideo.js'
+import * as ChatGndrActorDeclaration from './types/chat/gndr/actor/declaration.js'
+import * as ChatGndrActorDefs from './types/chat/gndr/actor/defs.js'
+import * as ChatGndrActorDeleteAccount from './types/chat/gndr/actor/deleteAccount.js'
+import * as ChatGndrActorExportAccountData from './types/chat/gndr/actor/exportAccountData.js'
+import * as ChatGndrConvoAcceptConvo from './types/chat/gndr/convo/acceptConvo.js'
+import * as ChatGndrConvoAddReaction from './types/chat/gndr/convo/addReaction.js'
+import * as ChatGndrConvoDefs from './types/chat/gndr/convo/defs.js'
+import * as ChatGndrConvoDeleteMessageForSelf from './types/chat/gndr/convo/deleteMessageForSelf.js'
+import * as ChatGndrConvoGetConvo from './types/chat/gndr/convo/getConvo.js'
+import * as ChatGndrConvoGetConvoAvailability from './types/chat/gndr/convo/getConvoAvailability.js'
+import * as ChatGndrConvoGetConvoForMembers from './types/chat/gndr/convo/getConvoForMembers.js'
+import * as ChatGndrConvoGetLog from './types/chat/gndr/convo/getLog.js'
+import * as ChatGndrConvoGetMessages from './types/chat/gndr/convo/getMessages.js'
+import * as ChatGndrConvoLeaveConvo from './types/chat/gndr/convo/leaveConvo.js'
+import * as ChatGndrConvoListConvos from './types/chat/gndr/convo/listConvos.js'
+import * as ChatGndrConvoMuteConvo from './types/chat/gndr/convo/muteConvo.js'
+import * as ChatGndrConvoRemoveReaction from './types/chat/gndr/convo/removeReaction.js'
+import * as ChatGndrConvoSendMessage from './types/chat/gndr/convo/sendMessage.js'
+import * as ChatGndrConvoSendMessageBatch from './types/chat/gndr/convo/sendMessageBatch.js'
+import * as ChatGndrConvoUnmuteConvo from './types/chat/gndr/convo/unmuteConvo.js'
+import * as ChatGndrConvoUpdateAllRead from './types/chat/gndr/convo/updateAllRead.js'
+import * as ChatGndrConvoUpdateRead from './types/chat/gndr/convo/updateRead.js'
+import * as ChatGndrModerationGetActorMetadata from './types/chat/gndr/moderation/getActorMetadata.js'
+import * as ChatGndrModerationGetMessageContext from './types/chat/gndr/moderation/getMessageContext.js'
+import * as ChatGndrModerationUpdateActorAccess from './types/chat/gndr/moderation/updateActorAccess.js'
 import * as ToolsOzoneCommunicationCreateTemplate from './types/tools/ozone/communication/createTemplate.js'
 import * as ToolsOzoneCommunicationDefs from './types/tools/ozone/communication/defs.js'
 import * as ToolsOzoneCommunicationDeleteTemplate from './types/tools/ozone/communication/deleteTemplate.js'
@@ -374,139 +374,139 @@ export * as ComAtprotoTempAddReservedHandle from './types/com/atproto/temp/addRe
 export * as ComAtprotoTempCheckSignupQueue from './types/com/atproto/temp/checkSignupQueue.js'
 export * as ComAtprotoTempFetchLabels from './types/com/atproto/temp/fetchLabels.js'
 export * as ComAtprotoTempRequestPhoneVerification from './types/com/atproto/temp/requestPhoneVerification.js'
-export * as AppBskyActorDefs from './types/app/gndr/actor/defs.js'
-export * as AppBskyActorGetPreferences from './types/app/gndr/actor/getPreferences.js'
-export * as AppBskyActorGetProfile from './types/app/gndr/actor/getProfile.js'
-export * as AppBskyActorGetProfiles from './types/app/gndr/actor/getProfiles.js'
-export * as AppBskyActorGetSuggestions from './types/app/gndr/actor/getSuggestions.js'
-export * as AppBskyActorProfile from './types/app/gndr/actor/profile.js'
-export * as AppBskyActorPutPreferences from './types/app/gndr/actor/putPreferences.js'
-export * as AppBskyActorSearchActors from './types/app/gndr/actor/searchActors.js'
-export * as AppBskyActorSearchActorsTypeahead from './types/app/gndr/actor/searchActorsTypeahead.js'
-export * as AppBskyActorStatus from './types/app/gndr/actor/status.js'
-export * as AppBskyEmbedDefs from './types/app/gndr/embed/defs.js'
-export * as AppBskyEmbedExternal from './types/app/gndr/embed/external.js'
-export * as AppBskyEmbedImages from './types/app/gndr/embed/images.js'
-export * as AppBskyEmbedRecord from './types/app/gndr/embed/record.js'
-export * as AppBskyEmbedRecordWithMedia from './types/app/gndr/embed/recordWithMedia.js'
-export * as AppBskyEmbedVideo from './types/app/gndr/embed/video.js'
-export * as AppBskyFeedDefs from './types/app/gndr/feed/defs.js'
-export * as AppBskyFeedDescribeFeedGenerator from './types/app/gndr/feed/describeFeedGenerator.js'
-export * as AppBskyFeedGenerator from './types/app/gndr/feed/generator.js'
-export * as AppBskyFeedGetActorFeeds from './types/app/gndr/feed/getActorFeeds.js'
-export * as AppBskyFeedGetActorLikes from './types/app/gndr/feed/getActorLikes.js'
-export * as AppBskyFeedGetAuthorFeed from './types/app/gndr/feed/getAuthorFeed.js'
-export * as AppBskyFeedGetFeed from './types/app/gndr/feed/getFeed.js'
-export * as AppBskyFeedGetFeedGenerator from './types/app/gndr/feed/getFeedGenerator.js'
-export * as AppBskyFeedGetFeedGenerators from './types/app/gndr/feed/getFeedGenerators.js'
-export * as AppBskyFeedGetFeedSkeleton from './types/app/gndr/feed/getFeedSkeleton.js'
-export * as AppBskyFeedGetLikes from './types/app/gndr/feed/getLikes.js'
-export * as AppBskyFeedGetListFeed from './types/app/gndr/feed/getListFeed.js'
-export * as AppBskyFeedGetPosts from './types/app/gndr/feed/getPosts.js'
-export * as AppBskyFeedGetPostThread from './types/app/gndr/feed/getPostThread.js'
-export * as AppBskyFeedGetQuotes from './types/app/gndr/feed/getQuotes.js'
-export * as AppBskyFeedGetRepostedBy from './types/app/gndr/feed/getRepostedBy.js'
-export * as AppBskyFeedGetSuggestedFeeds from './types/app/gndr/feed/getSuggestedFeeds.js'
-export * as AppBskyFeedGetTimeline from './types/app/gndr/feed/getTimeline.js'
-export * as AppBskyFeedLike from './types/app/gndr/feed/like.js'
-export * as AppBskyFeedPost from './types/app/gndr/feed/post.js'
-export * as AppBskyFeedPostgate from './types/app/gndr/feed/postgate.js'
-export * as AppBskyFeedRepost from './types/app/gndr/feed/repost.js'
-export * as AppBskyFeedSearchPosts from './types/app/gndr/feed/searchPosts.js'
-export * as AppBskyFeedSendInteractions from './types/app/gndr/feed/sendInteractions.js'
-export * as AppBskyFeedThreadgate from './types/app/gndr/feed/threadgate.js'
-export * as AppBskyGraphBlock from './types/app/gndr/graph/block.js'
-export * as AppBskyGraphDefs from './types/app/gndr/graph/defs.js'
-export * as AppBskyGraphFollow from './types/app/gndr/graph/follow.js'
-export * as AppBskyGraphGetActorStarterPacks from './types/app/gndr/graph/getActorStarterPacks.js'
-export * as AppBskyGraphGetBlocks from './types/app/gndr/graph/getBlocks.js'
-export * as AppBskyGraphGetFollowers from './types/app/gndr/graph/getFollowers.js'
-export * as AppBskyGraphGetFollows from './types/app/gndr/graph/getFollows.js'
-export * as AppBskyGraphGetKnownFollowers from './types/app/gndr/graph/getKnownFollowers.js'
-export * as AppBskyGraphGetList from './types/app/gndr/graph/getList.js'
-export * as AppBskyGraphGetListBlocks from './types/app/gndr/graph/getListBlocks.js'
-export * as AppBskyGraphGetListMutes from './types/app/gndr/graph/getListMutes.js'
-export * as AppBskyGraphGetLists from './types/app/gndr/graph/getLists.js'
-export * as AppBskyGraphGetMutes from './types/app/gndr/graph/getMutes.js'
-export * as AppBskyGraphGetRelationships from './types/app/gndr/graph/getRelationships.js'
-export * as AppBskyGraphGetStarterPack from './types/app/gndr/graph/getStarterPack.js'
-export * as AppBskyGraphGetStarterPacks from './types/app/gndr/graph/getStarterPacks.js'
-export * as AppBskyGraphGetSuggestedFollowsByActor from './types/app/gndr/graph/getSuggestedFollowsByActor.js'
-export * as AppBskyGraphList from './types/app/gndr/graph/list.js'
-export * as AppBskyGraphListblock from './types/app/gndr/graph/listblock.js'
-export * as AppBskyGraphListitem from './types/app/gndr/graph/listitem.js'
-export * as AppBskyGraphMuteActor from './types/app/gndr/graph/muteActor.js'
-export * as AppBskyGraphMuteActorList from './types/app/gndr/graph/muteActorList.js'
-export * as AppBskyGraphMuteThread from './types/app/gndr/graph/muteThread.js'
-export * as AppBskyGraphSearchStarterPacks from './types/app/gndr/graph/searchStarterPacks.js'
-export * as AppBskyGraphStarterpack from './types/app/gndr/graph/starterpack.js'
-export * as AppBskyGraphUnmuteActor from './types/app/gndr/graph/unmuteActor.js'
-export * as AppBskyGraphUnmuteActorList from './types/app/gndr/graph/unmuteActorList.js'
-export * as AppBskyGraphUnmuteThread from './types/app/gndr/graph/unmuteThread.js'
-export * as AppBskyGraphVerification from './types/app/gndr/graph/verification.js'
-export * as AppBskyLabelerDefs from './types/app/gndr/labeler/defs.js'
-export * as AppBskyLabelerGetServices from './types/app/gndr/labeler/getServices.js'
-export * as AppBskyLabelerService from './types/app/gndr/labeler/service.js'
-export * as AppBskyNotificationDeclaration from './types/app/gndr/notification/declaration.js'
-export * as AppBskyNotificationDefs from './types/app/gndr/notification/defs.js'
-export * as AppBskyNotificationGetPreferences from './types/app/gndr/notification/getPreferences.js'
-export * as AppBskyNotificationGetUnreadCount from './types/app/gndr/notification/getUnreadCount.js'
-export * as AppBskyNotificationListActivitySubscriptions from './types/app/gndr/notification/listActivitySubscriptions.js'
-export * as AppBskyNotificationListNotifications from './types/app/gndr/notification/listNotifications.js'
-export * as AppBskyNotificationPutActivitySubscription from './types/app/gndr/notification/putActivitySubscription.js'
-export * as AppBskyNotificationPutPreferences from './types/app/gndr/notification/putPreferences.js'
-export * as AppBskyNotificationPutPreferencesV2 from './types/app/gndr/notification/putPreferencesV2.js'
-export * as AppBskyNotificationRegisterPush from './types/app/gndr/notification/registerPush.js'
-export * as AppBskyNotificationUpdateSeen from './types/app/gndr/notification/updateSeen.js'
-export * as AppBskyRichtextFacet from './types/app/gndr/richtext/facet.js'
-export * as AppBskyUnspeccedDefs from './types/app/gndr/unspecced/defs.js'
-export * as AppBskyUnspeccedGetConfig from './types/app/gndr/unspecced/getConfig.js'
-export * as AppBskyUnspeccedGetPopularFeedGenerators from './types/app/gndr/unspecced/getPopularFeedGenerators.js'
-export * as AppBskyUnspeccedGetPostThreadOtherV2 from './types/app/gndr/unspecced/getPostThreadOtherV2.js'
-export * as AppBskyUnspeccedGetPostThreadV2 from './types/app/gndr/unspecced/getPostThreadV2.js'
-export * as AppBskyUnspeccedGetSuggestedFeeds from './types/app/gndr/unspecced/getSuggestedFeeds.js'
-export * as AppBskyUnspeccedGetSuggestedFeedsSkeleton from './types/app/gndr/unspecced/getSuggestedFeedsSkeleton.js'
-export * as AppBskyUnspeccedGetSuggestedStarterPacks from './types/app/gndr/unspecced/getSuggestedStarterPacks.js'
-export * as AppBskyUnspeccedGetSuggestedStarterPacksSkeleton from './types/app/gndr/unspecced/getSuggestedStarterPacksSkeleton.js'
-export * as AppBskyUnspeccedGetSuggestedUsers from './types/app/gndr/unspecced/getSuggestedUsers.js'
-export * as AppBskyUnspeccedGetSuggestedUsersSkeleton from './types/app/gndr/unspecced/getSuggestedUsersSkeleton.js'
-export * as AppBskyUnspeccedGetSuggestionsSkeleton from './types/app/gndr/unspecced/getSuggestionsSkeleton.js'
-export * as AppBskyUnspeccedGetTaggedSuggestions from './types/app/gndr/unspecced/getTaggedSuggestions.js'
-export * as AppBskyUnspeccedGetTrendingTopics from './types/app/gndr/unspecced/getTrendingTopics.js'
-export * as AppBskyUnspeccedGetTrends from './types/app/gndr/unspecced/getTrends.js'
-export * as AppBskyUnspeccedGetTrendsSkeleton from './types/app/gndr/unspecced/getTrendsSkeleton.js'
-export * as AppBskyUnspeccedSearchActorsSkeleton from './types/app/gndr/unspecced/searchActorsSkeleton.js'
-export * as AppBskyUnspeccedSearchPostsSkeleton from './types/app/gndr/unspecced/searchPostsSkeleton.js'
-export * as AppBskyUnspeccedSearchStarterPacksSkeleton from './types/app/gndr/unspecced/searchStarterPacksSkeleton.js'
-export * as AppBskyVideoDefs from './types/app/gndr/video/defs.js'
-export * as AppBskyVideoGetJobStatus from './types/app/gndr/video/getJobStatus.js'
-export * as AppBskyVideoGetUploadLimits from './types/app/gndr/video/getUploadLimits.js'
-export * as AppBskyVideoUploadVideo from './types/app/gndr/video/uploadVideo.js'
-export * as ChatBskyActorDeclaration from './types/chat/gndr/actor/declaration.js'
-export * as ChatBskyActorDefs from './types/chat/gndr/actor/defs.js'
-export * as ChatBskyActorDeleteAccount from './types/chat/gndr/actor/deleteAccount.js'
-export * as ChatBskyActorExportAccountData from './types/chat/gndr/actor/exportAccountData.js'
-export * as ChatBskyConvoAcceptConvo from './types/chat/gndr/convo/acceptConvo.js'
-export * as ChatBskyConvoAddReaction from './types/chat/gndr/convo/addReaction.js'
-export * as ChatBskyConvoDefs from './types/chat/gndr/convo/defs.js'
-export * as ChatBskyConvoDeleteMessageForSelf from './types/chat/gndr/convo/deleteMessageForSelf.js'
-export * as ChatBskyConvoGetConvo from './types/chat/gndr/convo/getConvo.js'
-export * as ChatBskyConvoGetConvoAvailability from './types/chat/gndr/convo/getConvoAvailability.js'
-export * as ChatBskyConvoGetConvoForMembers from './types/chat/gndr/convo/getConvoForMembers.js'
-export * as ChatBskyConvoGetLog from './types/chat/gndr/convo/getLog.js'
-export * as ChatBskyConvoGetMessages from './types/chat/gndr/convo/getMessages.js'
-export * as ChatBskyConvoLeaveConvo from './types/chat/gndr/convo/leaveConvo.js'
-export * as ChatBskyConvoListConvos from './types/chat/gndr/convo/listConvos.js'
-export * as ChatBskyConvoMuteConvo from './types/chat/gndr/convo/muteConvo.js'
-export * as ChatBskyConvoRemoveReaction from './types/chat/gndr/convo/removeReaction.js'
-export * as ChatBskyConvoSendMessage from './types/chat/gndr/convo/sendMessage.js'
-export * as ChatBskyConvoSendMessageBatch from './types/chat/gndr/convo/sendMessageBatch.js'
-export * as ChatBskyConvoUnmuteConvo from './types/chat/gndr/convo/unmuteConvo.js'
-export * as ChatBskyConvoUpdateAllRead from './types/chat/gndr/convo/updateAllRead.js'
-export * as ChatBskyConvoUpdateRead from './types/chat/gndr/convo/updateRead.js'
-export * as ChatBskyModerationGetActorMetadata from './types/chat/gndr/moderation/getActorMetadata.js'
-export * as ChatBskyModerationGetMessageContext from './types/chat/gndr/moderation/getMessageContext.js'
-export * as ChatBskyModerationUpdateActorAccess from './types/chat/gndr/moderation/updateActorAccess.js'
+export * as AppGndrActorDefs from './types/app/gndr/actor/defs.js'
+export * as AppGndrActorGetPreferences from './types/app/gndr/actor/getPreferences.js'
+export * as AppGndrActorGetProfile from './types/app/gndr/actor/getProfile.js'
+export * as AppGndrActorGetProfiles from './types/app/gndr/actor/getProfiles.js'
+export * as AppGndrActorGetSuggestions from './types/app/gndr/actor/getSuggestions.js'
+export * as AppGndrActorProfile from './types/app/gndr/actor/profile.js'
+export * as AppGndrActorPutPreferences from './types/app/gndr/actor/putPreferences.js'
+export * as AppGndrActorSearchActors from './types/app/gndr/actor/searchActors.js'
+export * as AppGndrActorSearchActorsTypeahead from './types/app/gndr/actor/searchActorsTypeahead.js'
+export * as AppGndrActorStatus from './types/app/gndr/actor/status.js'
+export * as AppGndrEmbedDefs from './types/app/gndr/embed/defs.js'
+export * as AppGndrEmbedExternal from './types/app/gndr/embed/external.js'
+export * as AppGndrEmbedImages from './types/app/gndr/embed/images.js'
+export * as AppGndrEmbedRecord from './types/app/gndr/embed/record.js'
+export * as AppGndrEmbedRecordWithMedia from './types/app/gndr/embed/recordWithMedia.js'
+export * as AppGndrEmbedVideo from './types/app/gndr/embed/video.js'
+export * as AppGndrFeedDefs from './types/app/gndr/feed/defs.js'
+export * as AppGndrFeedDescribeFeedGenerator from './types/app/gndr/feed/describeFeedGenerator.js'
+export * as AppGndrFeedGenerator from './types/app/gndr/feed/generator.js'
+export * as AppGndrFeedGetActorFeeds from './types/app/gndr/feed/getActorFeeds.js'
+export * as AppGndrFeedGetActorLikes from './types/app/gndr/feed/getActorLikes.js'
+export * as AppGndrFeedGetAuthorFeed from './types/app/gndr/feed/getAuthorFeed.js'
+export * as AppGndrFeedGetFeed from './types/app/gndr/feed/getFeed.js'
+export * as AppGndrFeedGetFeedGenerator from './types/app/gndr/feed/getFeedGenerator.js'
+export * as AppGndrFeedGetFeedGenerators from './types/app/gndr/feed/getFeedGenerators.js'
+export * as AppGndrFeedGetFeedSkeleton from './types/app/gndr/feed/getFeedSkeleton.js'
+export * as AppGndrFeedGetLikes from './types/app/gndr/feed/getLikes.js'
+export * as AppGndrFeedGetListFeed from './types/app/gndr/feed/getListFeed.js'
+export * as AppGndrFeedGetPosts from './types/app/gndr/feed/getPosts.js'
+export * as AppGndrFeedGetPostThread from './types/app/gndr/feed/getPostThread.js'
+export * as AppGndrFeedGetQuotes from './types/app/gndr/feed/getQuotes.js'
+export * as AppGndrFeedGetRepostedBy from './types/app/gndr/feed/getRepostedBy.js'
+export * as AppGndrFeedGetSuggestedFeeds from './types/app/gndr/feed/getSuggestedFeeds.js'
+export * as AppGndrFeedGetTimeline from './types/app/gndr/feed/getTimeline.js'
+export * as AppGndrFeedLike from './types/app/gndr/feed/like.js'
+export * as AppGndrFeedPost from './types/app/gndr/feed/post.js'
+export * as AppGndrFeedPostgate from './types/app/gndr/feed/postgate.js'
+export * as AppGndrFeedRepost from './types/app/gndr/feed/repost.js'
+export * as AppGndrFeedSearchPosts from './types/app/gndr/feed/searchPosts.js'
+export * as AppGndrFeedSendInteractions from './types/app/gndr/feed/sendInteractions.js'
+export * as AppGndrFeedThreadgate from './types/app/gndr/feed/threadgate.js'
+export * as AppGndrGraphBlock from './types/app/gndr/graph/block.js'
+export * as AppGndrGraphDefs from './types/app/gndr/graph/defs.js'
+export * as AppGndrGraphFollow from './types/app/gndr/graph/follow.js'
+export * as AppGndrGraphGetActorStarterPacks from './types/app/gndr/graph/getActorStarterPacks.js'
+export * as AppGndrGraphGetBlocks from './types/app/gndr/graph/getBlocks.js'
+export * as AppGndrGraphGetFollowers from './types/app/gndr/graph/getFollowers.js'
+export * as AppGndrGraphGetFollows from './types/app/gndr/graph/getFollows.js'
+export * as AppGndrGraphGetKnownFollowers from './types/app/gndr/graph/getKnownFollowers.js'
+export * as AppGndrGraphGetList from './types/app/gndr/graph/getList.js'
+export * as AppGndrGraphGetListBlocks from './types/app/gndr/graph/getListBlocks.js'
+export * as AppGndrGraphGetListMutes from './types/app/gndr/graph/getListMutes.js'
+export * as AppGndrGraphGetLists from './types/app/gndr/graph/getLists.js'
+export * as AppGndrGraphGetMutes from './types/app/gndr/graph/getMutes.js'
+export * as AppGndrGraphGetRelationships from './types/app/gndr/graph/getRelationships.js'
+export * as AppGndrGraphGetStarterPack from './types/app/gndr/graph/getStarterPack.js'
+export * as AppGndrGraphGetStarterPacks from './types/app/gndr/graph/getStarterPacks.js'
+export * as AppGndrGraphGetSuggestedFollowsByActor from './types/app/gndr/graph/getSuggestedFollowsByActor.js'
+export * as AppGndrGraphList from './types/app/gndr/graph/list.js'
+export * as AppGndrGraphListblock from './types/app/gndr/graph/listblock.js'
+export * as AppGndrGraphListitem from './types/app/gndr/graph/listitem.js'
+export * as AppGndrGraphMuteActor from './types/app/gndr/graph/muteActor.js'
+export * as AppGndrGraphMuteActorList from './types/app/gndr/graph/muteActorList.js'
+export * as AppGndrGraphMuteThread from './types/app/gndr/graph/muteThread.js'
+export * as AppGndrGraphSearchStarterPacks from './types/app/gndr/graph/searchStarterPacks.js'
+export * as AppGndrGraphStarterpack from './types/app/gndr/graph/starterpack.js'
+export * as AppGndrGraphUnmuteActor from './types/app/gndr/graph/unmuteActor.js'
+export * as AppGndrGraphUnmuteActorList from './types/app/gndr/graph/unmuteActorList.js'
+export * as AppGndrGraphUnmuteThread from './types/app/gndr/graph/unmuteThread.js'
+export * as AppGndrGraphVerification from './types/app/gndr/graph/verification.js'
+export * as AppGndrLabelerDefs from './types/app/gndr/labeler/defs.js'
+export * as AppGndrLabelerGetServices from './types/app/gndr/labeler/getServices.js'
+export * as AppGndrLabelerService from './types/app/gndr/labeler/service.js'
+export * as AppGndrNotificationDeclaration from './types/app/gndr/notification/declaration.js'
+export * as AppGndrNotificationDefs from './types/app/gndr/notification/defs.js'
+export * as AppGndrNotificationGetPreferences from './types/app/gndr/notification/getPreferences.js'
+export * as AppGndrNotificationGetUnreadCount from './types/app/gndr/notification/getUnreadCount.js'
+export * as AppGndrNotificationListActivitySubscriptions from './types/app/gndr/notification/listActivitySubscriptions.js'
+export * as AppGndrNotificationListNotifications from './types/app/gndr/notification/listNotifications.js'
+export * as AppGndrNotificationPutActivitySubscription from './types/app/gndr/notification/putActivitySubscription.js'
+export * as AppGndrNotificationPutPreferences from './types/app/gndr/notification/putPreferences.js'
+export * as AppGndrNotificationPutPreferencesV2 from './types/app/gndr/notification/putPreferencesV2.js'
+export * as AppGndrNotificationRegisterPush from './types/app/gndr/notification/registerPush.js'
+export * as AppGndrNotificationUpdateSeen from './types/app/gndr/notification/updateSeen.js'
+export * as AppGndrRichtextFacet from './types/app/gndr/richtext/facet.js'
+export * as AppGndrUnspeccedDefs from './types/app/gndr/unspecced/defs.js'
+export * as AppGndrUnspeccedGetConfig from './types/app/gndr/unspecced/getConfig.js'
+export * as AppGndrUnspeccedGetPopularFeedGenerators from './types/app/gndr/unspecced/getPopularFeedGenerators.js'
+export * as AppGndrUnspeccedGetPostThreadOtherV2 from './types/app/gndr/unspecced/getPostThreadOtherV2.js'
+export * as AppGndrUnspeccedGetPostThreadV2 from './types/app/gndr/unspecced/getPostThreadV2.js'
+export * as AppGndrUnspeccedGetSuggestedFeeds from './types/app/gndr/unspecced/getSuggestedFeeds.js'
+export * as AppGndrUnspeccedGetSuggestedFeedsSkeleton from './types/app/gndr/unspecced/getSuggestedFeedsSkeleton.js'
+export * as AppGndrUnspeccedGetSuggestedStarterPacks from './types/app/gndr/unspecced/getSuggestedStarterPacks.js'
+export * as AppGndrUnspeccedGetSuggestedStarterPacksSkeleton from './types/app/gndr/unspecced/getSuggestedStarterPacksSkeleton.js'
+export * as AppGndrUnspeccedGetSuggestedUsers from './types/app/gndr/unspecced/getSuggestedUsers.js'
+export * as AppGndrUnspeccedGetSuggestedUsersSkeleton from './types/app/gndr/unspecced/getSuggestedUsersSkeleton.js'
+export * as AppGndrUnspeccedGetSuggestionsSkeleton from './types/app/gndr/unspecced/getSuggestionsSkeleton.js'
+export * as AppGndrUnspeccedGetTaggedSuggestions from './types/app/gndr/unspecced/getTaggedSuggestions.js'
+export * as AppGndrUnspeccedGetTrendingTopics from './types/app/gndr/unspecced/getTrendingTopics.js'
+export * as AppGndrUnspeccedGetTrends from './types/app/gndr/unspecced/getTrends.js'
+export * as AppGndrUnspeccedGetTrendsSkeleton from './types/app/gndr/unspecced/getTrendsSkeleton.js'
+export * as AppGndrUnspeccedSearchActorsSkeleton from './types/app/gndr/unspecced/searchActorsSkeleton.js'
+export * as AppGndrUnspeccedSearchPostsSkeleton from './types/app/gndr/unspecced/searchPostsSkeleton.js'
+export * as AppGndrUnspeccedSearchStarterPacksSkeleton from './types/app/gndr/unspecced/searchStarterPacksSkeleton.js'
+export * as AppGndrVideoDefs from './types/app/gndr/video/defs.js'
+export * as AppGndrVideoGetJobStatus from './types/app/gndr/video/getJobStatus.js'
+export * as AppGndrVideoGetUploadLimits from './types/app/gndr/video/getUploadLimits.js'
+export * as AppGndrVideoUploadVideo from './types/app/gndr/video/uploadVideo.js'
+export * as ChatGndrActorDeclaration from './types/chat/gndr/actor/declaration.js'
+export * as ChatGndrActorDefs from './types/chat/gndr/actor/defs.js'
+export * as ChatGndrActorDeleteAccount from './types/chat/gndr/actor/deleteAccount.js'
+export * as ChatGndrActorExportAccountData from './types/chat/gndr/actor/exportAccountData.js'
+export * as ChatGndrConvoAcceptConvo from './types/chat/gndr/convo/acceptConvo.js'
+export * as ChatGndrConvoAddReaction from './types/chat/gndr/convo/addReaction.js'
+export * as ChatGndrConvoDefs from './types/chat/gndr/convo/defs.js'
+export * as ChatGndrConvoDeleteMessageForSelf from './types/chat/gndr/convo/deleteMessageForSelf.js'
+export * as ChatGndrConvoGetConvo from './types/chat/gndr/convo/getConvo.js'
+export * as ChatGndrConvoGetConvoAvailability from './types/chat/gndr/convo/getConvoAvailability.js'
+export * as ChatGndrConvoGetConvoForMembers from './types/chat/gndr/convo/getConvoForMembers.js'
+export * as ChatGndrConvoGetLog from './types/chat/gndr/convo/getLog.js'
+export * as ChatGndrConvoGetMessages from './types/chat/gndr/convo/getMessages.js'
+export * as ChatGndrConvoLeaveConvo from './types/chat/gndr/convo/leaveConvo.js'
+export * as ChatGndrConvoListConvos from './types/chat/gndr/convo/listConvos.js'
+export * as ChatGndrConvoMuteConvo from './types/chat/gndr/convo/muteConvo.js'
+export * as ChatGndrConvoRemoveReaction from './types/chat/gndr/convo/removeReaction.js'
+export * as ChatGndrConvoSendMessage from './types/chat/gndr/convo/sendMessage.js'
+export * as ChatGndrConvoSendMessageBatch from './types/chat/gndr/convo/sendMessageBatch.js'
+export * as ChatGndrConvoUnmuteConvo from './types/chat/gndr/convo/unmuteConvo.js'
+export * as ChatGndrConvoUpdateAllRead from './types/chat/gndr/convo/updateAllRead.js'
+export * as ChatGndrConvoUpdateRead from './types/chat/gndr/convo/updateRead.js'
+export * as ChatGndrModerationGetActorMetadata from './types/chat/gndr/moderation/getActorMetadata.js'
+export * as ChatGndrModerationGetMessageContext from './types/chat/gndr/moderation/getMessageContext.js'
+export * as ChatGndrModerationUpdateActorAccess from './types/chat/gndr/moderation/updateActorAccess.js'
 export * as ToolsOzoneCommunicationCreateTemplate from './types/tools/ozone/communication/createTemplate.js'
 export * as ToolsOzoneCommunicationDefs from './types/tools/ozone/communication/defs.js'
 export * as ToolsOzoneCommunicationDeleteTemplate from './types/tools/ozone/communication/deleteTemplate.js'
@@ -1748,55 +1748,55 @@ export class ComAtprotoTempNS {
 
 export class AppNS {
   _client: XrpcClient
-  gndr: AppBskyNS
+  gndr: AppGndrNS
 
   constructor(client: XrpcClient) {
     this._client = client
-    this.gndr = new AppBskyNS(client)
+    this.gndr = new AppGndrNS(client)
   }
 }
 
-export class AppBskyNS {
+export class AppGndrNS {
   _client: XrpcClient
-  actor: AppBskyActorNS
-  embed: AppBskyEmbedNS
-  feed: AppBskyFeedNS
-  graph: AppBskyGraphNS
-  labeler: AppBskyLabelerNS
-  notification: AppBskyNotificationNS
-  richtext: AppBskyRichtextNS
-  unspecced: AppBskyUnspeccedNS
-  video: AppBskyVideoNS
+  actor: AppGndrActorNS
+  embed: AppGndrEmbedNS
+  feed: AppGndrFeedNS
+  graph: AppGndrGraphNS
+  labeler: AppGndrLabelerNS
+  notification: AppGndrNotificationNS
+  richtext: AppGndrRichtextNS
+  unspecced: AppGndrUnspeccedNS
+  video: AppGndrVideoNS
 
   constructor(client: XrpcClient) {
     this._client = client
-    this.actor = new AppBskyActorNS(client)
-    this.embed = new AppBskyEmbedNS(client)
-    this.feed = new AppBskyFeedNS(client)
-    this.graph = new AppBskyGraphNS(client)
-    this.labeler = new AppBskyLabelerNS(client)
-    this.notification = new AppBskyNotificationNS(client)
-    this.richtext = new AppBskyRichtextNS(client)
-    this.unspecced = new AppBskyUnspeccedNS(client)
-    this.video = new AppBskyVideoNS(client)
+    this.actor = new AppGndrActorNS(client)
+    this.embed = new AppGndrEmbedNS(client)
+    this.feed = new AppGndrFeedNS(client)
+    this.graph = new AppGndrGraphNS(client)
+    this.labeler = new AppGndrLabelerNS(client)
+    this.notification = new AppGndrNotificationNS(client)
+    this.richtext = new AppGndrRichtextNS(client)
+    this.unspecced = new AppGndrUnspeccedNS(client)
+    this.video = new AppGndrVideoNS(client)
   }
 }
 
-export class AppBskyActorNS {
+export class AppGndrActorNS {
   _client: XrpcClient
-  profile: AppBskyActorProfileRecord
-  status: AppBskyActorStatusRecord
+  profile: AppGndrActorProfileRecord
+  status: AppGndrActorStatusRecord
 
   constructor(client: XrpcClient) {
     this._client = client
-    this.profile = new AppBskyActorProfileRecord(client)
-    this.status = new AppBskyActorStatusRecord(client)
+    this.profile = new AppGndrActorProfileRecord(client)
+    this.status = new AppGndrActorStatusRecord(client)
   }
 
   getPreferences(
-    params?: AppBskyActorGetPreferences.QueryParams,
-    opts?: AppBskyActorGetPreferences.CallOptions,
-  ): Promise<AppBskyActorGetPreferences.Response> {
+    params?: AppGndrActorGetPreferences.QueryParams,
+    opts?: AppGndrActorGetPreferences.CallOptions,
+  ): Promise<AppGndrActorGetPreferences.Response> {
     return this._client.call(
       'app.gndr.actor.getPreferences',
       params,
@@ -1806,9 +1806,9 @@ export class AppBskyActorNS {
   }
 
   getProfile(
-    params?: AppBskyActorGetProfile.QueryParams,
-    opts?: AppBskyActorGetProfile.CallOptions,
-  ): Promise<AppBskyActorGetProfile.Response> {
+    params?: AppGndrActorGetProfile.QueryParams,
+    opts?: AppGndrActorGetProfile.CallOptions,
+  ): Promise<AppGndrActorGetProfile.Response> {
     return this._client.call(
       'app.gndr.actor.getProfile',
       params,
@@ -1818,9 +1818,9 @@ export class AppBskyActorNS {
   }
 
   getProfiles(
-    params?: AppBskyActorGetProfiles.QueryParams,
-    opts?: AppBskyActorGetProfiles.CallOptions,
-  ): Promise<AppBskyActorGetProfiles.Response> {
+    params?: AppGndrActorGetProfiles.QueryParams,
+    opts?: AppGndrActorGetProfiles.CallOptions,
+  ): Promise<AppGndrActorGetProfiles.Response> {
     return this._client.call(
       'app.gndr.actor.getProfiles',
       params,
@@ -1830,9 +1830,9 @@ export class AppBskyActorNS {
   }
 
   getSuggestions(
-    params?: AppBskyActorGetSuggestions.QueryParams,
-    opts?: AppBskyActorGetSuggestions.CallOptions,
-  ): Promise<AppBskyActorGetSuggestions.Response> {
+    params?: AppGndrActorGetSuggestions.QueryParams,
+    opts?: AppGndrActorGetSuggestions.CallOptions,
+  ): Promise<AppGndrActorGetSuggestions.Response> {
     return this._client.call(
       'app.gndr.actor.getSuggestions',
       params,
@@ -1842,9 +1842,9 @@ export class AppBskyActorNS {
   }
 
   putPreferences(
-    data?: AppBskyActorPutPreferences.InputSchema,
-    opts?: AppBskyActorPutPreferences.CallOptions,
-  ): Promise<AppBskyActorPutPreferences.Response> {
+    data?: AppGndrActorPutPreferences.InputSchema,
+    opts?: AppGndrActorPutPreferences.CallOptions,
+  ): Promise<AppGndrActorPutPreferences.Response> {
     return this._client.call(
       'app.gndr.actor.putPreferences',
       opts?.qp,
@@ -1854,9 +1854,9 @@ export class AppBskyActorNS {
   }
 
   searchActors(
-    params?: AppBskyActorSearchActors.QueryParams,
-    opts?: AppBskyActorSearchActors.CallOptions,
-  ): Promise<AppBskyActorSearchActors.Response> {
+    params?: AppGndrActorSearchActors.QueryParams,
+    opts?: AppGndrActorSearchActors.CallOptions,
+  ): Promise<AppGndrActorSearchActors.Response> {
     return this._client.call(
       'app.gndr.actor.searchActors',
       params,
@@ -1866,9 +1866,9 @@ export class AppBskyActorNS {
   }
 
   searchActorsTypeahead(
-    params?: AppBskyActorSearchActorsTypeahead.QueryParams,
-    opts?: AppBskyActorSearchActorsTypeahead.CallOptions,
-  ): Promise<AppBskyActorSearchActorsTypeahead.Response> {
+    params?: AppGndrActorSearchActorsTypeahead.QueryParams,
+    opts?: AppGndrActorSearchActorsTypeahead.CallOptions,
+  ): Promise<AppGndrActorSearchActorsTypeahead.Response> {
     return this._client.call(
       'app.gndr.actor.searchActorsTypeahead',
       params,
@@ -1878,7 +1878,7 @@ export class AppBskyActorNS {
   }
 }
 
-export class AppBskyActorProfileRecord {
+export class AppGndrActorProfileRecord {
   _client: XrpcClient
 
   constructor(client: XrpcClient) {
@@ -1889,7 +1889,7 @@ export class AppBskyActorProfileRecord {
     params: OmitKey<ComAtprotoRepoListRecords.QueryParams, 'collection'>,
   ): Promise<{
     cursor?: string
-    records: { uri: string; value: AppBskyActorProfile.Record }[]
+    records: { uri: string; value: AppGndrActorProfile.Record }[]
   }> {
     const res = await this._client.call('com.atproto.repo.listRecords', {
       collection: 'app.gndr.actor.profile',
@@ -1900,7 +1900,7 @@ export class AppBskyActorProfileRecord {
 
   async get(
     params: OmitKey<ComAtprotoRepoGetRecord.QueryParams, 'collection'>,
-  ): Promise<{ uri: string; cid: string; value: AppBskyActorProfile.Record }> {
+  ): Promise<{ uri: string; cid: string; value: AppGndrActorProfile.Record }> {
     const res = await this._client.call('com.atproto.repo.getRecord', {
       collection: 'app.gndr.actor.profile',
       ...params,
@@ -1913,7 +1913,7 @@ export class AppBskyActorProfileRecord {
       ComAtprotoRepoCreateRecord.InputSchema,
       'collection' | 'record'
     >,
-    record: Un$Typed<AppBskyActorProfile.Record>,
+    record: Un$Typed<AppGndrActorProfile.Record>,
     headers?: Record<string, string>,
   ): Promise<{ uri: string; cid: string }> {
     const collection = 'app.gndr.actor.profile'
@@ -1936,7 +1936,7 @@ export class AppBskyActorProfileRecord {
       ComAtprotoRepoPutRecord.InputSchema,
       'collection' | 'record'
     >,
-    record: Un$Typed<AppBskyActorProfile.Record>,
+    record: Un$Typed<AppGndrActorProfile.Record>,
     headers?: Record<string, string>,
   ): Promise<{ uri: string; cid: string }> {
     const collection = 'app.gndr.actor.profile'
@@ -1962,7 +1962,7 @@ export class AppBskyActorProfileRecord {
   }
 }
 
-export class AppBskyActorStatusRecord {
+export class AppGndrActorStatusRecord {
   _client: XrpcClient
 
   constructor(client: XrpcClient) {
@@ -1973,7 +1973,7 @@ export class AppBskyActorStatusRecord {
     params: OmitKey<ComAtprotoRepoListRecords.QueryParams, 'collection'>,
   ): Promise<{
     cursor?: string
-    records: { uri: string; value: AppBskyActorStatus.Record }[]
+    records: { uri: string; value: AppGndrActorStatus.Record }[]
   }> {
     const res = await this._client.call('com.atproto.repo.listRecords', {
       collection: 'app.gndr.actor.status',
@@ -1984,7 +1984,7 @@ export class AppBskyActorStatusRecord {
 
   async get(
     params: OmitKey<ComAtprotoRepoGetRecord.QueryParams, 'collection'>,
-  ): Promise<{ uri: string; cid: string; value: AppBskyActorStatus.Record }> {
+  ): Promise<{ uri: string; cid: string; value: AppGndrActorStatus.Record }> {
     const res = await this._client.call('com.atproto.repo.getRecord', {
       collection: 'app.gndr.actor.status',
       ...params,
@@ -1997,7 +1997,7 @@ export class AppBskyActorStatusRecord {
       ComAtprotoRepoCreateRecord.InputSchema,
       'collection' | 'record'
     >,
-    record: Un$Typed<AppBskyActorStatus.Record>,
+    record: Un$Typed<AppGndrActorStatus.Record>,
     headers?: Record<string, string>,
   ): Promise<{ uri: string; cid: string }> {
     const collection = 'app.gndr.actor.status'
@@ -2020,7 +2020,7 @@ export class AppBskyActorStatusRecord {
       ComAtprotoRepoPutRecord.InputSchema,
       'collection' | 'record'
     >,
-    record: Un$Typed<AppBskyActorStatus.Record>,
+    record: Un$Typed<AppGndrActorStatus.Record>,
     headers?: Record<string, string>,
   ): Promise<{ uri: string; cid: string }> {
     const collection = 'app.gndr.actor.status'
@@ -2046,7 +2046,7 @@ export class AppBskyActorStatusRecord {
   }
 }
 
-export class AppBskyEmbedNS {
+export class AppGndrEmbedNS {
   _client: XrpcClient
 
   constructor(client: XrpcClient) {
@@ -2054,29 +2054,29 @@ export class AppBskyEmbedNS {
   }
 }
 
-export class AppBskyFeedNS {
+export class AppGndrFeedNS {
   _client: XrpcClient
-  generator: AppBskyFeedGeneratorRecord
-  like: AppBskyFeedLikeRecord
-  post: AppBskyFeedPostRecord
-  postgate: AppBskyFeedPostgateRecord
-  repost: AppBskyFeedRepostRecord
-  threadgate: AppBskyFeedThreadgateRecord
+  generator: AppGndrFeedGeneratorRecord
+  like: AppGndrFeedLikeRecord
+  post: AppGndrFeedPostRecord
+  postgate: AppGndrFeedPostgateRecord
+  repost: AppGndrFeedRepostRecord
+  threadgate: AppGndrFeedThreadgateRecord
 
   constructor(client: XrpcClient) {
     this._client = client
-    this.generator = new AppBskyFeedGeneratorRecord(client)
-    this.like = new AppBskyFeedLikeRecord(client)
-    this.post = new AppBskyFeedPostRecord(client)
-    this.postgate = new AppBskyFeedPostgateRecord(client)
-    this.repost = new AppBskyFeedRepostRecord(client)
-    this.threadgate = new AppBskyFeedThreadgateRecord(client)
+    this.generator = new AppGndrFeedGeneratorRecord(client)
+    this.like = new AppGndrFeedLikeRecord(client)
+    this.post = new AppGndrFeedPostRecord(client)
+    this.postgate = new AppGndrFeedPostgateRecord(client)
+    this.repost = new AppGndrFeedRepostRecord(client)
+    this.threadgate = new AppGndrFeedThreadgateRecord(client)
   }
 
   describeFeedGenerator(
-    params?: AppBskyFeedDescribeFeedGenerator.QueryParams,
-    opts?: AppBskyFeedDescribeFeedGenerator.CallOptions,
-  ): Promise<AppBskyFeedDescribeFeedGenerator.Response> {
+    params?: AppGndrFeedDescribeFeedGenerator.QueryParams,
+    opts?: AppGndrFeedDescribeFeedGenerator.CallOptions,
+  ): Promise<AppGndrFeedDescribeFeedGenerator.Response> {
     return this._client.call(
       'app.gndr.feed.describeFeedGenerator',
       params,
@@ -2086,9 +2086,9 @@ export class AppBskyFeedNS {
   }
 
   getActorFeeds(
-    params?: AppBskyFeedGetActorFeeds.QueryParams,
-    opts?: AppBskyFeedGetActorFeeds.CallOptions,
-  ): Promise<AppBskyFeedGetActorFeeds.Response> {
+    params?: AppGndrFeedGetActorFeeds.QueryParams,
+    opts?: AppGndrFeedGetActorFeeds.CallOptions,
+  ): Promise<AppGndrFeedGetActorFeeds.Response> {
     return this._client.call(
       'app.gndr.feed.getActorFeeds',
       params,
@@ -2098,42 +2098,42 @@ export class AppBskyFeedNS {
   }
 
   getActorLikes(
-    params?: AppBskyFeedGetActorLikes.QueryParams,
-    opts?: AppBskyFeedGetActorLikes.CallOptions,
-  ): Promise<AppBskyFeedGetActorLikes.Response> {
+    params?: AppGndrFeedGetActorLikes.QueryParams,
+    opts?: AppGndrFeedGetActorLikes.CallOptions,
+  ): Promise<AppGndrFeedGetActorLikes.Response> {
     return this._client
       .call('app.gndr.feed.getActorLikes', params, undefined, opts)
       .catch((e) => {
-        throw AppBskyFeedGetActorLikes.toKnownErr(e)
+        throw AppGndrFeedGetActorLikes.toKnownErr(e)
       })
   }
 
   getAuthorFeed(
-    params?: AppBskyFeedGetAuthorFeed.QueryParams,
-    opts?: AppBskyFeedGetAuthorFeed.CallOptions,
-  ): Promise<AppBskyFeedGetAuthorFeed.Response> {
+    params?: AppGndrFeedGetAuthorFeed.QueryParams,
+    opts?: AppGndrFeedGetAuthorFeed.CallOptions,
+  ): Promise<AppGndrFeedGetAuthorFeed.Response> {
     return this._client
       .call('app.gndr.feed.getAuthorFeed', params, undefined, opts)
       .catch((e) => {
-        throw AppBskyFeedGetAuthorFeed.toKnownErr(e)
+        throw AppGndrFeedGetAuthorFeed.toKnownErr(e)
       })
   }
 
   getFeed(
-    params?: AppBskyFeedGetFeed.QueryParams,
-    opts?: AppBskyFeedGetFeed.CallOptions,
-  ): Promise<AppBskyFeedGetFeed.Response> {
+    params?: AppGndrFeedGetFeed.QueryParams,
+    opts?: AppGndrFeedGetFeed.CallOptions,
+  ): Promise<AppGndrFeedGetFeed.Response> {
     return this._client
       .call('app.gndr.feed.getFeed', params, undefined, opts)
       .catch((e) => {
-        throw AppBskyFeedGetFeed.toKnownErr(e)
+        throw AppGndrFeedGetFeed.toKnownErr(e)
       })
   }
 
   getFeedGenerator(
-    params?: AppBskyFeedGetFeedGenerator.QueryParams,
-    opts?: AppBskyFeedGetFeedGenerator.CallOptions,
-  ): Promise<AppBskyFeedGetFeedGenerator.Response> {
+    params?: AppGndrFeedGetFeedGenerator.QueryParams,
+    opts?: AppGndrFeedGetFeedGenerator.CallOptions,
+  ): Promise<AppGndrFeedGetFeedGenerator.Response> {
     return this._client.call(
       'app.gndr.feed.getFeedGenerator',
       params,
@@ -2143,9 +2143,9 @@ export class AppBskyFeedNS {
   }
 
   getFeedGenerators(
-    params?: AppBskyFeedGetFeedGenerators.QueryParams,
-    opts?: AppBskyFeedGetFeedGenerators.CallOptions,
-  ): Promise<AppBskyFeedGetFeedGenerators.Response> {
+    params?: AppGndrFeedGetFeedGenerators.QueryParams,
+    opts?: AppGndrFeedGetFeedGenerators.CallOptions,
+  ): Promise<AppGndrFeedGetFeedGenerators.Response> {
     return this._client.call(
       'app.gndr.feed.getFeedGenerators',
       params,
@@ -2155,63 +2155,63 @@ export class AppBskyFeedNS {
   }
 
   getFeedSkeleton(
-    params?: AppBskyFeedGetFeedSkeleton.QueryParams,
-    opts?: AppBskyFeedGetFeedSkeleton.CallOptions,
-  ): Promise<AppBskyFeedGetFeedSkeleton.Response> {
+    params?: AppGndrFeedGetFeedSkeleton.QueryParams,
+    opts?: AppGndrFeedGetFeedSkeleton.CallOptions,
+  ): Promise<AppGndrFeedGetFeedSkeleton.Response> {
     return this._client
       .call('app.gndr.feed.getFeedSkeleton', params, undefined, opts)
       .catch((e) => {
-        throw AppBskyFeedGetFeedSkeleton.toKnownErr(e)
+        throw AppGndrFeedGetFeedSkeleton.toKnownErr(e)
       })
   }
 
   getLikes(
-    params?: AppBskyFeedGetLikes.QueryParams,
-    opts?: AppBskyFeedGetLikes.CallOptions,
-  ): Promise<AppBskyFeedGetLikes.Response> {
+    params?: AppGndrFeedGetLikes.QueryParams,
+    opts?: AppGndrFeedGetLikes.CallOptions,
+  ): Promise<AppGndrFeedGetLikes.Response> {
     return this._client.call('app.gndr.feed.getLikes', params, undefined, opts)
   }
 
   getListFeed(
-    params?: AppBskyFeedGetListFeed.QueryParams,
-    opts?: AppBskyFeedGetListFeed.CallOptions,
-  ): Promise<AppBskyFeedGetListFeed.Response> {
+    params?: AppGndrFeedGetListFeed.QueryParams,
+    opts?: AppGndrFeedGetListFeed.CallOptions,
+  ): Promise<AppGndrFeedGetListFeed.Response> {
     return this._client
       .call('app.gndr.feed.getListFeed', params, undefined, opts)
       .catch((e) => {
-        throw AppBskyFeedGetListFeed.toKnownErr(e)
+        throw AppGndrFeedGetListFeed.toKnownErr(e)
       })
   }
 
   getPosts(
-    params?: AppBskyFeedGetPosts.QueryParams,
-    opts?: AppBskyFeedGetPosts.CallOptions,
-  ): Promise<AppBskyFeedGetPosts.Response> {
+    params?: AppGndrFeedGetPosts.QueryParams,
+    opts?: AppGndrFeedGetPosts.CallOptions,
+  ): Promise<AppGndrFeedGetPosts.Response> {
     return this._client.call('app.gndr.feed.getPosts', params, undefined, opts)
   }
 
   getPostThread(
-    params?: AppBskyFeedGetPostThread.QueryParams,
-    opts?: AppBskyFeedGetPostThread.CallOptions,
-  ): Promise<AppBskyFeedGetPostThread.Response> {
+    params?: AppGndrFeedGetPostThread.QueryParams,
+    opts?: AppGndrFeedGetPostThread.CallOptions,
+  ): Promise<AppGndrFeedGetPostThread.Response> {
     return this._client
       .call('app.gndr.feed.getPostThread', params, undefined, opts)
       .catch((e) => {
-        throw AppBskyFeedGetPostThread.toKnownErr(e)
+        throw AppGndrFeedGetPostThread.toKnownErr(e)
       })
   }
 
   getQuotes(
-    params?: AppBskyFeedGetQuotes.QueryParams,
-    opts?: AppBskyFeedGetQuotes.CallOptions,
-  ): Promise<AppBskyFeedGetQuotes.Response> {
+    params?: AppGndrFeedGetQuotes.QueryParams,
+    opts?: AppGndrFeedGetQuotes.CallOptions,
+  ): Promise<AppGndrFeedGetQuotes.Response> {
     return this._client.call('app.gndr.feed.getQuotes', params, undefined, opts)
   }
 
   getRepostedBy(
-    params?: AppBskyFeedGetRepostedBy.QueryParams,
-    opts?: AppBskyFeedGetRepostedBy.CallOptions,
-  ): Promise<AppBskyFeedGetRepostedBy.Response> {
+    params?: AppGndrFeedGetRepostedBy.QueryParams,
+    opts?: AppGndrFeedGetRepostedBy.CallOptions,
+  ): Promise<AppGndrFeedGetRepostedBy.Response> {
     return this._client.call(
       'app.gndr.feed.getRepostedBy',
       params,
@@ -2221,9 +2221,9 @@ export class AppBskyFeedNS {
   }
 
   getSuggestedFeeds(
-    params?: AppBskyFeedGetSuggestedFeeds.QueryParams,
-    opts?: AppBskyFeedGetSuggestedFeeds.CallOptions,
-  ): Promise<AppBskyFeedGetSuggestedFeeds.Response> {
+    params?: AppGndrFeedGetSuggestedFeeds.QueryParams,
+    opts?: AppGndrFeedGetSuggestedFeeds.CallOptions,
+  ): Promise<AppGndrFeedGetSuggestedFeeds.Response> {
     return this._client.call(
       'app.gndr.feed.getSuggestedFeeds',
       params,
@@ -2233,9 +2233,9 @@ export class AppBskyFeedNS {
   }
 
   getTimeline(
-    params?: AppBskyFeedGetTimeline.QueryParams,
-    opts?: AppBskyFeedGetTimeline.CallOptions,
-  ): Promise<AppBskyFeedGetTimeline.Response> {
+    params?: AppGndrFeedGetTimeline.QueryParams,
+    opts?: AppGndrFeedGetTimeline.CallOptions,
+  ): Promise<AppGndrFeedGetTimeline.Response> {
     return this._client.call(
       'app.gndr.feed.getTimeline',
       params,
@@ -2245,20 +2245,20 @@ export class AppBskyFeedNS {
   }
 
   searchPosts(
-    params?: AppBskyFeedSearchPosts.QueryParams,
-    opts?: AppBskyFeedSearchPosts.CallOptions,
-  ): Promise<AppBskyFeedSearchPosts.Response> {
+    params?: AppGndrFeedSearchPosts.QueryParams,
+    opts?: AppGndrFeedSearchPosts.CallOptions,
+  ): Promise<AppGndrFeedSearchPosts.Response> {
     return this._client
       .call('app.gndr.feed.searchPosts', params, undefined, opts)
       .catch((e) => {
-        throw AppBskyFeedSearchPosts.toKnownErr(e)
+        throw AppGndrFeedSearchPosts.toKnownErr(e)
       })
   }
 
   sendInteractions(
-    data?: AppBskyFeedSendInteractions.InputSchema,
-    opts?: AppBskyFeedSendInteractions.CallOptions,
-  ): Promise<AppBskyFeedSendInteractions.Response> {
+    data?: AppGndrFeedSendInteractions.InputSchema,
+    opts?: AppGndrFeedSendInteractions.CallOptions,
+  ): Promise<AppGndrFeedSendInteractions.Response> {
     return this._client.call(
       'app.gndr.feed.sendInteractions',
       opts?.qp,
@@ -2268,7 +2268,7 @@ export class AppBskyFeedNS {
   }
 }
 
-export class AppBskyFeedGeneratorRecord {
+export class AppGndrFeedGeneratorRecord {
   _client: XrpcClient
 
   constructor(client: XrpcClient) {
@@ -2279,7 +2279,7 @@ export class AppBskyFeedGeneratorRecord {
     params: OmitKey<ComAtprotoRepoListRecords.QueryParams, 'collection'>,
   ): Promise<{
     cursor?: string
-    records: { uri: string; value: AppBskyFeedGenerator.Record }[]
+    records: { uri: string; value: AppGndrFeedGenerator.Record }[]
   }> {
     const res = await this._client.call('com.atproto.repo.listRecords', {
       collection: 'app.gndr.feed.generator',
@@ -2290,7 +2290,7 @@ export class AppBskyFeedGeneratorRecord {
 
   async get(
     params: OmitKey<ComAtprotoRepoGetRecord.QueryParams, 'collection'>,
-  ): Promise<{ uri: string; cid: string; value: AppBskyFeedGenerator.Record }> {
+  ): Promise<{ uri: string; cid: string; value: AppGndrFeedGenerator.Record }> {
     const res = await this._client.call('com.atproto.repo.getRecord', {
       collection: 'app.gndr.feed.generator',
       ...params,
@@ -2303,7 +2303,7 @@ export class AppBskyFeedGeneratorRecord {
       ComAtprotoRepoCreateRecord.InputSchema,
       'collection' | 'record'
     >,
-    record: Un$Typed<AppBskyFeedGenerator.Record>,
+    record: Un$Typed<AppGndrFeedGenerator.Record>,
     headers?: Record<string, string>,
   ): Promise<{ uri: string; cid: string }> {
     const collection = 'app.gndr.feed.generator'
@@ -2321,7 +2321,7 @@ export class AppBskyFeedGeneratorRecord {
       ComAtprotoRepoPutRecord.InputSchema,
       'collection' | 'record'
     >,
-    record: Un$Typed<AppBskyFeedGenerator.Record>,
+    record: Un$Typed<AppGndrFeedGenerator.Record>,
     headers?: Record<string, string>,
   ): Promise<{ uri: string; cid: string }> {
     const collection = 'app.gndr.feed.generator'
@@ -2347,7 +2347,7 @@ export class AppBskyFeedGeneratorRecord {
   }
 }
 
-export class AppBskyFeedLikeRecord {
+export class AppGndrFeedLikeRecord {
   _client: XrpcClient
 
   constructor(client: XrpcClient) {
@@ -2358,7 +2358,7 @@ export class AppBskyFeedLikeRecord {
     params: OmitKey<ComAtprotoRepoListRecords.QueryParams, 'collection'>,
   ): Promise<{
     cursor?: string
-    records: { uri: string; value: AppBskyFeedLike.Record }[]
+    records: { uri: string; value: AppGndrFeedLike.Record }[]
   }> {
     const res = await this._client.call('com.atproto.repo.listRecords', {
       collection: 'app.gndr.feed.like',
@@ -2369,7 +2369,7 @@ export class AppBskyFeedLikeRecord {
 
   async get(
     params: OmitKey<ComAtprotoRepoGetRecord.QueryParams, 'collection'>,
-  ): Promise<{ uri: string; cid: string; value: AppBskyFeedLike.Record }> {
+  ): Promise<{ uri: string; cid: string; value: AppGndrFeedLike.Record }> {
     const res = await this._client.call('com.atproto.repo.getRecord', {
       collection: 'app.gndr.feed.like',
       ...params,
@@ -2382,7 +2382,7 @@ export class AppBskyFeedLikeRecord {
       ComAtprotoRepoCreateRecord.InputSchema,
       'collection' | 'record'
     >,
-    record: Un$Typed<AppBskyFeedLike.Record>,
+    record: Un$Typed<AppGndrFeedLike.Record>,
     headers?: Record<string, string>,
   ): Promise<{ uri: string; cid: string }> {
     const collection = 'app.gndr.feed.like'
@@ -2400,7 +2400,7 @@ export class AppBskyFeedLikeRecord {
       ComAtprotoRepoPutRecord.InputSchema,
       'collection' | 'record'
     >,
-    record: Un$Typed<AppBskyFeedLike.Record>,
+    record: Un$Typed<AppGndrFeedLike.Record>,
     headers?: Record<string, string>,
   ): Promise<{ uri: string; cid: string }> {
     const collection = 'app.gndr.feed.like'
@@ -2426,7 +2426,7 @@ export class AppBskyFeedLikeRecord {
   }
 }
 
-export class AppBskyFeedPostRecord {
+export class AppGndrFeedPostRecord {
   _client: XrpcClient
 
   constructor(client: XrpcClient) {
@@ -2437,7 +2437,7 @@ export class AppBskyFeedPostRecord {
     params: OmitKey<ComAtprotoRepoListRecords.QueryParams, 'collection'>,
   ): Promise<{
     cursor?: string
-    records: { uri: string; value: AppBskyFeedPost.Record }[]
+    records: { uri: string; value: AppGndrFeedPost.Record }[]
   }> {
     const res = await this._client.call('com.atproto.repo.listRecords', {
       collection: 'app.gndr.feed.post',
@@ -2448,7 +2448,7 @@ export class AppBskyFeedPostRecord {
 
   async get(
     params: OmitKey<ComAtprotoRepoGetRecord.QueryParams, 'collection'>,
-  ): Promise<{ uri: string; cid: string; value: AppBskyFeedPost.Record }> {
+  ): Promise<{ uri: string; cid: string; value: AppGndrFeedPost.Record }> {
     const res = await this._client.call('com.atproto.repo.getRecord', {
       collection: 'app.gndr.feed.post',
       ...params,
@@ -2461,7 +2461,7 @@ export class AppBskyFeedPostRecord {
       ComAtprotoRepoCreateRecord.InputSchema,
       'collection' | 'record'
     >,
-    record: Un$Typed<AppBskyFeedPost.Record>,
+    record: Un$Typed<AppGndrFeedPost.Record>,
     headers?: Record<string, string>,
   ): Promise<{ uri: string; cid: string }> {
     const collection = 'app.gndr.feed.post'
@@ -2479,7 +2479,7 @@ export class AppBskyFeedPostRecord {
       ComAtprotoRepoPutRecord.InputSchema,
       'collection' | 'record'
     >,
-    record: Un$Typed<AppBskyFeedPost.Record>,
+    record: Un$Typed<AppGndrFeedPost.Record>,
     headers?: Record<string, string>,
   ): Promise<{ uri: string; cid: string }> {
     const collection = 'app.gndr.feed.post'
@@ -2505,7 +2505,7 @@ export class AppBskyFeedPostRecord {
   }
 }
 
-export class AppBskyFeedPostgateRecord {
+export class AppGndrFeedPostgateRecord {
   _client: XrpcClient
 
   constructor(client: XrpcClient) {
@@ -2516,7 +2516,7 @@ export class AppBskyFeedPostgateRecord {
     params: OmitKey<ComAtprotoRepoListRecords.QueryParams, 'collection'>,
   ): Promise<{
     cursor?: string
-    records: { uri: string; value: AppBskyFeedPostgate.Record }[]
+    records: { uri: string; value: AppGndrFeedPostgate.Record }[]
   }> {
     const res = await this._client.call('com.atproto.repo.listRecords', {
       collection: 'app.gndr.feed.postgate',
@@ -2527,7 +2527,7 @@ export class AppBskyFeedPostgateRecord {
 
   async get(
     params: OmitKey<ComAtprotoRepoGetRecord.QueryParams, 'collection'>,
-  ): Promise<{ uri: string; cid: string; value: AppBskyFeedPostgate.Record }> {
+  ): Promise<{ uri: string; cid: string; value: AppGndrFeedPostgate.Record }> {
     const res = await this._client.call('com.atproto.repo.getRecord', {
       collection: 'app.gndr.feed.postgate',
       ...params,
@@ -2540,7 +2540,7 @@ export class AppBskyFeedPostgateRecord {
       ComAtprotoRepoCreateRecord.InputSchema,
       'collection' | 'record'
     >,
-    record: Un$Typed<AppBskyFeedPostgate.Record>,
+    record: Un$Typed<AppGndrFeedPostgate.Record>,
     headers?: Record<string, string>,
   ): Promise<{ uri: string; cid: string }> {
     const collection = 'app.gndr.feed.postgate'
@@ -2558,7 +2558,7 @@ export class AppBskyFeedPostgateRecord {
       ComAtprotoRepoPutRecord.InputSchema,
       'collection' | 'record'
     >,
-    record: Un$Typed<AppBskyFeedPostgate.Record>,
+    record: Un$Typed<AppGndrFeedPostgate.Record>,
     headers?: Record<string, string>,
   ): Promise<{ uri: string; cid: string }> {
     const collection = 'app.gndr.feed.postgate'
@@ -2584,7 +2584,7 @@ export class AppBskyFeedPostgateRecord {
   }
 }
 
-export class AppBskyFeedRepostRecord {
+export class AppGndrFeedRepostRecord {
   _client: XrpcClient
 
   constructor(client: XrpcClient) {
@@ -2595,7 +2595,7 @@ export class AppBskyFeedRepostRecord {
     params: OmitKey<ComAtprotoRepoListRecords.QueryParams, 'collection'>,
   ): Promise<{
     cursor?: string
-    records: { uri: string; value: AppBskyFeedRepost.Record }[]
+    records: { uri: string; value: AppGndrFeedRepost.Record }[]
   }> {
     const res = await this._client.call('com.atproto.repo.listRecords', {
       collection: 'app.gndr.feed.repost',
@@ -2606,7 +2606,7 @@ export class AppBskyFeedRepostRecord {
 
   async get(
     params: OmitKey<ComAtprotoRepoGetRecord.QueryParams, 'collection'>,
-  ): Promise<{ uri: string; cid: string; value: AppBskyFeedRepost.Record }> {
+  ): Promise<{ uri: string; cid: string; value: AppGndrFeedRepost.Record }> {
     const res = await this._client.call('com.atproto.repo.getRecord', {
       collection: 'app.gndr.feed.repost',
       ...params,
@@ -2619,7 +2619,7 @@ export class AppBskyFeedRepostRecord {
       ComAtprotoRepoCreateRecord.InputSchema,
       'collection' | 'record'
     >,
-    record: Un$Typed<AppBskyFeedRepost.Record>,
+    record: Un$Typed<AppGndrFeedRepost.Record>,
     headers?: Record<string, string>,
   ): Promise<{ uri: string; cid: string }> {
     const collection = 'app.gndr.feed.repost'
@@ -2637,7 +2637,7 @@ export class AppBskyFeedRepostRecord {
       ComAtprotoRepoPutRecord.InputSchema,
       'collection' | 'record'
     >,
-    record: Un$Typed<AppBskyFeedRepost.Record>,
+    record: Un$Typed<AppGndrFeedRepost.Record>,
     headers?: Record<string, string>,
   ): Promise<{ uri: string; cid: string }> {
     const collection = 'app.gndr.feed.repost'
@@ -2663,7 +2663,7 @@ export class AppBskyFeedRepostRecord {
   }
 }
 
-export class AppBskyFeedThreadgateRecord {
+export class AppGndrFeedThreadgateRecord {
   _client: XrpcClient
 
   constructor(client: XrpcClient) {
@@ -2674,7 +2674,7 @@ export class AppBskyFeedThreadgateRecord {
     params: OmitKey<ComAtprotoRepoListRecords.QueryParams, 'collection'>,
   ): Promise<{
     cursor?: string
-    records: { uri: string; value: AppBskyFeedThreadgate.Record }[]
+    records: { uri: string; value: AppGndrFeedThreadgate.Record }[]
   }> {
     const res = await this._client.call('com.atproto.repo.listRecords', {
       collection: 'app.gndr.feed.threadgate',
@@ -2688,7 +2688,7 @@ export class AppBskyFeedThreadgateRecord {
   ): Promise<{
     uri: string
     cid: string
-    value: AppBskyFeedThreadgate.Record
+    value: AppGndrFeedThreadgate.Record
   }> {
     const res = await this._client.call('com.atproto.repo.getRecord', {
       collection: 'app.gndr.feed.threadgate',
@@ -2702,7 +2702,7 @@ export class AppBskyFeedThreadgateRecord {
       ComAtprotoRepoCreateRecord.InputSchema,
       'collection' | 'record'
     >,
-    record: Un$Typed<AppBskyFeedThreadgate.Record>,
+    record: Un$Typed<AppGndrFeedThreadgate.Record>,
     headers?: Record<string, string>,
   ): Promise<{ uri: string; cid: string }> {
     const collection = 'app.gndr.feed.threadgate'
@@ -2720,7 +2720,7 @@ export class AppBskyFeedThreadgateRecord {
       ComAtprotoRepoPutRecord.InputSchema,
       'collection' | 'record'
     >,
-    record: Un$Typed<AppBskyFeedThreadgate.Record>,
+    record: Un$Typed<AppGndrFeedThreadgate.Record>,
     headers?: Record<string, string>,
   ): Promise<{ uri: string; cid: string }> {
     const collection = 'app.gndr.feed.threadgate'
@@ -2746,31 +2746,31 @@ export class AppBskyFeedThreadgateRecord {
   }
 }
 
-export class AppBskyGraphNS {
+export class AppGndrGraphNS {
   _client: XrpcClient
-  block: AppBskyGraphBlockRecord
-  follow: AppBskyGraphFollowRecord
-  list: AppBskyGraphListRecord
-  listblock: AppBskyGraphListblockRecord
-  listitem: AppBskyGraphListitemRecord
-  starterpack: AppBskyGraphStarterpackRecord
-  verification: AppBskyGraphVerificationRecord
+  block: AppGndrGraphBlockRecord
+  follow: AppGndrGraphFollowRecord
+  list: AppGndrGraphListRecord
+  listblock: AppGndrGraphListblockRecord
+  listitem: AppGndrGraphListitemRecord
+  starterpack: AppGndrGraphStarterpackRecord
+  verification: AppGndrGraphVerificationRecord
 
   constructor(client: XrpcClient) {
     this._client = client
-    this.block = new AppBskyGraphBlockRecord(client)
-    this.follow = new AppBskyGraphFollowRecord(client)
-    this.list = new AppBskyGraphListRecord(client)
-    this.listblock = new AppBskyGraphListblockRecord(client)
-    this.listitem = new AppBskyGraphListitemRecord(client)
-    this.starterpack = new AppBskyGraphStarterpackRecord(client)
-    this.verification = new AppBskyGraphVerificationRecord(client)
+    this.block = new AppGndrGraphBlockRecord(client)
+    this.follow = new AppGndrGraphFollowRecord(client)
+    this.list = new AppGndrGraphListRecord(client)
+    this.listblock = new AppGndrGraphListblockRecord(client)
+    this.listitem = new AppGndrGraphListitemRecord(client)
+    this.starterpack = new AppGndrGraphStarterpackRecord(client)
+    this.verification = new AppGndrGraphVerificationRecord(client)
   }
 
   getActorStarterPacks(
-    params?: AppBskyGraphGetActorStarterPacks.QueryParams,
-    opts?: AppBskyGraphGetActorStarterPacks.CallOptions,
-  ): Promise<AppBskyGraphGetActorStarterPacks.Response> {
+    params?: AppGndrGraphGetActorStarterPacks.QueryParams,
+    opts?: AppGndrGraphGetActorStarterPacks.CallOptions,
+  ): Promise<AppGndrGraphGetActorStarterPacks.Response> {
     return this._client.call(
       'app.gndr.graph.getActorStarterPacks',
       params,
@@ -2780,9 +2780,9 @@ export class AppBskyGraphNS {
   }
 
   getBlocks(
-    params?: AppBskyGraphGetBlocks.QueryParams,
-    opts?: AppBskyGraphGetBlocks.CallOptions,
-  ): Promise<AppBskyGraphGetBlocks.Response> {
+    params?: AppGndrGraphGetBlocks.QueryParams,
+    opts?: AppGndrGraphGetBlocks.CallOptions,
+  ): Promise<AppGndrGraphGetBlocks.Response> {
     return this._client.call(
       'app.gndr.graph.getBlocks',
       params,
@@ -2792,9 +2792,9 @@ export class AppBskyGraphNS {
   }
 
   getFollowers(
-    params?: AppBskyGraphGetFollowers.QueryParams,
-    opts?: AppBskyGraphGetFollowers.CallOptions,
-  ): Promise<AppBskyGraphGetFollowers.Response> {
+    params?: AppGndrGraphGetFollowers.QueryParams,
+    opts?: AppGndrGraphGetFollowers.CallOptions,
+  ): Promise<AppGndrGraphGetFollowers.Response> {
     return this._client.call(
       'app.gndr.graph.getFollowers',
       params,
@@ -2804,9 +2804,9 @@ export class AppBskyGraphNS {
   }
 
   getFollows(
-    params?: AppBskyGraphGetFollows.QueryParams,
-    opts?: AppBskyGraphGetFollows.CallOptions,
-  ): Promise<AppBskyGraphGetFollows.Response> {
+    params?: AppGndrGraphGetFollows.QueryParams,
+    opts?: AppGndrGraphGetFollows.CallOptions,
+  ): Promise<AppGndrGraphGetFollows.Response> {
     return this._client.call(
       'app.gndr.graph.getFollows',
       params,
@@ -2816,9 +2816,9 @@ export class AppBskyGraphNS {
   }
 
   getKnownFollowers(
-    params?: AppBskyGraphGetKnownFollowers.QueryParams,
-    opts?: AppBskyGraphGetKnownFollowers.CallOptions,
-  ): Promise<AppBskyGraphGetKnownFollowers.Response> {
+    params?: AppGndrGraphGetKnownFollowers.QueryParams,
+    opts?: AppGndrGraphGetKnownFollowers.CallOptions,
+  ): Promise<AppGndrGraphGetKnownFollowers.Response> {
     return this._client.call(
       'app.gndr.graph.getKnownFollowers',
       params,
@@ -2828,16 +2828,16 @@ export class AppBskyGraphNS {
   }
 
   getList(
-    params?: AppBskyGraphGetList.QueryParams,
-    opts?: AppBskyGraphGetList.CallOptions,
-  ): Promise<AppBskyGraphGetList.Response> {
+    params?: AppGndrGraphGetList.QueryParams,
+    opts?: AppGndrGraphGetList.CallOptions,
+  ): Promise<AppGndrGraphGetList.Response> {
     return this._client.call('app.gndr.graph.getList', params, undefined, opts)
   }
 
   getListBlocks(
-    params?: AppBskyGraphGetListBlocks.QueryParams,
-    opts?: AppBskyGraphGetListBlocks.CallOptions,
-  ): Promise<AppBskyGraphGetListBlocks.Response> {
+    params?: AppGndrGraphGetListBlocks.QueryParams,
+    opts?: AppGndrGraphGetListBlocks.CallOptions,
+  ): Promise<AppGndrGraphGetListBlocks.Response> {
     return this._client.call(
       'app.gndr.graph.getListBlocks',
       params,
@@ -2847,9 +2847,9 @@ export class AppBskyGraphNS {
   }
 
   getListMutes(
-    params?: AppBskyGraphGetListMutes.QueryParams,
-    opts?: AppBskyGraphGetListMutes.CallOptions,
-  ): Promise<AppBskyGraphGetListMutes.Response> {
+    params?: AppGndrGraphGetListMutes.QueryParams,
+    opts?: AppGndrGraphGetListMutes.CallOptions,
+  ): Promise<AppGndrGraphGetListMutes.Response> {
     return this._client.call(
       'app.gndr.graph.getListMutes',
       params,
@@ -2859,34 +2859,34 @@ export class AppBskyGraphNS {
   }
 
   getLists(
-    params?: AppBskyGraphGetLists.QueryParams,
-    opts?: AppBskyGraphGetLists.CallOptions,
-  ): Promise<AppBskyGraphGetLists.Response> {
+    params?: AppGndrGraphGetLists.QueryParams,
+    opts?: AppGndrGraphGetLists.CallOptions,
+  ): Promise<AppGndrGraphGetLists.Response> {
     return this._client.call('app.gndr.graph.getLists', params, undefined, opts)
   }
 
   getMutes(
-    params?: AppBskyGraphGetMutes.QueryParams,
-    opts?: AppBskyGraphGetMutes.CallOptions,
-  ): Promise<AppBskyGraphGetMutes.Response> {
+    params?: AppGndrGraphGetMutes.QueryParams,
+    opts?: AppGndrGraphGetMutes.CallOptions,
+  ): Promise<AppGndrGraphGetMutes.Response> {
     return this._client.call('app.gndr.graph.getMutes', params, undefined, opts)
   }
 
   getRelationships(
-    params?: AppBskyGraphGetRelationships.QueryParams,
-    opts?: AppBskyGraphGetRelationships.CallOptions,
-  ): Promise<AppBskyGraphGetRelationships.Response> {
+    params?: AppGndrGraphGetRelationships.QueryParams,
+    opts?: AppGndrGraphGetRelationships.CallOptions,
+  ): Promise<AppGndrGraphGetRelationships.Response> {
     return this._client
       .call('app.gndr.graph.getRelationships', params, undefined, opts)
       .catch((e) => {
-        throw AppBskyGraphGetRelationships.toKnownErr(e)
+        throw AppGndrGraphGetRelationships.toKnownErr(e)
       })
   }
 
   getStarterPack(
-    params?: AppBskyGraphGetStarterPack.QueryParams,
-    opts?: AppBskyGraphGetStarterPack.CallOptions,
-  ): Promise<AppBskyGraphGetStarterPack.Response> {
+    params?: AppGndrGraphGetStarterPack.QueryParams,
+    opts?: AppGndrGraphGetStarterPack.CallOptions,
+  ): Promise<AppGndrGraphGetStarterPack.Response> {
     return this._client.call(
       'app.gndr.graph.getStarterPack',
       params,
@@ -2896,9 +2896,9 @@ export class AppBskyGraphNS {
   }
 
   getStarterPacks(
-    params?: AppBskyGraphGetStarterPacks.QueryParams,
-    opts?: AppBskyGraphGetStarterPacks.CallOptions,
-  ): Promise<AppBskyGraphGetStarterPacks.Response> {
+    params?: AppGndrGraphGetStarterPacks.QueryParams,
+    opts?: AppGndrGraphGetStarterPacks.CallOptions,
+  ): Promise<AppGndrGraphGetStarterPacks.Response> {
     return this._client.call(
       'app.gndr.graph.getStarterPacks',
       params,
@@ -2908,9 +2908,9 @@ export class AppBskyGraphNS {
   }
 
   getSuggestedFollowsByActor(
-    params?: AppBskyGraphGetSuggestedFollowsByActor.QueryParams,
-    opts?: AppBskyGraphGetSuggestedFollowsByActor.CallOptions,
-  ): Promise<AppBskyGraphGetSuggestedFollowsByActor.Response> {
+    params?: AppGndrGraphGetSuggestedFollowsByActor.QueryParams,
+    opts?: AppGndrGraphGetSuggestedFollowsByActor.CallOptions,
+  ): Promise<AppGndrGraphGetSuggestedFollowsByActor.Response> {
     return this._client.call(
       'app.gndr.graph.getSuggestedFollowsByActor',
       params,
@@ -2920,16 +2920,16 @@ export class AppBskyGraphNS {
   }
 
   muteActor(
-    data?: AppBskyGraphMuteActor.InputSchema,
-    opts?: AppBskyGraphMuteActor.CallOptions,
-  ): Promise<AppBskyGraphMuteActor.Response> {
+    data?: AppGndrGraphMuteActor.InputSchema,
+    opts?: AppGndrGraphMuteActor.CallOptions,
+  ): Promise<AppGndrGraphMuteActor.Response> {
     return this._client.call('app.gndr.graph.muteActor', opts?.qp, data, opts)
   }
 
   muteActorList(
-    data?: AppBskyGraphMuteActorList.InputSchema,
-    opts?: AppBskyGraphMuteActorList.CallOptions,
-  ): Promise<AppBskyGraphMuteActorList.Response> {
+    data?: AppGndrGraphMuteActorList.InputSchema,
+    opts?: AppGndrGraphMuteActorList.CallOptions,
+  ): Promise<AppGndrGraphMuteActorList.Response> {
     return this._client.call(
       'app.gndr.graph.muteActorList',
       opts?.qp,
@@ -2939,16 +2939,16 @@ export class AppBskyGraphNS {
   }
 
   muteThread(
-    data?: AppBskyGraphMuteThread.InputSchema,
-    opts?: AppBskyGraphMuteThread.CallOptions,
-  ): Promise<AppBskyGraphMuteThread.Response> {
+    data?: AppGndrGraphMuteThread.InputSchema,
+    opts?: AppGndrGraphMuteThread.CallOptions,
+  ): Promise<AppGndrGraphMuteThread.Response> {
     return this._client.call('app.gndr.graph.muteThread', opts?.qp, data, opts)
   }
 
   searchStarterPacks(
-    params?: AppBskyGraphSearchStarterPacks.QueryParams,
-    opts?: AppBskyGraphSearchStarterPacks.CallOptions,
-  ): Promise<AppBskyGraphSearchStarterPacks.Response> {
+    params?: AppGndrGraphSearchStarterPacks.QueryParams,
+    opts?: AppGndrGraphSearchStarterPacks.CallOptions,
+  ): Promise<AppGndrGraphSearchStarterPacks.Response> {
     return this._client.call(
       'app.gndr.graph.searchStarterPacks',
       params,
@@ -2958,16 +2958,16 @@ export class AppBskyGraphNS {
   }
 
   unmuteActor(
-    data?: AppBskyGraphUnmuteActor.InputSchema,
-    opts?: AppBskyGraphUnmuteActor.CallOptions,
-  ): Promise<AppBskyGraphUnmuteActor.Response> {
+    data?: AppGndrGraphUnmuteActor.InputSchema,
+    opts?: AppGndrGraphUnmuteActor.CallOptions,
+  ): Promise<AppGndrGraphUnmuteActor.Response> {
     return this._client.call('app.gndr.graph.unmuteActor', opts?.qp, data, opts)
   }
 
   unmuteActorList(
-    data?: AppBskyGraphUnmuteActorList.InputSchema,
-    opts?: AppBskyGraphUnmuteActorList.CallOptions,
-  ): Promise<AppBskyGraphUnmuteActorList.Response> {
+    data?: AppGndrGraphUnmuteActorList.InputSchema,
+    opts?: AppGndrGraphUnmuteActorList.CallOptions,
+  ): Promise<AppGndrGraphUnmuteActorList.Response> {
     return this._client.call(
       'app.gndr.graph.unmuteActorList',
       opts?.qp,
@@ -2977,9 +2977,9 @@ export class AppBskyGraphNS {
   }
 
   unmuteThread(
-    data?: AppBskyGraphUnmuteThread.InputSchema,
-    opts?: AppBskyGraphUnmuteThread.CallOptions,
-  ): Promise<AppBskyGraphUnmuteThread.Response> {
+    data?: AppGndrGraphUnmuteThread.InputSchema,
+    opts?: AppGndrGraphUnmuteThread.CallOptions,
+  ): Promise<AppGndrGraphUnmuteThread.Response> {
     return this._client.call(
       'app.gndr.graph.unmuteThread',
       opts?.qp,
@@ -2989,7 +2989,7 @@ export class AppBskyGraphNS {
   }
 }
 
-export class AppBskyGraphBlockRecord {
+export class AppGndrGraphBlockRecord {
   _client: XrpcClient
 
   constructor(client: XrpcClient) {
@@ -3000,7 +3000,7 @@ export class AppBskyGraphBlockRecord {
     params: OmitKey<ComAtprotoRepoListRecords.QueryParams, 'collection'>,
   ): Promise<{
     cursor?: string
-    records: { uri: string; value: AppBskyGraphBlock.Record }[]
+    records: { uri: string; value: AppGndrGraphBlock.Record }[]
   }> {
     const res = await this._client.call('com.atproto.repo.listRecords', {
       collection: 'app.gndr.graph.block',
@@ -3011,7 +3011,7 @@ export class AppBskyGraphBlockRecord {
 
   async get(
     params: OmitKey<ComAtprotoRepoGetRecord.QueryParams, 'collection'>,
-  ): Promise<{ uri: string; cid: string; value: AppBskyGraphBlock.Record }> {
+  ): Promise<{ uri: string; cid: string; value: AppGndrGraphBlock.Record }> {
     const res = await this._client.call('com.atproto.repo.getRecord', {
       collection: 'app.gndr.graph.block',
       ...params,
@@ -3024,7 +3024,7 @@ export class AppBskyGraphBlockRecord {
       ComAtprotoRepoCreateRecord.InputSchema,
       'collection' | 'record'
     >,
-    record: Un$Typed<AppBskyGraphBlock.Record>,
+    record: Un$Typed<AppGndrGraphBlock.Record>,
     headers?: Record<string, string>,
   ): Promise<{ uri: string; cid: string }> {
     const collection = 'app.gndr.graph.block'
@@ -3042,7 +3042,7 @@ export class AppBskyGraphBlockRecord {
       ComAtprotoRepoPutRecord.InputSchema,
       'collection' | 'record'
     >,
-    record: Un$Typed<AppBskyGraphBlock.Record>,
+    record: Un$Typed<AppGndrGraphBlock.Record>,
     headers?: Record<string, string>,
   ): Promise<{ uri: string; cid: string }> {
     const collection = 'app.gndr.graph.block'
@@ -3068,7 +3068,7 @@ export class AppBskyGraphBlockRecord {
   }
 }
 
-export class AppBskyGraphFollowRecord {
+export class AppGndrGraphFollowRecord {
   _client: XrpcClient
 
   constructor(client: XrpcClient) {
@@ -3079,7 +3079,7 @@ export class AppBskyGraphFollowRecord {
     params: OmitKey<ComAtprotoRepoListRecords.QueryParams, 'collection'>,
   ): Promise<{
     cursor?: string
-    records: { uri: string; value: AppBskyGraphFollow.Record }[]
+    records: { uri: string; value: AppGndrGraphFollow.Record }[]
   }> {
     const res = await this._client.call('com.atproto.repo.listRecords', {
       collection: 'app.gndr.graph.follow',
@@ -3090,7 +3090,7 @@ export class AppBskyGraphFollowRecord {
 
   async get(
     params: OmitKey<ComAtprotoRepoGetRecord.QueryParams, 'collection'>,
-  ): Promise<{ uri: string; cid: string; value: AppBskyGraphFollow.Record }> {
+  ): Promise<{ uri: string; cid: string; value: AppGndrGraphFollow.Record }> {
     const res = await this._client.call('com.atproto.repo.getRecord', {
       collection: 'app.gndr.graph.follow',
       ...params,
@@ -3103,7 +3103,7 @@ export class AppBskyGraphFollowRecord {
       ComAtprotoRepoCreateRecord.InputSchema,
       'collection' | 'record'
     >,
-    record: Un$Typed<AppBskyGraphFollow.Record>,
+    record: Un$Typed<AppGndrGraphFollow.Record>,
     headers?: Record<string, string>,
   ): Promise<{ uri: string; cid: string }> {
     const collection = 'app.gndr.graph.follow'
@@ -3121,7 +3121,7 @@ export class AppBskyGraphFollowRecord {
       ComAtprotoRepoPutRecord.InputSchema,
       'collection' | 'record'
     >,
-    record: Un$Typed<AppBskyGraphFollow.Record>,
+    record: Un$Typed<AppGndrGraphFollow.Record>,
     headers?: Record<string, string>,
   ): Promise<{ uri: string; cid: string }> {
     const collection = 'app.gndr.graph.follow'
@@ -3147,7 +3147,7 @@ export class AppBskyGraphFollowRecord {
   }
 }
 
-export class AppBskyGraphListRecord {
+export class AppGndrGraphListRecord {
   _client: XrpcClient
 
   constructor(client: XrpcClient) {
@@ -3158,7 +3158,7 @@ export class AppBskyGraphListRecord {
     params: OmitKey<ComAtprotoRepoListRecords.QueryParams, 'collection'>,
   ): Promise<{
     cursor?: string
-    records: { uri: string; value: AppBskyGraphList.Record }[]
+    records: { uri: string; value: AppGndrGraphList.Record }[]
   }> {
     const res = await this._client.call('com.atproto.repo.listRecords', {
       collection: 'app.gndr.graph.list',
@@ -3169,7 +3169,7 @@ export class AppBskyGraphListRecord {
 
   async get(
     params: OmitKey<ComAtprotoRepoGetRecord.QueryParams, 'collection'>,
-  ): Promise<{ uri: string; cid: string; value: AppBskyGraphList.Record }> {
+  ): Promise<{ uri: string; cid: string; value: AppGndrGraphList.Record }> {
     const res = await this._client.call('com.atproto.repo.getRecord', {
       collection: 'app.gndr.graph.list',
       ...params,
@@ -3182,7 +3182,7 @@ export class AppBskyGraphListRecord {
       ComAtprotoRepoCreateRecord.InputSchema,
       'collection' | 'record'
     >,
-    record: Un$Typed<AppBskyGraphList.Record>,
+    record: Un$Typed<AppGndrGraphList.Record>,
     headers?: Record<string, string>,
   ): Promise<{ uri: string; cid: string }> {
     const collection = 'app.gndr.graph.list'
@@ -3200,7 +3200,7 @@ export class AppBskyGraphListRecord {
       ComAtprotoRepoPutRecord.InputSchema,
       'collection' | 'record'
     >,
-    record: Un$Typed<AppBskyGraphList.Record>,
+    record: Un$Typed<AppGndrGraphList.Record>,
     headers?: Record<string, string>,
   ): Promise<{ uri: string; cid: string }> {
     const collection = 'app.gndr.graph.list'
@@ -3226,7 +3226,7 @@ export class AppBskyGraphListRecord {
   }
 }
 
-export class AppBskyGraphListblockRecord {
+export class AppGndrGraphListblockRecord {
   _client: XrpcClient
 
   constructor(client: XrpcClient) {
@@ -3237,7 +3237,7 @@ export class AppBskyGraphListblockRecord {
     params: OmitKey<ComAtprotoRepoListRecords.QueryParams, 'collection'>,
   ): Promise<{
     cursor?: string
-    records: { uri: string; value: AppBskyGraphListblock.Record }[]
+    records: { uri: string; value: AppGndrGraphListblock.Record }[]
   }> {
     const res = await this._client.call('com.atproto.repo.listRecords', {
       collection: 'app.gndr.graph.listblock',
@@ -3251,7 +3251,7 @@ export class AppBskyGraphListblockRecord {
   ): Promise<{
     uri: string
     cid: string
-    value: AppBskyGraphListblock.Record
+    value: AppGndrGraphListblock.Record
   }> {
     const res = await this._client.call('com.atproto.repo.getRecord', {
       collection: 'app.gndr.graph.listblock',
@@ -3265,7 +3265,7 @@ export class AppBskyGraphListblockRecord {
       ComAtprotoRepoCreateRecord.InputSchema,
       'collection' | 'record'
     >,
-    record: Un$Typed<AppBskyGraphListblock.Record>,
+    record: Un$Typed<AppGndrGraphListblock.Record>,
     headers?: Record<string, string>,
   ): Promise<{ uri: string; cid: string }> {
     const collection = 'app.gndr.graph.listblock'
@@ -3283,7 +3283,7 @@ export class AppBskyGraphListblockRecord {
       ComAtprotoRepoPutRecord.InputSchema,
       'collection' | 'record'
     >,
-    record: Un$Typed<AppBskyGraphListblock.Record>,
+    record: Un$Typed<AppGndrGraphListblock.Record>,
     headers?: Record<string, string>,
   ): Promise<{ uri: string; cid: string }> {
     const collection = 'app.gndr.graph.listblock'
@@ -3309,7 +3309,7 @@ export class AppBskyGraphListblockRecord {
   }
 }
 
-export class AppBskyGraphListitemRecord {
+export class AppGndrGraphListitemRecord {
   _client: XrpcClient
 
   constructor(client: XrpcClient) {
@@ -3320,7 +3320,7 @@ export class AppBskyGraphListitemRecord {
     params: OmitKey<ComAtprotoRepoListRecords.QueryParams, 'collection'>,
   ): Promise<{
     cursor?: string
-    records: { uri: string; value: AppBskyGraphListitem.Record }[]
+    records: { uri: string; value: AppGndrGraphListitem.Record }[]
   }> {
     const res = await this._client.call('com.atproto.repo.listRecords', {
       collection: 'app.gndr.graph.listitem',
@@ -3331,7 +3331,7 @@ export class AppBskyGraphListitemRecord {
 
   async get(
     params: OmitKey<ComAtprotoRepoGetRecord.QueryParams, 'collection'>,
-  ): Promise<{ uri: string; cid: string; value: AppBskyGraphListitem.Record }> {
+  ): Promise<{ uri: string; cid: string; value: AppGndrGraphListitem.Record }> {
     const res = await this._client.call('com.atproto.repo.getRecord', {
       collection: 'app.gndr.graph.listitem',
       ...params,
@@ -3344,7 +3344,7 @@ export class AppBskyGraphListitemRecord {
       ComAtprotoRepoCreateRecord.InputSchema,
       'collection' | 'record'
     >,
-    record: Un$Typed<AppBskyGraphListitem.Record>,
+    record: Un$Typed<AppGndrGraphListitem.Record>,
     headers?: Record<string, string>,
   ): Promise<{ uri: string; cid: string }> {
     const collection = 'app.gndr.graph.listitem'
@@ -3362,7 +3362,7 @@ export class AppBskyGraphListitemRecord {
       ComAtprotoRepoPutRecord.InputSchema,
       'collection' | 'record'
     >,
-    record: Un$Typed<AppBskyGraphListitem.Record>,
+    record: Un$Typed<AppGndrGraphListitem.Record>,
     headers?: Record<string, string>,
   ): Promise<{ uri: string; cid: string }> {
     const collection = 'app.gndr.graph.listitem'
@@ -3388,7 +3388,7 @@ export class AppBskyGraphListitemRecord {
   }
 }
 
-export class AppBskyGraphStarterpackRecord {
+export class AppGndrGraphStarterpackRecord {
   _client: XrpcClient
 
   constructor(client: XrpcClient) {
@@ -3399,7 +3399,7 @@ export class AppBskyGraphStarterpackRecord {
     params: OmitKey<ComAtprotoRepoListRecords.QueryParams, 'collection'>,
   ): Promise<{
     cursor?: string
-    records: { uri: string; value: AppBskyGraphStarterpack.Record }[]
+    records: { uri: string; value: AppGndrGraphStarterpack.Record }[]
   }> {
     const res = await this._client.call('com.atproto.repo.listRecords', {
       collection: 'app.gndr.graph.starterpack',
@@ -3413,7 +3413,7 @@ export class AppBskyGraphStarterpackRecord {
   ): Promise<{
     uri: string
     cid: string
-    value: AppBskyGraphStarterpack.Record
+    value: AppGndrGraphStarterpack.Record
   }> {
     const res = await this._client.call('com.atproto.repo.getRecord', {
       collection: 'app.gndr.graph.starterpack',
@@ -3427,7 +3427,7 @@ export class AppBskyGraphStarterpackRecord {
       ComAtprotoRepoCreateRecord.InputSchema,
       'collection' | 'record'
     >,
-    record: Un$Typed<AppBskyGraphStarterpack.Record>,
+    record: Un$Typed<AppGndrGraphStarterpack.Record>,
     headers?: Record<string, string>,
   ): Promise<{ uri: string; cid: string }> {
     const collection = 'app.gndr.graph.starterpack'
@@ -3445,7 +3445,7 @@ export class AppBskyGraphStarterpackRecord {
       ComAtprotoRepoPutRecord.InputSchema,
       'collection' | 'record'
     >,
-    record: Un$Typed<AppBskyGraphStarterpack.Record>,
+    record: Un$Typed<AppGndrGraphStarterpack.Record>,
     headers?: Record<string, string>,
   ): Promise<{ uri: string; cid: string }> {
     const collection = 'app.gndr.graph.starterpack'
@@ -3471,7 +3471,7 @@ export class AppBskyGraphStarterpackRecord {
   }
 }
 
-export class AppBskyGraphVerificationRecord {
+export class AppGndrGraphVerificationRecord {
   _client: XrpcClient
 
   constructor(client: XrpcClient) {
@@ -3482,7 +3482,7 @@ export class AppBskyGraphVerificationRecord {
     params: OmitKey<ComAtprotoRepoListRecords.QueryParams, 'collection'>,
   ): Promise<{
     cursor?: string
-    records: { uri: string; value: AppBskyGraphVerification.Record }[]
+    records: { uri: string; value: AppGndrGraphVerification.Record }[]
   }> {
     const res = await this._client.call('com.atproto.repo.listRecords', {
       collection: 'app.gndr.graph.verification',
@@ -3496,7 +3496,7 @@ export class AppBskyGraphVerificationRecord {
   ): Promise<{
     uri: string
     cid: string
-    value: AppBskyGraphVerification.Record
+    value: AppGndrGraphVerification.Record
   }> {
     const res = await this._client.call('com.atproto.repo.getRecord', {
       collection: 'app.gndr.graph.verification',
@@ -3510,7 +3510,7 @@ export class AppBskyGraphVerificationRecord {
       ComAtprotoRepoCreateRecord.InputSchema,
       'collection' | 'record'
     >,
-    record: Un$Typed<AppBskyGraphVerification.Record>,
+    record: Un$Typed<AppGndrGraphVerification.Record>,
     headers?: Record<string, string>,
   ): Promise<{ uri: string; cid: string }> {
     const collection = 'app.gndr.graph.verification'
@@ -3528,7 +3528,7 @@ export class AppBskyGraphVerificationRecord {
       ComAtprotoRepoPutRecord.InputSchema,
       'collection' | 'record'
     >,
-    record: Un$Typed<AppBskyGraphVerification.Record>,
+    record: Un$Typed<AppGndrGraphVerification.Record>,
     headers?: Record<string, string>,
   ): Promise<{ uri: string; cid: string }> {
     const collection = 'app.gndr.graph.verification'
@@ -3554,19 +3554,19 @@ export class AppBskyGraphVerificationRecord {
   }
 }
 
-export class AppBskyLabelerNS {
+export class AppGndrLabelerNS {
   _client: XrpcClient
-  service: AppBskyLabelerServiceRecord
+  service: AppGndrLabelerServiceRecord
 
   constructor(client: XrpcClient) {
     this._client = client
-    this.service = new AppBskyLabelerServiceRecord(client)
+    this.service = new AppGndrLabelerServiceRecord(client)
   }
 
   getServices(
-    params?: AppBskyLabelerGetServices.QueryParams,
-    opts?: AppBskyLabelerGetServices.CallOptions,
-  ): Promise<AppBskyLabelerGetServices.Response> {
+    params?: AppGndrLabelerGetServices.QueryParams,
+    opts?: AppGndrLabelerGetServices.CallOptions,
+  ): Promise<AppGndrLabelerGetServices.Response> {
     return this._client.call(
       'app.gndr.labeler.getServices',
       params,
@@ -3576,7 +3576,7 @@ export class AppBskyLabelerNS {
   }
 }
 
-export class AppBskyLabelerServiceRecord {
+export class AppGndrLabelerServiceRecord {
   _client: XrpcClient
 
   constructor(client: XrpcClient) {
@@ -3587,7 +3587,7 @@ export class AppBskyLabelerServiceRecord {
     params: OmitKey<ComAtprotoRepoListRecords.QueryParams, 'collection'>,
   ): Promise<{
     cursor?: string
-    records: { uri: string; value: AppBskyLabelerService.Record }[]
+    records: { uri: string; value: AppGndrLabelerService.Record }[]
   }> {
     const res = await this._client.call('com.atproto.repo.listRecords', {
       collection: 'app.gndr.labeler.service',
@@ -3601,7 +3601,7 @@ export class AppBskyLabelerServiceRecord {
   ): Promise<{
     uri: string
     cid: string
-    value: AppBskyLabelerService.Record
+    value: AppGndrLabelerService.Record
   }> {
     const res = await this._client.call('com.atproto.repo.getRecord', {
       collection: 'app.gndr.labeler.service',
@@ -3615,7 +3615,7 @@ export class AppBskyLabelerServiceRecord {
       ComAtprotoRepoCreateRecord.InputSchema,
       'collection' | 'record'
     >,
-    record: Un$Typed<AppBskyLabelerService.Record>,
+    record: Un$Typed<AppGndrLabelerService.Record>,
     headers?: Record<string, string>,
   ): Promise<{ uri: string; cid: string }> {
     const collection = 'app.gndr.labeler.service'
@@ -3638,7 +3638,7 @@ export class AppBskyLabelerServiceRecord {
       ComAtprotoRepoPutRecord.InputSchema,
       'collection' | 'record'
     >,
-    record: Un$Typed<AppBskyLabelerService.Record>,
+    record: Un$Typed<AppGndrLabelerService.Record>,
     headers?: Record<string, string>,
   ): Promise<{ uri: string; cid: string }> {
     const collection = 'app.gndr.labeler.service'
@@ -3664,19 +3664,19 @@ export class AppBskyLabelerServiceRecord {
   }
 }
 
-export class AppBskyNotificationNS {
+export class AppGndrNotificationNS {
   _client: XrpcClient
-  declaration: AppBskyNotificationDeclarationRecord
+  declaration: AppGndrNotificationDeclarationRecord
 
   constructor(client: XrpcClient) {
     this._client = client
-    this.declaration = new AppBskyNotificationDeclarationRecord(client)
+    this.declaration = new AppGndrNotificationDeclarationRecord(client)
   }
 
   getPreferences(
-    params?: AppBskyNotificationGetPreferences.QueryParams,
-    opts?: AppBskyNotificationGetPreferences.CallOptions,
-  ): Promise<AppBskyNotificationGetPreferences.Response> {
+    params?: AppGndrNotificationGetPreferences.QueryParams,
+    opts?: AppGndrNotificationGetPreferences.CallOptions,
+  ): Promise<AppGndrNotificationGetPreferences.Response> {
     return this._client.call(
       'app.gndr.notification.getPreferences',
       params,
@@ -3686,9 +3686,9 @@ export class AppBskyNotificationNS {
   }
 
   getUnreadCount(
-    params?: AppBskyNotificationGetUnreadCount.QueryParams,
-    opts?: AppBskyNotificationGetUnreadCount.CallOptions,
-  ): Promise<AppBskyNotificationGetUnreadCount.Response> {
+    params?: AppGndrNotificationGetUnreadCount.QueryParams,
+    opts?: AppGndrNotificationGetUnreadCount.CallOptions,
+  ): Promise<AppGndrNotificationGetUnreadCount.Response> {
     return this._client.call(
       'app.gndr.notification.getUnreadCount',
       params,
@@ -3698,9 +3698,9 @@ export class AppBskyNotificationNS {
   }
 
   listActivitySubscriptions(
-    params?: AppBskyNotificationListActivitySubscriptions.QueryParams,
-    opts?: AppBskyNotificationListActivitySubscriptions.CallOptions,
-  ): Promise<AppBskyNotificationListActivitySubscriptions.Response> {
+    params?: AppGndrNotificationListActivitySubscriptions.QueryParams,
+    opts?: AppGndrNotificationListActivitySubscriptions.CallOptions,
+  ): Promise<AppGndrNotificationListActivitySubscriptions.Response> {
     return this._client.call(
       'app.gndr.notification.listActivitySubscriptions',
       params,
@@ -3710,9 +3710,9 @@ export class AppBskyNotificationNS {
   }
 
   listNotifications(
-    params?: AppBskyNotificationListNotifications.QueryParams,
-    opts?: AppBskyNotificationListNotifications.CallOptions,
-  ): Promise<AppBskyNotificationListNotifications.Response> {
+    params?: AppGndrNotificationListNotifications.QueryParams,
+    opts?: AppGndrNotificationListNotifications.CallOptions,
+  ): Promise<AppGndrNotificationListNotifications.Response> {
     return this._client.call(
       'app.gndr.notification.listNotifications',
       params,
@@ -3722,9 +3722,9 @@ export class AppBskyNotificationNS {
   }
 
   putActivitySubscription(
-    data?: AppBskyNotificationPutActivitySubscription.InputSchema,
-    opts?: AppBskyNotificationPutActivitySubscription.CallOptions,
-  ): Promise<AppBskyNotificationPutActivitySubscription.Response> {
+    data?: AppGndrNotificationPutActivitySubscription.InputSchema,
+    opts?: AppGndrNotificationPutActivitySubscription.CallOptions,
+  ): Promise<AppGndrNotificationPutActivitySubscription.Response> {
     return this._client.call(
       'app.gndr.notification.putActivitySubscription',
       opts?.qp,
@@ -3734,9 +3734,9 @@ export class AppBskyNotificationNS {
   }
 
   putPreferences(
-    data?: AppBskyNotificationPutPreferences.InputSchema,
-    opts?: AppBskyNotificationPutPreferences.CallOptions,
-  ): Promise<AppBskyNotificationPutPreferences.Response> {
+    data?: AppGndrNotificationPutPreferences.InputSchema,
+    opts?: AppGndrNotificationPutPreferences.CallOptions,
+  ): Promise<AppGndrNotificationPutPreferences.Response> {
     return this._client.call(
       'app.gndr.notification.putPreferences',
       opts?.qp,
@@ -3746,9 +3746,9 @@ export class AppBskyNotificationNS {
   }
 
   putPreferencesV2(
-    data?: AppBskyNotificationPutPreferencesV2.InputSchema,
-    opts?: AppBskyNotificationPutPreferencesV2.CallOptions,
-  ): Promise<AppBskyNotificationPutPreferencesV2.Response> {
+    data?: AppGndrNotificationPutPreferencesV2.InputSchema,
+    opts?: AppGndrNotificationPutPreferencesV2.CallOptions,
+  ): Promise<AppGndrNotificationPutPreferencesV2.Response> {
     return this._client.call(
       'app.gndr.notification.putPreferencesV2',
       opts?.qp,
@@ -3758,9 +3758,9 @@ export class AppBskyNotificationNS {
   }
 
   registerPush(
-    data?: AppBskyNotificationRegisterPush.InputSchema,
-    opts?: AppBskyNotificationRegisterPush.CallOptions,
-  ): Promise<AppBskyNotificationRegisterPush.Response> {
+    data?: AppGndrNotificationRegisterPush.InputSchema,
+    opts?: AppGndrNotificationRegisterPush.CallOptions,
+  ): Promise<AppGndrNotificationRegisterPush.Response> {
     return this._client.call(
       'app.gndr.notification.registerPush',
       opts?.qp,
@@ -3770,9 +3770,9 @@ export class AppBskyNotificationNS {
   }
 
   updateSeen(
-    data?: AppBskyNotificationUpdateSeen.InputSchema,
-    opts?: AppBskyNotificationUpdateSeen.CallOptions,
-  ): Promise<AppBskyNotificationUpdateSeen.Response> {
+    data?: AppGndrNotificationUpdateSeen.InputSchema,
+    opts?: AppGndrNotificationUpdateSeen.CallOptions,
+  ): Promise<AppGndrNotificationUpdateSeen.Response> {
     return this._client.call(
       'app.gndr.notification.updateSeen',
       opts?.qp,
@@ -3782,7 +3782,7 @@ export class AppBskyNotificationNS {
   }
 }
 
-export class AppBskyNotificationDeclarationRecord {
+export class AppGndrNotificationDeclarationRecord {
   _client: XrpcClient
 
   constructor(client: XrpcClient) {
@@ -3793,7 +3793,7 @@ export class AppBskyNotificationDeclarationRecord {
     params: OmitKey<ComAtprotoRepoListRecords.QueryParams, 'collection'>,
   ): Promise<{
     cursor?: string
-    records: { uri: string; value: AppBskyNotificationDeclaration.Record }[]
+    records: { uri: string; value: AppGndrNotificationDeclaration.Record }[]
   }> {
     const res = await this._client.call('com.atproto.repo.listRecords', {
       collection: 'app.gndr.notification.declaration',
@@ -3807,7 +3807,7 @@ export class AppBskyNotificationDeclarationRecord {
   ): Promise<{
     uri: string
     cid: string
-    value: AppBskyNotificationDeclaration.Record
+    value: AppGndrNotificationDeclaration.Record
   }> {
     const res = await this._client.call('com.atproto.repo.getRecord', {
       collection: 'app.gndr.notification.declaration',
@@ -3821,7 +3821,7 @@ export class AppBskyNotificationDeclarationRecord {
       ComAtprotoRepoCreateRecord.InputSchema,
       'collection' | 'record'
     >,
-    record: Un$Typed<AppBskyNotificationDeclaration.Record>,
+    record: Un$Typed<AppGndrNotificationDeclaration.Record>,
     headers?: Record<string, string>,
   ): Promise<{ uri: string; cid: string }> {
     const collection = 'app.gndr.notification.declaration'
@@ -3844,7 +3844,7 @@ export class AppBskyNotificationDeclarationRecord {
       ComAtprotoRepoPutRecord.InputSchema,
       'collection' | 'record'
     >,
-    record: Un$Typed<AppBskyNotificationDeclaration.Record>,
+    record: Un$Typed<AppGndrNotificationDeclaration.Record>,
     headers?: Record<string, string>,
   ): Promise<{ uri: string; cid: string }> {
     const collection = 'app.gndr.notification.declaration'
@@ -3870,7 +3870,7 @@ export class AppBskyNotificationDeclarationRecord {
   }
 }
 
-export class AppBskyRichtextNS {
+export class AppGndrRichtextNS {
   _client: XrpcClient
 
   constructor(client: XrpcClient) {
@@ -3878,7 +3878,7 @@ export class AppBskyRichtextNS {
   }
 }
 
-export class AppBskyUnspeccedNS {
+export class AppGndrUnspeccedNS {
   _client: XrpcClient
 
   constructor(client: XrpcClient) {
@@ -3886,9 +3886,9 @@ export class AppBskyUnspeccedNS {
   }
 
   getConfig(
-    params?: AppBskyUnspeccedGetConfig.QueryParams,
-    opts?: AppBskyUnspeccedGetConfig.CallOptions,
-  ): Promise<AppBskyUnspeccedGetConfig.Response> {
+    params?: AppGndrUnspeccedGetConfig.QueryParams,
+    opts?: AppGndrUnspeccedGetConfig.CallOptions,
+  ): Promise<AppGndrUnspeccedGetConfig.Response> {
     return this._client.call(
       'app.gndr.unspecced.getConfig',
       params,
@@ -3898,9 +3898,9 @@ export class AppBskyUnspeccedNS {
   }
 
   getPopularFeedGenerators(
-    params?: AppBskyUnspeccedGetPopularFeedGenerators.QueryParams,
-    opts?: AppBskyUnspeccedGetPopularFeedGenerators.CallOptions,
-  ): Promise<AppBskyUnspeccedGetPopularFeedGenerators.Response> {
+    params?: AppGndrUnspeccedGetPopularFeedGenerators.QueryParams,
+    opts?: AppGndrUnspeccedGetPopularFeedGenerators.CallOptions,
+  ): Promise<AppGndrUnspeccedGetPopularFeedGenerators.Response> {
     return this._client.call(
       'app.gndr.unspecced.getPopularFeedGenerators',
       params,
@@ -3910,9 +3910,9 @@ export class AppBskyUnspeccedNS {
   }
 
   getPostThreadOtherV2(
-    params?: AppBskyUnspeccedGetPostThreadOtherV2.QueryParams,
-    opts?: AppBskyUnspeccedGetPostThreadOtherV2.CallOptions,
-  ): Promise<AppBskyUnspeccedGetPostThreadOtherV2.Response> {
+    params?: AppGndrUnspeccedGetPostThreadOtherV2.QueryParams,
+    opts?: AppGndrUnspeccedGetPostThreadOtherV2.CallOptions,
+  ): Promise<AppGndrUnspeccedGetPostThreadOtherV2.Response> {
     return this._client.call(
       'app.gndr.unspecced.getPostThreadOtherV2',
       params,
@@ -3922,9 +3922,9 @@ export class AppBskyUnspeccedNS {
   }
 
   getPostThreadV2(
-    params?: AppBskyUnspeccedGetPostThreadV2.QueryParams,
-    opts?: AppBskyUnspeccedGetPostThreadV2.CallOptions,
-  ): Promise<AppBskyUnspeccedGetPostThreadV2.Response> {
+    params?: AppGndrUnspeccedGetPostThreadV2.QueryParams,
+    opts?: AppGndrUnspeccedGetPostThreadV2.CallOptions,
+  ): Promise<AppGndrUnspeccedGetPostThreadV2.Response> {
     return this._client.call(
       'app.gndr.unspecced.getPostThreadV2',
       params,
@@ -3934,9 +3934,9 @@ export class AppBskyUnspeccedNS {
   }
 
   getSuggestedFeeds(
-    params?: AppBskyUnspeccedGetSuggestedFeeds.QueryParams,
-    opts?: AppBskyUnspeccedGetSuggestedFeeds.CallOptions,
-  ): Promise<AppBskyUnspeccedGetSuggestedFeeds.Response> {
+    params?: AppGndrUnspeccedGetSuggestedFeeds.QueryParams,
+    opts?: AppGndrUnspeccedGetSuggestedFeeds.CallOptions,
+  ): Promise<AppGndrUnspeccedGetSuggestedFeeds.Response> {
     return this._client.call(
       'app.gndr.unspecced.getSuggestedFeeds',
       params,
@@ -3946,9 +3946,9 @@ export class AppBskyUnspeccedNS {
   }
 
   getSuggestedFeedsSkeleton(
-    params?: AppBskyUnspeccedGetSuggestedFeedsSkeleton.QueryParams,
-    opts?: AppBskyUnspeccedGetSuggestedFeedsSkeleton.CallOptions,
-  ): Promise<AppBskyUnspeccedGetSuggestedFeedsSkeleton.Response> {
+    params?: AppGndrUnspeccedGetSuggestedFeedsSkeleton.QueryParams,
+    opts?: AppGndrUnspeccedGetSuggestedFeedsSkeleton.CallOptions,
+  ): Promise<AppGndrUnspeccedGetSuggestedFeedsSkeleton.Response> {
     return this._client.call(
       'app.gndr.unspecced.getSuggestedFeedsSkeleton',
       params,
@@ -3958,9 +3958,9 @@ export class AppBskyUnspeccedNS {
   }
 
   getSuggestedStarterPacks(
-    params?: AppBskyUnspeccedGetSuggestedStarterPacks.QueryParams,
-    opts?: AppBskyUnspeccedGetSuggestedStarterPacks.CallOptions,
-  ): Promise<AppBskyUnspeccedGetSuggestedStarterPacks.Response> {
+    params?: AppGndrUnspeccedGetSuggestedStarterPacks.QueryParams,
+    opts?: AppGndrUnspeccedGetSuggestedStarterPacks.CallOptions,
+  ): Promise<AppGndrUnspeccedGetSuggestedStarterPacks.Response> {
     return this._client.call(
       'app.gndr.unspecced.getSuggestedStarterPacks',
       params,
@@ -3970,9 +3970,9 @@ export class AppBskyUnspeccedNS {
   }
 
   getSuggestedStarterPacksSkeleton(
-    params?: AppBskyUnspeccedGetSuggestedStarterPacksSkeleton.QueryParams,
-    opts?: AppBskyUnspeccedGetSuggestedStarterPacksSkeleton.CallOptions,
-  ): Promise<AppBskyUnspeccedGetSuggestedStarterPacksSkeleton.Response> {
+    params?: AppGndrUnspeccedGetSuggestedStarterPacksSkeleton.QueryParams,
+    opts?: AppGndrUnspeccedGetSuggestedStarterPacksSkeleton.CallOptions,
+  ): Promise<AppGndrUnspeccedGetSuggestedStarterPacksSkeleton.Response> {
     return this._client.call(
       'app.gndr.unspecced.getSuggestedStarterPacksSkeleton',
       params,
@@ -3982,9 +3982,9 @@ export class AppBskyUnspeccedNS {
   }
 
   getSuggestedUsers(
-    params?: AppBskyUnspeccedGetSuggestedUsers.QueryParams,
-    opts?: AppBskyUnspeccedGetSuggestedUsers.CallOptions,
-  ): Promise<AppBskyUnspeccedGetSuggestedUsers.Response> {
+    params?: AppGndrUnspeccedGetSuggestedUsers.QueryParams,
+    opts?: AppGndrUnspeccedGetSuggestedUsers.CallOptions,
+  ): Promise<AppGndrUnspeccedGetSuggestedUsers.Response> {
     return this._client.call(
       'app.gndr.unspecced.getSuggestedUsers',
       params,
@@ -3994,9 +3994,9 @@ export class AppBskyUnspeccedNS {
   }
 
   getSuggestedUsersSkeleton(
-    params?: AppBskyUnspeccedGetSuggestedUsersSkeleton.QueryParams,
-    opts?: AppBskyUnspeccedGetSuggestedUsersSkeleton.CallOptions,
-  ): Promise<AppBskyUnspeccedGetSuggestedUsersSkeleton.Response> {
+    params?: AppGndrUnspeccedGetSuggestedUsersSkeleton.QueryParams,
+    opts?: AppGndrUnspeccedGetSuggestedUsersSkeleton.CallOptions,
+  ): Promise<AppGndrUnspeccedGetSuggestedUsersSkeleton.Response> {
     return this._client.call(
       'app.gndr.unspecced.getSuggestedUsersSkeleton',
       params,
@@ -4006,9 +4006,9 @@ export class AppBskyUnspeccedNS {
   }
 
   getSuggestionsSkeleton(
-    params?: AppBskyUnspeccedGetSuggestionsSkeleton.QueryParams,
-    opts?: AppBskyUnspeccedGetSuggestionsSkeleton.CallOptions,
-  ): Promise<AppBskyUnspeccedGetSuggestionsSkeleton.Response> {
+    params?: AppGndrUnspeccedGetSuggestionsSkeleton.QueryParams,
+    opts?: AppGndrUnspeccedGetSuggestionsSkeleton.CallOptions,
+  ): Promise<AppGndrUnspeccedGetSuggestionsSkeleton.Response> {
     return this._client.call(
       'app.gndr.unspecced.getSuggestionsSkeleton',
       params,
@@ -4018,9 +4018,9 @@ export class AppBskyUnspeccedNS {
   }
 
   getTaggedSuggestions(
-    params?: AppBskyUnspeccedGetTaggedSuggestions.QueryParams,
-    opts?: AppBskyUnspeccedGetTaggedSuggestions.CallOptions,
-  ): Promise<AppBskyUnspeccedGetTaggedSuggestions.Response> {
+    params?: AppGndrUnspeccedGetTaggedSuggestions.QueryParams,
+    opts?: AppGndrUnspeccedGetTaggedSuggestions.CallOptions,
+  ): Promise<AppGndrUnspeccedGetTaggedSuggestions.Response> {
     return this._client.call(
       'app.gndr.unspecced.getTaggedSuggestions',
       params,
@@ -4030,9 +4030,9 @@ export class AppBskyUnspeccedNS {
   }
 
   getTrendingTopics(
-    params?: AppBskyUnspeccedGetTrendingTopics.QueryParams,
-    opts?: AppBskyUnspeccedGetTrendingTopics.CallOptions,
-  ): Promise<AppBskyUnspeccedGetTrendingTopics.Response> {
+    params?: AppGndrUnspeccedGetTrendingTopics.QueryParams,
+    opts?: AppGndrUnspeccedGetTrendingTopics.CallOptions,
+  ): Promise<AppGndrUnspeccedGetTrendingTopics.Response> {
     return this._client.call(
       'app.gndr.unspecced.getTrendingTopics',
       params,
@@ -4042,9 +4042,9 @@ export class AppBskyUnspeccedNS {
   }
 
   getTrends(
-    params?: AppBskyUnspeccedGetTrends.QueryParams,
-    opts?: AppBskyUnspeccedGetTrends.CallOptions,
-  ): Promise<AppBskyUnspeccedGetTrends.Response> {
+    params?: AppGndrUnspeccedGetTrends.QueryParams,
+    opts?: AppGndrUnspeccedGetTrends.CallOptions,
+  ): Promise<AppGndrUnspeccedGetTrends.Response> {
     return this._client.call(
       'app.gndr.unspecced.getTrends',
       params,
@@ -4054,9 +4054,9 @@ export class AppBskyUnspeccedNS {
   }
 
   getTrendsSkeleton(
-    params?: AppBskyUnspeccedGetTrendsSkeleton.QueryParams,
-    opts?: AppBskyUnspeccedGetTrendsSkeleton.CallOptions,
-  ): Promise<AppBskyUnspeccedGetTrendsSkeleton.Response> {
+    params?: AppGndrUnspeccedGetTrendsSkeleton.QueryParams,
+    opts?: AppGndrUnspeccedGetTrendsSkeleton.CallOptions,
+  ): Promise<AppGndrUnspeccedGetTrendsSkeleton.Response> {
     return this._client.call(
       'app.gndr.unspecced.getTrendsSkeleton',
       params,
@@ -4066,31 +4066,31 @@ export class AppBskyUnspeccedNS {
   }
 
   searchActorsSkeleton(
-    params?: AppBskyUnspeccedSearchActorsSkeleton.QueryParams,
-    opts?: AppBskyUnspeccedSearchActorsSkeleton.CallOptions,
-  ): Promise<AppBskyUnspeccedSearchActorsSkeleton.Response> {
+    params?: AppGndrUnspeccedSearchActorsSkeleton.QueryParams,
+    opts?: AppGndrUnspeccedSearchActorsSkeleton.CallOptions,
+  ): Promise<AppGndrUnspeccedSearchActorsSkeleton.Response> {
     return this._client
       .call('app.gndr.unspecced.searchActorsSkeleton', params, undefined, opts)
       .catch((e) => {
-        throw AppBskyUnspeccedSearchActorsSkeleton.toKnownErr(e)
+        throw AppGndrUnspeccedSearchActorsSkeleton.toKnownErr(e)
       })
   }
 
   searchPostsSkeleton(
-    params?: AppBskyUnspeccedSearchPostsSkeleton.QueryParams,
-    opts?: AppBskyUnspeccedSearchPostsSkeleton.CallOptions,
-  ): Promise<AppBskyUnspeccedSearchPostsSkeleton.Response> {
+    params?: AppGndrUnspeccedSearchPostsSkeleton.QueryParams,
+    opts?: AppGndrUnspeccedSearchPostsSkeleton.CallOptions,
+  ): Promise<AppGndrUnspeccedSearchPostsSkeleton.Response> {
     return this._client
       .call('app.gndr.unspecced.searchPostsSkeleton', params, undefined, opts)
       .catch((e) => {
-        throw AppBskyUnspeccedSearchPostsSkeleton.toKnownErr(e)
+        throw AppGndrUnspeccedSearchPostsSkeleton.toKnownErr(e)
       })
   }
 
   searchStarterPacksSkeleton(
-    params?: AppBskyUnspeccedSearchStarterPacksSkeleton.QueryParams,
-    opts?: AppBskyUnspeccedSearchStarterPacksSkeleton.CallOptions,
-  ): Promise<AppBskyUnspeccedSearchStarterPacksSkeleton.Response> {
+    params?: AppGndrUnspeccedSearchStarterPacksSkeleton.QueryParams,
+    opts?: AppGndrUnspeccedSearchStarterPacksSkeleton.CallOptions,
+  ): Promise<AppGndrUnspeccedSearchStarterPacksSkeleton.Response> {
     return this._client
       .call(
         'app.gndr.unspecced.searchStarterPacksSkeleton',
@@ -4099,12 +4099,12 @@ export class AppBskyUnspeccedNS {
         opts,
       )
       .catch((e) => {
-        throw AppBskyUnspeccedSearchStarterPacksSkeleton.toKnownErr(e)
+        throw AppGndrUnspeccedSearchStarterPacksSkeleton.toKnownErr(e)
       })
   }
 }
 
-export class AppBskyVideoNS {
+export class AppGndrVideoNS {
   _client: XrpcClient
 
   constructor(client: XrpcClient) {
@@ -4112,9 +4112,9 @@ export class AppBskyVideoNS {
   }
 
   getJobStatus(
-    params?: AppBskyVideoGetJobStatus.QueryParams,
-    opts?: AppBskyVideoGetJobStatus.CallOptions,
-  ): Promise<AppBskyVideoGetJobStatus.Response> {
+    params?: AppGndrVideoGetJobStatus.QueryParams,
+    opts?: AppGndrVideoGetJobStatus.CallOptions,
+  ): Promise<AppGndrVideoGetJobStatus.Response> {
     return this._client.call(
       'app.gndr.video.getJobStatus',
       params,
@@ -4124,9 +4124,9 @@ export class AppBskyVideoNS {
   }
 
   getUploadLimits(
-    params?: AppBskyVideoGetUploadLimits.QueryParams,
-    opts?: AppBskyVideoGetUploadLimits.CallOptions,
-  ): Promise<AppBskyVideoGetUploadLimits.Response> {
+    params?: AppGndrVideoGetUploadLimits.QueryParams,
+    opts?: AppGndrVideoGetUploadLimits.CallOptions,
+  ): Promise<AppGndrVideoGetUploadLimits.Response> {
     return this._client.call(
       'app.gndr.video.getUploadLimits',
       params,
@@ -4136,50 +4136,50 @@ export class AppBskyVideoNS {
   }
 
   uploadVideo(
-    data?: AppBskyVideoUploadVideo.InputSchema,
-    opts?: AppBskyVideoUploadVideo.CallOptions,
-  ): Promise<AppBskyVideoUploadVideo.Response> {
+    data?: AppGndrVideoUploadVideo.InputSchema,
+    opts?: AppGndrVideoUploadVideo.CallOptions,
+  ): Promise<AppGndrVideoUploadVideo.Response> {
     return this._client.call('app.gndr.video.uploadVideo', opts?.qp, data, opts)
   }
 }
 
 export class ChatNS {
   _client: XrpcClient
-  gndr: ChatBskyNS
+  gndr: ChatGndrNS
 
   constructor(client: XrpcClient) {
     this._client = client
-    this.gndr = new ChatBskyNS(client)
+    this.gndr = new ChatGndrNS(client)
   }
 }
 
-export class ChatBskyNS {
+export class ChatGndrNS {
   _client: XrpcClient
-  actor: ChatBskyActorNS
-  convo: ChatBskyConvoNS
-  moderation: ChatBskyModerationNS
+  actor: ChatGndrActorNS
+  convo: ChatGndrConvoNS
+  moderation: ChatGndrModerationNS
 
   constructor(client: XrpcClient) {
     this._client = client
-    this.actor = new ChatBskyActorNS(client)
-    this.convo = new ChatBskyConvoNS(client)
-    this.moderation = new ChatBskyModerationNS(client)
+    this.actor = new ChatGndrActorNS(client)
+    this.convo = new ChatGndrConvoNS(client)
+    this.moderation = new ChatGndrModerationNS(client)
   }
 }
 
-export class ChatBskyActorNS {
+export class ChatGndrActorNS {
   _client: XrpcClient
-  declaration: ChatBskyActorDeclarationRecord
+  declaration: ChatGndrActorDeclarationRecord
 
   constructor(client: XrpcClient) {
     this._client = client
-    this.declaration = new ChatBskyActorDeclarationRecord(client)
+    this.declaration = new ChatGndrActorDeclarationRecord(client)
   }
 
   deleteAccount(
-    data?: ChatBskyActorDeleteAccount.InputSchema,
-    opts?: ChatBskyActorDeleteAccount.CallOptions,
-  ): Promise<ChatBskyActorDeleteAccount.Response> {
+    data?: ChatGndrActorDeleteAccount.InputSchema,
+    opts?: ChatGndrActorDeleteAccount.CallOptions,
+  ): Promise<ChatGndrActorDeleteAccount.Response> {
     return this._client.call(
       'chat.gndr.actor.deleteAccount',
       opts?.qp,
@@ -4189,9 +4189,9 @@ export class ChatBskyActorNS {
   }
 
   exportAccountData(
-    params?: ChatBskyActorExportAccountData.QueryParams,
-    opts?: ChatBskyActorExportAccountData.CallOptions,
-  ): Promise<ChatBskyActorExportAccountData.Response> {
+    params?: ChatGndrActorExportAccountData.QueryParams,
+    opts?: ChatGndrActorExportAccountData.CallOptions,
+  ): Promise<ChatGndrActorExportAccountData.Response> {
     return this._client.call(
       'chat.gndr.actor.exportAccountData',
       params,
@@ -4201,7 +4201,7 @@ export class ChatBskyActorNS {
   }
 }
 
-export class ChatBskyActorDeclarationRecord {
+export class ChatGndrActorDeclarationRecord {
   _client: XrpcClient
 
   constructor(client: XrpcClient) {
@@ -4212,7 +4212,7 @@ export class ChatBskyActorDeclarationRecord {
     params: OmitKey<ComAtprotoRepoListRecords.QueryParams, 'collection'>,
   ): Promise<{
     cursor?: string
-    records: { uri: string; value: ChatBskyActorDeclaration.Record }[]
+    records: { uri: string; value: ChatGndrActorDeclaration.Record }[]
   }> {
     const res = await this._client.call('com.atproto.repo.listRecords', {
       collection: 'chat.gndr.actor.declaration',
@@ -4226,7 +4226,7 @@ export class ChatBskyActorDeclarationRecord {
   ): Promise<{
     uri: string
     cid: string
-    value: ChatBskyActorDeclaration.Record
+    value: ChatGndrActorDeclaration.Record
   }> {
     const res = await this._client.call('com.atproto.repo.getRecord', {
       collection: 'chat.gndr.actor.declaration',
@@ -4240,7 +4240,7 @@ export class ChatBskyActorDeclarationRecord {
       ComAtprotoRepoCreateRecord.InputSchema,
       'collection' | 'record'
     >,
-    record: Un$Typed<ChatBskyActorDeclaration.Record>,
+    record: Un$Typed<ChatGndrActorDeclaration.Record>,
     headers?: Record<string, string>,
   ): Promise<{ uri: string; cid: string }> {
     const collection = 'chat.gndr.actor.declaration'
@@ -4263,7 +4263,7 @@ export class ChatBskyActorDeclarationRecord {
       ComAtprotoRepoPutRecord.InputSchema,
       'collection' | 'record'
     >,
-    record: Un$Typed<ChatBskyActorDeclaration.Record>,
+    record: Un$Typed<ChatGndrActorDeclaration.Record>,
     headers?: Record<string, string>,
   ): Promise<{ uri: string; cid: string }> {
     const collection = 'chat.gndr.actor.declaration'
@@ -4289,7 +4289,7 @@ export class ChatBskyActorDeclarationRecord {
   }
 }
 
-export class ChatBskyConvoNS {
+export class ChatGndrConvoNS {
   _client: XrpcClient
 
   constructor(client: XrpcClient) {
@@ -4297,9 +4297,9 @@ export class ChatBskyConvoNS {
   }
 
   acceptConvo(
-    data?: ChatBskyConvoAcceptConvo.InputSchema,
-    opts?: ChatBskyConvoAcceptConvo.CallOptions,
-  ): Promise<ChatBskyConvoAcceptConvo.Response> {
+    data?: ChatGndrConvoAcceptConvo.InputSchema,
+    opts?: ChatGndrConvoAcceptConvo.CallOptions,
+  ): Promise<ChatGndrConvoAcceptConvo.Response> {
     return this._client.call(
       'chat.gndr.convo.acceptConvo',
       opts?.qp,
@@ -4309,20 +4309,20 @@ export class ChatBskyConvoNS {
   }
 
   addReaction(
-    data?: ChatBskyConvoAddReaction.InputSchema,
-    opts?: ChatBskyConvoAddReaction.CallOptions,
-  ): Promise<ChatBskyConvoAddReaction.Response> {
+    data?: ChatGndrConvoAddReaction.InputSchema,
+    opts?: ChatGndrConvoAddReaction.CallOptions,
+  ): Promise<ChatGndrConvoAddReaction.Response> {
     return this._client
       .call('chat.gndr.convo.addReaction', opts?.qp, data, opts)
       .catch((e) => {
-        throw ChatBskyConvoAddReaction.toKnownErr(e)
+        throw ChatGndrConvoAddReaction.toKnownErr(e)
       })
   }
 
   deleteMessageForSelf(
-    data?: ChatBskyConvoDeleteMessageForSelf.InputSchema,
-    opts?: ChatBskyConvoDeleteMessageForSelf.CallOptions,
-  ): Promise<ChatBskyConvoDeleteMessageForSelf.Response> {
+    data?: ChatGndrConvoDeleteMessageForSelf.InputSchema,
+    opts?: ChatGndrConvoDeleteMessageForSelf.CallOptions,
+  ): Promise<ChatGndrConvoDeleteMessageForSelf.Response> {
     return this._client.call(
       'chat.gndr.convo.deleteMessageForSelf',
       opts?.qp,
@@ -4332,9 +4332,9 @@ export class ChatBskyConvoNS {
   }
 
   getConvo(
-    params?: ChatBskyConvoGetConvo.QueryParams,
-    opts?: ChatBskyConvoGetConvo.CallOptions,
-  ): Promise<ChatBskyConvoGetConvo.Response> {
+    params?: ChatGndrConvoGetConvo.QueryParams,
+    opts?: ChatGndrConvoGetConvo.CallOptions,
+  ): Promise<ChatGndrConvoGetConvo.Response> {
     return this._client.call(
       'chat.gndr.convo.getConvo',
       params,
@@ -4344,9 +4344,9 @@ export class ChatBskyConvoNS {
   }
 
   getConvoAvailability(
-    params?: ChatBskyConvoGetConvoAvailability.QueryParams,
-    opts?: ChatBskyConvoGetConvoAvailability.CallOptions,
-  ): Promise<ChatBskyConvoGetConvoAvailability.Response> {
+    params?: ChatGndrConvoGetConvoAvailability.QueryParams,
+    opts?: ChatGndrConvoGetConvoAvailability.CallOptions,
+  ): Promise<ChatGndrConvoGetConvoAvailability.Response> {
     return this._client.call(
       'chat.gndr.convo.getConvoAvailability',
       params,
@@ -4356,9 +4356,9 @@ export class ChatBskyConvoNS {
   }
 
   getConvoForMembers(
-    params?: ChatBskyConvoGetConvoForMembers.QueryParams,
-    opts?: ChatBskyConvoGetConvoForMembers.CallOptions,
-  ): Promise<ChatBskyConvoGetConvoForMembers.Response> {
+    params?: ChatGndrConvoGetConvoForMembers.QueryParams,
+    opts?: ChatGndrConvoGetConvoForMembers.CallOptions,
+  ): Promise<ChatGndrConvoGetConvoForMembers.Response> {
     return this._client.call(
       'chat.gndr.convo.getConvoForMembers',
       params,
@@ -4368,16 +4368,16 @@ export class ChatBskyConvoNS {
   }
 
   getLog(
-    params?: ChatBskyConvoGetLog.QueryParams,
-    opts?: ChatBskyConvoGetLog.CallOptions,
-  ): Promise<ChatBskyConvoGetLog.Response> {
+    params?: ChatGndrConvoGetLog.QueryParams,
+    opts?: ChatGndrConvoGetLog.CallOptions,
+  ): Promise<ChatGndrConvoGetLog.Response> {
     return this._client.call('chat.gndr.convo.getLog', params, undefined, opts)
   }
 
   getMessages(
-    params?: ChatBskyConvoGetMessages.QueryParams,
-    opts?: ChatBskyConvoGetMessages.CallOptions,
-  ): Promise<ChatBskyConvoGetMessages.Response> {
+    params?: ChatGndrConvoGetMessages.QueryParams,
+    opts?: ChatGndrConvoGetMessages.CallOptions,
+  ): Promise<ChatGndrConvoGetMessages.Response> {
     return this._client.call(
       'chat.gndr.convo.getMessages',
       params,
@@ -4387,16 +4387,16 @@ export class ChatBskyConvoNS {
   }
 
   leaveConvo(
-    data?: ChatBskyConvoLeaveConvo.InputSchema,
-    opts?: ChatBskyConvoLeaveConvo.CallOptions,
-  ): Promise<ChatBskyConvoLeaveConvo.Response> {
+    data?: ChatGndrConvoLeaveConvo.InputSchema,
+    opts?: ChatGndrConvoLeaveConvo.CallOptions,
+  ): Promise<ChatGndrConvoLeaveConvo.Response> {
     return this._client.call('chat.gndr.convo.leaveConvo', opts?.qp, data, opts)
   }
 
   listConvos(
-    params?: ChatBskyConvoListConvos.QueryParams,
-    opts?: ChatBskyConvoListConvos.CallOptions,
-  ): Promise<ChatBskyConvoListConvos.Response> {
+    params?: ChatGndrConvoListConvos.QueryParams,
+    opts?: ChatGndrConvoListConvos.CallOptions,
+  ): Promise<ChatGndrConvoListConvos.Response> {
     return this._client.call(
       'chat.gndr.convo.listConvos',
       params,
@@ -4406,27 +4406,27 @@ export class ChatBskyConvoNS {
   }
 
   muteConvo(
-    data?: ChatBskyConvoMuteConvo.InputSchema,
-    opts?: ChatBskyConvoMuteConvo.CallOptions,
-  ): Promise<ChatBskyConvoMuteConvo.Response> {
+    data?: ChatGndrConvoMuteConvo.InputSchema,
+    opts?: ChatGndrConvoMuteConvo.CallOptions,
+  ): Promise<ChatGndrConvoMuteConvo.Response> {
     return this._client.call('chat.gndr.convo.muteConvo', opts?.qp, data, opts)
   }
 
   removeReaction(
-    data?: ChatBskyConvoRemoveReaction.InputSchema,
-    opts?: ChatBskyConvoRemoveReaction.CallOptions,
-  ): Promise<ChatBskyConvoRemoveReaction.Response> {
+    data?: ChatGndrConvoRemoveReaction.InputSchema,
+    opts?: ChatGndrConvoRemoveReaction.CallOptions,
+  ): Promise<ChatGndrConvoRemoveReaction.Response> {
     return this._client
       .call('chat.gndr.convo.removeReaction', opts?.qp, data, opts)
       .catch((e) => {
-        throw ChatBskyConvoRemoveReaction.toKnownErr(e)
+        throw ChatGndrConvoRemoveReaction.toKnownErr(e)
       })
   }
 
   sendMessage(
-    data?: ChatBskyConvoSendMessage.InputSchema,
-    opts?: ChatBskyConvoSendMessage.CallOptions,
-  ): Promise<ChatBskyConvoSendMessage.Response> {
+    data?: ChatGndrConvoSendMessage.InputSchema,
+    opts?: ChatGndrConvoSendMessage.CallOptions,
+  ): Promise<ChatGndrConvoSendMessage.Response> {
     return this._client.call(
       'chat.gndr.convo.sendMessage',
       opts?.qp,
@@ -4436,9 +4436,9 @@ export class ChatBskyConvoNS {
   }
 
   sendMessageBatch(
-    data?: ChatBskyConvoSendMessageBatch.InputSchema,
-    opts?: ChatBskyConvoSendMessageBatch.CallOptions,
-  ): Promise<ChatBskyConvoSendMessageBatch.Response> {
+    data?: ChatGndrConvoSendMessageBatch.InputSchema,
+    opts?: ChatGndrConvoSendMessageBatch.CallOptions,
+  ): Promise<ChatGndrConvoSendMessageBatch.Response> {
     return this._client.call(
       'chat.gndr.convo.sendMessageBatch',
       opts?.qp,
@@ -4448,9 +4448,9 @@ export class ChatBskyConvoNS {
   }
 
   unmuteConvo(
-    data?: ChatBskyConvoUnmuteConvo.InputSchema,
-    opts?: ChatBskyConvoUnmuteConvo.CallOptions,
-  ): Promise<ChatBskyConvoUnmuteConvo.Response> {
+    data?: ChatGndrConvoUnmuteConvo.InputSchema,
+    opts?: ChatGndrConvoUnmuteConvo.CallOptions,
+  ): Promise<ChatGndrConvoUnmuteConvo.Response> {
     return this._client.call(
       'chat.gndr.convo.unmuteConvo',
       opts?.qp,
@@ -4460,9 +4460,9 @@ export class ChatBskyConvoNS {
   }
 
   updateAllRead(
-    data?: ChatBskyConvoUpdateAllRead.InputSchema,
-    opts?: ChatBskyConvoUpdateAllRead.CallOptions,
-  ): Promise<ChatBskyConvoUpdateAllRead.Response> {
+    data?: ChatGndrConvoUpdateAllRead.InputSchema,
+    opts?: ChatGndrConvoUpdateAllRead.CallOptions,
+  ): Promise<ChatGndrConvoUpdateAllRead.Response> {
     return this._client.call(
       'chat.gndr.convo.updateAllRead',
       opts?.qp,
@@ -4472,14 +4472,14 @@ export class ChatBskyConvoNS {
   }
 
   updateRead(
-    data?: ChatBskyConvoUpdateRead.InputSchema,
-    opts?: ChatBskyConvoUpdateRead.CallOptions,
-  ): Promise<ChatBskyConvoUpdateRead.Response> {
+    data?: ChatGndrConvoUpdateRead.InputSchema,
+    opts?: ChatGndrConvoUpdateRead.CallOptions,
+  ): Promise<ChatGndrConvoUpdateRead.Response> {
     return this._client.call('chat.gndr.convo.updateRead', opts?.qp, data, opts)
   }
 }
 
-export class ChatBskyModerationNS {
+export class ChatGndrModerationNS {
   _client: XrpcClient
 
   constructor(client: XrpcClient) {
@@ -4487,9 +4487,9 @@ export class ChatBskyModerationNS {
   }
 
   getActorMetadata(
-    params?: ChatBskyModerationGetActorMetadata.QueryParams,
-    opts?: ChatBskyModerationGetActorMetadata.CallOptions,
-  ): Promise<ChatBskyModerationGetActorMetadata.Response> {
+    params?: ChatGndrModerationGetActorMetadata.QueryParams,
+    opts?: ChatGndrModerationGetActorMetadata.CallOptions,
+  ): Promise<ChatGndrModerationGetActorMetadata.Response> {
     return this._client.call(
       'chat.gndr.moderation.getActorMetadata',
       params,
@@ -4499,9 +4499,9 @@ export class ChatBskyModerationNS {
   }
 
   getMessageContext(
-    params?: ChatBskyModerationGetMessageContext.QueryParams,
-    opts?: ChatBskyModerationGetMessageContext.CallOptions,
-  ): Promise<ChatBskyModerationGetMessageContext.Response> {
+    params?: ChatGndrModerationGetMessageContext.QueryParams,
+    opts?: ChatGndrModerationGetMessageContext.CallOptions,
+  ): Promise<ChatGndrModerationGetMessageContext.Response> {
     return this._client.call(
       'chat.gndr.moderation.getMessageContext',
       params,
@@ -4511,9 +4511,9 @@ export class ChatBskyModerationNS {
   }
 
   updateActorAccess(
-    data?: ChatBskyModerationUpdateActorAccess.InputSchema,
-    opts?: ChatBskyModerationUpdateActorAccess.CallOptions,
-  ): Promise<ChatBskyModerationUpdateActorAccess.Response> {
+    data?: ChatGndrModerationUpdateActorAccess.InputSchema,
+    opts?: ChatGndrModerationUpdateActorAccess.CallOptions,
+  ): Promise<ChatGndrModerationUpdateActorAccess.Response> {
     return this._client.call(
       'chat.gndr.moderation.updateActorAccess',
       opts?.qp,

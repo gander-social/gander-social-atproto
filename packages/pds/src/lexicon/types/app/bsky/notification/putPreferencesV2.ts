@@ -9,7 +9,7 @@ import {
   is$typed as _is$typed,
   type OmitKey,
 } from '../../../../util'
-import type * as AppBskyNotificationDefs from './defs.js'
+import type * as AppGndrNotificationDefs from './defs.js'
 
 const is$typed = _is$typed,
   validate = _validate
@@ -18,23 +18,23 @@ const id = 'app.gndr.notification.putPreferencesV2'
 export type QueryParams = {}
 
 export interface InputSchema {
-  chat?: AppBskyNotificationDefs.ChatPreference
-  follow?: AppBskyNotificationDefs.FilterablePreference
-  like?: AppBskyNotificationDefs.FilterablePreference
-  likeViaRepost?: AppBskyNotificationDefs.FilterablePreference
-  mention?: AppBskyNotificationDefs.FilterablePreference
-  quote?: AppBskyNotificationDefs.FilterablePreference
-  reply?: AppBskyNotificationDefs.FilterablePreference
-  repost?: AppBskyNotificationDefs.FilterablePreference
-  repostViaRepost?: AppBskyNotificationDefs.FilterablePreference
-  starterpackJoined?: AppBskyNotificationDefs.Preference
-  subscribedPost?: AppBskyNotificationDefs.Preference
-  unverified?: AppBskyNotificationDefs.Preference
-  verified?: AppBskyNotificationDefs.Preference
+  chat?: AppGndrNotificationDefs.ChatPreference
+  follow?: AppGndrNotificationDefs.FilterablePreference
+  like?: AppGndrNotificationDefs.FilterablePreference
+  likeViaRepost?: AppGndrNotificationDefs.FilterablePreference
+  mention?: AppGndrNotificationDefs.FilterablePreference
+  quote?: AppGndrNotificationDefs.FilterablePreference
+  reply?: AppGndrNotificationDefs.FilterablePreference
+  repost?: AppGndrNotificationDefs.FilterablePreference
+  repostViaRepost?: AppGndrNotificationDefs.FilterablePreference
+  starterpackJoined?: AppGndrNotificationDefs.Preference
+  subscribedPost?: AppGndrNotificationDefs.Preference
+  unverified?: AppGndrNotificationDefs.Preference
+  verified?: AppGndrNotificationDefs.Preference
 }
 
 export interface OutputSchema {
-  preferences: AppBskyNotificationDefs.Preferences
+  preferences: AppGndrNotificationDefs.Preferences
 }
 
 export interface HandlerInput {

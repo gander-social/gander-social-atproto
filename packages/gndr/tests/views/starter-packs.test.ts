@@ -140,7 +140,7 @@ describe('starter packs', () => {
       {
         headers: await network.serviceHeaders(
           sc.dids.alice,
-          ids.AppBskyNotificationListNotifications,
+          ids.AppGndrNotificationListNotifications,
         ),
       },
     )
@@ -163,7 +163,7 @@ describe('starter packs', () => {
       {
         headers: await network.serviceHeaders(
           sc.dids.frankie,
-          ids.AppBskyGraphGetStarterPack,
+          ids.AppGndrGraphGetStarterPack,
         ),
       },
     )
@@ -179,7 +179,7 @@ describe('starter packs', () => {
       {
         headers: await network.serviceHeaders(
           sc.dids.bob,
-          ids.AppBskyGraphGetStarterPack,
+          ids.AppGndrGraphGetStarterPack,
         ),
       },
     )
@@ -201,7 +201,7 @@ describe('starter packs', () => {
       {
         headers: await network.serviceHeaders(
           sc.dids.alice,
-          ids.AppBskyGraphGetStarterPack,
+          ids.AppGndrGraphGetStarterPack,
         ),
       },
     )
@@ -252,7 +252,7 @@ describe('starter packs', () => {
         {
           headers: await network.serviceHeaders(
             sc.dids.frankie,
-            ids.AppBskyGraphSearchStarterPacks,
+            ids.AppGndrGraphSearchStarterPacks,
           ),
         },
       )

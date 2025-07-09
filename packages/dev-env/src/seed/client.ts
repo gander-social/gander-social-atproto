@@ -2,14 +2,14 @@ import fs from 'node:fs/promises'
 import path from 'node:path'
 import { CID } from 'multiformats/cid'
 import {
-  AppBskyFeedLike,
-  AppBskyFeedPost,
-  AppBskyFeedRepost,
-  AppBskyGraphBlock,
-  AppBskyGraphFollow,
-  AppBskyGraphList,
-  AppBskyGraphVerification,
-  AppBskyRichtextFacet,
+  AppGndrFeedLike,
+  AppGndrFeedPost,
+  AppGndrFeedRepost,
+  AppGndrGraphBlock,
+  AppGndrGraphFollow,
+  AppGndrGraphList,
+  AppGndrGraphVerification,
+  AppGndrRichtextFacet,
   AtpAgent,
   ComAtprotoModerationCreateReport,
 } from '@atproto/api'
@@ -242,7 +242,7 @@ export class SeedClient<
   async follow(
     from: string,
     to: string,
-    overrides?: Partial<AppBskyGraphFollow.Record>,
+    overrides?: Partial<AppGndrGraphFollow.Record>,
   ) {
     const res = await this.agent.app.gndr.graph.follow.create(
       { repo: from },
@@ -273,7 +273,7 @@ export class SeedClient<
   async block(
     from: string,
     to: string,
-    overrides?: Partial<AppBskyGraphBlock.Record>,
+    overrides?: Partial<AppGndrGraphBlock.Record>,
   ) {
     const res = await this.agent.app.gndr.graph.block.create(
       { repo: from },
@@ -316,10 +316,10 @@ export class SeedClient<
   async post(
     by: string,
     text: string,
-    facets?: AppBskyRichtextFacet.Main[],
+    facets?: AppGndrRichtextFacet.Main[],
     images?: ImageRef[],
     quote?: RecordRef,
-    overrides?: Partial<AppBskyFeedPost.Record>,
+    overrides?: Partial<AppGndrFeedPost.Record>,
   ) {
     const imageEmbed = images && {
       $type: 'app.gndr.embed.images',
@@ -386,7 +386,7 @@ export class SeedClient<
   async like(
     by: string,
     subject: RecordRef,
-    overrides?: Partial<AppBskyFeedLike.Record>,
+    overrides?: Partial<AppGndrFeedLike.Record>,
   ) {
     const res = await this.agent.app.gndr.feed.like.create(
       { repo: by },
@@ -407,9 +407,9 @@ export class SeedClient<
     root: RecordRef,
     parent: RecordRef,
     text: string,
-    facets?: AppBskyRichtextFacet.Main[],
+    facets?: AppGndrRichtextFacet.Main[],
     images?: ImageRef[],
-    overrides?: Partial<AppBskyFeedPost.Record>,
+    overrides?: Partial<AppGndrFeedPost.Record>,
   ) {
     const embed = images
       ? {
@@ -445,7 +445,7 @@ export class SeedClient<
   async repost(
     by: string,
     subject: RecordRef,
-    overrides?: Partial<AppBskyFeedRepost.Record>,
+    overrides?: Partial<AppGndrFeedRepost.Record>,
   ) {
     const res = await this.agent.app.gndr.feed.repost.create(
       { repo: by },
@@ -466,7 +466,7 @@ export class SeedClient<
     by: string,
     name: string,
     purpose: 'mod' | 'curate' | 'reference',
-    overrides?: Partial<AppBskyGraphList.Record>,
+    overrides?: Partial<AppGndrGraphList.Record>,
   ) {
     const res = await this.agent.app.gndr.graph.list.create(
       { repo: by },
@@ -590,7 +590,7 @@ export class SeedClient<
     subject: string,
     handle: string,
     displayName: string,
-    overrides?: Partial<AppBskyGraphVerification.Record>,
+    overrides?: Partial<AppGndrGraphVerification.Record>,
   ) {
     const res = await this.agent.app.gndr.graph.verification.create(
       { repo: by },

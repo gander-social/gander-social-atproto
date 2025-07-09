@@ -204,27 +204,27 @@ describe('moderation-statuses', () => {
         onlyPostStatuses,
       ] = await Promise.all([
         modClient.queryStatuses({
-          collections: ['app.bsky.graph.starterpack'],
+          collections: ['app.gndr.graph.starterpack'],
         }),
         modClient.queryStatuses({
           subject: sc.dids.alice,
           includeAllUserRecords: true,
-          collections: ['app.bsky.graph.starterpack'],
+          collections: ['app.gndr.graph.starterpack'],
         }),
         modClient.queryStatuses({
           subject: sc.dids.bob,
           includeAllUserRecords: true,
-          collections: ['app.bsky.graph.starterpack'],
+          collections: ['app.gndr.graph.starterpack'],
         }),
         modClient.queryStatuses({
-          collections: ['app.bsky.feed.post'],
+          collections: ['app.gndr.feed.post'],
         }),
       ])
 
       expect(onlyStarterPackStatuses.subjectStatuses.length).toEqual(1)
       assert(isStrongRef(onlyStarterPackStatuses.subjectStatuses[0].subject))
       expect(onlyStarterPackStatuses.subjectStatuses[0].subject.uri).toContain(
-        'app.bsky.graph.starterpack',
+        'app.gndr.graph.starterpack',
       )
       expect(onlyAlicesStarterPackStatuses.subjectStatuses.length).toEqual(1)
       assert(

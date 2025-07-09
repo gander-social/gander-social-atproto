@@ -43,7 +43,7 @@ describe.skip('pds actor search views', () => {
     await network.processAll(50000)
     headers = await network.serviceHeaders(
       Object.values(sc.dids)[0],
-      ids.AppBskyActorSearchActorsTypeahead,
+      ids.AppGndrActorSearchActorsTypeahead,
     )
   })
 

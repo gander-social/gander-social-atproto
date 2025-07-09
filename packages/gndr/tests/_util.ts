@@ -2,7 +2,7 @@ import { Server } from 'node:http'
 import { AddressInfo } from 'node:net'
 import { type Express } from 'express'
 import { CID } from 'multiformats/cid'
-import { AppBskyFeedGetPostThread } from '@atproto/api'
+import { AppGndrFeedGetPostThread } from '@atproto/api'
 import { lexToJson } from '@atproto/lexicon'
 import { AtUri } from '@atproto/syntax'
 import {
@@ -25,7 +25,7 @@ import {
 import { $Typed } from '../src/lexicon/util'
 
 type ThreadViewPost = Extract<
-  AppBskyFeedGetPostThread.OutputSchema['thread'],
+  AppGndrFeedGetPostThread.OutputSchema['thread'],
   { post: { uri: string } }
 >
 

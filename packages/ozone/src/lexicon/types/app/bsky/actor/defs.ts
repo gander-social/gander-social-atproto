@@ -536,11 +536,11 @@ export function validateGndrAppStatePref<V>(v: V) {
 
 /** If set, an active progress guide. Once completed, can be set to undefined. Should have unspecced fields tracking progress. */
 export interface GndrAppProgressGuide {
-  $type?: 'app.gndr.actor.defs#bskyAppProgressGuide'
+  $type?: 'app.gndr.actor.defs#gndrAppProgressGuide'
   guide: string
 }
 
-const hashGndrAppProgressGuide = 'bskyAppProgressGuide'
+const hashGndrAppProgressGuide = 'gndrAppProgressGuide'
 
 export function isGndrAppProgressGuide<V>(v: V) {
   return is$typed(v, id, hashGndrAppProgressGuide)

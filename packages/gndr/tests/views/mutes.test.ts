@@ -48,7 +48,7 @@ describe('mute views', () => {
         {
           headers: await network.serviceHeaders(
             alice,
-            ids.AppBskyGraphMuteActor,
+            ids.AppGndrGraphMuteActor,
           ),
           encoding: 'application/json',
         },
@@ -66,7 +66,7 @@ describe('mute views', () => {
       {
         headers: await network.serviceHeaders(
           alice,
-          ids.AppBskyFeedGetPostThread,
+          ids.AppGndrFeedGetPostThread,
         ),
       },
     )
@@ -83,7 +83,7 @@ describe('mute views', () => {
       {
         headers: await network.serviceHeaders(
           alice,
-          ids.AppBskyFeedGetAuthorFeed,
+          ids.AppGndrFeedGetAuthorFeed,
         ),
       },
     )
@@ -98,7 +98,7 @@ describe('mute views', () => {
       {
         headers: await network.serviceHeaders(
           alice,
-          ids.AppBskyFeedGetTimeline,
+          ids.AppGndrFeedGetTimeline,
         ),
       },
     )
@@ -117,7 +117,7 @@ describe('mute views', () => {
       {
         headers: await network.serviceHeaders(
           alice,
-          ids.AppBskyFeedGetListFeed,
+          ids.AppGndrFeedGetListFeed,
         ),
       },
     )
@@ -132,7 +132,7 @@ describe('mute views', () => {
       {
         headers: await network.serviceHeaders(
           alice,
-          ids.AppBskyActorGetProfile,
+          ids.AppGndrActorGetProfile,
         ),
       },
     )
@@ -145,7 +145,7 @@ describe('mute views', () => {
       {
         headers: await network.serviceHeaders(
           alice,
-          ids.AppBskyActorGetProfiles,
+          ids.AppGndrActorGetProfiles,
         ),
       },
     )
@@ -162,7 +162,7 @@ describe('mute views', () => {
       {
         headers: await network.serviceHeaders(
           alice,
-          ids.AppBskyNotificationListNotifications,
+          ids.AppGndrNotificationListNotifications,
         ),
       },
     )
@@ -187,7 +187,7 @@ describe('mute views', () => {
       {
         headers: await network.serviceHeaders(
           alice,
-          ids.AppBskyActorGetSuggestions,
+          ids.AppGndrActorGetSuggestions,
         ),
       },
     )
@@ -204,7 +204,7 @@ describe('mute views', () => {
     const { data: view } = await agent.api.app.gndr.graph.getMutes(
       {},
       {
-        headers: await network.serviceHeaders(alice, ids.AppBskyGraphGetMutes),
+        headers: await network.serviceHeaders(alice, ids.AppGndrGraphGetMutes),
       },
     )
     expect(forSnapshot(view.mutes)).toMatchSnapshot()
@@ -218,7 +218,7 @@ describe('mute views', () => {
         {
           headers: await network.serviceHeaders(
             alice,
-            ids.AppBskyGraphGetMutes,
+            ids.AppGndrGraphGetMutes,
           ),
         },
       )
@@ -233,7 +233,7 @@ describe('mute views', () => {
     const full = await agent.api.app.gndr.graph.getMutes(
       {},
       {
-        headers: await network.serviceHeaders(alice, ids.AppBskyGraphGetMutes),
+        headers: await network.serviceHeaders(alice, ids.AppGndrGraphGetMutes),
       },
     )
 
@@ -245,7 +245,7 @@ describe('mute views', () => {
     const { data: initial } = await agent.api.app.gndr.graph.getMutes(
       {},
       {
-        headers: await network.serviceHeaders(alice, ids.AppBskyGraphGetMutes),
+        headers: await network.serviceHeaders(alice, ids.AppGndrGraphGetMutes),
       },
     )
     expect(initial.mutes.length).toEqual(8)
@@ -256,7 +256,7 @@ describe('mute views', () => {
       {
         headers: await network.serviceHeaders(
           alice,
-          ids.AppBskyGraphUnmuteActor,
+          ids.AppGndrGraphUnmuteActor,
         ),
         encoding: 'application/json',
       },
@@ -265,7 +265,7 @@ describe('mute views', () => {
     const { data: final } = await agent.api.app.gndr.graph.getMutes(
       {},
       {
-        headers: await network.serviceHeaders(alice, ids.AppBskyGraphGetMutes),
+        headers: await network.serviceHeaders(alice, ids.AppGndrGraphGetMutes),
       },
     )
     expect(final.mutes.length).toEqual(7)
@@ -274,7 +274,7 @@ describe('mute views', () => {
     await agent.api.app.gndr.graph.muteActor(
       { actor: sc.dids['elta48.test'] },
       {
-        headers: await network.serviceHeaders(alice, ids.AppBskyGraphMuteActor),
+        headers: await network.serviceHeaders(alice, ids.AppGndrGraphMuteActor),
         encoding: 'application/json',
       },
     )
@@ -284,7 +284,7 @@ describe('mute views', () => {
     const promise = agent.api.app.gndr.graph.muteActor(
       { actor: alice },
       {
-        headers: await network.serviceHeaders(alice, ids.AppBskyGraphMuteActor),
+        headers: await network.serviceHeaders(alice, ids.AppGndrGraphMuteActor),
         encoding: 'application/json',
       },
     )

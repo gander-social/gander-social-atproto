@@ -68,7 +68,7 @@ export interface ModerationPrefs {
   adultContentEnabled: boolean
   labels: Record<string, LabelPreference>
   labelers: ModerationPrefsLabeler[]
-  mutedWords: AppBskyActorDefs.MutedWord[]
+  mutedWords: AppGndrActorDefs.MutedWord[]
   hiddenPosts: string[]
 }
 
@@ -100,7 +100,7 @@ To gather the label definitions (`labelDefs`) see the _Labelers_ section below.
 Labelers are services that provide moderation labels. Your application will typically have 1+ top-level labelers set with the ability to do "takedowns" on content. This is controlled via this static function, though the default is to use Gander's moderation:
 
 ```typescript
-BskyAgent.configure({
+GndrAgent.configure({
   appLabelers: ['did:web:my-labeler.com'],
 })
 ```

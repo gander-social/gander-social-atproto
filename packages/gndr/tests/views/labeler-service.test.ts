@@ -1,6 +1,6 @@
 import assert from 'node:assert'
 import {
-  AppBskyLabelerDefs,
+  AppGndrLabelerDefs,
   AtpAgent,
   ComAtprotoModerationDefs,
 } from '@atproto/api'
@@ -37,7 +37,7 @@ describe('labeler service views', () => {
     const aliceRes = await pdsAgent.api.com.atproto.repo.createRecord(
       {
         repo: alice,
-        collection: ids.AppBskyLabelerService,
+        collection: ids.AppGndrLabelerService,
         rkey: 'self',
         record: {
           policies: {
@@ -51,7 +51,7 @@ describe('labeler service views', () => {
     await pdsAgent.api.com.atproto.repo.createRecord(
       {
         repo: bob,
-        collection: ids.AppBskyLabelerService,
+        collection: ids.AppGndrLabelerService,
         rkey: 'self',
         record: {
           policies: {
@@ -79,7 +79,7 @@ describe('labeler service views', () => {
       {
         headers: await network.serviceHeaders(
           bob,
-          ids.AppBskyLabelerGetServices,
+          ids.AppGndrLabelerGetServices,
         ),
       },
     )
@@ -93,7 +93,7 @@ describe('labeler service views', () => {
       {
         headers: await network.serviceHeaders(
           bob,
-          ids.AppBskyLabelerGetServices,
+          ids.AppGndrLabelerGetServices,
         ),
       },
     )
@@ -107,7 +107,7 @@ describe('labeler service views', () => {
       {
         headers: await network.serviceHeaders(
           bob,
-          ids.AppBskyLabelerGetServices,
+          ids.AppGndrLabelerGetServices,
         ),
       },
     )
@@ -125,7 +125,7 @@ describe('labeler service views', () => {
       {
         headers: await network.serviceHeaders(
           bob,
-          ids.AppBskyLabelerGetServices,
+          ids.AppGndrLabelerGetServices,
         ),
       },
     )
@@ -170,7 +170,7 @@ describe('labeler service views', () => {
       {
         headers: await network.serviceHeaders(
           bob,
-          ids.AppBskyActorSearchActors,
+          ids.AppGndrActorSearchActors,
         ),
       },
     )
@@ -185,7 +185,7 @@ describe('labeler service views', () => {
       {
         headers: await network.serviceHeaders(
           bob,
-          ids.AppBskyLabelerGetServices,
+          ids.AppGndrLabelerGetServices,
         ),
       },
     )
@@ -201,7 +201,7 @@ describe('labeler service views', () => {
     await pdsAgent.api.com.atproto.repo.createRecord(
       {
         repo: carol,
-        collection: ids.AppBskyLabelerService,
+        collection: ids.AppGndrLabelerService,
         rkey: 'self',
         record: {
           policies: {
@@ -222,15 +222,15 @@ describe('labeler service views', () => {
       {
         headers: await network.serviceHeaders(
           bob,
-          ids.AppBskyLabelerGetServices,
+          ids.AppGndrLabelerGetServices,
         ),
       },
     )
 
     const labelerView = view.data.views[0]
-    expect(AppBskyLabelerDefs.isLabelerViewDetailed(labelerView)).toBe(true)
+    expect(AppGndrLabelerDefs.isLabelerViewDetailed(labelerView)).toBe(true)
     // for TS only
-    if (!AppBskyLabelerDefs.isLabelerViewDetailed(labelerView)) return
+    if (!AppGndrLabelerDefs.isLabelerViewDetailed(labelerView)) return
     expect(labelerView).toBeTruthy()
     expect(labelerView.reasonTypes).toEqual([
       ComAtprotoModerationDefs.REASONOTHER,

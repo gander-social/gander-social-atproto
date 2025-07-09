@@ -9,8 +9,8 @@ import {
   is$typed as _is$typed,
   type OmitKey,
 } from '../../../../util'
-import type * as AppBskyActorDefs from '../actor/defs.js'
-import type * as AppBskyFeedDefs from '../feed/defs.js'
+import type * as AppGndrActorDefs from '../actor/defs.js'
+import type * as AppGndrFeedDefs from '../feed/defs.js'
 
 const is$typed = _is$typed,
   validate = _validate
@@ -114,7 +114,7 @@ export interface TrendView {
   postCount: number
   status?: 'hot' | (string & {})
   category?: string
-  actors: AppBskyActorDefs.ProfileViewBasic[]
+  actors: AppGndrActorDefs.ProfileViewBasic[]
 }
 
 const hashTrendView = 'trendView'
@@ -129,7 +129,7 @@ export function validateTrendView<V>(v: V) {
 
 export interface ThreadItemPost {
   $type?: 'app.gndr.unspecced.defs#threadItemPost'
-  post: AppBskyFeedDefs.PostView
+  post: AppGndrFeedDefs.PostView
   /** This post has more parents that were not present in the response. This is just a boolean, without the number of parents. */
   moreParents: boolean
   /** This post has more replies that were not present in the response. This is a numeric value, which is best-effort and might not be accurate. */
@@ -186,7 +186,7 @@ export function validateThreadItemNotFound<V>(v: V) {
 
 export interface ThreadItemBlocked {
   $type?: 'app.gndr.unspecced.defs#threadItemBlocked'
-  author: AppBskyFeedDefs.BlockedAuthor
+  author: AppGndrFeedDefs.BlockedAuthor
 }
 
 const hashThreadItemBlocked = 'threadItemBlocked'

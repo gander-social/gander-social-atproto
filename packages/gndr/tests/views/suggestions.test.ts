@@ -40,7 +40,7 @@ describe('pds user search views', () => {
       {
         headers: await network.serviceHeaders(
           sc.dids.carol,
-          ids.AppBskyActorGetSuggestions,
+          ids.AppGndrActorGetSuggestions,
         ),
       },
     )
@@ -59,7 +59,7 @@ describe('pds user search views', () => {
       {
         headers: await network.serviceHeaders(
           sc.dids.alice,
-          ids.AppBskyActorGetSuggestions,
+          ids.AppGndrActorGetSuggestions,
         ),
       },
     )
@@ -74,7 +74,7 @@ describe('pds user search views', () => {
       {
         headers: await network.serviceHeaders(
           sc.dids.carol,
-          ids.AppBskyActorGetSuggestions,
+          ids.AppGndrActorGetSuggestions,
         ),
       },
     )
@@ -86,7 +86,7 @@ describe('pds user search views', () => {
       {
         headers: await network.serviceHeaders(
           sc.dids.carol,
-          ids.AppBskyActorGetSuggestions,
+          ids.AppGndrActorGetSuggestions,
         ),
       },
     )
@@ -98,7 +98,7 @@ describe('pds user search views', () => {
       {
         headers: await network.serviceHeaders(
           sc.dids.carol,
-          ids.AppBskyActorGetSuggestions,
+          ids.AppGndrActorGetSuggestions,
         ),
       },
     )
@@ -112,7 +112,7 @@ describe('pds user search views', () => {
       {
         headers: await network.serviceHeaders(
           sc.dids.carol,
-          ids.AppBskyActorGetSuggestions,
+          ids.AppGndrActorGetSuggestions,
         ),
       },
     )

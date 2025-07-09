@@ -74,7 +74,7 @@ describe('pds views with blocking', () => {
       {
         headers: await network.serviceHeaders(
           dan,
-          ids.AppBskyFeedGetPostThread,
+          ids.AppGndrFeedGetPostThread,
         ),
       },
     )
@@ -97,7 +97,7 @@ describe('pds views with blocking', () => {
       {
         headers: await network.serviceHeaders(
           carol,
-          ids.AppBskyFeedGetPostThread,
+          ids.AppGndrFeedGetPostThread,
         ),
       },
     )
@@ -123,7 +123,7 @@ describe('pds views with blocking', () => {
       {
         headers: await network.serviceHeaders(
           dan,
-          ids.AppBskyFeedGetPostThread,
+          ids.AppGndrFeedGetPostThread,
         ),
       },
     )
@@ -136,7 +136,7 @@ describe('pds views with blocking', () => {
       {
         headers: await network.serviceHeaders(
           alice,
-          ids.AppBskyFeedGetPostThread,
+          ids.AppGndrFeedGetPostThread,
         ),
       },
     )
@@ -157,7 +157,7 @@ describe('pds views with blocking', () => {
       {
         headers: await network.serviceHeaders(
           carol,
-          ids.AppBskyFeedGetPostThread,
+          ids.AppGndrFeedGetPostThread,
         ),
       },
     )
@@ -171,7 +171,7 @@ describe('pds views with blocking', () => {
       {
         headers: await network.serviceHeaders(
           dan,
-          ids.AppBskyFeedGetPostThread,
+          ids.AppGndrFeedGetPostThread,
         ),
       },
     )
@@ -184,7 +184,7 @@ describe('pds views with blocking', () => {
       {
         headers: await network.serviceHeaders(
           dan,
-          ids.AppBskyFeedGetAuthorFeed,
+          ids.AppGndrFeedGetAuthorFeed,
         ),
       },
     )
@@ -197,7 +197,7 @@ describe('pds views with blocking', () => {
       {
         headers: await network.serviceHeaders(
           carol,
-          ids.AppBskyFeedGetAuthorFeed,
+          ids.AppGndrFeedGetAuthorFeed,
         ),
       },
     )
@@ -212,7 +212,7 @@ describe('pds views with blocking', () => {
       {
         headers: await network.serviceHeaders(
           carol,
-          ids.AppBskyFeedGetTimeline,
+          ids.AppGndrFeedGetTimeline,
         ),
       },
     )
@@ -231,7 +231,7 @@ describe('pds views with blocking', () => {
     const resDan = await agent.api.app.gndr.feed.getTimeline(
       { limit: 100 },
       {
-        headers: await network.serviceHeaders(dan, ids.AppBskyFeedGetTimeline),
+        headers: await network.serviceHeaders(dan, ids.AppGndrFeedGetTimeline),
       },
     )
     expect(
@@ -256,7 +256,7 @@ describe('pds views with blocking', () => {
       {
         headers: await network.serviceHeaders(
           carol,
-          ids.AppBskyFeedGetListFeed,
+          ids.AppGndrFeedGetListFeed,
         ),
       },
     )
@@ -267,7 +267,7 @@ describe('pds views with blocking', () => {
     const resDan = await agent.api.app.gndr.feed.getListFeed(
       { list: listRef.uriStr, limit: 100 },
       {
-        headers: await network.serviceHeaders(dan, ids.AppBskyFeedGetListFeed),
+        headers: await network.serviceHeaders(dan, ids.AppGndrFeedGetListFeed),
       },
     )
     expect(
@@ -281,7 +281,7 @@ describe('pds views with blocking', () => {
       {
         headers: await network.serviceHeaders(
           carol,
-          ids.AppBskyActorGetProfile,
+          ids.AppGndrActorGetProfile,
         ),
       },
     )
@@ -291,7 +291,7 @@ describe('pds views with blocking', () => {
     const resDan = await agent.api.app.gndr.actor.getProfile(
       { actor: carol },
       {
-        headers: await network.serviceHeaders(dan, ids.AppBskyActorGetProfile),
+        headers: await network.serviceHeaders(dan, ids.AppGndrActorGetProfile),
       },
     )
     expect(resDan.data.viewer?.blocking).toBeDefined()
@@ -303,14 +303,14 @@ describe('pds views with blocking', () => {
     const { data: profile } = await agent.api.app.gndr.actor.getProfile(
       { actor: carol },
       {
-        headers: await network.serviceHeaders(dan, ids.AppBskyActorGetProfile),
+        headers: await network.serviceHeaders(dan, ids.AppGndrActorGetProfile),
       },
     )
     expect(profile.viewer?.following).toBeUndefined()
     expect(profile.viewer?.followedBy).toBeUndefined()
     const { data: result } = await agent.api.app.gndr.graph.getBlocks(
       {},
-      { headers: await network.serviceHeaders(dan, ids.AppBskyGraphGetBlocks) },
+      { headers: await network.serviceHeaders(dan, ids.AppGndrGraphGetBlocks) },
     )
     const blocked = result.blocks.find((block) => block.did === carol)
     expect(blocked).toBeDefined()
@@ -324,7 +324,7 @@ describe('pds views with blocking', () => {
       {
         headers: await network.serviceHeaders(
           carol,
-          ids.AppBskyActorGetProfiles,
+          ids.AppGndrActorGetProfiles,
         ),
       },
     )
@@ -338,7 +338,7 @@ describe('pds views with blocking', () => {
     const resDan = await agent.api.app.gndr.actor.getProfiles(
       { actors: [alice, carol] },
       {
-        headers: await network.serviceHeaders(dan, ids.AppBskyActorGetProfiles),
+        headers: await network.serviceHeaders(dan, ids.AppGndrActorGetProfiles),
       },
     )
     expect(resDan.data.profiles[0].viewer?.blocking).toBeUndefined()
@@ -355,7 +355,7 @@ describe('pds views with blocking', () => {
       {
         headers: await network.serviceHeaders(
           alice,
-          ids.AppBskyGraphGetFollows,
+          ids.AppGndrGraphGetFollows,
         ),
       },
     )
@@ -366,7 +366,7 @@ describe('pds views with blocking', () => {
       {
         headers: await network.serviceHeaders(
           alice,
-          ids.AppBskyGraphGetFollows,
+          ids.AppGndrGraphGetFollows,
         ),
       },
     )
@@ -379,7 +379,7 @@ describe('pds views with blocking', () => {
       {
         headers: await network.serviceHeaders(
           alice,
-          ids.AppBskyGraphGetFollowers,
+          ids.AppGndrGraphGetFollowers,
         ),
       },
     )
@@ -390,7 +390,7 @@ describe('pds views with blocking', () => {
       {
         headers: await network.serviceHeaders(
           alice,
-          ids.AppBskyGraphGetFollowers,
+          ids.AppGndrGraphGetFollowers,
         ),
       },
     )
@@ -404,7 +404,7 @@ describe('pds views with blocking', () => {
 
     const resCarol = await agent.api.app.gndr.feed.getPosts(
       { uris: [alicePost, carolPost, danPost] },
-      { headers: await network.serviceHeaders(carol, ids.AppBskyFeedGetPosts) },
+      { headers: await network.serviceHeaders(carol, ids.AppGndrFeedGetPosts) },
     )
     expect(resCarol.data.posts.some((p) => p.uri === alicePost)).toBe(true)
     expect(resCarol.data.posts.some((p) => p.uri === carolPost)).toBe(true)
@@ -412,7 +412,7 @@ describe('pds views with blocking', () => {
 
     const resDan = await agent.api.app.gndr.feed.getPosts(
       { uris: [alicePost, carolPost, danPost] },
-      { headers: await network.serviceHeaders(dan, ids.AppBskyFeedGetPosts) },
+      { headers: await network.serviceHeaders(dan, ids.AppGndrFeedGetPosts) },
     )
     expect(resDan.data.posts.some((p) => p.uri === alicePost)).toBe(true)
     expect(resDan.data.posts.some((p) => p.uri === carolPost)).toBe(false)
@@ -427,7 +427,7 @@ describe('pds views with blocking', () => {
       {
         headers: await network.serviceHeaders(
           carol,
-          ids.AppBskyNotificationListNotifications,
+          ids.AppGndrNotificationListNotifications,
         ),
       },
     )
@@ -442,7 +442,7 @@ describe('pds views with blocking', () => {
       {
         headers: await network.serviceHeaders(
           dan,
-          ids.AppBskyNotificationListNotifications,
+          ids.AppGndrNotificationListNotifications,
         ),
       },
     )
@@ -459,7 +459,7 @@ describe('pds views with blocking', () => {
       {
         headers: await network.serviceHeaders(
           carol,
-          ids.AppBskyActorSearchActors,
+          ids.AppGndrActorSearchActors,
         ),
       },
     )
@@ -472,7 +472,7 @@ describe('pds views with blocking', () => {
       {
         headers: await network.serviceHeaders(
           dan,
-          ids.AppBskyActorSearchActors,
+          ids.AppGndrActorSearchActors,
         ),
       },
     )
@@ -487,7 +487,7 @@ describe('pds views with blocking', () => {
       {
         headers: await network.serviceHeaders(
           carol,
-          ids.AppBskyActorSearchActorsTypeahead,
+          ids.AppGndrActorSearchActorsTypeahead,
         ),
       },
     )
@@ -500,7 +500,7 @@ describe('pds views with blocking', () => {
       {
         headers: await network.serviceHeaders(
           dan,
-          ids.AppBskyActorSearchActorsTypeahead,
+          ids.AppGndrActorSearchActorsTypeahead,
         ),
       },
     )
@@ -515,7 +515,7 @@ describe('pds views with blocking', () => {
       {
         headers: await network.serviceHeaders(
           carol,
-          ids.AppBskyActorSearchActorsTypeahead,
+          ids.AppGndrActorSearchActorsTypeahead,
         ),
       },
     )
@@ -528,7 +528,7 @@ describe('pds views with blocking', () => {
       {
         headers: await network.serviceHeaders(
           dan,
-          ids.AppBskyActorSearchActorsTypeahead,
+          ids.AppGndrActorSearchActorsTypeahead,
         ),
       },
     )
@@ -548,7 +548,7 @@ describe('pds views with blocking', () => {
       {
         headers: await network.serviceHeaders(
           carol,
-          ids.AppBskyActorGetSuggestions,
+          ids.AppGndrActorGetSuggestions,
         ),
       },
     )
@@ -561,7 +561,7 @@ describe('pds views with blocking', () => {
       {
         headers: await network.serviceHeaders(
           dan,
-          ids.AppBskyActorGetSuggestions,
+          ids.AppGndrActorGetSuggestions,
         ),
       },
     )
@@ -577,7 +577,7 @@ describe('pds views with blocking', () => {
         {
           headers: await network.serviceHeaders(
             alice,
-            ids.AppBskyFeedGetPostThread,
+            ids.AppGndrFeedGetPostThread,
           ),
         },
       )
@@ -598,7 +598,7 @@ describe('pds views with blocking', () => {
       {
         headers: await network.serviceHeaders(
           alice,
-          ids.AppBskyFeedGetPostThread,
+          ids.AppGndrFeedGetPostThread,
         ),
       },
     )
@@ -628,7 +628,7 @@ describe('pds views with blocking', () => {
         {
           headers: await network.serviceHeaders(
             alice,
-            ids.AppBskyFeedGetPostThread,
+            ids.AppGndrFeedGetPostThread,
           ),
         },
       )
@@ -655,7 +655,7 @@ describe('pds views with blocking', () => {
         {
           headers: await network.serviceHeaders(
             alice,
-            ids.AppBskyFeedGetPostThread,
+            ids.AppGndrFeedGetPostThread,
           ),
         },
       )
@@ -678,7 +678,7 @@ describe('pds views with blocking', () => {
       {
         headers: await network.serviceHeaders(
           alice,
-          ids.AppBskyFeedGetPostThread,
+          ids.AppGndrFeedGetPostThread,
         ),
       },
     )
@@ -710,7 +710,7 @@ describe('pds views with blocking', () => {
         {
           headers: await network.serviceHeaders(
             alice,
-            ids.AppBskyFeedGetPostThread,
+            ids.AppGndrFeedGetPostThread,
           ),
         },
       )
@@ -738,7 +738,7 @@ describe('pds views with blocking', () => {
       {
         headers: await network.serviceHeaders(
           alice,
-          ids.AppBskyFeedGetTimeline,
+          ids.AppGndrFeedGetTimeline,
         ),
       },
     )
@@ -776,7 +776,7 @@ describe('pds views with blocking', () => {
 
     const res = await agent.api.app.gndr.graph.getBlocks(
       {},
-      { headers: await network.serviceHeaders(dan, ids.AppBskyGraphGetBlocks) },
+      { headers: await network.serviceHeaders(dan, ids.AppGndrGraphGetBlocks) },
     )
     const dids = res.data.blocks.map((block) => block.did).sort()
     expect(dids).toEqual([alice, carol].sort())
@@ -785,15 +785,15 @@ describe('pds views with blocking', () => {
   it('paginates getBlocks', async () => {
     const full = await agent.api.app.gndr.graph.getBlocks(
       {},
-      { headers: await network.serviceHeaders(dan, ids.AppBskyGraphGetBlocks) },
+      { headers: await network.serviceHeaders(dan, ids.AppGndrGraphGetBlocks) },
     )
     const first = await agent.api.app.gndr.graph.getBlocks(
       { limit: 1 },
-      { headers: await network.serviceHeaders(dan, ids.AppBskyGraphGetBlocks) },
+      { headers: await network.serviceHeaders(dan, ids.AppGndrGraphGetBlocks) },
     )
     const second = await agent.api.app.gndr.graph.getBlocks(
       { cursor: first.data.cursor },
-      { headers: await network.serviceHeaders(dan, ids.AppBskyGraphGetBlocks) },
+      { headers: await network.serviceHeaders(dan, ids.AppGndrGraphGetBlocks) },
     )
     const combined = [...first.data.blocks, ...second.data.blocks]
     expect(combined).toEqual(full.data.blocks)
@@ -805,7 +805,7 @@ describe('pds views with blocking', () => {
       {
         headers: await network.serviceHeaders(
           alice,
-          ids.AppBskyActorGetProfile,
+          ids.AppGndrActorGetProfile,
         ),
       },
     )

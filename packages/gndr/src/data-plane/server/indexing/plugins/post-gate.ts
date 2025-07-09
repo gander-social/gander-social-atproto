@@ -8,7 +8,7 @@ import { Database } from '../../db'
 import { DatabaseSchema, DatabaseSchemaType } from '../../db/database-schema'
 import { RecordProcessor } from '../processor'
 
-const lexId = lex.ids.AppBskyFeedPostgate
+const lexId = lex.ids.AppGndrFeedPostgate
 type IndexedGate = DatabaseSchemaType['post_gate']
 
 const insertFn = async (

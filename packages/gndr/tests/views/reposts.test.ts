@@ -34,7 +34,7 @@ describe('pds repost views', () => {
       {
         headers: await network.serviceHeaders(
           alice,
-          ids.AppBskyFeedGetRepostedBy,
+          ids.AppGndrFeedGetRepostedBy,
         ),
       },
     )
@@ -48,7 +48,7 @@ describe('pds repost views', () => {
       {
         headers: await network.serviceHeaders(
           alice,
-          ids.AppBskyFeedGetRepostedBy,
+          ids.AppGndrFeedGetRepostedBy,
         ),
       },
     )
@@ -68,7 +68,7 @@ describe('pds repost views', () => {
         {
           headers: await network.serviceHeaders(
             alice,
-            ids.AppBskyFeedGetRepostedBy,
+            ids.AppGndrFeedGetRepostedBy,
           ),
         },
       )
@@ -85,7 +85,7 @@ describe('pds repost views', () => {
       {
         headers: await network.serviceHeaders(
           alice,
-          ids.AppBskyFeedGetRepostedBy,
+          ids.AppGndrFeedGetRepostedBy,
         ),
       },
     )
@@ -100,7 +100,7 @@ describe('pds repost views', () => {
       {
         headers: await network.serviceHeaders(
           alice,
-          ids.AppBskyFeedGetRepostedBy,
+          ids.AppGndrFeedGetRepostedBy,
         ),
       },
     )

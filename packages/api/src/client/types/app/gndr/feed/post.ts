@@ -9,12 +9,12 @@ import {
   is$typed as _is$typed,
   type OmitKey,
 } from '../../../../util'
-import type * as AppBskyRichtextFacet from '../richtext/facet.js'
-import type * as AppBskyEmbedImages from '../embed/images.js'
-import type * as AppBskyEmbedVideo from '../embed/video.js'
-import type * as AppBskyEmbedExternal from '../embed/external.js'
-import type * as AppBskyEmbedRecord from '../embed/record.js'
-import type * as AppBskyEmbedRecordWithMedia from '../embed/recordWithMedia.js'
+import type * as AppGndrRichtextFacet from '../richtext/facet.js'
+import type * as AppGndrEmbedImages from '../embed/images.js'
+import type * as AppGndrEmbedVideo from '../embed/video.js'
+import type * as AppGndrEmbedExternal from '../embed/external.js'
+import type * as AppGndrEmbedRecord from '../embed/record.js'
+import type * as AppGndrEmbedRecordWithMedia from '../embed/recordWithMedia.js'
 import type * as ComAtprotoLabelDefs from '../../../com/atproto/label/defs.js'
 import type * as ComAtprotoRepoStrongRef from '../../../com/atproto/repo/strongRef.js'
 
@@ -29,14 +29,14 @@ export interface Record {
   /** DEPRECATED: replaced by app.gndr.richtext.facet. */
   entities?: Entity[]
   /** Annotations of text (mentions, URLs, hashtags, etc) */
-  facets?: AppBskyRichtextFacet.Main[]
+  facets?: AppGndrRichtextFacet.Main[]
   reply?: ReplyRef
   embed?:
-    | $Typed<AppBskyEmbedImages.Main>
-    | $Typed<AppBskyEmbedVideo.Main>
-    | $Typed<AppBskyEmbedExternal.Main>
-    | $Typed<AppBskyEmbedRecord.Main>
-    | $Typed<AppBskyEmbedRecordWithMedia.Main>
+    | $Typed<AppGndrEmbedImages.Main>
+    | $Typed<AppGndrEmbedVideo.Main>
+    | $Typed<AppGndrEmbedExternal.Main>
+    | $Typed<AppGndrEmbedRecord.Main>
+    | $Typed<AppGndrEmbedRecordWithMedia.Main>
     | { $type: string }
   /** Indicates human language of post primary text content. */
   langs?: string[]

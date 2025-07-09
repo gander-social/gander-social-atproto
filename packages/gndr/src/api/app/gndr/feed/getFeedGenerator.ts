@@ -40,7 +40,7 @@ export default function (server: Server, ctx: AppContext) {
       const services = unpackIdentityServices(identity.services)
       const fgEndpoint = getServiceEndpoint(services, {
         id: 'gndr_fg',
-        type: 'BskyFeedGenerator',
+        type: 'GndrFeedGenerator',
       })
       if (!fgEndpoint) {
         throw new InvalidRequestError(

@@ -73,7 +73,7 @@ describe('known followers (social proof)', () => {
       {
         headers: await network.serviceHeaders(
           dids.base_view,
-          ids.AppBskyGraphGetFollows,
+          ids.AppGndrGraphGetFollows,
         ),
       },
     )
@@ -88,7 +88,7 @@ describe('known followers (social proof)', () => {
       {
         headers: await network.serviceHeaders(
           dids.base_view,
-          ids.AppBskyGraphGetKnownFollowers,
+          ids.AppGndrGraphGetKnownFollowers,
         ),
       },
     )
@@ -104,7 +104,7 @@ describe('known followers (social proof)', () => {
       {
         headers: await network.serviceHeaders(
           dids.base_view,
-          ids.AppBskyActorGetProfile,
+          ids.AppGndrActorGetProfile,
         ),
       },
     )
@@ -121,7 +121,7 @@ describe('known followers (social proof)', () => {
       {
         headers: await network.serviceHeaders(
           dids.fp_block_view,
-          ids.AppBskyActorGetProfile,
+          ids.AppGndrActorGetProfile,
         ),
       },
     )
@@ -137,7 +137,7 @@ describe('known followers (social proof)', () => {
       {
         headers: await network.serviceHeaders(
           dids.sp_block_view,
-          ids.AppBskyActorGetProfile,
+          ids.AppGndrActorGetProfile,
         ),
       },
     )
@@ -153,7 +153,7 @@ describe('known followers (social proof)', () => {
       {
         headers: await network.serviceHeaders(
           dids.sp_block_view,
-          ids.AppBskyActorGetProfiles,
+          ids.AppGndrActorGetProfiles,
         ),
       },
     )
@@ -171,7 +171,7 @@ describe('known followers (social proof)', () => {
       {
         headers: await network.serviceHeaders(
           dids.mix_view,
-          ids.AppBskyActorGetProfiles,
+          ids.AppGndrActorGetProfiles,
         ),
       },
     )
