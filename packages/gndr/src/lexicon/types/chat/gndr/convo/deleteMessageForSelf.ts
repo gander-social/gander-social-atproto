@@ -9,22 +9,25 @@ import {
   is$typed as _is$typed,
   type OmitKey,
 } from '../../../../util'
-import type * as ChatGndrConvoDefs from './defs.js'
+import type * as ChatGndrConvoDefs from './defs'
 
 const is$typed = _is$typed,
   validate = _validate
-const id = 'chat.gndr.convo.getConvoForMembers'
+const id = 'chat.gndr.convo.deleteMessageForSelf'
 
-export type QueryParams = {
-  members: string[]
-}
-export type InputSchema = undefined
+export type QueryParams = {}
 
-export interface OutputSchema {
-  convo: ChatGndrConvoDefs.ConvoView
+export interface InputSchema {
+  convoId: string
+  messageId: string
 }
 
-export type HandlerInput = void
+export type OutputSchema = ChatGndrConvoDefs.DeletedMessageView
+
+export interface HandlerInput {
+  encoding: 'application/json'
+  body: InputSchema
+}
 
 export interface HandlerSuccess {
   encoding: 'application/json'

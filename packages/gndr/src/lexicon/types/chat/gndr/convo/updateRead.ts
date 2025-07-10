@@ -9,22 +9,21 @@ import {
   is$typed as _is$typed,
   type OmitKey,
 } from '../../../../util'
-import type * as ChatGndrConvoDefs from './defs.js'
+import type * as ChatGndrConvoDefs from './defs'
 
 const is$typed = _is$typed,
   validate = _validate
-const id = 'chat.gndr.convo.removeReaction'
+const id = 'chat.gndr.convo.updateRead'
 
 export type QueryParams = {}
 
 export interface InputSchema {
   convoId: string
-  messageId: string
-  value: string
+  messageId?: string
 }
 
 export interface OutputSchema {
-  message: ChatGndrConvoDefs.MessageView
+  convo: ChatGndrConvoDefs.ConvoView
 }
 
 export interface HandlerInput {
@@ -41,7 +40,6 @@ export interface HandlerSuccess {
 export interface HandlerError {
   status: number
   message?: string
-  error?: 'ReactionMessageDeleted' | 'ReactionInvalidValue'
 }
 
 export type HandlerOutput = HandlerError | HandlerSuccess

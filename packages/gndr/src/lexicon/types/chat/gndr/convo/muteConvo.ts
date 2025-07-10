@@ -9,20 +9,21 @@ import {
   is$typed as _is$typed,
   type OmitKey,
 } from '../../../../util'
-import type * as ChatGndrConvoDefs from './defs.js'
+import type * as ChatGndrConvoDefs from './defs'
 
 const is$typed = _is$typed,
   validate = _validate
-const id = 'chat.gndr.convo.sendMessage'
+const id = 'chat.gndr.convo.muteConvo'
 
 export type QueryParams = {}
 
 export interface InputSchema {
   convoId: string
-  message: ChatGndrConvoDefs.MessageInput
 }
 
-export type OutputSchema = ChatGndrConvoDefs.MessageView
+export interface OutputSchema {
+  convo: ChatGndrConvoDefs.ConvoView
+}
 
 export interface HandlerInput {
   encoding: 'application/json'

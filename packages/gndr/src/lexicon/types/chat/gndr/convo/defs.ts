@@ -9,9 +9,9 @@ import {
   is$typed as _is$typed,
   type OmitKey,
 } from '../../../../util'
-import type * as AppGndrRichtextFacet from '../../../app/gndr/richtext/facet.js'
-import type * as AppGndrEmbedRecord from '../../../app/gndr/embed/record.js'
-import type * as ChatGndrActorDefs from '../actor/defs.js'
+import type * as AppGndrRichtextFacet from '../../../app/gndr/richtext/facet'
+import type * as AppGndrEmbedRecord from '../../../app/gndr/embed/record'
+import type * as ChatGndrActorDefs from '../actor/defs'
 
 const is$typed = _is$typed,
   validate = _validate
