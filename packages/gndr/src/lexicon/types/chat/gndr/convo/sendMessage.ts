@@ -9,29 +9,25 @@ import {
   is$typed as _is$typed,
   type OmitKey,
 } from '../../../../util'
-import type * as ChatGndrConvoDefs from './defs.js'
+import type * as ChatGndrConvoDefs from './defs'
 
 const is$typed = _is$typed,
   validate = _validate
-const id = 'chat.gndr.convo.getMessages'
+const id = 'chat.gndr.convo.sendMessage'
 
-export type QueryParams = {
+export type QueryParams = {}
+
+export interface InputSchema {
   convoId: string
-  limit: number
-  cursor?: string
-}
-export type InputSchema = undefined
-
-export interface OutputSchema {
-  cursor?: string
-  messages: (
-    | $Typed<ChatGndrConvoDefs.MessageView>
-    | $Typed<ChatGndrConvoDefs.DeletedMessageView>
-    | { $type: string }
-  )[]
+  message: ChatGndrConvoDefs.MessageInput
 }
 
-export type HandlerInput = void
+export type OutputSchema = ChatGndrConvoDefs.MessageView
+
+export interface HandlerInput {
+  encoding: 'application/json'
+  body: InputSchema
+}
 
 export interface HandlerSuccess {
   encoding: 'application/json'

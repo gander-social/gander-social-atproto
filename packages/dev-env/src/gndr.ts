@@ -20,7 +20,7 @@ export class TestGndr {
     public sub: gndr.RepoSubscription,
   ) {}
 
-  static async create(cfg: GnderConfig): Promise<TestGndr> {
+  static async create(cfg: GndrConfig): Promise<TestGndr> {
     const serviceKeypair = await Secp256k1Keypair.create()
     const plcClient = new PlcClient(cfg.plcUrl)
 

@@ -9,32 +9,19 @@ import {
   is$typed as _is$typed,
   type OmitKey,
 } from '../../../../util'
-import type * as ChatGndrConvoDefs from './defs.js'
+import type * as ChatGndrConvoDefs from './defs'
 
 const is$typed = _is$typed,
   validate = _validate
-const id = 'chat.gndr.convo.getLog'
+const id = 'chat.gndr.convo.getConvo'
 
 export type QueryParams = {
-  cursor?: string
+  convoId: string
 }
 export type InputSchema = undefined
 
 export interface OutputSchema {
-  cursor?: string
-  logs: (
-    | $Typed<ChatGndrConvoDefs.LogBeginConvo>
-    | $Typed<ChatGndrConvoDefs.LogAcceptConvo>
-    | $Typed<ChatGndrConvoDefs.LogLeaveConvo>
-    | $Typed<ChatGndrConvoDefs.LogMuteConvo>
-    | $Typed<ChatGndrConvoDefs.LogUnmuteConvo>
-    | $Typed<ChatGndrConvoDefs.LogCreateMessage>
-    | $Typed<ChatGndrConvoDefs.LogDeleteMessage>
-    | $Typed<ChatGndrConvoDefs.LogReadMessage>
-    | $Typed<ChatGndrConvoDefs.LogAddReaction>
-    | $Typed<ChatGndrConvoDefs.LogRemoveReaction>
-    | { $type: string }
-  )[]
+  convo: ChatGndrConvoDefs.ConvoView
 }
 
 export type HandlerInput = void
