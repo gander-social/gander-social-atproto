@@ -5,7 +5,8 @@
   "description": "Reference implementation of app.gndr App View (Gander API)",
   "keywords": [
     "atproto",
-    "gander"
+    "gander",
+    "gndr"
   ],
   "homepage": "https://atproto.com",
   "repository": {

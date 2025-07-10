@@ -5,7 +5,8 @@
   "description": "Backend service for moderating the Gander network.",
   "keywords": [
     "atproto",
-    "gander"
+    "gander",
+    "ozone"
   ],
   "homepage": "https://atproto.com",
   "repository": {
