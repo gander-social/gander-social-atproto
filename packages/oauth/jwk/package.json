@@ -1,19 +1,19 @@
 {
-  "name": "@atproto/jwk",
+  "name": "@gander-social-atproto/jwk",
   "version": "0.4.0",
   "license": "MIT",
   "description": "A library for working with JSON Web Keys (JWKs) in TypeScript. This is meant to be extended by environment-specific libraries like @atproto/jwk-jose.",
   "keywords": [
-    "atproto",
+    "gander-social-atproto",
     "jwk",
     "jwks",
     "jwt",
     "json web key"
   ],
-  "homepage": "https://atproto.com",
+  "homepage": "https://github.com/gander-social/gander-social-atproto",
   "repository": {
     "type": "git",
-    "url": "https://github.com/gander-social/atproto",
+    "url": "https://github.com/gander-social/gander-social-atproto",
     "directory": "packages/oauth/jwk"
   },
   "type": "commonjs",

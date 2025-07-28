@@ -1,5 +1,5 @@
 {
-  "name": "@atproto/syntax",
+  "name": "@gander-social-atproto/syntax",
   "version": "0.4.0",
   "license": "MIT",
   "description": "Validation for atproto identifiers and formats: DID, handle, NSID, AT URI, etc",
@@ -9,10 +9,10 @@
     "nsid",
     "at-uri"
   ],
-  "homepage": "https://atproto.com",
+  "homepage": "https://github.com/gander-social/gander-social-atproto",
   "repository": {
     "type": "git",
-    "url": "https://github.com/gander-social/atproto",
+    "url": "https://github.com/gander-social/gander-social-atproto",
     "directory": "packages/syntax"
   },
   "main": "dist/index.js",

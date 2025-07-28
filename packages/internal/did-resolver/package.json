@@ -8,10 +8,10 @@
     "did",
     "resolver"
   ],
-  "homepage": "https://atproto.com",
+  "homepage": "https://github.com/gander-social/gander-social-atproto",
   "repository": {
     "type": "git",
-    "url": "https://github.com/gander-social/atproto",
+    "url": "https://github.com/gander-social/gander-social-atproto",
     "directory": "packages/internal/did-resolver"
   },
   "type": "commonjs",
@@ -28,7 +28,7 @@
     "@atproto-labs/pipe": "workspace:*",
     "@atproto-labs/simple-store": "workspace:*",
     "@atproto-labs/simple-store-memory": "workspace:*",
-    "@atproto/did": "workspace:*",
+    "@gander-social-atproto/did": "workspace:*",
     "zod": "^3.23.8"
   },
   "devDependencies": {

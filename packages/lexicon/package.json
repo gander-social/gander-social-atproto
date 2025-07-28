@@ -1,16 +1,16 @@
 {
-  "name": "@atproto/lexicon",
+  "name": "@gander-social-atproto/lexicon",
   "version": "0.4.11",
   "license": "MIT",
   "description": "atproto Lexicon schema language library",
   "keywords": [
-    "atproto",
+    "gander-social-atproto",
     "lexicon"
   ],
-  "homepage": "https://atproto.com",
+  "homepage": "https://github.com/gander-social/gander-social-atproto",
   "repository": {
     "type": "git",
-    "url": "https://github.com/gander-social/atproto",
+    "url": "https://github.com/gander-social/gander-social-atproto",
     "directory": "packages/lexicon"
   },
   "main": "dist/index.js",
@@ -20,8 +20,8 @@
     "build": "tsc --build tsconfig.build.json"
   },
   "dependencies": {
-    "@atproto/common-web": "workspace:^",
-    "@atproto/syntax": "workspace:^",
+    "@gander-social-atproto/common-web": "workspace:^",
+    "@gander-social-atproto/syntax": "workspace:^",
     "iso-datestring-validator": "^2.2.2",
     "multiformats": "^9.9.0",
     "zod": "^3.23.8"

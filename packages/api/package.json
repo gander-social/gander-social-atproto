@@ -1,38 +1,38 @@
 {
-  "name": "@atproto/api",
+  "name": "@gander-social-atproto/api",
   "version": "0.15.23",
   "license": "MIT",
   "description": "Client library for atproto and Gander",
   "keywords": [
-    "atproto",
+    "gander-social-atproto",
     "gander",
     "api"
   ],
-  "homepage": "https://atproto.com",
+  "homepage": "https://github.com/gander-social/gander-social-atproto",
   "repository": {
     "type": "git",
-    "url": "https://github.com/gander-social/atproto",
+    "url": "https://github.com/gander-social/gander-social-atproto",
     "directory": "packages/api"
   },
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "codegen": "node ./scripts/generate-code.mjs && lex gen-api --yes ./src/client ../../lexicons/com/atproto/*/* ../../lexicons/app/gndr/*/* ../../lexicons/chat/gndr/*/* ../../lexicons/tools/ozone/*/*",
+    "codegen": "node ./scripts/generate-code.mjs && lex gen-api --yes ./src/client ../../lexicons/com/gander-social-atproto/*/* ../../lexicons/app/gndr/*/* ../../lexicons/chat/gndr/*/* ../../lexicons/tools/ozone/*/*",
     "build": "tsc --build tsconfig.build.json",
     "test": "jest"
   },
   "dependencies": {
-    "@atproto/common-web": "workspace:^",
-    "@atproto/lexicon": "workspace:^",
-    "@atproto/syntax": "workspace:^",
-    "@atproto/xrpc": "workspace:^",
+    "@gander-social-atproto/common-web": "workspace:^",
+    "@gander-social-atproto/lexicon": "workspace:^",
+    "@gander-social-atproto/syntax": "workspace:^",
+    "@gander-social-atproto/xrpc": "workspace:^",
     "await-lock": "^2.2.2",
     "multiformats": "^9.9.0",
     "tlds": "^1.234.0",
     "zod": "^3.23.8"
   },
   "devDependencies": {
-    "@atproto/lex-cli": "workspace:^",
+    "@gander-social-atproto/lex-cli": "workspace:^",
     "jest": "^28.1.2",
     "prettier": "^3.2.5",
     "typescript": "^5.6.3"

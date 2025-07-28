@@ -1,18 +1,18 @@
 {
-  "name": "@atproto/oauth-client",
+  "name": "@gander-social-atproto/oauth-client",
   "version": "0.5.0",
   "license": "MIT",
   "description": "OAuth client for ATPROTO PDS. This package serves as common base for environment-specific implementations (NodeJS, Browser, React-Native).",
   "keywords": [
-    "atproto",
+    "gander-social-atproto",
     "oauth",
     "client",
     "isomorphic"
   ],
-  "homepage": "https://atproto.com",
+  "homepage": "https://github.com/gander-social/gander-social-atproto",
   "repository": {
     "type": "git",
-    "url": "https://github.com/gander-social/atproto",
+    "url": "https://github.com/gander-social/gander-social-atproto",
     "directory": "packages/oauth/oauth-client"
   },
   "type": "commonjs",
@@ -31,10 +31,10 @@
     "@atproto-labs/identity-resolver": "workspace:*",
     "@atproto-labs/simple-store": "workspace:*",
     "@atproto-labs/simple-store-memory": "workspace:*",
-    "@atproto/did": "workspace:*",
-    "@atproto/jwk": "workspace:*",
-    "@atproto/oauth-types": "workspace:*",
-    "@atproto/xrpc": "workspace:*",
+    "@gander-social-atproto/did": "workspace:*",
+    "@gander-social-atproto/jwk": "workspace:*",
+    "@gander-social-atproto/oauth-types": "workspace:*",
+    "@gander-social-atproto/xrpc": "workspace:*",
     "multiformats": "^9.9.0",
     "zod": "^3.23.8"
   },
