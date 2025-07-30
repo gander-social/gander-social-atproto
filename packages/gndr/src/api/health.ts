@@ -20,8 +20,8 @@ This is an AT Protocol Application View (AppView) for the "gndr.app" application
 
 Most API routes are under /xrpc/
 
-      Code: https://github.com/gander-social/atproto
-  Protocol: https://atproto.com
+      Code: https://github.com/gander-social/gander-social-atproto
+  Protocol: https://github.com/gander-social/gander-social-atproto
 `)
   })
 

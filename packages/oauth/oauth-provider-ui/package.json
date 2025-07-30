@@ -3,10 +3,10 @@
   "version": "0.1.11",
   "license": "MIT",
   "description": "Sign-in & Sign-up UI for the @atproto/oauth-provider",
-  "homepage": "https://atproto.com",
+  "homepage": "https://github.com/gander-social/gander-social-atproto",
   "repository": {
     "type": "git",
-    "url": "https://github.com/gander-social/atproto",
+    "url": "https://github.com/gander-social/gander-social-atproto",
     "directory": "packages/oauth/oauth-provider-ui"
   },
   "engines": {

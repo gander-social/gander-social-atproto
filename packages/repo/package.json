@@ -10,10 +10,10 @@
   "engines": {
     "node": ">=18.7.0"
   },
-  "homepage": "https://atproto.com",
+  "homepage": "https://github.com/gander-social/gander-social-atproto",
   "repository": {
     "type": "git",
-    "url": "https://github.com/gander-social/atproto",
+    "url": "https://github.com/gander-social/gander-social-atproto",
     "directory": "packages/repo"
   },
   "main": "dist/index.js",
