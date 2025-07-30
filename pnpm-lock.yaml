@@ -8,15 +8,15 @@ importers:
 
   .:
     devDependencies:
-      '@atproto/dev-env':
-        specifier: workspace:^
-        version: link:packages/dev-env
       '@changesets/changelog-github':
         specifier: ^0.4.8
         version: 0.4.8
       '@changesets/cli':
         specifier: ^2.26.2
         version: 2.26.2
+      '@gander-social-atproto/dev-env':
+        specifier: workspace:^
+        version: link:packages/dev-env
       '@swc/core':
         specifier: ^1.3.42
         version: 1.11.18
@@ -1533,9 +1533,6 @@ importers:
         specifier: ^3.23.8
         version: 3.24.2
     devDependencies:
-      '@atproto/dev-env':
-        specifier: workspace:^
-        version: link:../dev-env
       '@atproto/gndr':
         specifier: workspace:^
         version: link:../gndr
@@ -1551,6 +1548,9 @@ importers:
       '@did-plc/server':
         specifier: ^0.0.1
         version: 0.0.1
+      '@gander-social-atproto/dev-env':
+        specifier: workspace:^
+        version: link:../dev-env
       '@types/cors':
         specifier: ^2.8.12
         version: 2.8.12
