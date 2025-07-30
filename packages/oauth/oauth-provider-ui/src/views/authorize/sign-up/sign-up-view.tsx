@@ -1,6 +1,6 @@
 import { Trans, useLingui } from '@lingui/react/macro'
 import { ReactNode, useCallback, useState } from 'react'
-import type { CustomizationData } from '@atproto/oauth-provider-api'
+import type { CustomizationData } from '@gander-social-atproto/oauth-provider-api'
 import { WizardCard } from '../../../components/forms/wizard-card.tsx'
 import {
   LayoutTitlePage,

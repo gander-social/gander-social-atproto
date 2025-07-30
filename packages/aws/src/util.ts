@@ -1,4 +1,4 @@
-import { allFulfilled } from '@atproto/common'
+import { allFulfilled } from '@gander-social-atproto/common'
 import { ImageInvalidator } from './types'
 
 export class MultiImageInvalidator implements ImageInvalidator {

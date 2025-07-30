@@ -1,7 +1,7 @@
 import './disposable-polyfill/index.js'
 
-export * from '@atproto/jwk-webcrypto'
-export * from '@atproto/oauth-client'
+export * from '@gander-social-atproto/jwk-webcrypto'
+export * from '@gander-social-atproto/oauth-client'
 
 export * from './browser-oauth-client.js'
 export * from './errors.js'

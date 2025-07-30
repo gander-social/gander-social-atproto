@@ -1,10 +1,10 @@
-import { AtpAgent } from '@atproto/api'
+import { AtpAgent } from '@gander-social-atproto/api'
 import {
   ImageRef,
   SeedClient,
   TestNetworkNoAppView,
   basicSeed,
-} from '@atproto/dev-env'
+} from '@gander-social-atproto/dev-env'
 
 describe('account deactivation', () => {
   let network: TestNetworkNoAppView

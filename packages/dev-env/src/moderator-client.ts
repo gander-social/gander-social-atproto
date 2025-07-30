@@ -6,7 +6,7 @@ import {
   ToolsOzoneModerationQueryStatuses as QueryModerationStatuses,
   ToolsOzoneSettingRemoveOptions,
   ToolsOzoneSettingUpsertOption,
-} from '@atproto/api'
+} from '@gander-social-atproto/api'
 import { TestOzone } from './ozone'
 
 type TakeActionInput = EmitModerationEvent.InputSchema

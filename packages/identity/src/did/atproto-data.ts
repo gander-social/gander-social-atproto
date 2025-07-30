@@ -5,8 +5,8 @@ import {
   getNotifEndpoint,
   getPdsEndpoint,
   getSigningKey,
-} from '@atproto/common-web'
-import * as crypto from '@atproto/crypto'
+} from '@gander-social-atproto/common-web'
+import * as crypto from '@gander-social-atproto/crypto'
 import { AtprotoData, DidDocument } from '../types'
 
 export {

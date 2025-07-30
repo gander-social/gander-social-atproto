@@ -1,5 +1,5 @@
-import { MINUTE } from '@atproto/common'
-import { InvalidRequestError } from '@atproto/xrpc-server'
+import { MINUTE } from '@gander-social-atproto/common'
+import { InvalidRequestError } from '@gander-social-atproto/xrpc-server'
 import { NEW_PASSWORD_MAX_LENGTH } from '../../../../account-manager/helpers/scrypt'
 import { AppContext } from '../../../../context'
 import { Server } from '../../../../lexicon'

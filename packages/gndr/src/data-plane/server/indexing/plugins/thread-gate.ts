@@ -1,6 +1,6 @@
 import { CID } from 'multiformats/cid'
-import { AtUri, normalizeDatetimeAlways } from '@atproto/syntax'
-import { InvalidRequestError } from '@atproto/xrpc-server'
+import { AtUri, normalizeDatetimeAlways } from '@gander-social-atproto/syntax'
+import { InvalidRequestError } from '@gander-social-atproto/xrpc-server'
 import * as lex from '../../../../lexicon/lexicons'
 import * as Threadgate from '../../../../lexicon/types/app/gndr/feed/threadgate'
 import { BackgroundQueue } from '../../background'

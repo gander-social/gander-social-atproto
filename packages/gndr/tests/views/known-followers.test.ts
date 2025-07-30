@@ -1,5 +1,5 @@
-import { AtpAgent } from '@atproto/api'
-import { SeedClient, TestNetwork } from '@atproto/dev-env'
+import { AtpAgent } from '@gander-social-atproto/api'
+import { SeedClient, TestNetwork } from '@gander-social-atproto/dev-env'
 import { ids } from '../../src/lexicon/lexicons'
 import { knownFollowersSeed } from '../seed/known-followers'
 

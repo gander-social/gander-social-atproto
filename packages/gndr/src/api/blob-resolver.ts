@@ -7,8 +7,8 @@ import {
   VerifyCidError,
   VerifyCidTransform,
   createDecoders,
-} from '@atproto/common'
-import { AtprotoDid, isAtprotoDid } from '@atproto/did'
+} from '@gander-social-atproto/common'
+import { AtprotoDid, isAtprotoDid } from '@gander-social-atproto/did'
 import {
   ACCEPT_ENCODING_COMPRESSED,
   ACCEPT_ENCODING_UNCOMPRESSED,

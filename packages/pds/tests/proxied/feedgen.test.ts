@@ -1,6 +1,6 @@
-import { AtUri, AtpAgent } from '@atproto/api'
-import { SeedClient, TestNetwork } from '@atproto/dev-env'
-import { InvalidRequestError } from '@atproto/xrpc-server'
+import { AtUri, AtpAgent } from '@gander-social-atproto/api'
+import { SeedClient, TestNetwork } from '@gander-social-atproto/dev-env'
+import { InvalidRequestError } from '@gander-social-atproto/xrpc-server'
 import { forSnapshot } from '../_util'
 import basicSeed from '../seeds/basic'
 

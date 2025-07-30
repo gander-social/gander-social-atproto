@@ -1,4 +1,4 @@
-import { getPdsEndpoint, isValidDidDoc } from '@atproto/common-web'
+import { getPdsEndpoint, isValidDidDoc } from '@gander-social-atproto/common-web'
 import {
   ErrorResponseBody,
   Gettable,
@@ -6,7 +6,7 @@ import {
   XRPCError,
   XrpcClient,
   errorResponseBody,
-} from '@atproto/xrpc'
+} from '@gander-social-atproto/xrpc'
 import { Agent } from './agent'
 import {
   ComAtprotoServerCreateAccount,

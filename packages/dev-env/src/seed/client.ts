@@ -12,9 +12,9 @@ import {
   AppGndrRichtextFacet,
   AtpAgent,
   ComAtprotoModerationCreateReport,
-} from '@atproto/api'
-import { BlobRef } from '@atproto/lexicon'
-import { AtUri } from '@atproto/syntax'
+} from '@gander-social-atproto/api'
+import { BlobRef } from '@gander-social-atproto/lexicon'
+import { AtUri } from '@gander-social-atproto/syntax'
 import { TestNetworkNoAppView } from '../network-no-appview'
 
 // Makes it simple to create data via the XRPC client,

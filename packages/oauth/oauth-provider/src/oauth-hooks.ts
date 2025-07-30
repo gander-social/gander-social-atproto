@@ -1,11 +1,11 @@
-import { Jwks } from '@atproto/jwk'
-import type { Account } from '@atproto/oauth-provider-api'
+import { Jwks } from '@gander-social-atproto/jwk'
+import type { Account } from '@gander-social-atproto/oauth-provider-api'
 import {
   OAuthAuthorizationDetails,
   OAuthAuthorizationRequestParameters,
   OAuthClientMetadata,
   OAuthTokenResponse,
-} from '@atproto/oauth-types'
+} from '@gander-social-atproto/oauth-types'
 import { SignInData } from './account/sign-in-data.js'
 import { SignUpInput } from './account/sign-up-input.js'
 import { ClientAuth } from './client/client-auth.js'

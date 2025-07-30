@@ -1,12 +1,12 @@
 import assert from 'node:assert'
-import { ToolsOzoneModerationDefs } from '@atproto/api'
+import { ToolsOzoneModerationDefs } from '@gander-social-atproto/api'
 import {
   ModeratorClient,
   SeedClient,
   TestNetwork,
   basicSeed,
-} from '@atproto/dev-env'
-import { ResponseType, XRPCError } from '@atproto/xrpc'
+} from '@gander-social-atproto/dev-env'
+import { ResponseType, XRPCError } from '@gander-social-atproto/xrpc'
 import { forSnapshot, identity } from './_util'
 
 describe('blob divert', () => {

@@ -1,12 +1,12 @@
 import assert from 'node:assert'
-import { AtUri, AtpAgent } from '@atproto/api'
+import { AtUri, AtpAgent } from '@gander-social-atproto/api'
 import {
   SeedClient,
   TestNetworkNoAppView,
   TestPds,
   mockNetworkUtilities,
-} from '@atproto/dev-env'
-import { readCar } from '@atproto/repo'
+} from '@gander-social-atproto/dev-env'
+import { readCar } from '@gander-social-atproto/repo'
 import { ids } from '../src/lexicon/lexicons'
 
 describe('account migration', () => {

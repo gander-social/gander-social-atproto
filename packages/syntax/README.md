@@ -12,7 +12,7 @@ Validation logic for [atproto](https://atproto.com) identifiers - DIDs, Handles,
 Syntax specification: <https://atproto.com/specs/handle>
 
 ```typescript
-import { isValidHandle, ensureValidHandle, isValidDid } from '@atproto/syntax'
+import { isValidHandle, ensureValidHandle, isValidDid } from '@gander-social-atproto/syntax'
 
 isValidHandle('alice.test') // returns true
 ensureValidHandle('alice.test') // returns void
@@ -29,7 +29,7 @@ ensureValidDid(':did:method:val') // throws
 Syntax specification: <https://atproto.com/specs/nsid>
 
 ```typescript
-import { NSID } from '@atproto/syntax'
+import { NSID } from '@gander-social-atproto/syntax'
 
 const id1 = NSID.parse('com.example.foo')
 id1.authority // => 'example.com'
@@ -57,7 +57,7 @@ NSID.isValid('foo') // => false
 Syntax specification: <https://atproto.com/specs/at-uri-scheme>
 
 ```typescript
-import { AtUri } from '@atproto/syntax'
+import { AtUri } from '@gander-social-atproto/syntax'
 
 const uri = new AtUri('at://bob.com/com.example.post/1234')
 uri.protocol // => 'at:'

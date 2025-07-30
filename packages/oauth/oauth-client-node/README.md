@@ -22,8 +22,8 @@ needs of your application, and must respect the [ATPROTO].
 The `client_metadata` object will typically be built by the backend at startup.
 
 ```ts
-import { NodeOAuthClient, Session } from '@atproto/oauth-client-node'
-import { JoseKey } from '@atproto/jwk-jose'
+import { NodeOAuthClient, Session } from '@gander-social-atproto/oauth-client-node'
+import { JoseKey } from '@gander-social-atproto/jwk-jose'
 
 const client = new NodeOAuthClient({
   // This object will be used to build the payload of the /client-metadata.json
@@ -173,7 +173,7 @@ Instead of hard-coding the client metadata in your app, you can fetch it when
 the app starts:
 
 ```ts
-import { NodeOAuthClient } from '@atproto/oauth-client-node'
+import { NodeOAuthClient } from '@gander-social-atproto/oauth-client-node'
 
 const client = await NodeOAuthClient.fromClientId({
   clientId: 'https://my-app.com/client-metadata.json',
@@ -268,7 +268,7 @@ concurrent refreshes of the same session.
 Here is an example implementation based on [`redlock`](https://www.npmjs.com/package/redlock):
 
 ```ts
-import { RuntimeLock } from '@atproto/oauth-client-node'
+import { RuntimeLock } from '@gander-social-atproto/oauth-client-node'
 import Redis from 'ioredis'
 import Redlock from 'redlock'
 
@@ -361,7 +361,7 @@ import {
   Session,
   TokenRefreshError,
   TokenRevokedError,
-} from '@atproto/oauth-client-node'
+} from '@gander-social-atproto/oauth-client-node'
 
 client.addEventListener('updated', (event: CustomEvent<Session>) => {
   console.log('Refreshed tokens were saved in the store:', event.detail)

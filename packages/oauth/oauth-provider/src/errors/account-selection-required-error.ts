@@ -1,4 +1,4 @@
-import { OAuthAuthorizationRequestParameters } from '@atproto/oauth-types'
+import { OAuthAuthorizationRequestParameters } from '@gander-social-atproto/oauth-types'
 import { AuthorizationError } from './authorization-error.js'
 
 export class AccountSelectionRequiredError extends AuthorizationError {

@@ -1,8 +1,8 @@
-import * as gndr from '@atproto/gndr'
-import * as bsync from '@atproto/bsync'
-import { ExportableKeypair, Keypair } from '@atproto/crypto'
-import * as ozone from '@atproto/ozone'
-import * as pds from '@atproto/pds'
+import * as gndr from '@gander-social-atproto/gndr'
+import * as bsync from '@gander-social-atproto/bsync'
+import { ExportableKeypair, Keypair } from '@gander-social-atproto/crypto'
+import * as ozone from '@gander-social-atproto/ozone''
+import * as pds from '@gander-social-atproto/pds'
 
 export type IntrospectConfig = {
   port?: number

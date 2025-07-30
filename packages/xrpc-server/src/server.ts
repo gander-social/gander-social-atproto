@@ -10,7 +10,7 @@ import express, {
   RequestHandler,
   Router,
 } from 'express'
-import { check, schema } from '@atproto/common'
+import { check, schema } from '@gander-social-atproto/common'
 import {
   LexXrpcProcedure,
   LexXrpcQuery,
@@ -18,7 +18,7 @@ import {
   LexiconDoc,
   Lexicons,
   lexToJson,
-} from '@atproto/lexicon'
+} from '@gander-social-atproto/lexicon'
 import {
   InternalServerError,
   InvalidRequestError,

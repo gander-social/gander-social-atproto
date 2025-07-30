@@ -144,7 +144,7 @@ The label value definition are custom labels which only apply to that labeler. Y
 Here is how to do this:
 
 ```typescript
-import { AtpAgent } from '@atproto/api'
+import { AtpAgent } from '@gander-social-atproto/api'
 
 const agent = new AtpAgent({ service: 'https://example.com' })
 // assume `agent` is a signed in session
@@ -170,7 +170,7 @@ import {
   moderateFeedGen,
   moderateUserList,
   moderateLabeler,
-} from '@atproto/api'
+} from '@gander-social-atproto/api'
 ```
 
 Each of these follows the same API signature:

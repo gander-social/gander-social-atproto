@@ -1,4 +1,4 @@
-import { RefreshToken } from '@atproto/oauth-provider'
+import { RefreshToken } from '@gander-social-atproto/oauth-provider'
 import { AccountDb } from '../db'
 
 /**

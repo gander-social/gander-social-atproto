@@ -8,7 +8,7 @@ TypeScript implementation of the Lexicon data and API schema description languag
 ## Usage
 
 ```typescript
-import { Lexicons } from '@atproto/lexicon'
+import { Lexicons } from '@gander-social-atproto/lexicon'
 
 // create your lexicons collection
 const lex = new Lexicons()

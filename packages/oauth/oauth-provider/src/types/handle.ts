@@ -1,5 +1,5 @@
 import { z } from 'zod'
-import { ensureValidHandle, normalizeHandle } from '@atproto/syntax'
+import { ensureValidHandle, normalizeHandle } from '@gander-social-atproto/syntax'
 
 export const handleSchema = z
   .string()

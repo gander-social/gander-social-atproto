@@ -1,6 +1,6 @@
 import assert from 'node:assert'
-import { Un$Typed } from '@atproto/api'
-import { UpstreamFailureError } from '@atproto/xrpc-server'
+import { Un$Typed } from '@gander-social-atproto/api'
+import { UpstreamFailureError } from '@gander-social-atproto/xrpc-server'
 import { AppContext } from '../../../../context'
 import { Server } from '../../../../lexicon'
 import { Preferences } from '../../../../lexicon/types/app/gndr/notification/defs'

@@ -7,7 +7,7 @@ import {
   BrowserOAuthClientLoadOptions,
   LoginContinuedInParentWindowError,
   OAuthSession,
-} from '@atproto/oauth-client-browser'
+} from '@gander-social-atproto/oauth-client-browser'
 
 type Simplify<T> = { [K in keyof T]: T[K] } & NonNullable<unknown>
 

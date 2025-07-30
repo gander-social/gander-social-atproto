@@ -1,5 +1,5 @@
-import { mapDefined } from '@atproto/common'
-import { INVALID_HANDLE } from '@atproto/syntax'
+import { mapDefined } from '@gander-social-atproto/common'
+import { INVALID_HANDLE } from '@gander-social-atproto/syntax'
 import { AppContext } from '../../../../context'
 import { Server } from '../../../../lexicon'
 

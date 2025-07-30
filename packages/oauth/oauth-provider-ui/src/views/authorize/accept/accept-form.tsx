@@ -1,6 +1,6 @@
 import { Trans, useLingui } from '@lingui/react/macro'
-import type { Account, ScopeDetail } from '@atproto/oauth-provider-api'
-import type { OAuthClientMetadata } from '@atproto/oauth-types'
+import type { Account, ScopeDetail } from '@gander-social-atproto/oauth-provider-api'
+import type { OAuthClientMetadata } from '@gander-social-atproto/oauth-types'
 import { Button } from '../../../components/forms/button.tsx'
 import {
   FormCard,

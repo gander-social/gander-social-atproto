@@ -2,8 +2,8 @@ import {
   Account,
   ConfirmResetPasswordInput,
   InitiatePasswordResetInput,
-} from '@atproto/oauth-provider-api'
-import { OAuthScope } from '@atproto/oauth-types'
+} from '@gander-social-atproto/oauth-provider-api'
+import { OAuthScope } from '@gander-social-atproto/oauth-types'
 import { ClientId } from '../client/client-id.js'
 import { DeviceId } from '../device/device-id.js'
 import { DeviceData } from '../device/device-store.js'

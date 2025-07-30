@@ -1,5 +1,5 @@
-import { TID } from '@atproto/common'
-import { InvalidRequestError } from '@atproto/xrpc-server'
+import { TID } from '@gander-social-atproto/common'
+import { InvalidRequestError } from '@gander-social-atproto/xrpc-server'
 import { AppContext } from '../../../../context'
 import { isActivitySubscriptionEnabled } from '../../../../hydration/util'
 import { Server } from '../../../../lexicon'

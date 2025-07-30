@@ -8,7 +8,7 @@ import {
   schema,
   streamToBuffer,
   verifyCidForBytes,
-} from '@atproto/common'
+} from '@gander-social-atproto/common'
 import { BlockMap } from './block-map'
 import { CarBlock } from './types'
 

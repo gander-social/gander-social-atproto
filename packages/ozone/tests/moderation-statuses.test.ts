@@ -2,13 +2,13 @@ import assert from 'node:assert'
 import {
   ToolsOzoneModerationDefs,
   ToolsOzoneModerationQueryStatuses,
-} from '@atproto/api'
+} from '@gander-social-atproto/api'
 import {
   ModeratorClient,
   SeedClient,
   TestNetwork,
   basicSeed,
-} from '@atproto/dev-env'
+} from '@gander-social-atproto/dev-env'
 import { isRepoRef } from '../src/lexicon/types/com/atproto/admin/defs'
 import {
   REASONMISLEADING,

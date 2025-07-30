@@ -1,7 +1,7 @@
 import { ServiceImpl } from '@connectrpc/connect'
 import { Selectable, sql } from 'kysely'
 import * as ui8 from 'uint8arrays'
-import { noUndefinedVals } from '@atproto/common'
+import { noUndefinedVals } from '@gander-social-atproto/common'
 import { Service } from '../../../proto/gndr_connect'
 import { Database } from '../db'
 import { Label } from '../db/tables/label'

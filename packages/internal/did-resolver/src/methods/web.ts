@@ -1,4 +1,4 @@
-import { Did, DidError, didDocumentValidator, didWebToUrl } from '@atproto/did'
+import { Did, DidError, didDocumentValidator, didWebToUrl } from '@gander-social-atproto/did'
 import {
   Fetch,
   bindFetch,

@@ -1,5 +1,5 @@
-import { AtUri, AtpAgent } from '@atproto/api'
-import { SeedClient, TestNetwork, basicSeed } from '@atproto/dev-env'
+import { AtUri, AtpAgent } from '@gander-social-atproto/api'
+import { SeedClient, TestNetwork, basicSeed } from '@gander-social-atproto/dev-env'
 import { ids } from '../../src/lexicon/lexicons'
 
 describe('gndr actor likes feed views', () => {

@@ -3,15 +3,15 @@ import { IncomingMessage, OutgoingMessage } from 'node:http'
 import { Duplex, Readable, pipeline } from 'node:stream'
 import { Request, Response, json, text } from 'express'
 import { contentType } from 'mime-types'
-import { MaxSizeChecker, createDecoders } from '@atproto/common'
+import { MaxSizeChecker, createDecoders } from '@gander-social-atproto/common'
 import {
   LexXrpcProcedure,
   LexXrpcQuery,
   LexXrpcSubscription,
   Lexicons,
   jsonToLex,
-} from '@atproto/lexicon'
-import { ResponseType } from '@atproto/xrpc'
+} from '@gander-social-atproto/lexicon'
+import { ResponseType } from '@gander-social-atproto/xrpc'
 import { InternalServerError, InvalidRequestError, XRPCError } from './errors'
 import {
   Awaitable,

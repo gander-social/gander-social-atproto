@@ -1,7 +1,7 @@
 import {
   OAuthProtectedResourceMetadata,
   oauthProtectedResourceMetadataSchema,
-} from '@atproto/oauth-types'
+} from '@gander-social-atproto/oauth-types'
 import {
   Fetch,
   FetchResponseError,

@@ -1,5 +1,5 @@
 import { createHash, randomBytes } from 'node:crypto'
-import { JoseKey } from '@atproto/jwk-jose'
+import { JoseKey } from '@gander-social-atproto/jwk-jose'
 import {
   HandleResolver,
   OAuthClient,
@@ -7,8 +7,8 @@ import {
   OAuthClientOptions,
   RuntimeImplementation,
   RuntimeLock,
-} from '@atproto/oauth-client'
-import { OAuthResponseMode } from '@atproto/oauth-types'
+} from '@gander-social-atproto/oauth-client'
+import { OAuthResponseMode } from '@gander-social-atproto/oauth-types'
 import {
   AtprotoHandleResolverNode,
   AtprotoHandleResolverNodeOptions,

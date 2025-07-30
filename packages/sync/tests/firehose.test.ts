@@ -1,10 +1,10 @@
-import { createDeferrable, wait } from '@atproto/common'
+import { createDeferrable, wait } from '@gander-social-atproto/common'
 import {
   SeedClient,
   TestNetworkNoAppView,
   mockResolvers,
-} from '@atproto/dev-env'
-import { IdResolver } from '@atproto/identity'
+} from '@gander-social-atproto/dev-env'
+import { IdResolver } from '@gander-social-atproto/identity'
 import { Firehose, FirehoseOptions, MemoryRunner } from '../src'
 import { Create, Event } from '../src/events'
 

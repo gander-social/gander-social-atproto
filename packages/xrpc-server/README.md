@@ -8,8 +8,8 @@ TypeScript library for implementing [atproto](https://atproto.com) HTTP API serv
 ## Usage
 
 ```typescript
-import { LexiconDoc } from '@atproto/lexicon'
-import * as xrpc from '@atproto/xrpc-server'
+import { LexiconDoc } from '@gander-social-atproto/lexicon'
+import * as xrpc from '@gander-social-atproto/xrpc-server'
 import express from 'express'
 
 const lexicons: LexiconDoc[] = [

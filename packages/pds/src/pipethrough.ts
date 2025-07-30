@@ -7,8 +7,8 @@ import {
   getServiceEndpoint,
   omit,
   streamToNodeBuffer,
-} from '@atproto/common'
-import { ResponseType, XRPCError as XRPCClientError } from '@atproto/xrpc'
+} from '@gander-social-atproto/common'
+import { ResponseType, XRPCError as XRPCClientError } from '@gander-social-atproto/xrpc'
 import {
   CatchallHandler,
   HandlerPipeThroughBuffer,
@@ -17,7 +17,7 @@ import {
   InvalidRequestError,
   XRPCError as XRPCServerError,
   parseReqNsid,
-} from '@atproto/xrpc-server'
+} from '@gander-social-atproto/xrpc-server'
 import { buildProxiedContentEncoding } from '@atproto-labs/xrpc-utils'
 import { AppContext } from './context'
 import { ids } from './lexicon/lexicons'

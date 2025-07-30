@@ -1,4 +1,4 @@
-import { TestNetwork } from '@atproto/dev-env'
+import { TestNetwork } from '@gander-social-atproto/dev-env'
 import { ProfileAssociatedChat } from '../dist/lexicon/types/app/gndr/actor/defs'
 import { StashClient } from '../dist/stash'
 import { Namespace } from '../src/stash'

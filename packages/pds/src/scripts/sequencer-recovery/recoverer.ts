@@ -1,5 +1,5 @@
-import { rmIfExists } from '@atproto/common'
-import { Secp256k1Keypair } from '@atproto/crypto'
+import { rmIfExists } from '@gander-social-atproto/common'
+import { Secp256k1Keypair } from '@gander-social-atproto/crypto'
 import {
   BlockMap,
   CidSet,
@@ -8,7 +8,7 @@ import {
   cborToLexRecord,
   parseDataKey,
   readCar,
-} from '@atproto/repo'
+} from '@gander-social-atproto/repo'
 import {
   AccountManager,
   AccountStatus,

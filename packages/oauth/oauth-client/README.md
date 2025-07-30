@@ -11,8 +11,8 @@ For a node specific implementation, see
 ### Configuration
 
 ```ts
-import { OAuthClient, Key, Session } from '@atproto/oauth-client'
-import { JoseKey } from '@atproto/jwk-jose' // NodeJS/Browser only
+import { OAuthClient, Key, Session } from '@gander-social-atproto/oauth-client'
+import { JoseKey } from '@gander-social-atproto/jwk-jose' // NodeJS/Browser only
 
 const client = new OAuthClient({
   handleResolver: 'https://my-backend.example', // backend instances should use a DNS based resolver
@@ -179,7 +179,7 @@ by constructing an `Agent` (from `@atproto/api`) instance using the
 `OAuthSession` instance.
 
 ```ts
-import { Agent } from '@atproto/api'
+import { Agent } from '@gander-social-atproto/api'
 
 const agent = new Agent(oauthSession)
 
@@ -199,9 +199,9 @@ The `OAuthSession` instance obtained after signing in can be used to instantiate
 the `XrpcClient` class from the `@atproto/xrpc` package.
 
 ```ts
-import { Lexicons } from '@atproto/lexicon'
-import { OAuthClient } from '@atproto/oauth-client' // or "@atproto/oauth-client-browser" or "@atproto/oauth-client-node"
-import { XrpcClient } from '@atproto/xrpc'
+import { Lexicons } from '@gander-social-atproto/lexicon'
+import { OAuthClient } from '@gander-social-atproto/oauth-client' // or "@atproto/oauth-client-browser" or "@atproto/oauth-client-node"
+import { XrpcClient } from '@gander-social-atproto/xrpc'
 
 // Define your lexicons
 const myLexicon = new Lexicons([
@@ -300,7 +300,7 @@ import {
   Session,
   TokenRefreshError,
   TokenRevokedError,
-} from '@atproto/oauth-client'
+} from '@gander-social-atproto/oauth-client'
 
 client.addEventListener('updated', (event: CustomEvent<Session>) => {
   console.log('Refreshed tokens were saved in the store:', event.detail)

@@ -1,4 +1,4 @@
-import { wait } from '@atproto/common'
+import { wait } from '@gander-social-atproto/common'
 import { ConsecutiveList, MemoryRunner } from '../src/runner'
 
 describe('EventRunner utils', () => {

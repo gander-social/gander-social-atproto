@@ -1,7 +1,7 @@
 import assert from 'node:assert'
-import { AtpAgent } from '@atproto/api'
-import { MINUTE } from '@atproto/common'
-import { SeedClient, TestNetwork, basicSeed } from '@atproto/dev-env'
+import { AtpAgent } from '@gander-social-atproto/api'
+import { MINUTE } from '@gander-social-atproto/common'
+import { SeedClient, TestNetwork, basicSeed } from '@gander-social-atproto/dev-env'
 
 describe('label hydration', () => {
   let network: TestNetwork

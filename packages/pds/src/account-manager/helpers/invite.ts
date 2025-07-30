@@ -1,5 +1,5 @@
-import { chunkArray } from '@atproto/common'
-import { InvalidRequestError } from '@atproto/xrpc-server'
+import { chunkArray } from '@gander-social-atproto/common'
+import { InvalidRequestError } from '@gander-social-atproto/xrpc-server'
 import { countAll } from '../../db'
 import { AccountDb, InviteCode } from '../db'
 

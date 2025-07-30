@@ -1,5 +1,5 @@
-import { AppGndrNotificationDeclaration } from '@atproto/api'
-import { mapDefined } from '@atproto/common'
+import { AppGndrNotificationDeclaration } from '@gander-social-atproto/api'
+import { mapDefined } from '@gander-social-atproto/common'
 import { DataPlaneClient } from '../data-plane/client'
 import { Record as ProfileRecord } from '../lexicon/types/app/gndr/actor/profile'
 import { Record as StatusRecord } from '../lexicon/types/app/gndr/actor/status'

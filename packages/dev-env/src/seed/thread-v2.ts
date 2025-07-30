@@ -1,5 +1,5 @@
-import { AppGndrFeedPost } from '@atproto/api'
-import type { DatabaseSchema } from '@atproto/gndr'
+import { AppGndrFeedPost } from '@gander-social-atproto/api'
+import type { DatabaseSchema } from '@gander-social-atproto/gndr'
 import { TestNetwork } from '../network'
 import { TestNetworkNoAppView } from '../network-no-appview'
 import { RecordRef, SeedClient } from './client'

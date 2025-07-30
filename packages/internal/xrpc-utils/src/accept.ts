@@ -1,8 +1,8 @@
-import { ResponseType } from '@atproto/xrpc'
+import { ResponseType } from '@gander-social-atproto/xrpc'
 import {
   InvalidRequestError,
   XRPCError as XRPCServerError,
-} from '@atproto/xrpc-server'
+} from '@gander-social-atproto/xrpc-server'
 
 export type AcceptFlags = { q: number }
 export type Accept = [name: string, flags: AcceptFlags]

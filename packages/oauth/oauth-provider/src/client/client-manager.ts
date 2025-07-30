@@ -1,4 +1,4 @@
-import { Jwks, Keyset, jwksSchema } from '@atproto/jwk'
+import { Jwks, Keyset, jwksSchema } from '@gander-social-atproto/jwk'
 import {
   OAuthAuthorizationServerMetadata,
   OAuthClientIdDiscoverable,
@@ -9,7 +9,7 @@ import {
   isOAuthClientIdDiscoverable,
   isOAuthClientIdLoopback,
   oauthClientMetadataSchema,
-} from '@atproto/oauth-types'
+} from '@gander-social-atproto/oauth-types'
 import {
   Fetch,
   bindFetch,

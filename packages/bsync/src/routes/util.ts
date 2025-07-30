@@ -3,7 +3,7 @@ import {
   InvalidDidError,
   ensureValidAtUri,
   ensureValidDid,
-} from '@atproto/syntax'
+} from '@gander-social-atproto/syntax'
 
 export const validCursor = (cursor: string): number | null => {
   if (cursor === '') return null

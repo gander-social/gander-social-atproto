@@ -1,4 +1,4 @@
-import { lexicons } from '@atproto/api'
+import { lexicons } from '@gander-social-atproto/api'
 import { BackgroundQueue } from '../background'
 import { Database } from '../db'
 import { CommitCreateEvent, Jetstream } from '../jetstream/service'

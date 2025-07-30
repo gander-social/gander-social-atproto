@@ -1,4 +1,4 @@
-import { EXAMPLE_LABELER, SeedClient, TestGndr } from '@atproto/dev-env'
+import { EXAMPLE_LABELER, SeedClient, TestGndr } from '@gander-social-atproto/dev-env'
 import { ids } from '../../src/lexicon/lexicons'
 import usersSeed from './users'
 

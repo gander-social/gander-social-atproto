@@ -1,5 +1,5 @@
-import { AtUri, INVALID_HANDLE } from '@atproto/syntax'
-import { createServiceAuthHeaders } from '@atproto/xrpc-server'
+import { AtUri, INVALID_HANDLE } from '@gander-social-atproto/syntax'
+import { createServiceAuthHeaders } from '@gander-social-atproto/xrpc-server'
 import { AccountManager } from '../account-manager/account-manager'
 import { ActorStoreReader } from '../actor-store/actor-store-reader'
 import { GndrAppView } from '../gndr-app-view'

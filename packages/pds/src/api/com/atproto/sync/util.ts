@@ -1,4 +1,4 @@
-import { InvalidRequestError } from '@atproto/xrpc-server'
+import { InvalidRequestError } from '@gander-social-atproto/xrpc-server'
 import { ActorAccount } from '../../../../account-manager/helpers/account'
 import { AppContext } from '../../../../context'
 

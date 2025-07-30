@@ -1,4 +1,4 @@
-import { isValidTld } from '@atproto/syntax'
+import { isValidTld } from '@gander-social-atproto/syntax'
 import { ensureHandleServiceConstraints } from '../src/handle'
 
 describe('handle validation', () => {

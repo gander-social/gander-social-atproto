@@ -5,7 +5,7 @@ import {
   AtUri,
   ToolsOzoneModerationDefs,
   ToolsOzoneVerificationDefs,
-} from '@atproto/api'
+} from '@gander-social-atproto/api'
 import { Database } from '../db'
 import { CreatedAtUriKeyset, paginate } from '../db/pagination'
 import { Verification } from '../db/schema/verification'

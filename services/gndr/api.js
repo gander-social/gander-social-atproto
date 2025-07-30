@@ -44,8 +44,8 @@ const assert = require('node:assert')
 const cluster = require('node:cluster')
 const path = require('node:path')
 
-const { GndrAppView, ServerConfig } = require('@atproto/gndr')
-const { Secp256k1Keypair } = require('@atproto/crypto')
+const { GndrAppView, ServerConfig } = require('@gander-social-atproto/gndr')
+const { Secp256k1Keypair } = require('@gander-social-atproto/crypto')
 
 const main = async () => {
   const env = getEnv()

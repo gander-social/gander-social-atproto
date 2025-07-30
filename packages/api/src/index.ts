@@ -1,15 +1,15 @@
-import { Lexicons } from '@atproto/lexicon'
+import { Lexicons } from '@gander-social-atproto/lexicon'
 import { lexicons as internalLexicons } from './client/lexicons'
 
-export { AtUri } from '@atproto/syntax'
+export { AtUri } from '@gander-social-atproto/syntax'
 export {
   BlobRef,
   jsonStringToLex,
   jsonToLex,
   lexToJson,
   stringifyLex,
-} from '@atproto/lexicon'
-export { parseLanguage } from '@atproto/common-web'
+} from '@gander-social-atproto/lexicon'
+export { parseLanguage } from '@gander-social-atproto/common-web'
 export * from './types'
 export * from './const'
 export * from './util'

@@ -1,5 +1,5 @@
 import { CID } from 'multiformats/cid'
-import { graphemeLen, utf8Len } from '@atproto/common-web'
+import { graphemeLen, utf8Len } from '@gander-social-atproto/common-web'
 import { Lexicons } from '../lexicons'
 import {
   LexBoolean,

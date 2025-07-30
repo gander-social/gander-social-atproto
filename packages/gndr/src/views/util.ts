@@ -1,5 +1,5 @@
 import * as util from 'node:util'
-import { BlobRef } from '@atproto/lexicon'
+import { BlobRef } from '@gander-social-atproto/lexicon'
 import { Record as PostRecord } from '../lexicon/types/app/gndr/feed/post'
 import {
   Record as PostgateRecord,

@@ -1,7 +1,7 @@
-import { AtpAgent } from '@atproto/api'
-import { Keypair, Secp256k1Keypair } from '@atproto/crypto'
-import { SeedClient, TestNetwork, usersSeed } from '@atproto/dev-env'
-import { createServiceJwt } from '@atproto/xrpc-server'
+import { AtpAgent } from '@gander-social-atproto/api'
+import { Keypair, Secp256k1Keypair } from '@gander-social-atproto/crypto'
+import { SeedClient, TestNetwork, usersSeed } from '@gander-social-atproto/dev-env'
+import { createServiceJwt } from '@gander-social-atproto/xrpc-server'
 import { ids } from '../src/lexicon/lexicons'
 
 describe('auth', () => {

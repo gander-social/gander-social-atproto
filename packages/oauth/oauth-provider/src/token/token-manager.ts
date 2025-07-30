@@ -1,11 +1,11 @@
-import { SignedJwt, isSignedJwt } from '@atproto/jwk'
-import type { Account } from '@atproto/oauth-provider-api'
+import { SignedJwt, isSignedJwt } from '@gander-social-atproto/jwk'
+import type { Account } from '@gander-social-atproto/oauth-provider-api'
 import {
   OAuthAccessToken,
   OAuthAuthorizationRequestParameters,
   OAuthTokenResponse,
   OAuthTokenType,
-} from '@atproto/oauth-types'
+} from '@gander-social-atproto/oauth-types'
 import { AccessTokenMode } from '../access-token/access-token-mode.js'
 import { ClientAuth } from '../client/client-auth.js'
 import { Client } from '../client/client.js'

@@ -42,6 +42,6 @@ export default defineConfig({
   },
   optimizeDeps: {
     // Needed because this is a monorepo and it exposes CommonJS
-    include: ['@atproto/oauth-provider-api'],
+    include: ['@gander-social-atproto/oauth-provider-api'],
   },
 })

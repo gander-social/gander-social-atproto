@@ -1,5 +1,5 @@
 import { CID } from 'multiformats/cid'
-import { TID, check, dataToCborBlock } from '@atproto/common'
+import { TID, check, dataToCborBlock } from '@gander-social-atproto/common'
 import {
   BlobRef,
   LexValue,
@@ -8,7 +8,7 @@ import {
   ValidationError,
   lexToIpld,
   untypedJsonBlobRef,
-} from '@atproto/lexicon'
+} from '@gander-social-atproto/lexicon'
 import {
   RecordCreateOp,
   RecordDeleteOp,
@@ -16,12 +16,12 @@ import {
   RecordWriteOp,
   WriteOpAction,
   cborToLex,
-} from '@atproto/repo'
+} from '@gander-social-atproto/repo'
 import {
   AtUri,
   ensureValidDatetime,
   ensureValidRecordKey,
-} from '@atproto/syntax'
+} from '@gander-social-atproto/syntax'
 import { hasExplicitSlur } from '../handle/explicit-slurs'
 import * as lex from '../lexicon/lexicons'
 import * as AppGndrActorProfile from '../lexicon/types/app/gndr/actor/profile'

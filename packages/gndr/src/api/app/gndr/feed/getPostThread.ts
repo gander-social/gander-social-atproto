@@ -1,4 +1,4 @@
-import { InvalidRequestError } from '@atproto/xrpc-server'
+import { InvalidRequestError } from '@gander-social-atproto/xrpc-server'
 import { ServerConfig } from '../../../../config'
 import { AppContext } from '../../../../context'
 import { Code, DataPlaneClient, isDataplaneError } from '../../../../data-plane'

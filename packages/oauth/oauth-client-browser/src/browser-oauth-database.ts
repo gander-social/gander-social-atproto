@@ -1,11 +1,11 @@
-import { DidDocument } from '@atproto/did'
-import { Key } from '@atproto/jwk'
-import { WebcryptoKey } from '@atproto/jwk-webcrypto'
-import { InternalStateData, Session, TokenSet } from '@atproto/oauth-client'
+import { DidDocument } from '@gander-social-atproto/did'
+import { Key } from '@gander-social-atproto/jwk'
+import { WebcryptoKey } from '@gander-social-atproto/jwk-webcrypto'
+import { InternalStateData, Session, TokenSet } from '@gander-social-atproto/oauth-client'
 import {
   OAuthAuthorizationServerMetadata,
   OAuthProtectedResourceMetadata,
-} from '@atproto/oauth-types'
+} from '@gander-social-atproto/oauth-types'
 import { ResolvedHandle } from '@atproto-labs/handle-resolver'
 import { SimpleStore, Value } from '@atproto-labs/simple-store'
 import { DB, DBObjectStore } from './indexed-db/index.js'

@@ -7,14 +7,14 @@ import {
   OAuthClientOptions,
   OAuthSession,
   SessionEventMap,
-} from '@atproto/oauth-client'
+} from '@gander-social-atproto/oauth-client'
 import {
   OAuthClientMetadataInput,
   OAuthResponseMode,
   assertOAuthDiscoverableClientId,
   atprotoLoopbackClientMetadata,
   isOAuthClientIdLoopback,
-} from '@atproto/oauth-types'
+} from '@gander-social-atproto/oauth-types'
 import { BrowserOAuthDatabase } from './browser-oauth-database.js'
 import { BrowserRuntimeImplementation } from './browser-runtime-implementation.js'
 import { LoginContinuedInParentWindowError } from './errors.js'

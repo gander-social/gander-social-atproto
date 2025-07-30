@@ -1,4 +1,4 @@
-import { mapDefined } from '@atproto/common'
+import { mapDefined } from '@gander-social-atproto/common'
 import { AppContext } from '../../../../context'
 import { DataPlaneClient } from '../../../../data-plane'
 import { FeedItem } from '../../../../hydration/feed'

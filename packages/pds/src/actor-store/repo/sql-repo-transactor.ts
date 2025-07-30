@@ -1,6 +1,6 @@
 import { CID } from 'multiformats/cid'
-import { chunkArray } from '@atproto/common'
-import { BlockMap, CommitData, RepoStorage } from '@atproto/repo'
+import { chunkArray } from '@gander-social-atproto/common'
+import { BlockMap, CommitData, RepoStorage } from '@gander-social-atproto/repo'
 import { ActorDb, RepoBlock } from '../db'
 import { SqlRepoReader } from './sql-repo-reader'
 

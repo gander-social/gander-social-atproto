@@ -6,9 +6,9 @@ export {
 } from '@atproto-labs/fetch'
 export * from '@atproto-labs/handle-resolver'
 
-export * from '@atproto/did'
-export * from '@atproto/jwk'
-export * from '@atproto/oauth-types'
+export * from '@gander-social-atproto/did'
+export * from '@gander-social-atproto/jwk'
+export * from '@gander-social-atproto/oauth-types'
 
 export * from './lock.js'
 export * from './oauth-authorization-server-metadata-resolver.js'

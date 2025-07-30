@@ -1,5 +1,5 @@
-import { AppGndrFeedPost, AtpAgent, Un$Typed } from '@atproto/api'
-import { SeedClient, TestNetwork, basicSeed } from '@atproto/dev-env'
+import { AppGndrFeedPost, AtpAgent, Un$Typed } from '@gander-social-atproto/api'
+import { SeedClient, TestNetwork, basicSeed } from '@gander-social-atproto/dev-env'
 import { RecordWithMedia } from '../../dist/views/types'
 import { ids } from '../../src/lexicon/lexicons'
 import { RecordEmbed, VideoEmbed } from '../../src/views/types'

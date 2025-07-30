@@ -1,5 +1,5 @@
-import AtpAgent from '@atproto/api'
-import { TestNetwork } from '@atproto/dev-env'
+import AtpAgent from '@gander-social-atproto/api'
+import { TestNetwork } from '@gander-social-atproto/dev-env'
 
 describe('get config', () => {
   describe('when live now is NOT configured', () => {

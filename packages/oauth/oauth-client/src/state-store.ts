@@ -1,4 +1,4 @@
-import { Key } from '@atproto/jwk'
+import { Key } from '@gander-social-atproto/jwk'
 import { SimpleStore } from '@atproto-labs/simple-store'
 import { ClientAuthMethod } from './oauth-client-auth.js'
 

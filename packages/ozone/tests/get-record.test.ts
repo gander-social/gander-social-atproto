@@ -1,12 +1,12 @@
-import { AtpAgent } from '@atproto/api'
+import { AtpAgent } from '@gander-social-atproto/api'
 import {
   ModeratorClient,
   SeedClient,
   TestNetwork,
   TestOzone,
   basicSeed,
-} from '@atproto/dev-env'
-import { AtUri } from '@atproto/syntax'
+} from '@gander-social-atproto/dev-env'
+import { AtUri } from '@gander-social-atproto/syntax'
 import { ids } from '../src/lexicon/lexicons'
 import {
   REASONOTHER,

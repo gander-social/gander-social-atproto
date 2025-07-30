@@ -1,8 +1,8 @@
 import net from 'node:net'
-import AtpAgent from '@atproto/api'
-import { cborEncode, noUndefinedVals } from '@atproto/common'
-import { Keypair } from '@atproto/crypto'
-import { IdResolver } from '@atproto/identity'
+import AtpAgent from '@gander-social-atproto/api'
+import { cborEncode, noUndefinedVals } from '@gander-social-atproto/common'
+import { Keypair } from '@gander-social-atproto/crypto'
+import { IdResolver } from '@gander-social-atproto/identity'
 import { LabelRow } from '../db/schema/label'
 import { Label } from '../lexicon/types/com/atproto/label/defs'
 

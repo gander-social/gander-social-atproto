@@ -1,5 +1,5 @@
-import { MINUTE } from '@atproto/common'
-import { AuthRequiredError, InvalidRequestError } from '@atproto/xrpc-server'
+import { MINUTE } from '@gander-social-atproto/common'
+import { AuthRequiredError, InvalidRequestError } from '@gander-social-atproto/xrpc-server'
 import { AccountStatus } from '../../../../account-manager/account-manager'
 import { OLD_PASSWORD_MAX_LENGTH } from '../../../../account-manager/helpers/scrypt'
 import { AppContext } from '../../../../context'

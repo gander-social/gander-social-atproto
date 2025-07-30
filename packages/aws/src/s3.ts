@@ -2,8 +2,8 @@ import stream from 'node:stream'
 import * as aws from '@aws-sdk/client-s3'
 import { Upload } from '@aws-sdk/lib-storage'
 import { CID } from 'multiformats/cid'
-import { randomStr } from '@atproto/crypto'
-import { BlobNotFoundError, BlobStore } from '@atproto/repo'
+import { randomStr } from '@gander-social-atproto/crypto'
+import { BlobNotFoundError, BlobStore } from '@gander-social-atproto/repo'
 
 export type S3Config = { bucket: string; uploadTimeoutMs?: number } & Omit<
   aws.S3ClientConfig,

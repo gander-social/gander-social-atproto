@@ -1,5 +1,5 @@
-import { createRetryable } from '@atproto/common'
-import { ResponseType, XRPCError } from '@atproto/xrpc'
+import { createRetryable } from '@gander-social-atproto/common'
+import { ResponseType, XRPCError } from '@gander-social-atproto/xrpc'
 
 export const RETRYABLE_HTTP_STATUS_CODES = new Set([
   408, 425, 429, 500, 502, 503, 504, 522, 524,

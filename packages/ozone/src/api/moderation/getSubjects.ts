@@ -1,5 +1,5 @@
-import { ToolsOzoneModerationDefs } from '@atproto/api'
-import { AtUri } from '@atproto/syntax'
+import { ToolsOzoneModerationDefs } from '@gander-social-atproto/api'
+import { AtUri } from '@gander-social-atproto/syntax'
 import { AppContext } from '../../context'
 import { Server } from '../../lexicon'
 import { SubjectView } from '../../lexicon/types/tools/ozone/moderation/defs'

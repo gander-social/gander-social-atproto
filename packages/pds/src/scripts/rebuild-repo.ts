@@ -1,12 +1,12 @@
 import readline from 'node:readline/promises'
-import { TID } from '@atproto/common'
+import { TID } from '@gander-social-atproto/common'
 import {
   BlockMap,
   CidSet,
   MST,
   MemoryBlockstore,
   signCommit,
-} from '@atproto/repo'
+} from '@gander-social-atproto/repo'
 import { AccountManager } from '../account-manager/account-manager'
 import { ActorStore } from '../actor-store/actor-store'
 import { Sequencer } from '../sequencer'

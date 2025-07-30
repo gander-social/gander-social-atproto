@@ -17,7 +17,7 @@ import { useDeviceSessionsQuery } from '#/data/useDeviceSessionsQuery'
 import { useSignInMutation } from '#/data/useSignInMutation'
 import { format2FACode } from '#/util/format2FACode'
 import { wait } from '#/util/wait'
-import { normalizeAndEnsureValidHandle } from '@atproto/syntax'
+import { normalizeAndEnsureValidHandle } from '@gander-social-atproto/syntax'
 
 export const Route = createFileRoute('/account/_minimalLayout/sign-in')({
   component: RouteComponent,

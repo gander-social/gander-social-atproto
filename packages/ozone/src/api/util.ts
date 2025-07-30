@@ -1,4 +1,4 @@
-import { InvalidRequestError } from '@atproto/xrpc-server'
+import { InvalidRequestError } from '@gander-social-atproto/xrpc-server'
 import { AppContext } from '../context'
 import { Member } from '../db/schema/member'
 import { ModerationEvent } from '../db/schema/moderation_event'

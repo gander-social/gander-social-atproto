@@ -1,5 +1,5 @@
-import { AtUri } from '@atproto/syntax'
-import { InvalidRequestError } from '@atproto/xrpc-server'
+import { AtUri } from '@gander-social-atproto/syntax'
+import { InvalidRequestError } from '@gander-social-atproto/xrpc-server'
 import * as ChatGndrConvoDefs from '../lexicon/types/chat/gndr/convo/defs'
 import { RepoRef, isRepoRef } from '../lexicon/types/com/atproto/admin/defs'
 import { InputSchema as ReportInput } from '../lexicon/types/com/atproto/moderation/createReport'

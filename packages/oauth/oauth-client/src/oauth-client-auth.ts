@@ -1,9 +1,9 @@
-import { Keyset } from '@atproto/jwk'
+import { Keyset } from '@gander-social-atproto/jwk'
 import {
   CLIENT_ASSERTION_TYPE_JWT_BEARER,
   OAuthAuthorizationServerMetadata,
   OAuthClientCredentials,
-} from '@atproto/oauth-types'
+} from '@gander-social-atproto/oauth-types'
 import { FALLBACK_ALG } from './constants.js'
 import { AuthMethodUnsatisfiableError } from './errors/auth-method-unsatisfiable-error.js'
 import { Runtime } from './runtime.js'

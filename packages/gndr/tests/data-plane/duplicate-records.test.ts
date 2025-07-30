@@ -1,7 +1,7 @@
-import { TID, cidForCbor } from '@atproto/common'
-import { TestNetwork } from '@atproto/dev-env'
-import { WriteOpAction } from '@atproto/repo'
-import { AtUri } from '@atproto/syntax'
+import { TID, cidForCbor } from '@gander-social-atproto/common'
+import { TestNetwork } from '@gander-social-atproto/dev-env'
+import { WriteOpAction } from '@gander-social-atproto/repo'
+import { AtUri } from '@gander-social-atproto/syntax'
 import * as lex from '../../src/lexicon/lexicons'
 
 type Database = TestNetwork['gndr']['db']

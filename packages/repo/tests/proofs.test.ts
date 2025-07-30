@@ -1,5 +1,5 @@
-import { TID, cidForCbor, streamToBuffer } from '@atproto/common'
-import * as crypto from '@atproto/crypto'
+import { TID, cidForCbor, streamToBuffer } from '@gander-social-atproto/common'
+import * as crypto from '@gander-social-atproto/crypto'
 import { RecordCidClaim, RecordPath, Repo, RepoContents } from '../src'
 import { MemoryBlockstore } from '../src/storage'
 import * as sync from '../src/sync'

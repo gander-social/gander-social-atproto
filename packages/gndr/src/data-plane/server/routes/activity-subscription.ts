@@ -1,6 +1,6 @@
 import { PlainMessage } from '@bufbuild/protobuf'
 import { ServiceImpl } from '@connectrpc/connect'
-import { keyBy } from '@atproto/common'
+import { keyBy } from '@gander-social-atproto/common'
 import { Service } from '../../../proto/gndr_connect'
 import {
   ActivitySubscription,

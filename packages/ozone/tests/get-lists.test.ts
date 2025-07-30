@@ -1,4 +1,4 @@
-import { AtpAgent, GNDR_LABELER_DID } from '@atproto/api'
+import { AtpAgent, GNDR_LABELER_DID } from '@gander-social-atproto/api'
 import {
   ModeratorClient,
   RecordRef,
@@ -6,7 +6,7 @@ import {
   TestNetwork,
   TestOzone,
   basicSeed,
-} from '@atproto/dev-env'
+} from '@gander-social-atproto/dev-env'
 import { ids } from '../src/lexicon/lexicons'
 import { TAKEDOWN_LABEL } from '../src/mod-service'
 

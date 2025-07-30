@@ -1,5 +1,5 @@
-import AtpAgent, { AppGndrEmbedRecord } from '@atproto/api'
-import { SeedClient, TestNetwork } from '@atproto/dev-env'
+import AtpAgent, { AppGndrEmbedRecord } from '@gander-social-atproto/api'
+import { SeedClient, TestNetwork } from '@gander-social-atproto/dev-env'
 import { ids } from '../src/lexicon/lexicons'
 import { Users, postgatesSeed } from './seed/postgates'
 

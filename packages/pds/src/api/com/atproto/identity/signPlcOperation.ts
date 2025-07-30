@@ -1,6 +1,6 @@
 import * as plc from '@did-plc/lib'
-import { check } from '@atproto/common'
-import { InvalidRequestError } from '@atproto/xrpc-server'
+import { check } from '@gander-social-atproto/common'
+import { InvalidRequestError } from '@gander-social-atproto/xrpc-server'
 import { AppContext } from '../../../../context'
 import { Server } from '../../../../lexicon'
 import { ids } from '../../../../lexicon/lexicons'

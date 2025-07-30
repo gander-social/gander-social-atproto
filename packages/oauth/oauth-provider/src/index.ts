@@ -1,9 +1,9 @@
 // Avoid having to explicitly depend sub dependencies
 export * from '@atproto-labs/fetch'
 export * from '@atproto-labs/fetch-node'
-export * from '@atproto/jwk'
-export * from '@atproto/jwk-jose'
-export * from '@atproto/oauth-types'
+export * from '@gander-social-atproto/jwk'
+export * from '@gander-social-atproto/jwk-jose'
+export * from '@gander-social-atproto/oauth-types'
 
 export * from './constants.js'
 export * from './oauth-client.js'

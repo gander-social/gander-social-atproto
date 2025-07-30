@@ -1,10 +1,10 @@
-import AtpAgent from '@atproto/api'
+import AtpAgent from '@gander-social-atproto/api'
 import {
   ModeratorClient,
   SeedClient,
   TestNetwork,
   basicSeed,
-} from '@atproto/dev-env'
+} from '@gander-social-atproto/dev-env'
 import { ids } from '../src/lexicon/lexicons'
 
 describe('expiring label', () => {

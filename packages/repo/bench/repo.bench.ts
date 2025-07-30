@@ -1,6 +1,6 @@
-import { TID } from '@atproto/common'
-import * as crypto from '@atproto/crypto'
-import { Secp256k1Keypair } from '@atproto/crypto'
+import { TID } from '@gander-social-atproto/common'
+import * as crypto from '@gander-social-atproto/crypto'
+import { Secp256k1Keypair } from '@gander-social-atproto/crypto'
 import { MemoryBlockstore, Repo, WriteOpAction } from '../src'
 import * as util from '../tests/_util'
 

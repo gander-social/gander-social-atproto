@@ -3,7 +3,7 @@ import {
   LexXrpcQuery,
   jsonStringToLex,
   stringifyLex,
-} from '@atproto/lexicon'
+} from '@gander-social-atproto/lexicon'
 import {
   CallOptions,
   ErrorResponseBody,

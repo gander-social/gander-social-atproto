@@ -4,8 +4,8 @@ import {
   AtpAgent,
   ComAtprotoServerConfirmEmail,
   ComAtprotoServerUpdateEmail,
-} from '@atproto/api'
-import { SeedClient, TestNetworkNoAppView } from '@atproto/dev-env'
+} from '@gander-social-atproto/api'
+import { SeedClient, TestNetworkNoAppView } from '@gander-social-atproto/dev-env'
 import { ServerMailer } from '../src/mailer'
 import userSeed from './seeds/users'
 

@@ -1,5 +1,5 @@
-import { TID } from '@atproto/common-web'
-import { TestNetworkNoAppView } from '@atproto/dev-env'
+import { TID } from '@gander-social-atproto/common-web'
+import { TestNetworkNoAppView } from '@gander-social-atproto/dev-env'
 import {
   AppGndrActorDefs,
   AppGndrActorProfile,

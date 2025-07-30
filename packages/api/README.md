@@ -18,7 +18,7 @@ yarn add @atproto/api
 Then in your application:
 
 ```typescript
-import { AtpAgent } from '@atproto/api'
+import { AtpAgent } from '@gander-social-atproto/api'
 
 const agent = new AtpAgent({ service: 'https://example.com' })
 ```
@@ -45,7 +45,7 @@ class.
 > `@atproto/oauth-client-*` packages).
 
 ```typescript
-import { AtpAgent, AtpSessionEvent, AtpSessionData } from '@atproto/api'
+import { AtpAgent, AtpSessionEvent, AtpSessionData } from '@gander-social-atproto/api'
 
 // configure connection to the server, without account authentication
 const agent = new AtpAgent({
@@ -92,8 +92,8 @@ Every `@atproto/oauth-client-*` implementation has a different way to obtain an
 `@atproto/api`). Here is an example restoring a previously saved session:
 
 ```typescript
-import { Agent } from '@atproto/api'
-import { OAuthClient } from '@atproto/oauth-client'
+import { Agent } from '@gander-social-atproto/api'
+import { OAuthClient } from '@gander-social-atproto/oauth-client'
 
 const oauthClient = new OAuthClient({
   // ...
@@ -174,7 +174,7 @@ if (agent instanceof AtpAgent) {
 The package includes a complete types system which includes validation and type-guards. For example, to validate a post record:
 
 ```typescript
-import { AppGndrFeedPost } from '@atproto/api'
+import { AppGndrFeedPost } from '@gander-social-atproto/api'
 
 const post = {...}
 if (AppGndrFeedPost.isRecord(post)) {
@@ -197,7 +197,7 @@ Some records (ie posts) use the `app.bsky.richtext` lexicon. At the moment richt
 ℹ️ It is **strongly** recommended to use this package's `RichText` library. Javascript encodes strings in utf16 while the protocol (and most other programming environments) use utf8. Converting between the two is challenging, but `RichText` handles that for you.
 
 ```typescript
-import { RichText } from '@atproto/api'
+import { RichText } from '@gander-social-atproto/api'
 
 // creating richtext
 const rt = new RichText({
@@ -245,7 +245,7 @@ Applying the moderation system is a challenging task, but we've done our best to
 For more information, see the [Moderation Documentation](./docs/moderation.md).
 
 ```typescript
-import { moderatePost } from '@atproto/api'
+import { moderatePost } from '@gander-social-atproto/api'
 
 // First get the user's moderation prefs and their label definitions
 // =
@@ -348,7 +348,7 @@ If you want to provide your own `fetch` implementation, you can do so by
 instantiating the sessionManager with a custom fetch implementation:
 
 ```typescript
-import { AtpAgent } from '@atproto/api'
+import { AtpAgent } from '@gander-social-atproto/api'
 
 const myFetch = (input: RequestInfo | URL, init?: RequestInit) => {
   console.log('requesting', input)

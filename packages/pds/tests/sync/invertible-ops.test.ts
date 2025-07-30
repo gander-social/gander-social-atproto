@@ -1,8 +1,8 @@
 import { CID } from 'multiformats/cid'
-import { AtUri } from '@atproto/api'
-import { SeedClient, TestNetworkNoAppView } from '@atproto/dev-env'
-import * as repo from '@atproto/repo'
-import { Subscription } from '@atproto/xrpc-server'
+import { AtUri } from '@gander-social-atproto/api'
+import { SeedClient, TestNetworkNoAppView } from '@gander-social-atproto/dev-env'
+import * as repo from '@gander-social-atproto/repo'
+import { Subscription } from '@gander-social-atproto/xrpc-server'
 import {
   OutputSchema as SubscribeReposOutput,
   RepoOp,

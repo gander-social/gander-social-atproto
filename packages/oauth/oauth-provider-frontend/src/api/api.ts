@@ -3,7 +3,7 @@ import {
   ApiEndpoints,
   CSRF_COOKIE_NAME,
   CSRF_HEADER_NAME,
-} from '@atproto/oauth-provider-api'
+} from '@gander-social-atproto/oauth-provider-api'
 import { readCookie } from '../util/cookies.ts'
 import {
   JsonClient,

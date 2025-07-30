@@ -11,8 +11,8 @@ import {
   cloneStream,
   createDecoders,
   isErrnoException,
-} from '@atproto/common'
-import { BlobNotFoundError } from '@atproto/repo'
+} from '@gander-social-atproto/common'
+import { BlobNotFoundError } from '@gander-social-atproto/repo'
 import { StreamBlobOptions, streamBlob } from '../api/blob-resolver'
 import { AppContext } from '../context'
 import { Middleware, responseSignal } from '../util/http'

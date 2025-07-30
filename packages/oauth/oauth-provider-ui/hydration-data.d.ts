@@ -2,8 +2,8 @@ import type {
   CustomizationData,
   ScopeDetail,
   Session,
-} from '@atproto/oauth-provider-api'
-import type { OAuthClientMetadata } from '@atproto/oauth-types'
+} from '@gander-social-atproto/oauth-provider-api'
+import type { OAuthClientMetadata } from '@gander-social-atproto/oauth-types'
 
 export type AuthorizeData = {
   requestUri: string

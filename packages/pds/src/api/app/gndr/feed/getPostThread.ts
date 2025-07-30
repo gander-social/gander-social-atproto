@@ -1,6 +1,6 @@
 import assert from 'node:assert'
-import { AtUri } from '@atproto/syntax'
-import { XRPCError } from '@atproto/xrpc'
+import { AtUri } from '@gander-social-atproto/syntax'
+import { XRPCError } from '@gander-social-atproto/xrpc'
 import { AppContext } from '../../../../context'
 import { Server } from '../../../../lexicon'
 import { ids } from '../../../../lexicon/lexicons'

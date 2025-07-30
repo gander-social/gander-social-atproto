@@ -6,7 +6,7 @@ import {
   Lexicons,
   ValidationError,
   type ValidationResult,
-} from '@atproto/lexicon'
+} from '@gander-social-atproto/lexicon'
 import { type $Typed, is$typed, maybe$typed } from './util.js'
 
 export const schemaDict = {

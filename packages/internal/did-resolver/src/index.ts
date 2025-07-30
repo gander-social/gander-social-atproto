@@ -1,4 +1,4 @@
-export * from '@atproto/did'
+export * from '@gander-social-atproto/did'
 
 export * from './did-cache-memory.js'
 export * from './did-cache.js'

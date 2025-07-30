@@ -2,7 +2,7 @@ import type { ServerResponse } from 'node:http'
 import {
   OAuthAuthorizationRequestParameters,
   OAuthResponseMode,
-} from '@atproto/oauth-types'
+} from '@gander-social-atproto/oauth-types'
 import { AuthorizationError } from '../errors/authorization-error.js'
 import { html, js } from '../lib/html/index.js'
 import { sendWebPage } from '../lib/send-web-page.js'

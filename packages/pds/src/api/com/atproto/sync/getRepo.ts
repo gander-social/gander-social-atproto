@@ -1,6 +1,6 @@
 import stream from 'node:stream'
-import { byteIterableToStream } from '@atproto/common'
-import { InvalidRequestError } from '@atproto/xrpc-server'
+import { byteIterableToStream } from '@gander-social-atproto/common'
+import { InvalidRequestError } from '@gander-social-atproto/xrpc-server'
 import {
   RepoRootNotFoundError,
   SqlRepoReader,

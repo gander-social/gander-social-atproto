@@ -4,8 +4,8 @@ import {
   SourceFile,
   VariableDeclarationKind,
 } from 'ts-morph'
-import { type LexiconDoc, Lexicons } from '@atproto/lexicon'
-import { NSID } from '@atproto/syntax'
+import { type LexiconDoc, Lexicons } from '@gander-social-atproto/lexicon'
+import { NSID } from '@gander-social-atproto/syntax'
 import { type GeneratedAPI } from '../types'
 import { gen, lexiconsTs, utilTs } from './common'
 import {
@@ -53,9 +53,9 @@ const indexTs = (
   nsidTokens: Record<string, string[]>,
 ) =>
   gen(project, '/index.ts', async (file) => {
-    //= import {createServer as createXrpcServer, Server as XrpcServer} from '@atproto/xrpc-server'
+    //= import {createServer as createXrpcServer, Server as XrpcServer} from '@gander-social-atproto/xrpc-server'
     file.addImportDeclaration({
-      moduleSpecifier: '@atproto/xrpc-server',
+      moduleSpecifier: '@gander-social-atproto/xrpc-server',
       namedImports: [
         { name: 'Auth', isTypeOnly: true },
         { name: 'Options', alias: 'XrpcOptions', isTypeOnly: true },
@@ -416,7 +416,7 @@ function genServerXrpcStreaming(
   const def = lexicons.getDefOrThrow(lexUri, ['subscription'])
 
   file.addImportDeclaration({
-    moduleSpecifier: '@atproto/xrpc-server',
+    moduleSpecifier: '@gander-social-atproto/xrpc-server',
     namedImports: [{ name: 'ErrorFrame' }],
   })
 

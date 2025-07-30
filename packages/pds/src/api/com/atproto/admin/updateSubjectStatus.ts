@@ -1,6 +1,6 @@
 import { CID } from 'multiformats/cid'
-import { AtUri } from '@atproto/syntax'
-import { InvalidRequestError } from '@atproto/xrpc-server'
+import { AtUri } from '@gander-social-atproto/syntax'
+import { InvalidRequestError } from '@gander-social-atproto/xrpc-server'
 import { AppContext } from '../../../../context'
 import { Server } from '../../../../lexicon'
 import {

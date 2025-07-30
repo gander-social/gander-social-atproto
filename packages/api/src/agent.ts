@@ -1,12 +1,12 @@
 import AwaitLock from 'await-lock'
-import { TID, retry } from '@atproto/common-web'
-import { AtUri, ensureValidDid } from '@atproto/syntax'
+import { TID, retry } from '@gander-social-atproto/common-web'
+import { AtUri, ensureValidDid } from '@gander-social-atproto/syntax'
 import {
   FetchHandler,
   FetchHandlerOptions,
   XrpcClient,
   buildFetchHandler,
-} from '@atproto/xrpc'
+} from '@gander-social-atproto/xrpc'
 import {
   AppGndrActorDefs,
   AppGndrActorProfile,

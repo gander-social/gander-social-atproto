@@ -1,6 +1,6 @@
 import assert from 'node:assert'
-import { mapDefined } from '@atproto/common'
-import { AtUri } from '@atproto/syntax'
+import { mapDefined } from '@gander-social-atproto/common'
+import { AtUri } from '@gander-social-atproto/syntax'
 import { DataPlaneClient } from '../data-plane/client'
 import { ids } from '../lexicon/lexicons'
 import { Record as ProfileRecord } from '../lexicon/types/app/gndr/actor/profile'

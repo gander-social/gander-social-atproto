@@ -1,5 +1,5 @@
-import { HOUR, MINUTE, mapDefined } from '@atproto/common'
-import { AtUri, INVALID_HANDLE, normalizeDatetimeAlways } from '@atproto/syntax'
+import { HOUR, MINUTE, mapDefined } from '@gander-social-atproto/common'
+import { AtUri, INVALID_HANDLE, normalizeDatetimeAlways } from '@gander-social-atproto/syntax'
 import { Actor, ProfileViewerState } from '../hydration/actor'
 import { FeedItem, Like, Post, Repost } from '../hydration/feed'
 import { Follow, Verification } from '../hydration/graph'

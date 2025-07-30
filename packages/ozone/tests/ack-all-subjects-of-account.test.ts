@@ -1,11 +1,11 @@
-import { ComAtprotoRepoStrongRef } from '@atproto/api'
+import { ComAtprotoRepoStrongRef } from '@gander-social-atproto/api'
 import {
   ModeratorClient,
   RecordRef,
   SeedClient,
   TestNetwork,
   basicSeed,
-} from '@atproto/dev-env'
+} from '@gander-social-atproto/dev-env'
 import { isRepoRef } from '../src/lexicon/types/com/atproto/admin/defs'
 import {
   REASONAPPEAL,

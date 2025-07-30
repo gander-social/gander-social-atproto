@@ -1,4 +1,4 @@
-import { AuthRequiredError } from '@atproto/xrpc-server'
+import { AuthRequiredError } from '@gander-social-atproto/xrpc-server'
 import { AppContext } from '../../context'
 import { Member } from '../../db/schema/member'
 import { Server } from '../../lexicon'

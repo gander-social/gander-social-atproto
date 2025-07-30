@@ -1,7 +1,7 @@
 import {
   ActiveDeviceSession,
   CustomizationData,
-} from '@atproto/oauth-provider-api'
+} from '@gander-social-atproto/oauth-provider-api'
 
 export type HydrationData = {
   'account-page': {

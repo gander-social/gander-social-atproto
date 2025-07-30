@@ -1,6 +1,6 @@
-import { AtpAgent } from '@atproto/api'
-import { SeedClient, TestNetworkNoAppView } from '@atproto/dev-env'
-import { IdResolver } from '@atproto/identity'
+import { AtpAgent } from '@gander-social-atproto/api'
+import { SeedClient, TestNetworkNoAppView } from '@gander-social-atproto/dev-env'
+import { IdResolver } from '@gander-social-atproto/identity'
 import { AppContext } from '../src'
 import basicSeed from './seeds/basic'
 

@@ -1,5 +1,5 @@
 import { ServiceImpl } from '@connectrpc/connect'
-import { keyBy } from '@atproto/common'
+import { keyBy } from '@gander-social-atproto/common'
 import { Service } from '../../../proto/gndr_connect'
 import { Database } from '../db'
 import { TimeCidKeyset, paginate } from '../db/pagination'

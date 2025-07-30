@@ -1,4 +1,4 @@
-import { asPredicate } from '@atproto/api'
+import { asPredicate } from '@gander-social-atproto/api'
 import { HydrateCtx } from '../hydration/hydrator'
 import { validateRecord as validatePostRecord } from '../lexicon/types/app/gndr/feed/post'
 import {

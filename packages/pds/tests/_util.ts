@@ -2,9 +2,9 @@ import { Server } from 'node:http'
 import { AddressInfo } from 'node:net'
 import { type Express } from 'express'
 import { CID } from 'multiformats/cid'
-import { ToolsOzoneModerationDefs } from '@atproto/api'
-import { lexToJson } from '@atproto/lexicon'
-import { AtUri } from '@atproto/syntax'
+import { ToolsOzoneModerationDefs } from '@gander-social-atproto/api'
+import { lexToJson } from '@gander-social-atproto/lexicon'
+import { AtUri } from '@gander-social-atproto/syntax'
 import {
   FeedViewPost,
   isReasonRepost,

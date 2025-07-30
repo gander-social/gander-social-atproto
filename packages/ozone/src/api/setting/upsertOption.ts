@@ -1,6 +1,6 @@
 import assert from 'node:assert'
-import { ToolsOzoneTeamDefs } from '@atproto/api'
-import { AuthRequiredError } from '@atproto/xrpc-server'
+import { ToolsOzoneTeamDefs } from '@gander-social-atproto/api'
+import { AuthRequiredError } from '@gander-social-atproto/xrpc-server'
 import { AdminTokenOutput, ModeratorOutput } from '../../auth-verifier'
 import { AppContext } from '../../context'
 import { Member } from '../../db/schema/member'

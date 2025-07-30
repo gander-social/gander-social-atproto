@@ -1,4 +1,4 @@
-import { HOUR } from '@atproto/common'
+import { HOUR } from '@gander-social-atproto/common'
 import { BackgroundQueue, PeriodicBackgroundTask } from '../background'
 import { TeamService } from '../team'
 

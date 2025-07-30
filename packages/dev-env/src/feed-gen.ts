@@ -3,9 +3,9 @@ import http from 'node:http'
 import * as plc from '@did-plc/lib'
 import express from 'express'
 import getPort from 'get-port'
-import { Secp256k1Keypair } from '@atproto/crypto'
-import { SkeletonHandler, createLexiconServer } from '@atproto/pds'
-import { InvalidRequestError } from '@atproto/xrpc-server'
+import { Secp256k1Keypair } from '@gander-social-atproto/crypto'
+import { SkeletonHandler, createLexiconServer } from '@gander-social-atproto/pds'
+import { InvalidRequestError } from '@gander-social-atproto/xrpc-server'
 
 export class TestFeedGen {
   destroyed = false

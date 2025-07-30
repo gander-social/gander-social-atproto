@@ -1,4 +1,4 @@
-import { Did, DidDocument } from '@atproto/did'
+import { Did, DidDocument } from '@gander-social-atproto/did'
 import { CachedGetter, SimpleStore } from '@atproto-labs/simple-store'
 import { DidCacheMemory } from './did-cache-memory.js'
 import { DidMethod, ResolveDidOptions } from './did-method.js'

@@ -123,7 +123,7 @@ importers:
       '@atproto/common':
         specifier: workspace:^
         version: link:../common
-      '@atproto/crypto':
+      '@gander-social-atproto/crypto':
         specifier: workspace:^
         version: link:../crypto
       '@atproto/repo':
@@ -302,22 +302,22 @@ importers:
       '@atproto/common-web':
         specifier: workspace:^
         version: link:../common-web
-      '@atproto/crypto':
+      '@gander-social-atproto/crypto':
         specifier: workspace:^
         version: link:../crypto
-      '@atproto/gndr':
+      '@gander-social-atproto/gndr':
         specifier: workspace:^
         version: link:../gndr
-      '@atproto/identity':
+      '@gander-social-atproto/identity':
         specifier: workspace:^
         version: link:../identity
       '@atproto/lexicon':
         specifier: workspace:^
         version: link:../lexicon
-      '@atproto/ozone':
+      '@gander-social-atproto/ozone'':
         specifier: workspace:^
         version: link:../ozone
-      '@atproto/pds':
+      '@gander-social-atproto/pds':
         specifier: workspace:^
         version: link:../pds
       '@atproto/sync':
@@ -391,13 +391,13 @@ importers:
       '@atproto/common':
         specifier: workspace:^
         version: link:../common
-      '@atproto/crypto':
+      '@gander-social-atproto/crypto':
         specifier: workspace:^
         version: link:../crypto
       '@atproto/did':
         specifier: workspace:^
         version: link:../did
-      '@atproto/identity':
+      '@gander-social-atproto/identity':
         specifier: workspace:^
         version: link:../identity
       '@atproto/lexicon':
@@ -503,7 +503,7 @@ importers:
       '@atproto/lex-cli':
         specifier: workspace:^
         version: link:../lex-cli
-      '@atproto/pds':
+      '@gander-social-atproto/pds':
         specifier: workspace:^
         version: link:../pds
       '@atproto/xrpc':
@@ -551,7 +551,7 @@ importers:
       '@atproto/common-web':
         specifier: workspace:^
         version: link:../common-web
-      '@atproto/crypto':
+      '@gander-social-atproto/crypto':
         specifier: workspace:^
         version: link:../crypto
     devDependencies:
@@ -1306,10 +1306,10 @@ importers:
       '@atproto/common':
         specifier: workspace:^
         version: link:../common
-      '@atproto/crypto':
+      '@gander-social-atproto/crypto':
         specifier: workspace:^
         version: link:../crypto
-      '@atproto/identity':
+      '@gander-social-atproto/identity':
         specifier: workspace:^
         version: link:../identity
       '@atproto/lexicon':
@@ -1376,7 +1376,7 @@ importers:
       '@atproto/lex-cli':
         specifier: workspace:^
         version: link:../lex-cli
-      '@atproto/pds':
+      '@gander-social-atproto/pds':
         specifier: workspace:^
         version: link:../pds
       '@did-plc/server':
@@ -1418,16 +1418,16 @@ importers:
       '@atproto/api':
         specifier: workspace:^
         version: link:../api
-      '@atproto/aws':
+      '@gander-social-atproto/aws':
         specifier: workspace:^
         version: link:../aws
       '@atproto/common':
         specifier: workspace:^
         version: link:../common
-      '@atproto/crypto':
+      '@gander-social-atproto/crypto':
         specifier: workspace:^
         version: link:../crypto
-      '@atproto/identity':
+      '@gander-social-atproto/identity':
         specifier: workspace:^
         version: link:../identity
       '@atproto/lexicon':
@@ -1536,7 +1536,7 @@ importers:
       '@atproto/dev-env':
         specifier: workspace:^
         version: link:../dev-env
-      '@atproto/gndr':
+      '@gander-social-atproto/gndr':
         specifier: workspace:^
         version: link:../gndr
       '@atproto/lex-cli':
@@ -1599,7 +1599,7 @@ importers:
       '@atproto/common-web':
         specifier: workspace:^
         version: link:../common-web
-      '@atproto/crypto':
+      '@gander-social-atproto/crypto':
         specifier: workspace:^
         version: link:../crypto
       '@atproto/lexicon':
@@ -1633,7 +1633,7 @@ importers:
       '@atproto/common':
         specifier: workspace:^
         version: link:../common
-      '@atproto/identity':
+      '@gander-social-atproto/identity':
         specifier: workspace:^
         version: link:../identity
       '@atproto/lexicon':
@@ -1695,7 +1695,7 @@ importers:
       '@atproto/common':
         specifier: workspace:^
         version: link:../common
-      '@atproto/crypto':
+      '@gander-social-atproto/crypto':
         specifier: workspace:^
         version: link:../crypto
       '@atproto/lexicon':
@@ -1774,10 +1774,10 @@ importers:
 
   services/gndr:
     dependencies:
-      '@atproto/crypto':
+      '@gander-social-atproto/crypto':
         specifier: workspace:^
         version: link:../../packages/crypto
-      '@atproto/gndr':
+      '@gander-social-atproto/gndr':
         specifier: workspace:^
         version: link:../../packages/gndr
       dd-trace:
@@ -1786,10 +1786,10 @@ importers:
 
   services/ozone:
     dependencies:
-      '@atproto/aws':
+      '@gander-social-atproto/aws':
         specifier: workspace:^
         version: link:../../packages/aws
-      '@atproto/ozone':
+      '@gander-social-atproto/ozone'':
         specifier: workspace:^
         version: link:../../packages/ozone
       dd-trace:
@@ -1798,7 +1798,7 @@ importers:
 
   services/pds:
     dependencies:
-      '@atproto/pds':
+      '@gander-social-atproto/pds':
         specifier: workspace:^
         version: link:../../packages/pds
       '@opentelemetry/instrumentation':
@@ -1860,10 +1860,10 @@ packages:
     resolution: {integrity: sha512-hc/KcBgFjSfrnNgrc9vx/QaCov79cXbRRQEWrAt/rdMLhcFEGCydN7ukddjOiLkLdhDqywSHrLOEbqg+MReQXw==}
     dependencies:
       '@atproto/api': link:packages/api
-      '@atproto/aws': link:packages/aws
+      '@gander-social-atproto/aws': link:packages/aws
       '@atproto/common': link:packages/common
-      '@atproto/crypto': link:packages/crypto
-      '@atproto/identity': link:packages/identity
+      '@gander-social-atproto/crypto': link:packages/crypto
+      '@gander-social-atproto/identity': link:packages/identity
       '@atproto/lexicon': link:packages/lexicon
       '@atproto/repo': link:packages/repo
       '@atproto/syntax': link:packages/syntax
@@ -5229,7 +5229,7 @@ packages:
     resolution: {integrity: sha512-RkY5w9DbYMco3SjeepqIiMveqz35exjlVDipCs2gz9AXF4/cp9hvmrp9zUWEw2vny+FjV8vGEN7QpaXWaO6nhg==}
     dependencies:
       '@atproto/common': 0.1.0
-      '@atproto/crypto': 0.1.0
+      '@gander-social-atproto/crypto': 0.1.0
       '@ipld/dag-cbor': 7.0.3
       axios: 1.6.7
       multiformats: 9.9.0
@@ -5242,7 +5242,7 @@ packages:
     resolution: {integrity: sha512-Omeawq3b8G/c/5CtkTtzovSOnWuvIuCI4GTJNrt1AmCskwEQV7zbX5d6km1mjJNbE0gHuQPTVqZxLVqetNbfwA==}
     dependencies:
       '@atproto/common': 0.1.1
-      '@atproto/crypto': 0.1.0
+      '@gander-social-atproto/crypto': 0.1.0
       '@ipld/dag-cbor': 7.0.3
       axios: 1.6.7
       multiformats: 9.9.0
@@ -5255,7 +5255,7 @@ packages:
     resolution: {integrity: sha512-GtxxHcOrOQ6fNI1ufq3Zqjc2PtWqPZOdsuzlwtxiH9XibUGwDkb0GmaBHyU5GiOxOKZEW1GspZ8mreBA6XOlTQ==}
     dependencies:
       '@atproto/common': 0.1.0
-      '@atproto/crypto': 0.1.0
+      '@gander-social-atproto/crypto': 0.1.0
       '@did-plc/lib': 0.0.4
       axios: 1.6.7
       cors: 2.8.5

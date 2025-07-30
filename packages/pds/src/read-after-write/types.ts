@@ -1,6 +1,6 @@
 import { CID } from 'multiformats/cid'
-import { AtUri } from '@atproto/syntax'
-import { Headers } from '@atproto/xrpc'
+import { AtUri } from '@gander-social-atproto/syntax'
+import { Headers } from '@gander-social-atproto/xrpc'
 import { Record as ProfileRecord } from '../lexicon/types/app/gndr/actor/profile'
 import { Record as PostRecord } from '../lexicon/types/app/gndr/feed/post'
 import { LocalViewer } from './viewer'

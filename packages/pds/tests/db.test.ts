@@ -1,4 +1,4 @@
-import { TestNetworkNoAppView } from '@atproto/dev-env'
+import { TestNetworkNoAppView } from '@gander-social-atproto/dev-env'
 // Importing from `dist` to circumvent circular dependency typing issues
 import { AccountDb } from '../dist/account-manager/db'
 

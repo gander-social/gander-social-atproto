@@ -1,5 +1,5 @@
 import { format } from 'node:util'
-import { AtpAgent } from '@atproto/api'
+import { AtpAgent } from '@gander-social-atproto/api'
 
 export type AppViewOptions = {
   url: string

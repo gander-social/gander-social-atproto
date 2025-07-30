@@ -1,4 +1,4 @@
-import { mapDefined } from '@atproto/common'
+import { mapDefined } from '@gander-social-atproto/common'
 import { AppContext } from '../../../../context'
 import { Server } from '../../../../lexicon'
 import { resHeaders } from '../../../util'

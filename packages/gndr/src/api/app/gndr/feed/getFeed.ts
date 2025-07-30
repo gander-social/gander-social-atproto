@@ -1,12 +1,12 @@
-import { AppGndrFeedGetFeedSkeleton, AtpAgent } from '@atproto/api'
-import { mapDefined, noUndefinedVals } from '@atproto/common'
-import { ResponseType, XRPCError } from '@atproto/xrpc'
+import { AppGndrFeedGetFeedSkeleton, AtpAgent } from '@gander-social-atproto/api'
+import { mapDefined, noUndefinedVals } from '@gander-social-atproto/common'
+import { ResponseType, XRPCError } from '@gander-social-atproto/xrpc'
 import {
   InvalidRequestError,
   ServerTimer,
   UpstreamFailureError,
   serverTimingHeader,
-} from '@atproto/xrpc-server'
+} from '@gander-social-atproto/xrpc-server'
 import { AppContext } from '../../../../context'
 import {
   Code,

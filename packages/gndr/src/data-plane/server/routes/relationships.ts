@@ -1,6 +1,6 @@
 import { ServiceImpl } from '@connectrpc/connect'
 import { sql } from 'kysely'
-import { keyBy } from '@atproto/common'
+import { keyBy } from '@gander-social-atproto/common'
 import { Service } from '../../../proto/gndr_connect'
 import { Database } from '../db'
 import { valuesList } from '../db/util'

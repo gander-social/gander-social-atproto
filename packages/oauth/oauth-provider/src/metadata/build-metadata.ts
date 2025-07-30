@@ -1,9 +1,9 @@
-import { Keyset } from '@atproto/jwk'
+import { Keyset } from '@gander-social-atproto/jwk'
 import {
   OAuthAuthorizationServerMetadata,
   OAuthIssuerIdentifier,
   oauthAuthorizationServerMetadataValidator,
-} from '@atproto/oauth-types'
+} from '@gander-social-atproto/oauth-types'
 import { Client } from '../client/client.js'
 import { VERIFY_ALGOS } from '../lib/util/crypto.js'
 

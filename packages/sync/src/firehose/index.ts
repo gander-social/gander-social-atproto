@@ -1,11 +1,11 @@
 import { CID } from 'multiformats/cid'
 import type { ClientOptions } from 'ws'
-import { Deferrable, createDeferrable, wait } from '@atproto/common'
+import { Deferrable, createDeferrable, wait } from '@gander-social-atproto/common'
 import {
   DidDocument,
   IdResolver,
   parseToAtprotoDocument,
-} from '@atproto/identity'
+} from '@gander-social-atproto/identity'
 import {
   RepoVerificationError,
   cborToLexRecord,
@@ -14,9 +14,9 @@ import {
   readCar,
   readCarWithRoot,
   verifyProofs,
-} from '@atproto/repo'
-import { AtUri } from '@atproto/syntax'
-import { Subscription } from '@atproto/xrpc-server'
+} from '@gander-social-atproto/repo'
+import { AtUri } from '@gander-social-atproto/syntax'
+import { Subscription } from '@gander-social-atproto/xrpc-server'
 import {
   AccountEvt,
   AccountStatus,

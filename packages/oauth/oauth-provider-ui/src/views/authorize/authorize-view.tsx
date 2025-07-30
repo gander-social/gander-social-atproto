@@ -1,6 +1,6 @@
 import { Trans, useLingui } from '@lingui/react/macro'
 import { useEffect, useState } from 'react'
-import type { CustomizationData, Session } from '@atproto/oauth-provider-api'
+import type { CustomizationData, Session } from '@gander-social-atproto/oauth-provider-api'
 import {
   LayoutTitlePage,
   LayoutTitlePageProps,

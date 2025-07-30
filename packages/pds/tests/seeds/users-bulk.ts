@@ -1,5 +1,5 @@
-import { chunkArray } from '@atproto/common'
-import { SeedClient } from '@atproto/dev-env'
+import { chunkArray } from '@gander-social-atproto/common'
+import { SeedClient } from '@gander-social-atproto/dev-env'
 
 export default async (sc: SeedClient, max = Infinity) => {
   // @TODO when these are run in parallel, seem to get an intermittent

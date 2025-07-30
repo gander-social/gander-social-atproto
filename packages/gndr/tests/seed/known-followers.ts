@@ -1,4 +1,4 @@
-import { SeedClient, TestNetwork, TestNetworkNoAppView } from '@atproto/dev-env'
+import { SeedClient, TestNetwork, TestNetworkNoAppView } from '@gander-social-atproto/dev-env'
 
 export type User = {
   email: string

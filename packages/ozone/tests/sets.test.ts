@@ -1,8 +1,8 @@
 import AtpAgent, {
   ToolsOzoneSetDefs,
   ToolsOzoneSetQuerySets,
-} from '@atproto/api'
-import { SeedClient, TestNetwork, basicSeed } from '@atproto/dev-env'
+} from '@gander-social-atproto/api'
+import { SeedClient, TestNetwork, basicSeed } from '@gander-social-atproto/dev-env'
 import { ids } from '../src/lexicon/lexicons'
 import { forSnapshot } from './_util'
 

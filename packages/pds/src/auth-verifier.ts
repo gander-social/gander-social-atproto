@@ -3,13 +3,13 @@ import { IncomingMessage, ServerResponse } from 'node:http'
 import { Request } from 'express'
 import * as jose from 'jose'
 import KeyEncoder from 'key-encoder'
-import { getVerificationMaterial } from '@atproto/common'
-import { IdResolver, getDidKeyFromMultibase } from '@atproto/identity'
+import { getVerificationMaterial } from '@gander-social-atproto/common'
+import { IdResolver, getDidKeyFromMultibase } from '@gander-social-atproto/identity'
 import {
   OAuthError,
   OAuthVerifier,
   WWWAuthenticateError,
-} from '@atproto/oauth-provider'
+} from '@gander-social-atproto/oauth-provider'
 import {
   AuthRequiredError,
   ForbiddenError,
@@ -17,7 +17,7 @@ import {
   XRPCError,
   parseReqNsid,
   verifyJwt as verifyServiceJwt,
-} from '@atproto/xrpc-server'
+} from '@gander-social-atproto/xrpc-server'
 import { AccountManager } from './account-manager/account-manager'
 import { softDeleted } from './db'
 import { oauthLogger } from './logger'

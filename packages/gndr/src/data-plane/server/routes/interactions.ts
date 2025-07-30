@@ -1,5 +1,5 @@
 import { ServiceImpl } from '@connectrpc/connect'
-import { DAY, keyBy } from '@atproto/common'
+import { DAY, keyBy } from '@gander-social-atproto/common'
 import { Service } from '../../../proto/gndr_connect'
 import { Database } from '../db'
 import { countAll } from '../db/util'

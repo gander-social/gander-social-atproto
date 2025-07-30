@@ -1,5 +1,5 @@
-import { check } from '@atproto/common-web'
-import * as crypto from '@atproto/crypto'
+import { check } from '@gander-social-atproto/common-web'
+import * as crypto from '@gander-social-atproto/crypto'
 import { DidNotFoundError, PoorlyFormattedDidDocumentError } from '../errors'
 import {
   AtprotoData,

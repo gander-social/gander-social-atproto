@@ -26,7 +26,7 @@ import {
   jwkValidator,
   jwtHeaderSchema,
   jwtPayloadSchema,
-} from '@atproto/jwk'
+} from '@gander-social-atproto/jwk'
 import { RequiredKey, either } from './util.js'
 
 const { JOSEError } = errors

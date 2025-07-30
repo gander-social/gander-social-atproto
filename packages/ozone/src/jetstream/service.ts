@@ -1,4 +1,4 @@
-import { WebSocketKeepAlive } from '@atproto/xrpc-server'
+import { WebSocketKeepAlive } from '@gander-social-atproto/xrpc-server'
 
 type JetstreamRecord = Record<string, unknown>
 type OnCreateCallback<T extends JetstreamRecord> = (

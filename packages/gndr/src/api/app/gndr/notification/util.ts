@@ -1,4 +1,4 @@
-import { Un$Typed } from '@atproto/api'
+import { Un$Typed } from '@gander-social-atproto/api'
 import {
   ChatPreference,
   FilterablePreference,

@@ -3,8 +3,8 @@ import {
   AppGndrLabelerDefs,
   AtpAgent,
   ComAtprotoModerationDefs,
-} from '@atproto/api'
-import { RecordRef, SeedClient, TestNetwork, basicSeed } from '@atproto/dev-env'
+} from '@gander-social-atproto/api'
+import { RecordRef, SeedClient, TestNetwork, basicSeed } from '@gander-social-atproto/dev-env'
 import { ids } from '../../src/lexicon/lexicons'
 import { isView as isRecordEmbedView } from '../../src/lexicon/types/app/gndr/embed/record'
 import { forSnapshot, stripViewerFromLabeler } from '../_util'

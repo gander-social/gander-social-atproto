@@ -5,21 +5,21 @@ import { Redis } from 'ioredis'
 import * as nodemailer from 'nodemailer'
 import * as ui8 from 'uint8arrays'
 import * as undici from 'undici'
-import { AtpAgent } from '@atproto/api'
-import { KmsKeypair, S3BlobStore } from '@atproto/aws'
-import * as crypto from '@atproto/crypto'
-import { IdResolver } from '@atproto/identity'
+import { AtpAgent } from '@gander-social-atproto/api'
+import { KmsKeypair, S3BlobStore } from '@gander-social-atproto/aws'
+import * as crypto from '@gander-social-atproto/crypto'
+import { IdResolver } from '@gander-social-atproto/identity'
 import {
   AccessTokenMode,
   JoseKey,
   OAuthProvider,
   OAuthVerifier,
-} from '@atproto/oauth-provider'
-import { BlobStore } from '@atproto/repo'
+} from '@gander-social-atproto/oauth-provider'
+import { BlobStore } from '@gander-social-atproto/repo'
 import {
   createServiceAuthHeaders,
   createServiceJwt,
-} from '@atproto/xrpc-server'
+} from '@gander-social-atproto/xrpc-server'
 import {
   Fetch,
   isUnicastIp,

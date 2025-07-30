@@ -1,6 +1,6 @@
 import { Selectable } from 'kysely'
-import { ToolsOzoneSafelinkDefs } from '@atproto/api'
-import { InvalidRequestError } from '@atproto/xrpc-server'
+import { ToolsOzoneSafelinkDefs } from '@gander-social-atproto/api'
+import { InvalidRequestError } from '@gander-social-atproto/xrpc-server'
 import {
   SafelinkActionType,
   SafelinkPatternType,

@@ -1,5 +1,5 @@
-import { AtprotoDid } from '@atproto/did'
-import { Key } from '@atproto/jwk'
+import { AtprotoDid } from '@gander-social-atproto/did'
+import { Key } from '@gander-social-atproto/jwk'
 import {
   CachedGetter,
   GetCachedOptions,

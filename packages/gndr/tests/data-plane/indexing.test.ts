@@ -7,12 +7,12 @@ import {
   AppGndrFeedRepost,
   AppGndrGraphFollow,
   AtpAgent,
-} from '@atproto/api'
-import { TID, cidForCbor } from '@atproto/common'
-import { SeedClient, TestNetwork, basicSeed, usersSeed } from '@atproto/dev-env'
-import { repoPrepare } from '@atproto/pds'
-import { WriteOpAction } from '@atproto/repo'
-import { AtUri } from '@atproto/syntax'
+} from '@gander-social-atproto/api'
+import { TID, cidForCbor } from '@gander-social-atproto/common'
+import { SeedClient, TestNetwork, basicSeed, usersSeed } from '@gander-social-atproto/dev-env'
+import { repoPrepare } from '@gander-social-atproto/pds'
+import { WriteOpAction } from '@gander-social-atproto/repo'
+import { AtUri } from '@gander-social-atproto/syntax'
 import { Database } from '../../src/data-plane/server/db'
 import { ids } from '../../src/lexicon/lexicons'
 import { forSnapshot } from '../_util'

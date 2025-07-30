@@ -1,4 +1,4 @@
-import { Key, Keyset } from '@atproto/jwk'
+import { Key, Keyset } from '@gander-social-atproto/jwk'
 import {
   OAuthAuthorizationRequestParameters,
   OAuthClientIdDiscoverable,
@@ -6,7 +6,7 @@ import {
   OAuthClientMetadataInput,
   OAuthResponseMode,
   oauthClientMetadataSchema,
-} from '@atproto/oauth-types'
+} from '@gander-social-atproto/oauth-types'
 import {
   AtprotoDid,
   DidCache,

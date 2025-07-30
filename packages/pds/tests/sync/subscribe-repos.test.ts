@@ -1,18 +1,18 @@
 import { CID } from 'multiformats/cid'
 import { WebSocket } from 'ws'
-import { AtpAgent } from '@atproto/api'
+import { AtpAgent } from '@gander-social-atproto/api'
 import {
   HOUR,
   MINUTE,
   cborDecode,
   readFromGenerator,
   wait,
-} from '@atproto/common'
-import { randomStr } from '@atproto/crypto'
-import { SeedClient, TestNetworkNoAppView } from '@atproto/dev-env'
-import * as repo from '@atproto/repo'
-import { readCar } from '@atproto/repo'
-import { ErrorFrame, Frame, MessageFrame, byFrame } from '@atproto/xrpc-server'
+} from '@gander-social-atproto/common'
+import { randomStr } from '@gander-social-atproto/crypto'
+import { SeedClient, TestNetworkNoAppView } from '@gander-social-atproto/dev-env'
+import * as repo from '@gander-social-atproto/repo'
+import { readCar } from '@gander-social-atproto/repo'
+import { ErrorFrame, Frame, MessageFrame, byFrame } from '@gander-social-atproto/xrpc-server'
 import { AppContext } from '../../src'
 import { AccountStatus } from '../../src/account-manager/account-manager'
 import {

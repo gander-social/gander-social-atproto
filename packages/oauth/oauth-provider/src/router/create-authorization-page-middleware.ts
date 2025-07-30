@@ -2,7 +2,7 @@ import type { IncomingMessage, ServerResponse } from 'node:http'
 import {
   oauthAuthorizationRequestQuerySchema,
   oauthClientCredentialsSchema,
-} from '@atproto/oauth-types'
+} from '@gander-social-atproto/oauth-types'
 import { AuthorizationError } from '../errors/authorization-error.js'
 import { InvalidRequestError } from '../errors/invalid-request-error.js'
 import {

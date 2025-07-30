@@ -1,6 +1,6 @@
 import assert from 'node:assert'
-import { AppGndrUnspeccedDefs, AtpAgent } from '@atproto/api'
-import { SeedClient, TestNetwork, seedThreadV2 } from '@atproto/dev-env'
+import { AppGndrUnspeccedDefs, AtpAgent } from '@gander-social-atproto/api'
+import { SeedClient, TestNetwork, seedThreadV2 } from '@gander-social-atproto/dev-env'
 import { ids } from '../../src/lexicon/lexicons'
 import { ThreadItemPost } from '../../src/lexicon/types/app/gndr/unspecced/defs'
 import { OutputSchema as OutputSchemaHiddenThread } from '../../src/lexicon/types/app/gndr/unspecced/getPostThreadOtherV2'

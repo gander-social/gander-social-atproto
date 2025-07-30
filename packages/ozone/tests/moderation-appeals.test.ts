@@ -1,13 +1,13 @@
 import {
   ComAtprotoModerationDefs,
   ToolsOzoneModerationDefs,
-} from '@atproto/api'
+} from '@gander-social-atproto/api'
 import {
   ModeratorClient,
   SeedClient,
   TestNetwork,
   basicSeed,
-} from '@atproto/dev-env'
+} from '@gander-social-atproto/dev-env'
 import {
   REASONMISLEADING,
   REASONSPAM,

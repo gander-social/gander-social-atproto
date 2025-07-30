@@ -1,8 +1,8 @@
 import assert from 'node:assert'
-import { AtpAgent } from '@atproto/api'
-import { Secp256k1Keypair } from '@atproto/crypto'
-import { SeedClient, TestNetwork, usersSeed } from '@atproto/dev-env'
-import { createServiceAuthHeaders } from '@atproto/xrpc-server'
+import { AtpAgent } from '@gander-social-atproto/api'
+import { Secp256k1Keypair } from '@gander-social-atproto/crypto'
+import { SeedClient, TestNetwork, usersSeed } from '@gander-social-atproto/dev-env'
+import { createServiceAuthHeaders } from '@gander-social-atproto/xrpc-server'
 import { ids } from '../../src/lexicon/lexicons'
 import {
   RepoRef,

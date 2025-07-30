@@ -1,11 +1,11 @@
 import assert from 'node:assert'
-import { AtpAgent } from '@atproto/api'
+import { AtpAgent } from '@gander-social-atproto/api'
 import {
   EXAMPLE_LABELER,
   SeedClient,
   TestNetwork,
   basicSeed,
-} from '@atproto/dev-env'
+} from '@gander-social-atproto/dev-env'
 import { Database } from '../../src'
 import { ids } from '../../src/lexicon/lexicons'
 import { FeedViewPost } from '../../src/lexicon/types/app/gndr/feed/defs'

@@ -7,7 +7,7 @@ import {
   OAuthAuthorizationRequestParameters,
   OAuthClientId,
   RequestId,
-} from '@atproto/oauth-provider'
+} from '@gander-social-atproto/oauth-provider'
 import { DateISO, JsonEncoded } from '../../../db'
 
 export interface AuthorizationRequest {

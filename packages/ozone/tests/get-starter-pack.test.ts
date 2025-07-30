@@ -1,11 +1,11 @@
-import { AtpAgent } from '@atproto/api'
+import { AtpAgent } from '@gander-social-atproto/api'
 import {
   RecordRef,
   SeedClient,
   TestNetwork,
   TestOzone,
   basicSeed,
-} from '@atproto/dev-env'
+} from '@gander-social-atproto/dev-env'
 import { ids } from '../src/lexicon/lexicons'
 import { TAKEDOWN_LABEL } from '../src/mod-service'
 import { forSnapshot } from './_util'

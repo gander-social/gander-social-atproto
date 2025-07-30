@@ -1,5 +1,5 @@
-import { Key, Keyset } from '@atproto/jwk'
-import { OAuthAuthorizationServerMetadata } from '@atproto/oauth-types'
+import { Key, Keyset } from '@gander-social-atproto/jwk'
+import { OAuthAuthorizationServerMetadata } from '@gander-social-atproto/oauth-types'
 import { Fetch } from '@atproto-labs/fetch'
 import { GetCachedOptions } from './oauth-authorization-server-metadata-resolver.js'
 import {

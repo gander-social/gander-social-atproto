@@ -43,6 +43,6 @@ export default defineConfig({
     },
   },
   optimizeDeps: {
-    include: ['@atproto/oauth-provider-api', '@atproto/syntax'],
+    include: ['@gander-social-atproto/oauth-provider-api', '@gander-social-atproto/syntax'],
   },
 })

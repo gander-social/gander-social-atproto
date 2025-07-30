@@ -8,8 +8,8 @@ TypeScript client library for talking to [atproto](https://atproto.com) services
 ## Usage
 
 ```typescript
-import { LexiconDoc } from '@atproto/lexicon'
-import { XrpcClient } from '@atproto/xrpc'
+import { LexiconDoc } from '@gander-social-atproto/lexicon'
+import { XrpcClient } from '@gander-social-atproto/xrpc'
 
 const pingLexicon = {
   lexicon: 1,
@@ -49,7 +49,7 @@ res1.body // => {message: 'hello world'}
 ### With a custom fetch handler
 
 ```typescript
-import { XrpcClient } from '@atproto/xrpc'
+import { XrpcClient } from '@gander-social-atproto/xrpc'
 
 const session = {
   serviceUrl: 'https://ping.example.com',

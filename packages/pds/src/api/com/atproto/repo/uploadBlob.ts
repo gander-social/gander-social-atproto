@@ -1,5 +1,5 @@
-import { DAY } from '@atproto/common'
-import { UpstreamTimeoutError } from '@atproto/xrpc-server'
+import { DAY } from '@gander-social-atproto/common'
+import { UpstreamTimeoutError } from '@gander-social-atproto/xrpc-server'
 import { BlobMetadata } from '../../../../actor-store/blob/transactor'
 import { AppContext } from '../../../../context'
 import { Server } from '../../../../lexicon'

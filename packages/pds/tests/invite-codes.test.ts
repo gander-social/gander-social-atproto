@@ -1,7 +1,7 @@
-import { AtpAgent, ComAtprotoServerCreateAccount } from '@atproto/api'
-import { DAY } from '@atproto/common'
-import * as crypto from '@atproto/crypto'
-import { TestNetworkNoAppView } from '@atproto/dev-env'
+import { AtpAgent, ComAtprotoServerCreateAccount } from '@gander-social-atproto/api'
+import { DAY } from '@gander-social-atproto/common'
+import * as crypto from '@gander-social-atproto/crypto'
+import { TestNetworkNoAppView } from '@gander-social-atproto/dev-env'
 import { AppContext } from '../src'
 import { genInvCodes } from '../src/api/com/atproto/server/util'
 

@@ -1,11 +1,11 @@
 import assert from 'node:assert'
-import { ComAtprotoAdminDefs, ToolsOzoneModerationDefs } from '@atproto/api'
+import { ComAtprotoAdminDefs, ToolsOzoneModerationDefs } from '@gander-social-atproto/api'
 import {
   ModeratorClient,
   SeedClient,
   TestNetwork,
   basicSeed,
-} from '@atproto/dev-env'
+} from '@gander-social-atproto/dev-env'
 
 describe('moderation', () => {
   let network: TestNetwork

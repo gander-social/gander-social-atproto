@@ -60,7 +60,7 @@ of doing this:
 1. Either you "burn" the metadata into your application:
 
    ```typescript
-   import { BrowserOAuthClient } from '@atproto/oauth-client-browser'
+   import { BrowserOAuthClient } from '@gander-social-atproto/oauth-client-browser'
 
    const client = new BrowserOAuthClient({
      clientMetadata: {
@@ -73,7 +73,7 @@ of doing this:
 2. Or you load it asynchronously from the URL:
 
    ```typescript
-   import { OAuthClient } from '@atproto/oauth-client-browser'
+   import { OAuthClient } from '@gander-social-atproto/oauth-client-browser'
 
    const client = await BrowserOAuthClient.load({
      clientId: 'https://my-app.com/client-metadata.json',
@@ -112,7 +112,7 @@ expect this value to be the URL of a service running the
 > If you host your own PDS, you can use its URL as a handle resolver.
 
 ```typescript
-import { BrowserOAuthClient } from '@atproto/oauth-client-browser'
+import { BrowserOAuthClient } from '@gander-social-atproto/oauth-client-browser'
 
 const client = new BrowserOAuthClient({
   handleResolver: 'https://my-pds.example.com',
@@ -128,7 +128,7 @@ with a `AtprotoDohHandleResolver` instance:
 import {
   BrowserOAuthClient,
   AtprotoDohHandleResolver,
-} from '@atproto/oauth-client-browser'
+} from '@gander-social-atproto/oauth-client-browser'
 
 const client = new BrowserOAuthClient({
   handleResolver: new AtprotoDohHandleResolver('https://my-doh.example.com'),
@@ -268,7 +268,7 @@ through the `Agent` interface. The `oauthSession` returned by the
 `BrowserOAuthClient` can be used to instantiate an `Agent` instance.
 
 ```typescript
-import { Agent } from '@atproto/api'
+import { Agent } from '@gander-social-atproto/api'
 
 const session = await client.restore('did:plc:alice')
 
@@ -312,7 +312,7 @@ Using a loopback client is only recommended for development purposes. A loopback
 client can be instantiated like this:
 
 ```typescript
-import { BrowserOAuthClient } from '@atproto/oauth-client-browser'
+import { BrowserOAuthClient } from '@gander-social-atproto/oauth-client-browser'
 
 const client = new BrowserOAuthClient({
   handleResolver: 'https://bsky.social',
@@ -324,7 +324,7 @@ const client = new BrowserOAuthClient({
 If you need to use a special `redirect_uris`, you can configure them like this:
 
 ```typescript
-import { BrowserOAuthClient } from '@atproto/oauth-client-browser'
+import { BrowserOAuthClient } from '@gander-social-atproto/oauth-client-browser'
 
 const client = new BrowserOAuthClient({
   handleResolver: 'https://bsky.social',

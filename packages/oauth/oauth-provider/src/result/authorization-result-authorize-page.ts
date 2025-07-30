@@ -1,5 +1,5 @@
-import type { ScopeDetail, Session } from '@atproto/oauth-provider-api'
-import { OAuthAuthorizationRequestParameters } from '@atproto/oauth-types'
+import type { ScopeDetail, Session } from '@gander-social-atproto/oauth-provider-api'
+import { OAuthAuthorizationRequestParameters } from '@gander-social-atproto/oauth-types'
 import { Client } from '../client/client.js'
 import { RequestUri } from '../request/request-uri.js'
 

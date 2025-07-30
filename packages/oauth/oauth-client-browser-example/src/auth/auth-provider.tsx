@@ -1,8 +1,8 @@
 'use client'
 
 import { ReactNode, createContext, useContext, useMemo } from 'react'
-import { Agent } from '@atproto/api'
-import { OAuthSession } from '@atproto/oauth-client'
+import { Agent } from '@gander-social-atproto/api'
+import { OAuthSession } from '@gander-social-atproto/oauth-client'
 import { OAuthSignIn, UseOAuthOptions, useOAuth } from './use-oauth.ts'
 
 export type AuthContextValueSignedIn = {

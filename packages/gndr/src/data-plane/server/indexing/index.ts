@@ -1,17 +1,17 @@
 import { Selectable, sql } from 'kysely'
 import { CID } from 'multiformats/cid'
-import { AtpAgent, ComAtprotoSyncGetLatestCommit } from '@atproto/api'
-import { DAY, HOUR } from '@atproto/common'
-import { IdResolver, getPds } from '@atproto/identity'
-import { ValidationError } from '@atproto/lexicon'
+import { AtpAgent, ComAtprotoSyncGetLatestCommit } from '@gander-social-atproto/api'
+import { DAY, HOUR } from '@gander-social-atproto/common'
+import { IdResolver, getPds } from '@gander-social-atproto/identity'
+import { ValidationError } from '@gander-social-atproto/lexicon'
 import {
   VerifiedRepo,
   WriteOpAction,
   getAndParseRecord,
   readCarWithRoot,
   verifyRepo,
-} from '@atproto/repo'
-import { AtUri } from '@atproto/syntax'
+} from '@gander-social-atproto/repo'
+import { AtUri } from '@gander-social-atproto/syntax'
 import { subLogger } from '../../../logger'
 import { retryXrpc } from '../../../util/retry'
 import { BackgroundQueue } from '../background'

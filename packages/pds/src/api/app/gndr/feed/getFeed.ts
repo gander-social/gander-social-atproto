@@ -1,5 +1,5 @@
-import { InvalidRequestError } from '@atproto/oauth-provider'
-import { AtUri } from '@atproto/syntax'
+import { InvalidRequestError } from '@gander-social-atproto/oauth-provider'
+import { AtUri } from '@gander-social-atproto/syntax'
 import { AppContext } from '../../../../context'
 import { Server } from '../../../../lexicon'
 import { ids } from '../../../../lexicon/lexicons'

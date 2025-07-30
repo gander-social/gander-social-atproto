@@ -1,11 +1,11 @@
 import express from 'express'
-import { jsonToLex } from '@atproto/lexicon'
-import { HeadersMap } from '@atproto/xrpc'
+import { jsonToLex } from '@gander-social-atproto/lexicon'
+import { HeadersMap } from '@gander-social-atproto/xrpc'
 import {
   HandlerPipeThrough,
   HandlerPipeThroughBuffer,
   parseReqNsid,
-} from '@atproto/xrpc-server'
+} from '@gander-social-atproto/xrpc-server'
 import { AppContext } from '../context'
 import { lexicons } from '../lexicon/lexicons'
 import { readStickyLogger as log } from '../logger'

@@ -1,15 +1,15 @@
 import assert from 'node:assert'
-import { AtUri, AtpAgent } from '@atproto/api'
-import { TID } from '@atproto/common'
+import { AtUri, AtpAgent } from '@gander-social-atproto/api'
+import { TID } from '@gander-social-atproto/common'
 import {
   RecordRef,
   SeedClient,
   TestFeedGen,
   TestNetwork,
   basicSeed,
-} from '@atproto/dev-env'
-import { XRPCError } from '@atproto/xrpc'
-import { AuthRequiredError, MethodHandler } from '@atproto/xrpc-server'
+} from '@gander-social-atproto/dev-env'
+import { XRPCError } from '@gander-social-atproto/xrpc'
+import { AuthRequiredError, MethodHandler } from '@gander-social-atproto/xrpc-server'
 import { ids } from '../src/lexicon/lexicons'
 import {
   FeedViewPost,

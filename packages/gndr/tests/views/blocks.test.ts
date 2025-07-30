@@ -1,6 +1,6 @@
 import assert from 'node:assert'
-import { AtUri, AtpAgent } from '@atproto/api'
-import { RecordRef, SeedClient, TestNetwork, basicSeed } from '@atproto/dev-env'
+import { AtUri, AtpAgent } from '@gander-social-atproto/api'
+import { RecordRef, SeedClient, TestNetwork, basicSeed } from '@gander-social-atproto/dev-env'
 import { ids } from '../../src/lexicon/lexicons'
 import { isView as isRecordEmbedView } from '../../src/lexicon/types/app/gndr/embed/record'
 import { isPostView } from '../../src/lexicon/types/app/gndr/feed/defs'

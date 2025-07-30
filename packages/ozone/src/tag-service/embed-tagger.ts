@@ -4,7 +4,7 @@ import {
   AppGndrEmbedRecordWithMedia,
   AppGndrEmbedVideo,
   AppGndrFeedPost,
-} from '@atproto/api'
+} from '@gander-social-atproto/api'
 import { ids } from '../lexicon/lexicons'
 import { langLogger as log } from '../logger'
 import { ContentTagger } from './content-tagger'

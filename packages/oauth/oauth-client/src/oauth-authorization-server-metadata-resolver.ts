@@ -2,7 +2,7 @@ import {
   OAuthAuthorizationServerMetadata,
   oauthAuthorizationServerMetadataValidator,
   oauthIssuerIdentifierSchema,
-} from '@atproto/oauth-types'
+} from '@gander-social-atproto/oauth-types'
 import {
   Fetch,
   FetchResponseError,

@@ -2,8 +2,8 @@ import {
   AtpAgent,
   ChatGndrConvoDefs,
   ToolsOzoneModerationEmitEvent,
-} from '@atproto/api'
-import { HOUR } from '@atproto/common'
+} from '@gander-social-atproto/api'
+import { HOUR } from '@gander-social-atproto/common'
 import {
   ImageRef,
   ModeratorClient,
@@ -12,8 +12,8 @@ import {
   TestNetwork,
   TestOzone,
   basicSeed,
-} from '@atproto/dev-env'
-import { AtUri } from '@atproto/syntax'
+} from '@gander-social-atproto/dev-env'
+import { AtUri } from '@gander-social-atproto/syntax'
 import { EventReverser } from '../src'
 import { ImageInvalidator } from '../src/image-invalidator'
 import { ids } from '../src/lexicon/lexicons'

@@ -1,8 +1,8 @@
-import { AtpAgent } from '@atproto/api'
-import { wait } from '@atproto/common'
-import { Keypair } from '@atproto/crypto'
-import { TestNetworkNoAppView } from '@atproto/dev-env'
-import { readCarWithRoot, verifyRepo } from '@atproto/repo'
+import { AtpAgent } from '@gander-social-atproto/api'
+import { wait } from '@gander-social-atproto/common'
+import { Keypair } from '@gander-social-atproto/crypto'
+import { TestNetworkNoAppView } from '@gander-social-atproto/dev-env'
+import { readCarWithRoot, verifyRepo } from '@gander-social-atproto/repo'
 import { AppContext } from '../src/context'
 import { PreparedCreate, prepareCreate } from '../src/repo'
 

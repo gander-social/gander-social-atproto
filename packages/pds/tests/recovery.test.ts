@@ -1,9 +1,9 @@
 import fs from 'node:fs/promises'
 import * as ui8 from 'uint8arrays'
-import AtpAgent from '@atproto/api'
-import { renameIfExists, rmIfExists } from '@atproto/common'
-import { SeedClient, TestNetworkNoAppView, basicSeed } from '@atproto/dev-env'
-import { verifyRepoCar } from '@atproto/repo'
+import AtpAgent from '@gander-social-atproto/api'
+import { renameIfExists, rmIfExists } from '@gander-social-atproto/common'
+import { SeedClient, TestNetworkNoAppView, basicSeed } from '@gander-social-atproto/dev-env'
+import { verifyRepoCar } from '@gander-social-atproto/repo'
 import { AppContext, scripts } from '../dist'
 
 describe('recovery', () => {

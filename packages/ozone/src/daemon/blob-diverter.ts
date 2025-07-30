@@ -7,9 +7,9 @@ import {
   allFulfilled,
   createDecoders,
   getPdsEndpoint,
-} from '@atproto/common'
-import { IdResolver } from '@atproto/identity'
-import { ResponseType, XRPCError } from '@atproto/xrpc'
+} from '@gander-social-atproto/common'
+import { IdResolver } from '@gander-social-atproto/identity'
+import { ResponseType, XRPCError } from '@gander-social-atproto/xrpc'
 import { BlobDivertConfig } from '../config'
 import { Database } from '../db'
 import { retryHttp } from '../util'

@@ -1,4 +1,4 @@
-import { isLoopbackHost } from '@atproto/oauth-types'
+import { isLoopbackHost } from '@gander-social-atproto/oauth-types'
 
 export type Simplify<T> = { [K in keyof T]: T[K] } & NonNullable<unknown>
 export type TupleUnion<U extends string, R extends any[] = []> = {

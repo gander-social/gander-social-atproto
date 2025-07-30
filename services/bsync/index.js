@@ -11,7 +11,7 @@ const {
   envToCfg,
   httpLogger,
   readEnv,
-} = require('@atproto/bsync')
+} = require('@gander-social-atproto/bsync')
 
 const main = async () => {
   const env = readEnv()

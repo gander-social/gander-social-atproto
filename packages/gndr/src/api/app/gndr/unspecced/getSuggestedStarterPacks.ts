@@ -1,6 +1,6 @@
-import AtpAgent, { AtUri } from '@atproto/api'
-import { dedupeStrs, mapDefined, noUndefinedVals } from '@atproto/common'
-import { InternalServerError } from '@atproto/xrpc-server'
+import AtpAgent, { AtUri } from '@gander-social-atproto/api'
+import { dedupeStrs, mapDefined, noUndefinedVals } from '@gander-social-atproto/common'
+import { InternalServerError } from '@gander-social-atproto/xrpc-server'
 import { AppContext } from '../../../../context'
 import {
   HydrateCtx,

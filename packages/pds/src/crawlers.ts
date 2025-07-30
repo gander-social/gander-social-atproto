@@ -1,5 +1,5 @@
-import { AtpAgent } from '@atproto/api'
-import { MINUTE } from '@atproto/common'
+import { AtpAgent } from '@gander-social-atproto/api'
+import { MINUTE } from '@gander-social-atproto/common'
 import { BackgroundQueue } from './background'
 import { crawlerLogger as log } from './logger'
 

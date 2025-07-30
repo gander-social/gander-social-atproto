@@ -3,11 +3,11 @@ import {
   Did,
   DidDocument,
   DidService,
-} from '@atproto/did'
+} from '@gander-social-atproto/did'
 import {
   OAuthAuthorizationServerMetadata,
   oauthIssuerIdentifierSchema,
-} from '@atproto/oauth-types'
+} from '@gander-social-atproto/oauth-types'
 import {
   IdentityInfo,
   IdentityResolver,

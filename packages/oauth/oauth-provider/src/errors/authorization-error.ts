@@ -1,4 +1,4 @@
-import { OAuthAuthorizationRequestParameters } from '@atproto/oauth-types'
+import { OAuthAuthorizationRequestParameters } from '@gander-social-atproto/oauth-types'
 import {
   AuthorizationResponseError,
   isAuthorizationResponseError,

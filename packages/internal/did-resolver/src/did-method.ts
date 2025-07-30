@@ -1,4 +1,4 @@
-import { Did, DidDocument } from '@atproto/did'
+import { Did, DidDocument } from '@gander-social-atproto/did'
 
 export type ResolveDidOptions = {
   signal?: AbortSignal
