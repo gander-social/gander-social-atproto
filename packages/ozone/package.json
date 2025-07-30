@@ -17,7 +17,7 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "codegen": "lex gen-server --yes ./src/lexicon ../../lexicons/com/atproto/*/* ../../lexicons/app/gndr/*/* ../../lexicons/chat/gndr/*/* ../../lexicons/tools/ozone/*/*",
+    "codegen": "lex gen-server --yes ./src/lexicon ../../lexicons/com/gander-social-atproto/*/* ../../lexicons/app/gndr/*/* ../../lexicons/chat/gndr/*/* ../../lexicons/tools/ozone/*/*",
     "build": "tsc --build tsconfig.build.json",
     "start": "node --enable-source-maps dist/bin.js",
     "test": "../dev-infra/with-test-redis-and-db.sh jest",

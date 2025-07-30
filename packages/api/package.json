@@ -1,5 +1,5 @@
 {
-  "name": "@atproto/api",
+  "name": "@gander-social-atproto/api",
   "version": "0.15.23",
   "license": "MIT",
   "description": "Client library for atproto and Gander",
@@ -17,7 +17,7 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "codegen": "node ./scripts/generate-code.mjs && lex gen-api --yes ./src/client ../../lexicons/com/atproto/*/* ../../lexicons/app/gndr/*/* ../../lexicons/chat/gndr/*/* ../../lexicons/tools/ozone/*/*",
+    "codegen": "node ./scripts/generate-code.mjs && lex gen-api --yes ./src/client ../../lexicons/com/gander-social-atproto/*/* ../../lexicons/app/gndr/*/* ../../lexicons/chat/gndr/*/* ../../lexicons/tools/ozone/*/*",
     "build": "tsc --build tsconfig.build.json",
     "test": "jest"
   },
