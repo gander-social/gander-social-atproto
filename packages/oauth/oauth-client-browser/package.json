@@ -1,5 +1,5 @@
 {
-  "name": "@atproto/oauth-client-browser",
+  "name": "@gander-social-atproto/oauth-client-browser",
   "version": "0.3.26",
   "license": "MIT",
   "description": "ATPROTO OAuth client for the browser (relies on WebCrypto & Indexed DB)",
@@ -12,10 +12,10 @@
     "indexed",
     "db"
   ],
-  "homepage": "https://atproto.com",
+  "homepage": "https://github.com/gander-social/gander-social-atproto",
   "repository": {
     "type": "git",
-    "url": "https://github.com/gander-social/atproto",
+    "url": "https://github.com/gander-social/gander-social-atproto",
     "directory": "packages/oauth/oauth-client-browser"
   },
   "type": "commonjs",
@@ -34,11 +34,11 @@
     "@atproto-labs/did-resolver": "workspace:*",
     "@atproto-labs/handle-resolver": "workspace:*",
     "@atproto-labs/simple-store": "workspace:*",
-    "@atproto/did": "workspace:*",
-    "@atproto/jwk": "workspace:*",
-    "@atproto/jwk-webcrypto": "workspace:*",
-    "@atproto/oauth-client": "workspace:*",
-    "@atproto/oauth-types": "workspace:*"
+    "@gander-social-atproto/did": "workspace:*",
+    "@gander-social-atproto/jwk": "workspace:*",
+    "@gander-social-atproto/jwk-webcrypto": "workspace:*",
+    "@gander-social-atproto/oauth-client": "workspace:*",
+    "@gander-social-atproto/oauth-types": "workspace:*"
   },
   "devDependencies": {
     "typescript": "^5.6.3"

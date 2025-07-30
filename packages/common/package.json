@@ -1,15 +1,15 @@
 {
-  "name": "@atproto/common",
+  "name": "@gander-social-atproto/common",
   "version": "0.4.11",
   "license": "MIT",
   "description": "Shared web-platform-friendly code for atproto libraries",
   "keywords": [
     "atproto"
   ],
-  "homepage": "https://atproto.com",
+  "homepage": "https://github.com/gander-social/gander-social-atproto",
   "repository": {
     "type": "git",
-    "url": "https://github.com/gander-social/atproto",
+    "url": "https://github.com/gander-social/gander-social-atproto",
     "directory": "packages/common"
   },
   "main": "dist/index.js",
@@ -22,7 +22,7 @@
     "node": ">=18.7.0"
   },
   "dependencies": {
-    "@atproto/common-web": "workspace:^",
+    "@gander-social-atproto/common-web": "workspace:^",
     "@ipld/dag-cbor": "^7.0.3",
     "cbor-x": "^1.5.1",
     "iso-datestring-validator": "^2.2.2",

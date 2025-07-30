@@ -1,5 +1,5 @@
 {
-  "name": "@atproto/oauth-types",
+  "name": "@gander-social-atproto/oauth-types",
   "version": "0.4.0",
   "license": "MIT",
   "description": "OAuth typing & validation library",
@@ -9,10 +9,10 @@
     "types",
     "isomorphic"
   ],
-  "homepage": "https://atproto.com",
+  "homepage": "https://github.com/gander-social/gander-social-atproto",
   "repository": {
     "type": "git",
-    "url": "https://github.com/gander-social/atproto",
+    "url": "https://github.com/gander-social/gander-social-atproto",
     "directory": "packages/oauth/oauth-types"
   },
   "type": "commonjs",
@@ -25,7 +25,7 @@
     }
   },
   "dependencies": {
-    "@atproto/jwk": "workspace:*",
+    "@gander-social-atproto/jwk": "workspace:*",
     "zod": "^3.23.8"
   },
   "devDependencies": {

@@ -1,5 +1,5 @@
 {
-  "name": "@atproto/bsync",
+  "name": "@gander-social-atproto/bsync",
   "version": "0.0.20",
   "license": "MIT",
   "description": "Sychronizing service for app.gndr App View (Gander API)",
@@ -7,10 +7,10 @@
     "atproto",
     "gander"
   ],
-  "homepage": "https://atproto.com",
+  "homepage": "https://github.com/gander-social/gander-social-atproto",
   "repository": {
     "type": "git",
-    "url": "https://github.com/gander-social/atproto",
+    "url": "https://github.com/gander-social/gander-social-atproto",
     "directory": "packages/bsync"
   },
   "main": "dist/index.js",
@@ -28,8 +28,8 @@
     "node": ">=18.7.0"
   },
   "dependencies": {
-    "@atproto/common": "workspace:^",
-    "@atproto/syntax": "workspace:^",
+    "@gander-social-atproto/common": "workspace:^",
+    "@gander-social-atproto/syntax": "workspace:^",
     "@bufbuild/protobuf": "^1.5.0",
     "@connectrpc/connect": "^1.1.4",
     "@connectrpc/connect-node": "^1.1.4",

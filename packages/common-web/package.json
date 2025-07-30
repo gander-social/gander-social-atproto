@@ -1,15 +1,15 @@
 {
-  "name": "@atproto/common-web",
+  "name": "@gander-social-atproto/common-web",
   "version": "0.4.2",
   "license": "MIT",
   "description": "Shared web-platform-friendly code for atproto libraries",
   "keywords": [
     "atproto"
   ],
-  "homepage": "https://atproto.com",
+  "homepage": "https://github.com/gander-social/gander-social-atproto",
   "repository": {
     "type": "git",
-    "url": "https://github.com/gander-social/atproto",
+    "url": "https://github.com/gander-social/gander-social-atproto",
     "directory": "packages/common-web"
   },
   "main": "dist/index.js",

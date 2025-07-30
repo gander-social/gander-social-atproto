@@ -1,5 +1,5 @@
 {
-  "name": "@atproto/lex-cli",
+  "name": "@gander-social-atproto/lex-cli",
   "version": "0.8.3",
   "license": "MIT",
   "description": "TypeScript codegen tool for atproto Lexicon schemas",
@@ -7,10 +7,10 @@
     "atproto",
     "lexicon"
   ],
-  "homepage": "https://atproto.com",
+  "homepage": "https://github.com/gander-social/gander-social-atproto",
   "repository": {
     "type": "git",
-    "url": "https://github.com/gander-social/atproto",
+    "url": "https://github.com/gander-social/gander-social-atproto",
     "directory": "packages/lex-cli"
   },
   "bin": {
@@ -25,8 +25,8 @@
     "node": ">=18.7.0"
   },
   "dependencies": {
-    "@atproto/lexicon": "workspace:^",
-    "@atproto/syntax": "workspace:^",
+    "@gander-social-atproto/lexicon": "workspace:^",
+    "@gander-social-atproto/syntax": "workspace:^",
     "chalk": "^4.1.2",
     "commander": "^9.4.0",
     "prettier": "^3.2.5",

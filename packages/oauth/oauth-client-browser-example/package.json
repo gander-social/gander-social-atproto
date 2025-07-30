@@ -1,5 +1,5 @@
 {
-  "name": "@atproto/oauth-client-browser-example",
+  "name": "@gander-social-atproto/oauth-client-browser-example",
   "version": "0.0.5",
   "license": "MIT",
   "description": "Example single page application app using ATPROTO OAuth",
@@ -11,10 +11,10 @@
     "browser",
     "client"
   ],
-  "homepage": "https://atproto.com",
+  "homepage": "https://github.com/gander-social/gander-social-atproto",
   "repository": {
     "type": "git",
-    "url": "https://github.com/gander-social/atproto",
+    "url": "https://github.com/gander-social/gander-social-atproto",
     "directory": "packages/oauth/oauth-client-browser"
   },
   "type": "commonjs",
@@ -28,11 +28,11 @@
   ],
   "devDependencies": {
     "@atproto-labs/rollup-plugin-bundle-manifest": "workspace:*",
-    "@atproto/api": "workspace:*",
-    "@atproto/oauth-client": "workspace:*",
-    "@atproto/oauth-client-browser": "workspace:*",
-    "@atproto/oauth-types": "workspace:*",
-    "@atproto/xrpc": "workspace:*",
+    "@gander-social-atproto/api": "workspace:*",
+    "@gander-social-atproto/oauth-client": "workspace:*",
+    "@gander-social-atproto/oauth-client-browser": "workspace:*",
+    "@gander-social-atproto/oauth-types": "workspace:*",
+    "@gander-social-atproto/xrpc": "workspace:*",
     "@rollup/plugin-commonjs": "^25.0.7",
     "@rollup/plugin-html": "^1.0.4",
     "@rollup/plugin-json": "^6.1.0",

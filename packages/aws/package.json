@@ -1,5 +1,5 @@
 {
-  "name": "@atproto/aws",
+  "name": "@gander-social-atproto/aws",
   "version": "0.2.24",
   "license": "MIT",
   "description": "Shared AWS cloud API helpers for atproto services",
@@ -10,7 +10,7 @@
   "homepage": "https://atproto.com",
   "repository": {
     "type": "git",
-    "url": "https://github.com/gander-social/atproto",
+    "url": "https://github.com/gander-social",
     "directory": "packages/aws"
   },
   "main": "dist/index.js",
@@ -22,9 +22,9 @@
     "node": ">=18.7.0"
   },
   "dependencies": {
-    "@atproto/common": "workspace:^",
-    "@atproto/crypto": "workspace:^",
-    "@atproto/repo": "workspace:^",
+    "@gander-social-atproto/common": "workspace:^",
+    "@gander-social-atproto/crypto": "workspace:^",
+    "@gander-social-atproto/repo": "workspace:^",
     "@aws-sdk/client-cloudfront": "^3.261.0",
     "@aws-sdk/client-kms": "^3.196.0",
     "@aws-sdk/client-s3": "^3.224.0",
