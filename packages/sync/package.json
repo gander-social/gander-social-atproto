@@ -1,5 +1,5 @@
 {
-  "name": "@atproto/sync",
+  "name": "@gander-social-atproto/sync",
   "version": "0.1.28",
   "license": "MIT",
   "description": "atproto sync library",
@@ -25,12 +25,12 @@
     "test": "../dev-infra/with-test-redis-and-db.sh jest"
   },
   "dependencies": {
-    "@atproto/common": "workspace:^",
-    "@atproto/identity": "workspace:^",
-    "@atproto/lexicon": "workspace:^",
-    "@atproto/repo": "workspace:^",
-    "@atproto/syntax": "workspace:^",
-    "@atproto/xrpc-server": "workspace:^",
+    "@gander-social-atproto/common": "workspace:^",
+    "@gander-social-atproto/identity": "workspace:^",
+    "@gander-social-atproto/lexicon": "workspace:^",
+    "@gander-social-atproto/repo": "workspace:^",
+    "@gander-social-atproto/syntax": "workspace:^",
+    "@gander-social-atproto/xrpc-server": "workspace:^",
     "multiformats": "^9.9.0",
     "p-queue": "^6.6.2",
     "ws": "^8.12.0"

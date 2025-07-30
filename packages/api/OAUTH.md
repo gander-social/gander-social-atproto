@@ -92,8 +92,8 @@ all. In this example, we will use TypeScript and Parcel, with plain JavaScript.
 
 ```bash
 npm init -y
-npm install --save-dev @atproto/oauth-client-browser
-npm install --save-dev @atproto/api
+npm install --save-dev @gander-social-atproto/oauth-client-browser
+npm install --save-dev @gander-social-atproto/api
 npm install --save-dev parcel
 npm install --save-dev parcel-reporter-static-files-copy
 mkdir -p src

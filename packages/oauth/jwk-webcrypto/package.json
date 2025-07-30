@@ -1,8 +1,8 @@
 {
-  "name": "@atproto/jwk-webcrypto",
+  "name": "@gander-social-atproto/jwk-webcrypto",
   "version": "0.1.9",
   "license": "MIT",
-  "description": "Webcrypto based implementation of @atproto/jwk Key's",
+  "description": "Webcrypto based implementation of @gander-social-atproto/jwk Key's",
   "keywords": [
     "atproto",
     "jwk",
@@ -24,8 +24,8 @@
     }
   },
   "dependencies": {
-    "@atproto/jwk": "workspace:*",
-    "@atproto/jwk-jose": "workspace:*",
+    "@gander-social-atproto/jwk": "workspace:*",
+    "@gander-social-atproto/jwk-jose": "workspace:*",
     "zod": "^3.23.8"
   },
   "devDependencies": {

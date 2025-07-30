@@ -31,7 +31,7 @@
   "dependencies": {
     "@atproto-labs/fetch-node": "workspace:*",
     "@atproto-labs/handle-resolver": "workspace:*",
-    "@atproto/did": "workspace:*"
+    "@gander-social-atproto/did": "workspace:*"
   },
   "devDependencies": {
     "typescript": "^5.6.3"

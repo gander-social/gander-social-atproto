@@ -1,5 +1,5 @@
 {
-  "name": "@atproto/oauth-provider-frontend",
+  "name": "@gander-social-atproto/oauth-provider-frontend",
   "version": "0.1.10",
   "license": "MIT",
   "homepage": "https://github.com/gander-social/gander-social-atproto",
@@ -25,14 +25,14 @@
     "hydration-data.d.ts"
   ],
   "optionalDependencies": {
-    "@atproto/oauth-provider-api": "workspace:*"
+    "@gander-social-atproto/oauth-provider-api": "workspace:*"
   },
   "devDependencies": {
     "@atproto-labs/fetch": "workspace:*",
     "@atproto-labs/rollup-plugin-bundle-manifest": "workspace:*",
-    "@atproto/oauth-provider-api": "workspace:*",
-    "@atproto/oauth-types": "workspace:*",
-    "@atproto/syntax": "workspace:*",
+    "@gander-social-atproto/oauth-provider-api": "workspace:*",
+    "@gander-social-atproto/oauth-types": "workspace:*",
+    "@gander-social-atproto/syntax": "workspace:*",
     "@lingui/cli": "^5.2.0",
     "@lingui/core": "^5.2.0",
     "@lingui/react": "^5.2.0",

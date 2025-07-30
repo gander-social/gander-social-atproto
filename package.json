@@ -1,7 +1,7 @@
 {
   "name": "atp",
   "version": "0.0.1",
-  "repository": "git@github.com:gander-social/atproto.git",
+  "repository": "git@github.com:gander-social/gander-social-atproto.git",
   "author": "Gander Social <formation@gandersocial.ca>",
   "license": "MIT",
   "private": true,

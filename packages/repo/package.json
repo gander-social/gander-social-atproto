@@ -1,5 +1,5 @@
 {
-  "name": "@atproto/repo",
+  "name": "@gander-social-atproto/repo",
   "version": "0.8.4",
   "license": "MIT",
   "description": "atproto repo and MST implementation",
@@ -24,10 +24,10 @@
     "build": "tsc --build tsconfig.build.json"
   },
   "dependencies": {
-    "@atproto/common": "workspace:^",
-    "@atproto/common-web": "workspace:^",
-    "@atproto/crypto": "workspace:^",
-    "@atproto/lexicon": "workspace:^",
+    "@gander-social-atproto/common": "workspace:^",
+    "@gander-social-atproto/common-web": "workspace:^",
+    "@gander-social-atproto/crypto": "workspace:^",
+    "@gander-social-atproto/lexicon": "workspace:^",
     "@ipld/dag-cbor": "^7.0.0",
     "multiformats": "^9.9.0",
     "uint8arrays": "3.0.0",
