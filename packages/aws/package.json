@@ -22,9 +22,6 @@
     "node": ">=18.7.0"
   },
   "dependencies": {
-    "@gander-social-atproto/common": "workspace:^",
-    "@gander-social-atproto/crypto": "workspace:^",
-    "@gander-social-atproto/repo": "workspace:^",
     "@aws-sdk/client-cloudfront": "^3.261.0",
     "@aws-sdk/client-kms": "^3.196.0",
     "@aws-sdk/client-s3": "^3.224.0",
