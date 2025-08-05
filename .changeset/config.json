@@ -1,6 +1,11 @@
 {
   "$schema": "https://unpkg.com/@changesets/config@2.3.1/schema.json",
-  "changelog": ["@changesets/changelog-github", { "repo": "gander-social/atproto" }],
+  "changelog": [
+    "@changesets/changelog-github",
+    {
+      "repo": "gander-social/gander-social-atproto"
+    }
+  ],
   "commit": false,
   "fixed": [],
   "linked": [],

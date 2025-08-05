@@ -1,5 +1,5 @@
 ---
-"@atproto/lexicon": patch
+"@gander-social-atproto/lexicon": patch
 ---
 
 Improve return type of `assertValidXrpcParams`

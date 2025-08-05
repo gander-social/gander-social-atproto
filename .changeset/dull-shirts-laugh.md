@@ -1,5 +1,5 @@
 ---
-"@atproto/xrpc-server": patch
+"@gander-social-atproto/xrpc-server": patch
 ---
 
 Fix json and text uploads: don't parse bodies with input encoding of */*.
