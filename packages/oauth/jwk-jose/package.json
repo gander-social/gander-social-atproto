@@ -1,10 +1,10 @@
 {
   "name": "@gander-social-atproto/jwk-jose",
-  "version": "0.1.9",
+  "version": "0.1.91",
   "license": "MIT",
   "description": "`jose` based implementation of @gander-social-atproto/jwk Key's",
   "keywords": [
-    "atproto",
+    "gander-social-atproto",
     "jwk",
     "jose"
   ],

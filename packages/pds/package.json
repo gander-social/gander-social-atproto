@@ -1,10 +1,10 @@
 {
   "name": "@gander-social-atproto/pds",
-  "version": "0.4.158",
+  "version": "0.4.159",
   "license": "MIT",
   "description": "Reference implementation of atproto Personal Data Server (PDS)",
   "keywords": [
-    "atproto",
+    "gander-social-atproto",
     "pds"
   ],
   "homepage": "https://github.com/gander-social/gander-social-atproto",
@@ -80,7 +80,7 @@
     "@gander-social-atproto/dev-env": "workspace:^",
     "@gander-social-atproto/lex-cli": "workspace:^",
     "@gander-social-atproto/oauth-client-browser-example": "workspace:*",
-    "@gander-social-atproto/pds-entryway": "npm:@gander-social-atproto/pds@0.3.0-entryway.3",
+    "@gander-social-atproto/pds-entryway": "npm:@gander-social-atproto/pds@0.4.158",
     "@did-plc/server": "^0.0.1",
     "@types/cors": "^2.8.12",
     "@types/express": "^4.17.13",

@@ -132,6 +132,15 @@ importers:
       '@aws-sdk/lib-storage':
         specifier: ^3.226.0
         version: 3.857.0(@aws-sdk/client-s3@3.857.0)
+      '@gander-social-atproto/common':
+        specifier: workspace:^
+        version: link:../common
+      '@gander-social-atproto/crypto':
+        specifier: workspace:^
+        version: link:../crypto
+      '@gander-social-atproto/repo':
+        specifier: workspace:^
+        version: link:../repo
       '@noble/curves':
         specifier: ^1.7.0
         version: 1.9.6
@@ -873,6 +882,21 @@ importers:
       '@atproto-labs/simple-store':
         specifier: workspace:*
         version: link:../../internal/simple-store
+      '@gander-social-atproto/did':
+        specifier: workspace:*
+        version: link:../../did
+      '@gander-social-atproto/jwk':
+        specifier: workspace:*
+        version: link:../jwk
+      '@gander-social-atproto/jwk-webcrypto':
+        specifier: workspace:*
+        version: link:../jwk-webcrypto
+      '@gander-social-atproto/oauth-client':
+        specifier: workspace:*
+        version: link:../oauth-client
+      '@gander-social-atproto/oauth-types':
+        specifier: workspace:*
+        version: link:../oauth-types
     devDependencies:
       typescript:
         specifier: ^5.6.3
@@ -1524,6 +1548,9 @@ importers:
       '@gander-social-atproto/oauth-client-browser-example':
         specifier: workspace:*
         version: link:../oauth/oauth-client-browser-example
+      '@gander-social-atproto/pds-entryway':
+        specifier: npm:@gander-social-atproto/pds@0.4.158
+        version: 'link:'
       '@types/cors':
         specifier: ^2.8.12
         version: 2.8.19
@@ -1652,6 +1679,9 @@ importers:
 
   packages/xrpc:
     dependencies:
+      '@gander-social-atproto/lexicon':
+        specifier: workspace:^
+        version: link:../lexicon
       zod:
         specifier: ^3.23.8
         version: 3.25.76
