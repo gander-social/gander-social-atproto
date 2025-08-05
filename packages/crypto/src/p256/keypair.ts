@@ -1,5 +1,5 @@
-import { p256 } from '@noble/curves/p256'
-import { sha256 } from '@noble/hashes/sha256'
+import { p256 } from '@noble/curves/nist.js'
+import { sha256 } from '@noble/hashes/sha2'
 import {
   fromString as ui8FromString,
   toString as ui8ToString,

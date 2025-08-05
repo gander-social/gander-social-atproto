@@ -1,10 +1,10 @@
 import assert from 'node:assert'
 import { randomInt } from 'node:crypto'
 import {
+  Client,
   Code,
   ConnectError,
-  PromiseClient,
-  createPromiseClient,
+  createClient as createPromiseClient,
   makeAnyClient,
 } from '@connectrpc/connect'
 import { createGrpcTransport } from '@connectrpc/connect-node'
@@ -14,7 +14,7 @@ import { HostList } from './hosts'
 export * from './hosts'
 export * from './util'
 
-export type DataPlaneClient = PromiseClient<typeof Service>
+export type DataPlaneClient = Client<typeof Service>
 type HttpVersion = '1.1' | '2'
 const MAX_RETRIES = 3
 

@@ -1,4 +1,4 @@
-import { p256 } from '@noble/curves/p256'
+import { p256 } from '@noble/curves/nist.js'
 
 export const compressPubkey = (pubkeyBytes: Uint8Array): Uint8Array => {
   const point = p256.ProjectivePoint.fromHex(pubkeyBytes)

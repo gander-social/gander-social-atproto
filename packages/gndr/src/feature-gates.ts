@@ -1,5 +1,5 @@
 import { sha256Hex } from '@gander-social-atproto/crypto'
-import Statsig, { StatsigUser } from 'statsig-node'
+import { Statsig as StatsigDefault, StatsigUser } from 'statsig-node'
 import { featureGatesLogger } from './logger'
 
 export type Config = {
@@ -20,7 +20,7 @@ export enum GateID {
  */
 export class FeatureGates {
   ready = false
-  private statsig = Statsig
+  private statsig = StatsigDefault
   ids = GateID
 
   constructor(private config: Config) {}

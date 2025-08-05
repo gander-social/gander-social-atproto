@@ -1,7 +1,7 @@
 import {
+  Client,
   Interceptor,
-  PromiseClient,
-  createPromiseClient,
+  createClient as createClientConnect,
 } from '@connectrpc/connect'
 import {
   ConnectTransportOptions,
@@ -9,11 +9,11 @@ import {
 } from '@connectrpc/connect-node'
 import { Service } from './proto/bsync_connect'
 
-export type BsyncClient = PromiseClient<typeof Service>
+export type BsyncClient = Client<typeof Service>
 
 export const createClient = (opts: ConnectTransportOptions): BsyncClient => {
   const transport = createConnectTransport(opts)
-  return createPromiseClient(Service, transport)
+  return createClientConnect(Service, transport)
 }
 
 export const authWithApiKey =

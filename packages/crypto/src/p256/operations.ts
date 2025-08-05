@@ -1,5 +1,5 @@
-import { p256 } from '@noble/curves/p256'
-import { sha256 } from '@noble/hashes/sha256'
+import { p256 } from '@noble/curves/nist.js'
+import { sha256 } from '@noble/hashes/sha2'
 import { equals as ui8equals } from 'uint8arrays'
 import { P256_DID_PREFIX } from '../const'
 import { VerifyOptions } from '../types'

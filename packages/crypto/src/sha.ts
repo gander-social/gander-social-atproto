@@ -1,4 +1,4 @@
-import * as noble from '@noble/hashes/sha256'
+import * as noble from '@noble/hashes/sha2'
 import * as uint8arrays from 'uint8arrays'
 
 // takes either bytes of utf8 input

@@ -1,19 +1,19 @@
 import fs from 'node:fs'
 import { cborEncode } from '@gander-social-atproto/common'
-import { p256 as nobleP256 } from '@noble/curves/p256'
+import { p256 as nobleP256 } from '@noble/curves/nist.js'
 import { secp256k1 as nobleK256 } from '@noble/curves/secp256k1'
 import * as uint8arrays from 'uint8arrays'
 import {
+  P256Keypair,
   P256_JWT_ALG,
   SECP256K1_JWT_ALG,
+  Secp256k1Keypair,
   bytesToMultibase,
   multibaseToBytes,
   parseDidKey,
   sha256,
 } from '../src'
-import { P256Keypair } from '../src/p256/keypair'
 import * as p256 from '../src/p256/operations'
-import { Secp256k1Keypair } from '../src/secp256k1/keypair'
 import * as secp from '../src/secp256k1/operations'
 
 describe('signatures', () => {

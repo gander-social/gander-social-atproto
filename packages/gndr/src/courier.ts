@@ -1,9 +1,9 @@
 import {
+  Client,
   Code,
   ConnectError,
   Interceptor,
-  PromiseClient,
-  createPromiseClient,
+  createClient as createPromiseClient,
 } from '@connectrpc/connect'
 import {
   ConnectTransportOptions,
@@ -11,7 +11,7 @@ import {
 } from '@connectrpc/connect-node'
 import { Service } from './proto/courier_connect'
 
-export type CourierClient = PromiseClient<typeof Service>
+export type CourierClient = Client<typeof Service>
 
 export const createCourierClient = (
   opts: ConnectTransportOptions,
