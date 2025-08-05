@@ -1,5 +1,3 @@
-import { CID } from 'multiformats/cid'
-import PQueue from 'p-queue'
 import { TID } from '@gander-social-atproto/common'
 import { BlobRef, LexValue, RepoRecord } from '@gander-social-atproto/lexicon'
 import {
@@ -11,6 +9,8 @@ import {
 } from '@gander-social-atproto/repo'
 import { AtUri } from '@gander-social-atproto/syntax'
 import { InvalidRequestError } from '@gander-social-atproto/xrpc-server'
+import { CID } from 'multiformats/cid'
+import PQueue from 'p-queue'
 import { ActorStoreTransactor } from '../../../../actor-store/actor-store-transactor'
 import { AppContext } from '../../../../context'
 import { Server } from '../../../../lexicon'

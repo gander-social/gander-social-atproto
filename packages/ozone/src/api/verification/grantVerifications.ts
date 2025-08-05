@@ -1,8 +1,8 @@
-import { Selectable } from 'kysely'
 import {
   AuthRequiredError,
   InvalidRequestError,
 } from '@gander-social-atproto/xrpc-server'
+import { Selectable } from 'kysely'
 import { AppContext } from '../../context'
 import { Verification } from '../../db/schema/verification'
 import { Server } from '../../lexicon'

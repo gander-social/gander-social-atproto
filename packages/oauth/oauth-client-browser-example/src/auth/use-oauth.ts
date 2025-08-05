@@ -1,6 +1,5 @@
 'use client'
 
-import { useCallback, useEffect, useRef, useState } from 'react'
 import {
   AuthorizeOptions,
   BrowserOAuthClient,
@@ -8,6 +7,7 @@ import {
   LoginContinuedInParentWindowError,
   OAuthSession,
 } from '@gander-social-atproto/oauth-client-browser'
+import { useCallback, useEffect, useRef, useState } from 'react'
 
 type Simplify<T> = { [K in keyof T]: T[K] } & NonNullable<unknown>
 

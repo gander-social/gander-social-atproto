@@ -1,11 +1,11 @@
-import express from 'express'
-import * as ui8 from 'uint8arrays'
 import { IdResolver } from '@gander-social-atproto/identity'
 import {
   AuthRequiredError,
   parseReqNsid,
   verifyJwt,
 } from '@gander-social-atproto/xrpc-server'
+import express from 'express'
+import * as ui8 from 'uint8arrays'
 import { TeamService } from './team'
 
 type ReqCtx = {

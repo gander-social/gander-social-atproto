@@ -1,6 +1,6 @@
-import { CID } from 'multiformats/cid'
 import { AtUri, normalizeDatetimeAlways } from '@gander-social-atproto/syntax'
 import { InvalidRequestError } from '@gander-social-atproto/xrpc-server'
+import { CID } from 'multiformats/cid'
 import * as lex from '../../../../lexicon/lexicons'
 import * as Postgate from '../../../../lexicon/types/app/gndr/feed/postgate'
 import { BackgroundQueue } from '../../background'

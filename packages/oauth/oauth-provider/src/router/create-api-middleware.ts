@@ -1,6 +1,4 @@
 import type { IncomingMessage, ServerResponse } from 'node:http'
-import createHttpError from 'http-errors'
-import { z } from 'zod'
 import { signedJwtSchema } from '@gander-social-atproto/jwk'
 import {
   API_ENDPOINT_PREFIX,
@@ -17,6 +15,8 @@ import {
   oauthRedirectUriSchema,
   oauthResponseModeSchema,
 } from '@gander-social-atproto/oauth-types'
+import createHttpError from 'http-errors'
+import { z } from 'zod'
 import { signInDataSchema } from '../account/sign-in-data.js'
 import { signUpInputSchema } from '../account/sign-up-input.js'
 import { DeviceId, deviceIdSchema } from '../device/device-id.js'

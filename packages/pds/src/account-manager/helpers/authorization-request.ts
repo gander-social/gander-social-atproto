@@ -1,4 +1,3 @@
-import { Insertable, Selectable } from 'kysely'
 import {
   Code,
   FoundRequestResult,
@@ -6,6 +5,7 @@ import {
   RequestId,
   UpdateRequestData,
 } from '@gander-social-atproto/oauth-provider'
+import { Insertable, Selectable } from 'kysely'
 import { fromDateISO, fromJson, toDateISO, toJson } from '../../db'
 import { AccountDb, AuthorizationRequest } from '../db'
 

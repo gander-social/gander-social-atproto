@@ -1,7 +1,7 @@
 import { PassThrough, Readable } from 'node:stream'
 import { pipeline } from 'node:stream/promises'
-import sharp from 'sharp'
 import { errHasMsg } from '@gander-social-atproto/common'
+import sharp from 'sharp'
 import { ImageInfo, Options, formatsToMimes } from './util'
 
 export type { Options }

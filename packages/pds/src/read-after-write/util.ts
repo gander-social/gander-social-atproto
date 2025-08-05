@@ -1,4 +1,3 @@
-import express from 'express'
 import { jsonToLex } from '@gander-social-atproto/lexicon'
 import { HeadersMap } from '@gander-social-atproto/xrpc'
 import {
@@ -6,6 +5,7 @@ import {
   HandlerPipeThroughBuffer,
   parseReqNsid,
 } from '@gander-social-atproto/xrpc-server'
+import express from 'express'
 import { AppContext } from '../context'
 import { lexicons } from '../lexicon/lexicons'
 import { readStickyLogger as log } from '../logger'

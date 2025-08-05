@@ -1,6 +1,3 @@
-import { useLingui } from '@lingui/react/macro'
-import { useCallback, useState } from 'react'
-import { useErrorBoundary } from 'react-error-boundary'
 import type {
   Account,
   ConfirmResetPasswordInput,
@@ -10,6 +7,9 @@ import type {
   SignUpInput,
   VerifyHandleAvailabilityInput,
 } from '@gander-social-atproto/oauth-provider-api'
+import { useLingui } from '@lingui/react/macro'
+import { useCallback, useState } from 'react'
+import { useErrorBoundary } from 'react-error-boundary'
 import { Api, UnknownRequestUriError } from '../lib/api.ts'
 import { upsert } from '../lib/util.ts'
 

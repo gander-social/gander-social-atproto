@@ -1,5 +1,3 @@
-import { CID } from 'multiformats/cid'
-import type { ClientOptions } from 'ws'
 import {
   Deferrable,
   createDeferrable,
@@ -21,6 +19,8 @@ import {
 } from '@gander-social-atproto/repo'
 import { AtUri } from '@gander-social-atproto/syntax'
 import { Subscription } from '@gander-social-atproto/xrpc-server'
+import { CID } from 'multiformats/cid'
+import type { ClientOptions } from 'ws'
 import {
   AccountEvt,
   AccountStatus,

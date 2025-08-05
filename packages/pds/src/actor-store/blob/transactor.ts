@@ -1,8 +1,5 @@
 import crypto from 'node:crypto'
 import stream from 'node:stream'
-import bytes from 'bytes'
-import { fromStream as fileTypeFromStream } from 'file-type'
-import { CID } from 'multiformats/cid'
 import {
   cloneStream,
   sha256RawToCid,
@@ -16,6 +13,9 @@ import {
 } from '@gander-social-atproto/repo'
 import { AtUri } from '@gander-social-atproto/syntax'
 import { InvalidRequestError } from '@gander-social-atproto/xrpc-server'
+import bytes from 'bytes'
+import { fromStream as fileTypeFromStream } from 'file-type'
+import { CID } from 'multiformats/cid'
 import { BackgroundQueue } from '../../background'
 import * as img from '../../image'
 import { StatusAttr } from '../../lexicon/types/com/atproto/admin/defs'

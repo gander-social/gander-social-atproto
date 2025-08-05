@@ -1,5 +1,3 @@
-import { Selectable, sql } from 'kysely'
-import { CID } from 'multiformats/cid'
 import {
   AtpAgent,
   ComAtprotoSyncGetLatestCommit,
@@ -15,6 +13,8 @@ import {
   verifyRepo,
 } from '@gander-social-atproto/repo'
 import { AtUri } from '@gander-social-atproto/syntax'
+import { Selectable, sql } from 'kysely'
+import { CID } from 'multiformats/cid'
 import { subLogger } from '../../../logger'
 import { retryXrpc } from '../../../util/retry'
 import { BackgroundQueue } from '../background'

@@ -1,6 +1,4 @@
 import { EventEmitter, once } from 'node:events'
-import { Selectable } from 'kysely'
-import Mail from 'nodemailer/lib/mailer'
 import { AtpAgent } from '@gander-social-atproto/api'
 import { fileExists } from '@gander-social-atproto/common'
 import {
@@ -8,6 +6,8 @@ import {
   TestNetworkNoAppView,
 } from '@gander-social-atproto/dev-env'
 import { BlobNotFoundError } from '@gander-social-atproto/repo'
+import { Selectable } from 'kysely'
+import Mail from 'nodemailer/lib/mailer'
 import { AppContext } from '../src'
 import {
   Account,

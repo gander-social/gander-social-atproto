@@ -1,7 +1,7 @@
+import type { CustomizationData } from '@gander-social-atproto/oauth-provider-api'
 import { useLingui } from '@lingui/react/macro'
 import { clsx } from 'clsx'
 import { JSX } from 'react'
-import type { CustomizationData } from '@gander-social-atproto/oauth-provider-api'
 import { Override } from '../../lib/util.ts'
 import { LocaleSelector } from '../../locales/locale-selector.tsx'
 import { LinkAnchor } from '../utils/link-anchor.tsx'

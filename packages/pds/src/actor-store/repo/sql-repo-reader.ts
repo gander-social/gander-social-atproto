@@ -1,5 +1,3 @@
-import { sql } from 'kysely'
-import { CID } from 'multiformats/cid'
 import { chunkArray } from '@gander-social-atproto/common'
 import {
   BlockMap,
@@ -8,6 +6,8 @@ import {
   ReadableBlockstore,
   writeCarStream,
 } from '@gander-social-atproto/repo'
+import { sql } from 'kysely'
+import { CID } from 'multiformats/cid'
 import { countAll } from '../../db'
 import { ActorDb } from '../db'
 

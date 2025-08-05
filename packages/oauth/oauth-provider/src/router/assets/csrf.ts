@@ -1,9 +1,9 @@
 import type { IncomingMessage, ServerResponse } from 'node:http'
-import createHttpError from 'http-errors'
 import {
   CSRF_COOKIE_NAME,
   CSRF_HEADER_NAME,
 } from '@gander-social-atproto/oauth-provider-api'
+import createHttpError from 'http-errors'
 import {
   CookieSerializeOptions,
   parseHttpCookies,

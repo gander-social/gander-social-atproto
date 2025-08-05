@@ -1,6 +1,5 @@
 import assert from 'node:assert'
 import { Client, createOp as createPlcOp } from '@did-plc/lib'
-import { Selectable } from 'kysely'
 import { Keypair, Secp256k1Keypair } from '@gander-social-atproto/crypto'
 import {
   Account,
@@ -37,6 +36,7 @@ import {
   AuthRequiredError as XrpcAuthRequiredError,
   InvalidRequestError as XrpcInvalidRequestError,
 } from '@gander-social-atproto/xrpc-server'
+import { Selectable } from 'kysely'
 import { ActorStore } from '../actor-store/actor-store'
 import { BackgroundQueue } from '../background'
 import { fromDateISO } from '../db'

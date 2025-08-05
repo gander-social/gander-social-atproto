@@ -1,9 +1,9 @@
-import * as jose from 'jose'
 import { AtpAgent } from '@gander-social-atproto/api'
 import {
   SeedClient,
   TestNetworkNoAppView,
 } from '@gander-social-atproto/dev-env'
+import * as jose from 'jose'
 import { createRefreshToken } from '../src/account-manager/helpers/auth'
 
 describe('auth', () => {

@@ -1,8 +1,8 @@
-import { z } from 'zod'
 import {
   oauthAuthorizationResponseErrorSchema,
   oidcAuthorizationResponseErrorSchema,
 } from '@gander-social-atproto/oauth-types'
+import { z } from 'zod'
 
 export const authorizationResponseErrorSchema = z.union([
   oauthAuthorizationResponseErrorSchema,

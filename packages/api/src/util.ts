@@ -1,5 +1,5 @@
-import { z } from 'zod'
 import { AtUri } from '@gander-social-atproto/syntax'
+import { z } from 'zod'
 import { AppGndrActorDefs } from './client'
 import { Nux } from './client/types/app/gndr/actor/defs'
 

@@ -1,10 +1,10 @@
-import { TypeOf, z } from 'zod'
 import {
   OAuthAuthorizationRequestParameters,
   oauthClientIdDiscoverableSchema,
   oauthClientIdLoopbackSchema,
   oauthClientMetadataSchema,
 } from '@gander-social-atproto/oauth-types'
+import { TypeOf, z } from 'zod'
 import { Simplify } from './util.js'
 
 // Note: These types are not prefixed with `OAuth` because they are not specific

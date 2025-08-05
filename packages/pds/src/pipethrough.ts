@@ -1,7 +1,5 @@
 import { IncomingHttpHeaders, ServerResponse } from 'node:http'
 import { PassThrough, Readable } from 'node:stream'
-import express from 'express'
-import { Dispatcher } from 'undici'
 import {
   decodeStream,
   getServiceEndpoint,
@@ -21,6 +19,8 @@ import {
   XRPCError as XRPCServerError,
   parseReqNsid,
 } from '@gander-social-atproto/xrpc-server'
+import express from 'express'
+import { Dispatcher } from 'undici'
 import { buildProxiedContentEncoding } from '@atproto-labs/xrpc-utils'
 import { AppContext } from './context'
 import { ids } from './lexicon/lexicons'

@@ -1,9 +1,9 @@
 import assert from 'node:assert'
 import * as http from 'node:http'
 import { AddressInfo } from 'node:net'
-import { CID } from 'multiformats/cid'
 import { LexiconDoc } from '@gander-social-atproto/lexicon'
 import { XrpcClient } from '@gander-social-atproto/xrpc'
+import { CID } from 'multiformats/cid'
 import * as xrpcServer from '../src'
 import { closeServer, createServer } from './_util'
 

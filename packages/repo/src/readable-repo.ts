@@ -1,5 +1,5 @@
-import { CID } from 'multiformats/cid'
 import { RepoRecord } from '@gander-social-atproto/lexicon'
+import { CID } from 'multiformats/cid'
 import { MissingBlocksError } from './error'
 import log from './logger'
 import { MST } from './mst'

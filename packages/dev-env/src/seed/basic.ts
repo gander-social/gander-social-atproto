@@ -1,5 +1,5 @@
-import { TestGndr } from '../gndr'
 import { EXAMPLE_LABELER } from '../const'
+import { TestGndr } from '../gndr'
 import { TestNetwork } from '../network'
 import { TestNetworkNoAppView } from '../network-no-appview'
 import { SeedClient } from './client'

@@ -1,5 +1,5 @@
-import { Selectable } from 'kysely'
 import { DeviceId, SessionId } from '@gander-social-atproto/oauth-provider'
+import { Selectable } from 'kysely'
 import { DateISO } from '../../../db'
 
 export interface Device {

@@ -1,3 +1,4 @@
+import { retry } from '@gander-social-atproto/common'
 import {
   DummyDriver,
   DynamicModule,
@@ -10,7 +11,6 @@ import {
   SqliteQueryCompiler,
   sql,
 } from 'kysely'
-import { retry } from '@gander-social-atproto/common'
 
 // Applies to repo_root or record table
 export const notSoftDeletedClause = (alias: DbRef) => {

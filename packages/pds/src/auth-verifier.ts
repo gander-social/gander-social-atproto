@@ -1,8 +1,5 @@
 import { KeyObject, createPublicKey, createSecretKey } from 'node:crypto'
 import { IncomingMessage, ServerResponse } from 'node:http'
-import { Request } from 'express'
-import * as jose from 'jose'
-import KeyEncoder from 'key-encoder'
 import { getVerificationMaterial } from '@gander-social-atproto/common'
 import {
   IdResolver,
@@ -21,6 +18,9 @@ import {
   parseReqNsid,
   verifyJwt as verifyServiceJwt,
 } from '@gander-social-atproto/xrpc-server'
+import { Request } from 'express'
+import * as jose from 'jose'
+import KeyEncoder from 'key-encoder'
 import { AccountManager } from './account-manager/account-manager'
 import { softDeleted } from './db'
 import { oauthLogger } from './logger'

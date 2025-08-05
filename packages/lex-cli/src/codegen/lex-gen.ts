@@ -1,5 +1,4 @@
 import { relative as getRelativePath } from 'node:path/posix'
-import { JSDoc, SourceFile, VariableDeclarationKind } from 'ts-morph'
 import {
   type LexArray,
   type LexBlob,
@@ -11,6 +10,7 @@ import {
   type LexToken,
   Lexicons,
 } from '@gander-social-atproto/lexicon'
+import { JSDoc, SourceFile, VariableDeclarationKind } from 'ts-morph'
 import { toCamelCase, toScreamingSnakeCase, toTitleCase } from './util'
 
 interface Commentable {

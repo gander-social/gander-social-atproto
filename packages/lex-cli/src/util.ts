@@ -1,11 +1,11 @@
 import fs from 'node:fs'
 import { join } from 'node:path'
-import chalk from 'chalk'
-import { ZodError, type ZodFormattedError } from 'zod'
 import {
   type LexiconDoc,
   parseLexiconDoc,
 } from '@gander-social-atproto/lexicon'
+import chalk from 'chalk'
+import { ZodError, type ZodFormattedError } from 'zod'
 import { type FileDiff, type GeneratedAPI } from './types'
 
 export function readAllLexicons(paths: string[]): LexiconDoc[] {

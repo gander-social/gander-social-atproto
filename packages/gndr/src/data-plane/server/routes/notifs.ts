@@ -1,8 +1,8 @@
 import { Timestamp } from '@bufbuild/protobuf'
 import { ServiceImpl } from '@connectrpc/connect'
-import { sql } from 'kysely'
 import { keyBy } from '@gander-social-atproto/common'
 import { jsonStringToLex } from '@gander-social-atproto/lexicon'
+import { sql } from 'kysely'
 import {
   ChatPreference,
   FilterablePreference,

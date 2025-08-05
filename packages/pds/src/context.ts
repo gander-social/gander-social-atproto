@@ -1,10 +1,5 @@
 import assert from 'node:assert'
 import * as plc from '@did-plc/lib'
-import express from 'express'
-import { Redis } from 'ioredis'
-import * as nodemailer from 'nodemailer'
-import * as ui8 from 'uint8arrays'
-import * as undici from 'undici'
 import { AtpAgent } from '@gander-social-atproto/api'
 import { KmsKeypair, S3BlobStore } from '@gander-social-atproto/aws'
 import * as crypto from '@gander-social-atproto/crypto'
@@ -20,6 +15,11 @@ import {
   createServiceAuthHeaders,
   createServiceJwt,
 } from '@gander-social-atproto/xrpc-server'
+import express from 'express'
+import { Redis } from 'ioredis'
+import * as nodemailer from 'nodemailer'
+import * as ui8 from 'uint8arrays'
+import * as undici from 'undici'
 import {
   Fetch,
   isUnicastIp,
@@ -37,11 +37,11 @@ import {
   createSecretKeyObject,
 } from './auth-verifier'
 import { BackgroundQueue } from './background'
-import { GndrAppView } from './gndr-app-view'
 import { ServerConfig, ServerSecrets } from './config'
 import { Crawlers } from './crawlers'
 import { DidSqliteCache } from './did-cache'
 import { DiskBlobStore } from './disk-blobstore'
+import { GndrAppView } from './gndr-app-view'
 import { ImageUrlBuilder } from './image/image-url-builder'
 import { fetchLogger } from './logger'
 import { ServerMailer } from './mailer'

@@ -1,5 +1,3 @@
-import { sql } from 'kysely'
-import { CID } from 'multiformats/cid'
 import {
   AppGndrActorProfile,
   AppGndrFeedLike,
@@ -18,6 +16,8 @@ import {
 import { repoPrepare } from '@gander-social-atproto/pds'
 import { WriteOpAction } from '@gander-social-atproto/repo'
 import { AtUri } from '@gander-social-atproto/syntax'
+import { sql } from 'kysely'
+import { CID } from 'multiformats/cid'
 import { Database } from '../../src/data-plane/server/db'
 import { ids } from '../../src/lexicon/lexicons'
 import { forSnapshot } from '../_util'

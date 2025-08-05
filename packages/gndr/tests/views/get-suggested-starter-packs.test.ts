@@ -1,9 +1,9 @@
 import { once } from 'node:events'
 import { Server, createServer } from 'node:http'
 import { AddressInfo } from 'node:net'
-import express, { Application } from 'express'
 import AtpAgent from '@gander-social-atproto/api'
 import { SeedClient, TestNetwork } from '@gander-social-atproto/dev-env'
+import express, { Application } from 'express'
 import { ids } from '../../src/lexicon/lexicons'
 import { OutputSchema } from '../../src/lexicon/types/app/gndr/unspecced/getSuggestedStarterPacksSkeleton'
 import {

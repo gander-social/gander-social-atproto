@@ -1,5 +1,5 @@
-import { Trans } from '@lingui/react/macro'
 import type { LinkDefinition } from '@gander-social-atproto/oauth-provider-api'
+import { Trans } from '@lingui/react/macro'
 import { MultiLangString } from './multi-lang-string.tsx'
 
 export type LinkNameProps = {

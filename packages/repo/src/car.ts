@@ -1,7 +1,3 @@
-import * as cbor from '@ipld/dag-cbor'
-import { CID } from 'multiformats/cid'
-import * as ui8 from 'uint8arrays'
-import * as varint from 'varint'
 import {
   check,
   parseCidFromBytes,
@@ -9,6 +5,10 @@ import {
   streamToBuffer,
   verifyCidForBytes,
 } from '@gander-social-atproto/common'
+import * as cbor from '@ipld/dag-cbor'
+import { CID } from 'multiformats/cid'
+import * as ui8 from 'uint8arrays'
+import * as varint from 'varint'
 import { BlockMap } from './block-map'
 import { CarBlock } from './types'
 

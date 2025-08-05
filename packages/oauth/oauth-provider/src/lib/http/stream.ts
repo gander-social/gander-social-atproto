@@ -1,7 +1,7 @@
 import type { IncomingMessage } from 'node:http'
 import { Readable } from 'node:stream'
-import createHttpError from 'http-errors'
 import { decodeStream, streamToNodeBuffer } from '@gander-social-atproto/common'
+import createHttpError from 'http-errors'
 import {
   KnownNames,
   KnownParser,

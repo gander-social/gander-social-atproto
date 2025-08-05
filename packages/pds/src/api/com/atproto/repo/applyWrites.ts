@@ -1,9 +1,9 @@
-import { CID } from 'multiformats/cid'
 import { WriteOpAction } from '@gander-social-atproto/repo'
 import {
   AuthRequiredError,
   InvalidRequestError,
 } from '@gander-social-atproto/xrpc-server'
+import { CID } from 'multiformats/cid'
 import { AppContext } from '../../../../context'
 import { Server } from '../../../../lexicon'
 import {

@@ -1,6 +1,6 @@
+import { JwtVerifyError } from '@gander-social-atproto/jwk'
 import { errors } from 'jose'
 import { ZodError } from 'zod'
-import { JwtVerifyError } from '@gander-social-atproto/jwk'
 import { OAuthError } from './oauth-error.js'
 import { WWWAuthenticateError } from './www-authenticate-error.js'
 

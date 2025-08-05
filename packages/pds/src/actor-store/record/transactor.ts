@@ -1,7 +1,7 @@
-import { CID } from 'multiformats/cid'
 import { RepoRecord } from '@gander-social-atproto/lexicon'
 import { BlobStore, WriteOpAction } from '@gander-social-atproto/repo'
 import { AtUri } from '@gander-social-atproto/syntax'
+import { CID } from 'multiformats/cid'
 import { StatusAttr } from '../../lexicon/types/com/atproto/admin/defs'
 import { dbLogger as log } from '../../logger'
 import { ActorDb, Backlink } from '../db'

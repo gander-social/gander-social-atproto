@@ -1,5 +1,3 @@
-import { isValidISODateString } from 'iso-datestring-validator'
-import { CID } from 'multiformats/cid'
 import { validateLanguage } from '@gander-social-atproto/common-web'
 import {
   ensureValidAtUri,
@@ -9,6 +7,8 @@ import {
   ensureValidRecordKey,
   isValidTid,
 } from '@gander-social-atproto/syntax'
+import { isValidISODateString } from 'iso-datestring-validator'
+import { CID } from 'multiformats/cid'
 import { ValidationError, ValidationResult } from '../types'
 
 export function datetime(path: string, value: string): ValidationResult {

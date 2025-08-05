@@ -1,5 +1,5 @@
-import { z } from 'zod'
 import { signedJwtSchema, unsignedJwtSchema } from '@gander-social-atproto/jwk'
+import { z } from 'zod'
 
 export const oauthAuthorizationRequestJarSchema = z.object({
   /**

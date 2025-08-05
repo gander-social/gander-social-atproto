@@ -7,10 +7,10 @@ import {
   createServer,
 } from 'node:http'
 import { AddressInfo } from 'node:net'
-import { type Browser, type Page, launch } from 'puppeteer'
 import { TestNetworkNoAppView } from '@gander-social-atproto/dev-env'
 // @ts-expect-error (json file)
 import files from '@gander-social-atproto/oauth-client-browser-example'
+import { type Browser, type Page, launch } from 'puppeteer'
 
 class PageHelper implements AsyncDisposable {
   constructor(protected readonly page: Page) {}

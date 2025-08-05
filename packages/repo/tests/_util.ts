@@ -1,8 +1,8 @@
 import fs from 'node:fs'
-import { CID } from 'multiformats'
 import { TID, dataToCborBlock } from '@gander-social-atproto/common'
 import * as crypto from '@gander-social-atproto/crypto'
 import { Keypair, randomBytes } from '@gander-social-atproto/crypto'
+import { CID } from 'multiformats'
 import {
   BlockMap,
   CollectionContents,

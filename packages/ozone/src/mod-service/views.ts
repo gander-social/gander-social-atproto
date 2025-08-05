@@ -1,4 +1,3 @@
-import { sql } from 'kysely'
 import {
   AppGndrActorDefs,
   AtpAgent,
@@ -13,6 +12,7 @@ import {
   INVALID_HANDLE,
   normalizeDatetimeAlways,
 } from '@gander-social-atproto/syntax'
+import { sql } from 'kysely'
 import { Database } from '../db'
 import { LabelRow } from '../db/schema/label'
 import { ids } from '../lexicon/lexicons'

@@ -1,4 +1,3 @@
-import type { Redis, RedisOptions } from 'ioredis'
 import { Key, Keyset, isSignedJwt } from '@gander-social-atproto/jwk'
 import {
   OAuthAccessToken,
@@ -6,6 +5,7 @@ import {
   OAuthTokenType,
   oauthIssuerIdentifierSchema,
 } from '@gander-social-atproto/oauth-types'
+import type { Redis, RedisOptions } from 'ioredis'
 import { DpopManager, DpopManagerOptions } from './dpop/dpop-manager.js'
 import { DpopNonce } from './dpop/dpop-nonce.js'
 import { DpopProof } from './dpop/dpop-proof.js'

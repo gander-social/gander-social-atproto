@@ -1,6 +1,6 @@
-import { CID } from 'multiformats/cid'
 import { BlobNotFoundError } from '@gander-social-atproto/repo'
 import { InvalidRequestError } from '@gander-social-atproto/xrpc-server'
+import { CID } from 'multiformats/cid'
 import { AuthScope } from '../../../../auth-verifier'
 import { AppContext } from '../../../../context'
 import { Server } from '../../../../lexicon'

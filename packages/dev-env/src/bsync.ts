@@ -1,5 +1,5 @@
-import getPort from 'get-port'
 import * as bsync from '@gander-social-atproto/bsync'
+import getPort from 'get-port'
 import { BsyncConfig } from './types'
 
 export class TestBsync {

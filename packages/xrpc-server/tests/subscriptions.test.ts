@@ -1,9 +1,9 @@
 import * as http from 'node:http'
 import { AddressInfo } from 'node:net'
-import getPort from 'get-port'
-import { WebSocket, WebSocketServer, createWebSocketStream } from 'ws'
 import { wait } from '@gander-social-atproto/common'
 import { LexiconDoc } from '@gander-social-atproto/lexicon'
+import getPort from 'get-port'
+import { WebSocket, WebSocketServer, createWebSocketStream } from 'ws'
 import { ErrorFrame, Frame, MessageFrame, Subscription, byFrame } from '../src'
 import * as xrpcServer from '../src'
 import {

@@ -1,8 +1,6 @@
 import assert from 'node:assert'
 import { IncomingMessage, OutgoingMessage } from 'node:http'
 import { Duplex, Readable, pipeline } from 'node:stream'
-import { Request, Response, json, text } from 'express'
-import { contentType } from 'mime-types'
 import { MaxSizeChecker, createDecoders } from '@gander-social-atproto/common'
 import {
   LexXrpcProcedure,
@@ -12,6 +10,8 @@ import {
   jsonToLex,
 } from '@gander-social-atproto/lexicon'
 import { ResponseType } from '@gander-social-atproto/xrpc'
+import { Request, Response, json, text } from 'express'
+import { contentType } from 'mime-types'
 import { InternalServerError, InvalidRequestError, XRPCError } from './errors'
 import {
   Awaitable,

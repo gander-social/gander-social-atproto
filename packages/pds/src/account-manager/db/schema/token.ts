@@ -1,4 +1,3 @@
-import { Generated, Selectable } from 'kysely'
 import {
   ClientAuth,
   ClientAuthLegacy,
@@ -11,6 +10,7 @@ import {
   Sub,
   TokenId,
 } from '@gander-social-atproto/oauth-provider'
+import { Generated, Selectable } from 'kysely'
 import { DateISO, JsonEncoded } from '../../../db/cast'
 
 export interface Token {

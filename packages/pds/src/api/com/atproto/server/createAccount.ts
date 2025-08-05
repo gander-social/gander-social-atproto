@@ -1,6 +1,4 @@
 import * as plc from '@did-plc/lib'
-import { isEmailValid } from '@hapi/address'
-import { isDisposableEmail } from 'disposable-email-domains-js'
 import { DidDocument, MINUTE, check } from '@gander-social-atproto/common'
 import {
   ExportableKeypair,
@@ -12,6 +10,8 @@ import {
   AuthRequiredError,
   InvalidRequestError,
 } from '@gander-social-atproto/xrpc-server'
+import { isEmailValid } from '@hapi/address'
+import { isDisposableEmail } from 'disposable-email-domains-js'
 import { AccountStatus } from '../../../../account-manager/account-manager'
 import { NEW_PASSWORD_MAX_LENGTH } from '../../../../account-manager/helpers/scrypt'
 import { AppContext } from '../../../../context'

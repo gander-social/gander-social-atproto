@@ -1,7 +1,7 @@
-import { CID } from 'multiformats/cid'
-import * as uint8arrays from 'uint8arrays'
 import { dataToCborBlock } from '@gander-social-atproto/common'
 import { LexValue, lexToIpld } from '@gander-social-atproto/lexicon'
+import { CID } from 'multiformats/cid'
+import * as uint8arrays from 'uint8arrays'
 
 export class BlockMap {
   private map: Map<string, Uint8Array> = new Map()

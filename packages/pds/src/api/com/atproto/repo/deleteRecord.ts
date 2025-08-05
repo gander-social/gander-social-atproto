@@ -1,8 +1,8 @@
-import { CID } from 'multiformats/cid'
 import {
   AuthRequiredError,
   InvalidRequestError,
 } from '@gander-social-atproto/xrpc-server'
+import { CID } from 'multiformats/cid'
 import { AppContext } from '../../../../context'
 import { Server } from '../../../../lexicon'
 import { dbLogger } from '../../../../logger'

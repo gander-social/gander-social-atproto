@@ -1,4 +1,3 @@
-import { Selectable } from 'kysely'
 import {
   $Typed,
   AppGndrActorDefs,
@@ -6,6 +5,7 @@ import {
   ToolsOzoneModerationDefs,
   ToolsOzoneVerificationDefs,
 } from '@gander-social-atproto/api'
+import { Selectable } from 'kysely'
 import { Database } from '../db'
 import { CreatedAtUriKeyset, paginate } from '../db/pagination'
 import { Verification } from '../db/schema/verification'

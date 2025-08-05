@@ -1,5 +1,5 @@
-import { CID } from 'multiformats/cid'
 import { AtUri } from '@gander-social-atproto/syntax'
+import { CID } from 'multiformats/cid'
 import * as lex from '../../../../lexicon/lexicons'
 import { BackgroundQueue } from '../../background'
 import { Database } from '../../db'

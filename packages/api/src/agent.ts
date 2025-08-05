@@ -1,4 +1,3 @@
-import AwaitLock from 'await-lock'
 import { TID, retry } from '@gander-social-atproto/common-web'
 import { AtUri, ensureValidDid } from '@gander-social-atproto/syntax'
 import {
@@ -7,6 +6,7 @@ import {
   XrpcClient,
   buildFetchHandler,
 } from '@gander-social-atproto/xrpc'
+import AwaitLock from 'await-lock'
 import {
   AppGndrActorDefs,
   AppGndrActorProfile,

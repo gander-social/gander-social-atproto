@@ -1,5 +1,5 @@
-import express from 'express'
 import { TestNetwork, TestOzone } from '@gander-social-atproto/dev-env'
+import express from 'express'
 import { handler as errorHandler } from '../src/error'
 import { startServer } from './_util'
 

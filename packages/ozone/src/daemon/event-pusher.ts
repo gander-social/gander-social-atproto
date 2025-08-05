@@ -1,7 +1,7 @@
 import assert from 'node:assert'
-import { Insertable, Selectable } from 'kysely'
 import { AtpAgent } from '@gander-social-atproto/api'
 import { SECOND } from '@gander-social-atproto/common'
+import { Insertable, Selectable } from 'kysely'
 import { Database } from '../db'
 import { BlobPushEvent } from '../db/schema/blob_push_event'
 import { RepoPushEventType } from '../db/schema/repo_push_event'

@@ -1,4 +1,3 @@
-import { CID } from 'multiformats/cid'
 import { RepoRecord } from '@gander-social-atproto/lexicon'
 import {
   CidSet,
@@ -7,6 +6,7 @@ import {
 } from '@gander-social-atproto/repo'
 import * as syntax from '@gander-social-atproto/syntax'
 import { AtUri, ensureValidAtUri } from '@gander-social-atproto/syntax'
+import { CID } from 'multiformats/cid'
 import { countAll, notSoftDeletedClause } from '../../db/util'
 import { ids } from '../../lexicon/lexicons'
 import { Record as ProfileRecord } from '../../lexicon/types/app/gndr/actor/profile'

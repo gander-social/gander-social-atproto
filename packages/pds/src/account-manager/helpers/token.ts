@@ -1,4 +1,3 @@
-import { Selectable } from 'kysely'
 import {
   Code,
   NewTokenData,
@@ -6,6 +5,7 @@ import {
   TokenData,
   TokenId,
 } from '@gander-social-atproto/oauth-provider'
+import { Selectable } from 'kysely'
 import { fromDateISO, fromJson, toDateISO, toJson } from '../../db'
 import { AccountDb, Token } from '../db'
 import { selectAccountQB } from './account'

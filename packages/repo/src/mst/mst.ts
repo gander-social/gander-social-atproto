@@ -1,10 +1,10 @@
-import { CID } from 'multiformats'
-import { z } from 'zod'
 import {
   cidForCbor,
   dataToCborBlock,
   schema as common,
 } from '@gander-social-atproto/common'
+import { CID } from 'multiformats'
+import { z } from 'zod'
 import { BlockMap } from '../block-map'
 import { CidSet } from '../cid-set'
 import { MissingBlockError, MissingBlocksError } from '../error'

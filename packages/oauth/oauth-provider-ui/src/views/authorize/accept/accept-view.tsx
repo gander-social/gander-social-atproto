@@ -1,9 +1,9 @@
-import { Trans, useLingui } from '@lingui/react/macro'
 import type {
   Account,
   ScopeDetail,
 } from '@gander-social-atproto/oauth-provider-api'
 import type { OAuthClientMetadata } from '@gander-social-atproto/oauth-types'
+import { Trans, useLingui } from '@lingui/react/macro'
 import {
   LayoutTitlePage,
   LayoutTitlePageProps,

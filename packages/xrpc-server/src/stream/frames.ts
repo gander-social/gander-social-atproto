@@ -1,5 +1,5 @@
-import * as uint8arrays from 'uint8arrays'
 import { cborDecodeMulti, cborEncode } from '@gander-social-atproto/common'
+import * as uint8arrays from 'uint8arrays'
 import {
   ErrorFrameBody,
   ErrorFrameHeader,

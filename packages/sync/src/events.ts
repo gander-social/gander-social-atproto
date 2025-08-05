@@ -1,8 +1,8 @@
-import type { CID } from 'multiformats/cid'
 import { DidDocument } from '@gander-social-atproto/identity'
 import type { RepoRecord } from '@gander-social-atproto/lexicon'
 import { BlockMap } from '@gander-social-atproto/repo'
 import { AtUri } from '@gander-social-atproto/syntax'
+import type { CID } from 'multiformats/cid'
 
 export type Event = CommitEvt | SyncEvt | IdentityEvt | AccountEvt
 

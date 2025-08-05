@@ -1,15 +1,15 @@
 import {
-  IndentationText,
-  Project,
-  SourceFile,
-  VariableDeclarationKind,
-} from 'ts-morph'
-import {
   type LexRecord,
   type LexiconDoc,
   Lexicons,
 } from '@gander-social-atproto/lexicon'
 import { NSID } from '@gander-social-atproto/syntax'
+import {
+  IndentationText,
+  Project,
+  SourceFile,
+  VariableDeclarationKind,
+} from 'ts-morph'
 import { type GeneratedAPI } from '../types'
 import { gen, lexiconsTs, utilTs } from './common'
 import {

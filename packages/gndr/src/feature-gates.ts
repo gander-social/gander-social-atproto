@@ -1,5 +1,5 @@
-import Statsig, { StatsigUser } from 'statsig-node'
 import { sha256Hex } from '@gander-social-atproto/crypto'
+import Statsig, { StatsigUser } from 'statsig-node'
 import { featureGatesLogger } from './logger'
 
 export type Config = {

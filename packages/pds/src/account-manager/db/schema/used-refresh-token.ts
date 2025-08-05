@@ -1,5 +1,5 @@
-import { Selectable } from 'kysely'
 import { RefreshToken } from '@gander-social-atproto/oauth-provider'
+import { Selectable } from 'kysely'
 
 export interface UsedRefreshToken {
   tokenId: number

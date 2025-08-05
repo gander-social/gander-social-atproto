@@ -1,6 +1,6 @@
+import type { Account } from '@gander-social-atproto/oauth-provider-api'
 import { Trans, useLingui } from '@lingui/react/macro'
 import { ReactNode } from 'react'
-import type { Account } from '@gander-social-atproto/oauth-provider-api'
 import { Button } from '../../../components/forms/button.tsx'
 import {
   FormCard,

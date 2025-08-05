@@ -3,7 +3,6 @@ import { once } from 'node:events'
 import http from 'node:http'
 import { AddressInfo } from 'node:net'
 import * as plc from '@did-plc/lib'
-import express from 'express'
 import { Keypair } from '@gander-social-atproto/crypto'
 import {
   SeedClient,
@@ -11,6 +10,7 @@ import {
   usersSeed,
 } from '@gander-social-atproto/dev-env'
 import { verifyJwt } from '@gander-social-atproto/xrpc-server'
+import express from 'express'
 import { parseProxyHeader } from '../../src/pipethrough'
 
 describe('proxy header', () => {

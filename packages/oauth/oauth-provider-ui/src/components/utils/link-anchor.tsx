@@ -1,5 +1,5 @@
-import { JSX } from 'react'
 import type { LinkDefinition } from '@gander-social-atproto/oauth-provider-api'
+import { JSX } from 'react'
 import { Override } from '../../lib/util.ts'
 import { LinkTitle } from './link-title.tsx'
 

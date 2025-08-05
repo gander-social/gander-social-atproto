@@ -1,6 +1,5 @@
 import fs from 'node:fs/promises'
 import path from 'node:path'
-import { CID } from 'multiformats/cid'
 import {
   AppGndrFeedLike,
   AppGndrFeedPost,
@@ -15,6 +14,7 @@ import {
 } from '@gander-social-atproto/api'
 import { BlobRef } from '@gander-social-atproto/lexicon'
 import { AtUri } from '@gander-social-atproto/syntax'
+import { CID } from 'multiformats/cid'
 import { TestNetworkNoAppView } from '../network-no-appview'
 
 // Makes it simple to create data via the XRPC client,

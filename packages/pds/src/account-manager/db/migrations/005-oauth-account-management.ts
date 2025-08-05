@@ -1,6 +1,6 @@
-import { Kysely } from 'kysely'
 import { HOUR } from '@gander-social-atproto/common'
 import { ClientId, DeviceId } from '@gander-social-atproto/oauth-provider'
+import { Kysely } from 'kysely'
 import { DateISO, JsonEncoded, toDateISO } from '../../../db'
 
 // @NOTE this migration has been updated to be idempotent through

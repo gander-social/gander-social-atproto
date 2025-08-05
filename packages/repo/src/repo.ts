@@ -1,7 +1,7 @@
-import { CID } from 'multiformats/cid'
 import { TID, dataToCborBlock } from '@gander-social-atproto/common'
 import * as crypto from '@gander-social-atproto/crypto'
 import { lexToIpld } from '@gander-social-atproto/lexicon'
+import { CID } from 'multiformats/cid'
 import { BlockMap } from './block-map'
 import { CidSet } from './cid-set'
 import { DataDiff } from './data-diff'

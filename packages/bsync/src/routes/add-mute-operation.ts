@@ -1,6 +1,6 @@
 import { Code, ConnectError, ServiceImpl } from '@connectrpc/connect'
-import { sql } from 'kysely'
 import { AtUri } from '@gander-social-atproto/syntax'
+import { sql } from 'kysely'
 import { AppContext } from '../context'
 import { Database } from '../db'
 import { createMuteOpChannel } from '../db/schema/mute_op'

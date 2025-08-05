@@ -1,5 +1,5 @@
-import { CID } from 'multiformats/cid'
 import { InvalidRequestError } from '@gander-social-atproto/xrpc-server'
+import { CID } from 'multiformats/cid'
 
 export const parseCidParam = (cid: string): CID => {
   try {

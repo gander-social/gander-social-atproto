@@ -1,5 +1,5 @@
-import { z } from 'zod'
 import { signedJwtSchema } from '@gander-social-atproto/jwk'
+import { z } from 'zod'
 import { oauthAuthorizationDetailsSchema } from './oauth-authorization-details.js'
 import { oauthClientIdSchema } from './oauth-client-id.js'
 import { oauthCodeChallengeMethodSchema } from './oauth-code-challenge-method.js'

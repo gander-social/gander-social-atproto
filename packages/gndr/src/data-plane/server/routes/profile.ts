@@ -1,11 +1,11 @@
 import { Timestamp } from '@bufbuild/protobuf'
 import { ServiceImpl } from '@connectrpc/connect'
-import { Selectable, sql } from 'kysely'
 import {
   AppGndrNotificationDeclaration,
   ChatGndrActorDeclaration,
 } from '@gander-social-atproto/api'
 import { keyBy } from '@gander-social-atproto/common'
+import { Selectable, sql } from 'kysely'
 import { parseRecordBytes } from '../../../hydration/util'
 import { Service } from '../../../proto/gndr_connect'
 import { VerificationMeta } from '../../../proto/gndr_pb'

@@ -1,14 +1,14 @@
 import { Duplex, Transform, Writable } from 'node:stream'
 import { pipeline } from 'node:stream/promises'
-import createError, { isHttpError } from 'http-errors'
-import { CID } from 'multiformats/cid'
-import { Dispatcher } from 'undici'
 import {
   VerifyCidError,
   VerifyCidTransform,
   createDecoders,
 } from '@gander-social-atproto/common'
 import { AtprotoDid, isAtprotoDid } from '@gander-social-atproto/did'
+import createError, { isHttpError } from 'http-errors'
+import { CID } from 'multiformats/cid'
+import { Dispatcher } from 'undici'
 import {
   ACCEPT_ENCODING_COMPRESSED,
   ACCEPT_ENCODING_UNCOMPRESSED,

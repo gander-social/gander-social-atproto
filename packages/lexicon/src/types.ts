@@ -1,5 +1,5 @@
-import { z } from 'zod'
 import { NSID } from '@gander-social-atproto/syntax'
+import { z } from 'zod'
 import { requiredPropertiesRefinement } from './util'
 
 // primitives

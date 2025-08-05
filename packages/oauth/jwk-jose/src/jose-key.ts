@@ -1,18 +1,4 @@
 import {
-  type GenerateKeyPairOptions,
-  type GenerateKeyPairResult,
-  type JWK,
-  type JWTVerifyOptions,
-  type KeyLike,
-  SignJWT,
-  errors,
-  exportJWK,
-  generateKeyPair,
-  importJWK,
-  importPKCS8,
-  jwtVerify,
-} from 'jose'
-import {
   Jwk,
   JwkError,
   JwtCreateError,
@@ -27,6 +13,20 @@ import {
   jwtHeaderSchema,
   jwtPayloadSchema,
 } from '@gander-social-atproto/jwk'
+import {
+  type GenerateKeyPairOptions,
+  type GenerateKeyPairResult,
+  type JWK,
+  type JWTVerifyOptions,
+  type KeyLike,
+  SignJWT,
+  errors,
+  exportJWK,
+  generateKeyPair,
+  importJWK,
+  importPKCS8,
+  jwtVerify,
+} from 'jose'
 import { RequiredKey, either } from './util.js'
 
 const { JOSEError } = errors

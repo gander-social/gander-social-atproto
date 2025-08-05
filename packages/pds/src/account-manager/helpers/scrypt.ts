@@ -1,6 +1,6 @@
 import crypto from 'node:crypto'
-import * as ui8 from 'uint8arrays'
 import { sha256 } from '@gander-social-atproto/crypto'
+import * as ui8 from 'uint8arrays'
 
 export const OLD_PASSWORD_MAX_LENGTH = 512
 export const NEW_PASSWORD_MAX_LENGTH = 256

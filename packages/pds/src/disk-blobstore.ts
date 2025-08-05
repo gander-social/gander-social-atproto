@@ -2,7 +2,6 @@ import fsSync from 'node:fs'
 import fs from 'node:fs/promises'
 import path from 'node:path'
 import stream from 'node:stream'
-import { CID } from 'multiformats/cid'
 import {
   fileExists,
   isErrnoException,
@@ -10,6 +9,7 @@ import {
 } from '@gander-social-atproto/common'
 import { randomStr } from '@gander-social-atproto/crypto'
 import { BlobNotFoundError, BlobStore } from '@gander-social-atproto/repo'
+import { CID } from 'multiformats/cid'
 import { httpLogger as log } from './logger'
 
 export class DiskBlobStore implements BlobStore {

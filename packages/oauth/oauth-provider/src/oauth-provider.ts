@@ -1,5 +1,4 @@
 import { createHash } from 'node:crypto'
-import type { Redis, RedisOptions } from 'ioredis'
 import { Jwks, Keyset } from '@gander-social-atproto/jwk'
 import type { Account } from '@gander-social-atproto/oauth-provider-api'
 import {
@@ -23,6 +22,7 @@ import {
   atprotoLoopbackClientMetadata,
   oauthAuthorizationRequestParametersSchema,
 } from '@gander-social-atproto/oauth-types'
+import type { Redis, RedisOptions } from 'ioredis'
 import { safeFetchWrap } from '@atproto-labs/fetch-node'
 import { SimpleStore } from '@atproto-labs/simple-store'
 import { SimpleStoreMemory } from '@atproto-labs/simple-store-memory'

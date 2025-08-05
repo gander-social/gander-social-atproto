@@ -1,7 +1,7 @@
 import { createHash } from 'node:crypto'
+import { ValidationError } from '@gander-social-atproto/jwk'
 import { EmbeddedJWK, calculateJwkThumbprint, errors, jwtVerify } from 'jose'
 import { z } from 'zod'
-import { ValidationError } from '@gander-social-atproto/jwk'
 import { DPOP_NONCE_MAX_AGE } from '../constants.js'
 import { InvalidDpopProofError } from '../errors/invalid-dpop-proof-error.js'
 import { UseDpopNonceError } from '../errors/use-dpop-nonce-error.js'
