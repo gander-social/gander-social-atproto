@@ -1,6 +1,10 @@
 import assert from 'node:assert'
 import { AtpAgent } from '@gander-social-atproto/api'
-import { SeedClient, TestNetwork, authorFeedSeed } from '@gander-social-atproto/dev-env'
+import {
+  SeedClient,
+  TestNetwork,
+  authorFeedSeed,
+} from '@gander-social-atproto/dev-env'
 import { ids } from '../../src/lexicon/lexicons'
 import {
   Record as Profile,

@@ -45,7 +45,11 @@ class.
 > `@atproto/oauth-client-*` packages).
 
 ```typescript
-import { AtpAgent, AtpSessionEvent, AtpSessionData } from '@gander-social-atproto/api'
+import {
+  AtpAgent,
+  AtpSessionEvent,
+  AtpSessionData,
+} from '@gander-social-atproto/api'
 
 // configure connection to the server, without account authentication
 const agent = new AtpAgent({

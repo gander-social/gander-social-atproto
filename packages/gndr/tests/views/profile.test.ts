@@ -2,7 +2,11 @@ import assert from 'node:assert'
 import fs from 'node:fs/promises'
 import { AppGndrEmbedExternal, AtpAgent } from '@gander-social-atproto/api'
 import { HOUR, MINUTE } from '@gander-social-atproto/common'
-import { SeedClient, TestNetwork, basicSeed } from '@gander-social-atproto/dev-env'
+import {
+  SeedClient,
+  TestNetwork,
+  basicSeed,
+} from '@gander-social-atproto/dev-env'
 import { ids } from '../../src/lexicon/lexicons'
 import { forSnapshot, stripViewer } from '../_util'
 

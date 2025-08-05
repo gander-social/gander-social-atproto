@@ -1,5 +1,8 @@
 import { isModEventDivert } from '@gander-social-atproto/api/dist/client/types/tools/ozone/moderation/defs'
-import { AuthRequiredError, InvalidRequestError } from '@gander-social-atproto/xrpc-server'
+import {
+  AuthRequiredError,
+  InvalidRequestError,
+} from '@gander-social-atproto/xrpc-server'
 import { AdminTokenOutput, ModeratorOutput } from '../../auth-verifier'
 import { AppContext } from '../../context'
 import { Server } from '../../lexicon'

@@ -3,9 +3,17 @@ import stream from 'node:stream'
 import bytes from 'bytes'
 import { fromStream as fileTypeFromStream } from 'file-type'
 import { CID } from 'multiformats/cid'
-import { cloneStream, sha256RawToCid, streamSize } from '@gander-social-atproto/common'
+import {
+  cloneStream,
+  sha256RawToCid,
+  streamSize,
+} from '@gander-social-atproto/common'
 import { BlobRef } from '@gander-social-atproto/lexicon'
-import { BlobNotFoundError, BlobStore, WriteOpAction } from '@gander-social-atproto/repo'
+import {
+  BlobNotFoundError,
+  BlobStore,
+  WriteOpAction,
+} from '@gander-social-atproto/repo'
 import { AtUri } from '@gander-social-atproto/syntax'
 import { InvalidRequestError } from '@gander-social-atproto/xrpc-server'
 import { BackgroundQueue } from '../../background'
@@ -130,7 +138,7 @@ export class BlobTransactor extends BlobReader {
 
   async updateBlobTakedownStatus(blob: CID, takedown: StatusAttr) {
     const takedownRef = takedown.applied
-      ? takedown.ref ?? new Date().toISOString()
+      ? (takedown.ref ?? new Date().toISOString())
       : null
     await this.db.db
       .updateTable('blob')

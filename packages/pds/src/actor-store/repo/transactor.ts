@@ -1,6 +1,11 @@
 import { CID } from 'multiformats/cid'
 import * as crypto from '@gander-social-atproto/crypto'
-import { BlobStore, Repo, WriteOpAction, formatDataKey } from '@gander-social-atproto/repo'
+import {
+  BlobStore,
+  Repo,
+  WriteOpAction,
+  formatDataKey,
+} from '@gander-social-atproto/repo'
 import { AtUri } from '@gander-social-atproto/syntax'
 import { InvalidRequestError } from '@gander-social-atproto/xrpc-server'
 import { BackgroundQueue } from '../../background'

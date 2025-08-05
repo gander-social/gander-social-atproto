@@ -5,7 +5,10 @@ import {
   wait,
 } from '@gander-social-atproto/common'
 import { randomStr } from '@gander-social-atproto/crypto'
-import { SeedClient, TestNetworkNoAppView } from '@gander-social-atproto/dev-env'
+import {
+  SeedClient,
+  TestNetworkNoAppView,
+} from '@gander-social-atproto/dev-env'
 import { readCarWithRoot } from '@gander-social-atproto/repo'
 import { sequencer } from '../../pds'
 import { SeqEvt, Sequencer, formatSeqSyncEvt } from '../src/sequencer'

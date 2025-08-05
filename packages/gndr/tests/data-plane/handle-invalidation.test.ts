@@ -1,6 +1,10 @@
 import { AtpAgent } from '@gander-social-atproto/api'
 import { DAY } from '@gander-social-atproto/common'
-import { SeedClient, TestNetwork, usersSeed } from '@gander-social-atproto/dev-env'
+import {
+  SeedClient,
+  TestNetwork,
+  usersSeed,
+} from '@gander-social-atproto/dev-env'
 import { ids } from '../../src/lexicon/lexicons'
 
 describe('handle invalidation', () => {

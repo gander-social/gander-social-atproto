@@ -1,6 +1,14 @@
 import assert from 'node:assert'
-import { AppGndrFeedGetPostThread, AtUri, AtpAgent } from '@gander-social-atproto/api'
-import { SeedClient, TestNetwork, basicSeed } from '@gander-social-atproto/dev-env'
+import {
+  AppGndrFeedGetPostThread,
+  AtUri,
+  AtpAgent,
+} from '@gander-social-atproto/api'
+import {
+  SeedClient,
+  TestNetwork,
+  basicSeed,
+} from '@gander-social-atproto/dev-env'
 import { ids } from '../../src/lexicon/lexicons'
 import { isThreadViewPost } from '../../src/lexicon/types/app/gndr/feed/defs'
 import {

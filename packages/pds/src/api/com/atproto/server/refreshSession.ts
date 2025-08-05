@@ -1,5 +1,8 @@
 import { INVALID_HANDLE } from '@gander-social-atproto/syntax'
-import { AuthRequiredError, InvalidRequestError } from '@gander-social-atproto/xrpc-server'
+import {
+  AuthRequiredError,
+  InvalidRequestError,
+} from '@gander-social-atproto/xrpc-server'
 import { formatAccountStatus } from '../../../../account-manager/account-manager'
 import { AppContext } from '../../../../context'
 import { softDeleted } from '../../../../db/util'

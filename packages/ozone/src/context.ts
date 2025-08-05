@@ -3,7 +3,11 @@ import * as plc from '@did-plc/lib'
 import express from 'express'
 import { AtpAgent } from '@gander-social-atproto/api'
 import { Keypair, Secp256k1Keypair } from '@gander-social-atproto/crypto'
-import { DidCache, IdResolver, MemoryCache } from '@gander-social-atproto/identity'
+import {
+  DidCache,
+  IdResolver,
+  MemoryCache,
+} from '@gander-social-atproto/identity'
 import { createServiceAuthHeaders } from '@gander-social-atproto/xrpc-server'
 import { AuthVerifier } from './auth-verifier'
 import { BackgroundQueue } from './background'

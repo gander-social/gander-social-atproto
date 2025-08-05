@@ -1,6 +1,9 @@
 import { CID } from 'multiformats/cid'
 import { AtUri } from '@gander-social-atproto/api'
-import { SeedClient, TestNetworkNoAppView } from '@gander-social-atproto/dev-env'
+import {
+  SeedClient,
+  TestNetworkNoAppView,
+} from '@gander-social-atproto/dev-env'
 import * as repo from '@gander-social-atproto/repo'
 import { Subscription } from '@gander-social-atproto/xrpc-server'
 import {

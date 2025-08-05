@@ -1,4 +1,8 @@
-import { Did, assertDidPlc, didDocumentValidator } from '@gander-social-atproto/did'
+import {
+  Did,
+  assertDidPlc,
+  didDocumentValidator,
+} from '@gander-social-atproto/did'
 import {
   Fetch,
   bindFetch,

@@ -6,7 +6,11 @@ import * as ui8 from 'uint8arrays'
 import { AtUri, AtpAgent } from '@gander-social-atproto/api'
 import { MINUTE } from '@gander-social-atproto/common'
 import * as crypto from '@gander-social-atproto/crypto'
-import { SeedClient, TestNetwork, basicSeed } from '@gander-social-atproto/dev-env'
+import {
+  SeedClient,
+  TestNetwork,
+  basicSeed,
+} from '@gander-social-atproto/dev-env'
 
 const keyEncoder = new KeyEncoder('secp256k1')
 

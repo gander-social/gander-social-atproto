@@ -2,7 +2,11 @@ import assert from 'node:assert'
 import util from 'node:util'
 import { request } from 'undici'
 import { AtpAgent } from '@gander-social-atproto/api'
-import { RecordRef, SeedClient, TestNetwork } from '@gander-social-atproto/dev-env'
+import {
+  RecordRef,
+  SeedClient,
+  TestNetwork,
+} from '@gander-social-atproto/dev-env'
 import { isView as isExternalEmbedView } from '../../src/lexicon/types/app/gndr/embed/external'
 import { isView as isImagesEmbedView } from '../../src/lexicon/types/app/gndr/embed/images'
 import { isView as isRecordEmbedView } from '../../src/lexicon/types/app/gndr/embed/record'

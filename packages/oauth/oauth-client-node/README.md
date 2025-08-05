@@ -22,7 +22,10 @@ needs of your application, and must respect the [ATPROTO].
 The `client_metadata` object will typically be built by the backend at startup.
 
 ```ts
-import { NodeOAuthClient, Session } from '@gander-social-atproto/oauth-client-node'
+import {
+  NodeOAuthClient,
+  Session,
+} from '@gander-social-atproto/oauth-client-node'
 import { JoseKey } from '@gander-social-atproto/jwk-jose'
 
 const client = new NodeOAuthClient({

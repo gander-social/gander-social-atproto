@@ -5,7 +5,10 @@ import {
   ComAtprotoServerConfirmEmail,
   ComAtprotoServerUpdateEmail,
 } from '@gander-social-atproto/api'
-import { SeedClient, TestNetworkNoAppView } from '@gander-social-atproto/dev-env'
+import {
+  SeedClient,
+  TestNetworkNoAppView,
+} from '@gander-social-atproto/dev-env'
 import { ServerMailer } from '../src/mailer'
 import userSeed from './seeds/users'
 

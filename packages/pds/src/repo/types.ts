@@ -1,6 +1,10 @@
 import { CID } from 'multiformats/cid'
 import { RepoRecord } from '@gander-social-atproto/lexicon'
-import { BlockMap, CommitData, WriteOpAction } from '@gander-social-atproto/repo'
+import {
+  BlockMap,
+  CommitData,
+  WriteOpAction,
+} from '@gander-social-atproto/repo'
 import { AtUri } from '@gander-social-atproto/syntax'
 
 export type ValidationStatus = 'valid' | 'unknown' | undefined

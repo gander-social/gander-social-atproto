@@ -13,10 +13,14 @@ import { parseAssetsManifest } from './assets-manifest.js'
 // )
 
 const ui = parseAssetsManifest(
-  require.resolve('@gander-social-atproto/oauth-provider-ui/bundle-manifest.json'),
+  require.resolve(
+    '@gander-social-atproto/oauth-provider-ui/bundle-manifest.json',
+  ),
 )
 const fe = parseAssetsManifest(
-  require.resolve('@gander-social-atproto/oauth-provider-frontend/bundle-manifest.json'),
+  require.resolve(
+    '@gander-social-atproto/oauth-provider-frontend/bundle-manifest.json',
+  ),
 )
 
 export type HydrationData = Simplify<UiHydrationData & FeHydrationData>

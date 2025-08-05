@@ -1,6 +1,9 @@
 import { Selectable, sql } from 'kysely'
 import { CID } from 'multiformats/cid'
-import { AtpAgent, ComAtprotoSyncGetLatestCommit } from '@gander-social-atproto/api'
+import {
+  AtpAgent,
+  ComAtprotoSyncGetLatestCommit,
+} from '@gander-social-atproto/api'
 import { DAY, HOUR } from '@gander-social-atproto/common'
 import { IdResolver, getPds } from '@gander-social-atproto/identity'
 import { ValidationError } from '@gander-social-atproto/lexicon'

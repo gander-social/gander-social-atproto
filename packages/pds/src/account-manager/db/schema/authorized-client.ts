@@ -1,5 +1,8 @@
 import { Selectable } from 'kysely'
-import { AuthorizedClientData, OAuthClientId } from '@gander-social-atproto/oauth-provider'
+import {
+  AuthorizedClientData,
+  OAuthClientId,
+} from '@gander-social-atproto/oauth-provider'
 import { DateISO, JsonEncoded } from '../../../db'
 
 export interface AuthorizedClient {

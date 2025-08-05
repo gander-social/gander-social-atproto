@@ -1,4 +1,7 @@
-import { AsyncBuffer, AsyncBufferFullError } from '@gander-social-atproto/common'
+import {
+  AsyncBuffer,
+  AsyncBufferFullError,
+} from '@gander-social-atproto/common'
 import { InvalidRequestError } from '@gander-social-atproto/xrpc-server'
 import { LabelsEvt, Sequencer } from './sequencer'
 

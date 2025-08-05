@@ -4,7 +4,10 @@ import { Request } from 'express'
 import * as jose from 'jose'
 import KeyEncoder from 'key-encoder'
 import { getVerificationMaterial } from '@gander-social-atproto/common'
-import { IdResolver, getDidKeyFromMultibase } from '@gander-social-atproto/identity'
+import {
+  IdResolver,
+  getDidKeyFromMultibase,
+} from '@gander-social-atproto/identity'
 import {
   OAuthError,
   OAuthVerifier,

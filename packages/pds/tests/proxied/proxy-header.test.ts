@@ -5,7 +5,11 @@ import { AddressInfo } from 'node:net'
 import * as plc from '@did-plc/lib'
 import express from 'express'
 import { Keypair } from '@gander-social-atproto/crypto'
-import { SeedClient, TestNetworkNoAppView, usersSeed } from '@gander-social-atproto/dev-env'
+import {
+  SeedClient,
+  TestNetworkNoAppView,
+  usersSeed,
+} from '@gander-social-atproto/dev-env'
 import { verifyJwt } from '@gander-social-atproto/xrpc-server'
 import { parseProxyHeader } from '../../src/pipethrough'
 

@@ -1,4 +1,7 @@
-import { AppGndrFeedGetFeedSkeleton, AtpAgent } from '@gander-social-atproto/api'
+import {
+  AppGndrFeedGetFeedSkeleton,
+  AtpAgent,
+} from '@gander-social-atproto/api'
 import { mapDefined, noUndefinedVals } from '@gander-social-atproto/common'
 import { ResponseType, XRPCError } from '@gander-social-atproto/xrpc'
 import {

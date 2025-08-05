@@ -1,6 +1,9 @@
 import { EventEmitter, once } from 'node:events'
 import Mail from 'nodemailer/lib/mailer'
-import { AtpAgent, ComAtprotoServerResetPassword } from '@gander-social-atproto/api'
+import {
+  AtpAgent,
+  ComAtprotoServerResetPassword,
+} from '@gander-social-atproto/api'
 import * as crypto from '@gander-social-atproto/crypto'
 import { TestNetworkNoAppView } from '@gander-social-atproto/dev-env'
 import { IdResolver } from '@gander-social-atproto/identity'

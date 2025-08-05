@@ -1,7 +1,11 @@
 import { DidDocument } from '@gander-social-atproto/did'
 import { Key } from '@gander-social-atproto/jwk'
 import { WebcryptoKey } from '@gander-social-atproto/jwk-webcrypto'
-import { InternalStateData, Session, TokenSet } from '@gander-social-atproto/oauth-client'
+import {
+  InternalStateData,
+  Session,
+  TokenSet,
+} from '@gander-social-atproto/oauth-client'
 import {
   OAuthAuthorizationServerMetadata,
   OAuthProtectedResourceMetadata,

@@ -9,7 +9,10 @@ import {
   basicSeed,
 } from '@gander-social-atproto/dev-env'
 import { XRPCError } from '@gander-social-atproto/xrpc'
-import { AuthRequiredError, MethodHandler } from '@gander-social-atproto/xrpc-server'
+import {
+  AuthRequiredError,
+  MethodHandler,
+} from '@gander-social-atproto/xrpc-server'
 import { ids } from '../src/lexicon/lexicons'
 import {
   FeedViewPost,

@@ -8,7 +8,10 @@ import {
   omit,
   streamToNodeBuffer,
 } from '@gander-social-atproto/common'
-import { ResponseType, XRPCError as XRPCClientError } from '@gander-social-atproto/xrpc'
+import {
+  ResponseType,
+  XRPCError as XRPCClientError,
+} from '@gander-social-atproto/xrpc'
 import {
   CatchallHandler,
   HandlerPipeThroughBuffer,

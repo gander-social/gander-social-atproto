@@ -1,8 +1,14 @@
 import { AtpAgent } from '@gander-social-atproto/api'
 import { cborEncode } from '@gander-social-atproto/common'
-import { Secp256k1Keypair, verifySignature } from '@gander-social-atproto/crypto'
+import {
+  Secp256k1Keypair,
+  verifySignature,
+} from '@gander-social-atproto/crypto'
 import { EXAMPLE_LABELER, TestNetwork } from '@gander-social-atproto/dev-env'
-import { DisconnectError, Subscription } from '@gander-social-atproto/xrpc-server'
+import {
+  DisconnectError,
+  Subscription,
+} from '@gander-social-atproto/xrpc-server'
 import { ids, lexicons } from '../src/lexicon/lexicons'
 import { Label } from '../src/lexicon/types/com/atproto/label/defs'
 import {

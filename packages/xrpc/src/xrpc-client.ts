@@ -1,4 +1,8 @@
-import { LexiconDoc, Lexicons, ValidationError } from '@gander-social-atproto/lexicon'
+import {
+  LexiconDoc,
+  Lexicons,
+  ValidationError,
+} from '@gander-social-atproto/lexicon'
 import {
   FetchHandler,
   FetchHandlerObject,

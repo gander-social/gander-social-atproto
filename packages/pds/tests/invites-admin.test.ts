@@ -1,6 +1,9 @@
 import { AtpAgent } from '@gander-social-atproto/api'
 import { randomStr } from '@gander-social-atproto/crypto'
-import { SeedClient, TestNetworkNoAppView } from '@gander-social-atproto/dev-env'
+import {
+  SeedClient,
+  TestNetworkNoAppView,
+} from '@gander-social-atproto/dev-env'
 
 describe('pds admin invite views', () => {
   let network: TestNetworkNoAppView

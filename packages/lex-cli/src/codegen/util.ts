@@ -1,4 +1,7 @@
-import { type LexUserType, type LexiconDoc } from '@gander-social-atproto/lexicon'
+import {
+  type LexUserType,
+  type LexiconDoc,
+} from '@gander-social-atproto/lexicon'
 import { NSID } from '@gander-social-atproto/syntax'
 
 export interface DefTreeNodeUserType {

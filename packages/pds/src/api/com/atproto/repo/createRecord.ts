@@ -1,6 +1,9 @@
 import { CID } from 'multiformats/cid'
 import { InvalidRecordKeyError } from '@gander-social-atproto/syntax'
-import { AuthRequiredError, InvalidRequestError } from '@gander-social-atproto/xrpc-server'
+import {
+  AuthRequiredError,
+  InvalidRequestError,
+} from '@gander-social-atproto/xrpc-server'
 import { AppContext } from '../../../../context'
 import { Server } from '../../../../lexicon'
 import { dbLogger } from '../../../../logger'

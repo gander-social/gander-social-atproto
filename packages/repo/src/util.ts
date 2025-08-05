@@ -1,8 +1,19 @@
 import * as cbor from '@ipld/dag-cbor'
-import { TID, cborDecode, check, cidForCbor, schema } from '@gander-social-atproto/common'
+import {
+  TID,
+  cborDecode,
+  check,
+  cidForCbor,
+  schema,
+} from '@gander-social-atproto/common'
 import * as crypto from '@gander-social-atproto/crypto'
 import { Keypair } from '@gander-social-atproto/crypto'
-import { LexValue, RepoRecord, ipldToLex, lexToIpld } from '@gander-social-atproto/lexicon'
+import {
+  LexValue,
+  RepoRecord,
+  ipldToLex,
+  lexToIpld,
+} from '@gander-social-atproto/lexicon'
 import { DataDiff } from './data-diff'
 import {
   Commit,

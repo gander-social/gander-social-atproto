@@ -6,7 +6,11 @@ import Mail from 'nodemailer/lib/mailer'
 import { AtpAgent } from '@gander-social-atproto/api'
 import { check } from '@gander-social-atproto/common'
 import { Secp256k1Keypair } from '@gander-social-atproto/crypto'
-import { SeedClient, TestNetworkNoAppView, basicSeed } from '@gander-social-atproto/dev-env'
+import {
+  SeedClient,
+  TestNetworkNoAppView,
+  basicSeed,
+} from '@gander-social-atproto/dev-env'
 import { AppContext } from '../src'
 
 describe('plc operations', () => {

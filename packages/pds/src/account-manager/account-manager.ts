@@ -3,7 +3,10 @@ import { CID } from 'multiformats/cid'
 import { HOUR, wait } from '@gander-social-atproto/common'
 import { IdResolver } from '@gander-social-atproto/identity'
 import { isValidTld } from '@gander-social-atproto/syntax'
-import { AuthRequiredError, InvalidRequestError } from '@gander-social-atproto/xrpc-server'
+import {
+  AuthRequiredError,
+  InvalidRequestError,
+} from '@gander-social-atproto/xrpc-server'
 import { AuthScope } from '../auth-verifier'
 import { softDeleted } from '../db'
 import { hasExplicitSlur } from '../handle/explicit-slurs'

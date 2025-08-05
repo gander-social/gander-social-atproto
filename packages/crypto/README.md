@@ -15,7 +15,11 @@ The details of cryptography in atproto are described in [the specification](http
 ## Usage
 
 ```typescript
-import { verifySignature, Secp256k1Keypair, P256Keypair } from '@gander-social-atproto/crypto'
+import {
+  verifySignature,
+  Secp256k1Keypair,
+  P256Keypair,
+} from '@gander-social-atproto/crypto'
 
 // generate a new random K-256 private key
 const keypair = await Secp256k1Keypair.create({ exportable: true })

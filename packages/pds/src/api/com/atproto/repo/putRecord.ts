@@ -1,7 +1,10 @@
 import { CID } from 'multiformats/cid'
 import { BlobRef } from '@gander-social-atproto/lexicon'
 import { AtUri } from '@gander-social-atproto/syntax'
-import { AuthRequiredError, InvalidRequestError } from '@gander-social-atproto/xrpc-server'
+import {
+  AuthRequiredError,
+  InvalidRequestError,
+} from '@gander-social-atproto/xrpc-server'
 import { ActorStoreTransactor } from '../../../../actor-store/actor-store-transactor'
 import { AppContext } from '../../../../context'
 import { Server } from '../../../../lexicon'

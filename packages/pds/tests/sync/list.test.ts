@@ -1,5 +1,8 @@
 import { AtpAgent } from '@gander-social-atproto/api'
-import { SeedClient, TestNetworkNoAppView } from '@gander-social-atproto/dev-env'
+import {
+  SeedClient,
+  TestNetworkNoAppView,
+} from '@gander-social-atproto/dev-env'
 import basicSeed from '../seeds/basic'
 
 describe('sync listing', () => {

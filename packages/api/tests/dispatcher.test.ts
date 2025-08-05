@@ -1,6 +1,9 @@
 import assert from 'node:assert'
 import { AddressInfo } from 'node:net'
-import { getPdsEndpoint, isValidDidDoc } from '@gander-social-atproto/common-web'
+import {
+  getPdsEndpoint,
+  isValidDidDoc,
+} from '@gander-social-atproto/common-web'
 import { TestNetworkNoAppView } from '@gander-social-atproto/dev-env'
 import {
   AtpAgent,

@@ -1,5 +1,8 @@
 import assert from 'node:assert'
-import { ComAtprotoAdminDefs, ToolsOzoneModerationDefs } from '@gander-social-atproto/api'
+import {
+  ComAtprotoAdminDefs,
+  ToolsOzoneModerationDefs,
+} from '@gander-social-atproto/api'
 import {
   ModeratorClient,
   SeedClient,

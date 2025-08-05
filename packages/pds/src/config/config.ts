@@ -1,7 +1,10 @@
 import assert from 'node:assert'
 import path from 'node:path'
 import { DAY, HOUR, SECOND } from '@gander-social-atproto/common'
-import { BrandingInput, HcaptchaConfig } from '@gander-social-atproto/oauth-provider'
+import {
+  BrandingInput,
+  HcaptchaConfig,
+} from '@gander-social-atproto/oauth-provider'
 import { ServerEnvironment } from './env'
 
 // off-config but still from env:

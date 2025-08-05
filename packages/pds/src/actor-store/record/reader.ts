@@ -1,6 +1,10 @@
 import { CID } from 'multiformats/cid'
 import { RepoRecord } from '@gander-social-atproto/lexicon'
-import { CidSet, cborToLexRecord, formatDataKey } from '@gander-social-atproto/repo'
+import {
+  CidSet,
+  cborToLexRecord,
+  formatDataKey,
+} from '@gander-social-atproto/repo'
 import * as syntax from '@gander-social-atproto/syntax'
 import { AtUri, ensureValidAtUri } from '@gander-social-atproto/syntax'
 import { countAll, notSoftDeletedClause } from '../../db/util'

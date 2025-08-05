@@ -1,6 +1,10 @@
 import { AtpAgent } from '@gander-social-atproto/api'
 import { wait } from '@gander-social-atproto/common'
-import { SeedClient, TestNetwork, usersBulkSeed } from '@gander-social-atproto/dev-env'
+import {
+  SeedClient,
+  TestNetwork,
+  usersBulkSeed,
+} from '@gander-social-atproto/dev-env'
 import { ids } from '../../src/lexicon/lexicons'
 import { forSnapshot, paginateAll, stripViewer } from '../_util'
 

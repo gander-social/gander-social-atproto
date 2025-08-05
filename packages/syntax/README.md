@@ -12,7 +12,11 @@ Validation logic for [atproto](https://atproto.com) identifiers - DIDs, Handles,
 Syntax specification: <https://atproto.com/specs/handle>
 
 ```typescript
-import { isValidHandle, ensureValidHandle, isValidDid } from '@gander-social-atproto/syntax'
+import {
+  isValidHandle,
+  ensureValidHandle,
+  isValidDid,
+} from '@gander-social-atproto/syntax'
 
 isValidHandle('alice.test') // returns true
 ensureValidHandle('alice.test') // returns void

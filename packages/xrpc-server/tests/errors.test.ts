@@ -1,7 +1,11 @@
 import * as http from 'node:http'
 import { AddressInfo } from 'node:net'
 import { LexiconDoc } from '@gander-social-atproto/lexicon'
-import { XRPCError, XRPCInvalidResponseError, XrpcClient } from '@gander-social-atproto/xrpc'
+import {
+  XRPCError,
+  XRPCInvalidResponseError,
+  XrpcClient,
+} from '@gander-social-atproto/xrpc'
 import * as xrpcServer from '../src'
 import { closeServer, createServer } from './_util'
 

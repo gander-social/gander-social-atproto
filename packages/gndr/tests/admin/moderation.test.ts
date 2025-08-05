@@ -1,6 +1,11 @@
 import assert from 'node:assert'
 import { AtpAgent } from '@gander-social-atproto/api'
-import { ImageRef, SeedClient, TestNetwork, basicSeed } from '@gander-social-atproto/dev-env'
+import {
+  ImageRef,
+  SeedClient,
+  TestNetwork,
+  basicSeed,
+} from '@gander-social-atproto/dev-env'
 import {
   RepoBlobRef,
   RepoRef,

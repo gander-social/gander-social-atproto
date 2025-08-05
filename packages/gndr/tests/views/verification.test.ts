@@ -1,6 +1,10 @@
 import assert from 'node:assert'
 import { AtpAgent } from '@gander-social-atproto/api'
-import { SeedClient, TestNetwork, verificationsSeed } from '@gander-social-atproto/dev-env'
+import {
+  SeedClient,
+  TestNetwork,
+  verificationsSeed,
+} from '@gander-social-atproto/dev-env'
 import { ids } from '../../src/lexicon/lexicons'
 import { VerificationState } from '../../src/lexicon/types/app/gndr/actor/defs'
 

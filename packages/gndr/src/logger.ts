@@ -1,7 +1,10 @@
 import { IncomingMessage } from 'node:http'
 import { stdSerializers } from 'pino'
 import { pinoHttp } from 'pino-http'
-import { obfuscateHeaders, subsystemLogger } from '@gander-social-atproto/common'
+import {
+  obfuscateHeaders,
+  subsystemLogger,
+} from '@gander-social-atproto/common'
 
 export const dbLogger: ReturnType<typeof subsystemLogger> =
   subsystemLogger('gndr:db')

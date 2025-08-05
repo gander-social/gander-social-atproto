@@ -1,6 +1,10 @@
 import { CID } from 'multiformats/cid'
 import * as ui8 from 'uint8arrays'
-import { dataToCborBlock, streamToBytes, wait } from '@gander-social-atproto/common'
+import {
+  dataToCborBlock,
+  streamToBytes,
+  wait,
+} from '@gander-social-atproto/common'
 import { CarBlock, readCarStream, writeCarStream } from '../src'
 import fixtures from './car-file-fixtures.json'
 

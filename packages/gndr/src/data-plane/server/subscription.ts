@@ -1,6 +1,10 @@
 import { IdResolver } from '@gander-social-atproto/identity'
 import { WriteOpAction } from '@gander-social-atproto/repo'
-import { Event as FirehoseEvent, Firehose, MemoryRunner } from '@gander-social-atproto/sync'
+import {
+  Event as FirehoseEvent,
+  Firehose,
+  MemoryRunner,
+} from '@gander-social-atproto/sync'
 import { subLogger as log } from '../../logger'
 import { BackgroundQueue } from './background'
 import { Database } from './db'

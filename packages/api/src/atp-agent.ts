@@ -1,4 +1,7 @@
-import { getPdsEndpoint, isValidDidDoc } from '@gander-social-atproto/common-web'
+import {
+  getPdsEndpoint,
+  isValidDidDoc,
+} from '@gander-social-atproto/common-web'
 import {
   ErrorResponseBody,
   Gettable,

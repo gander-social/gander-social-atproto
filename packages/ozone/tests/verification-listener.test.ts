@@ -1,6 +1,10 @@
 import { Sender, WebSocketServer } from 'ws'
 import { AppGndrGraphVerification, AtpAgent } from '@gander-social-atproto/api'
-import { SeedClient, TestNetwork, basicSeed } from '@gander-social-atproto/dev-env'
+import {
+  SeedClient,
+  TestNetwork,
+  basicSeed,
+} from '@gander-social-atproto/dev-env'
 import { forSnapshot } from './_util'
 
 describe('verification-listener', () => {

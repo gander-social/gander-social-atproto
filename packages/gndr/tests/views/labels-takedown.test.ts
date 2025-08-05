@@ -1,6 +1,11 @@
 import assert from 'node:assert'
 import { AppGndrLabelerDefs, AtpAgent } from '@gander-social-atproto/api'
-import { RecordRef, SeedClient, TestNetwork, basicSeed } from '@gander-social-atproto/dev-env'
+import {
+  RecordRef,
+  SeedClient,
+  TestNetwork,
+  basicSeed,
+} from '@gander-social-atproto/dev-env'
 import { ids } from '../../src/lexicon/lexicons'
 
 describe('gndr takedown labels', () => {

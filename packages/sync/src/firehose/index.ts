@@ -1,6 +1,10 @@
 import { CID } from 'multiformats/cid'
 import type { ClientOptions } from 'ws'
-import { Deferrable, createDeferrable, wait } from '@gander-social-atproto/common'
+import {
+  Deferrable,
+  createDeferrable,
+  wait,
+} from '@gander-social-atproto/common'
 import {
   DidDocument,
   IdResolver,

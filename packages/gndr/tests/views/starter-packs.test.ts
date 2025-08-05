@@ -1,6 +1,11 @@
 import assert from 'node:assert'
 import { AtpAgent, asPredicate } from '@gander-social-atproto/api'
-import { RecordRef, SeedClient, TestNetwork, basicSeed } from '@gander-social-atproto/dev-env'
+import {
+  RecordRef,
+  SeedClient,
+  TestNetwork,
+  basicSeed,
+} from '@gander-social-atproto/dev-env'
 import { ids } from '../../src/lexicon/lexicons'
 import { validateRecord as validateProfileRecord } from '../../src/lexicon/types/app/gndr/actor/profile'
 import { forSnapshot } from '../_util'

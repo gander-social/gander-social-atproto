@@ -1,5 +1,10 @@
 import { AtpAgent } from '@gander-social-atproto/api'
-import { RecordRef, SeedClient, TestNetwork, usersSeed } from '@gander-social-atproto/dev-env'
+import {
+  RecordRef,
+  SeedClient,
+  TestNetwork,
+  usersSeed,
+} from '@gander-social-atproto/dev-env'
 import { ids } from '../../src/lexicon/lexicons'
 
 describe('thread mutes', () => {

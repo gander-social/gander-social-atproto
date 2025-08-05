@@ -1,5 +1,9 @@
 import { AtprotoDid, isAtprotoDid } from '@gander-social-atproto/did'
-export type { AtprotoDid, AtprotoIdentityDidMethods } from '@gander-social-atproto/did'
+
+export type {
+  AtprotoDid,
+  AtprotoIdentityDidMethods,
+} from '@gander-social-atproto/did'
 
 export type ResolveHandleOptions = {
   signal?: AbortSignal

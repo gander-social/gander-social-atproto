@@ -3,7 +3,10 @@ import http from 'node:http'
 import { AddressInfo } from 'node:net'
 import express from 'express'
 import { AtpAgent } from '@gander-social-atproto/api'
-import { SeedClient, TestNetworkNoAppView } from '@gander-social-atproto/dev-env'
+import {
+  SeedClient,
+  TestNetworkNoAppView,
+} from '@gander-social-atproto/dev-env'
 import { verifyJwt } from '@gander-social-atproto/xrpc-server'
 import { createServer } from '../../src/lexicon'
 import usersSeed from '../seeds/users'

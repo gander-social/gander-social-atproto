@@ -2,7 +2,10 @@ import { CID } from 'multiformats/cid'
 import { AtpAgent } from '@gander-social-atproto/api'
 import { TID, cidForCbor } from '@gander-social-atproto/common'
 import { Keypair, randomStr } from '@gander-social-atproto/crypto'
-import { SeedClient, TestNetworkNoAppView } from '@gander-social-atproto/dev-env'
+import {
+  SeedClient,
+  TestNetworkNoAppView,
+} from '@gander-social-atproto/dev-env'
 import * as repo from '@gander-social-atproto/repo'
 import { MemoryBlockstore } from '@gander-social-atproto/repo'
 import { AtUri } from '@gander-social-atproto/syntax'

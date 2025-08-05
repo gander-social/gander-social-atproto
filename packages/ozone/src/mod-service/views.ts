@@ -8,7 +8,11 @@ import { chunkArray, dedupeStrs } from '@gander-social-atproto/common'
 import { Keypair } from '@gander-social-atproto/crypto'
 import { IdResolver } from '@gander-social-atproto/identity'
 import { BlobRef } from '@gander-social-atproto/lexicon'
-import { AtUri, INVALID_HANDLE, normalizeDatetimeAlways } from '@gander-social-atproto/syntax'
+import {
+  AtUri,
+  INVALID_HANDLE,
+  normalizeDatetimeAlways,
+} from '@gander-social-atproto/syntax'
 import { Database } from '../db'
 import { LabelRow } from '../db/schema/label'
 import { ids } from '../lexicon/lexicons'

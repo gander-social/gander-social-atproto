@@ -3,7 +3,10 @@ import { gzipSync } from 'node:zlib'
 import * as uint8arrays from 'uint8arrays'
 import { AtpAgent } from '@gander-social-atproto/api'
 import { randomBytes } from '@gander-social-atproto/crypto'
-import { SeedClient, TestNetworkNoAppView } from '@gander-social-atproto/dev-env'
+import {
+  SeedClient,
+  TestNetworkNoAppView,
+} from '@gander-social-atproto/dev-env'
 import { BlobRef } from '@gander-social-atproto/lexicon'
 import { AppContext } from '../src'
 import { ActorDb } from '../src/actor-store/db'

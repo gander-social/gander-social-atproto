@@ -1,4 +1,7 @@
-import { DidDocument, PoorlyFormattedDidDocumentError } from '@gander-social-atproto/identity'
+import {
+  DidDocument,
+  PoorlyFormattedDidDocumentError,
+} from '@gander-social-atproto/identity'
 import { InvalidRequestError } from '@gander-social-atproto/xrpc-server'
 import { AppContext } from '../../../../context'
 

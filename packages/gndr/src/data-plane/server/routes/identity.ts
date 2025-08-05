@@ -1,6 +1,11 @@
 import { Timestamp } from '@bufbuild/protobuf'
 import { Code, ConnectError, ServiceImpl } from '@connectrpc/connect'
-import { DidDocument, IdResolver, getDid, getHandle } from '@gander-social-atproto/identity'
+import {
+  DidDocument,
+  IdResolver,
+  getDid,
+  getHandle,
+} from '@gander-social-atproto/identity'
 import { Service } from '../../../proto/gndr_connect'
 import { Database } from '../db'
 

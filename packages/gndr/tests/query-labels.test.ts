@@ -1,5 +1,9 @@
 import { AtpAgent } from '@gander-social-atproto/api'
-import { SeedClient, TestNetwork, basicSeed } from '@gander-social-atproto/dev-env'
+import {
+  SeedClient,
+  TestNetwork,
+  basicSeed,
+} from '@gander-social-atproto/dev-env'
 
 describe('label hydration', () => {
   let network: TestNetwork
