@@ -216,7 +216,8 @@ export class JoseKey<J extends Jwk = Jwk> extends Key<J> {
       if (!jwk.alg) jwk.alg = alg
       else if (jwk.alg !== alg) throw new JwkError('Invalid "alg" in JWK')
     }
-    return this.fromJWK(jwk, kid)
+    // Cast jwk to Record<string, unknown> to satisfy fromJWK signature
+    return this.fromJWK(jwk as Record<string, unknown>, kid)
   }
 
   /**
