@@ -1,9 +1,9 @@
 import { Client as PlcClient } from '@did-plc/lib'
+import { AtpAgent } from '@gander-social-atproto/api'
+import { Secp256k1Keypair } from '@gander-social-atproto/crypto'
+import * as gndr from '@gander-social-atproto/gndr'
 import getPort from 'get-port'
 import * as ui8 from 'uint8arrays'
-import { AtpAgent } from '@gander-social-atproto/api'
-import * as gndr from '@gander-social-atproto/gndr'
-import { Secp256k1Keypair } from '@gander-social-atproto/crypto'
 import { ADMIN_PASSWORD, EXAMPLE_LABELER } from './const'
 import { GndrConfig } from './types'
 

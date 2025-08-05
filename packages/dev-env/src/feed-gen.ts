@@ -1,11 +1,14 @@
 import events from 'node:events'
 import http from 'node:http'
 import * as plc from '@did-plc/lib'
+import { Secp256k1Keypair } from '@gander-social-atproto/crypto'
+import {
+  SkeletonHandler,
+  createLexiconServer,
+} from '@gander-social-atproto/pds'
+import { InvalidRequestError } from '@gander-social-atproto/xrpc-server'
 import express from 'express'
 import getPort from 'get-port'
-import { Secp256k1Keypair } from '@gander-social-atproto/crypto'
-import { SkeletonHandler, createLexiconServer } from '@gander-social-atproto/pds'
-import { InvalidRequestError } from '@gander-social-atproto/xrpc-server'
 
 export class TestFeedGen {
   destroyed = false
