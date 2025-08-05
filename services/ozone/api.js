@@ -26,7 +26,7 @@ const {
   envToSecrets,
   httpLogger,
   readEnv,
-} = require('@gander-social-atproto/ozone'')
+} = require('@gander-social-atproto/ozone')
 
 const main = async () => {
   const env = readEnv()
