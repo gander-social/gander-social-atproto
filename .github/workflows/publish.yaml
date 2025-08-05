@@ -25,7 +25,7 @@ jobs:
           node-version-file: package.json
           cache: 'pnpm'
       - run: pnpm i --frozen-lockfile
-      - run: pnpm build
+      - run: pnpm --recursive build
       - run: pnpm verify
       - name: Publish
         id: changesets
