@@ -1,6 +1,6 @@
 {
   "name": "@gander-social-atproto/identity",
-  "version": "0.4.8",
+  "version": "0.5.0",
   "license": "MIT",
   "description": "Library for decentralized identities in atproto using DIDs and handles",
   "keywords": [

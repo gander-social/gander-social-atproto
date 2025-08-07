@@ -1,5 +1,16 @@
 # @atproto-labs/handle-resolver
 
+## 0.3.1
+
+### Patch Changes
+
+- [`3d6cfd937e28a03df240c6bc71b3d26e5b143911`](https://github.com/gander-social/gander-social-atproto/commit/3d6cfd937e28a03df240c6bc71b3d26e5b143911) Thanks [@melodylumen](https://github.com/melodylumen)! - Force a patch bump to ensure that the Github action will properly publish to npm for all repos with the dependency
+  version numbers
+- Updated dependencies [[`b5c367a7816349197a86213b69309f66b34ae066`](https://github.com/gander-social/gander-social-atproto/commit/b5c367a7816349197a86213b69309f66b34ae066), [`3d6cfd937e28a03df240c6bc71b3d26e5b143911`](https://github.com/gander-social/gander-social-atproto/commit/3d6cfd937e28a03df240c6bc71b3d26e5b143911)]:
+  - @gander-social-atproto/did@0.2.0
+  - @atproto-labs/simple-store@0.2.1
+  - @atproto-labs/simple-store-memory@0.1.4
+
 ## 0.3.0
 
 ### Minor Changes

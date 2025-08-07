@@ -1,6 +1,6 @@
 {
   "name": "@gander-social-atproto/oauth-provider-ui",
-  "version": "0.1.11",
+  "version": "0.2.0",
   "license": "MIT",
   "description": "Sign-in & Sign-up UI for the @gander-social-atproto/oauth-provider",
   "homepage": "https://github.com/gander-social/gander-social-atproto",

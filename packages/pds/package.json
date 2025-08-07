@@ -1,6 +1,6 @@
 {
   "name": "@gander-social-atproto/pds",
-  "version": "0.4.16-entryway.2",
+  "version": "0.5.0",
   "license": "MIT",
   "description": "Reference implementation of atproto Personal Data Server (PDS)",
   "keywords": [

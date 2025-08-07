@@ -1,5 +1,14 @@
 # @atproto-labs/simple-store-memory
 
+## 0.1.4
+
+### Patch Changes
+
+- [`3d6cfd937e28a03df240c6bc71b3d26e5b143911`](https://github.com/gander-social/gander-social-atproto/commit/3d6cfd937e28a03df240c6bc71b3d26e5b143911) Thanks [@melodylumen](https://github.com/melodylumen)! - Force a patch bump to ensure that the Github action will properly publish to npm for all repos with the dependency
+  version numbers
+- Updated dependencies [[`3d6cfd937e28a03df240c6bc71b3d26e5b143911`](https://github.com/gander-social/gander-social-atproto/commit/3d6cfd937e28a03df240c6bc71b3d26e5b143911)]:
+  - @atproto-labs/simple-store@0.2.1
+
 ## 0.1.3
 
 ### Patch Changes
