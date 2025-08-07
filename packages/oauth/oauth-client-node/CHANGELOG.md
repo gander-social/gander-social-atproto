@@ -1,5 +1,26 @@
 # @atproto/oauth-client-node
 
+## 0.4.0
+
+### Minor Changes
+
+- [#5](https://github.com/gander-social/gander-social-atproto/pull/5) [`b5c367a7816349197a86213b69309f66b34ae066`](https://github.com/gander-social/gander-social-atproto/commit/b5c367a7816349197a86213b69309f66b34ae066) Thanks [@melodylumen](https://github.com/melodylumen)! - Adjust all packages to reflect being forked and republished by Gander Social with name changes and primary repository name change to gander-social-atproto to reflect the adjustments
+
+### Patch Changes
+
+- [`3d6cfd937e28a03df240c6bc71b3d26e5b143911`](https://github.com/gander-social/gander-social-atproto/commit/3d6cfd937e28a03df240c6bc71b3d26e5b143911) Thanks [@melodylumen](https://github.com/melodylumen)! - Force a patch bump to ensure that the Github action will properly publish to npm for all repos with the dependency
+  version numbers
+- Updated dependencies [[`b5c367a7816349197a86213b69309f66b34ae066`](https://github.com/gander-social/gander-social-atproto/commit/b5c367a7816349197a86213b69309f66b34ae066), [`3d6cfd937e28a03df240c6bc71b3d26e5b143911`](https://github.com/gander-social/gander-social-atproto/commit/3d6cfd937e28a03df240c6bc71b3d26e5b143911), [`109d703621e541cb3c511afb711a90160d0dc5bf`](https://github.com/gander-social/gander-social-atproto/commit/109d703621e541cb3c511afb711a90160d0dc5bf)]:
+  - @gander-social-atproto/jwk-webcrypto@0.2.0
+  - @gander-social-atproto/oauth-client@0.6.0
+  - @gander-social-atproto/oauth-types@0.5.0
+  - @gander-social-atproto/jwk-jose@0.2.0
+  - @gander-social-atproto/jwk@0.5.0
+  - @gander-social-atproto/did@0.2.0
+  - @atproto-labs/did-resolver@0.2.1
+  - @atproto-labs/handle-resolver-node@0.1.19
+  - @atproto-labs/simple-store@0.2.1
+
 ## 0.3.2
 
 ### Patch Changes

@@ -1,5 +1,21 @@
 # @atproto/lex-cli
 
+## 0.9.0
+
+### Minor Changes
+
+- [#5](https://github.com/gander-social/gander-social-atproto/pull/5) [`b5c367a7816349197a86213b69309f66b34ae066`](https://github.com/gander-social/gander-social-atproto/commit/b5c367a7816349197a86213b69309f66b34ae066) Thanks [@melodylumen](https://github.com/melodylumen)! - Adjust all packages to reflect being forked and republished by Gander Social with name changes and primary repository name change to gander-social-atproto to reflect the adjustments
+
+- [#3999](https://github.com/bluesky-social/atproto/pull/3999) [`8ef976d3852df4bfa376e515e131cc0810a42f20`](https://github.com/gander-social/gander-social-atproto/commit/8ef976d3852df4bfa376e515e131cc0810a42f20) Thanks [@matthieusieben](https://github.com/matthieusieben)! - `QueryParams` is now always generated as a `type` instead of an `interface`
+
+### Patch Changes
+
+- [`3d6cfd937e28a03df240c6bc71b3d26e5b143911`](https://github.com/gander-social/gander-social-atproto/commit/3d6cfd937e28a03df240c6bc71b3d26e5b143911) Thanks [@melodylumen](https://github.com/melodylumen)! - Force a patch bump to ensure that the Github action will properly publish to npm for all repos with the dependency
+  version numbers
+- Updated dependencies [[`b5c367a7816349197a86213b69309f66b34ae066`](https://github.com/gander-social/gander-social-atproto/commit/b5c367a7816349197a86213b69309f66b34ae066), [`3d6cfd937e28a03df240c6bc71b3d26e5b143911`](https://github.com/gander-social/gander-social-atproto/commit/3d6cfd937e28a03df240c6bc71b3d26e5b143911), [`8ef976d3852df4bfa376e515e131cc0810a42f20`](https://github.com/gander-social/gander-social-atproto/commit/8ef976d3852df4bfa376e515e131cc0810a42f20)]:
+  - @gander-social-atproto/lexicon@0.5.0
+  - @gander-social-atproto/syntax@0.5.0
+
 ## 0.8.3
 
 ### Patch Changes

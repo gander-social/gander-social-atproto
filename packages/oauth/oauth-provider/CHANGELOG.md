@@ -1,5 +1,31 @@
 # @atproto/oauth-provider
 
+## 0.10.0
+
+### Minor Changes
+
+- [#5](https://github.com/gander-social/gander-social-atproto/pull/5) [`b5c367a7816349197a86213b69309f66b34ae066`](https://github.com/gander-social/gander-social-atproto/commit/b5c367a7816349197a86213b69309f66b34ae066) Thanks [@melodylumen](https://github.com/melodylumen)! - Adjust all packages to reflect being forked and republished by Gander Social with name changes and primary repository name change to gander-social-atproto to reflect the adjustments
+
+### Patch Changes
+
+- [`3d6cfd937e28a03df240c6bc71b3d26e5b143911`](https://github.com/gander-social/gander-social-atproto/commit/3d6cfd937e28a03df240c6bc71b3d26e5b143911) Thanks [@melodylumen](https://github.com/melodylumen)! - Force a patch bump to ensure that the Github action will properly publish to npm for all repos with the dependency
+  version numbers
+- Updated dependencies [[`b5c367a7816349197a86213b69309f66b34ae066`](https://github.com/gander-social/gander-social-atproto/commit/b5c367a7816349197a86213b69309f66b34ae066), [`3d6cfd937e28a03df240c6bc71b3d26e5b143911`](https://github.com/gander-social/gander-social-atproto/commit/3d6cfd937e28a03df240c6bc71b3d26e5b143911), [`109d703621e541cb3c511afb711a90160d0dc5bf`](https://github.com/gander-social/gander-social-atproto/commit/109d703621e541cb3c511afb711a90160d0dc5bf)]:
+  - @gander-social-atproto/oauth-provider-frontend@0.2.0
+  - @gander-social-atproto/oauth-provider-api@0.2.0
+  - @gander-social-atproto/oauth-provider-ui@0.2.0
+  - @gander-social-atproto/oauth-types@0.5.0
+  - @gander-social-atproto/jwk-jose@0.2.0
+  - @gander-social-atproto/jwk@0.5.0
+  - @gander-social-atproto/common@0.5.0
+  - @gander-social-atproto/syntax@0.5.0
+  - @gander-social-atproto/did@0.2.0
+  - @atproto-labs/fetch@0.2.4
+  - @atproto-labs/fetch-node@0.1.10
+  - @atproto-labs/pipe@0.1.2
+  - @atproto-labs/simple-store@0.2.1
+  - @atproto-labs/simple-store-memory@0.1.4
+
 ## 0.9.3
 
 ### Patch Changes
@@ -374,7 +400,6 @@
 ### Patch Changes
 
 - [#3525](https://github.com/gander-social/atproto/pull/3525) [`6ea9c961a`](https://github.com/gander-social/atproto/commit/6ea9c961af964cd9b0d00b5073c695c5e0b3345a) Thanks [@matthieusieben](https://github.com/matthieusieben)! - Add the following hooks in the `OAuthProvider`:
-
   - `onAuthorized` which is triggered when the user "authorized" a client (a `code` is issued)
   - `onTokenCreated` which is triggered when the code is exchanged for a token
   - `onTokenRefreshed` which is triggered when a refresh token is exchanged for a new access token

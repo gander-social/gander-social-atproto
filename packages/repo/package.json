@@ -1,6 +1,6 @@
 {
   "name": "@gander-social-atproto/repo",
-  "version": "0.8.4",
+  "version": "0.9.0",
   "license": "MIT",
   "description": "atproto repo and MST implementation",
   "keywords": [
