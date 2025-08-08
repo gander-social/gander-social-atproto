@@ -1,7 +1,5 @@
 import dns, { LookupAddress } from 'node:dns'
 import { LookupFunction } from 'node:net'
-import ipaddr from 'ipaddr.js'
-import { Agent, Client } from 'undici'
 import {
   Fetch,
   FetchContext,
@@ -9,6 +7,8 @@ import {
   asRequest,
   extractUrl,
 } from '@gander-atproto-nest/fetch'
+import ipaddr from 'ipaddr.js'
+import { Agent, Client } from 'undici'
 import { isUnicastIp } from './util.js'
 
 const { IPv4, IPv6 } = ipaddr

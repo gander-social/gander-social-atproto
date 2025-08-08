@@ -1,5 +1,6 @@
 import { IncomingHttpHeaders, ServerResponse } from 'node:http'
 import { PassThrough, Readable } from 'node:stream'
+import { buildProxiedContentEncoding } from '@gander-atproto-nest/xrpc-utils'
 import {
   decodeStream,
   getServiceEndpoint,
@@ -21,7 +22,6 @@ import {
 } from '@gander-social-atproto/xrpc-server'
 import express from 'express'
 import { Dispatcher } from 'undici'
-import { buildProxiedContentEncoding } from '@gander-atproto-nest/xrpc-utils'
 import { AppContext } from './context'
 import { ids } from './lexicon/lexicons'
 import { httpLogger } from './logger'

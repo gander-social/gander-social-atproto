@@ -1,3 +1,5 @@
+import { ResolvedHandle } from '@gander-atproto-nest/handle-resolver'
+import { SimpleStore, Value } from '@gander-atproto-nest/simple-store'
 import { DidDocument } from '@gander-social-atproto/did'
 import { Key } from '@gander-social-atproto/jwk'
 import { WebcryptoKey } from '@gander-social-atproto/jwk-webcrypto'
@@ -10,8 +12,6 @@ import {
   OAuthAuthorizationServerMetadata,
   OAuthProtectedResourceMetadata,
 } from '@gander-social-atproto/oauth-types'
-import { ResolvedHandle } from '@gander-atproto-nest/handle-resolver'
-import { SimpleStore, Value } from '@gander-atproto-nest/simple-store'
 import { DB, DBObjectStore } from './indexed-db/index.js'
 import { TupleUnion } from './util.js'
 

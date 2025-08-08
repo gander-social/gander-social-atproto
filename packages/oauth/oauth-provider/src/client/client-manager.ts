@@ -1,15 +1,3 @@
-import { Jwks, Keyset, jwksSchema } from '@gander-social-atproto/jwk'
-import {
-  OAuthAuthorizationServerMetadata,
-  OAuthClientIdDiscoverable,
-  OAuthClientIdLoopback,
-  OAuthClientMetadata,
-  OAuthClientMetadataInput,
-  isLoopbackHost,
-  isOAuthClientIdDiscoverable,
-  isOAuthClientIdLoopback,
-  oauthClientMetadataSchema,
-} from '@gander-social-atproto/oauth-types'
 import {
   Fetch,
   bindFetch,
@@ -24,6 +12,18 @@ import {
   GetCachedOptions,
   SimpleStore,
 } from '@gander-atproto-nest/simple-store'
+import { Jwks, Keyset, jwksSchema } from '@gander-social-atproto/jwk'
+import {
+  OAuthAuthorizationServerMetadata,
+  OAuthClientIdDiscoverable,
+  OAuthClientIdLoopback,
+  OAuthClientMetadata,
+  OAuthClientMetadataInput,
+  isLoopbackHost,
+  isOAuthClientIdDiscoverable,
+  isOAuthClientIdLoopback,
+  oauthClientMetadataSchema,
+} from '@gander-social-atproto/oauth-types'
 import { InvalidClientMetadataError } from '../errors/invalid-client-metadata-error.js'
 import { InvalidRedirectUriError } from '../errors/invalid-redirect-uri-error.js'
 import { callAsync } from '../lib/util/function.js'

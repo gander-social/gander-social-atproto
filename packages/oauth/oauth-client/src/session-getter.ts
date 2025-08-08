@@ -1,10 +1,10 @@
-import { AtprotoDid } from '@gander-social-atproto/did'
-import { Key } from '@gander-social-atproto/jwk'
 import {
   CachedGetter,
   GetCachedOptions,
   SimpleStore,
 } from '@gander-atproto-nest/simple-store'
+import { AtprotoDid } from '@gander-social-atproto/did'
+import { Key } from '@gander-social-atproto/jwk'
 import { AuthMethodUnsatisfiableError } from './errors/auth-method-unsatisfiable-error.js'
 import { TokenInvalidError } from './errors/token-invalid-error.js'
 import { TokenRefreshError } from './errors/token-refresh-error.js'

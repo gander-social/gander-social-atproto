@@ -1,7 +1,7 @@
+import { SimpleStore } from '@gander-atproto-nest/simple-store'
 import { Jwk, Key } from '@gander-social-atproto/jwk'
 import { JoseKey } from '@gander-social-atproto/jwk-jose'
 import { InternalStateData, Session } from '@gander-social-atproto/oauth-client'
-import { SimpleStore } from '@gander-atproto-nest/simple-store'
 
 type ToDpopJwkValue<V extends { dpopKey: Key }> = Omit<V, 'dpopKey'> & {
   dpopJwk: Jwk

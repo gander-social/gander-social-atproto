@@ -1,6 +1,6 @@
+import { Fetch, bindFetch } from '@gander-atproto-nest/fetch'
 import { AtprotoDid } from '@gander-social-atproto/did'
 import { OAuthAuthorizationServerMetadata } from '@gander-social-atproto/oauth-types'
-import { Fetch, bindFetch } from '@gander-atproto-nest/fetch'
 import { AtprotoScope } from './atproto-token-response.js'
 import { TokenInvalidError } from './errors/token-invalid-error.js'
 import { TokenRevokedError } from './errors/token-revoked-error.js'
