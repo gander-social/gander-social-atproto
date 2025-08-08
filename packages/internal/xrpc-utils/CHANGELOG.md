@@ -1,4 +1,4 @@
-# @atproto-labs/xrpc-utils
+# @gander-atproto-nest/xrpc-utils
 
 ## 0.0.17
 

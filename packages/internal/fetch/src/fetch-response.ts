@@ -1,4 +1,4 @@
-import { Transformer, pipe } from '@atproto-labs/pipe'
+import { Transformer, pipe } from '@gander-atproto-nest/pipe'
 import { FetchError } from './fetch-error.js'
 import { TransformedResponse } from './transformed-response.js'
 import {

@@ -12,7 +12,7 @@ import {
   IdentityInfo,
   IdentityResolver,
   ResolveIdentityOptions,
-} from '@atproto-labs/identity-resolver'
+} from '@gander-atproto-nest/identity-resolver'
 import {
   GetCachedOptions,
   OAuthAuthorizationServerMetadataResolver,

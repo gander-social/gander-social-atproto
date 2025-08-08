@@ -1,10 +1,10 @@
-export * from '@atproto-labs/did-resolver'
+export * from '@gander-atproto-nest/did-resolver'
 export {
   FetchError,
   FetchRequestError,
   FetchResponseError,
-} from '@atproto-labs/fetch'
-export * from '@atproto-labs/handle-resolver'
+} from '@gander-atproto-nest/fetch'
+export * from '@gander-atproto-nest/handle-resolver'
 
 export * from '@gander-social-atproto/did'
 export * from '@gander-social-atproto/jwk'

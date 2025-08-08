@@ -1,5 +1,5 @@
 {
-  "name": "@atproto-labs/handle-resolver",
+  "name": "@gander-atproto-nest/handle-resolver",
   "version": "0.3.1",
   "license": "MIT",
   "description": "Isomorphic ATProto handle to DID resolver",
@@ -12,10 +12,10 @@
     "node",
     "isomorphic"
   ],
-  "homepage": "https://atproto.com",
+  "homepage": "https://github.com/gander-social/gander-social-atproto",
   "repository": {
     "type": "git",
-    "url": "https://github.com/gander-social/atproto",
+    "url": "https://github.com/gander-social/gander-social-atproto",
     "directory": "packages/internal/handle-resolver"
   },
   "type": "commonjs",
@@ -28,8 +28,8 @@
     }
   },
   "dependencies": {
-    "@atproto-labs/simple-store": "workspace:*",
-    "@atproto-labs/simple-store-memory": "workspace:*",
+    "@gander-atproto-nest/simple-store": "workspace:*",
+    "@gander-atproto-nest/simple-store-memory": "workspace:*",
     "@gander-social-atproto/did": "workspace:*",
     "zod": "^3.23.8"
   },

@@ -28,8 +28,8 @@
     "@gander-social-atproto/oauth-provider-api": "workspace:*"
   },
   "devDependencies": {
-    "@atproto-labs/fetch": "workspace:*",
-    "@atproto-labs/rollup-plugin-bundle-manifest": "workspace:*",
+    "@gander-atproto-nest/fetch": "workspace:*",
+    "@gander-atproto-nest/rollup-plugin-bundle-manifest": "workspace:*",
     "@gander-social-atproto/oauth-provider-api": "workspace:*",
     "@gander-social-atproto/oauth-types": "workspace:*",
     "@gander-social-atproto/syntax": "workspace:*",

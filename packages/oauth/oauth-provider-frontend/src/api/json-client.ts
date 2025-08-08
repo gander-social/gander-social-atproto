@@ -1,5 +1,5 @@
 // Using a type import to avoid bundling this lib
-import type { Json } from '@atproto-labs/fetch'
+import type { Json } from '@gander-atproto-nest/fetch'
 
 export { type Json }
 type Awaitable<T> = T | PromiseLike<T>

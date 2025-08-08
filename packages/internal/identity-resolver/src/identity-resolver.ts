@@ -2,7 +2,7 @@ import {
   AtprotoDid,
   AtprotoIdentityDidMethods,
   DidDocument,
-} from '@atproto-labs/did-resolver'
+} from '@gander-atproto-nest/did-resolver'
 import { HANDLE_INVALID } from './constants'
 
 // Consistent with `com.atproto.identity.defs#identityInfo` returned by

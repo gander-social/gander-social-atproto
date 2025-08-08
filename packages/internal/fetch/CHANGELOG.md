@@ -1,4 +1,4 @@
-# @atproto-labs/fetch
+# @gander-atproto-nest/fetch
 
 ## 0.2.4
 
@@ -16,7 +16,7 @@
 - [#3821](https://github.com/gander-social/atproto/pull/3821) [`5050b6550`](https://github.com/gander-social/atproto/commit/5050b6550e07e71b0a524eda0b71b837583294d4) Thanks [@matthieusieben](https://github.com/matthieusieben)! - Allow `follow` redirect mode, when explicitly set.
 
 - Updated dependencies [[`5050b6550`](https://github.com/gander-social/atproto/commit/5050b6550e07e71b0a524eda0b71b837583294d4)]:
-  - @atproto-labs/pipe@0.1.1
+    - @gander-atproto-nest/pipe@0.1.1
 
 ## 0.2.2
 
@@ -67,4 +67,4 @@
 ### Patch Changes
 
 - Updated dependencies [[`a8d6c1123`](https://github.com/gander-social/atproto/commit/a8d6c112359f5c4c0cfbe2df63443ed275f2a646)]:
-  - @atproto-labs/pipe@0.1.0
+    - @gander-atproto-nest/pipe@0.1.0

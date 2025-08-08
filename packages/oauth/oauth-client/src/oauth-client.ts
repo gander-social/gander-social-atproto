@@ -13,11 +13,14 @@ import {
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   type DidResolverCommonOptions,
   assertAtprotoDid,
-} from '@atproto-labs/did-resolver'
-import { Fetch } from '@atproto-labs/fetch'
-import { HandleCache, HandleResolver } from '@atproto-labs/handle-resolver'
-import { HANDLE_INVALID } from '@atproto-labs/identity-resolver'
-import { SimpleStoreMemory } from '@atproto-labs/simple-store-memory'
+} from '@gander-atproto-nest/did-resolver'
+import { Fetch } from '@gander-atproto-nest/fetch'
+import {
+  HandleCache,
+  HandleResolver,
+} from '@gander-atproto-nest/handle-resolver'
+import { HANDLE_INVALID } from '@gander-atproto-nest/identity-resolver'
+import { SimpleStoreMemory } from '@gander-atproto-nest/simple-store-memory'
 import { FALLBACK_ALG } from './constants.js'
 import { AuthMethodUnsatisfiableError } from './errors/auth-method-unsatisfiable-error.js'
 import { TokenRevokedError } from './errors/token-revoked-error.js'

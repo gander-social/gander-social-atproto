@@ -1,4 +1,4 @@
-# @atproto-labs/simple-store
+# @gander-atproto-nest/simple-store
 
 ## 0.2.1
 

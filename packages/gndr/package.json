@@ -30,8 +30,8 @@
     "node": ">=18.7.0"
   },
   "dependencies": {
-    "@atproto-labs/fetch-node": "workspace:*",
-    "@atproto-labs/xrpc-utils": "workspace:*",
+    "@gander-atproto-nest/fetch-node": "workspace:*",
+    "@gander-atproto-nest/xrpc-utils": "workspace:*",
     "@gander-social-atproto/api": "workspace:^",
     "@gander-social-atproto/common": "workspace:^",
     "@gander-social-atproto/crypto": "workspace:^",

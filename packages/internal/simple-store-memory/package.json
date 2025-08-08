@@ -1,5 +1,5 @@
 {
-  "name": "@atproto-labs/simple-store-memory",
+  "name": "@gander-atproto-nest/simple-store-memory",
   "version": "0.1.4",
   "license": "MIT",
   "description": "Memory based simple-store implementation",
@@ -8,10 +8,10 @@
     "isomorphic",
     "memory"
   ],
-  "homepage": "https://atproto.com",
+  "homepage": "https://github.com/gander-social/gander-social-atproto",
   "repository": {
     "type": "git",
-    "url": "https://github.com/gander-social/atproto",
+    "url": "https://github.com/gander-social/gander-social-atproto",
     "directory": "packages/internal/simple-store-memory"
   },
   "type": "commonjs",
@@ -24,7 +24,7 @@
     }
   },
   "dependencies": {
-    "@atproto-labs/simple-store": "workspace:*",
+    "@gander-atproto-nest/simple-store": "workspace:*",
     "lru-cache": "^10.2.0"
   },
   "devDependencies": {

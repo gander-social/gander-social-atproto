@@ -8,8 +8,8 @@ import {
   protocolCheckRequestTransform,
   requireHostHeaderTransform,
   timedFetch,
-} from '@atproto-labs/fetch'
-import { pipe } from '@atproto-labs/pipe'
+} from '@gander-atproto-nest/fetch'
+import { pipe } from '@gander-atproto-nest/pipe'
 import { unicastFetchWrap } from './unicast.js'
 
 export type SafeFetchWrapOptions = NonNullable<

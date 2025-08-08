@@ -134,7 +134,7 @@
 - Updated dependencies [[`192f3ab89`](https://github.com/gander-social/atproto/commit/192f3ab89c943216683541f42cc1332e9c305eee), [`0286f7ee3`](https://github.com/gander-social/atproto/commit/0286f7ee3d56ae50cfe0b70add60cf4785587b3c), [`b675fbbf1`](https://github.com/gander-social/atproto/commit/b675fbbf17e000fad2b38a52db550702830a807d), [`0286f7ee3`](https://github.com/gander-social/atproto/commit/0286f7ee3d56ae50cfe0b70add60cf4785587b3c), [`0286f7ee3`](https://github.com/gander-social/atproto/commit/0286f7ee3d56ae50cfe0b70add60cf4785587b3c), [`0286f7ee3`](https://github.com/gander-social/atproto/commit/0286f7ee3d56ae50cfe0b70add60cf4785587b3c), [`0286f7ee3`](https://github.com/gander-social/atproto/commit/0286f7ee3d56ae50cfe0b70add60cf4785587b3c)]:
   - @atproto/oauth-provider@0.8.1
   - @atproto/xrpc-server@0.8.0
-  - @atproto-labs/xrpc-utils@0.0.16
+  - @gander-atproto-nest/xrpc-utils@0.0.16
 
 ## 0.4.146
 
@@ -165,7 +165,7 @@
 - Updated dependencies [[`3fa2ee3b6`](https://github.com/gander-social/atproto/commit/3fa2ee3b6a382709b10921da53e69a901bccbb05), [`9214bd017`](https://github.com/gander-social/atproto/commit/9214bd01705381aed6b5bde2900d6dc5486b6e9f), [`3fa2ee3b6`](https://github.com/gander-social/atproto/commit/3fa2ee3b6a382709b10921da53e69a901bccbb05)]:
   - @atproto/oauth-provider@0.8.0
   - @atproto/xrpc-server@0.7.19
-  - @atproto-labs/xrpc-utils@0.0.15
+  - @gander-atproto-nest/xrpc-utils@0.0.15
 
 ## 0.4.143
 
@@ -222,7 +222,7 @@
 
 - Updated dependencies [[`80f402f36`](https://github.com/gander-social/atproto/commit/80f402f3663af08fd048300738d04c67aa2b9cb8), [`5050b6550`](https://github.com/gander-social/atproto/commit/5050b6550e07e71b0a524eda0b71b837583294d4), [`36dbd4155`](https://github.com/gander-social/atproto/commit/36dbd41551f74052a3f584719a1a7edd86eca201), [`5050b6550`](https://github.com/gander-social/atproto/commit/5050b6550e07e71b0a524eda0b71b837583294d4), [`43861a452`](https://github.com/gander-social/atproto/commit/43861a452b70268e738ef12033297cddacbe25d4), [`8318c5718`](https://github.com/gander-social/atproto/commit/8318c57187a1fed443be73bfd7639f49febc7337)]:
   - @atproto/api@0.15.8
-  - @atproto-labs/fetch-node@0.1.9
+  - @gander-atproto-nest/fetch-node@0.1.9
   - @atproto/oauth-provider@0.7.7
 
 ## 0.4.137
@@ -259,7 +259,7 @@
   - @atproto/common@0.4.11
   - @atproto/identity@0.4.8
   - @atproto/repo@0.8.1
-  - @atproto-labs/xrpc-utils@0.0.14
+  - @gander-atproto-nest/xrpc-utils@0.0.14
   - @atproto/aws@0.2.21
   - @atproto/crypto@0.4.4
 
@@ -272,7 +272,7 @@
 - Updated dependencies [[`45354c84f`](https://github.com/gander-social/atproto/commit/45354c84f898d79f58c14b5c0da3661beb7353f9), [`45354c84f`](https://github.com/gander-social/atproto/commit/45354c84f898d79f58c14b5c0da3661beb7353f9)]:
   - @atproto/api@0.15.5
   - @atproto/xrpc-server@0.7.17
-  - @atproto-labs/xrpc-utils@0.0.13
+  - @gander-atproto-nest/xrpc-utils@0.0.13
 
 ## 0.4.133
 
@@ -281,7 +281,7 @@
 - Updated dependencies [[`da168588d`](https://github.com/gander-social/atproto/commit/da168588de59e5048d255866205bd16c5ab5f95c), [`7af77f3ed`](https://github.com/gander-social/atproto/commit/7af77f3edfe52f77729f61de4188e8375f03b4ef)]:
   - @atproto/xrpc-server@0.7.16
   - @atproto/api@0.15.4
-  - @atproto-labs/xrpc-utils@0.0.12
+  - @gander-atproto-nest/xrpc-utils@0.0.12
 
 ## 0.4.132
 
@@ -391,7 +391,7 @@
   - @atproto/oauth-provider@0.6.6
   - @atproto/xrpc-server@0.7.15
   - @atproto/xrpc@0.6.12
-  - @atproto-labs/xrpc-utils@0.0.11
+  - @gander-atproto-nest/xrpc-utils@0.0.11
 
 ## 0.4.119
 
@@ -414,7 +414,7 @@
   - @atproto/crypto@0.4.4
   - @atproto/oauth-provider@0.6.5
   - @atproto/xrpc-server@0.7.14
-  - @atproto-labs/xrpc-utils@0.0.10
+  - @gander-atproto-nest/xrpc-utils@0.0.10
 
 ## 0.4.117
 
@@ -503,7 +503,7 @@
   - @atproto/xrpc@0.6.11
   - @atproto/xrpc-server@0.7.13
   - @atproto/aws@0.2.18
-  - @atproto-labs/xrpc-utils@0.0.9
+  - @gander-atproto-nest/xrpc-utils@0.0.9
 
 ## 0.4.107
 
@@ -541,13 +541,13 @@
   - @atproto/oauth-provider@0.5.0
   - @atproto/api@0.14.8
   - @atproto/syntax@0.3.4
-  - @atproto-labs/fetch-node@0.1.8
+  - @gander-atproto-nest/fetch-node@0.1.8
   - @atproto/lexicon@0.4.8
   - @atproto/repo@0.7.1
   - @atproto/xrpc@0.6.10
   - @atproto/xrpc-server@0.7.12
   - @atproto/aws@0.2.17
-  - @atproto-labs/xrpc-utils@0.0.8
+  - @gander-atproto-nest/xrpc-utils@0.0.8
 
 ## 0.4.104
 
@@ -649,7 +649,7 @@
   - @atproto/xrpc@0.6.9
   - @atproto/xrpc-server@0.7.11
   - @atproto/aws@0.2.15
-  - @atproto-labs/xrpc-utils@0.0.7
+  - @gander-atproto-nest/xrpc-utils@0.0.7
 
 ## 0.4.94
 
@@ -679,7 +679,7 @@
 
 - Updated dependencies [[`61dc0d60e`](https://github.com/gander-social/atproto/commit/61dc0d60e19b88c6427a54c6d95a391b5f4da7bd), [`61dc0d60e`](https://github.com/gander-social/atproto/commit/61dc0d60e19b88c6427a54c6d95a391b5f4da7bd), [`87ed907a6`](https://github.com/gander-social/atproto/commit/87ed907a6b96b408c02c9af819cec8380a453254)]:
   - @atproto/oauth-provider@0.2.17
-  - @atproto-labs/fetch-node@0.1.7
+  - @gander-atproto-nest/fetch-node@0.1.7
   - @atproto/xrpc-server@0.7.10
   - @atproto/identity@0.4.6
   - @atproto/lexicon@0.4.6
@@ -690,7 +690,7 @@
   - @atproto/xrpc@0.6.8
   - @atproto/api@0.13.33
   - @atproto/aws@0.2.14
-  - @atproto-labs/xrpc-utils@0.0.6
+  - @gander-atproto-nest/xrpc-utils@0.0.6
 
 ## 0.4.91
 
@@ -707,7 +707,7 @@
   - @atproto/api@0.13.32
   - @atproto/xrpc@0.6.7
   - @atproto/common@0.4.7
-  - @atproto-labs/xrpc-utils@0.0.5
+  - @gander-atproto-nest/xrpc-utils@0.0.5
   - @atproto/aws@0.2.13
   - @atproto/crypto@0.4.3
   - @atproto/oauth-provider@0.2.16
@@ -735,7 +735,7 @@
 
 - Updated dependencies [[`1015d9692`](https://github.com/gander-social/atproto/commit/1015d96925898149cc60b434561e19730a1bea12)]:
   - @atproto/xrpc-server@0.7.8
-  - @atproto-labs/xrpc-utils@0.0.4
+  - @gander-atproto-nest/xrpc-utils@0.0.4
 
 ## 0.4.87
 
@@ -752,7 +752,7 @@
 
 - Updated dependencies [[`cbf17066f`](https://github.com/gander-social/atproto/commit/cbf17066f314fbc7f2e943127ee4a9f589f8bec2), [`9c0128193`](https://github.com/gander-social/atproto/commit/9c01281931a371304bcfa465005d7363c003bc5f)]:
   - @atproto/api@0.13.28
-  - @atproto-labs/fetch-node@0.1.6
+  - @gander-atproto-nest/fetch-node@0.1.6
   - @atproto/oauth-provider@0.2.13
 
 ## 0.4.85
@@ -761,7 +761,7 @@
 
 - Updated dependencies [[`0832a377d`](https://github.com/gander-social/atproto/commit/0832a377d269584a906d5062ebb5e2e6307f9c61)]:
   - @atproto/xrpc-server@0.7.7
-  - @atproto-labs/xrpc-utils@0.0.3
+  - @gander-atproto-nest/xrpc-utils@0.0.3
 
 ## 0.4.84
 
@@ -770,7 +770,7 @@
 - Updated dependencies [[`e277158f7`](https://github.com/gander-social/atproto/commit/e277158f70a831b04fde3ec84b3c1eaa6ce82e9d)]:
   - @atproto/api@0.13.27
   - @atproto/oauth-provider@0.2.12
-  - @atproto-labs/fetch-node@0.1.5
+  - @gander-atproto-nest/fetch-node@0.1.5
 
 ## 0.4.83
 
@@ -782,7 +782,7 @@
   - @atproto/identity@0.4.5
   - @atproto/repo@0.6.2
   - @atproto/xrpc-server@0.7.6
-  - @atproto-labs/xrpc-utils@0.0.2
+  - @gander-atproto-nest/xrpc-utils@0.0.2
 
 ## 0.4.82
 
@@ -791,7 +791,7 @@
 - [#3177](https://github.com/gander-social/atproto/pull/3177) [`72eba67af`](https://github.com/gander-social/atproto/commit/72eba67af1af8320b5400bcb9319d5c3c8407d99) Thanks [@matthieusieben](https://github.com/matthieusieben)! - Remove dependency on Axios
 
 - Updated dependencies [[`72eba67af`](https://github.com/gander-social/atproto/commit/72eba67af1af8320b5400bcb9319d5c3c8407d99), [`72eba67af`](https://github.com/gander-social/atproto/commit/72eba67af1af8320b5400bcb9319d5c3c8407d99)]:
-  - @atproto-labs/xrpc-utils@0.0.1
+    - @gander-atproto-nest/xrpc-utils@0.0.1
   - @atproto/identity@0.4.4
   - @atproto/api@0.13.26
   - @atproto/common@0.4.6
@@ -868,7 +868,7 @@
 - Updated dependencies [[`622654672`](https://github.com/gander-social/atproto/commit/6226546725d1bb0375e3c9e0d71af173e8253c4f), [`ed2236220`](https://github.com/gander-social/atproto/commit/ed2236220900ab9a6132c525289cfdd959733a42)]:
   - @atproto/oauth-provider@0.2.9
   - @atproto/api@0.13.19
-  - @atproto-labs/fetch-node@0.1.4
+  - @gander-atproto-nest/fetch-node@0.1.4
 
 ## 0.4.74
 
@@ -976,7 +976,7 @@
 ### Patch Changes
 
 - Updated dependencies [[`80450cbf2`](https://github.com/gander-social/atproto/commit/80450cbf2ca27967ee9fe1a5f4bc590b26f1e6b2)]:
-  - @atproto-labs/fetch-node@0.1.3
+    - @gander-atproto-nest/fetch-node@0.1.3
   - @atproto/oauth-provider@0.2.5
 
 ## 0.4.63
@@ -992,7 +992,7 @@
 
 - Updated dependencies [[`df14df522`](https://github.com/gander-social/atproto/commit/df14df522bb7986e56ee1f6a0f5d862e1ea6f4d5), [`8943c1008`](https://github.com/gander-social/atproto/commit/8943c10082702bbc0fc150237c6cc421251afd51)]:
   - @atproto/api@0.13.10
-  - @atproto-labs/fetch-node@0.1.2
+  - @gander-atproto-nest/fetch-node@0.1.2
   - @atproto/oauth-provider@0.2.4
 
 ## 0.4.61
@@ -1033,7 +1033,7 @@
 - Updated dependencies [[`ed325d863`](https://github.com/gander-social/atproto/commit/ed325d863ce8ea5986c5a45c3188aaa35288b7a8), [`a07b21151`](https://github.com/gander-social/atproto/commit/a07b21151f1850340c4b7797ebb11521b1a6cdf3), [`ed325d863`](https://github.com/gander-social/atproto/commit/ed325d863ce8ea5986c5a45c3188aaa35288b7a8), [`ed325d863`](https://github.com/gander-social/atproto/commit/ed325d863ce8ea5986c5a45c3188aaa35288b7a8), [`a07b21151`](https://github.com/gander-social/atproto/commit/a07b21151f1850340c4b7797ebb11521b1a6cdf3), [`2676206e4`](https://github.com/gander-social/atproto/commit/2676206e422233fefbf2d9d182e8d462f0957c93), [`ed325d863`](https://github.com/gander-social/atproto/commit/ed325d863ce8ea5986c5a45c3188aaa35288b7a8), [`a07b21151`](https://github.com/gander-social/atproto/commit/a07b21151f1850340c4b7797ebb11521b1a6cdf3), [`ed325d863`](https://github.com/gander-social/atproto/commit/ed325d863ce8ea5986c5a45c3188aaa35288b7a8), [`a07b21151`](https://github.com/gander-social/atproto/commit/a07b21151f1850340c4b7797ebb11521b1a6cdf3), [`ed325d863`](https://github.com/gander-social/atproto/commit/ed325d863ce8ea5986c5a45c3188aaa35288b7a8), [`87a1f2426`](https://github.com/gander-social/atproto/commit/87a1f24262e0e644b6cf31cc7a0446d9127ffa94), [`ed325d863`](https://github.com/gander-social/atproto/commit/ed325d863ce8ea5986c5a45c3188aaa35288b7a8), [`a07b21151`](https://github.com/gander-social/atproto/commit/a07b21151f1850340c4b7797ebb11521b1a6cdf3), [`ed325d863`](https://github.com/gander-social/atproto/commit/ed325d863ce8ea5986c5a45c3188aaa35288b7a8), [`ed325d863`](https://github.com/gander-social/atproto/commit/ed325d863ce8ea5986c5a45c3188aaa35288b7a8), [`a07b21151`](https://github.com/gander-social/atproto/commit/a07b21151f1850340c4b7797ebb11521b1a6cdf3), [`a07b21151`](https://github.com/gander-social/atproto/commit/a07b21151f1850340c4b7797ebb11521b1a6cdf3), [`ed325d863`](https://github.com/gander-social/atproto/commit/ed325d863ce8ea5986c5a45c3188aaa35288b7a8), [`a07b21151`](https://github.com/gander-social/atproto/commit/a07b21151f1850340c4b7797ebb11521b1a6cdf3), [`a07b21151`](https://github.com/gander-social/atproto/commit/a07b21151f1850340c4b7797ebb11521b1a6cdf3), [`ed325d863`](https://github.com/gander-social/atproto/commit/ed325d863ce8ea5986c5a45c3188aaa35288b7a8), [`ed325d863`](https://github.com/gander-social/atproto/commit/ed325d863ce8ea5986c5a45c3188aaa35288b7a8), [`a07b21151`](https://github.com/gander-social/atproto/commit/a07b21151f1850340c4b7797ebb11521b1a6cdf3), [`a07b21151`](https://github.com/gander-social/atproto/commit/a07b21151f1850340c4b7797ebb11521b1a6cdf3), [`a07b21151`](https://github.com/gander-social/atproto/commit/a07b21151f1850340c4b7797ebb11521b1a6cdf3)]:
   - @atproto/oauth-provider@0.2.2
   - @atproto/xrpc@0.6.3
-  - @atproto-labs/fetch-node@0.1.1
+  - @gander-atproto-nest/fetch-node@0.1.1
   - @atproto/api@0.13.8
   - @atproto/xrpc-server@0.7.0
   - @atproto/lexicon@0.4.2
@@ -1287,7 +1287,7 @@
 
 - Updated dependencies [[`a8d6c1123`](https://github.com/gander-social/atproto/commit/a8d6c112359f5c4c0cfbe2df63443ed275f2a646)]:
   - @atproto/oauth-provider@0.1.0
-  - @atproto-labs/fetch-node@0.1.0
+  - @gander-atproto-nest/fetch-node@0.1.0
 
 ## 0.4.34
 

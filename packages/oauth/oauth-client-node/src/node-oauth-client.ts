@@ -12,7 +12,7 @@ import { OAuthResponseMode } from '@gander-social-atproto/oauth-types'
 import {
   AtprotoHandleResolverNode,
   AtprotoHandleResolverNodeOptions,
-} from '@atproto-labs/handle-resolver-node'
+} from '@gander-atproto-nest/handle-resolver-node'
 import {
   NodeSavedSessionStore,
   NodeSavedStateStore,

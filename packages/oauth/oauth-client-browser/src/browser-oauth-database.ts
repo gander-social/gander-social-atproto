@@ -10,8 +10,8 @@ import {
   OAuthAuthorizationServerMetadata,
   OAuthProtectedResourceMetadata,
 } from '@gander-social-atproto/oauth-types'
-import { ResolvedHandle } from '@atproto-labs/handle-resolver'
-import { SimpleStore, Value } from '@atproto-labs/simple-store'
+import { ResolvedHandle } from '@gander-atproto-nest/handle-resolver'
+import { SimpleStore, Value } from '@gander-atproto-nest/simple-store'
 import { DB, DBObjectStore } from './indexed-db/index.js'
 import { TupleUnion } from './util.js'
 

@@ -1,5 +1,5 @@
 import { Key } from '@gander-social-atproto/jwk'
-import { SimpleStore } from '@atproto-labs/simple-store'
+import { SimpleStore } from '@gander-atproto-nest/simple-store'
 import { ClientAuthMethod } from './oauth-client-auth.js'
 
 export type InternalStateData = {

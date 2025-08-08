@@ -7,12 +7,12 @@ import {
   FetchResponseError,
   bindFetch,
   cancelBody,
-} from '@atproto-labs/fetch'
+} from '@gander-atproto-nest/fetch'
 import {
   CachedGetter,
   GetCachedOptions,
   SimpleStore,
-} from '@atproto-labs/simple-store'
+} from '@gander-atproto-nest/simple-store'
 import { contentMime } from './util.js'
 
 export type { GetCachedOptions, OAuthProtectedResourceMetadata }
