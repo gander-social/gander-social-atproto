@@ -1,12 +1,3 @@
-import { Key, Keyset } from '@gander-social-atproto/jwk'
-import {
-  OAuthAuthorizationRequestParameters,
-  OAuthClientIdDiscoverable,
-  OAuthClientMetadata,
-  OAuthClientMetadataInput,
-  OAuthResponseMode,
-  oauthClientMetadataSchema,
-} from '@gander-social-atproto/oauth-types'
 import {
   AtprotoDid,
   DidCache,
@@ -21,6 +12,15 @@ import {
 } from '@gander-atproto-nest/handle-resolver'
 import { HANDLE_INVALID } from '@gander-atproto-nest/identity-resolver'
 import { SimpleStoreMemory } from '@gander-atproto-nest/simple-store-memory'
+import { Key, Keyset } from '@gander-social-atproto/jwk'
+import {
+  OAuthAuthorizationRequestParameters,
+  OAuthClientIdDiscoverable,
+  OAuthClientMetadata,
+  OAuthClientMetadataInput,
+  OAuthResponseMode,
+  oauthClientMetadataSchema,
+} from '@gander-social-atproto/oauth-types'
 import { FALLBACK_ALG } from './constants.js'
 import { AuthMethodUnsatisfiableError } from './errors/auth-method-unsatisfiable-error.js'
 import { TokenRevokedError } from './errors/token-revoked-error.js'

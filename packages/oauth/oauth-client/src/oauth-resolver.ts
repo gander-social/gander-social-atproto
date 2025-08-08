@@ -1,4 +1,9 @@
 import {
+  IdentityInfo,
+  IdentityResolver,
+  ResolveIdentityOptions,
+} from '@gander-atproto-nest/identity-resolver'
+import {
   AtprotoIdentityDidMethods,
   Did,
   DidDocument,
@@ -8,11 +13,6 @@ import {
   OAuthAuthorizationServerMetadata,
   oauthIssuerIdentifierSchema,
 } from '@gander-social-atproto/oauth-types'
-import {
-  IdentityInfo,
-  IdentityResolver,
-  ResolveIdentityOptions,
-} from '@gander-atproto-nest/identity-resolver'
 import {
   GetCachedOptions,
   OAuthAuthorizationServerMetadataResolver,

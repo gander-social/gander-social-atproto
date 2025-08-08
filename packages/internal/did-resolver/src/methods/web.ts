@@ -1,10 +1,4 @@
 import {
-  Did,
-  DidError,
-  didDocumentValidator,
-  didWebToUrl,
-} from '@gander-social-atproto/did'
-import {
   Fetch,
   bindFetch,
   fetchJsonProcessor,
@@ -12,6 +6,12 @@ import {
   fetchOkProcessor,
 } from '@gander-atproto-nest/fetch'
 import { pipe } from '@gander-atproto-nest/pipe'
+import {
+  Did,
+  DidError,
+  didDocumentValidator,
+  didWebToUrl,
+} from '@gander-social-atproto/did'
 import { DidMethod, ResolveDidOptions } from '../did-method.js'
 
 const fetchSuccessHandler = pipe(

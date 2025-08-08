@@ -1,14 +1,14 @@
 /* eslint-env node */
 
+const {
+  bundleManifest,
+} = require('@gander-atproto-nest/rollup-plugin-bundle-manifest')
 const { default: commonjs } = require('@rollup/plugin-commonjs')
 const { default: html, makeHtmlAttributes } = require('@rollup/plugin-html')
 const { default: json } = require('@rollup/plugin-json')
 const { default: nodeResolve } = require('@rollup/plugin-node-resolve')
 const { default: swc } = require('@rollup/plugin-swc')
 const { defineConfig } = require('rollup')
-const {
-  bundleManifest,
-} = require('@gander-atproto-nest/rollup-plugin-bundle-manifest')
 const postcss = ((m) => m.default || m)(require('rollup-plugin-postcss'))
 const serve = ((m) => m.default || m)(require('rollup-plugin-serve'))
 

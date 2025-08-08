@@ -1,3 +1,10 @@
+import {
+  Fetch,
+  Json,
+  bindFetch,
+  fetchJsonProcessor,
+} from '@gander-atproto-nest/fetch'
+import { SimpleStore } from '@gander-atproto-nest/simple-store'
 import { AtprotoDid } from '@gander-social-atproto/did'
 import { Key, Keyset } from '@gander-social-atproto/jwk'
 import {
@@ -8,13 +15,6 @@ import {
   OAuthTokenRequest,
   oauthParResponseSchema,
 } from '@gander-social-atproto/oauth-types'
-import {
-  Fetch,
-  Json,
-  bindFetch,
-  fetchJsonProcessor,
-} from '@gander-atproto-nest/fetch'
-import { SimpleStore } from '@gander-atproto-nest/simple-store'
 import {
   AtprotoScope,
   AtprotoTokenResponse,

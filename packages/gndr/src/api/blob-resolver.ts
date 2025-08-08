@@ -1,6 +1,12 @@
 import { Duplex, Transform, Writable } from 'node:stream'
 import { pipeline } from 'node:stream/promises'
 import {
+  ACCEPT_ENCODING_COMPRESSED,
+  ACCEPT_ENCODING_UNCOMPRESSED,
+  buildProxiedContentEncoding,
+  formatAcceptHeader,
+} from '@gander-atproto-nest/xrpc-utils'
+import {
   VerifyCidError,
   VerifyCidTransform,
   createDecoders,
@@ -9,12 +15,6 @@ import { AtprotoDid, isAtprotoDid } from '@gander-social-atproto/did'
 import createError, { isHttpError } from 'http-errors'
 import { CID } from 'multiformats/cid'
 import { Dispatcher } from 'undici'
-import {
-  ACCEPT_ENCODING_COMPRESSED,
-  ACCEPT_ENCODING_UNCOMPRESSED,
-  buildProxiedContentEncoding,
-  formatAcceptHeader,
-} from '@gander-atproto-nest/xrpc-utils'
 import { ServerConfig } from '../config'
 import { AppContext } from '../context'
 import {
