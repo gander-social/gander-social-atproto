@@ -1,5 +1,5 @@
-import { Agent, Dispatcher, Pool, RetryAgent } from 'undici'
 import { isUnicastIp, unicastLookup } from '@gander-atproto-nest/fetch-node'
+import { Agent, Dispatcher, Pool, RetryAgent } from 'undici'
 import { ServerConfig } from '../config'
 import { RETRYABLE_HTTP_STATUS_CODES } from '../util/retry'
 

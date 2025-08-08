@@ -1,9 +1,4 @@
 import {
-  OAuthAuthorizationServerMetadata,
-  oauthAuthorizationServerMetadataValidator,
-  oauthIssuerIdentifierSchema,
-} from '@gander-social-atproto/oauth-types'
-import {
   Fetch,
   FetchResponseError,
   bindFetch,
@@ -14,6 +9,11 @@ import {
   GetCachedOptions,
   SimpleStore,
 } from '@gander-atproto-nest/simple-store'
+import {
+  OAuthAuthorizationServerMetadata,
+  oauthAuthorizationServerMetadataValidator,
+  oauthIssuerIdentifierSchema,
+} from '@gander-social-atproto/oauth-types'
 import { contentMime } from './util.js'
 
 export type { GetCachedOptions, OAuthAuthorizationServerMetadata }

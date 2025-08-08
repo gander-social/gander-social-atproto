@@ -1,5 +1,5 @@
-import { ZodError } from 'zod'
 import { FetchError } from '@gander-atproto-nest/fetch'
+import { ZodError } from 'zod'
 import { OAuthError } from './oauth-error.js'
 
 /**

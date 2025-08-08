@@ -1,4 +1,8 @@
 import { createHash, randomBytes } from 'node:crypto'
+import {
+  AtprotoHandleResolverNode,
+  AtprotoHandleResolverNodeOptions,
+} from '@gander-atproto-nest/handle-resolver-node'
 import { JoseKey } from '@gander-social-atproto/jwk-jose'
 import {
   HandleResolver,
@@ -9,10 +13,6 @@ import {
   RuntimeLock,
 } from '@gander-social-atproto/oauth-client'
 import { OAuthResponseMode } from '@gander-social-atproto/oauth-types'
-import {
-  AtprotoHandleResolverNode,
-  AtprotoHandleResolverNodeOptions,
-} from '@gander-atproto-nest/handle-resolver-node'
 import {
   NodeSavedSessionStore,
   NodeSavedStateStore,

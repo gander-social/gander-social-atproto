@@ -1,8 +1,8 @@
-import { Did, DidDocument } from '@gander-social-atproto/did'
 import {
   SimpleStoreMemory,
   SimpleStoreMemoryOptions,
 } from '@gander-atproto-nest/simple-store-memory'
+import { Did, DidDocument } from '@gander-social-atproto/did'
 import { DidCache } from './did-cache.js'
 
 const DEFAULT_TTL = 3600 * 1000 // 1 hour

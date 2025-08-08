@@ -1,5 +1,4 @@
 import { createHash } from 'node:crypto'
-import { z } from 'zod'
 import {
   Fetch,
   FetchBound,
@@ -9,6 +8,7 @@ import {
   fetchOkProcessor,
 } from '@gander-atproto-nest/fetch'
 import { pipe } from '@gander-atproto-nest/pipe'
+import { z } from 'zod'
 
 export const hcaptchaTokenSchema = z.string().min(1)
 export type HcaptchaToken = z.infer<typeof hcaptchaTokenSchema>

@@ -1,8 +1,8 @@
+import { isLocalHostname } from '@gander-atproto-nest/fetch-node'
 import {
   OAuthClientIdDiscoverable,
   parseOAuthDiscoverableClientId,
 } from '@gander-social-atproto/oauth-types'
-import { isLocalHostname } from '@gander-atproto-nest/fetch-node'
 import { InvalidClientIdError } from '../errors/invalid-client-id-error.js'
 import { InvalidRedirectUriError } from '../errors/invalid-redirect-uri-error.js'
 

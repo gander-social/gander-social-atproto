@@ -1,5 +1,12 @@
 import assert from 'node:assert'
 import * as plc from '@did-plc/lib'
+import {
+  Fetch,
+  isUnicastIp,
+  loggedFetch,
+  safeFetchWrap,
+  unicastLookup,
+} from '@gander-atproto-nest/fetch-node'
 import { AtpAgent } from '@gander-social-atproto/api'
 import { KmsKeypair, S3BlobStore } from '@gander-social-atproto/aws'
 import * as crypto from '@gander-social-atproto/crypto'
@@ -20,13 +27,6 @@ import { Redis } from 'ioredis'
 import * as nodemailer from 'nodemailer'
 import * as ui8 from 'uint8arrays'
 import * as undici from 'undici'
-import {
-  Fetch,
-  isUnicastIp,
-  loggedFetch,
-  safeFetchWrap,
-  unicastLookup,
-} from '@gander-atproto-nest/fetch-node'
 import { AccountManager } from './account-manager/account-manager'
 import { OAuthStore } from './account-manager/oauth-store'
 import { ActorStore } from './actor-store/actor-store'

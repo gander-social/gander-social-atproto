@@ -1,5 +1,3 @@
-import { Key } from '@gander-social-atproto/jwk'
-import { base64url } from 'multiformats/bases/base64'
 import {
   Fetch,
   FetchContext,
@@ -7,6 +5,8 @@ import {
   peekJson,
 } from '@gander-atproto-nest/fetch'
 import { SimpleStore } from '@gander-atproto-nest/simple-store'
+import { Key } from '@gander-social-atproto/jwk'
+import { base64url } from 'multiformats/bases/base64'
 
 // "undefined" in non https environments or environments without crypto
 const subtle = globalThis.crypto?.subtle as SubtleCrypto | undefined
