@@ -1,5 +1,29 @@
 # @atproto/pds
 
+## 0.5.1
+
+### Patch Changes
+
+- [#7](https://github.com/gander-social/gander-social-atproto/pull/7) [`85fea07c9d972a1b1bff4c3c0a8674aeaedaa805`](https://github.com/gander-social/gander-social-atproto/commit/85fea07c9d972a1b1bff4c3c0a8674aeaedaa805) Thanks [@melodylumen](https://github.com/melodylumen)! - Duplicate atproto-labs packages to gander-atproto-nest npm account. Patch bump to ensure they correctly update npm
+  packages with version numbers instead of "workspace:\*"
+
+- [#7](https://github.com/gander-social/gander-social-atproto/pull/7) [`85fea07c9d972a1b1bff4c3c0a8674aeaedaa805`](https://github.com/gander-social/gander-social-atproto/commit/85fea07c9d972a1b1bff4c3c0a8674aeaedaa805) Thanks [@melodylumen](https://github.com/melodylumen)! - Force a patch bump to ensure that the Github action will properly publish to npm for all repos with the dependency
+  version numbers
+- Updated dependencies [[`85fea07c9d972a1b1bff4c3c0a8674aeaedaa805`](https://github.com/gander-social/gander-social-atproto/commit/85fea07c9d972a1b1bff4c3c0a8674aeaedaa805), [`85fea07c9d972a1b1bff4c3c0a8674aeaedaa805`](https://github.com/gander-social/gander-social-atproto/commit/85fea07c9d972a1b1bff4c3c0a8674aeaedaa805)]:
+  - @gander-social-atproto/oauth-provider@0.10.1
+  - @gander-atproto-nest/fetch-node@0.1.11
+  - @gander-atproto-nest/xrpc-utils@0.0.18
+  - @gander-social-atproto/api@0.16.1
+  - @gander-social-atproto/aws@0.3.1
+  - @gander-social-atproto/common@0.5.1
+  - @gander-social-atproto/crypto@0.5.1
+  - @gander-social-atproto/identity@0.5.1
+  - @gander-social-atproto/lexicon@0.5.1
+  - @gander-social-atproto/repo@0.9.1
+  - @gander-social-atproto/syntax@0.5.1
+  - @gander-social-atproto/xrpc@0.8.1
+  - @gander-social-atproto/xrpc-server@0.9.1
+
 ## 0.5.0
 
 ### Minor Changes
@@ -791,7 +815,7 @@
 - [#3177](https://github.com/gander-social/atproto/pull/3177) [`72eba67af`](https://github.com/gander-social/atproto/commit/72eba67af1af8320b5400bcb9319d5c3c8407d99) Thanks [@matthieusieben](https://github.com/matthieusieben)! - Remove dependency on Axios
 
 - Updated dependencies [[`72eba67af`](https://github.com/gander-social/atproto/commit/72eba67af1af8320b5400bcb9319d5c3c8407d99), [`72eba67af`](https://github.com/gander-social/atproto/commit/72eba67af1af8320b5400bcb9319d5c3c8407d99)]:
-    - @gander-atproto-nest/xrpc-utils@0.0.1
+  - @gander-atproto-nest/xrpc-utils@0.0.1
   - @atproto/identity@0.4.4
   - @atproto/api@0.13.26
   - @atproto/common@0.4.6
@@ -976,7 +1000,7 @@
 ### Patch Changes
 
 - Updated dependencies [[`80450cbf2`](https://github.com/gander-social/atproto/commit/80450cbf2ca27967ee9fe1a5f4bc590b26f1e6b2)]:
-    - @gander-atproto-nest/fetch-node@0.1.3
+  - @gander-atproto-nest/fetch-node@0.1.3
   - @atproto/oauth-provider@0.2.5
 
 ## 0.4.63

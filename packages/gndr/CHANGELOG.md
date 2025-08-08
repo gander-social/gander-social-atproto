@@ -1,5 +1,28 @@
 # @atproto/gndr
 
+## 0.1.1
+
+### Patch Changes
+
+- [#7](https://github.com/gander-social/gander-social-atproto/pull/7) [`85fea07c9d972a1b1bff4c3c0a8674aeaedaa805`](https://github.com/gander-social/gander-social-atproto/commit/85fea07c9d972a1b1bff4c3c0a8674aeaedaa805) Thanks [@melodylumen](https://github.com/melodylumen)! - Duplicate atproto-labs packages to gander-atproto-nest npm account. Patch bump to ensure they correctly update npm
+  packages with version numbers instead of "workspace:\*"
+
+- [#7](https://github.com/gander-social/gander-social-atproto/pull/7) [`85fea07c9d972a1b1bff4c3c0a8674aeaedaa805`](https://github.com/gander-social/gander-social-atproto/commit/85fea07c9d972a1b1bff4c3c0a8674aeaedaa805) Thanks [@melodylumen](https://github.com/melodylumen)! - Force a patch bump to ensure that the Github action will properly publish to npm for all repos with the dependency
+  version numbers
+- Updated dependencies [[`85fea07c9d972a1b1bff4c3c0a8674aeaedaa805`](https://github.com/gander-social/gander-social-atproto/commit/85fea07c9d972a1b1bff4c3c0a8674aeaedaa805), [`85fea07c9d972a1b1bff4c3c0a8674aeaedaa805`](https://github.com/gander-social/gander-social-atproto/commit/85fea07c9d972a1b1bff4c3c0a8674aeaedaa805)]:
+  - @gander-atproto-nest/fetch-node@0.1.11
+  - @gander-atproto-nest/xrpc-utils@0.0.18
+  - @gander-social-atproto/api@0.16.1
+  - @gander-social-atproto/common@0.5.1
+  - @gander-social-atproto/crypto@0.5.1
+  - @gander-social-atproto/did@0.2.1
+  - @gander-social-atproto/identity@0.5.1
+  - @gander-social-atproto/lexicon@0.5.1
+  - @gander-social-atproto/repo@0.9.1
+  - @gander-social-atproto/sync@0.2.1
+  - @gander-social-atproto/syntax@0.5.1
+  - @gander-social-atproto/xrpc-server@0.9.1
+
 ## 0.1.0
 
 ### Minor Changes
@@ -527,7 +550,7 @@
 - [#3445](https://github.com/gander-social/atproto/pull/3445) [`8a30e0ed9`](https://github.com/gander-social/atproto/commit/8a30e0ed9239cb2037d54fb98e70e8b0cfbc3e39) Thanks [@rafaelbsky](https://github.com/rafaelbsky)! - Replace undefined values with empty strings in mock dataplane
 
 - Updated dependencies [[`61dc0d60e`](https://github.com/gander-social/atproto/commit/61dc0d60e19b88c6427a54c6d95a391b5f4da7bd), [`61dc0d60e`](https://github.com/gander-social/atproto/commit/61dc0d60e19b88c6427a54c6d95a391b5f4da7bd), [`87ed907a6`](https://github.com/gander-social/atproto/commit/87ed907a6b96b408c02c9af819cec8380a453254)]:
-    - @gander-atproto-nest/fetch-node@0.1.7
+  - @gander-atproto-nest/fetch-node@0.1.7
   - @atproto/xrpc-server@0.7.10
   - @atproto/identity@0.4.6
   - @atproto/lexicon@0.4.6
@@ -634,7 +657,7 @@
 - [#3177](https://github.com/gander-social/atproto/pull/3177) [`72eba67af`](https://github.com/gander-social/atproto/commit/72eba67af1af8320b5400bcb9319d5c3c8407d99) Thanks [@matthieusieben](https://github.com/matthieusieben)! - Remove dependency on Axios
 
 - Updated dependencies [[`72eba67af`](https://github.com/gander-social/atproto/commit/72eba67af1af8320b5400bcb9319d5c3c8407d99), [`72eba67af`](https://github.com/gander-social/atproto/commit/72eba67af1af8320b5400bcb9319d5c3c8407d99)]:
-    - @gander-atproto-nest/xrpc-utils@0.0.1
+  - @gander-atproto-nest/xrpc-utils@0.0.1
   - @atproto/identity@0.4.4
   - @atproto/api@0.13.26
   - @atproto/common@0.4.6

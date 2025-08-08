@@ -1,5 +1,17 @@
 # @gander-atproto-nest/fetch
 
+## 0.2.5
+
+### Patch Changes
+
+- [#7](https://github.com/gander-social/gander-social-atproto/pull/7) [`85fea07c9d972a1b1bff4c3c0a8674aeaedaa805`](https://github.com/gander-social/gander-social-atproto/commit/85fea07c9d972a1b1bff4c3c0a8674aeaedaa805) Thanks [@melodylumen](https://github.com/melodylumen)! - Duplicate atproto-labs packages to gander-atproto-nest npm account. Patch bump to ensure they correctly update npm
+  packages with version numbers instead of "workspace:\*"
+
+- [#7](https://github.com/gander-social/gander-social-atproto/pull/7) [`85fea07c9d972a1b1bff4c3c0a8674aeaedaa805`](https://github.com/gander-social/gander-social-atproto/commit/85fea07c9d972a1b1bff4c3c0a8674aeaedaa805) Thanks [@melodylumen](https://github.com/melodylumen)! - Force a patch bump to ensure that the Github action will properly publish to npm for all repos with the dependency
+  version numbers
+- Updated dependencies [[`85fea07c9d972a1b1bff4c3c0a8674aeaedaa805`](https://github.com/gander-social/gander-social-atproto/commit/85fea07c9d972a1b1bff4c3c0a8674aeaedaa805), [`85fea07c9d972a1b1bff4c3c0a8674aeaedaa805`](https://github.com/gander-social/gander-social-atproto/commit/85fea07c9d972a1b1bff4c3c0a8674aeaedaa805)]:
+  - @gander-atproto-nest/pipe@0.1.3
+
 ## 0.2.4
 
 ### Patch Changes
@@ -16,7 +28,7 @@
 - [#3821](https://github.com/gander-social/atproto/pull/3821) [`5050b6550`](https://github.com/gander-social/atproto/commit/5050b6550e07e71b0a524eda0b71b837583294d4) Thanks [@matthieusieben](https://github.com/matthieusieben)! - Allow `follow` redirect mode, when explicitly set.
 
 - Updated dependencies [[`5050b6550`](https://github.com/gander-social/atproto/commit/5050b6550e07e71b0a524eda0b71b837583294d4)]:
-    - @gander-atproto-nest/pipe@0.1.1
+  - @gander-atproto-nest/pipe@0.1.1
 
 ## 0.2.2
 
@@ -67,4 +79,4 @@
 ### Patch Changes
 
 - Updated dependencies [[`a8d6c1123`](https://github.com/gander-social/atproto/commit/a8d6c112359f5c4c0cfbe2df63443ed275f2a646)]:
-    - @gander-atproto-nest/pipe@0.1.0
+  - @gander-atproto-nest/pipe@0.1.0

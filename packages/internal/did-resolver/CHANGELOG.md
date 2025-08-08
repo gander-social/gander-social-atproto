@@ -1,5 +1,21 @@
 # @gander-atproto-nest/did-resolver
 
+## 0.2.2
+
+### Patch Changes
+
+- [#7](https://github.com/gander-social/gander-social-atproto/pull/7) [`85fea07c9d972a1b1bff4c3c0a8674aeaedaa805`](https://github.com/gander-social/gander-social-atproto/commit/85fea07c9d972a1b1bff4c3c0a8674aeaedaa805) Thanks [@melodylumen](https://github.com/melodylumen)! - Duplicate atproto-labs packages to gander-atproto-nest npm account. Patch bump to ensure they correctly update npm
+  packages with version numbers instead of "workspace:\*"
+
+- [#7](https://github.com/gander-social/gander-social-atproto/pull/7) [`85fea07c9d972a1b1bff4c3c0a8674aeaedaa805`](https://github.com/gander-social/gander-social-atproto/commit/85fea07c9d972a1b1bff4c3c0a8674aeaedaa805) Thanks [@melodylumen](https://github.com/melodylumen)! - Force a patch bump to ensure that the Github action will properly publish to npm for all repos with the dependency
+  version numbers
+- Updated dependencies [[`85fea07c9d972a1b1bff4c3c0a8674aeaedaa805`](https://github.com/gander-social/gander-social-atproto/commit/85fea07c9d972a1b1bff4c3c0a8674aeaedaa805), [`85fea07c9d972a1b1bff4c3c0a8674aeaedaa805`](https://github.com/gander-social/gander-social-atproto/commit/85fea07c9d972a1b1bff4c3c0a8674aeaedaa805)]:
+  - @gander-atproto-nest/simple-store-memory@0.1.5
+  - @gander-atproto-nest/simple-store@0.2.2
+  - @gander-atproto-nest/fetch@0.2.5
+  - @gander-atproto-nest/pipe@0.1.3
+  - @gander-social-atproto/did@0.2.1
+
 ## 0.2.1
 
 ### Patch Changes
@@ -24,23 +40,23 @@
 ### Patch Changes
 
 - Updated dependencies [[`5050b6550`](https://github.com/gander-social/atproto/commit/5050b6550e07e71b0a524eda0b71b837583294d4), [`5050b6550`](https://github.com/gander-social/atproto/commit/5050b6550e07e71b0a524eda0b71b837583294d4)]:
-    - @gander-atproto-nest/pipe@0.1.1
-    - @gander-atproto-nest/fetch@0.2.3
+  - @gander-atproto-nest/pipe@0.1.1
+  - @gander-atproto-nest/fetch@0.2.3
 
 ## 0.1.12
 
 ### Patch Changes
 
 - Updated dependencies [[`0d77d1b55`](https://github.com/gander-social/atproto/commit/0d77d1b550a58117aee8f7f1e2be24d255ade9e4), [`0d77d1b55`](https://github.com/gander-social/atproto/commit/0d77d1b550a58117aee8f7f1e2be24d255ade9e4)]:
-    - @gander-atproto-nest/simple-store@0.2.0
-    - @gander-atproto-nest/simple-store-memory@0.1.3
+  - @gander-atproto-nest/simple-store@0.2.0
+  - @gander-atproto-nest/simple-store-memory@0.1.3
 
 ## 0.1.11
 
 ### Patch Changes
 
 - Updated dependencies [[`850e39843`](https://github.com/gander-social/atproto/commit/850e39843cb0ec9ea716675f7568c0c601f45e29), [`850e39843`](https://github.com/gander-social/atproto/commit/850e39843cb0ec9ea716675f7568c0c601f45e29)]:
-    - @gander-atproto-nest/fetch@0.2.2
+  - @gander-atproto-nest/fetch@0.2.2
 
 ## 0.1.10
 
@@ -49,9 +65,9 @@
 - [#3220](https://github.com/gander-social/atproto/pull/3220) [`61dc0d60e`](https://github.com/gander-social/atproto/commit/61dc0d60e19b88c6427a54c6d95a391b5f4da7bd) Thanks [@matthieusieben](https://github.com/matthieusieben)! - Apply new linting rules regarding import order
 
 - Updated dependencies [[`61dc0d60e`](https://github.com/gander-social/atproto/commit/61dc0d60e19b88c6427a54c6d95a391b5f4da7bd)]:
-    - @gander-atproto-nest/simple-store-memory@0.1.2
-    - @gander-atproto-nest/simple-store@0.1.2
-    - @gander-atproto-nest/fetch@0.2.1
+  - @gander-atproto-nest/simple-store-memory@0.1.2
+  - @gander-atproto-nest/simple-store@0.1.2
+  - @gander-atproto-nest/fetch@0.2.1
   - @atproto/did@0.1.5
 
 ## 0.1.9
@@ -68,7 +84,7 @@
 ### Patch Changes
 
 - Updated dependencies [[`5ece8c6ae`](https://github.com/gander-social/atproto/commit/5ece8c6aeab9c5c3f51295d93ed6e27c3c6095c2), [`5ece8c6ae`](https://github.com/gander-social/atproto/commit/5ece8c6aeab9c5c3f51295d93ed6e27c3c6095c2)]:
-    - @gander-atproto-nest/fetch@0.2.0
+  - @gander-atproto-nest/fetch@0.2.0
 
 ## 0.1.7
 
@@ -81,7 +97,7 @@
 ### Patch Changes
 
 - Updated dependencies [[`622654672`](https://github.com/gander-social/atproto/commit/6226546725d1bb0375e3c9e0d71af173e8253c4f)]:
-    - @gander-atproto-nest/fetch@0.1.2
+  - @gander-atproto-nest/fetch@0.1.2
 
 ## 0.1.5
 
@@ -97,7 +113,7 @@
 ### Patch Changes
 
 - Updated dependencies [[`a07b21151`](https://github.com/gander-social/atproto/commit/a07b21151f1850340c4b7797ebb11521b1a6cdf3), [`a07b21151`](https://github.com/gander-social/atproto/commit/a07b21151f1850340c4b7797ebb11521b1a6cdf3), [`a07b21151`](https://github.com/gander-social/atproto/commit/a07b21151f1850340c4b7797ebb11521b1a6cdf3)]:
-    - @gander-atproto-nest/fetch@0.1.1
+  - @gander-atproto-nest/fetch@0.1.1
 
 ## 0.1.3
 
@@ -120,8 +136,8 @@
 - [#2633](https://github.com/gander-social/atproto/pull/2633) [`acc9093d2`](https://github.com/gander-social/atproto/commit/acc9093d2845eba02b68fb2f9db33e4f1b59bb10) Thanks [@matthieusieben](https://github.com/matthieusieben)! - Use distinct type names to prevent conflicts
 
 - Updated dependencies [[`acc9093d2`](https://github.com/gander-social/atproto/commit/acc9093d2845eba02b68fb2f9db33e4f1b59bb10), [`acc9093d2`](https://github.com/gander-social/atproto/commit/acc9093d2845eba02b68fb2f9db33e4f1b59bb10)]:
-    - @gander-atproto-nest/simple-store@0.1.1
-    - @gander-atproto-nest/simple-store-memory@0.1.1
+  - @gander-atproto-nest/simple-store@0.1.1
+  - @gander-atproto-nest/simple-store-memory@0.1.1
 
 ## 0.1.0
 
@@ -132,8 +148,8 @@
 ### Patch Changes
 
 - Updated dependencies [[`a8d6c1123`](https://github.com/gander-social/atproto/commit/a8d6c112359f5c4c0cfbe2df63443ed275f2a646)]:
-    - @gander-atproto-nest/simple-store-memory@0.1.0
-    - @gander-atproto-nest/simple-store@0.1.0
-    - @gander-atproto-nest/fetch@0.1.0
-    - @gander-atproto-nest/pipe@0.1.0
+  - @gander-atproto-nest/simple-store-memory@0.1.0
+  - @gander-atproto-nest/simple-store@0.1.0
+  - @gander-atproto-nest/fetch@0.1.0
+  - @gander-atproto-nest/pipe@0.1.0
   - @atproto/did@0.1.0
