@@ -1,5 +1,25 @@
 # @atproto/dev-env
 
+## 0.4.1
+
+### Patch Changes
+
+- [#7](https://github.com/gander-social/gander-social-atproto/pull/7) [`85fea07c9d972a1b1bff4c3c0a8674aeaedaa805`](https://github.com/gander-social/gander-social-atproto/commit/85fea07c9d972a1b1bff4c3c0a8674aeaedaa805) Thanks [@melodylumen](https://github.com/melodylumen)! - Force a patch bump to ensure that the Github action will properly publish to npm for all repos with the dependency
+  version numbers
+- Updated dependencies [[`85fea07c9d972a1b1bff4c3c0a8674aeaedaa805`](https://github.com/gander-social/gander-social-atproto/commit/85fea07c9d972a1b1bff4c3c0a8674aeaedaa805), [`85fea07c9d972a1b1bff4c3c0a8674aeaedaa805`](https://github.com/gander-social/gander-social-atproto/commit/85fea07c9d972a1b1bff4c3c0a8674aeaedaa805)]:
+  - @gander-social-atproto/gndr@0.1.1
+  - @gander-social-atproto/pds@0.5.1
+  - @gander-social-atproto/api@0.16.1
+  - @gander-social-atproto/bsync@0.1.1
+  - @gander-social-atproto/common-web@0.5.1
+  - @gander-social-atproto/crypto@0.5.1
+  - @gander-social-atproto/identity@0.5.1
+  - @gander-social-atproto/lexicon@0.5.1
+  - @gander-social-atproto/ozone@0.2.1
+  - @gander-social-atproto/sync@0.2.1
+  - @gander-social-atproto/syntax@0.5.1
+  - @gander-social-atproto/xrpc-server@0.9.1
+
 ## 0.4.0
 
 ### Minor Changes

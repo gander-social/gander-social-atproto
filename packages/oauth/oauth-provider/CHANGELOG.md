@@ -1,5 +1,30 @@
 # @atproto/oauth-provider
 
+## 0.10.1
+
+### Patch Changes
+
+- [#7](https://github.com/gander-social/gander-social-atproto/pull/7) [`85fea07c9d972a1b1bff4c3c0a8674aeaedaa805`](https://github.com/gander-social/gander-social-atproto/commit/85fea07c9d972a1b1bff4c3c0a8674aeaedaa805) Thanks [@melodylumen](https://github.com/melodylumen)! - Duplicate atproto-labs packages to gander-atproto-nest npm account. Patch bump to ensure they correctly update npm
+  packages with version numbers instead of "workspace:\*"
+
+- [#7](https://github.com/gander-social/gander-social-atproto/pull/7) [`85fea07c9d972a1b1bff4c3c0a8674aeaedaa805`](https://github.com/gander-social/gander-social-atproto/commit/85fea07c9d972a1b1bff4c3c0a8674aeaedaa805) Thanks [@melodylumen](https://github.com/melodylumen)! - Force a patch bump to ensure that the Github action will properly publish to npm for all repos with the dependency
+  version numbers
+- Updated dependencies [[`85fea07c9d972a1b1bff4c3c0a8674aeaedaa805`](https://github.com/gander-social/gander-social-atproto/commit/85fea07c9d972a1b1bff4c3c0a8674aeaedaa805), [`85fea07c9d972a1b1bff4c3c0a8674aeaedaa805`](https://github.com/gander-social/gander-social-atproto/commit/85fea07c9d972a1b1bff4c3c0a8674aeaedaa805)]:
+  - @gander-social-atproto/oauth-provider-frontend@0.2.1
+  - @gander-atproto-nest/simple-store-memory@0.1.5
+  - @gander-social-atproto/oauth-provider-ui@0.2.1
+  - @gander-atproto-nest/simple-store@0.2.2
+  - @gander-atproto-nest/fetch-node@0.1.11
+  - @gander-atproto-nest/fetch@0.2.5
+  - @gander-atproto-nest/pipe@0.1.3
+  - @gander-social-atproto/common@0.5.1
+  - @gander-social-atproto/did@0.2.1
+  - @gander-social-atproto/jwk@0.5.1
+  - @gander-social-atproto/jwk-jose@0.2.1
+  - @gander-social-atproto/oauth-provider-api@0.2.1
+  - @gander-social-atproto/oauth-types@0.5.1
+  - @gander-social-atproto/syntax@0.5.1
+
 ## 0.10.0
 
 ### Minor Changes
@@ -165,8 +190,8 @@
 - [#3820](https://github.com/gander-social/atproto/pull/3820) [`8318c5718`](https://github.com/gander-social/atproto/commit/8318c57187a1fed443be73bfd7639f49febc7337) Thanks [@matthieusieben](https://github.com/matthieusieben)! - Add support for `transition:email` oauth scope
 
 - Updated dependencies [[`5050b6550`](https://github.com/gander-social/atproto/commit/5050b6550e07e71b0a524eda0b71b837583294d4), [`36dbd4155`](https://github.com/gander-social/atproto/commit/36dbd41551f74052a3f584719a1a7edd86eca201), [`5050b6550`](https://github.com/gander-social/atproto/commit/5050b6550e07e71b0a524eda0b71b837583294d4), [`43861a452`](https://github.com/gander-social/atproto/commit/43861a452b70268e738ef12033297cddacbe25d4), [`5050b6550`](https://github.com/gander-social/atproto/commit/5050b6550e07e71b0a524eda0b71b837583294d4), [`8318c5718`](https://github.com/gander-social/atproto/commit/8318c57187a1fed443be73bfd7639f49febc7337), [`5050b6550`](https://github.com/gander-social/atproto/commit/5050b6550e07e71b0a524eda0b71b837583294d4)]:
-    - @gander-atproto-nest/fetch-node@0.1.9
-    - @gander-atproto-nest/pipe@0.1.1
+  - @gander-atproto-nest/fetch-node@0.1.9
+  - @gander-atproto-nest/pipe@0.1.1
   - @atproto/oauth-provider-ui@0.1.5
     - @gander-atproto-nest/fetch@0.2.3
   - @atproto/oauth-provider-frontend@0.1.4
@@ -371,7 +396,7 @@
 - [#2945](https://github.com/gander-social/atproto/pull/2945) [`850e39843`](https://github.com/gander-social/atproto/commit/850e39843cb0ec9ea716675f7568c0c601f45e29) Thanks [@matthieusieben](https://github.com/matthieusieben)! - Add support for multiple locales
 
 - Updated dependencies [[`850e39843`](https://github.com/gander-social/atproto/commit/850e39843cb0ec9ea716675f7568c0c601f45e29), [`850e39843`](https://github.com/gander-social/atproto/commit/850e39843cb0ec9ea716675f7568c0c601f45e29), [`850e39843`](https://github.com/gander-social/atproto/commit/850e39843cb0ec9ea716675f7568c0c601f45e29)]:
-    - @gander-atproto-nest/fetch@0.2.2
+  - @gander-atproto-nest/fetch@0.2.2
   - @atproto/oauth-types@0.2.4
   - @atproto/jwk@0.1.4
     - @gander-atproto-nest/fetch-node@0.1.8
@@ -415,9 +440,9 @@
 - [#3220](https://github.com/gander-social/atproto/pull/3220) [`61dc0d60e`](https://github.com/gander-social/atproto/commit/61dc0d60e19b88c6427a54c6d95a391b5f4da7bd) Thanks [@matthieusieben](https://github.com/matthieusieben)! - Update NodeJS engine requirement to >=18.7.0
 
 - Updated dependencies [[`61dc0d60e`](https://github.com/gander-social/atproto/commit/61dc0d60e19b88c6427a54c6d95a391b5f4da7bd), [`61dc0d60e`](https://github.com/gander-social/atproto/commit/61dc0d60e19b88c6427a54c6d95a391b5f4da7bd), [`61dc0d60e`](https://github.com/gander-social/atproto/commit/61dc0d60e19b88c6427a54c6d95a391b5f4da7bd)]:
-    - @gander-atproto-nest/simple-store-memory@0.1.2
-    - @gander-atproto-nest/simple-store@0.1.2
-    - @gander-atproto-nest/fetch-node@0.1.7
+  - @gander-atproto-nest/simple-store-memory@0.1.2
+  - @gander-atproto-nest/simple-store@0.1.2
+  - @gander-atproto-nest/fetch-node@0.1.7
   - @atproto/oauth-types@0.2.3
     - @gander-atproto-nest/fetch@0.2.1
   - @atproto/jwk-jose@0.1.4
@@ -448,7 +473,7 @@
 ### Patch Changes
 
 - Updated dependencies [[`9c0128193`](https://github.com/gander-social/atproto/commit/9c01281931a371304bcfa465005d7363c003bc5f)]:
-    - @gander-atproto-nest/fetch-node@0.1.6
+  - @gander-atproto-nest/fetch-node@0.1.6
 
 ## 0.2.12
 
@@ -482,8 +507,8 @@
 - [#3135](https://github.com/gander-social/atproto/pull/3135) [`622654672`](https://github.com/gander-social/atproto/commit/6226546725d1bb0375e3c9e0d71af173e8253c4f) Thanks [@matthieusieben](https://github.com/matthieusieben)! - Improve "invalid_client_metadata" error description
 
 - Updated dependencies [[`622654672`](https://github.com/gander-social/atproto/commit/6226546725d1bb0375e3c9e0d71af173e8253c4f)]:
-    - @gander-atproto-nest/fetch@0.1.2
-    - @gander-atproto-nest/fetch-node@0.1.4
+  - @gander-atproto-nest/fetch@0.1.2
+  - @gander-atproto-nest/fetch-node@0.1.4
 
 ## 0.2.8
 
@@ -518,14 +543,14 @@
 ### Patch Changes
 
 - Updated dependencies [[`80450cbf2`](https://github.com/gander-social/atproto/commit/80450cbf2ca27967ee9fe1a5f4bc590b26f1e6b2)]:
-    - @gander-atproto-nest/fetch-node@0.1.3
+  - @gander-atproto-nest/fetch-node@0.1.3
 
 ## 0.2.4
 
 ### Patch Changes
 
 - Updated dependencies [[`8943c1008`](https://github.com/gander-social/atproto/commit/8943c10082702bbc0fc150237c6cc421251afd51)]:
-    - @gander-atproto-nest/fetch-node@0.1.2
+  - @gander-atproto-nest/fetch-node@0.1.2
 
 ## 0.2.3
 
@@ -656,9 +681,9 @@
 ### Patch Changes
 
 - Updated dependencies [[`a8d6c1123`](https://github.com/gander-social/atproto/commit/a8d6c112359f5c4c0cfbe2df63443ed275f2a646)]:
-    - @gander-atproto-nest/simple-store-memory@0.1.0
-    - @gander-atproto-nest/simple-store@0.1.0
-    - @gander-atproto-nest/fetch-node@0.1.0
+  - @gander-atproto-nest/simple-store-memory@0.1.0
+  - @gander-atproto-nest/simple-store@0.1.0
+  - @gander-atproto-nest/fetch-node@0.1.0
   - @atproto/oauth-types@0.1.0
     - @gander-atproto-nest/fetch@0.1.0
   - @atproto/jwk-jose@0.1.0
