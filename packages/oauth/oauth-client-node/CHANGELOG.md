@@ -34,7 +34,7 @@
 ### Patch Changes
 
 - Updated dependencies []:
-  - @atproto-labs/handle-resolver-node@0.1.18
+    - @gander-atproto-nest/handle-resolver-node@0.1.18
   - @atproto/oauth-client@0.4.2
 
 ## 0.3.0
@@ -51,9 +51,9 @@
 
 - Updated dependencies [[`90b4775fc`](https://github.com/gander-social/atproto/commit/90b4775fc9c6959171bc12b961ce9421cc14d6ee), [`90b4775fc`](https://github.com/gander-social/atproto/commit/90b4775fc9c6959171bc12b961ce9421cc14d6ee), [`90b4775fc`](https://github.com/gander-social/atproto/commit/90b4775fc9c6959171bc12b961ce9421cc14d6ee), [`90b4775fc`](https://github.com/gander-social/atproto/commit/90b4775fc9c6959171bc12b961ce9421cc14d6ee), [`90b4775fc`](https://github.com/gander-social/atproto/commit/90b4775fc9c6959171bc12b961ce9421cc14d6ee)]:
   - @atproto/oauth-client@0.4.1
-  - @atproto-labs/did-resolver@0.2.0
+  - @gander-atproto-nest/did-resolver@0.2.0
   - @atproto/jwk@0.4.0
-  - @atproto-labs/handle-resolver-node@0.1.17
+  - @gander-atproto-nest/handle-resolver-node@0.1.17
   - @atproto/jwk-jose@0.1.9
   - @atproto/jwk-webcrypto@0.1.9
   - @atproto/oauth-types@0.3.1
@@ -115,8 +115,8 @@
 ### Patch Changes
 
 - Updated dependencies []:
-  - @atproto-labs/handle-resolver-node@0.1.16
-  - @atproto-labs/did-resolver@0.1.13
+    - @gander-atproto-nest/handle-resolver-node@0.1.16
+    - @gander-atproto-nest/did-resolver@0.1.13
   - @atproto/oauth-client@0.3.17
 
 ## 0.2.17
@@ -132,11 +132,11 @@
 ### Patch Changes
 
 - Updated dependencies [[`0d77d1b55`](https://github.com/gander-social/atproto/commit/0d77d1b550a58117aee8f7f1e2be24d255ade9e4), [`30f9b6690`](https://github.com/gander-social/atproto/commit/30f9b6690e0e2c5810772e94e631322b9d89c65a), [`30f9b6690`](https://github.com/gander-social/atproto/commit/30f9b6690e0e2c5810772e94e631322b9d89c65a), [`0d77d1b55`](https://github.com/gander-social/atproto/commit/0d77d1b550a58117aee8f7f1e2be24d255ade9e4)]:
-  - @atproto-labs/simple-store@0.2.0
+    - @gander-atproto-nest/simple-store@0.2.0
   - @atproto/oauth-types@0.2.6
-  - @atproto-labs/did-resolver@0.1.12
+    - @gander-atproto-nest/did-resolver@0.1.12
   - @atproto/oauth-client@0.3.15
-  - @atproto-labs/handle-resolver-node@0.1.15
+    - @gander-atproto-nest/handle-resolver-node@0.1.15
 
 ## 0.2.15
 
@@ -171,10 +171,10 @@
   - @atproto/oauth-types@0.2.4
   - @atproto/jwk@0.1.4
   - @atproto/oauth-client@0.3.11
-  - @atproto-labs/did-resolver@0.1.11
+  - @gander-atproto-nest/did-resolver@0.1.11
   - @atproto/jwk-jose@0.1.5
   - @atproto/jwk-webcrypto@0.1.5
-  - @atproto-labs/handle-resolver-node@0.1.14
+  - @gander-atproto-nest/handle-resolver-node@0.1.14
 
 ## 0.2.11
 
@@ -192,9 +192,9 @@
 - [#3220](https://github.com/gander-social/atproto/pull/3220) [`61dc0d60e`](https://github.com/gander-social/atproto/commit/61dc0d60e19b88c6427a54c6d95a391b5f4da7bd) Thanks [@matthieusieben](https://github.com/matthieusieben)! - Update NodeJS engine requirement to >=18.7.0
 
 - Updated dependencies [[`61dc0d60e`](https://github.com/gander-social/atproto/commit/61dc0d60e19b88c6427a54c6d95a391b5f4da7bd), [`61dc0d60e`](https://github.com/gander-social/atproto/commit/61dc0d60e19b88c6427a54c6d95a391b5f4da7bd), [`61dc0d60e`](https://github.com/gander-social/atproto/commit/61dc0d60e19b88c6427a54c6d95a391b5f4da7bd)]:
-  - @atproto-labs/handle-resolver-node@0.1.13
-  - @atproto-labs/did-resolver@0.1.10
-  - @atproto-labs/simple-store@0.1.2
+    - @gander-atproto-nest/handle-resolver-node@0.1.13
+    - @gander-atproto-nest/did-resolver@0.1.10
+    - @gander-atproto-nest/simple-store@0.1.2
   - @atproto/jwk-webcrypto@0.1.4
   - @atproto/oauth-client@0.3.9
   - @atproto/oauth-types@0.2.3
@@ -207,17 +207,17 @@
 ### Patch Changes
 
 - Updated dependencies [[`cc2a1222b`](https://github.com/gander-social/atproto/commit/cc2a1222bd2b8ddd70d70dad174c1c63246a2d87), [`cc2a1222b`](https://github.com/gander-social/atproto/commit/cc2a1222bd2b8ddd70d70dad174c1c63246a2d87)]:
-  - @atproto-labs/did-resolver@0.1.9
+    - @gander-atproto-nest/did-resolver@0.1.9
   - @atproto/did@0.1.4
   - @atproto/oauth-client@0.3.8
-  - @atproto-labs/handle-resolver-node@0.1.12
+    - @gander-atproto-nest/handle-resolver-node@0.1.12
 
 ## 0.2.8
 
 ### Patch Changes
 
 - Updated dependencies []:
-  - @atproto-labs/handle-resolver-node@0.1.11
+    - @gander-atproto-nest/handle-resolver-node@0.1.11
 
 ## 0.2.7
 
@@ -229,15 +229,15 @@
   - @atproto/jwk-webcrypto@0.1.3
   - @atproto/oauth-client@0.3.7
   - @atproto/oauth-types@0.2.2
-  - @atproto-labs/did-resolver@0.1.8
-  - @atproto-labs/handle-resolver-node@0.1.10
+  - @gander-atproto-nest/did-resolver@0.1.8
+  - @gander-atproto-nest/handle-resolver-node@0.1.10
 
 ## 0.2.6
 
 ### Patch Changes
 
 - Updated dependencies [[`72eba67af`](https://github.com/gander-social/atproto/commit/72eba67af1af8320b5400bcb9319d5c3c8407d99)]:
-  - @atproto-labs/did-resolver@0.1.7
+    - @gander-atproto-nest/did-resolver@0.1.7
   - @atproto/oauth-client@0.3.6
 
 ## 0.2.5
@@ -245,7 +245,7 @@
 ### Patch Changes
 
 - Updated dependencies []:
-  - @atproto-labs/handle-resolver-node@0.1.9
+    - @gander-atproto-nest/handle-resolver-node@0.1.9
   - @atproto/oauth-client@0.3.5
 
 ## 0.2.4
@@ -260,9 +260,9 @@
 ### Patch Changes
 
 - Updated dependencies []:
-  - @atproto-labs/did-resolver@0.1.6
+    - @gander-atproto-nest/did-resolver@0.1.6
   - @atproto/oauth-client@0.3.3
-  - @atproto-labs/handle-resolver-node@0.1.8
+    - @gander-atproto-nest/handle-resolver-node@0.1.8
 
 ## 0.2.2
 
@@ -292,23 +292,23 @@
 - Updated dependencies [[`7f26b1765`](https://github.com/gander-social/atproto/commit/7f26b176526b9856a8f61faca6f065f0afd43abf), [`7f26b1765`](https://github.com/gander-social/atproto/commit/7f26b176526b9856a8f61faca6f065f0afd43abf), [`9d40ccbb6`](https://github.com/gander-social/atproto/commit/9d40ccbb69103fae9aae7e3cec31e9b3116f3ba2), [`7f26b1765`](https://github.com/gander-social/atproto/commit/7f26b176526b9856a8f61faca6f065f0afd43abf), [`9d40ccbb6`](https://github.com/gander-social/atproto/commit/9d40ccbb69103fae9aae7e3cec31e9b3116f3ba2), [`9d40ccbb6`](https://github.com/gander-social/atproto/commit/9d40ccbb69103fae9aae7e3cec31e9b3116f3ba2), [`9d40ccbb6`](https://github.com/gander-social/atproto/commit/9d40ccbb69103fae9aae7e3cec31e9b3116f3ba2), [`9d40ccbb6`](https://github.com/gander-social/atproto/commit/9d40ccbb69103fae9aae7e3cec31e9b3116f3ba2), [`9d40ccbb6`](https://github.com/gander-social/atproto/commit/9d40ccbb69103fae9aae7e3cec31e9b3116f3ba2), [`9d40ccbb6`](https://github.com/gander-social/atproto/commit/9d40ccbb69103fae9aae7e3cec31e9b3116f3ba2), [`9d40ccbb6`](https://github.com/gander-social/atproto/commit/9d40ccbb69103fae9aae7e3cec31e9b3116f3ba2), [`7f26b1765`](https://github.com/gander-social/atproto/commit/7f26b176526b9856a8f61faca6f065f0afd43abf), [`9d40ccbb6`](https://github.com/gander-social/atproto/commit/9d40ccbb69103fae9aae7e3cec31e9b3116f3ba2), [`9d40ccbb6`](https://github.com/gander-social/atproto/commit/9d40ccbb69103fae9aae7e3cec31e9b3116f3ba2), [`7f26b1765`](https://github.com/gander-social/atproto/commit/7f26b176526b9856a8f61faca6f065f0afd43abf)]:
   - @atproto/oauth-client@0.3.0
   - @atproto/oauth-types@0.2.0
-  - @atproto-labs/did-resolver@0.1.5
+  - @gander-atproto-nest/did-resolver@0.1.5
   - @atproto/did@0.1.3
-  - @atproto-labs/handle-resolver-node@0.1.7
+  - @gander-atproto-nest/handle-resolver-node@0.1.7
 
 ## 0.1.4
 
 ### Patch Changes
 
 - Updated dependencies []:
-  - @atproto-labs/handle-resolver-node@0.1.6
+    - @gander-atproto-nest/handle-resolver-node@0.1.6
 
 ## 0.1.3
 
 ### Patch Changes
 
 - Updated dependencies []:
-  - @atproto-labs/handle-resolver-node@0.1.5
+    - @gander-atproto-nest/handle-resolver-node@0.1.5
 
 ## 0.1.2
 
@@ -317,8 +317,8 @@
 - Updated dependencies [[`ed325d863`](https://github.com/gander-social/atproto/commit/ed325d863ce8ea5986c5a45c3188aaa35288b7a8), [`ed325d863`](https://github.com/gander-social/atproto/commit/ed325d863ce8ea5986c5a45c3188aaa35288b7a8), [`ed325d863`](https://github.com/gander-social/atproto/commit/ed325d863ce8ea5986c5a45c3188aaa35288b7a8), [`ed325d863`](https://github.com/gander-social/atproto/commit/ed325d863ce8ea5986c5a45c3188aaa35288b7a8), [`ed325d863`](https://github.com/gander-social/atproto/commit/ed325d863ce8ea5986c5a45c3188aaa35288b7a8), [`ed325d863`](https://github.com/gander-social/atproto/commit/ed325d863ce8ea5986c5a45c3188aaa35288b7a8), [`ed325d863`](https://github.com/gander-social/atproto/commit/ed325d863ce8ea5986c5a45c3188aaa35288b7a8), [`ed325d863`](https://github.com/gander-social/atproto/commit/ed325d863ce8ea5986c5a45c3188aaa35288b7a8), [`ed325d863`](https://github.com/gander-social/atproto/commit/ed325d863ce8ea5986c5a45c3188aaa35288b7a8), [`ed325d863`](https://github.com/gander-social/atproto/commit/ed325d863ce8ea5986c5a45c3188aaa35288b7a8), [`ed325d863`](https://github.com/gander-social/atproto/commit/ed325d863ce8ea5986c5a45c3188aaa35288b7a8), [`ed325d863`](https://github.com/gander-social/atproto/commit/ed325d863ce8ea5986c5a45c3188aaa35288b7a8), [`ed325d863`](https://github.com/gander-social/atproto/commit/ed325d863ce8ea5986c5a45c3188aaa35288b7a8)]:
   - @atproto/oauth-types@0.1.5
   - @atproto/oauth-client@0.2.2
-  - @atproto-labs/handle-resolver-node@0.1.4
-  - @atproto-labs/did-resolver@0.1.4
+  - @gander-atproto-nest/handle-resolver-node@0.1.4
+  - @gander-atproto-nest/did-resolver@0.1.4
 
 ## 0.1.1
 
@@ -326,8 +326,8 @@
 
 - Updated dependencies [[`cb4abbb67`](https://github.com/gander-social/atproto/commit/cb4abbb673c69a8a89b49dca5c038f3da2153c6c), [`cb4abbb67`](https://github.com/gander-social/atproto/commit/cb4abbb673c69a8a89b49dca5c038f3da2153c6c), [`cb4abbb67`](https://github.com/gander-social/atproto/commit/cb4abbb673c69a8a89b49dca5c038f3da2153c6c)]:
   - @atproto/did@0.1.2
-  - @atproto-labs/did-resolver@0.1.3
-  - @atproto-labs/handle-resolver-node@0.1.3
+  - @gander-atproto-nest/did-resolver@0.1.3
+  - @gander-atproto-nest/handle-resolver-node@0.1.3
   - @atproto/oauth-client@0.2.1
 
 ## 0.1.0
@@ -398,8 +398,8 @@
   - @atproto/oauth-types@0.1.2
   - @atproto/did@0.1.1
   - @atproto/jwk-webcrypto@0.1.2
-  - @atproto-labs/handle-resolver-node@0.1.2
-  - @atproto-labs/did-resolver@0.1.2
+  - @gander-atproto-nest/handle-resolver-node@0.1.2
+  - @gander-atproto-nest/did-resolver@0.1.2
 
 ## 0.0.1
 
@@ -413,8 +413,8 @@
   - @atproto/oauth-types@0.1.1
   - @atproto/jwk-jose@0.1.1
   - @atproto/jwk@0.1.1
-  - @atproto-labs/handle-resolver-node@0.1.1
-  - @atproto-labs/did-resolver@0.1.1
-  - @atproto-labs/simple-store@0.1.1
+  - @gander-atproto-nest/handle-resolver-node@0.1.1
+  - @gander-atproto-nest/did-resolver@0.1.1
+  - @gander-atproto-nest/simple-store@0.1.1
   - @atproto/oauth-client@0.1.1
   - @atproto/jwk-webcrypto@0.1.1

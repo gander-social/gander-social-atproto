@@ -9,8 +9,8 @@ import {
   fetchJsonProcessor,
   fetchJsonZodProcessor,
   fetchOkProcessor,
-} from '@atproto-labs/fetch'
-import { pipe } from '@atproto-labs/pipe'
+} from '@gander-atproto-nest/fetch'
+import { pipe } from '@gander-atproto-nest/pipe'
 import { DidMethod, ResolveDidOptions } from '../did-method.js'
 
 const fetchSuccessHandler = pipe(

@@ -5,18 +5,18 @@ import {
   DidResolverCommon,
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   type DidResolverCommonOptions,
-} from '@atproto-labs/did-resolver'
+} from '@gander-atproto-nest/did-resolver'
 import {
   CachedHandleResolver,
   HandleCache,
   HandleResolver,
   XrpcHandleResolver,
   XrpcHandleResolverOptions,
-} from '@atproto-labs/handle-resolver'
+} from '@gander-atproto-nest/handle-resolver'
 import {
   AtprotoIdentityResolver,
   IdentityResolver,
-} from '@atproto-labs/identity-resolver'
+} from '@gander-atproto-nest/identity-resolver'
 
 // @TODO Currently, the `OAuthClient`'s `IdentityResolver` is an instance of
 // `AtprotoIdentityResolver`, which implements the ATProto Identity resolution

@@ -23,9 +23,9 @@ import {
   oauthAuthorizationRequestParametersSchema,
 } from '@gander-social-atproto/oauth-types'
 import type { Redis, RedisOptions } from 'ioredis'
-import { safeFetchWrap } from '@atproto-labs/fetch-node'
-import { SimpleStore } from '@atproto-labs/simple-store'
-import { SimpleStoreMemory } from '@atproto-labs/simple-store-memory'
+import { safeFetchWrap } from '@gander-atproto-nest/fetch-node'
+import { SimpleStore } from '@gander-atproto-nest/simple-store'
+import { SimpleStoreMemory } from '@gander-atproto-nest/simple-store-memory'
 import { AccessTokenMode } from './access-token/access-token-mode.js'
 import { AccountManager } from './account/account-manager.js'
 import {

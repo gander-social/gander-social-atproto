@@ -5,11 +5,11 @@ import {
   DidResolver,
   ResolveDidOptions,
   isAtprotoDid,
-} from '@atproto-labs/did-resolver'
+} from '@gander-atproto-nest/did-resolver'
 import {
   HandleResolver,
   ResolveHandleOptions,
-} from '@atproto-labs/handle-resolver'
+} from '@gander-atproto-nest/handle-resolver'
 import { HANDLE_INVALID } from './constants.js'
 import { IdentityResolverError } from './identity-resolver-error.js'
 import {

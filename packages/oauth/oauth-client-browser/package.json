@@ -31,9 +31,9 @@
     "dist"
   ],
   "dependencies": {
-    "@atproto-labs/did-resolver": "workspace:*",
-    "@atproto-labs/handle-resolver": "workspace:*",
-    "@atproto-labs/simple-store": "workspace:*",
+    "@gander-atproto-nest/did-resolver": "workspace:*",
+    "@gander-atproto-nest/handle-resolver": "workspace:*",
+    "@gander-atproto-nest/simple-store": "workspace:*",
     "@gander-social-atproto/did": "workspace:*",
     "@gander-social-atproto/jwk": "workspace:*",
     "@gander-social-atproto/jwk-webcrypto": "workspace:*",

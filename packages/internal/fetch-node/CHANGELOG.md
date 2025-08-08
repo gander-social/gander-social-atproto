@@ -1,4 +1,4 @@
-# @atproto-labs/fetch-node
+# @gander-atproto-nest/fetch-node
 
 ## 0.1.10
 
@@ -23,15 +23,15 @@
 - [#3818](https://github.com/gander-social/atproto/pull/3818) [`43861a452`](https://github.com/gander-social/atproto/commit/43861a452b70268e738ef12033297cddacbe25d4) Thanks [@matthieusieben](https://github.com/matthieusieben)! - Remove dependency on the Public Suffix List
 
 - Updated dependencies [[`5050b6550`](https://github.com/gander-social/atproto/commit/5050b6550e07e71b0a524eda0b71b837583294d4), [`5050b6550`](https://github.com/gander-social/atproto/commit/5050b6550e07e71b0a524eda0b71b837583294d4)]:
-  - @atproto-labs/pipe@0.1.1
-  - @atproto-labs/fetch@0.2.3
+    - @gander-atproto-nest/pipe@0.1.1
+    - @gander-atproto-nest/fetch@0.2.3
 
 ## 0.1.8
 
 ### Patch Changes
 
 - Updated dependencies [[`850e39843`](https://github.com/gander-social/atproto/commit/850e39843cb0ec9ea716675f7568c0c601f45e29), [`850e39843`](https://github.com/gander-social/atproto/commit/850e39843cb0ec9ea716675f7568c0c601f45e29)]:
-  - @atproto-labs/fetch@0.2.2
+    - @gander-atproto-nest/fetch@0.2.2
 
 ## 0.1.7
 
@@ -42,7 +42,7 @@
 - [#3220](https://github.com/gander-social/atproto/pull/3220) [`61dc0d60e`](https://github.com/gander-social/atproto/commit/61dc0d60e19b88c6427a54c6d95a391b5f4da7bd) Thanks [@matthieusieben](https://github.com/matthieusieben)! - Update NodeJS engine requirement to >=18.7.0
 
 - Updated dependencies [[`61dc0d60e`](https://github.com/gander-social/atproto/commit/61dc0d60e19b88c6427a54c6d95a391b5f4da7bd)]:
-  - @atproto-labs/fetch@0.2.1
+    - @gander-atproto-nest/fetch@0.2.1
 
 ## 0.1.6
 
@@ -55,14 +55,14 @@
 ### Patch Changes
 
 - Updated dependencies [[`5ece8c6ae`](https://github.com/gander-social/atproto/commit/5ece8c6aeab9c5c3f51295d93ed6e27c3c6095c2), [`5ece8c6ae`](https://github.com/gander-social/atproto/commit/5ece8c6aeab9c5c3f51295d93ed6e27c3c6095c2)]:
-  - @atproto-labs/fetch@0.2.0
+    - @gander-atproto-nest/fetch@0.2.0
 
 ## 0.1.4
 
 ### Patch Changes
 
 - Updated dependencies [[`622654672`](https://github.com/gander-social/atproto/commit/6226546725d1bb0375e3c9e0d71af173e8253c4f)]:
-  - @atproto-labs/fetch@0.1.2
+    - @gander-atproto-nest/fetch@0.1.2
 
 ## 0.1.3
 
@@ -85,7 +85,7 @@
 - [#2770](https://github.com/gander-social/atproto/pull/2770) [`a07b21151`](https://github.com/gander-social/atproto/commit/a07b21151f1850340c4b7797ebb11521b1a6cdf3) Thanks [@matthieusieben](https://github.com/matthieusieben)! - Expose IP filtering utilities
 
 - Updated dependencies [[`a07b21151`](https://github.com/gander-social/atproto/commit/a07b21151f1850340c4b7797ebb11521b1a6cdf3), [`a07b21151`](https://github.com/gander-social/atproto/commit/a07b21151f1850340c4b7797ebb11521b1a6cdf3), [`a07b21151`](https://github.com/gander-social/atproto/commit/a07b21151f1850340c4b7797ebb11521b1a6cdf3)]:
-  - @atproto-labs/fetch@0.1.1
+    - @gander-atproto-nest/fetch@0.1.1
 
 ## 0.1.0
 
@@ -96,5 +96,5 @@
 ### Patch Changes
 
 - Updated dependencies [[`a8d6c1123`](https://github.com/gander-social/atproto/commit/a8d6c112359f5c4c0cfbe2df63443ed275f2a646)]:
-  - @atproto-labs/fetch@0.1.0
-  - @atproto-labs/pipe@0.1.0
+    - @gander-atproto-nest/fetch@0.1.0
+    - @gander-atproto-nest/pipe@0.1.0

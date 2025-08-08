@@ -16,14 +16,14 @@ import {
   fetchJsonProcessor,
   fetchJsonZodProcessor,
   fetchOkProcessor,
-} from '@atproto-labs/fetch'
-import { isLocalHostname } from '@atproto-labs/fetch-node'
-import { pipe } from '@atproto-labs/pipe'
+} from '@gander-atproto-nest/fetch'
+import { isLocalHostname } from '@gander-atproto-nest/fetch-node'
+import { pipe } from '@gander-atproto-nest/pipe'
 import {
   CachedGetter,
   GetCachedOptions,
   SimpleStore,
-} from '@atproto-labs/simple-store'
+} from '@gander-atproto-nest/simple-store'
 import { InvalidClientMetadataError } from '../errors/invalid-client-metadata-error.js'
 import { InvalidRedirectUriError } from '../errors/invalid-redirect-uri-error.js'
 import { callAsync } from '../lib/util/function.js'

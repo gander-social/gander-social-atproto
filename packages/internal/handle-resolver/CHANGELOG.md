@@ -1,4 +1,4 @@
-# @atproto-labs/handle-resolver
+# @gander-atproto-nest/handle-resolver
 
 ## 0.3.1
 
@@ -34,8 +34,8 @@
 ### Patch Changes
 
 - Updated dependencies [[`0d77d1b55`](https://github.com/gander-social/atproto/commit/0d77d1b550a58117aee8f7f1e2be24d255ade9e4), [`0d77d1b55`](https://github.com/gander-social/atproto/commit/0d77d1b550a58117aee8f7f1e2be24d255ade9e4)]:
-  - @atproto-labs/simple-store@0.2.0
-  - @atproto-labs/simple-store-memory@0.1.3
+    - @gander-atproto-nest/simple-store@0.2.0
+    - @gander-atproto-nest/simple-store-memory@0.1.3
 
 ## 0.1.7
 
@@ -44,8 +44,8 @@
 - [#3220](https://github.com/gander-social/atproto/pull/3220) [`61dc0d60e`](https://github.com/gander-social/atproto/commit/61dc0d60e19b88c6427a54c6d95a391b5f4da7bd) Thanks [@matthieusieben](https://github.com/matthieusieben)! - Apply new linting rules regarding import order
 
 - Updated dependencies [[`61dc0d60e`](https://github.com/gander-social/atproto/commit/61dc0d60e19b88c6427a54c6d95a391b5f4da7bd)]:
-  - @atproto-labs/simple-store-memory@0.1.2
-  - @atproto-labs/simple-store@0.1.2
+    - @gander-atproto-nest/simple-store-memory@0.1.2
+    - @gander-atproto-nest/simple-store@0.1.2
   - @atproto/did@0.1.5
 
 ## 0.1.6
@@ -96,8 +96,8 @@
 - [#2633](https://github.com/gander-social/atproto/pull/2633) [`acc9093d2`](https://github.com/gander-social/atproto/commit/acc9093d2845eba02b68fb2f9db33e4f1b59bb10) Thanks [@matthieusieben](https://github.com/matthieusieben)! - Use distinct type names to prevent conflicts
 
 - Updated dependencies [[`acc9093d2`](https://github.com/gander-social/atproto/commit/acc9093d2845eba02b68fb2f9db33e4f1b59bb10), [`acc9093d2`](https://github.com/gander-social/atproto/commit/acc9093d2845eba02b68fb2f9db33e4f1b59bb10)]:
-  - @atproto-labs/simple-store@0.1.1
-  - @atproto-labs/simple-store-memory@0.1.1
+    - @gander-atproto-nest/simple-store@0.1.1
+    - @gander-atproto-nest/simple-store-memory@0.1.1
 
 ## 0.1.0
 
@@ -108,6 +108,6 @@
 ### Patch Changes
 
 - Updated dependencies [[`a8d6c1123`](https://github.com/gander-social/atproto/commit/a8d6c112359f5c4c0cfbe2df63443ed275f2a646)]:
-  - @atproto-labs/simple-store-memory@0.1.0
-  - @atproto-labs/simple-store@0.1.0
+    - @gander-atproto-nest/simple-store-memory@0.1.0
+    - @gander-atproto-nest/simple-store@0.1.0
   - @atproto/did@0.1.0

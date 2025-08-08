@@ -1,4 +1,4 @@
-# @atproto-labs/pipe
+# @gander-atproto-nest/pipe
 
 ## 0.1.2
 

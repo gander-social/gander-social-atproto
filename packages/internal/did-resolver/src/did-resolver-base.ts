@@ -1,6 +1,6 @@
 import { Did, DidError, extractDidMethod } from '@gander-social-atproto/did'
 import { ZodError } from 'zod'
-import { FetchError, FetchResponseError } from '@atproto-labs/fetch'
+import { FetchError, FetchResponseError } from '@gander-atproto-nest/fetch'
 import { DidMethod, DidMethods, ResolveDidOptions } from './did-method.js'
 import { DidResolver, ResolvedDocument } from './did-resolver.js'
 

@@ -27,7 +27,7 @@
     "dist"
   ],
   "devDependencies": {
-    "@atproto-labs/rollup-plugin-bundle-manifest": "workspace:*",
+    "@gander-atproto-nest/rollup-plugin-bundle-manifest": "workspace:*",
     "@gander-social-atproto/api": "workspace:*",
     "@gander-social-atproto/oauth-client": "workspace:*",
     "@gander-social-atproto/oauth-client-browser": "workspace:*",

@@ -1,5 +1,5 @@
 {
-  "name": "@atproto-labs/simple-store",
+  "name": "@gander-atproto-nest/simple-store",
   "version": "0.2.1",
   "license": "MIT",
   "description": "Simple store interfaces & utilities",
@@ -7,7 +7,8 @@
     "cache",
     "isomorphic"
   ],
-  "homepage": "https://atproto.com",
+  "homepage": "https://github.com/gander-social/gander-social-atproto",
+
   "repository": {
     "type": "git",
     "url": "https://github.com/gander-social/atproto",

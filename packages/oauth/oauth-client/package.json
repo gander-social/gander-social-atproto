@@ -25,12 +25,12 @@
     }
   },
   "dependencies": {
-    "@atproto-labs/did-resolver": "workspace:*",
-    "@atproto-labs/fetch": "workspace:*",
-    "@atproto-labs/handle-resolver": "workspace:*",
-    "@atproto-labs/identity-resolver": "workspace:*",
-    "@atproto-labs/simple-store": "workspace:*",
-    "@atproto-labs/simple-store-memory": "workspace:*",
+    "@gander-atproto-nest/did-resolver": "workspace:*",
+    "@gander-atproto-nest/fetch": "workspace:*",
+    "@gander-atproto-nest/handle-resolver": "workspace:*",
+    "@gander-atproto-nest/identity-resolver": "workspace:*",
+    "@gander-atproto-nest/simple-store": "workspace:*",
+    "@gander-atproto-nest/simple-store-memory": "workspace:*",
     "@gander-social-atproto/did": "workspace:*",
     "@gander-social-atproto/jwk": "workspace:*",
     "@gander-social-atproto/oauth-types": "workspace:*",

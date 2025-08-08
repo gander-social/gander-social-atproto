@@ -26,7 +26,7 @@ import {
   loggedFetch,
   safeFetchWrap,
   unicastLookup,
-} from '@atproto-labs/fetch-node'
+} from '@gander-atproto-nest/fetch-node'
 import { AccountManager } from './account-manager/account-manager'
 import { OAuthStore } from './account-manager/oauth-store'
 import { ActorStore } from './actor-store/actor-store'

@@ -1,4 +1,4 @@
-export * from '@atproto-labs/fetch'
+export * from '@gander-atproto-nest/fetch'
 
 export * from './safe.js'
 export * from './unicast.js'

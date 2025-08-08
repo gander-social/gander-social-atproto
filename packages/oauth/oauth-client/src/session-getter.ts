@@ -4,7 +4,7 @@ import {
   CachedGetter,
   GetCachedOptions,
   SimpleStore,
-} from '@atproto-labs/simple-store'
+} from '@gander-atproto-nest/simple-store'
 import { AuthMethodUnsatisfiableError } from './errors/auth-method-unsatisfiable-error.js'
 import { TokenInvalidError } from './errors/token-invalid-error.js'
 import { TokenRefreshError } from './errors/token-refresh-error.js'

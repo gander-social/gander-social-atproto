@@ -1,5 +1,5 @@
 {
-  "name": "@atproto-labs/fetch",
+  "name": "@gander-atproto-nest/fetch",
   "version": "0.2.4",
   "license": "MIT",
   "description": "Isomorphic wrapper utilities for fetch API",
@@ -7,10 +7,10 @@
     "atproto",
     "fetch"
   ],
-  "homepage": "https://atproto.com",
+  "homepage": "https://github.com/gander-social/gander-social-atproto",
   "repository": {
     "type": "git",
-    "url": "https://github.com/gander-social/atproto",
+    "url": "https://github.com/gander-social/gander-social-atproto",
     "directory": "packages/internal/fetch"
   },
   "type": "commonjs",
@@ -23,7 +23,7 @@
     }
   },
   "dependencies": {
-    "@atproto-labs/pipe": "workspace:*"
+    "@gander-atproto-nest/pipe": "workspace:*"
   },
   "devDependencies": {
     "typescript": "^5.6.3"

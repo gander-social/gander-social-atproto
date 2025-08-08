@@ -1,6 +1,6 @@
 // Avoid having to explicitly depend sub dependencies
-export * from '@atproto-labs/fetch'
-export * from '@atproto-labs/fetch-node'
+export * from '@gander-atproto-nest/fetch'
+export * from '@gander-atproto-nest/fetch-node'
 export * from '@gander-social-atproto/jwk'
 export * from '@gander-social-atproto/jwk-jose'
 export * from '@gander-social-atproto/oauth-types'

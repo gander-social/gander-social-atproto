@@ -14,7 +14,7 @@ import {
   ACCEPT_ENCODING_UNCOMPRESSED,
   buildProxiedContentEncoding,
   formatAcceptHeader,
-} from '@atproto-labs/xrpc-utils'
+} from '@gander-atproto-nest/xrpc-utils'
 import { ServerConfig } from '../config'
 import { AppContext } from '../context'
 import {

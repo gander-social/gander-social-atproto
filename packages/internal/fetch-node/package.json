@@ -1,5 +1,5 @@
 {
-  "name": "@atproto-labs/fetch-node",
+  "name": "@gander-atproto-nest/fetch-node",
   "version": "0.1.10",
   "license": "MIT",
   "description": "SSRF protection for fetch() in Node.js",
@@ -8,10 +8,10 @@
     "fetch",
     "node"
   ],
-  "homepage": "https://atproto.com",
+  "homepage": "https://github.com/gander-social/gander-social-atproto",
   "repository": {
     "type": "git",
-    "url": "https://github.com/gander-social/atproto",
+    "url": "https://github.com/gander-social/gander-social-atproto",
     "directory": "packages/internal/fetch-node"
   },
   "type": "commonjs",
@@ -27,8 +27,8 @@
     "node": ">=18.7.0"
   },
   "dependencies": {
-    "@atproto-labs/fetch": "workspace:*",
-    "@atproto-labs/pipe": "workspace:*",
+    "@gander-atproto-nest/fetch": "workspace:*",
+    "@gander-atproto-nest/pipe": "workspace:*",
     "ipaddr.js": "^2.1.0",
     "undici": "^6.14.1"
   },

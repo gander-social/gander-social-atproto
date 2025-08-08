@@ -40,7 +40,7 @@ Using an AppView:
 > any laws and regulations that apply to your use case.
 
 ```ts
-import { AppViewHandleResolver } from '@atproto-labs/handle-resolver'
+import { AppViewHandleResolver } from '@gander-atproto-nest/handle-resolver'
 
 const resolver = new AppViewHandleResolver({
   service: 'https://my-app-view.com/',
@@ -63,7 +63,7 @@ Using DNS-over-HTTPS (DoH) for DNS resolution:
 > supports the DNS-over-HTTPS protocol with "application/dns-json" responses.
 
 ```ts
-import { DohHandleResolver } from '@atproto-labs/handle-resolver'
+import { DohHandleResolver } from '@gander-atproto-nest/handle-resolver'
 
 // Also works with 'https://cloudflare-dns.com/dns-query'
 const resolver = new DohHandleResolver('https://dns.google/resolve', {
@@ -79,11 +79,11 @@ const did = await resolver.resolve('my-handle.bsky.social')
 
 > [!NOTE]
 > On a Node.js backend, you will probably want to use the
-> "@atproto-labs/handle-resolver-node" package. The example below applies to
+> "@gander-atproto-nest/handle-resolver-node" package. The example below applies to
 > Node.js code running on a user's machine (e.g. through Electron).
 
 ```ts
-import { AtprotoHandleResolver } from '@atproto-labs/handle-resolver'
+import { AtprotoHandleResolver } from '@gander-atproto-nest/handle-resolver'
 import { resolveTxt } from 'node:dns/promises'
 
 const resolver = new AtprotoHandleResolver({
@@ -105,7 +105,7 @@ import {
   CachedHandleResolver,
   HandleResolver,
   HandleCache,
-} from '@atproto-labs/handle-resolver'
+} from '@gander-atproto-nest/handle-resolver'
 
 // See previous examples for creating a resolver
 declare const sourceResolver: HandleResolver
@@ -124,7 +124,7 @@ import {
   CachedHandleResolver,
   HandleResolver,
   HandleCache,
-} from '@atproto-labs/handle-resolver'
+} from '@gander-atproto-nest/handle-resolver'
 
 // See previous examples for creating a resolver
 declare const sourceResolver: HandleResolver
