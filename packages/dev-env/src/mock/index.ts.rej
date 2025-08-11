@@ -1,0 +1,13 @@
+@@ -514,7 +514,11 @@
+   await thread.aliceAndBob(sc, sc.posts[alice][0].ref)
+   await thread.bobAndCarol(sc, sc.posts[bob][0].ref)
+ 
+-  await thread.mutes(sc)
++  // Skip mutes for Gander Social
++  if (process.env.SKIP_MUTE_OPERATIONS !== 'true') {
++    await thread.mutes(sc)
++  }
++
+   await thread.blocks(sc)
+ 
+ 

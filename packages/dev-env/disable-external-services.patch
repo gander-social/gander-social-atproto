@@ -1,0 +1,14 @@
+--- a/packages/dev-env/src/seed/thread-v2.ts
++++ b/packages/dev-env/src/seed/thread-v2.ts
+@@ -750,6 +750,11 @@
+
+ export async function mutes(sc: SeedClient) {
++  // Skip mutes for Gander Social dev environment
++  if (process.env.SKIP_MUTE_OPERATIONS === 'true') {
++    console.log('Skipping mute operations (SKIP_MUTE_OPERATIONS=true)');
++    return;
++  }
++
+   await sc.mute(sc.dids.eve, sc.dids.alice)
+   await sc.mute(sc.dids.carol, sc.dids.eve)
+ }

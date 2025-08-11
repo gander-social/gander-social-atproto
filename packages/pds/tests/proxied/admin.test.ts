@@ -1,7 +1,13 @@
 import { AtpAgent } from '@gander-social-atproto/api'
 import { SeedClient, TestNetwork } from '@gander-social-atproto/dev-env'
+import {
+  ensureTestSuiteHasTest,
+  runUpstreamTests,
+} from '@gander-social-atproto/test-config'
 import { forSnapshot } from '../_util'
 import basicSeed from '../seeds/basic'
+
+ensureTestSuiteHasTest()
 
 describe('proxies admin requests', () => {
   let network: TestNetwork
@@ -10,67 +16,72 @@ describe('proxies admin requests', () => {
 
   let moderator: string
 
-  beforeAll(async () => {
-    network = await TestNetwork.create({
-      dbPostgresSchema: 'proxy_admin',
-      pds: {
-        inviteRequired: true,
-      },
+  if (runUpstreamTests) {
+    beforeAll(async () => {
+      network = await TestNetwork.create({
+        dbPostgresSchema: 'proxy_admin',
+        pds: {
+          inviteRequired: true,
+        },
+      })
+      agent = network.pds.getClient()
+      sc = network.getSeedClient()
+      const { data: invite } =
+        await agent.api.com.atproto.server.createInviteCode(
+          { useCount: 10 },
+          {
+            encoding: 'application/json',
+            headers: network.pds.adminAuthHeaders(),
+          },
+        )
+      await basicSeed(sc, {
+        inviteCode: invite.code,
+        addModLabels: network.gndr,
+      })
+      const modAccount = await sc.createAccount('moderator', {
+        handle: 'testmod.test',
+        email: 'testmod@test.com',
+        password: 'testmod-pass',
+        inviteCode: invite.code,
+      })
+      moderator = modAccount.did
+      await network.ozone.addModeratorDid(moderator)
+
+      await network.processAll()
     })
-    agent = network.pds.getClient()
-    sc = network.getSeedClient()
-    const { data: invite } =
-      await agent.api.com.atproto.server.createInviteCode(
-        { useCount: 10 },
+
+    beforeAll(async () => {
+      const { data: invite } =
+        await agent.api.com.atproto.server.createInviteCode(
+          { useCount: 1, forAccount: sc.dids.alice },
+          {
+            headers: network.pds.adminAuthHeaders(),
+            encoding: 'application/json',
+          },
+        )
+      await agent.api.com.atproto.admin.disableAccountInvites(
+        { account: sc.dids.bob },
         {
-          encoding: 'application/json',
           headers: network.pds.adminAuthHeaders(),
+          encoding: 'application/json',
         },
       )
-    await basicSeed(sc, {
-      inviteCode: invite.code,
-      addModLabels: network.gndr,
+      await sc.createAccount('eve', {
+        handle: 'eve.test',
+        email: 'eve@test.com',
+        password: 'password',
+        inviteCode: invite.code,
+      })
     })
-    const modAccount = await sc.createAccount('moderator', {
-      handle: 'testmod.test',
-      email: 'testmod@test.com',
-      password: 'testmod-pass',
-      inviteCode: invite.code,
+
+    beforeEach(async () => {
+      await network.processAll()
     })
-    moderator = modAccount.did
-    await network.ozone.addModeratorDid(moderator)
 
-    await network.processAll()
-  })
-
-  beforeAll(async () => {
-    const { data: invite } =
-      await agent.api.com.atproto.server.createInviteCode(
-        { useCount: 1, forAccount: sc.dids.alice },
-        {
-          headers: network.pds.adminAuthHeaders(),
-          encoding: 'application/json',
-        },
-      )
-    await agent.api.com.atproto.admin.disableAccountInvites(
-      { account: sc.dids.bob },
-      { headers: network.pds.adminAuthHeaders(), encoding: 'application/json' },
-    )
-    await sc.createAccount('eve', {
-      handle: 'eve.test',
-      email: 'eve@test.com',
-      password: 'password',
-      inviteCode: invite.code,
+    afterAll(async () => {
+      await network.close()
     })
-  })
-
-  beforeEach(async () => {
-    await network.processAll()
-  })
-
-  afterAll(async () => {
-    await network.close()
-  })
+  }
 
   it('creates reports of a repo.', async () => {
     const { data: reportA } =
@@ -208,68 +219,71 @@ describe('proxies admin requests', () => {
     await expect(tryGetRecord).rejects.toThrow('Could not locate record')
   })
 
-  it('takesdown and labels repos, and reverts.', async () => {
-    // takedown repo
-    await agent.api.tools.ozone.moderation.emitEvent(
-      {
-        event: { $type: 'tools.ozone.moderation.defs#modEventTakedown' },
-        subject: {
-          $type: 'com.atproto.admin.defs#repoRef',
-          did: sc.dids.alice,
+  if (runUpstreamTests) {
+    test('takesdown and labels repos, and reverts.', async () => {
+      // takedown repo
+      await agent.api.tools.ozone.moderation.emitEvent(
+        {
+          event: { $type: 'tools.ozone.moderation.defs#modEventTakedown' },
+          subject: {
+            $type: 'com.atproto.admin.defs#repoRef',
+            did: sc.dids.alice,
+          },
+          createdBy: 'did:example:admin',
+          // @ts-expect-error
+          reason: 'Y',
+          createLabelVals: ['dogs'],
+          negateLabelVals: ['cats'],
         },
-        createdBy: 'did:example:admin',
-        // @ts-expect-error
-        reason: 'Y',
-        createLabelVals: ['dogs'],
-        negateLabelVals: ['cats'],
-      },
-      {
-        headers: sc.getHeaders(moderator),
-        encoding: 'application/json',
-      },
-    )
-    await network.processAll()
-    // check profile and labels
-    const tryGetProfileAppview = agent.api.app.gndr.actor.getProfile(
-      { actor: sc.dids.alice },
-      {
-        headers: { ...sc.getHeaders(sc.dids.carol) },
-      },
-    )
-    await expect(tryGetProfileAppview).rejects.toThrow(
-      'Account has been suspended',
-    )
-    // reverse action
-    await agent.api.tools.ozone.moderation.emitEvent(
-      {
-        subject: {
-          $type: 'com.atproto.admin.defs#repoRef',
-          did: sc.dids.alice,
+        {
+          headers: sc.getHeaders(moderator),
+          encoding: 'application/json',
         },
-        event: {
-          $type: 'tools.ozone.moderation.defs#modEventReverseTakedown',
+      )
+      await network.processAll()
+      // check profile and labels
+      const tryGetProfileAppview = agent.api.app.gndr.actor.getProfile(
+        { actor: sc.dids.alice },
+        {
+          headers: { ...sc.getHeaders(sc.dids.carol) },
         },
-        createdBy: 'did:example:admin',
-        // @ts-expect-error
-        reason: 'X',
-      },
-      {
-        headers: sc.getHeaders(moderator),
-        encoding: 'application/json',
-      },
-    )
-    await network.processAll()
-    // check profile and labels
-    const { data: profileAppview } = await agent.api.app.gndr.actor.getProfile(
-      { actor: sc.dids.alice },
-      {
-        headers: { ...sc.getHeaders(sc.dids.carol) },
-      },
-    )
-    expect(profileAppview).toEqual(
-      expect.objectContaining({ did: sc.dids.alice, handle: 'alice.test' }),
-    )
-  })
+      )
+      await expect(tryGetProfileAppview).rejects.toThrow(
+        'Account has been suspended',
+      )
+      // reverse action
+      await agent.api.tools.ozone.moderation.emitEvent(
+        {
+          subject: {
+            $type: 'com.atproto.admin.defs#repoRef',
+            did: sc.dids.alice,
+          },
+          event: {
+            $type: 'tools.ozone.moderation.defs#modEventReverseTakedown',
+          },
+          createdBy: 'did:example:admin',
+          // @ts-expect-error
+          reason: 'X',
+        },
+        {
+          headers: sc.getHeaders(moderator),
+          encoding: 'application/json',
+        },
+      )
+      await network.processAll()
+      // check profile and labels
+      const { data: profileAppview } =
+        await agent.api.app.gndr.actor.getProfile(
+          { actor: sc.dids.alice },
+          {
+            headers: { ...sc.getHeaders(sc.dids.carol) },
+          },
+        )
+      expect(profileAppview).toEqual(
+        expect.objectContaining({ did: sc.dids.alice, handle: 'alice.test' }),
+      )
+    })
+  }
 
   it('takesdown and labels records, and reverts.', async () => {
     const post = sc.posts[sc.dids.alice][0]

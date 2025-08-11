@@ -1,10 +1,10 @@
 {
   "name": "@gander-social-atproto/api",
-  "version": "0.16.0",
+  "version": "0.16.1",
   "license": "MIT",
   "description": "Client library for atproto and Gander",
   "keywords": [
-    "atproto",
+    "gander-social-atproto",
     "gander",
     "api"
   ],
@@ -26,6 +26,7 @@
     "@gander-social-atproto/lexicon": "workspace:^",
     "@gander-social-atproto/syntax": "workspace:^",
     "@gander-social-atproto/xrpc": "workspace:^",
+    "@gander-social-atproto/test-config": "workspace:*",
     "await-lock": "^2.2.2",
     "multiformats": "^9.9.0",
     "tlds": "^1.234.0",
