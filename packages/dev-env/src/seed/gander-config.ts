@@ -9,7 +9,7 @@ export const GANDER_SEED_CONFIG = {
     reports: true,
     takedowns: true,
     appeals: true,
-    moderation: true
+    moderation: true,
   },
 
   // Use local mock services
