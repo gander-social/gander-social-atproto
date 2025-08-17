@@ -1,0 +1,24 @@
+{
+  "name": "@gander-social-atproto/test-config",
+  "version": "0.0.1",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "license": "MIT",
+  "description": "Provides centralized configuration variables for testing",
+  "keywords": [
+    "gander-social-atproto",
+    "test-config"
+  ],
+  "homepage": "https://github.com/gander-social/gander-social-atproto",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gander-social/gander-social-atproto",
+    "directory": "packages/test-config"
+  },
+  "scripts": {
+    "build": "tsc --build tsconfig.build.json"
+  },
+  "dependencies": {
+    "eslint": "^8.57.0"
+  }
+}

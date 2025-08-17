@@ -41,6 +41,9 @@
     { "path": "./packages/repo" },
     { "path": "./packages/sync" },
     { "path": "./packages/syntax" },
+    {
+      "path": "./packages/test-config"
+    },
     { "path": "./packages/xrpc" },
     { "path": "./packages/xrpc-server" }
   ]

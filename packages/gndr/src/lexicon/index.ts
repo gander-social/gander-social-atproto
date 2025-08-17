@@ -109,8 +109,8 @@ import * as AppGndrFeedGetFeedGenerators from './types/app/gndr/feed/getFeedGene
 import * as AppGndrFeedGetFeedSkeleton from './types/app/gndr/feed/getFeedSkeleton.js'
 import * as AppGndrFeedGetLikes from './types/app/gndr/feed/getLikes.js'
 import * as AppGndrFeedGetListFeed from './types/app/gndr/feed/getListFeed.js'
-import * as AppGndrFeedGetPosts from './types/app/gndr/feed/getPosts.js'
 import * as AppGndrFeedGetPostThread from './types/app/gndr/feed/getPostThread.js'
+import * as AppGndrFeedGetPosts from './types/app/gndr/feed/getPosts.js'
 import * as AppGndrFeedGetQuotes from './types/app/gndr/feed/getQuotes.js'
 import * as AppGndrFeedGetRepostedBy from './types/app/gndr/feed/getRepostedBy.js'
 import * as AppGndrFeedGetSuggestedFeeds from './types/app/gndr/feed/getSuggestedFeeds.js'
@@ -148,6 +148,7 @@ import * as AppGndrNotificationPutPreferences from './types/app/gndr/notificatio
 import * as AppGndrNotificationPutPreferencesV2 from './types/app/gndr/notification/putPreferencesV2.js'
 import * as AppGndrNotificationRegisterPush from './types/app/gndr/notification/registerPush.js'
 import * as AppGndrNotificationUpdateSeen from './types/app/gndr/notification/updateSeen.js'
+import * as AppGndrUnspeccedGetAgeAssuranceState from './types/app/gndr/unspecced/getAgeAssuranceState.js'
 import * as AppGndrUnspeccedGetConfig from './types/app/gndr/unspecced/getConfig.js'
 import * as AppGndrUnspeccedGetPopularFeedGenerators from './types/app/gndr/unspecced/getPopularFeedGenerators.js'
 import * as AppGndrUnspeccedGetPostThreadOtherV2 from './types/app/gndr/unspecced/getPostThreadOtherV2.js'
@@ -163,6 +164,7 @@ import * as AppGndrUnspeccedGetTaggedSuggestions from './types/app/gndr/unspecce
 import * as AppGndrUnspeccedGetTrendingTopics from './types/app/gndr/unspecced/getTrendingTopics.js'
 import * as AppGndrUnspeccedGetTrends from './types/app/gndr/unspecced/getTrends.js'
 import * as AppGndrUnspeccedGetTrendsSkeleton from './types/app/gndr/unspecced/getTrendsSkeleton.js'
+import * as AppGndrUnspeccedInitAgeAssurance from './types/app/gndr/unspecced/initAgeAssurance.js'
 import * as AppGndrUnspeccedSearchActorsSkeleton from './types/app/gndr/unspecced/searchActorsSkeleton.js'
 import * as AppGndrUnspeccedSearchPostsSkeleton from './types/app/gndr/unspecced/searchPostsSkeleton.js'
 import * as AppGndrUnspeccedSearchStarterPacksSkeleton from './types/app/gndr/unspecced/searchStarterPacksSkeleton.js'
@@ -1597,18 +1599,6 @@ export class AppGndrFeedNS {
     return this._server.xrpc.method(nsid, cfg)
   }
 
-  getPosts<A extends Auth = void>(
-    cfg: MethodConfigOrHandler<
-      A,
-      AppGndrFeedGetPosts.QueryParams,
-      AppGndrFeedGetPosts.HandlerInput,
-      AppGndrFeedGetPosts.HandlerOutput
-    >,
-  ) {
-    const nsid = 'app.gndr.feed.getPosts' // @ts-ignore
-    return this._server.xrpc.method(nsid, cfg)
-  }
-
   getPostThread<A extends Auth = void>(
     cfg: MethodConfigOrHandler<
       A,
@@ -1618,6 +1608,18 @@ export class AppGndrFeedNS {
     >,
   ) {
     const nsid = 'app.gndr.feed.getPostThread' // @ts-ignore
+    return this._server.xrpc.method(nsid, cfg)
+  }
+
+  getPosts<A extends Auth = void>(
+    cfg: MethodConfigOrHandler<
+      A,
+      AppGndrFeedGetPosts.QueryParams,
+      AppGndrFeedGetPosts.HandlerInput,
+      AppGndrFeedGetPosts.HandlerOutput
+    >,
+  ) {
+    const nsid = 'app.gndr.feed.getPosts' // @ts-ignore
     return this._server.xrpc.method(nsid, cfg)
   }
 
@@ -2105,6 +2107,18 @@ export class AppGndrUnspeccedNS {
     this._server = server
   }
 
+  getAgeAssuranceState<A extends Auth = void>(
+    cfg: MethodConfigOrHandler<
+      A,
+      AppGndrUnspeccedGetAgeAssuranceState.QueryParams,
+      AppGndrUnspeccedGetAgeAssuranceState.HandlerInput,
+      AppGndrUnspeccedGetAgeAssuranceState.HandlerOutput
+    >,
+  ) {
+    const nsid = 'app.gndr.unspecced.getAgeAssuranceState' // @ts-ignore
+    return this._server.xrpc.method(nsid, cfg)
+  }
+
   getConfig<A extends Auth = void>(
     cfg: MethodConfigOrHandler<
       A,
@@ -2282,6 +2296,18 @@ export class AppGndrUnspeccedNS {
     >,
   ) {
     const nsid = 'app.gndr.unspecced.getTrendsSkeleton' // @ts-ignore
+    return this._server.xrpc.method(nsid, cfg)
+  }
+
+  initAgeAssurance<A extends Auth = void>(
+    cfg: MethodConfigOrHandler<
+      A,
+      AppGndrUnspeccedInitAgeAssurance.QueryParams,
+      AppGndrUnspeccedInitAgeAssurance.HandlerInput,
+      AppGndrUnspeccedInitAgeAssurance.HandlerOutput
+    >,
+  ) {
+    const nsid = 'app.gndr.unspecced.initAgeAssurance' // @ts-ignore
     return this._server.xrpc.method(nsid, cfg)
   }
 
