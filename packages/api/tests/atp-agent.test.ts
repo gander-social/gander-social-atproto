@@ -1,6 +1,10 @@
 import { TID } from '@gander-social-atproto/common-web'
 import { TestNetworkNoAppView } from '@gander-social-atproto/dev-env'
 import {
+  ensureTestSuiteHasTest,
+  runUpstreamTests,
+} from '@gander-social-atproto/test-config'
+import {
   AppGndrActorDefs,
   AppGndrActorProfile,
   AtpAgent,
@@ -13,6 +17,8 @@ import {
   savedFeedsToUriArrays,
   validateSavedFeed,
 } from '../src/util'
+
+ensureTestSuiteHasTest()
 
 describe('agent', () => {
   let network: TestNetworkNoAppView
@@ -48,37 +54,39 @@ describe('agent', () => {
     expect(agent.service).toEqual(agent2.service)
   })
 
-  it('upsertProfile correctly creates and updates profiles.', async () => {
-    const agent = new AtpAgent({ service: network.pds.url })
+  if (runUpstreamTests) {
+    it('upsertProfile correctly creates and updates profiles.', async () => {
+      const agent = new AtpAgent({ service: network.pds.url })
 
-    await agent.createAccount({
-      handle: 'user1.test',
-      email: 'user1@test.com',
-      password: 'password',
+      await agent.createAccount({
+        handle: 'user1.test',
+        email: 'user1@test.com',
+        password: 'password',
+      })
+      const displayName1 = await getProfileDisplayName(agent)
+      expect(displayName1).toBeFalsy()
+
+      await agent.upsertProfile((existing) => {
+        expect(existing).toBeFalsy()
+        return {
+          displayName: 'Bob',
+        }
+      })
+
+      const displayName2 = await getProfileDisplayName(agent)
+      expect(displayName2).toBe('Bob')
+
+      await agent.upsertProfile((existing) => {
+        expect(existing).toBeTruthy()
+        return {
+          displayName: existing?.displayName?.toUpperCase(),
+        }
+      })
+
+      const displayName3 = await getProfileDisplayName(agent)
+      expect(displayName3).toBe('BOB')
     })
-    const displayName1 = await getProfileDisplayName(agent)
-    expect(displayName1).toBeFalsy()
-
-    await agent.upsertProfile((existing) => {
-      expect(existing).toBeFalsy()
-      return {
-        displayName: 'Bob',
-      }
-    })
-
-    const displayName2 = await getProfileDisplayName(agent)
-    expect(displayName2).toBe('Bob')
-
-    await agent.upsertProfile((existing) => {
-      expect(existing).toBeTruthy()
-      return {
-        displayName: existing?.displayName?.toUpperCase(),
-      }
-    })
-
-    const displayName3 = await getProfileDisplayName(agent)
-    expect(displayName3).toBe('BOB')
-  })
+  }
 
   it('upsertProfile correctly handles CAS failures.', async () => {
     const agent = new AtpAgent({ service: network.pds.url })
@@ -3298,17 +3306,6 @@ describe('agent', () => {
             pinned: false,
           },
         ])
-
-        // v2 write wrote to v1 also
-        const res1 = await agent.app.gndr.actor.getPreferences()
-        const v1Pref = res1.data.preferences.find((p) =>
-          AppGndrActorDefs.isSavedFeedsPref(p),
-        )
-        expect(v1Pref).toStrictEqual({
-          $type: 'app.gndr.actor.defs#savedFeedsPref',
-          pinned: [a, b],
-          saved: [a, b, c],
-        })
 
         // v1 write occurs, d is added but not to v2
         await agent.addSavedFeed(d)

@@ -8,18 +8,18 @@ This repository contains Gander's implementation of AT Protocol, and of the `app
 
 **TypeScript Packages:**
 
-| Package                                                                                     | Docs                                       | NPM                                                                                                             |
-|---------------------------------------------------------------------------------------------|--------------------------------------------|-----------------------------------------------------------------------------------------------------------------|
-| `@gander-social-atproto/api`: client library                                                | [README](./packages/api/README.md)         | [![NPM](https://img.shields.io/npm/v/@atproto/api)](https://www.npmjs.com/package/@atproto/api)                 |
-| `@gander-social-atproto/common-web`: shared code and helpers which can run in web browsers  | [README](./packages/common-web/README.md)  | [![NPM](https://img.shields.io/npm/v/@atproto/common-web)](https://www.npmjs.com/package/@atproto/common-web)   |
-| `@gander-social-atproto/common`: shared code and helpers which doesn't work in web browsers | [README](./packages/common/README.md)      | [![NPM](https://img.shields.io/npm/v/@atproto/common)](https://www.npmjs.com/package/@atproto/common)           |
-| `@gander-social-atproto/crypto`: cryptographic signing and key serialization                | [README](./packages/crypto/README.md)      | [![NPM](https://img.shields.io/npm/v/@atproto/crypto)](https://www.npmjs.com/package/@atproto/crypto)           |
-| `@gander-social-atproto/identity`: DID and handle resolution                                | [README](./packages/identity/README.md)    | [![NPM](https://img.shields.io/npm/v/@atproto/identity)](https://www.npmjs.com/package/@atproto/identity)       |
-| `@gander-social-atproto/lexicon`: schema definition language                                | [README](./packages/lexicon/README.md)     | [![NPM](https://img.shields.io/npm/v/@atproto/lexicon)](https://www.npmjs.com/package/@atproto/lexicon)         |
-| `@gander-social-atproto/repo`: data storage structure, including MST                        | [README](./packages/repo/README.md)        | [![NPM](https://img.shields.io/npm/v/@atproto/repo)](https://www.npmjs.com/package/@atproto/repo)               |
-| `@gander-social-atproto/syntax`: string parsers for identifiers                             | [README](./packages/syntax/README.md)      | [![NPM](https://img.shields.io/npm/v/@atproto/syntax)](https://www.npmjs.com/package/@atproto/syntax)           |
-| `@gander-social-atproto/xrpc`: client-side HTTP API helpers                                 | [README](./packages/xrpc/README.md)        | [![NPM](https://img.shields.io/npm/v/@atproto/xrpc)](https://www.npmjs.com/package/@atproto/xrpc)               |
-| `@gander-social-atproto/xrpc-server`: server-side HTTP API helpers                          | [README](./packages/xrpc-server/README.md) | [![NPM](https://img.shields.io/npm/v/@atproto/xrpc-server)](https://www.npmjs.com/package/@atproto/xrpc-server) |
+| Package                                                                                     | Docs                                       | NPM                                                                                                                                         |
+|---------------------------------------------------------------------------------------------|--------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------|
+| `@gander-social-atproto/api`: client library                                                | [README](./packages/api/README.md)         | [![NPM](https://img.shields.io/npm/v/@gander-social-atproto/api)](https://www.npmjs.com/package/@gander-social-atproto/api)                 |
+| `@gander-social-atproto/common-web`: shared code and helpers which can run in web browsers  | [README](./packages/common-web/README.md)  | [![NPM](https://img.shields.io/npm/v/@gander-soclal-atproto/common-web)](https://www.npmjs.com/package/@gander-soclal-atproto/common-web)   |
+| `@gander-social-atproto/common`: shared code and helpers which doesn't work in web browsers | [README](./packages/common/README.md)      | [![NPM](https://img.shields.io/npm/v/@gander-soclal-atproto/common)](https://www.npmjs.com/package/@gander-soclal-atproto/common)           |
+| `@gander-social-atproto/crypto`: cryptographic signing and key serialization                | [README](./packages/crypto/README.md)      | [![NPM](https://img.shields.io/npm/v/@gander-soclal-atproto/crypto)](https://www.npmjs.com/package/@gander-soclal-atproto/crypto)           |
+| `@gander-social-atproto/identity`: DID and handle resolution                                | [README](./packages/identity/README.md)    | [![NPM](https://img.shields.io/npm/v/@gander-soclal-atproto/identity)](https://www.npmjs.com/package/@gander-soclal-atproto/identity)       |
+| `@gander-social-atproto/lexicon`: schema definition language                                | [README](./packages/lexicon/README.md)     | [![NPM](https://img.shields.io/npm/v/@gander-soclal-atproto/lexicon)](https://www.npmjs.com/package/@gander-soclal-atproto/lexicon)         |
+| `@gander-social-atproto/repo`: data storage structure, including MST                        | [README](./packages/repo/README.md)        | [![NPM](https://img.shields.io/npm/v/@gander-soclal-atproto/repo)](https://www.npmjs.com/package/@gander-soclal-atproto/repo)               |
+| `@gander-social-atproto/syntax`: string parsers for identifiers                             | [README](./packages/syntax/README.md)      | [![NPM](https://img.shields.io/npm/v/@gander-soclal-atproto/syntax)](https://www.npmjs.com/package/@gander-soclal-atproto/syntax)           |
+| `@gander-social-atproto/xrpc`: client-side HTTP API helpers                                 | [README](./packages/xrpc/README.md)        | [![NPM](https://img.shields.io/npm/v/@gander-soclal-atproto/xrpc)](https://www.npmjs.com/package/@gander-soclal-atproto/xrpc)               |
+| `@gander-social-atproto/xrpc-server`: server-side HTTP API helpers                          | [README](./packages/xrpc-server/README.md) | [![NPM](https://img.shields.io/npm/v/@gander-soclal-atproto/xrpc-server)](https://www.npmjs.com/package/@gander-soclal-atproto/xrpc-server) |
 
 **TypeScript Services:**
 
@@ -49,9 +49,10 @@ There is a Makefile which can help with basic development tasks:
 # use existing nvm to install node 18 and pnpm
 make nvm-setup
 
-# pull dependencies and build all local packages
+# pull dependencies and build all local packages - build needs to run to be able to make deps
+make build 
 make deps
-make build
+
 
 # run the tests, using Docker services as needed
 make test
@@ -121,4 +122,5 @@ This project is dual-licensed under MIT and Apache 2.0 terms:
 - MIT license ([LICENSE-MIT.txt](https://github.com/bluesky-social/atproto/blob/main/LICENSE-MIT.txt) or http://opensource.org/licenses/MIT)
 - Apache License, Version 2.0, ([LICENSE-APACHE.txt](https://github.com/bluesky-social/atproto/blob/main/LICENSE-APACHE.txt) or http://www.apache.org/licenses/LICENSE-2.0)
 
-Downstream projects and end users may chose either license individually, or both together, at their discretion. The motivation for this dual-licensing is the additional software patent assurance provided by Apache 2.0.
+Downstream projects and end users may choose either license individually, or both together, at their discretion. The
+motivation for this dual-licensing is the additional software patent assurance provided by Apache 2.0.

@@ -128,8 +128,8 @@ import * as AppGndrFeedGetFeedGenerators from './types/app/gndr/feed/getFeedGene
 import * as AppGndrFeedGetFeedSkeleton from './types/app/gndr/feed/getFeedSkeleton.js'
 import * as AppGndrFeedGetLikes from './types/app/gndr/feed/getLikes.js'
 import * as AppGndrFeedGetListFeed from './types/app/gndr/feed/getListFeed.js'
-import * as AppGndrFeedGetPosts from './types/app/gndr/feed/getPosts.js'
 import * as AppGndrFeedGetPostThread from './types/app/gndr/feed/getPostThread.js'
+import * as AppGndrFeedGetPosts from './types/app/gndr/feed/getPosts.js'
 import * as AppGndrFeedGetQuotes from './types/app/gndr/feed/getQuotes.js'
 import * as AppGndrFeedGetRepostedBy from './types/app/gndr/feed/getRepostedBy.js'
 import * as AppGndrFeedGetSuggestedFeeds from './types/app/gndr/feed/getSuggestedFeeds.js'
@@ -186,6 +186,7 @@ import * as AppGndrNotificationRegisterPush from './types/app/gndr/notification/
 import * as AppGndrNotificationUpdateSeen from './types/app/gndr/notification/updateSeen.js'
 import * as AppGndrRichtextFacet from './types/app/gndr/richtext/facet.js'
 import * as AppGndrUnspeccedDefs from './types/app/gndr/unspecced/defs.js'
+import * as AppGndrUnspeccedGetAgeAssuranceState from './types/app/gndr/unspecced/getAgeAssuranceState.js'
 import * as AppGndrUnspeccedGetConfig from './types/app/gndr/unspecced/getConfig.js'
 import * as AppGndrUnspeccedGetPopularFeedGenerators from './types/app/gndr/unspecced/getPopularFeedGenerators.js'
 import * as AppGndrUnspeccedGetPostThreadOtherV2 from './types/app/gndr/unspecced/getPostThreadOtherV2.js'
@@ -201,6 +202,7 @@ import * as AppGndrUnspeccedGetTaggedSuggestions from './types/app/gndr/unspecce
 import * as AppGndrUnspeccedGetTrendingTopics from './types/app/gndr/unspecced/getTrendingTopics.js'
 import * as AppGndrUnspeccedGetTrends from './types/app/gndr/unspecced/getTrends.js'
 import * as AppGndrUnspeccedGetTrendsSkeleton from './types/app/gndr/unspecced/getTrendsSkeleton.js'
+import * as AppGndrUnspeccedInitAgeAssurance from './types/app/gndr/unspecced/initAgeAssurance.js'
 import * as AppGndrUnspeccedSearchActorsSkeleton from './types/app/gndr/unspecced/searchActorsSkeleton.js'
 import * as AppGndrUnspeccedSearchPostsSkeleton from './types/app/gndr/unspecced/searchPostsSkeleton.js'
 import * as AppGndrUnspeccedSearchStarterPacksSkeleton from './types/app/gndr/unspecced/searchStarterPacksSkeleton.js'
@@ -402,8 +404,8 @@ export * as AppGndrFeedGetFeedGenerators from './types/app/gndr/feed/getFeedGene
 export * as AppGndrFeedGetFeedSkeleton from './types/app/gndr/feed/getFeedSkeleton.js'
 export * as AppGndrFeedGetLikes from './types/app/gndr/feed/getLikes.js'
 export * as AppGndrFeedGetListFeed from './types/app/gndr/feed/getListFeed.js'
-export * as AppGndrFeedGetPosts from './types/app/gndr/feed/getPosts.js'
 export * as AppGndrFeedGetPostThread from './types/app/gndr/feed/getPostThread.js'
+export * as AppGndrFeedGetPosts from './types/app/gndr/feed/getPosts.js'
 export * as AppGndrFeedGetQuotes from './types/app/gndr/feed/getQuotes.js'
 export * as AppGndrFeedGetRepostedBy from './types/app/gndr/feed/getRepostedBy.js'
 export * as AppGndrFeedGetSuggestedFeeds from './types/app/gndr/feed/getSuggestedFeeds.js'
@@ -460,6 +462,7 @@ export * as AppGndrNotificationRegisterPush from './types/app/gndr/notification/
 export * as AppGndrNotificationUpdateSeen from './types/app/gndr/notification/updateSeen.js'
 export * as AppGndrRichtextFacet from './types/app/gndr/richtext/facet.js'
 export * as AppGndrUnspeccedDefs from './types/app/gndr/unspecced/defs.js'
+export * as AppGndrUnspeccedGetAgeAssuranceState from './types/app/gndr/unspecced/getAgeAssuranceState.js'
 export * as AppGndrUnspeccedGetConfig from './types/app/gndr/unspecced/getConfig.js'
 export * as AppGndrUnspeccedGetPopularFeedGenerators from './types/app/gndr/unspecced/getPopularFeedGenerators.js'
 export * as AppGndrUnspeccedGetPostThreadOtherV2 from './types/app/gndr/unspecced/getPostThreadOtherV2.js'
@@ -475,6 +478,7 @@ export * as AppGndrUnspeccedGetTaggedSuggestions from './types/app/gndr/unspecce
 export * as AppGndrUnspeccedGetTrendingTopics from './types/app/gndr/unspecced/getTrendingTopics.js'
 export * as AppGndrUnspeccedGetTrends from './types/app/gndr/unspecced/getTrends.js'
 export * as AppGndrUnspeccedGetTrendsSkeleton from './types/app/gndr/unspecced/getTrendsSkeleton.js'
+export * as AppGndrUnspeccedInitAgeAssurance from './types/app/gndr/unspecced/initAgeAssurance.js'
 export * as AppGndrUnspeccedSearchActorsSkeleton from './types/app/gndr/unspecced/searchActorsSkeleton.js'
 export * as AppGndrUnspeccedSearchPostsSkeleton from './types/app/gndr/unspecced/searchPostsSkeleton.js'
 export * as AppGndrUnspeccedSearchStarterPacksSkeleton from './types/app/gndr/unspecced/searchStarterPacksSkeleton.js'
@@ -2183,13 +2187,6 @@ export class AppGndrFeedNS {
       })
   }
 
-  getPosts(
-    params?: AppGndrFeedGetPosts.QueryParams,
-    opts?: AppGndrFeedGetPosts.CallOptions,
-  ): Promise<AppGndrFeedGetPosts.Response> {
-    return this._client.call('app.gndr.feed.getPosts', params, undefined, opts)
-  }
-
   getPostThread(
     params?: AppGndrFeedGetPostThread.QueryParams,
     opts?: AppGndrFeedGetPostThread.CallOptions,
@@ -2199,6 +2196,13 @@ export class AppGndrFeedNS {
       .catch((e) => {
         throw AppGndrFeedGetPostThread.toKnownErr(e)
       })
+  }
+
+  getPosts(
+    params?: AppGndrFeedGetPosts.QueryParams,
+    opts?: AppGndrFeedGetPosts.CallOptions,
+  ): Promise<AppGndrFeedGetPosts.Response> {
+    return this._client.call('app.gndr.feed.getPosts', params, undefined, opts)
   }
 
   getQuotes(
@@ -3885,6 +3889,18 @@ export class AppGndrUnspeccedNS {
     this._client = client
   }
 
+  getAgeAssuranceState(
+    params?: AppGndrUnspeccedGetAgeAssuranceState.QueryParams,
+    opts?: AppGndrUnspeccedGetAgeAssuranceState.CallOptions,
+  ): Promise<AppGndrUnspeccedGetAgeAssuranceState.Response> {
+    return this._client.call(
+      'app.gndr.unspecced.getAgeAssuranceState',
+      params,
+      undefined,
+      opts,
+    )
+  }
+
   getConfig(
     params?: AppGndrUnspeccedGetConfig.QueryParams,
     opts?: AppGndrUnspeccedGetConfig.CallOptions,
@@ -4063,6 +4079,17 @@ export class AppGndrUnspeccedNS {
       undefined,
       opts,
     )
+  }
+
+  initAgeAssurance(
+    data?: AppGndrUnspeccedInitAgeAssurance.InputSchema,
+    opts?: AppGndrUnspeccedInitAgeAssurance.CallOptions,
+  ): Promise<AppGndrUnspeccedInitAgeAssurance.Response> {
+    return this._client
+      .call('app.gndr.unspecced.initAgeAssurance', opts?.qp, data, opts)
+      .catch((e) => {
+        throw AppGndrUnspeccedInitAgeAssurance.toKnownErr(e)
+      })
   }
 
   searchActorsSkeleton(
