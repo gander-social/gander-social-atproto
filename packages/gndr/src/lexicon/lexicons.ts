@@ -7282,48 +7282,6 @@ export const schemaDict = {
       },
     },
   },
-  AppGndrFeedGetPosts: {
-    lexicon: 1,
-    id: 'app.gndr.feed.getPosts',
-    defs: {
-      main: {
-        type: 'query',
-        description:
-          "Gets post views for a specified list of posts (by AT-URI). This is sometimes referred to as 'hydrating' a 'feed skeleton'.",
-        parameters: {
-          type: 'params',
-          required: ['uris'],
-          properties: {
-            uris: {
-              type: 'array',
-              description: 'List of post AT-URIs to return hydrated views for.',
-              items: {
-                type: 'string',
-                format: 'at-uri',
-              },
-              maxLength: 25,
-            },
-          },
-        },
-        output: {
-          encoding: 'application/json',
-          schema: {
-            type: 'object',
-            required: ['posts'],
-            properties: {
-              posts: {
-                type: 'array',
-                items: {
-                  type: 'ref',
-                  ref: 'lex:app.gndr.feed.defs#postView',
-                },
-              },
-            },
-          },
-        },
-      },
-    },
-  },
   AppGndrFeedGetPostThread: {
     lexicon: 1,
     id: 'app.gndr.feed.getPostThread',
@@ -7385,6 +7343,48 @@ export const schemaDict = {
             name: 'NotFound',
           },
         ],
+      },
+    },
+  },
+  AppGndrFeedGetPosts: {
+    lexicon: 1,
+    id: 'app.gndr.feed.getPosts',
+    defs: {
+      main: {
+        type: 'query',
+        description:
+          "Gets post views for a specified list of posts (by AT-URI). This is sometimes referred to as 'hydrating' a 'feed skeleton'.",
+        parameters: {
+          type: 'params',
+          required: ['uris'],
+          properties: {
+            uris: {
+              type: 'array',
+              description: 'List of post AT-URIs to return hydrated views for.',
+              items: {
+                type: 'string',
+                format: 'at-uri',
+              },
+              maxLength: 25,
+            },
+          },
+        },
+        output: {
+          encoding: 'application/json',
+          schema: {
+            type: 'object',
+            required: ['posts'],
+            properties: {
+              posts: {
+                type: 'array',
+                items: {
+                  type: 'ref',
+                  ref: 'lex:app.gndr.feed.defs#postView',
+                },
+              },
+            },
+          },
+        },
       },
     },
   },
@@ -10671,6 +10671,84 @@ export const schemaDict = {
           },
         },
       },
+      ageAssuranceState: {
+        type: 'object',
+        description:
+          'The computed state of the age assurance process, returned to the user in question on certain authenticated requests.',
+        required: ['status'],
+        properties: {
+          lastInitiatedAt: {
+            type: 'string',
+            format: 'datetime',
+            description: 'The timestamp when this state was last updated.',
+          },
+          status: {
+            type: 'string',
+            description: 'The status of the age assurance process.',
+            knownValues: ['unknown', 'pending', 'assured', 'blocked'],
+          },
+        },
+      },
+      ageAssuranceEvent: {
+        type: 'object',
+        description: 'Object used to store age assurance data in stash.',
+        required: ['createdAt', 'status', 'attemptId'],
+        properties: {
+          createdAt: {
+            type: 'string',
+            format: 'datetime',
+            description: 'The date and time of this write operation.',
+          },
+          status: {
+            type: 'string',
+            description: 'The status of the age assurance process.',
+            knownValues: ['unknown', 'pending', 'assured'],
+          },
+          attemptId: {
+            type: 'string',
+            description:
+              'The unique identifier for this instance of the age assurance flow, in UUID format.',
+          },
+          email: {
+            type: 'string',
+            description: 'The email used for AA.',
+          },
+          initIp: {
+            type: 'string',
+            description: 'The IP address used when initiating the AA flow.',
+          },
+          initUa: {
+            type: 'string',
+            description: 'The user agent used when initiating the AA flow.',
+          },
+          completeIp: {
+            type: 'string',
+            description: 'The IP address used when completing the AA flow.',
+          },
+          completeUa: {
+            type: 'string',
+            description: 'The user agent used when completing the AA flow.',
+          },
+        },
+      },
+    },
+  },
+  AppGndrUnspeccedGetAgeAssuranceState: {
+    lexicon: 1,
+    id: 'app.gndr.unspecced.getAgeAssuranceState',
+    defs: {
+      main: {
+        type: 'query',
+        description:
+          'Returns the current state of the age assurance process for an account. This is used to check if the user has completed age assurance or if further action is required.',
+        output: {
+          encoding: 'application/json',
+          schema: {
+            type: 'ref',
+            ref: 'lex:app.gndr.unspecced.defs#ageAssuranceState',
+          },
+        },
+      },
     },
   },
   AppGndrUnspeccedGetConfig: {
@@ -11431,6 +11509,59 @@ export const schemaDict = {
             },
           },
         },
+      },
+    },
+  },
+  AppGndrUnspeccedInitAgeAssurance: {
+    lexicon: 1,
+    id: 'app.gndr.unspecced.initAgeAssurance',
+    defs: {
+      main: {
+        type: 'procedure',
+        description:
+          "Initiate age assurance for an account. This is a one-time action that will start the process of verifying the user's age.",
+        input: {
+          encoding: 'application/json',
+          schema: {
+            type: 'object',
+            required: ['email', 'language', 'countryCode'],
+            properties: {
+              email: {
+                type: 'string',
+                description:
+                  "The user's email address to receive assurance instructions.",
+              },
+              language: {
+                type: 'string',
+                description:
+                  "The user's preferred language for communication during the assurance process.",
+              },
+              countryCode: {
+                type: 'string',
+                description:
+                  "An ISO 3166-1 alpha-2 code of the user's location.",
+              },
+            },
+          },
+        },
+        output: {
+          encoding: 'application/json',
+          schema: {
+            type: 'ref',
+            ref: 'lex:app.gndr.unspecced.defs#ageAssuranceState',
+          },
+        },
+        errors: [
+          {
+            name: 'InvalidEmail',
+          },
+          {
+            name: 'DidTooLong',
+          },
+          {
+            name: 'InvalidInitiation',
+          },
+        ],
       },
     },
   },
@@ -13302,8 +13433,8 @@ export const ids = {
   AppGndrFeedGetFeedSkeleton: 'app.gndr.feed.getFeedSkeleton',
   AppGndrFeedGetLikes: 'app.gndr.feed.getLikes',
   AppGndrFeedGetListFeed: 'app.gndr.feed.getListFeed',
-  AppGndrFeedGetPosts: 'app.gndr.feed.getPosts',
   AppGndrFeedGetPostThread: 'app.gndr.feed.getPostThread',
+  AppGndrFeedGetPosts: 'app.gndr.feed.getPosts',
   AppGndrFeedGetQuotes: 'app.gndr.feed.getQuotes',
   AppGndrFeedGetRepostedBy: 'app.gndr.feed.getRepostedBy',
   AppGndrFeedGetSuggestedFeeds: 'app.gndr.feed.getSuggestedFeeds',
@@ -13364,6 +13495,8 @@ export const ids = {
   AppGndrNotificationUpdateSeen: 'app.gndr.notification.updateSeen',
   AppGndrRichtextFacet: 'app.gndr.richtext.facet',
   AppGndrUnspeccedDefs: 'app.gndr.unspecced.defs',
+  AppGndrUnspeccedGetAgeAssuranceState:
+    'app.gndr.unspecced.getAgeAssuranceState',
   AppGndrUnspeccedGetConfig: 'app.gndr.unspecced.getConfig',
   AppGndrUnspeccedGetPopularFeedGenerators:
     'app.gndr.unspecced.getPopularFeedGenerators',
@@ -13387,6 +13520,7 @@ export const ids = {
   AppGndrUnspeccedGetTrendingTopics: 'app.gndr.unspecced.getTrendingTopics',
   AppGndrUnspeccedGetTrends: 'app.gndr.unspecced.getTrends',
   AppGndrUnspeccedGetTrendsSkeleton: 'app.gndr.unspecced.getTrendsSkeleton',
+  AppGndrUnspeccedInitAgeAssurance: 'app.gndr.unspecced.initAgeAssurance',
   AppGndrUnspeccedSearchActorsSkeleton:
     'app.gndr.unspecced.searchActorsSkeleton',
   AppGndrUnspeccedSearchPostsSkeleton: 'app.gndr.unspecced.searchPostsSkeleton',

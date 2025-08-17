@@ -9,7 +9,7 @@ import {
   is$typed as _is$typed,
   type OmitKey,
 } from '../../../../util'
-import type * as ChatGndrConvoDefs from './defs'
+import type * as ChatGndrConvoDefs from './defs.js'
 
 const is$typed = _is$typed,
   validate = _validate

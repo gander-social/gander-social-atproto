@@ -9,8 +9,8 @@ import {
   is$typed as _is$typed,
   type OmitKey,
 } from '../../../../util'
-import type * as AppGndrActorDefs from '../../../app/gndr/actor/defs'
-import type * as ComAtprotoLabelDefs from '../../../com/atproto/label/defs'
+import type * as AppGndrActorDefs from '../../../app/gndr/actor/defs.js'
+import type * as ComAtprotoLabelDefs from '../../../com/atproto/label/defs.js'
 
 const is$typed = _is$typed,
   validate = _validate
