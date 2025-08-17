@@ -1,6 +1,5 @@
 {
-  "name": "@gander-social-atproto/xrpc",
-  "version": "0.8.1",
+  "name": "@gander-social-atproto/xrpc","version": "0.8.2",
   "license": "MIT",
   "description": "atproto HTTP API (XRPC) client library",
   "keywords": [

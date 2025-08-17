@@ -1,6 +1,6 @@
 {
   "name": "@gander-atproto-nest/pipe",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "license": "MIT",
   "description": "Library for combining multiple functions into a single function.",
   "keywords": [
