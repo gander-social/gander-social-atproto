@@ -1,5 +1,14 @@
 # @gander-atproto-nest/fetch
 
+## 0.2.7
+
+### Patch Changes
+
+- [`6450bee3f800aa0f7eaf8f88ec4de958f36d4e0a`](https://github.com/gander-social/gander-social-atproto/commit/6450bee3f800aa0f7eaf8f88ec4de958f36d4e0a) Thanks [@melodylumen](https://github.com/melodylumen)! - Update all packages with patch version bump to reflect adjustments to build/test process and adding central config
+
+- Updated dependencies [[`6450bee3f800aa0f7eaf8f88ec4de958f36d4e0a`](https://github.com/gander-social/gander-social-atproto/commit/6450bee3f800aa0f7eaf8f88ec4de958f36d4e0a)]:
+  - @gander-atproto-nest/pipe@0.1.5
+
 ## 0.2.5
 
 ### Patch Changes

@@ -1,6 +1,6 @@
 {
   "name": "@gander-atproto-nest/handle-resolver-node",
-  "version": "0.1.21",
+  "version": "0.1.22",
   "license": "MIT",
   "description": "Node specific ATProto handle to DID resolver",
   "keywords": [
