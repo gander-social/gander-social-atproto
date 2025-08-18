@@ -27,6 +27,10 @@ export const verifySig = async (
 ): Promise<boolean> => {
   const allowMalleable = opts?.allowMalleableSig ?? false
   const msgHash = await sha256(data)
+  // Explicitly reject DER-encoded signatures when compact format is required
+  if (!allowMalleable && sig.length !== 64) {
+    return false
+  }
   return p256.verify(sig, msgHash, publicKey, {
     format: allowMalleable ? undefined : 'compact', // prevent DER-encoded signatures
     lowS: !allowMalleable,
