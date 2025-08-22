@@ -1,5 +1,16 @@
 # @atproto/pds
 
+## 0.5.4
+
+### Patch Changes
+
+- [#15](https://github.com/gander-social/gander-social-atproto/pull/15) [`bbcbbb3b237d9907776409acf9aa590fb6783ae5`](https://github.com/gander-social/gander-social-atproto/commit/bbcbbb3b237d9907776409acf9aa590fb6783ae5) Thanks [@melodylumen](https://github.com/melodylumen)! - Add in ageAssurance tools
+
+- Updated dependencies [[`bbcbbb3b237d9907776409acf9aa590fb6783ae5`](https://github.com/gander-social/gander-social-atproto/commit/bbcbbb3b237d9907776409acf9aa590fb6783ae5)]:
+  - @gander-social-atproto/oauth-provider@0.10.3
+  - @gander-atproto-nest/fetch-node@0.1.14
+  - @gander-social-atproto/api@0.16.4
+
 ## 0.5.3
 
 ### Patch Changes

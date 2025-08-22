@@ -1,5 +1,17 @@
 # @atproto/dev-env
 
+## 0.4.4
+
+### Patch Changes
+
+- [#15](https://github.com/gander-social/gander-social-atproto/pull/15) [`bbcbbb3b237d9907776409acf9aa590fb6783ae5`](https://github.com/gander-social/gander-social-atproto/commit/bbcbbb3b237d9907776409acf9aa590fb6783ae5) Thanks [@melodylumen](https://github.com/melodylumen)! - Add in ageAssurance tools
+
+- Updated dependencies [[`bbcbbb3b237d9907776409acf9aa590fb6783ae5`](https://github.com/gander-social/gander-social-atproto/commit/bbcbbb3b237d9907776409acf9aa590fb6783ae5)]:
+  - @gander-social-atproto/ozone@0.2.4
+  - @gander-social-atproto/gndr@0.1.4
+  - @gander-social-atproto/api@0.16.4
+  - @gander-social-atproto/pds@0.5.4
+
 ## 0.4.3
 
 ### Patch Changes
