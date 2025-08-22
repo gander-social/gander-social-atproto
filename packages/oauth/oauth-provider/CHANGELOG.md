@@ -1,5 +1,17 @@
 # @atproto/oauth-provider
 
+## 0.10.3
+
+### Patch Changes
+
+- [#15](https://github.com/gander-social/gander-social-atproto/pull/15) [`bbcbbb3b237d9907776409acf9aa590fb6783ae5`](https://github.com/gander-social/gander-social-atproto/commit/bbcbbb3b237d9907776409acf9aa590fb6783ae5) Thanks [@melodylumen](https://github.com/melodylumen)! - Add in ageAssurance tools
+
+- Updated dependencies [[`bbcbbb3b237d9907776409acf9aa590fb6783ae5`](https://github.com/gander-social/gander-social-atproto/commit/bbcbbb3b237d9907776409acf9aa590fb6783ae5)]:
+  - @gander-social-atproto/oauth-provider-frontend@0.2.3
+  - @gander-atproto-nest/simple-store-memory@0.1.8
+  - @gander-atproto-nest/simple-store@0.2.5
+  - @gander-atproto-nest/fetch-node@0.1.14
+
 ## 0.10.2
 
 ### Patch Changes

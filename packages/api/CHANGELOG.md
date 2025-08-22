@@ -1,5 +1,11 @@
 # @atproto/api
 
+## 0.16.4
+
+### Patch Changes
+
+- [#15](https://github.com/gander-social/gander-social-atproto/pull/15) [`bbcbbb3b237d9907776409acf9aa590fb6783ae5`](https://github.com/gander-social/gander-social-atproto/commit/bbcbbb3b237d9907776409acf9aa590fb6783ae5) Thanks [@melodylumen](https://github.com/melodylumen)! - Add in ageAssurance tools
+
 ## 0.16.3
 
 ### Patch Changes
