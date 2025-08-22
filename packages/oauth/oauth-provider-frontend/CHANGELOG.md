@@ -1,5 +1,13 @@
 # @atproto/oauth-provider-frontend
 
+## 0.2.2
+
+### Patch Changes
+
+- [#12](https://github.com/gander-social/gander-social-atproto/pull/12) [`ee891368a01938f04fb1bd31c60cdf38e67f5100`](https://github.com/gander-social/gander-social-atproto/commit/ee891368a01938f04fb1bd31c60cdf38e67f5100) Thanks [@melodylumen](https://github.com/melodylumen)! - Add in ageAssurance tools
+
+- [`6450bee3f800aa0f7eaf8f88ec4de958f36d4e0a`](https://github.com/gander-social/gander-social-atproto/commit/6450bee3f800aa0f7eaf8f88ec4de958f36d4e0a) Thanks [@melodylumen](https://github.com/melodylumen)! - Update all packages with patch version bump to reflect adjustments to build/test process and adding central config
+
 ## 0.2.1
 
 ### Patch Changes

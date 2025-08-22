@@ -1,5 +1,11 @@
 # @atproto/oauth-client-browser-example
 
+## 0.1.2
+
+### Patch Changes
+
+- [#12](https://github.com/gander-social/gander-social-atproto/pull/12) [`ee891368a01938f04fb1bd31c60cdf38e67f5100`](https://github.com/gander-social/gander-social-atproto/commit/ee891368a01938f04fb1bd31c60cdf38e67f5100) Thanks [@melodylumen](https://github.com/melodylumen)! - Add in ageAssurance tools
+
 ## 0.1.1
 
 ### Patch Changes

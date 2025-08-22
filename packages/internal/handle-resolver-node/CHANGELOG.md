@@ -1,5 +1,16 @@
 # @gander-atproto-nest/handle-resolver-node
 
+## 0.1.22
+
+### Patch Changes
+
+- [`6450bee3f800aa0f7eaf8f88ec4de958f36d4e0a`](https://github.com/gander-social/gander-social-atproto/commit/6450bee3f800aa0f7eaf8f88ec4de958f36d4e0a) Thanks [@melodylumen](https://github.com/melodylumen)! - Update all packages with patch version bump to reflect adjustments to build/test process and adding central config
+
+- Updated dependencies [[`ee891368a01938f04fb1bd31c60cdf38e67f5100`](https://github.com/gander-social/gander-social-atproto/commit/ee891368a01938f04fb1bd31c60cdf38e67f5100), [`6450bee3f800aa0f7eaf8f88ec4de958f36d4e0a`](https://github.com/gander-social/gander-social-atproto/commit/6450bee3f800aa0f7eaf8f88ec4de958f36d4e0a)]:
+  - @gander-atproto-nest/fetch-node@0.1.13
+  - @gander-social-atproto/did@0.2.3
+  - @gander-atproto-nest/handle-resolver@0.3.4
+
 ## 0.1.20
 
 ### Patch Changes
