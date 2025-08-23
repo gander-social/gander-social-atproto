@@ -40,6 +40,7 @@
     "@gander-social-atproto/crypto": "workspace:^",
     "@gander-social-atproto/identity": "workspace:^",
     "@gander-social-atproto/lexicon": "workspace:^",
+    "@gander-social-atproto/shared-core": "workspace:^",
     "@gander-social-atproto/oauth-provider": "workspace:^",
     "@gander-social-atproto/repo": "workspace:^",
     "@gander-social-atproto/syntax": "workspace:^",

@@ -19,6 +19,12 @@ export * from './types'
 // Export shared constants
 export * from './constants'
 
+// Export high-priority utilities
+export * from './errors'
+export * from './database'
+export * from './cache'
+export * from './auth'
+
 // Export utility modules
 export * from './utils/server'
 export * from './utils/middleware'

@@ -1,4 +1,5 @@
 export * from './db'
 export * from './cast'
-export * from './migrator'
+// Migrator now comes from shared-core
+export { Migrator } from '@gander-social-atproto/shared-core'
 export * from './util'
