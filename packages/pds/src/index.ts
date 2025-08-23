@@ -7,17 +7,15 @@ import 'express-async-errors'
 import events from 'node:events'
 import http from 'node:http'
 import { PlcClientError } from '@did-plc/lib'
-import { DAY, HOUR, MINUTE, SECOND } from '@gander-social-atproto/common'
+import { DAY, HOUR, MINUTE, SECOND } from '@gander-social-atproto/shared-core'
+import { XRPCError } from '@gander-social-atproto/shared-core'
 import {
   MemoryRateLimiter,
   MethodHandler,
   RedisRateLimiter,
   ResponseType,
-  XRPCError,
 } from '@gander-social-atproto/xrpc-server'
-import cors from 'cors'
-import express from 'express'
-import { HttpTerminator, createHttpTerminator } from 'http-terminator'
+import { cors, express, HttpTerminator, createHttpTerminator } from '@gander-social-atproto/shared-core'
 import apiRoutes from './api'
 import * as authRoutes from './auth-routes'
 import * as basicRoutes from './basic-routes'
@@ -28,7 +26,7 @@ import { createServer } from './lexicon'
 import * as AppGndrFeedGetFeedSkeleton from './lexicon/types/app/gndr/feed/getFeedSkeleton'
 import { loggerMiddleware } from './logger'
 import { proxyHandler } from './pipethrough'
-import compression from './util/compression'
+import { compression } from '@gander-social-atproto/shared-core'
 import * as wellKnown from './well-known'
 
 export { createSecretKeyObject } from './auth-verifier'

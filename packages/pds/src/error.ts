@@ -1,5 +1,5 @@
 import { OAuthError } from '@gander-social-atproto/oauth-provider'
-import { XRPCError } from '@gander-social-atproto/xrpc-server'
+import { XRPCError } from '@gander-social-atproto/shared-core'
 import { ErrorRequestHandler } from 'express'
 import { httpLogger as log } from './logger'
 
