@@ -3,14 +3,9 @@
  * Common server setup and configuration helpers
  */
 
-import express from 'express'
-import compression from 'compression'
-import cors from 'cors'
-import { createHttpTerminator, HttpTerminator } from 'http-terminator'
-import { pinoHttp } from 'pino-http'
-import type { Logger } from 'pino'
-import type { CorsOptions } from 'cors'
 import type { Server } from 'http'
+import { express, compression, cors, createHttpTerminator, HttpTerminator, pinoHttp } from '../dependencies'
+import type { Logger, CorsOptions } from '../dependencies'
 
 export interface CreateAppOptions {
   logger?: Logger

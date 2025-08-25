@@ -3,7 +3,7 @@
  * Common configuration helpers and parsers
  */
 
-import { z } from 'zod'
+import { z } from '../dependencies'
 
 /**
  * Parse environment variable as string

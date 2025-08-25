@@ -10,8 +10,8 @@ import {
   Migrator as KyselyMigrator,
   SelectQueryBuilder,
   sql,
-} from 'kysely'
-import { Pool, PoolConfig } from 'pg'
+} from './dependencies'
+import { Pool, PoolConfig } from './dependencies'
 import { InvalidRequestError } from './errors'
 
 /**

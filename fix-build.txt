@@ -1,0 +1,431 @@
+paulbrooker@Melodys-MacBook-Pro shared-core % ./fix-build.sh
+🔧 Fixing shared-core build issues...
+
+Making scripts executable...
+Installing dependencies...
+Scope: all 49 workspace projects
+../..                                    |  WARN  There are cyclic workspace dependencies: /Users/paulbrooker/IdeaProjects/gander-social-atproto/packages/dev-env, /Users/paulbrooker/IdeaProjects/gander-social-atproto/packages/pds
+../..                                    |  +31 +++
+../..                                    | Progress: resolved 31, reused 0, downloaded 31, added 31, done
+
+dependencies:
++ @did-plc/lib 0.0.4
++ @gander-social-atproto/common 0.5.3 <- ../common
++ @gander-social-atproto/common-web 0.5.3 <- ../common-web
++ @gander-social-atproto/crypto 0.5.3 <- ../crypto
++ @gander-social-atproto/identity 0.5.3 <- ../identity
++ @gander-social-atproto/lexicon 0.5.3 <- ../lexicon
++ @gander-social-atproto/syntax 0.5.3 <- ../syntax
++ @gander-social-atproto/xrpc 0.8.3 <- ../xrpc
++ @gander-social-atproto/xrpc-server 0.9.3 <- ../xrpc-server
++ compression 1.8.1
++ cors 2.8.5
++ express 4.21.2
++ http-terminator 3.2.0
++ ioredis 5.7.0
++ jose 5.2.0
++ kysely 0.22.0
++ multiformats 9.9.0
++ p-queue 6.6.2
++ pg 8.16.3
++ pino 8.21.0
++ pino-http 8.6.1
++ structured-headers 1.0.1
++ typed-emitter 2.1.0
++ uint8arrays 3.0.0
++ undici 6.21.3
++ zod 3.25.76
+
+devDependencies:
++ @types/compression 1.8.1
++ @types/cors 2.8.19
++ @types/express 4.17.23
++ @types/pg 8.15.5
++ typescript 5.6.3
+
+../pds prepare$ [ "$npm_config_production" = true ] || puppeteer browsers install chrome
+│ chrome@131.0.6778.204 /Users/paulbrooker/.cache/puppeteer/chrome/mac_arm-131.0.6778.204/chrome-mac-arm64/Google Chrome for Testing.app/Contents/MacOS/Google Chrome for Testing
+└─ Done in 322ms
+Done in 4s
+Cleaning previous build...
+Building shared-core...
+
+> @gander-social-atproto/shared-core@0.1.0 build /Users/paulbrooker/IdeaProjects/gander-social-atproto/packages/shared-core
+> tsc --build tsconfig.build.json
+
+src/auth.ts:7:30 - error TS6133: 'importJWK' is declared but its value is never read.
+
+7 import { SignJWT, jwtVerify, importJWK, exportJWK } from './dependencies'
+                               ~~~~~~~~~
+
+src/auth.ts:7:41 - error TS6133: 'exportJWK' is declared but its value is never read.
+
+7 import { SignJWT, jwtVerify, importJWK, exportJWK } from './dependencies'
+                                          ~~~~~~~~~
+
+src/auth.ts:72:27 - error TS2345: Argument of type 'AccessTokenPayload' is not assignable to parameter of type 'JWTPayload'.
+  Index signature for type 'string' is missing in type 'AccessTokenPayload'.
+
+72   const jwt = new SignJWT(payload)
+                             ~~~~~~~
+
+src/auth.ts:112:27 - error TS2345: Argument of type 'RefreshTokenPayload' is not assignable to parameter of type 'JWTPayload'.
+  Index signature for type 'string' is missing in type 'RefreshTokenPayload'.
+
+112   const jwt = new SignJWT(payload)
+                              ~~~~~~~
+
+src/auth.ts:204:27 - error TS2345: Argument of type 'ServiceAuthPayload' is not assignable to parameter of type 'JWTPayload'.
+  Index signature for type 'string' is missing in type 'ServiceAuthPayload'.
+
+204   const jwt = new SignJWT(payload)
+                              ~~~~~~~
+
+src/auth.ts:209:39 - error TS2339: Property 'export' does not exist on type 'Keypair'.
+
+209   return await jwt.sign(await keypair.export())
+                                          ~~~~~~
+
+src/cache.ts:199:25 - error TS2345: Argument of type 'K | undefined' is not assignable to parameter of type 'K'.
+  'K' could be instantiated with an arbitrary type which could be unrelated to 'K | undefined'.
+
+199       this.cache.delete(firstKey)
+                            ~~~~~~~~
+
+src/cache.ts:352:5 - error TS2322: Type 'RedisCache<unknown>' is not assignable to type 'RedisCache<T>'.
+  The types of 'options.deserializer' are incompatible between these types.
+    Type '((value: string) => unknown) | undefined' is not assignable to type '((value: string) => T) | undefined'.
+      Type '(value: string) => unknown' is not assignable to type '(value: string) => T'.
+        Type 'unknown' is not assignable to type 'T'.
+          'T' could be instantiated with an arbitrary type which could be unrelated to 'unknown'.
+
+352     this.redis = new RedisCache(redis, options.redisOptions)
+        ~~~~~~~~~~
+
+src/database.ts:9:3 - error TS6133: 'MigrationProvider' is declared but its value is never read.
+
+9   MigrationProvider,
+    ~~~~~~~~~~~~~~~~~
+
+src/database.ts:20:34 - error TS1362: 'KyselyMigrator' cannot be used as a value because it was exported using 'export type'.
+
+20 export class Migrator<T> extends KyselyMigrator {
+                                    ~~~~~~~~~~~~~~
+
+  src/dependencies.ts:35:3
+    35   Migrator,
+         ~~~~~~~~
+    'KyselyMigrator' was exported here.
+
+src/database.ts:191:14 - error TS2339: Property 'or' does not exist on type 'WhereInterface<DB, TB>'.
+
+191           eb.or([
+                 ~~
+
+src/database.ts:192:13 - error TS2349: This expression is not callable.
+  Type 'WhereInterface<DB, TB>' has no call signatures.
+
+192             eb(options.primaryKey as any, op, cursor.primary),
+                ~~
+
+src/database.ts:193:16 - error TS2339: Property 'and' does not exist on type 'WhereInterface<DB, TB>'.
+
+193             eb.and([
+                   ~~~
+
+src/database.ts:194:15 - error TS2349: This expression is not callable.
+  Type 'WhereInterface<DB, TB>' has no call signatures.
+
+194               eb(options.primaryKey as any, '=', cursor.primary),
+                  ~~
+
+src/database.ts:195:15 - error TS2349: This expression is not callable.
+  Type 'WhereInterface<DB, TB>' has no call signatures.
+
+195               eb(options.secondaryKey as any, op, cursor.secondary),
+                  ~~
+
+src/database.ts:360:25 - error TS2345: Argument of type 'TB' is not assignable to parameter of type 'keyof DB & string'.
+  Type 'keyof DB' is not assignable to type 'keyof DB & string'.
+    Type 'string | number | symbol' is not assignable to type 'keyof DB & string'.
+      Type 'string' is not assignable to type 'keyof DB & string'.
+        Type 'string' is not assignable to type 'keyof DB'.
+          Type 'keyof DB' is not assignable to type 'string'.
+            Type 'string | number | symbol' is not assignable to type 'string'.
+              Type 'number' is not assignable to type 'string'.
+                Type 'TB' is not assignable to type 'string'.
+                  Type 'keyof DB' is not assignable to type 'string'.
+                    Type 'string | number | symbol' is not assignable to type 'string'.
+                      Type 'number' is not assignable to type 'string'.
+
+360     await db.insertInto(table).values(batch as any).execute()
+                            ~~~~~
+
+src/dependencies.ts:10:3 - error TS2300: Duplicate identifier 'Request'.
+
+10   Request,
+     ~~~~~~~
+
+src/dependencies.ts:11:3 - error TS2300: Duplicate identifier 'Response'.
+
+11   Response,
+     ~~~~~~~~
+
+src/dependencies.ts:25:10 - error TS1205: Re-exporting a type when 'isolatedModules' is enabled requires using 'export type'.
+
+25 export { HttpTerminator, createHttpTerminator } from 'http-terminator'
+            ~~~~~~~~~~~~~~
+
+src/dependencies.ts:32:3 - error TS2305: Module '"kysely"' has no exported member 'Database'.
+
+32   Database as KyselyDatabase,
+     ~~~~~~~~
+
+src/dependencies.ts:62:17 - error TS2300: Duplicate identifier 'Request'.
+
+62 export { fetch, Request, Response, Headers } from 'undici'
+                   ~~~~~~~
+
+src/dependencies.ts:62:26 - error TS2300: Duplicate identifier 'Response'.
+
+62 export { fetch, Request, Response, Headers } from 'undici'
+                            ~~~~~~~~
+
+src/dependencies.ts:69:10 - error TS1205: Re-exporting a type when 'isolatedModules' is enabled requires using 'export type'.
+
+69 export { default as TypedEmitter } from 'typed-emitter'
+            ~~~~~~~~~~~~~~~~~~~~~~~
+
+src/dependencies.ts:72:10 - error TS2305: Module '"structured-headers"' has no exported member 'parseDict'.
+
+72 export { parseDict, parseDictionary, serializeDict } from 'structured-headers'
+            ~~~~~~~~~
+
+src/dependencies.ts:72:38 - error TS2724: '"structured-headers"' has no exported member named 'serializeDict'. Did you mean 'serializeList'?
+
+72 export { parseDict, parseDictionary, serializeDict } from 'structured-headers'
+                                        ~~~~~~~~~~~~~
+
+  ../../node_modules/.pnpm/structured-headers@1.0.1/node_modules/structured-headers/dist/serializer.d.ts:5:25
+    5 export declare function serializeList(input: List): string;
+                              ~~~~~~~~~~~~~
+    'serializeList' is declared here.
+
+src/errors.ts:18:10 - error TS2339: Property 'cause' does not exist on type 'XRPCError'.
+
+18     this.cause = cause
+            ~~~~~
+
+src/index.ts:14:1 - error TS2308: Module './dependencies' has already exported a member named 'Headers'. Consider explicitly re-exporting to resolve the ambiguity.
+
+14 export * from './internal'
+   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/index.ts:17:1 - error TS2308: Module './dependencies' has already exported a member named 'JWTPayload'. Consider explicitly re-exporting to resolve the ambiguity.
+
+17 export * from './types'
+   ~~~~~~~~~~~~~~~~~~~~~~~
+
+src/index.ts:17:1 - error TS2308: Module './internal' has already exported a member named 'DidDocument'. Consider explicitly re-exporting to resolve the ambiguity.
+
+17 export * from './types'
+   ~~~~~~~~~~~~~~~~~~~~~~~
+
+src/index.ts:23:1 - error TS2308: Module './internal' has already exported a member named 'ForbiddenError'. Consider explicitly re-exporting to resolve the ambiguity.
+
+23 export * from './errors'
+   ~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/index.ts:23:1 - error TS2308: Module './internal' has already exported a member named 'InternalServerError'. Consider explicitly re-exporting to resolve the ambiguity.
+
+23 export * from './errors'
+   ~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/index.ts:23:1 - error TS2308: Module './internal' has already exported a member named 'InvalidRequestError'. Consider explicitly re-exporting to resolve the ambiguity.
+
+23 export * from './errors'
+   ~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/index.ts:23:1 - error TS2308: Module './internal' has already exported a member named 'ValidationError'. Consider explicitly re-exporting to resolve the ambiguity.
+
+23 export * from './errors'
+   ~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/index.ts:23:1 - error TS2308: Module './internal' has already exported a member named 'XRPCError'. Consider explicitly re-exporting to resolve the ambiguity.
+
+23 export * from './errors'
+   ~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/index.ts:24:1 - error TS2308: Module './dependencies' has already exported a member named 'Migrator'. Consider explicitly re-exporting to resolve the ambiguity.
+
+24 export * from './database'
+   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/index.ts:24:1 - error TS2308: Module './types' has already exported a member named 'PaginationParams'. Consider explicitly re-exporting to resolve the ambiguity.
+
+24 export * from './database'
+   ~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/index.ts:25:1 - error TS2308: Module './internal' has already exported a member named 'CacheResult'. Consider explicitly re-exporting to resolve the ambiguity.
+
+25 export * from './cache'
+   ~~~~~~~~~~~~~~~~~~~~~~~
+
+src/index.ts:25:1 - error TS2308: Module './internal' has already exported a member named 'MemoryCache'. Consider explicitly re-exporting to resolve the ambiguity.
+
+25 export * from './cache'
+   ~~~~~~~~~~~~~~~~~~~~~~~
+
+src/internal.ts:18:1 - error TS2308: Module '@gander-social-atproto/xrpc' has already exported a member named 'Headers'. Consider explicitly re-exporting to resolve the ambiguity.
+
+18 export * from '@gander-social-atproto/xrpc-server'
+   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/internal.ts:18:1 - error TS2308: Module '@gander-social-atproto/xrpc' has already exported a member named 'XRPCError'. Consider explicitly re-exporting to resolve the ambiguity.
+
+18 export * from '@gander-social-atproto/xrpc-server'
+   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/internal.ts:29:3 - error TS2305: Module '"@gander-social-atproto/common"' has no exported member 'createPromise'.
+
+29   createPromise,
+     ~~~~~~~~~~~~~
+
+src/internal.ts:30:3 - error TS2305: Module '"@gander-social-atproto/common"' has no exported member 'createDeferredPromise'.
+
+30   createDeferredPromise,
+     ~~~~~~~~~~~~~~~~~~~~~
+
+src/internal.ts:40:3 - error TS2305: Module '"@gander-social-atproto/common-web"' has no exported member 'formatRecordKey'.
+
+40   formatRecordKey,
+     ~~~~~~~~~~~~~~~
+
+src/internal.ts:41:3 - error TS2305: Module '"@gander-social-atproto/common-web"' has no exported member 'ensureValidRecordKey'.
+
+41   ensureValidRecordKey,
+     ~~~~~~~~~~~~~~~~~~~~
+
+src/internal.ts:42:3 - error TS2305: Module '"@gander-social-atproto/common-web"' has no exported member 'ensureValidAtUri'.
+
+42   ensureValidAtUri,
+     ~~~~~~~~~~~~~~~~
+
+src/internal.ts:43:3 - error TS2305: Module '"@gander-social-atproto/common-web"' has no exported member 'normalizeAndValidateHandle'.
+
+43   normalizeAndValidateHandle,
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+src/internal.ts:49:3 - error TS2305: Module '"@gander-social-atproto/syntax"' has no exported member 'AtIdentifier'.
+
+49   AtIdentifier,
+     ~~~~~~~~~~~~
+
+src/internal.ts:52:3 - error TS2724: '"@gander-social-atproto/syntax"' has no exported member named 'isValidDid'. Did you mean 'isValidTid'?
+
+52   isValidDid,
+     ~~~~~~~~~~
+
+  ../syntax/dist/tid.d.ts:2:22
+    2 export declare const isValidTid: (tid: string) => boolean;
+                           ~~~~~~~~~~
+    'isValidTid' is declared here.
+
+src/internal.ts:53:3 - error TS2724: '"@gander-social-atproto/syntax"' has no exported member named 'isValidNsid'. Did you mean 'isValidTid'?
+
+53   isValidNsid,
+     ~~~~~~~~~~~
+
+  ../syntax/dist/tid.d.ts:2:22
+    2 export declare const isValidTid: (tid: string) => boolean;
+                           ~~~~~~~~~~
+    'isValidTid' is declared here.
+
+src/internal.ts:54:3 - error TS2724: '"@gander-social-atproto/syntax"' has no exported member named 'isValidAtUri'. Did you mean 'isValidTid'?
+
+54   isValidAtUri,
+     ~~~~~~~~~~~~
+
+  ../syntax/dist/tid.d.ts:2:22
+    2 export declare const isValidTid: (tid: string) => boolean;
+                           ~~~~~~~~~~
+    'isValidTid' is declared here.
+
+src/internal.ts:56:3 - error TS2305: Module '"@gander-social-atproto/syntax"' has no exported member 'isValidCIDString'.
+
+56   isValidCIDString,
+     ~~~~~~~~~~~~~~~~
+
+src/internal.ts:71:3 - error TS1205: Re-exporting a type when 'isolatedModules' is enabled requires using 'export type'.
+
+71   Keypair,
+     ~~~~~~~
+
+src/internal.ts:75:3 - error TS2305: Module '"@gander-social-atproto/crypto"' has no exported member 'sha256Stream'.
+
+75   sha256Stream,
+     ~~~~~~~~~~~~
+
+src/internal.ts:76:3 - error TS2305: Module '"@gander-social-atproto/crypto"' has no exported member 'verify'.
+
+76   verify,
+     ~~~~~~
+
+src/internal.ts:77:3 - error TS2305: Module '"@gander-social-atproto/crypto"' has no exported member 'DidKey'.
+
+77   DidKey,
+     ~~~~~~
+
+src/internal.ts:85:3 - error TS1205: Re-exporting a type when 'isolatedModules' is enabled requires using 'export type'.
+
+85   CacheResult,
+     ~~~~~~~~~~~
+
+src/internal.ts:88:3 - error TS2305: Module '"@gander-social-atproto/identity"' has no exported member 'ResolveHandleInput'.
+
+88   ResolveHandleInput,
+     ~~~~~~~~~~~~~~~~~~
+
+src/internal.ts:89:3 - error TS2305: Module '"@gander-social-atproto/identity"' has no exported member 'ResolveDidInput'.
+
+89   ResolveDidInput,
+     ~~~~~~~~~~~~~~~
+
+src/internal.ts:90:3 - error TS2305: Module '"@gander-social-atproto/identity"' has no exported member 'GetKeyInput'.
+
+90   GetKeyInput,
+     ~~~~~~~~~~~
+
+src/internal.ts:102:3 - error TS2305: Module '"@gander-social-atproto/xrpc-server"' has no exported member 'ServerConfig'.
+
+102   ServerConfig as XrpcServerConfig,
+      ~~~~~~~~~~~~
+
+src/internal.ts:103:3 - error TS1205: Re-exporting a type when 'isolatedModules' is enabled requires using 'export type'.
+
+103   AuthVerifier,
+      ~~~~~~~~~~~~
+
+src/internal.ts:104:3 - error TS1205: Re-exporting a type when 'isolatedModules' is enabled requires using 'export type'.
+
+104   StreamAuthVerifier,
+      ~~~~~~~~~~~~~~~~~~
+
+src/internal.ts:108:3 - error TS2305: Module '"@gander-social-atproto/xrpc-server"' has no exported member 'ServerError'.
+
+108   ServerError,
+      ~~~~~~~~~~~
+
+src/utils/config.ts:213:3 - error TS2322: Type 'Partial<T>' is not assignable to type 'T'.
+  'Partial<T>' is assignable to the constraint of type 'T', but 'T' could be instantiated with a different subtype of constraint 'Record<string, any>'.
+
+213   return configs.reduce((merged, config) => {
+      ~~~~~~
+
+
+Found 64 errors.
+
+ ELIFECYCLE  Command failed with exit code 1.
+
+✅ Build successful!
+The shared-core package is now ready to use.

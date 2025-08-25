@@ -18,9 +18,9 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "build": "tsc --build tsconfig.build.json",
     "clean": "rm -rf dist",
-    "prebuild": "npm run clean"
+    "build:clean": "pnpm run clean && pnpm run build",
+    "build": "tsc --build tsconfig.build.json"
   },
   "dependencies": {
     "@gander-social-atproto/common": "workspace:^",

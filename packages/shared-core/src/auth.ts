@@ -3,9 +3,9 @@
  * JWT handling and auth middleware
  */
 
-import { Request, Response, NextFunction } from 'express'
-import { SignJWT, jwtVerify, importJWK, exportJWK } from 'jose'
-import { Keypair } from '@gander-social-atproto/crypto'
+import type { Request, Response, NextFunction } from 'express'
+import { SignJWT, jwtVerify, importJWK, exportJWK } from './dependencies'
+import { Keypair } from './internal'
 import { AuthError, ForbiddenError, InvalidTokenError, ExpiredTokenError } from './errors'
 
 /**

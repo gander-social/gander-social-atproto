@@ -7,6 +7,9 @@
 export { default as express } from 'express'
 export type { 
   Application as ExpressApplication,
+  Request,
+  Response,
+  NextFunction,
   Request as ExpressRequest,
   Response as ExpressResponse,
   NextFunction as ExpressNextFunction,
@@ -22,8 +25,9 @@ export type { CorsOptions } from 'cors'
 export { HttpTerminator, createHttpTerminator } from 'http-terminator'
 
 // Database
-export { default as pg } from 'pg'
-export { Kysely } from 'kysely'
+export { default as pg, Pool } from 'pg'
+export type { Pool as PgPool, PoolConfig } from 'pg'
+export { Kysely, Migrator as KyselyMigrator, sql } from 'kysely'
 export type { 
   Database as KyselyDatabase,
   Migration,
@@ -42,7 +46,7 @@ export type { Redis as RedisClient, RedisOptions } from 'ioredis'
 // Logging
 export { default as pino } from 'pino'
 export { default as pinoHttp } from 'pino-http'
-export type { Logger as PinoLogger, LoggerOptions as PinoLoggerOptions } from 'pino'
+export type { Logger, Logger as PinoLogger, LoggerOptions as PinoLoggerOptions } from 'pino'
 
 // Crypto and encoding
 export { importJWK, exportJWK, SignJWT, jwtVerify } from 'jose'

@@ -3,8 +3,8 @@
  * Memory and Redis cache utilities with TTL support
  */
 
-import { Redis } from 'ioredis'
-import { DAY, HOUR } from '@gander-social-atproto/common'
+import { Redis } from './dependencies'
+import { DAY, HOUR } from './internal'
 
 /**
  * Cache interface

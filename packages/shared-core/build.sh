@@ -1,21 +1,29 @@
 #!/bin/bash
-# Script to build the shared-core package
 
-echo "🚀 Building shared-core package..."
-echo ""
+# Build script for shared-core package
 
-# Navigate to shared-core directory
-cd /mnt/c/Users/pdbro/IdeaProjects/gander-social-atproto/packages/shared-core
+echo "🚀 Building @gander-social-atproto/shared-core..."
 
-echo "📦 Installing dependencies..."
-pnpm install
+# Clean previous build
+echo "🧹 Cleaning previous build..."
+rm -rf dist
 
-echo ""
-echo "🔨 Building TypeScript..."
-pnpm build
+# Check if node_modules exists
+if [ ! -d "node_modules" ]; then
+    echo "📦 Installing dependencies..."
+    pnpm install
+fi
 
-echo ""
-echo "✅ Build complete!"
-echo ""
-echo "📁 Checking output:"
-ls -la dist/ 2>/dev/null || echo "⚠️  No dist folder yet - build may have failed"
+# Build TypeScript
+echo "🔨 Compiling TypeScript..."
+pnpm exec tsc --build tsconfig.build.json
+
+# Check if build was successful
+if [ -d "dist" ] && [ -f "dist/index.js" ]; then
+    echo "✅ Build successful!"
+    echo "📁 Output files in: dist/"
+    ls -la dist/
+else
+    echo "❌ Build failed!"
+    exit 1
+fi

@@ -3,9 +3,9 @@
  * Common middleware patterns for AT Protocol services
  */
 
-import type { Request, Response, NextFunction } from 'express'
-import type { Logger } from 'pino'
-import { z } from 'zod'
+import type { Request, Response, NextFunction } from '../dependencies'
+import type { Logger } from '../dependencies'
+import { z } from '../dependencies'
 
 /**
  * Rate limiting middleware options
