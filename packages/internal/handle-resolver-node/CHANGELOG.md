@@ -1,5 +1,13 @@
 # @gander-atproto-nest/handle-resolver-node
 
+## 0.1.23
+
+### Patch Changes
+
+- Updated dependencies [[`bbcbbb3b237d9907776409acf9aa590fb6783ae5`](https://github.com/gander-social/gander-social-atproto/commit/bbcbbb3b237d9907776409acf9aa590fb6783ae5)]:
+  - @gander-atproto-nest/fetch-node@0.1.14
+  - @gander-atproto-nest/handle-resolver@0.3.5
+
 ## 0.1.22
 
 ### Patch Changes
