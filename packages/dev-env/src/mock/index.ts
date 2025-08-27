@@ -37,17 +37,17 @@ export async function generateMockSetup(env: TestNetwork) {
     {
       email: 'alice@test.com',
       handle: `alice.test`,
-      password: 'hunter2',
+      password: 'hunter2025',
     },
     {
       email: 'bob@test.com',
       handle: `bob.test`,
-      password: 'hunter2',
+      password: 'hunter2025',
     },
     {
       email: 'carla@test.com',
       handle: `carla.test`,
-      password: 'hunter2',
+      password: 'hunter2025',
     },
   ]
 
@@ -328,6 +328,46 @@ export async function generateMockSetup(env: TestNetwork) {
       embed: {
         $type: 'app.gndr.embed.record',
         record: fgBobRes,
+      },
+      createdAt: date.next().value,
+    },
+  )
+
+  const fg3Uri = AtUri.make(
+    carla.accountDid,
+    'app.gndr.feed.generator',
+    'carla-intr-algo',
+  )
+  const fg3 = await env.createFeedGen({
+    [fg3Uri.toString()]: async () => {
+      const feed = posts
+        .filter(() => rand(2) === 0)
+        .map((post) => ({ post: post.uri }))
+      return {
+        encoding: 'application/json',
+        body: {
+          feed,
+        },
+      }
+    },
+  })
+  const fgCarlaRes = await carla.app.gndr.feed.generator.create(
+    { repo: carla.accountDid, rkey: fg3Uri.rkey },
+    {
+      did: fg3.did,
+      displayName: `Acceptin' Generator`,
+      acceptsInteractions: true,
+      createdAt: date.next().value,
+    },
+  )
+
+  await alice.app.gndr.feed.post.create(
+    { repo: alice.accountDid },
+    {
+      text: `carla accepts interactions on her feed`,
+      embed: {
+        $type: 'app.gndr.embed.record',
+        record: fgCarlaRes,
       },
       createdAt: date.next().value,
     },

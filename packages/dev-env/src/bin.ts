@@ -1,7 +1,17 @@
 import './env'
+
+import * as dotenv from 'dotenv'
 import { generateMockSetup } from './mock'
 import { TestNetwork } from './network'
 import { mockMailer } from './util'
+
+dotenv.config({ path: './config/env.dev' })
+
+console.log('Loaded Environment Variables:', {
+  DB_POSTGRES_URL: process.env.DB_POSTGRES_URL,
+  REDIS_HOST: process.env.REDIS_HOST,
+  DB_POSTGRES_SCHEMA: process.env.DB_POSTGRES_SCHEMA,
+})
 
 const run = async () => {
   console.log(`

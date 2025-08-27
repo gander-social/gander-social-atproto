@@ -17,18 +17,20 @@
   "bin": "dist/bin.js",
   "scripts": {
     "build": "tsc --build tsconfig.build.json",
-    "start": "../dev-infra/with-test-redis-and-db.sh node --enable-source-maps dist/bin.js",
-    "dev": "../dev-infra/with-test-redis-and-db.sh node --enable-source-maps --watch dist/bin.js"
+    "start": "node -r dotenv/config dist/bin.js dotenv_config_path=.env.dev  ../dev-infra/with-external-db.sh psql $DB_POSTGRES_URL node --enable-source-maps dist/bin.js",
+    "dev": "node -r dotenv/config dist/bin.js dotenv_config_path=.env.dev ../dev-infra/with-external-db.sh psql $DB_POSTGRES_URL node --enable-source-maps dist/bin.js --watch"
   },
   "engines": {
     "node": ">=18.7.0"
   },
   "dependencies": {
+    "@did-plc/lib": "^0.0.1",
+    "@did-plc/server": "^0.0.1",
     "@gander-social-atproto/api": "workspace:^",
-    "@gander-social-atproto/gndr": "workspace:^",
     "@gander-social-atproto/bsync": "workspace:^",
     "@gander-social-atproto/common-web": "workspace:^",
     "@gander-social-atproto/crypto": "workspace:^",
+    "@gander-social-atproto/gndr": "workspace:^",
     "@gander-social-atproto/identity": "workspace:^",
     "@gander-social-atproto/lexicon": "workspace:^",
     "@gander-social-atproto/ozone": "workspace:^",
@@ -36,14 +38,15 @@
     "@gander-social-atproto/sync": "workspace:^",
     "@gander-social-atproto/syntax": "workspace:^",
     "@gander-social-atproto/xrpc-server": "workspace:^",
-    "@did-plc/lib": "^0.0.1",
-    "@did-plc/server": "^0.0.1",
+    "@types/pg": "^8.6.6",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "get-port": "^5.1.1",
     "multiformats": "^9.9.0",
+    "pg": "^8.10.0",
     "uint8arrays": "3.0.0",
-    "undici": "^6.14.1"
+    "undici": "^6.14.1",
+    "zod": "^3.25.76"
   },
   "devDependencies": {
     "@types/express": "^4.17.13",

@@ -36,7 +36,7 @@
     "@gander-social-atproto/oauth-types": "workspace:*",
     "@gander-social-atproto/xrpc": "workspace:*",
     "multiformats": "^9.9.0",
-    "zod": "^3.23.8"
+    "zod": "^3.25.76"
   },
   "devDependencies": {
     "typescript": "^5.6.3"
