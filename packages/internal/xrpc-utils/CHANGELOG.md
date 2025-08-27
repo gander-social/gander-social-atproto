@@ -1,5 +1,15 @@
 # @gander-atproto-nest/xrpc-utils
 
+## 0.0.22
+
+### Patch Changes
+
+- [#19](https://github.com/gander-social/gander-social-atproto/pull/19) [`d1c6a24a4e1747120628a8465154ba37d932f8cd`](https://github.com/gander-social/gander-social-atproto/commit/d1c6a24a4e1747120628a8465154ba37d932f8cd) Thanks [@melodylumen](https://github.com/melodylumen)! - Package version of Zod bumped up
+
+- Updated dependencies [[`d1c6a24a4e1747120628a8465154ba37d932f8cd`](https://github.com/gander-social/gander-social-atproto/commit/d1c6a24a4e1747120628a8465154ba37d932f8cd)]:
+  - @gander-social-atproto/xrpc-server@0.9.5
+  - @gander-social-atproto/xrpc@0.8.5
+
 ## 0.0.21
 
 ### Patch Changes

@@ -1,6 +1,6 @@
 {
   "name": "@gander-social-atproto/jwk",
-  "version": "0.5.4",
+  "version": "0.5.5",
   "license": "MIT",
   "description": "A library for working with JSON Web Keys (JWKs) in TypeScript. This is meant to be extended by environment-specific libraries like @gander-social-atproto/jwk-jose.",
   "keywords": [

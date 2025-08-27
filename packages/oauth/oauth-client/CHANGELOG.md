@@ -1,5 +1,25 @@
 # @atproto/oauth-client
 
+## 0.6.5
+
+### Patch Changes
+
+- [#19](https://github.com/gander-social/gander-social-atproto/pull/19) [`d1c6a24a4e1747120628a8465154ba37d932f8cd`](https://github.com/gander-social/gander-social-atproto/commit/d1c6a24a4e1747120628a8465154ba37d932f8cd) Thanks [@melodylumen](https://github.com/melodylumen)! - Add in ageAssurance tools
+
+- [#19](https://github.com/gander-social/gander-social-atproto/pull/19) [`d1c6a24a4e1747120628a8465154ba37d932f8cd`](https://github.com/gander-social/gander-social-atproto/commit/d1c6a24a4e1747120628a8465154ba37d932f8cd) Thanks [@melodylumen](https://github.com/melodylumen)! - Package version of Zod bumped up
+
+- Updated dependencies [[`d1c6a24a4e1747120628a8465154ba37d932f8cd`](https://github.com/gander-social/gander-social-atproto/commit/d1c6a24a4e1747120628a8465154ba37d932f8cd), [`d1c6a24a4e1747120628a8465154ba37d932f8cd`](https://github.com/gander-social/gander-social-atproto/commit/d1c6a24a4e1747120628a8465154ba37d932f8cd)]:
+  - @gander-atproto-nest/simple-store-memory@0.1.10
+  - @gander-atproto-nest/did-resolver@0.2.7
+  - @gander-atproto-nest/simple-store@0.2.7
+  - @gander-atproto-nest/identity-resolver@0.3.7
+  - @gander-atproto-nest/handle-resolver@0.3.7
+  - @gander-social-atproto/oauth-types@0.5.4
+  - @gander-atproto-nest/fetch@0.2.9
+  - @gander-social-atproto/jwk@0.5.5
+  - @gander-social-atproto/xrpc@0.8.5
+  - @gander-social-atproto/did@0.2.5
+
 ## 0.6.4
 
 ### Patch Changes
