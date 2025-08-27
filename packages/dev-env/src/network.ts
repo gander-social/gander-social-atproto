@@ -40,7 +40,7 @@ export class TestNetwork extends TestNetworkNoAppView {
 
     const plc = await TestPlc.create(params.plc ?? {})
 
-    const bskyPort = params.gndr?.port ?? (await getPort())
+    const gndrPort = params.gndr?.port ?? (await getPort())
     const pdsPort = params.pds?.port ?? (await getPort())
     const ozonePort = params.ozone?.port ?? (await getPort())
 
@@ -56,7 +56,7 @@ export class TestNetwork extends TestNetworkNoAppView {
       await ozoneServiceProfile.createDidAndKey()
 
     const gndr = await TestGndr.create({
-      port: bskyPort,
+      port: gndrPort,
       plcUrl: plc.url,
       pdsPort,
       repoProvider: `ws://localhost:${pdsPort}`,
@@ -72,8 +72,8 @@ export class TestNetwork extends TestNetworkNoAppView {
     const pdsProps = {
       port: pdsPort,
       didPlcUrl: plc.url,
-      bskyAppViewUrl: gndr.url,
-      bskyAppViewDid: gndr.ctx.cfg.serverDid,
+      gndrAppViewUrl: gndr.url,
+      gndrAppViewDid: gndr.ctx.cfg.serverDid,
       modServiceUrl,
       modServiceDid: ozoneDid,
       ...params.pds,

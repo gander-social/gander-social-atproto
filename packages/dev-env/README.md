@@ -29,6 +29,13 @@ Create a new user.
 
 Get the `ServiceClient` for the given user.
 
+If you want to run a fully native dev environment, move docker-compose.dev-env-native.yml to docker-compose.dev-env.yml in 
+the root of the project. Ensure that you copy the docker-compose.dev-env.yml to the dev-env as docker-compose.dev-env-hybrid.yml.
+
+Add back in to package.json the following with scripts start & dev inside the quotations:
+
+../dev-infra/with-test-redis-and-db.sh
+
 ## License
 
 This project is dual-licensed under MIT and Apache 2.0 terms:

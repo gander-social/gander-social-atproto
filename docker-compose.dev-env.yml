@@ -1,10 +1,6 @@
-# docker-compose.dev-env.yml
 services:
   # Local PDS for dev environment
   dev-pds:
-    build:
-      context: ../.. # Root of the repository
-      dockerfile: packages/pds/Dockerfile
     container_name: gander-pds-dev
     ports:
       - '2583:3000'
@@ -17,46 +13,18 @@ services:
       - PDS_JWT_SECRET=dev-jwt-secret
       - PDS_DATA_DIRECTORY=/pds
       - PDS_BLOBSTORE_DISK_LOCATION=/pds/blocks
-      - PDS_DID_PLC_URL=http://dev-plc:2582
-      - PDS_DATABASE_URL=postgres://pds:pds@dev-pds-db:5432/pds_dev
+      - PDS_DID_PLC_URL=http://localhost:2582
+      - PDS_DATABASE_URL=postgres://pds:pds@localhost:5434/pds_dev
       - LOG_ENABLED=true
       - LOG_LEVEL=debug
       - RUN_MIGRATIONS=true
     volumes:
-      - dev-pds-data:/pds
-      # Mount source for development hot-reload
       - ../../packages/pds/src:/app/packages/pds/src:ro
-    depends_on:
-      dev-pds-db:
-        condition: service_healthy
-      dev-plc:
-        condition: service_started
-    networks:
-      - gander-dev
-
-  # PostgreSQL for dev PDS
-  dev-pds-db:
-    image: postgres:15-alpine
-    container_name: gander-pds-db
-    environment:
-      - POSTGRES_USER=pds
-      - POSTGRES_PASSWORD=pds
-      - POSTGRES_DB=pds_dev
-    volumes:
-      - dev-pds-db-data:/var/lib/postgresql/data
-    healthcheck:
-      test: ['CMD-SHELL', 'pg_isready -U pds']
-      interval: 5s
-      timeout: 5s
-      retries: 5
     networks:
       - gander-dev
 
   # Local Gndr (AppView) for dev
   dev-gndr:
-    build:
-      context: ../.. # Root of the repository
-      dockerfile: packages/gndr/Dockerfile # or packages/bsky/Dockerfile if gndr doesn't exist yet
     container_name: gander-gndr-dev
     ports:
       - '2585:2585'
@@ -65,94 +33,32 @@ services:
       - GNDR_PORT=2585
       - GNDR_HOSTNAME=localhost:2585
       - GNDR_SERVICE_DID=did:web:gndr.local
-      - GNDR_DATABASE_URL=postgres://gndr:gndr@dev-gndr-db:5432/gndr_dev
-      - GNDR_DID_PLC_URL=http://dev-plc:2582
-      - GNDR_REDIS_HOST=dev-redis
+      - GNDR_DATABASE_URL=postgres://gndr:gndr@localhost:5435/gndr_dev
+      - GNDR_DID_PLC_URL=http://localhost:2582
+      - GNDR_REDIS_HOST=localhost
       - GNDR_REDIS_PORT=6379
       - LOG_LEVEL=debug
       - RUN_MIGRATIONS=true
     volumes:
-      # Mount source for development
       - ../../packages/gndr/src:/app/packages/gndr/src:ro
-    depends_on:
-      dev-gndr-db:
-        condition: service_healthy
-      dev-redis:
-        condition: service_started
-      dev-plc:
-        condition: service_started
-    networks:
-      - gander-dev
-
-  # PostgreSQL for dev Gndr
-  dev-gndr-db:
-    image: postgres:15-alpine
-    container_name: gander-gndr-db
-    environment:
-      - POSTGRES_USER=gndr
-      - POSTGRES_PASSWORD=gndr
-      - POSTGRES_DB=gndr_dev
-    volumes:
-      - dev-gndr-db-data:/var/lib/postgresql/data
-    healthcheck:
-      test: ['CMD-SHELL', 'pg_isready -U gndr']
-      interval: 5s
-      timeout: 5s
-      retries: 5
-    networks:
-      - gander-dev
-
-  # Redis for caching
-  dev-redis:
-    image: redis:7-alpine
-    container_name: gander-redis-dev
-    ports:
-      - '6379:6379'
     networks:
       - gander-dev
 
   # Local PLC for dev environment
   dev-plc:
-    image: ghcr.io/did-method-plc/server:latest
     container_name: gander-plc-dev
     ports:
       - '2582:2582'
     environment:
-      - DATABASE_URL=postgres://plc:plc@dev-plc-db:5432/plc_dev
+      - DATABASE_URL=postgres://plc:plc@localhost:5433/plc_dev
       - ENABLE_MIGRATIONS=true
       - PORT=2582
       - LOG_LEVEL=debug
       - NODE_ENV=development
-    depends_on:
-      dev-plc-db:
-        condition: service_healthy
     networks:
       - gander-dev
-
-  # PostgreSQL for dev PLC
-  dev-plc-db:
-    image: postgres:15-alpine
-    container_name: gander-plc-db
-    environment:
-      - POSTGRES_USER=plc
-      - POSTGRES_PASSWORD=plc
-      - POSTGRES_DB=plc_dev
-    volumes:
-      - dev-plc-db-data:/var/lib/postgresql/data
-    healthcheck:
-      test: ['CMD-SHELL', 'pg_isready -U plc']
-      interval: 5s
-      timeout: 5s
-      retries: 5
-    networks:
-      - gander-dev
-
-volumes:
-  dev-pds-data:
-  dev-pds-db-data:
-  dev-gndr-db-data:
-  dev-plc-db-data:
 
 networks:
   gander-dev:
-    driver: bridge
+    external:
+      name: gander-hybrid-network
