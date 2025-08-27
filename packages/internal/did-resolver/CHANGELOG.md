@@ -1,5 +1,20 @@
 # @gander-atproto-nest/did-resolver
 
+## 0.2.6
+
+### Patch Changes
+
+- [#17](https://github.com/gander-social/gander-social-atproto/pull/17) [`1f84fddeafc94dd9f9f44c3ae440430a6c307809`](https://github.com/gander-social/gander-social-atproto/commit/1f84fddeafc94dd9f9f44c3ae440430a6c307809) Thanks [@melodylumen](https://github.com/melodylumen)! - Add in ageAssurance tools
+
+- [#17](https://github.com/gander-social/gander-social-atproto/pull/17) [`1f84fddeafc94dd9f9f44c3ae440430a6c307809`](https://github.com/gander-social/gander-social-atproto/commit/1f84fddeafc94dd9f9f44c3ae440430a6c307809) Thanks [@melodylumen](https://github.com/melodylumen)! - Package version of Zod bumped up
+
+- Updated dependencies [[`1f84fddeafc94dd9f9f44c3ae440430a6c307809`](https://github.com/gander-social/gander-social-atproto/commit/1f84fddeafc94dd9f9f44c3ae440430a6c307809), [`1f84fddeafc94dd9f9f44c3ae440430a6c307809`](https://github.com/gander-social/gander-social-atproto/commit/1f84fddeafc94dd9f9f44c3ae440430a6c307809)]:
+  - @gander-atproto-nest/simple-store-memory@0.1.9
+  - @gander-atproto-nest/simple-store@0.2.6
+  - @gander-atproto-nest/fetch@0.2.8
+  - @gander-atproto-nest/pipe@0.1.6
+  - @gander-social-atproto/did@0.2.4
+
 ## 0.2.5
 
 ### Patch Changes

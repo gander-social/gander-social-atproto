@@ -1,6 +1,6 @@
 {
   "name": "@gander-atproto-nest/rollup-plugin-bundle-manifest",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "license": "MIT",
   "description": "Library for generating a manifest of bundled files from a Rollup build",
   "keywords": [

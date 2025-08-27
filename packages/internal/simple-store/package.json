@@ -1,6 +1,6 @@
 {
   "name": "@gander-atproto-nest/simple-store",
-  "version": "0.2.5",
+  "version": "0.2.6",
   "license": "MIT",
   "description": "Simple store interfaces & utilities",
   "keywords": [

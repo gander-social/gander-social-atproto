@@ -1,6 +1,6 @@
 {
   "name": "@gander-atproto-nest/fetch-node",
-  "version": "0.1.14",
+  "version": "0.1.15",
   "license": "MIT",
   "description": "SSRF protection for fetch() in Node.js",
   "keywords": [
