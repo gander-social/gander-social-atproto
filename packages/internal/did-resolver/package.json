@@ -1,6 +1,6 @@
 {
   "name": "@gander-atproto-nest/did-resolver",
-  "version": "0.2.4",
+  "version": "0.2.6",
   "license": "MIT",
   "description": "DID resolution and verification library",
   "keywords": [

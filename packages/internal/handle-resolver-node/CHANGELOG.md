@@ -1,5 +1,24 @@
 # @gander-atproto-nest/handle-resolver-node
 
+## 0.1.24
+
+### Patch Changes
+
+- [#17](https://github.com/gander-social/gander-social-atproto/pull/17) [`1f84fddeafc94dd9f9f44c3ae440430a6c307809`](https://github.com/gander-social/gander-social-atproto/commit/1f84fddeafc94dd9f9f44c3ae440430a6c307809) Thanks [@melodylumen](https://github.com/melodylumen)! - Package version of Zod bumped up
+
+- Updated dependencies [[`1f84fddeafc94dd9f9f44c3ae440430a6c307809`](https://github.com/gander-social/gander-social-atproto/commit/1f84fddeafc94dd9f9f44c3ae440430a6c307809), [`1f84fddeafc94dd9f9f44c3ae440430a6c307809`](https://github.com/gander-social/gander-social-atproto/commit/1f84fddeafc94dd9f9f44c3ae440430a6c307809)]:
+  - @gander-atproto-nest/fetch-node@0.1.15
+  - @gander-atproto-nest/handle-resolver@0.3.6
+  - @gander-social-atproto/did@0.2.4
+
+## 0.1.23
+
+### Patch Changes
+
+- Updated dependencies [[`bbcbbb3b237d9907776409acf9aa590fb6783ae5`](https://github.com/gander-social/gander-social-atproto/commit/bbcbbb3b237d9907776409acf9aa590fb6783ae5)]:
+  - @gander-atproto-nest/fetch-node@0.1.14
+  - @gander-atproto-nest/handle-resolver@0.3.5
+
 ## 0.1.22
 
 ### Patch Changes
