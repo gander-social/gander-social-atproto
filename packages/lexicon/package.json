@@ -1,6 +1,6 @@
 {
   "name": "@gander-social-atproto/lexicon",
-  "version": "0.5.3",
+  "version": "0.5.4",
   "license": "MIT",
   "description": "atproto Lexicon schema language library",
   "keywords": [

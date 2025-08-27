@@ -1,6 +1,6 @@
 {
   "name": "@gander-social-atproto/bsync",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "license": "MIT",
   "description": "Sychronizing service for app.gndr App View (Gander API)",
   "keywords": [
