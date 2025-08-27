@@ -1,5 +1,11 @@
 # @gander-atproto-nest/rollup-plugin-bundle-manifest
 
+## 0.2.6
+
+### Patch Changes
+
+- [#19](https://github.com/gander-social/gander-social-atproto/pull/19) [`d1c6a24a4e1747120628a8465154ba37d932f8cd`](https://github.com/gander-social/gander-social-atproto/commit/d1c6a24a4e1747120628a8465154ba37d932f8cd) Thanks [@melodylumen](https://github.com/melodylumen)! - Package version of Zod bumped up
+
 ## 0.2.5
 
 ### Patch Changes

@@ -1,5 +1,27 @@
 # @atproto/gndr
 
+## 0.1.6
+
+### Patch Changes
+
+- [#19](https://github.com/gander-social/gander-social-atproto/pull/19) [`d1c6a24a4e1747120628a8465154ba37d932f8cd`](https://github.com/gander-social/gander-social-atproto/commit/d1c6a24a4e1747120628a8465154ba37d932f8cd) Thanks [@melodylumen](https://github.com/melodylumen)! - Add in ageAssurance tools
+
+- [#19](https://github.com/gander-social/gander-social-atproto/pull/19) [`d1c6a24a4e1747120628a8465154ba37d932f8cd`](https://github.com/gander-social/gander-social-atproto/commit/d1c6a24a4e1747120628a8465154ba37d932f8cd) Thanks [@melodylumen](https://github.com/melodylumen)! - Package version of Zod bumped up
+
+- Updated dependencies [[`d1c6a24a4e1747120628a8465154ba37d932f8cd`](https://github.com/gander-social/gander-social-atproto/commit/d1c6a24a4e1747120628a8465154ba37d932f8cd), [`d1c6a24a4e1747120628a8465154ba37d932f8cd`](https://github.com/gander-social/gander-social-atproto/commit/d1c6a24a4e1747120628a8465154ba37d932f8cd)]:
+  - @gander-atproto-nest/fetch-node@0.1.16
+  - @gander-social-atproto/api@0.16.6
+  - @gander-atproto-nest/xrpc-utils@0.0.22
+  - @gander-social-atproto/xrpc-server@0.9.5
+  - @gander-social-atproto/identity@0.5.5
+  - @gander-social-atproto/lexicon@0.5.5
+  - @gander-social-atproto/common@0.5.5
+  - @gander-social-atproto/crypto@0.5.5
+  - @gander-social-atproto/syntax@0.5.5
+  - @gander-social-atproto/repo@0.9.5
+  - @gander-social-atproto/sync@0.2.5
+  - @gander-social-atproto/did@0.2.5
+
 ## 0.1.5
 
 ### Patch Changes

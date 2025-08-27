@@ -1,5 +1,19 @@
 # @atproto/sync
 
+## 0.2.5
+
+### Patch Changes
+
+- [#19](https://github.com/gander-social/gander-social-atproto/pull/19) [`d1c6a24a4e1747120628a8465154ba37d932f8cd`](https://github.com/gander-social/gander-social-atproto/commit/d1c6a24a4e1747120628a8465154ba37d932f8cd) Thanks [@melodylumen](https://github.com/melodylumen)! - Package version of Zod bumped up
+
+- Updated dependencies [[`d1c6a24a4e1747120628a8465154ba37d932f8cd`](https://github.com/gander-social/gander-social-atproto/commit/d1c6a24a4e1747120628a8465154ba37d932f8cd)]:
+  - @gander-social-atproto/xrpc-server@0.9.5
+  - @gander-social-atproto/identity@0.5.5
+  - @gander-social-atproto/lexicon@0.5.5
+  - @gander-social-atproto/common@0.5.5
+  - @gander-social-atproto/syntax@0.5.5
+  - @gander-social-atproto/repo@0.9.5
+
 ## 0.2.4
 
 ### Patch Changes

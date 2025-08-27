@@ -1,6 +1,6 @@
 {
   "name": "@gander-social-atproto/sync",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "license": "MIT",
   "description": "atproto sync library",
   "keywords": [
