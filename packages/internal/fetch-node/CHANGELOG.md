@@ -1,5 +1,17 @@
 # @gander-atproto-nest/fetch-node
 
+## 0.1.17
+
+### Patch Changes
+
+- [#21](https://github.com/gander-social/gander-social-atproto/pull/21) [`ea296e8cd8b2f3f0514d6b61a698a8836d0084f9`](https://github.com/gander-social/gander-social-atproto/commit/ea296e8cd8b2f3f0514d6b61a698a8836d0084f9) Thanks [@melodylumen](https://github.com/melodylumen)! - Add in ageAssurance tools
+
+- [#21](https://github.com/gander-social/gander-social-atproto/pull/21) [`ea296e8cd8b2f3f0514d6b61a698a8836d0084f9`](https://github.com/gander-social/gander-social-atproto/commit/ea296e8cd8b2f3f0514d6b61a698a8836d0084f9) Thanks [@melodylumen](https://github.com/melodylumen)! - Package version of Zod bumped up
+
+- Updated dependencies [[`ea296e8cd8b2f3f0514d6b61a698a8836d0084f9`](https://github.com/gander-social/gander-social-atproto/commit/ea296e8cd8b2f3f0514d6b61a698a8836d0084f9)]:
+  - @gander-atproto-nest/fetch@0.2.10
+  - @gander-atproto-nest/pipe@0.1.8
+
 ## 0.1.16
 
 ### Patch Changes

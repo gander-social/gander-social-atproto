@@ -1,6 +1,6 @@
 {
   "name": "@gander-atproto-nest/identity-resolver",
-  "version": "0.3.7",
+  "version": "0.3.8",
   "license": "MIT",
   "description": "A library resolving ATPROTO identities",
   "keywords": [
