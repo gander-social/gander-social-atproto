@@ -1,5 +1,11 @@
 # @atproto/crypto
 
+## 0.5.7
+
+### Patch Changes
+
+- [#23](https://github.com/gander-social/gander-social-atproto/pull/23) [`fc68f6ef013aa1983c2a6caeb733be141a8011bf`](https://github.com/gander-social/gander-social-atproto/commit/fc68f6ef013aa1983c2a6caeb733be141a8011bf) Thanks [@melodylumen](https://github.com/melodylumen)! - Package version of Zod bumped up
+
 ## 0.5.6
 
 ### Patch Changes

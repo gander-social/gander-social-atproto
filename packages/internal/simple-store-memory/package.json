@@ -1,6 +1,6 @@
 {
   "name": "@gander-atproto-nest/simple-store-memory",
-  "version": "0.1.11",
+  "version": "0.1.12",
   "license": "MIT",
   "description": "Memory based simple-store implementation",
   "keywords": [

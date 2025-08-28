@@ -1,6 +1,6 @@
 {
   "name": "@gander-social-atproto/api",
-  "version": "0.16.7",
+  "version": "0.16.8",
   "license": "MIT",
   "description": "Client library for atproto and Gander",
   "keywords": [
