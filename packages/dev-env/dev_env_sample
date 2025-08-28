@@ -1,0 +1,32 @@
+# Gander Social Dev Environment Configuration
+NODE_ENV=development
+
+# Disable external service dependencies
+MOCK_EXTERNAL_SERVICES=true
+SKIP_MUTE_OPERATIONS=true
+SKIP_REPORT_OPERATIONS=true
+
+# Local service endpoints (instead of Bluesky production)
+PDS_SERVICE_URL=http://localhost:2583
+BGS_SERVICE_URL=http://localhost:2584
+PLC_SERVICE_URL=http://localhost:2582
+MOD_SERVICE_URL=http://localhost:2587
+
+# Gander-specific configuration
+APP_NAMESPACE=app.gndr
+SERVICE_DID=did:web:gndr.local
+DEFAULT_LOCALE=en-CA
+
+# Disable certain seed operations that require external services
+SEED_SKIP_MUTES=true
+SEED_SKIP_REPORTS=true
+SEED_SKIP_TAKEDOWNS=true
+SEED_SIMPLIFIED=true
+
+# Database and Redis configurations
+PLC_DATABASE_URL=postgres://plc:plc@localhost:5433/plc_dev
+PDS_DATABASE_URL=postgres://pds:pds@localhost:5434/pds_dev
+GNDR_DATABASE_URL=postgres://appview:appview@localhost:5435/appview_dev
+REDIS_URL=redis://localhost:6379
+REDIS_HOST=localhost
+DB_POSTGRES_SCHEMA=plc_dev

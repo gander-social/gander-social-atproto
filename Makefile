@@ -18,6 +18,9 @@ build: ## Compile all modules
 test: ## Run all tests
 	pnpm test
 
+.PHONY: first-code-install
+first-code-install: pnpm install --recursive --force ## Force all dependencies to be installed, ignoring lockfile, recursively - for first-time setup
+
 .PHONY: run-dev-env
 run-dev-env: ## Run a "development environment" shell
 	cd packages/dev-env; NODE_ENV=development pnpm run start

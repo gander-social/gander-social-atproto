@@ -50,6 +50,12 @@ There is a Makefile which can help with basic development tasks:
 make nvm-setup
 
 # pull dependencies and build all local packages - build needs to run to be able to make deps
+# IMPORTANT: follow these steps for a first install
+make first-code-install
+make build
+
+# If it ran
+
 make build 
 make deps
 
