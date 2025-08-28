@@ -19,7 +19,18 @@ test: ## Run all tests
 	pnpm test
 
 .PHONY: first-code-install
-first-code-install: pnpm install --recursive --force ## Force all dependencies to be installed, ignoring lockfile, recursively - for first-time setup
+first-code-install: ## Force all dependencies to be installed, ignoring lockfile, recursively - for first-time setup
+	pnpm firstcodeinstall
+
+.PHONY: build-ordered
+build-ordered: ## Ensure initial packages built are built in dependency order
+	pnpm run build:ordered
+
+.PHONY: start-here
+start-here: ## Run first time setup in order
+	pnpm firstcodeinstall
+	pnpm build-ordered
+	pnpm build
 
 .PHONY: run-dev-env
 run-dev-env: ## Run a "development environment" shell

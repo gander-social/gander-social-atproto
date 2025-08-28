@@ -51,13 +51,12 @@ make nvm-setup
 
 # pull dependencies and build all local packages - build needs to run to be able to make deps
 # IMPORTANT: follow these steps for a first install
-make first-code-install
-make build
+# If there is a pnpm-lock.yaml file, delete it
+make start-here
 
-# If it ran
-
-make build 
-make deps
+# this will ensure all dependencies are installed, ignoring build scripts
+# this will then run the ordered build scripts in the right order
+# this will then run make build completing the install
 
 
 # run the tests, using Docker services as needed
