@@ -1,6 +1,6 @@
 {
   "name": "@gander-social-atproto/oauth-provider",
-  "version": "0.10.6",
+  "version": "0.10.7",
   "license": "MIT",
   "description": "Generic OAuth2 and OpenID Connect provider for Node.js. Currently only supports features needed for Atproto.",
   "keywords": [
