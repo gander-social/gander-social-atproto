@@ -1,3 +1,4 @@
+import { Selectable } from 'kysely'
 import {
   ClientAuth,
   ClientAuthLegacy,
@@ -7,7 +8,6 @@ import {
   OAuthClientId,
   RequestId,
 } from '@gander-social-atproto/oauth-provider'
-import { Selectable } from 'kysely'
 import { DateISO, JsonEncoded } from '../../../db'
 
 export interface AuthorizationRequest {

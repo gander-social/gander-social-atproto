@@ -32,14 +32,14 @@ export class BasicHostList implements HostList {
     this.update()
   }
 
+  onUpdate(handler: HostListHandler) {
+    this.handlers.push(handler)
+  }
+
   private update() {
     for (const handler of this.handlers) {
       handler(this.hosts)
     }
-  }
-
-  onUpdate(handler: HostListHandler) {
-    this.handlers.push(handler)
   }
 }
 
@@ -83,6 +83,10 @@ export class EtcdHostList implements HostList {
     return this.inner.get()
   }
 
+  onUpdate(handler: HostListHandler) {
+    this.inner.onUpdate(handler)
+  }
+
   private update() {
     const hosts = new Set<string>()
     for (const host of this.kv.values()) {
@@ -95,9 +99,5 @@ export class EtcdHostList implements HostList {
     } else if (this.fallback.size) {
       this.inner.set(this.fallback)
     }
-  }
-
-  onUpdate(handler: HostListHandler) {
-    this.inner.onUpdate(handler)
   }
 }

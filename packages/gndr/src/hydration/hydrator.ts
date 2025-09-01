@@ -8,7 +8,12 @@ import { isMain as isEmbedRecord } from '../lexicon/types/app/gndr/embed/record'
 import { isMain as isEmbedRecordWithMedia } from '../lexicon/types/app/gndr/embed/recordWithMedia'
 import { isListRule as isThreadgateListRule } from '../lexicon/types/app/gndr/feed/threadgate'
 import { hydrationLogger } from '../logger'
-import { Notification } from '../proto/gndr_pb'
+import {
+  Bookmark,
+  BookmarkInfo,
+  Notification,
+  RecordRef,
+} from '../proto/gndr_pb'
 import { ParsedLabelers } from '../util'
 import { uriToDid, uriToDid as didFromUri } from '../util/uris'
 import {
@@ -43,6 +48,8 @@ import {
   GraphHydrator,
   ListAggs,
   ListItems,
+  ListMembershipState,
+  ListMembershipStates,
   ListViewerStates,
   Lists,
   RelationshipPair,
@@ -109,6 +116,7 @@ export type HydrationState = {
   postgates?: Postgates
   lists?: Lists
   listAggs?: ListAggs
+  listMemberships?: ListMembershipStates
   listViewers?: ListViewerStates
   listItems?: ListItems
   likes?: Likes
@@ -126,6 +134,7 @@ export type HydrationState = {
   activitySubscriptions?: ActivitySubscriptionStates
   bidirectionalBlocks?: BidirectionalBlocks
   verifications?: Verifications
+  bookmarks?: Bookmarks
 }
 
 export type PostBlock = { embed: boolean; parent: boolean; root: boolean }
@@ -143,6 +152,9 @@ export type FollowBlock = boolean
 export type FollowBlocks = HydrationMap<FollowBlock>
 
 export type BidirectionalBlocks = HydrationMap<HydrationMap<boolean>>
+
+// actor DID -> stash key -> bookmark
+export type Bookmarks = HydrationMap<HydrationMap<Bookmark>>
 
 export class Hydrator {
   actor: ActorHydrator
@@ -363,6 +375,45 @@ export class Hydrator {
     return mergeStates(profileState, { listItems, ctx })
   }
 
+  async hydrateListsMembership(
+    uris: string[],
+    did: string,
+    ctx: HydrateCtx,
+  ): Promise<HydrationState> {
+    const [
+      actorsHydrationState,
+      listsHydrationState,
+      { listitemUris: listItemUris },
+    ] = await Promise.all([
+      this.hydrateProfiles([did], ctx),
+      this.hydrateLists(uris, ctx),
+      this.dataplane.getListMembership({
+        actorDid: did,
+        listUris: uris,
+      }),
+    ])
+
+    // mapping uri -> did -> { actorListItemUri }
+    const listMemberships = new HydrationMap(
+      uris.map((uri, i) => {
+        const listItemUri = listItemUris[i]
+        return [
+          uri,
+          new HydrationMap<ListMembershipState>([
+            listItemUri
+              ? [did, { actorListItemUri: listItemUri }]
+              : [did, null],
+          ]),
+        ]
+      }),
+    )
+
+    return mergeManyStates(actorsHydrationState, listsHydrationState, {
+      listMemberships,
+      ctx,
+    })
+  }
+
   // app.gndr.feed.defs#postView
   // - post
   //   - profile
@@ -538,70 +589,6 @@ export class Hydrator {
     )
   }
 
-  private async hydratePostBlocks(
-    posts: Posts,
-    ctx: HydrateCtx,
-  ): Promise<PostBlocks> {
-    const postBlocks = new HydrationMap<PostBlock>()
-    const postBlocksPairs = new Map<string, PostBlockPairs>()
-    const relationships: RelationshipPair[] = []
-    for (const [uri, item] of posts) {
-      if (!item) continue
-      const post = item.record
-      const creator = didFromUri(uri)
-      const postBlockPairs: PostBlockPairs = {}
-      postBlocksPairs.set(uri, postBlockPairs)
-      // 3p block for replies
-      const parentUri = post.reply?.parent.uri
-      const parentDid = parentUri && didFromUri(parentUri)
-      if (parentDid && parentDid !== creator) {
-        const pair: RelationshipPair = [creator, parentDid]
-        relationships.push(pair)
-        postBlockPairs.parent = pair
-      }
-      const rootUri = post.reply?.root.uri
-      const rootDid = rootUri && didFromUri(rootUri)
-      if (rootDid && rootDid !== creator) {
-        const pair: RelationshipPair = [creator, rootDid]
-        relationships.push(pair)
-        postBlockPairs.root = pair
-      }
-      // 3p block for record embeds
-      for (const embedUri of nestedRecordUris(post)) {
-        const pair: RelationshipPair = [creator, didFromUri(embedUri)]
-        relationships.push(pair)
-        postBlockPairs.embed = pair
-      }
-    }
-    // replace embed/parent/root pairs with block state
-    const blocks = await this.hydrateBidirectionalBlocks(
-      pairsToMap(relationships),
-      ctx,
-    )
-    for (const [uri, { embed, parent, root }] of postBlocksPairs) {
-      postBlocks.set(uri, {
-        embed: !!embed && !!isBlocked(blocks, embed),
-        parent: !!parent && !!isBlocked(blocks, parent),
-        root: !!root && !!isBlocked(blocks, root),
-      })
-    }
-    return postBlocks
-  }
-
-  // app.gndr.feed.defs#feedViewPost
-  // - post (+ replies w/ reply parent author)
-  //   - profile
-  //     - list basic
-  //   - list
-  //     - profile
-  //       - list basic
-  //   - feedgen
-  //     - profile
-  //       - list basic
-  // - repost
-  //   - profile
-  //     - list basic
-  //   - post
   //     - ...
   async hydrateFeedItems(
     items: FeedItem[],
@@ -653,8 +640,8 @@ export class Hydrator {
     })
   }
 
-  // app.gndr.feed.defs#threadViewPost
-  // - post
+  // app.gndr.feed.defs#feedViewPost
+  // - post (+ replies w/ reply parent author)
   //   - profile
   //     - list basic
   //   - list
@@ -662,6 +649,12 @@ export class Hydrator {
   //       - list basic
   //   - feedgen
   //     - profile
+  //       - list basic
+  // - repost
+  //   - profile
+  //     - list basic
+  //   - post
+
   //       - list basic
   async hydrateThreadPosts(
     refs: ItemRef[],
@@ -692,9 +685,16 @@ export class Hydrator {
     return mergeStates(postsState, { threadContexts })
   }
 
-  // app.gndr.feed.defs#generatorView
-  // - feedgen
+  // app.gndr.feed.defs#threadViewPost
+  // - post
   //   - profile
+  //     - list basic
+  //   - list
+  //     - profile
+  //       - list basic
+  //   - feedgen
+  //     - profile
+
   //     - list basic
   async hydrateFeedGens(
     uris: string[], // @TODO any way to get refs here?
@@ -725,10 +725,10 @@ export class Hydrator {
     })
   }
 
-  // app.gndr.graph.defs#starterPackViewBasic
-  // - starterpack
+  // app.gndr.feed.defs#generatorView
+  // - feedgen
   //   - profile
-  //     - list basic
+
   //  - labels
   async hydrateStarterPacksBasic(
     uris: string[],
@@ -752,17 +752,11 @@ export class Hydrator {
     })
   }
 
-  // app.gndr.graph.defs#starterPackView
+  // app.gndr.graph.defs#starterPackViewBasic
   // - starterpack
   //   - profile
   //     - list basic
-  //   - feedgen
-  //     - profile
-  //       - list basic
-  //  - list basic
-  //  - list item
-  //    - profile
-  //      - list basic
+
   //  - labels
   async hydrateStarterPacks(
     uris: string[],
@@ -843,9 +837,18 @@ export class Hydrator {
     )
   }
 
-  // app.gndr.feed.getLikes#like
-  // - like
+  // app.gndr.graph.defs#starterPackView
+  // - starterpack
   //   - profile
+  //     - list basic
+  //   - feedgen
+  //     - profile
+  //       - list basic
+  //  - list basic
+  //  - list item
+  //    - profile
+  //      - list basic
+
   //     - list basic
   async hydrateLikes(
     authorDid: string,
@@ -876,9 +879,10 @@ export class Hydrator {
     return mergeStates(profileState, { likes, likeBlocks, ctx })
   }
 
-  // app.gndr.feed.getRepostedBy#repostedBy
-  // - repost
+  // app.gndr.feed.getLikes#like
+  // - like
   //   - profile
+
   //     - list basic
   async hydrateReposts(uris: string[], ctx: HydrateCtx) {
     const [reposts, profileState] = await Promise.all([
@@ -888,9 +892,10 @@ export class Hydrator {
     return mergeStates(profileState, { reposts, ctx })
   }
 
-  // app.gndr.notification.listNotifications#notification
-  // - notification
+  // app.gndr.feed.getRepostedBy#repostedBy
+  // - repost
   //   - profile
+
   //     - list basic
   async hydrateNotifications(
     notifs: Notification[],
@@ -948,6 +953,10 @@ export class Hydrator {
     })
   }
 
+  // app.gndr.notification.listNotifications#notification
+  // - notification
+  //   - profile
+
   // provides partial hydration state within getFollows / getFollowers, mainly for applying rules
   async hydrateFollows(
     uris: string[],
@@ -973,6 +982,46 @@ export class Hydrator {
       }
     }
     return { follows, followBlocks }
+  }
+
+  async hydrateBookmarks(
+    bookmarkInfos: BookmarkInfo[],
+    ctx: HydrateCtx,
+  ): Promise<HydrationState> {
+    const viewer = ctx.viewer
+    if (!viewer) return {}
+    const bookmarksRes = await this.dataplane.getBookmarksByActorAndSubjects({
+      actorDid: viewer,
+      uris: bookmarkInfos.map((b) => b.subject),
+    })
+
+    type BookmarkWithRef = Bookmark & { ref: RecordRef }
+    const bookmarks: BookmarkWithRef[] = bookmarksRes.bookmarks.filter(
+      (bookmark): bookmark is BookmarkWithRef => !!bookmark.ref?.key,
+    )
+    // mapping DID -> stash key -> bookmark
+    const bookmarksMap = new HydrationMap([
+      [
+        viewer,
+        new HydrationMap<Bookmark>(
+          bookmarks.map((bookmark) => {
+            const {
+              ref: { key },
+            } = bookmark
+            return [key, bookmark]
+          }),
+        ),
+      ],
+    ])
+
+    // @NOTE: The `createBookmark` endpoint limits bookmarks to be of posts,
+    // so we can assume currently all subjects are posts.
+    const postsState = await this.hydratePosts(
+      bookmarks.map((bookmark) => ({ uri: bookmark.subjectUri })),
+      ctx,
+    )
+
+    return mergeStates(postsState, { bookmarks: bookmarksMap })
   }
 
   async hydrateBidirectionalBlocks(
@@ -1043,9 +1092,6 @@ export class Hydrator {
     return result
   }
 
-  // app.gndr.labeler.def#labelerViewDetailed
-  // - labeler
-  //   - profile
   //     - list basic
   async hydrateLabelers(
     dids: string[],
@@ -1069,7 +1115,10 @@ export class Hydrator {
     })
   }
 
-  // ad-hoc record hydration
+  // app.gndr.labeler.def#labelerViewDetailed
+  // - labeler
+  //   - profile
+
   // in com.atproto.repo.getRecord
   async getRecord(uri: string, includeTakedowns = false) {
     const parsed = new AtUri(uri)
@@ -1176,6 +1225,8 @@ export class Hydrator {
     }
   }
 
+  // ad-hoc record hydration
+
   async createContext(vals: HydrateCtxVals) {
     // ensures we're only apply labelers that exist and are not taken down
     const labelers = vals.labelers.dids
@@ -1206,6 +1257,56 @@ export class Hydrator {
     if (!did) return uriStr
     uri.host = did
     return uri.toString()
+  }
+
+  private async hydratePostBlocks(
+    posts: Posts,
+    ctx: HydrateCtx,
+  ): Promise<PostBlocks> {
+    const postBlocks = new HydrationMap<PostBlock>()
+    const postBlocksPairs = new Map<string, PostBlockPairs>()
+    const relationships: RelationshipPair[] = []
+    for (const [uri, item] of posts) {
+      if (!item) continue
+      const post = item.record
+      const creator = didFromUri(uri)
+      const postBlockPairs: PostBlockPairs = {}
+      postBlocksPairs.set(uri, postBlockPairs)
+      // 3p block for replies
+      const parentUri = post.reply?.parent.uri
+      const parentDid = parentUri && didFromUri(parentUri)
+      if (parentDid && parentDid !== creator) {
+        const pair: RelationshipPair = [creator, parentDid]
+        relationships.push(pair)
+        postBlockPairs.parent = pair
+      }
+      const rootUri = post.reply?.root.uri
+      const rootDid = rootUri && didFromUri(rootUri)
+      if (rootDid && rootDid !== creator) {
+        const pair: RelationshipPair = [creator, rootDid]
+        relationships.push(pair)
+        postBlockPairs.root = pair
+      }
+      // 3p block for record embeds
+      for (const embedUri of nestedRecordUris(post)) {
+        const pair: RelationshipPair = [creator, didFromUri(embedUri)]
+        relationships.push(pair)
+        postBlockPairs.embed = pair
+      }
+    }
+    // replace embed/parent/root pairs with block state
+    const blocks = await this.hydrateBidirectionalBlocks(
+      pairsToMap(relationships),
+      ctx,
+    )
+    for (const [uri, { embed, parent, root }] of postBlocksPairs) {
+      postBlocks.set(uri, {
+        embed: !!embed && !!isBlocked(blocks, embed),
+        parent: !!parent && !!isBlocked(blocks, parent),
+        root: !!root && !!isBlocked(blocks, root),
+      })
+    }
+    return postBlocks
   }
 }
 
@@ -1356,6 +1457,7 @@ export const mergeStates = (
     postgates: mergeMaps(stateA.postgates, stateB.postgates),
     lists: mergeMaps(stateA.lists, stateB.lists),
     listAggs: mergeMaps(stateA.listAggs, stateB.listAggs),
+    listMemberships: mergeMaps(stateA.listMemberships, stateB.listMemberships),
     listViewers: mergeMaps(stateA.listViewers, stateB.listViewers),
     listItems: mergeMaps(stateA.listItems, stateB.listItems),
     likes: mergeMaps(stateA.likes, stateB.likes),

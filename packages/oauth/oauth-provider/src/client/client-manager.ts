@@ -12,7 +12,7 @@ import {
   GetCachedOptions,
   SimpleStore,
 } from '@gander-atproto-nest/simple-store'
-import { Jwks, Keyset, jwksSchema } from '@gander-social-atproto/jwk'
+import { Jwks, Keyset, jwksPubSchema } from '@gander-social-atproto/jwk'
 import {
   OAuthAuthorizationServerMetadata,
   OAuthClientIdDiscoverable,
@@ -44,7 +44,7 @@ const fetchMetadataHandler = pipe(
 const fetchJwksHandler = pipe(
   fetchOkProcessor(),
   fetchJsonProcessor('application/json', false),
-  fetchJsonZodProcessor(jwksSchema),
+  fetchJsonZodProcessor(jwksPubSchema),
 )
 
 export type LoopbackMetadataGetter = (
@@ -152,6 +152,119 @@ export class ClientManager {
         .filter((c) => c != null && c instanceof Client)
         .map((c) => [c.id, c]),
     )
+  }
+
+  validateLoopbackClientMetadata(
+    clientId: OAuthClientIdLoopback,
+    metadata: OAuthClientMetadata,
+  ): OAuthClientMetadata {
+    if (metadata.client_uri) {
+      throw new InvalidClientMetadataError(
+        'client_uri is not allowed for loopback clients',
+      )
+    }
+
+    if (metadata.application_type !== 'native') {
+      throw new InvalidClientMetadataError(
+        'Loopback clients must have application_type "native"',
+      )
+    }
+
+    const method = metadata.token_endpoint_auth_method
+    if (method !== 'none') {
+      throw new InvalidClientMetadataError(
+        `Loopback clients are not allowed to use "token_endpoint_auth_method" ${method}`,
+      )
+    }
+
+    for (const redirectUri of metadata.redirect_uris) {
+      const url = parseRedirectUri(redirectUri)
+
+      if (url.protocol !== 'http:') {
+        throw new InvalidRedirectUriError(
+          `Loopback clients must use HTTP redirect URIs`,
+        )
+      }
+
+      if (!isLoopbackHost(url.hostname)) {
+        throw new InvalidRedirectUriError(
+          `Loopback clients must use loopback redirect URIs`,
+        )
+      }
+    }
+
+    return metadata
+  }
+
+  validateDiscoverableClientMetadata(
+    clientId: OAuthClientIdDiscoverable,
+    metadata: OAuthClientMetadata,
+  ): OAuthClientMetadata {
+    if (!metadata.client_id) {
+      // https://drafts.aaronpk.com/draft-parecki-oauth-client-id-metadata-document/draft-parecki-oauth-client-id-metadata-document.html
+      throw new InvalidClientMetadataError(
+        `client_id is required for discoverable clients`,
+      )
+    }
+
+    const clientIdUrl = parseDiscoverableClientId(clientId)
+
+    if (metadata.client_uri) {
+      // https://drafts.aaronpk.com/draft-parecki-oauth-client-id-metadata-document/draft-parecki-oauth-client-id-metadata-document.html
+      //
+      // The client_uri must be a parent of the client_id URL. This might be
+      // relaxed in the future.
+
+      const clientUriUrl = new URL(metadata.client_uri)
+
+      if (clientUriUrl.origin !== clientIdUrl.origin) {
+        throw new InvalidClientMetadataError(
+          `client_uri must have the same origin as the client_id`,
+        )
+      }
+
+      if (clientIdUrl.pathname !== clientUriUrl.pathname) {
+        if (
+          !clientIdUrl.pathname.startsWith(
+            clientUriUrl.pathname.endsWith('/')
+              ? clientUriUrl.pathname
+              : `${clientUriUrl.pathname}/`,
+          )
+        ) {
+          throw new InvalidClientMetadataError(
+            `client_uri must be a parent URL of the client_id`,
+          )
+        }
+      }
+    }
+
+    for (const redirectUri of metadata.redirect_uris) {
+      const url = parseRedirectUri(redirectUri)
+
+      if (isPrivateUseUriScheme(url)) {
+        // https://datatracker.ietf.org/doc/html/rfc8252#section-8.4
+        //
+        // > In addition to the collision-resistant properties, requiring a
+        // > URI scheme based on a domain name that is under the control of
+        // > the app can help to prove ownership in the event of a dispute
+        // > where two apps claim the same private-use URI scheme (where one
+        // > app is acting maliciously).
+
+        // https://drafts.aaronpk.com/draft-parecki-oauth-client-id-metadata-document/draft-parecki-oauth-client-id-metadata-document.html
+        //
+        // Fully qualified domain name (FQDN) of the client_id, in reverse
+        // order. This could be relaxed to allow same apex domain names, or
+        // parent domains, but for now we require an exact match.
+        const protocol = `${reverseDomain(clientIdUrl.hostname)}:`
+        if (url.protocol !== protocol) {
+          throw new InvalidRedirectUriError(
+            `Private-Use URI Scheme redirect URI, for discoverable client metadata, must be the fully qualified domain name (FQDN) of the client_id, in reverse order (${protocol})`,
+          )
+        }
+      }
+    }
+
+    return metadata
   }
 
   protected async getClientMetadata(
@@ -669,119 +782,6 @@ export class ClientManager {
     } else {
       return metadata
     }
-  }
-
-  validateLoopbackClientMetadata(
-    clientId: OAuthClientIdLoopback,
-    metadata: OAuthClientMetadata,
-  ): OAuthClientMetadata {
-    if (metadata.client_uri) {
-      throw new InvalidClientMetadataError(
-        'client_uri is not allowed for loopback clients',
-      )
-    }
-
-    if (metadata.application_type !== 'native') {
-      throw new InvalidClientMetadataError(
-        'Loopback clients must have application_type "native"',
-      )
-    }
-
-    const method = metadata.token_endpoint_auth_method
-    if (method !== 'none') {
-      throw new InvalidClientMetadataError(
-        `Loopback clients are not allowed to use "token_endpoint_auth_method" ${method}`,
-      )
-    }
-
-    for (const redirectUri of metadata.redirect_uris) {
-      const url = parseRedirectUri(redirectUri)
-
-      if (url.protocol !== 'http:') {
-        throw new InvalidRedirectUriError(
-          `Loopback clients must use HTTP redirect URIs`,
-        )
-      }
-
-      if (!isLoopbackHost(url.hostname)) {
-        throw new InvalidRedirectUriError(
-          `Loopback clients must use loopback redirect URIs`,
-        )
-      }
-    }
-
-    return metadata
-  }
-
-  validateDiscoverableClientMetadata(
-    clientId: OAuthClientIdDiscoverable,
-    metadata: OAuthClientMetadata,
-  ): OAuthClientMetadata {
-    if (!metadata.client_id) {
-      // https://drafts.aaronpk.com/draft-parecki-oauth-client-id-metadata-document/draft-parecki-oauth-client-id-metadata-document.html
-      throw new InvalidClientMetadataError(
-        `client_id is required for discoverable clients`,
-      )
-    }
-
-    const clientIdUrl = parseDiscoverableClientId(clientId)
-
-    if (metadata.client_uri) {
-      // https://drafts.aaronpk.com/draft-parecki-oauth-client-id-metadata-document/draft-parecki-oauth-client-id-metadata-document.html
-      //
-      // The client_uri must be a parent of the client_id URL. This might be
-      // relaxed in the future.
-
-      const clientUriUrl = new URL(metadata.client_uri)
-
-      if (clientUriUrl.origin !== clientIdUrl.origin) {
-        throw new InvalidClientMetadataError(
-          `client_uri must have the same origin as the client_id`,
-        )
-      }
-
-      if (clientIdUrl.pathname !== clientUriUrl.pathname) {
-        if (
-          !clientIdUrl.pathname.startsWith(
-            clientUriUrl.pathname.endsWith('/')
-              ? clientUriUrl.pathname
-              : `${clientUriUrl.pathname}/`,
-          )
-        ) {
-          throw new InvalidClientMetadataError(
-            `client_uri must be a parent URL of the client_id`,
-          )
-        }
-      }
-    }
-
-    for (const redirectUri of metadata.redirect_uris) {
-      const url = parseRedirectUri(redirectUri)
-
-      if (isPrivateUseUriScheme(url)) {
-        // https://datatracker.ietf.org/doc/html/rfc8252#section-8.4
-        //
-        // > In addition to the collision-resistant properties, requiring a
-        // > URI scheme based on a domain name that is under the control of
-        // > the app can help to prove ownership in the event of a dispute
-        // > where two apps claim the same private-use URI scheme (where one
-        // > app is acting maliciously).
-
-        // https://drafts.aaronpk.com/draft-parecki-oauth-client-id-metadata-document/draft-parecki-oauth-client-id-metadata-document.html
-        //
-        // Fully qualified domain name (FQDN) of the client_id, in reverse
-        // order. This could be relaxed to allow same apex domain names, or
-        // parent domains, but for now we require an exact match.
-        const protocol = `${reverseDomain(clientIdUrl.hostname)}:`
-        if (url.protocol !== protocol) {
-          throw new InvalidRedirectUriError(
-            `Private-Use URI Scheme redirect URI, for discoverable client metadata, must be the fully qualified domain name (FQDN) of the client_id, in reverse order (${protocol})`,
-          )
-        }
-      }
-    }
-
-    return metadata
   }
 }
 

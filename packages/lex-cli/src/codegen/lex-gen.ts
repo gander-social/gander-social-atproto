@@ -1,4 +1,5 @@
 import { relative as getRelativePath } from 'node:path/posix'
+import { JSDoc, SourceFile, VariableDeclarationKind } from 'ts-morph'
 import {
   type LexArray,
   type LexBlob,
@@ -10,7 +11,6 @@ import {
   type LexToken,
   Lexicons,
 } from '@gander-social-atproto/lexicon'
-import { JSDoc, SourceFile, VariableDeclarationKind } from 'ts-morph'
 import { toCamelCase, toScreamingSnakeCase, toTitleCase } from './util'
 
 interface Commentable {
@@ -37,7 +37,7 @@ export function genCommonImports(file: SourceFile, baseNsid: string) {
       { name: 'BlobRef' },
     ])
 
-  //= import {CID} from 'multiformats/cid'
+  //= import { CID } from 'multiformats/cid'
   file
     .addImportDeclaration({
       moduleSpecifier: 'multiformats/cid',
@@ -214,7 +214,6 @@ function genObject(
           name: `${propKey}${req ? '' : '?'}`,
           type: makeType(types, { nullable: propNullable }),
         })
-        continue
       } else {
         if (propDef.type === 'array') {
           //= propName: type[]

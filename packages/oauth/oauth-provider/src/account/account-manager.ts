@@ -42,77 +42,6 @@ export class AccountManager {
       : undefined
   }
 
-  protected async processHcaptchaToken(
-    input: SignUpInput,
-    deviceId: DeviceId,
-    deviceMetadata: RequestMetadata,
-  ): Promise<HcaptchaVerifyResult | undefined> {
-    if (!this.hcaptchaClient) {
-      return undefined
-    }
-
-    if (!input.hcaptchaToken) {
-      throw new InvalidRequestError('hCaptcha token is required')
-    }
-
-    const tokens = this.hcaptchaClient.buildClientTokens(
-      deviceMetadata.ipAddress,
-      input.handle,
-      deviceMetadata.userAgent,
-    )
-
-    const result = await this.hcaptchaClient
-      .verify('signup', input.hcaptchaToken, deviceMetadata.ipAddress, tokens)
-      .catch((err) => {
-        throw InvalidRequestError.from(err, 'hCaptcha verification failed')
-      })
-
-    await callAsync(this.hooks.onHcaptchaResult, {
-      input,
-      deviceId,
-      deviceMetadata,
-      tokens,
-      result,
-    })
-
-    try {
-      this.hcaptchaClient.checkVerifyResult(result, tokens)
-    } catch (err) {
-      throw InvalidRequestError.from(err, 'hCaptcha verification failed')
-    }
-
-    return result
-  }
-
-  protected async enforceInviteCode(
-    input: SignUpInput,
-    _deviceId: DeviceId,
-    _deviceMetadata: RequestMetadata,
-  ): Promise<string | undefined> {
-    if (!this.inviteCodeRequired) {
-      return undefined
-    }
-
-    if (!input.inviteCode) {
-      throw new InvalidRequestError('Invite code is required')
-    }
-
-    return input.inviteCode
-  }
-
-  protected async buildSignupData(
-    input: SignUpInput,
-    deviceId: DeviceId,
-    deviceMetadata: RequestMetadata,
-  ): Promise<SignUpData> {
-    const [hcaptchaResult, inviteCode] = await Promise.all([
-      this.processHcaptchaToken(input, deviceId, deviceMetadata),
-      this.enforceInviteCode(input, deviceId, deviceMetadata),
-    ])
-
-    return { ...input, hcaptchaResult, inviteCode }
-  }
-
   public async createAccount(
     deviceId: DeviceId,
     deviceMetadata: RequestMetadata,
@@ -263,5 +192,76 @@ export class AccountManager {
     return constantTime(TIMING_ATTACK_MITIGATION_DELAY, async () => {
       return this.store.verifyHandleAvailability(handle)
     })
+  }
+
+  protected async processHcaptchaToken(
+    input: SignUpInput,
+    deviceId: DeviceId,
+    deviceMetadata: RequestMetadata,
+  ): Promise<HcaptchaVerifyResult | undefined> {
+    if (!this.hcaptchaClient) {
+      return undefined
+    }
+
+    if (!input.hcaptchaToken) {
+      throw new InvalidRequestError('hCaptcha token is required')
+    }
+
+    const tokens = this.hcaptchaClient.buildClientTokens(
+      deviceMetadata.ipAddress,
+      input.handle,
+      deviceMetadata.userAgent,
+    )
+
+    const result = await this.hcaptchaClient
+      .verify('signup', input.hcaptchaToken, deviceMetadata.ipAddress, tokens)
+      .catch((err) => {
+        throw InvalidRequestError.from(err, 'hCaptcha verification failed')
+      })
+
+    await callAsync(this.hooks.onHcaptchaResult, {
+      input,
+      deviceId,
+      deviceMetadata,
+      tokens,
+      result,
+    })
+
+    try {
+      this.hcaptchaClient.checkVerifyResult(result, tokens)
+    } catch (err) {
+      throw InvalidRequestError.from(err, 'hCaptcha verification failed')
+    }
+
+    return result
+  }
+
+  protected async enforceInviteCode(
+    input: SignUpInput,
+    _deviceId: DeviceId,
+    _deviceMetadata: RequestMetadata,
+  ): Promise<string | undefined> {
+    if (!this.inviteCodeRequired) {
+      return undefined
+    }
+
+    if (!input.inviteCode) {
+      throw new InvalidRequestError('Invite code is required')
+    }
+
+    return input.inviteCode
+  }
+
+  protected async buildSignupData(
+    input: SignUpInput,
+    deviceId: DeviceId,
+    deviceMetadata: RequestMetadata,
+  ): Promise<SignUpData> {
+    const [hcaptchaResult, inviteCode] = await Promise.all([
+      this.processHcaptchaToken(input, deviceId, deviceMetadata),
+      this.enforceInviteCode(input, deviceId, deviceMetadata),
+    ])
+
+    return { ...input, hcaptchaResult, inviteCode }
   }
 }

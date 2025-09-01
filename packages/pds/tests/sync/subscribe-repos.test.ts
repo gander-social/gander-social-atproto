@@ -1,3 +1,5 @@
+import { CID } from 'multiformats/cid'
+import { WebSocket } from 'ws'
 import { AtpAgent } from '@gander-social-atproto/api'
 import {
   HOUR,
@@ -19,8 +21,6 @@ import {
   MessageFrame,
   byFrame,
 } from '@gander-social-atproto/xrpc-server'
-import { CID } from 'multiformats/cid'
-import { WebSocket } from 'ws'
 import { AppContext } from '../../src'
 import { AccountStatus } from '../../src/account-manager/account-manager'
 import {

@@ -1,19 +1,25 @@
 import { LexValue, stringifyLex } from '@gander-social-atproto/lexicon'
 import { BsyncClient } from './bsync'
 import { lexicons } from './lexicon/lexicons'
+import { Bookmark } from './lexicon/types/app/gndr/bookmark/defs'
 import {
   Preferences,
   SubjectActivitySubscription,
 } from './lexicon/types/app/gndr/notification/defs'
+import { AgeAssuranceEvent } from './lexicon/types/app/gndr/unspecced/defs'
 import { Method } from './proto/bsync_pb'
 
 type PickNSID<T extends { $type?: string }> = Exclude<T['$type'], undefined>
 
 export const Namespaces = {
+  AppGndrBookmarkDefsBookmark:
+    'app.gndr.bookmark.defs#bookmark' satisfies PickNSID<Bookmark>,
   AppGndrNotificationDefsPreferences:
     'app.gndr.notification.defs#preferences' satisfies PickNSID<Preferences>,
   AppGndrNotificationDefsSubjectActivitySubscription:
     'app.gndr.notification.defs#subjectActivitySubscription' satisfies PickNSID<SubjectActivitySubscription>,
+  AppGndrUnspeccedDefsAgeAssuranceEvent:
+    'app.gndr.unspecced.defs#ageAssuranceEvent' satisfies PickNSID<AgeAssuranceEvent>,
 }
 
 export type Namespace = (typeof Namespaces)[keyof typeof Namespaces]

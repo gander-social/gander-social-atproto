@@ -12,19 +12,19 @@ export class BackgroundQueue {
   private abortController = new AbortController()
   private queue: PQueue
 
+  constructor(
+    protected db: Database,
+    queueOpts?: { concurrency?: number },
+  ) {
+    this.queue = new PQueue(queueOpts ?? { concurrency: 20 })
+  }
+
   public get signal() {
     return this.abortController.signal
   }
 
   public get destroyed() {
     return this.signal.aborted
-  }
-
-  constructor(
-    protected db: Database,
-    queueOpts?: { concurrency?: number },
-  ) {
-    this.queue = new PQueue(queueOpts ?? { concurrency: 20 })
   }
 
   getStats() {
@@ -99,14 +99,6 @@ export class PeriodicBackgroundTask {
   private intervalPromise?: Promise<void>
   private runningPromise?: Promise<void>
 
-  public get signal() {
-    return this.abortController.signal
-  }
-
-  public get destroyed() {
-    return this.signal.aborted
-  }
-
   constructor(
     protected backgroundQueue: BackgroundQueue,
     protected interval: number,
@@ -119,6 +111,14 @@ export class PeriodicBackgroundTask {
     // Bind this class's signal to the backgroundQueue's signal (destroying this
     // instance if the backgroundQueue is destroyed)
     this.abortController = boundAbortController(backgroundQueue.signal)
+  }
+
+  public get signal() {
+    return this.abortController.signal
+  }
+
+  public get destroyed() {
+    return this.signal.aborted
   }
 
   public run(signal?: AbortSignal): Promise<void> {

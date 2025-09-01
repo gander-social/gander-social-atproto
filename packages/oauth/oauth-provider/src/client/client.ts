@@ -1,11 +1,3 @@
-import { Jwks, SignedJwt, UnsignedJwt } from '@gander-social-atproto/jwk'
-import {
-  CLIENT_ASSERTION_TYPE_JWT_BEARER,
-  OAuthAuthorizationRequestParameters,
-  OAuthClientCredentials,
-  OAuthClientMetadata,
-  OAuthRedirectUri,
-} from '@gander-social-atproto/oauth-types'
 import {
   JWTClaimVerificationOptions,
   type JWTHeaderParameters,
@@ -23,6 +15,14 @@ import {
   exportJWK,
   jwtVerify,
 } from 'jose'
+import { Jwks, SignedJwt, UnsignedJwt } from '@gander-social-atproto/jwk'
+import {
+  CLIENT_ASSERTION_TYPE_JWT_BEARER,
+  OAuthAuthorizationRequestParameters,
+  OAuthClientCredentials,
+  OAuthClientMetadata,
+  OAuthRedirectUri,
+} from '@gander-social-atproto/oauth-types'
 import { CLIENT_ASSERTION_MAX_AGE, JAR_MAX_AGE } from '../constants.js'
 import { AuthorizationError } from '../errors/authorization-error.js'
 import { InvalidAuthorizationDetailsError } from '../errors/invalid-authorization-details-error.js'
@@ -60,6 +60,11 @@ export class Client {
       jwks || !metadata.jwks_uri
         ? createLocalJWKSet(jwks || { keys: [] })
         : createRemoteJWKSet(new URL(metadata.jwks_uri), {})
+  }
+
+  get defaultRedirectUri(): OAuthRedirectUri | undefined {
+    const { redirect_uris } = this.metadata
+    return redirect_uris.length === 1 ? redirect_uris[0] : undefined
   }
 
   /**
@@ -106,52 +111,6 @@ export class Client {
 
       throw new InvalidRequestError(message, err)
     }
-  }
-
-  protected async jwtVerifyUnsecured<PayloadType = JWTPayload>(
-    token: string,
-    {
-      audience,
-      allowMissingAudience = false,
-      allowMissingIssuer = false,
-      ...options
-    }: Omit<JWTClaimVerificationOptions, 'issuer'> & {
-      allowMissingIssuer?: boolean
-      allowMissingAudience?: boolean
-    } = {},
-  ): Promise<UnsecuredResult<PayloadType>> {
-    // jose does not support `allowMissingAudience` and `allowMissingIssuer`
-    // options, so we need to handle audience and issuer checks manually (see
-    // bellow).
-
-    const result = UnsecuredJWT.decode<PayloadType>(token, options)
-
-    if (!allowMissingIssuer || result.payload.iss != null) {
-      if (result.payload.iss !== this.id) {
-        throw new JOSEError(`Invalid "iss" claim "${result.payload.iss}"`)
-      }
-    }
-
-    if (!allowMissingAudience || result.payload.aud != null) {
-      if (audience != null) {
-        const payloadAud = asArray(result.payload.aud)
-        if (!asArray(audience).some((aud) => payloadAud.includes(aud))) {
-          throw new JOSEError(`Invalid "aud" claim "${result.payload.aud}"`)
-        }
-      }
-    }
-
-    return result
-  }
-
-  protected async jwtVerify<PayloadType = JWTPayload>(
-    token: string,
-    options?: Omit<JWTVerifyOptions, 'issuer'>,
-  ): Promise<JWTVerifyResult<PayloadType> & ResolvedKey<KeyLike>> {
-    return jwtVerify<PayloadType>(token, this.keyGetter, {
-      ...options,
-      issuer: this.id,
-    })
   }
 
   /**
@@ -377,9 +336,50 @@ export class Client {
     return parameters
   }
 
-  get defaultRedirectUri(): OAuthRedirectUri | undefined {
-    const { redirect_uris } = this.metadata
-    return redirect_uris.length === 1 ? redirect_uris[0] : undefined
+  protected async jwtVerifyUnsecured<PayloadType = JWTPayload>(
+    token: string,
+    {
+      audience,
+      allowMissingAudience = false,
+      allowMissingIssuer = false,
+      ...options
+    }: Omit<JWTClaimVerificationOptions, 'issuer'> & {
+      allowMissingIssuer?: boolean
+      allowMissingAudience?: boolean
+    } = {},
+  ): Promise<UnsecuredResult<PayloadType>> {
+    // jose does not support `allowMissingAudience` and `allowMissingIssuer`
+    // options, so we need to handle audience and issuer checks manually (see
+    // bellow).
+
+    const result = UnsecuredJWT.decode<PayloadType>(token, options)
+
+    if (!allowMissingIssuer || result.payload.iss != null) {
+      if (result.payload.iss !== this.id) {
+        throw new JOSEError(`Invalid "iss" claim "${result.payload.iss}"`)
+      }
+    }
+
+    if (!allowMissingAudience || result.payload.aud != null) {
+      if (audience != null) {
+        const payloadAud = asArray(result.payload.aud)
+        if (!asArray(audience).some((aud) => payloadAud.includes(aud))) {
+          throw new JOSEError(`Invalid "aud" claim "${result.payload.aud}"`)
+        }
+      }
+    }
+
+    return result
+  }
+
+  protected async jwtVerify<PayloadType = JWTPayload>(
+    token: string,
+    options?: Omit<JWTVerifyOptions, 'issuer'>,
+  ): Promise<JWTVerifyResult<PayloadType> & ResolvedKey<KeyLike>> {
+    return jwtVerify<PayloadType>(token, this.keyGetter, {
+      ...options,
+      issuer: this.id,
+    })
   }
 }
 

@@ -2,9 +2,9 @@ import assert from 'node:assert'
 import { once } from 'node:events'
 import { Server, createServer } from 'node:http'
 import { AddressInfo } from 'node:net'
+import express, { Application } from 'express'
 import AtpAgent from '@gander-social-atproto/api'
 import { SeedClient, TestNetwork } from '@gander-social-atproto/dev-env'
-import express, { Application } from 'express'
 import { ids } from '../../src/lexicon/lexicons'
 import { OutputSchema } from '../../src/lexicon/types/app/gndr/unspecced/getTrendsSkeleton'
 import { Users, trendsSeed } from '../seed/get-trends'
@@ -105,6 +105,11 @@ class MockTrendsServer {
     this.server = createServer(this.app)
   }
 
+  get url() {
+    const address = this.server.address() as AddressInfo
+    return `http://localhost:${address.port}`
+  }
+
   async listen(port?: number) {
     this.server.listen(port)
     await once(this.server, 'listening')
@@ -113,11 +118,6 @@ class MockTrendsServer {
   async stop() {
     this.server.close()
     await once(this.server, 'close')
-  }
-
-  get url() {
-    const address = this.server.address() as AddressInfo
-    return `http://localhost:${address.port}`
   }
 
   private createApp() {

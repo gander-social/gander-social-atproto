@@ -1,13 +1,8 @@
 /**
  * GENERATED CODE - DO NOT MODIFY
  */
-import {
-  type LexiconDoc,
-  Lexicons,
-  ValidationError,
-  type ValidationResult,
-} from '@gander-social-atproto/lexicon'
-import { type $Typed, is$typed, maybe$typed } from './util.js'
+import { type LexiconDoc, Lexicons, ValidationError, type ValidationResult, } from '@gander-social-atproto/lexicon'
+import { is$typed, maybe$typed } from './util.js'
 
 export const schemaDict = {
   ComAtprotoAdminDefs: {
@@ -8860,6 +8855,15 @@ export const schemaDict = {
             cursor: {
               type: 'string',
             },
+            purposes: {
+              type: 'array',
+              description:
+                'Optional filter by list purpose. If not specified, all supported types are returned.',
+              items: {
+                type: 'string',
+                knownValues: ['modlist', 'curatelist'],
+              },
+            },
           },
         },
         output: {
@@ -8879,6 +8883,81 @@ export const schemaDict = {
                 },
               },
             },
+          },
+        },
+      },
+    },
+  },
+  AppGndrGraphGetListsWithMembership: {
+    lexicon: 1,
+    id: 'app.gndr.graph.getListsWithMembership',
+    defs: {
+      main: {
+        type: 'query',
+          description:
+        'Enumerates the lists created by the session user, and includes membership information about `actor` in those lists. Only supports curation and moderation lists (no reference lists, used in starter packs). Requires auth.',
+          parameters: {
+          type: 'params',
+            required: ['actor'],
+            properties: {
+            actor: {
+              type: 'string',
+                format: 'at-identifier',
+                description: 'The account (actor) to check for membership.',
+            },
+            limit: {
+              type: 'integer',
+                minimum: 1,
+                maximum: 100,
+            default: 50,
+            },
+            cursor: {
+              type: 'string',
+            },
+            purposes: {
+              type: 'array',
+                description:
+              'Optional filter by list purpose. If not specified, all supported types are returned.',
+                items: {
+                type: 'string',
+                  knownValues: ['modlist', 'curatelist'],
+              },
+            },
+          },
+        },
+        output: {
+          encoding: 'application/json',
+            schema: {
+            type: 'object',
+              required: ['listsWithMembership'],
+              properties: {
+              cursor: {
+                type: 'string',
+              },
+              listsWithMembership: {
+                type: 'array',
+                  items: {
+                  type: 'ref',
+                  ref: 'lex:app.gndr.graph.getListsWithMembership#listWithMembership',
+                },
+              },
+            },
+          },
+        },
+      },
+      listWithMembership: {
+        description:
+          'A list and an optional list item indicating membership of a target user to that list.',
+            type: 'object',
+          required: ['list'],
+          properties: {
+          list: {
+            type: 'ref',
+            ref: 'lex:app.gndr.graph.defs#listView',
+          },
+          listItem: {
+            type: 'ref',
+            ref: 'lex:app.gndr.graph.defs#listItemView',
           },
         },
       },
@@ -9059,6 +9138,72 @@ export const schemaDict = {
                 },
               },
             },
+          },
+        },
+      },
+    },
+  },
+  AppGndrGraphGetStarterPacksWithMembership: {
+    lexicon: 1,
+    id: 'app.gndr.graph.getStarterPacksWithMembership',
+    defs: {
+      main: {
+        type: 'query',
+          description:
+        'Enumerates the starter packs created by the session user, and includes membership information about `actor` in those starter packs. Requires auth.',
+          parameters: {
+          type: 'params',
+            required: ['actor'],
+            properties: {
+            actor: {
+              type: 'string',
+                format: 'at-identifier',
+                description: 'The account (actor) to check for membership.',
+            },
+            limit: {
+              type: 'integer',
+                minimum: 1,
+                maximum: 100,
+            default: 50,
+            },
+            cursor: {
+              type: 'string',
+            },
+          },
+        },
+        output: {
+          encoding: 'application/json',
+            schema: {
+            type: 'object',
+              required: ['starterPacksWithMembership'],
+              properties: {
+              cursor: {
+                type: 'string',
+              },
+              starterPacksWithMembership: {
+                type: 'array',
+                  items: {
+                  type: 'ref',
+                  ref: 'lex:app.gndr.graph.getStarterPacksWithMembership#starterPackWithMembership',
+                },
+              },
+            },
+          },
+        },
+      },
+      starterPackWithMembership: {
+        description:
+          'A starter pack and an optional list item indicating membership of a target user to that starter pack.',
+            type: 'object',
+          required: ['starterPack'],
+          properties: {
+          starterPack: {
+            type: 'ref',
+            ref: 'lex:app.gndr.graph.defs#starterPackView',
+          },
+          listItem: {
+            type: 'ref',
+            ref: 'lex:app.gndr.graph.defs#listItemView',
           },
         },
       },
@@ -10358,6 +10503,44 @@ export const schemaDict = {
               platform: {
                 type: 'string',
                 knownValues: ['ios', 'android', 'web'],
+              },
+              appId: {
+                type: 'string',
+              },
+              ageRestricted: {
+                type: 'boolean',
+                description: 'Set to true when the actor is age restricted',
+              },
+            },
+          },
+        },
+      },
+    },
+  },
+  AppGndrNotificationUnregisterPush: {
+    lexicon: 1,
+    id: 'app.gndr.notification.unregisterPush',
+    defs: {
+      main: {
+        type: 'procedure',
+          description:
+        'The inverse of registerPush - inform a specified service that push notifications should no longer be sent to the given token for the requesting account. Requires auth.',
+          input: {
+          encoding: 'application/json',
+            schema: {
+            type: 'object',
+              required: ['serviceDid', 'token', 'platform', 'appId'],
+              properties: {
+              serviceDid: {
+                type: 'string',
+                  format: 'did',
+              },
+              token: {
+                type: 'string',
+              },
+              platform: {
+                type: 'string',
+                  knownValues: ['ios', 'android', 'web'],
               },
               appId: {
                 type: 'string',
@@ -13270,6 +13453,128 @@ export const schemaDict = {
       },
     },
   },
+  ComAtprotoTempCheckHandleAvailability: {
+    lexicon: 1,
+    id: 'com.atproto.temp.checkHandleAvailability',
+    defs: {
+      main: {
+        type: 'query',
+        description:
+          'Checks whether the provided handle is available. If the handle is not available, available suggestions will be returned. Optional inputs will be used to generate suggestions.',
+        parameters: {
+          type: 'params',
+          required: ['handle'],
+          properties: {
+            handle: {
+              type: 'string',
+              format: 'handle',
+              description:
+                'Tentative handle. Will be checked for availability or used to build handle suggestions.',
+            },
+            email: {
+              type: 'string',
+              description:
+                'User-provided email. Might be used to build handle suggestions.',
+            },
+            birthDate: {
+              type: 'string',
+              format: 'datetime',
+              description:
+                'User-provided birth date. Might be used to build handle suggestions.',
+            },
+          },
+        },
+        output: {
+          encoding: 'application/json',
+          schema: {
+            type: 'object',
+            required: ['handle', 'result'],
+            properties: {
+              handle: {
+                type: 'string',
+                format: 'handle',
+                description: 'Echo of the input handle.',
+              },
+              result: {
+                type: 'union',
+                refs: [
+                  'lex:com.atproto.temp.checkHandleAvailability#resultAvailable',
+                  'lex:com.atproto.temp.checkHandleAvailability#resultUnavailable',
+                ],
+              },
+            },
+          },
+        },
+        errors: [
+          {
+            name: 'InvalidEmail',
+            description: 'An invalid email was provided.',
+          },
+        ],
+      },
+      resultAvailable: {
+        type: 'object',
+        description: 'Indicates the provided handle is available.',
+        properties: {},
+      },
+      resultUnavailable: {
+        type: 'object',
+        description:
+          'Indicates the provided handle is unavailable and gives suggestions of available handles.',
+        required: ['suggestions'],
+        properties: {
+          suggestions: {
+            type: 'array',
+            description:
+              'List of suggested handles based on the provided inputs.',
+            items: {
+              type: 'ref',
+              ref: 'lex:com.atproto.temp.checkHandleAvailability#suggestion',
+            },
+          },
+        },
+      },
+      suggestion: {
+        type: 'object',
+        required: ['handle', 'method'],
+        properties: {
+          handle: {
+            type: 'string',
+            format: 'handle',
+          },
+          method: {
+            type: 'string',
+            description:
+              'Method used to build this suggestion. Should be considered opaque to clients. Can be used for metrics.',
+          },
+        },
+      },
+    },
+  },
+  ComAtprotoTempRevokeAccountCredentials: {
+    lexicon: 1,
+    id: 'com.atproto.temp.revokeAccountCredentials',
+    defs: {
+      main: {
+        type: 'procedure',
+        description:
+          'Revoke sessions, password, and app passwords associated with account. May be resolved by a password reset.',
+        input: {
+          encoding: 'application/json',
+          schema: {
+            type: 'object',
+            required: ['account'],
+            properties: {
+              account: {
+                type: 'string',
+                format: 'at-identifier',
+              },
+            },
+          },
+        },
+      },
+    },
+  },
   ToolsOzoneCommunicationCreateTemplate: {
     lexicon: 1,
     id: 'tools.ozone.communication.createTemplate',
@@ -13663,6 +13968,8 @@ export const schemaDict = {
               'lex:tools.ozone.moderation.defs#identityEvent',
               'lex:tools.ozone.moderation.defs#recordEvent',
               'lex:tools.ozone.moderation.defs#modEventPriorityScore',
+              'lex:tools.ozone.moderation.defs#ageAssuranceEvent',
+              'lex:tools.ozone.moderation.defs#ageAssuranceOverrideEvent',
             ],
           },
           subject: {
@@ -13735,6 +14042,8 @@ export const schemaDict = {
               'lex:tools.ozone.moderation.defs#identityEvent',
               'lex:tools.ozone.moderation.defs#recordEvent',
               'lex:tools.ozone.moderation.defs#modEventPriorityScore',
+              'lex:tools.ozone.moderation.defs#ageAssuranceEvent',
+              'lex:tools.ozone.moderation.defs#ageAssuranceOverrideEvent',
             ],
           },
           subject: {
@@ -13880,6 +14189,17 @@ export const schemaDict = {
               "Statistics related to the record subjects authored by the subject's account",
             type: 'ref',
             ref: 'lex:tools.ozone.moderation.defs#recordsStats',
+          },
+          ageAssuranceState: {
+            type: 'string',
+            description: 'Current age assurance state of the subject.',
+            knownValues: ['pending', 'assured', 'unknown', 'reset', 'blocked'],
+          },
+          ageAssuranceUpdatedBy: {
+            type: 'string',
+            description:
+              'Whether or not the last successful update to age assurance was made by the user or admin.',
+            knownValues: ['admin', 'user'],
           },
         },
       },
@@ -14132,6 +14452,63 @@ export const schemaDict = {
             type: 'integer',
             minimum: 0,
             maximum: 100,
+          },
+        },
+      },
+      ageAssuranceEvent: {
+        type: 'object',
+        description:
+          'Age assurance info coming directly from users. Only works on DID subjects.',
+        required: ['createdAt', 'status', 'attemptId'],
+        properties: {
+          createdAt: {
+            type: 'string',
+            format: 'datetime',
+            description: 'The date and time of this write operation.',
+          },
+          status: {
+            type: 'string',
+            description: 'The status of the age assurance process.',
+            knownValues: ['unknown', 'pending', 'assured'],
+          },
+          attemptId: {
+            type: 'string',
+            description:
+              'The unique identifier for this instance of the age assurance flow, in UUID format.',
+          },
+          initIp: {
+            type: 'string',
+            description: 'The IP address used when initiating the AA flow.',
+          },
+          initUa: {
+            type: 'string',
+            description: 'The user agent used when initiating the AA flow.',
+          },
+          completeIp: {
+            type: 'string',
+            description: 'The IP address used when completing the AA flow.',
+          },
+          completeUa: {
+            type: 'string',
+            description: 'The user agent used when completing the AA flow.',
+          },
+        },
+      },
+      ageAssuranceOverrideEvent: {
+        type: 'object',
+        description:
+          'Age assurance status override by moderators. Only works on DID subjects.',
+        required: ['comment', 'status'],
+        properties: {
+          status: {
+            type: 'string',
+            description:
+              'The status to be set for the user decided by a moderator, overriding whatever value the user had previously. Use reset to default to original state.',
+            knownValues: ['assured', 'reset', 'blocked'],
+          },
+          comment: {
+            type: 'string',
+            description: 'Comment describing the reason for the override.',
           },
         },
       },
@@ -14798,6 +15175,21 @@ export const schemaDict = {
           },
         },
       },
+      timelineEventPlcCreate: {
+        type: 'token',
+        description:
+          'Moderation event timeline event for a PLC create operation',
+      },
+      timelineEventPlcOperation: {
+        type: 'token',
+        description:
+          'Moderation event timeline event for generic PLC operation',
+      },
+      timelineEventPlcTombstone: {
+        type: 'token',
+        description:
+          'Moderation event timeline event for a PLC tombstone operation',
+      },
     },
   },
   ToolsOzoneModerationEmitEvent: {
@@ -14835,6 +15227,8 @@ export const schemaDict = {
                   'lex:tools.ozone.moderation.defs#identityEvent',
                   'lex:tools.ozone.moderation.defs#recordEvent',
                   'lex:tools.ozone.moderation.defs#modEventPriorityScore',
+                  'lex:tools.ozone.moderation.defs#ageAssuranceEvent',
+                  'lex:tools.ozone.moderation.defs#ageAssuranceOverrideEvent',
                 ],
               },
               subject: {
@@ -14859,6 +15253,11 @@ export const schemaDict = {
                 type: 'ref',
                 ref: 'lex:tools.ozone.moderation.defs#modTool',
               },
+              externalId: {
+                type: 'string',
+                description:
+                  'An optional external ID for the event, used to deduplicate events from external systems. Fails when an event of same type with the same external ID exists for the same subject.',
+              },
             },
           },
         },
@@ -14873,7 +15272,116 @@ export const schemaDict = {
           {
             name: 'SubjectHasAction',
           },
+          {
+            name: 'DuplicateExternalId',
+            description:
+              'An event with the same external ID already exists for the subject.',
+          },
         ],
+      },
+    },
+  },
+  ToolsOzoneModerationGetAccountTimeline: {
+    lexicon: 1,
+    id: 'tools.ozone.moderation.getAccountTimeline',
+    defs: {
+      main: {
+        type: 'query',
+        description:
+          'Get timeline of all available events of an account. This includes moderation events, account history and did history.',
+        parameters: {
+          type: 'params',
+          required: ['did'],
+          properties: {
+            did: {
+              type: 'string',
+              format: 'did',
+            },
+          },
+        },
+        output: {
+          encoding: 'application/json',
+          schema: {
+            type: 'object',
+            required: ['timeline'],
+            properties: {
+              timeline: {
+                type: 'array',
+                items: {
+                  type: 'ref',
+                  ref: 'lex:tools.ozone.moderation.getAccountTimeline#timelineItem',
+                },
+              },
+            },
+          },
+        },
+        errors: [
+          {
+            name: 'RepoNotFound',
+          },
+        ],
+      },
+      timelineItem: {
+        type: 'object',
+        required: ['day', 'summary'],
+        properties: {
+          day: {
+            type: 'string',
+          },
+          summary: {
+            type: 'array',
+            items: {
+              type: 'ref',
+              ref: 'lex:tools.ozone.moderation.getAccountTimeline#timelineItemSummary',
+            },
+          },
+        },
+      },
+      timelineItemSummary: {
+        type: 'object',
+        required: ['eventSubjectType', 'eventType', 'count'],
+        properties: {
+          eventSubjectType: {
+            type: 'string',
+            knownValues: ['account', 'record', 'chat'],
+          },
+          eventType: {
+            type: 'string',
+            knownValues: [
+              'tools.ozone.moderation.defs#modEventTakedown',
+              'tools.ozone.moderation.defs#modEventReverseTakedown',
+              'tools.ozone.moderation.defs#modEventComment',
+              'tools.ozone.moderation.defs#modEventReport',
+              'tools.ozone.moderation.defs#modEventLabel',
+              'tools.ozone.moderation.defs#modEventAcknowledge',
+              'tools.ozone.moderation.defs#modEventEscalate',
+              'tools.ozone.moderation.defs#modEventMute',
+              'tools.ozone.moderation.defs#modEventUnmute',
+              'tools.ozone.moderation.defs#modEventMuteReporter',
+              'tools.ozone.moderation.defs#modEventUnmuteReporter',
+              'tools.ozone.moderation.defs#modEventEmail',
+              'tools.ozone.moderation.defs#modEventResolveAppeal',
+              'tools.ozone.moderation.defs#modEventDivert',
+              'tools.ozone.moderation.defs#modEventTag',
+              'tools.ozone.moderation.defs#accountEvent',
+              'tools.ozone.moderation.defs#identityEvent',
+              'tools.ozone.moderation.defs#recordEvent',
+              'tools.ozone.moderation.defs#modEventPriorityScore',
+              'tools.ozone.moderation.defs#ageAssuranceEvent',
+              'tools.ozone.moderation.defs#ageAssuranceOverrideEvent',
+              'tools.ozone.moderation.defs#timelineEventPlcCreate',
+              'tools.ozone.moderation.defs#timelineEventPlcOperation',
+              'tools.ozone.moderation.defs#timelineEventPlcTombstone',
+              'tools.ozone.hosting.getAccountHistory#accountCreated',
+              'tools.ozone.hosting.getAccountHistory#emailConfirmed',
+              'tools.ozone.hosting.getAccountHistory#passwordUpdated',
+              'tools.ozone.hosting.getAccountHistory#handleUpdated',
+            ],
+          },
+          count: {
+            type: 'integer',
+          },
+        },
       },
     },
   },
@@ -15271,6 +15779,23 @@ export const schemaDict = {
               description:
                 'If specified, only events where the modTool name matches any of the given values are returned',
             },
+            batchId: {
+              type: 'string',
+              description:
+                'If specified, only events where the batchId matches the given value are returned',
+            },
+            ageAssuranceState: {
+              type: 'string',
+              description:
+                'If specified, only events where the age assurance state matches the given value are returned',
+              knownValues: [
+                'pending',
+                'assured',
+                'unknown',
+                'reset',
+                'blocked',
+              ],
+            },
             cursor: {
               type: 'string',
             },
@@ -15500,6 +16025,18 @@ export const schemaDict = {
               type: 'integer',
               description:
                 'If specified, only subjects that have priority score value above the given value will be returned.',
+            },
+            ageAssuranceState: {
+              type: 'string',
+              description:
+                'If specified, only subjects with the given age assurance state will be returned.',
+              knownValues: [
+                'pending',
+                'assured',
+                'unknown',
+                'reset',
+                'blocked',
+              ],
             },
           },
         },
@@ -17501,10 +18038,14 @@ export const ids = {
   ComAtprotoSyncRequestCrawl: 'com.atproto.sync.requestCrawl',
   ComAtprotoSyncSubscribeRepos: 'com.atproto.sync.subscribeRepos',
   ComAtprotoTempAddReservedHandle: 'com.atproto.temp.addReservedHandle',
+  ComAtprotoTempCheckHandleAvailability:
+    'com.atproto.temp.checkHandleAvailability',
   ComAtprotoTempCheckSignupQueue: 'com.atproto.temp.checkSignupQueue',
   ComAtprotoTempFetchLabels: 'com.atproto.temp.fetchLabels',
   ComAtprotoTempRequestPhoneVerification:
     'com.atproto.temp.requestPhoneVerification',
+  ComAtprotoTempRevokeAccountCredentials:
+    'com.atproto.temp.revokeAccountCredentials',
   AppGndrActorDefs: 'app.gndr.actor.defs',
   AppGndrActorGetPreferences: 'app.gndr.actor.getPreferences',
   AppGndrActorGetProfile: 'app.gndr.actor.getProfile',
@@ -17557,11 +18098,14 @@ export const ids = {
   AppGndrGraphGetList: 'app.gndr.graph.getList',
   AppGndrGraphGetListBlocks: 'app.gndr.graph.getListBlocks',
   AppGndrGraphGetListMutes: 'app.gndr.graph.getListMutes',
+  AppGndrGraphGetListsWithMembership: 'app.gndr.graph.getListsWithMembership',
   AppGndrGraphGetLists: 'app.gndr.graph.getLists',
   AppGndrGraphGetMutes: 'app.gndr.graph.getMutes',
   AppGndrGraphGetRelationships: 'app.gndr.graph.getRelationships',
   AppGndrGraphGetStarterPack: 'app.gndr.graph.getStarterPack',
   AppGndrGraphGetStarterPacks: 'app.gndr.graph.getStarterPacks',
+  AppGndrGraphGetStarterPacksWithMembership:
+    'app.gndr.graph.getStarterPacksWithMembership',
   AppGndrGraphGetSuggestedFollowsByActor:
     'app.gndr.graph.getSuggestedFollowsByActor',
   AppGndrGraphList: 'app.gndr.graph.list',
@@ -17592,6 +18136,7 @@ export const ids = {
   AppGndrNotificationPutPreferences: 'app.gndr.notification.putPreferences',
   AppGndrNotificationPutPreferencesV2: 'app.gndr.notification.putPreferencesV2',
   AppGndrNotificationRegisterPush: 'app.gndr.notification.registerPush',
+  AppGndrNotificationUnregisterPush: 'app.gndr.notification.unregisterPush',
   AppGndrNotificationUpdateSeen: 'app.gndr.notification.updateSeen',
   AppGndrRichtextFacet: 'app.gndr.richtext.facet',
   AppGndrUnspeccedDefs: 'app.gndr.unspecced.defs',
@@ -17667,6 +18212,8 @@ export const ids = {
   ToolsOzoneHostingGetAccountHistory: 'tools.ozone.hosting.getAccountHistory',
   ToolsOzoneModerationDefs: 'tools.ozone.moderation.defs',
   ToolsOzoneModerationEmitEvent: 'tools.ozone.moderation.emitEvent',
+  ToolsOzoneModerationGetAccountTimeline:
+    'tools.ozone.moderation.getAccountTimeline',
   ToolsOzoneModerationGetEvent: 'tools.ozone.moderation.getEvent',
   ToolsOzoneModerationGetRecord: 'tools.ozone.moderation.getRecord',
   ToolsOzoneModerationGetRecords: 'tools.ozone.moderation.getRecords',

@@ -30,26 +30,6 @@ export class ModerationDecision {
 
   constructor() {}
 
-  static merge(
-    ...decisions: (ModerationDecision | undefined)[]
-  ): ModerationDecision {
-    const decisionsFiltered = decisions.filter((v) => v != null)
-    const decision = new ModerationDecision()
-    if (decisionsFiltered[0]) {
-      decision.did = decisionsFiltered[0].did
-      decision.isMe = decisionsFiltered[0].isMe
-    }
-    decision.causes = decisionsFiltered.flatMap((d) => d.causes)
-    return decision
-  }
-
-  downgrade() {
-    for (const cause of this.causes) {
-      cause.downgraded = true
-    }
-    return this
-  }
-
   get blocked() {
     return !!this.blockCause
   }
@@ -73,6 +53,26 @@ export class ModerationDecision {
 
   get labelCauses() {
     return this.causes.filter((cause) => cause.type === 'label')
+  }
+
+  static merge(
+    ...decisions: (ModerationDecision | undefined)[]
+  ): ModerationDecision {
+    const decisionsFiltered = decisions.filter((v) => v != null)
+    const decision = new ModerationDecision()
+    if (decisionsFiltered[0]) {
+      decision.did = decisionsFiltered[0].did
+      decision.isMe = decisionsFiltered[0].isMe
+    }
+    decision.causes = decisionsFiltered.flatMap((d) => d.causes)
+    return decision
+  }
+
+  downgrade() {
+    for (const cause of this.causes) {
+      cause.downgraded = true
+    }
+    return this
   }
 
   ui(context: keyof ModerationBehavior): ModerationUI {

@@ -3,8 +3,6 @@ import { AddressInfo } from 'node:net'
 import { ToolsOzoneModerationDefs } from '@gander-social-atproto/api'
 import { lexToJson } from '@gander-social-atproto/lexicon'
 import { AtUri } from '@gander-social-atproto/syntax'
-import { type Express } from 'express'
-import { CID } from 'multiformats/cid'
 import {
   FeedViewPost,
   isReasonRepost,

@@ -1,7 +1,8 @@
-import { type LexiconDoc } from '@gander-social-atproto/lexicon'
 import { Options as PrettierOptions, format } from 'prettier'
 import { Project, SourceFile, VariableDeclarationKind } from 'ts-morph'
+import { type LexiconDoc } from '@gander-social-atproto/lexicon'
 import { type GeneratedFile } from '../types'
+import { toTitleCase } from './util'
 
 const PRETTIER_OPTS: PrettierOptions = {
   parser: 'typescript',
@@ -14,7 +15,7 @@ const PRETTIER_OPTS: PrettierOptions = {
 export const utilTs = (project) =>
   gen(project, '/util.ts', async (file) => {
     file.replaceWithText(`
-import { type ValidationResult } from '@gander-social-atproto/lexicon'
+import { type ValidationResult } from '@atproto/lexicon'
 
 export type OmitKey<T, K extends keyof T> = {
   [K2 in keyof T as K2 extends K ? never : K2]: T[K2]
@@ -45,6 +46,7 @@ function is$type<Id extends string, Hash extends string>(
         $type.startsWith(id) &&
         $type.endsWith(hash)
 }
+/* eslint-disable prettier/prettier */
 ${
   /**
    * The construct below allows to properly distinguish open unions. Consider
@@ -85,6 +87,7 @@ ${
    */
   ''
 }
+/* eslint-enable prettier/prettier */
 export type $TypedObject<V, Id extends string, Hash extends string> = V extends {
   $type: $Type<Id, Hash>
 }
@@ -134,17 +137,10 @@ export function asPredicate<V extends Validator>(validate: V) {
 
 export const lexiconsTs = (project, lexicons: LexiconDoc[]) =>
   gen(project, '/lexicons.ts', async (file) => {
-    const nsidToEnum = (nsid: string): string => {
-      return nsid
-        .split('.')
-        .map((word) => word[0].toUpperCase() + word.slice(1))
-        .join('')
-    }
-
-    //= import { type LexiconDoc, Lexicons } from '@gander-social-atproto/lexicon'
+    //= import { type LexiconDoc, Lexicons } from '@atproto/lexicon'
     file
       .addImportDeclaration({
-        moduleSpecifier: '@gander-social-atproto/lexicon',
+        moduleSpecifier: '@atproto/lexicon',
       })
       .addNamedImports([
         { name: 'LexiconDoc', isTypeOnly: true },
@@ -176,7 +172,7 @@ export const lexiconsTs = (project, lexicons: LexiconDoc[]) =>
               lexicons.reduce(
                 (acc, cur) => ({
                   ...acc,
-                  [nsidToEnum(cur.id)]: cur,
+                  [toTitleCase(cur.id)]: cur,
                 }),
                 {},
               ),
@@ -259,7 +255,7 @@ export const lexiconsTs = (project, lexicons: LexiconDoc[]) =>
           name: 'ids',
           initializer: `{${lexicons
             .map(
-              (lex) => `\n  ${nsidToEnum(lex.id)}: ${JSON.stringify(lex.id)},`,
+              (lex) => `\n  ${toTitleCase(lex.id)}: ${JSON.stringify(lex.id)},`,
             )
             .join('')}\n} as const`,
         },

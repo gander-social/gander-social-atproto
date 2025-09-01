@@ -1,3 +1,4 @@
+import { Generated, Selectable } from 'kysely'
 import {
   ClientAuth,
   ClientAuthLegacy,
@@ -10,7 +11,6 @@ import {
   Sub,
   TokenId,
 } from '@gander-social-atproto/oauth-provider'
-import { Generated, Selectable } from 'kysely'
 import { DateISO, JsonEncoded } from '../../../db/cast'
 
 export interface Token {
@@ -28,6 +28,7 @@ export interface Token {
   details: JsonEncoded<OAuthAuthorizationDetails> | null
   code: Code | null
   currentRefreshToken: RefreshToken | null
+  scope: string | null
 }
 
 export type TokenEntry = Selectable<Token>

@@ -1,5 +1,5 @@
-import { AtUri } from '@gander-social-atproto/syntax'
 import { z } from 'zod'
+import { AtUri } from '@gander-social-atproto/syntax'
 import { AppGndrActorDefs } from './client'
 import { Nux } from './client/types/app/gndr/actor/defs'
 
@@ -84,7 +84,7 @@ export function validateSavedFeed(savedFeed: AppGndrActorDefs.SavedFeed) {
 
 export type Did = `did:${string}`
 
-// @TODO use tools from @atproto/did
+// @TODO use tools from @gander-social-atproto/did
 export const isDid = (str: unknown): str is Did =>
   typeof str === 'string' &&
   str.startsWith('did:') &&

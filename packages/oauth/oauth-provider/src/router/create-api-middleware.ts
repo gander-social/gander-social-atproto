@@ -1,4 +1,6 @@
 import type { IncomingMessage, ServerResponse } from 'node:http'
+import createHttpError from 'http-errors'
+import { z } from 'zod'
 import { signedJwtSchema } from '@gander-social-atproto/jwk'
 import {
   API_ENDPOINT_PREFIX,
@@ -15,8 +17,6 @@ import {
   oauthRedirectUriSchema,
   oauthResponseModeSchema,
 } from '@gander-social-atproto/oauth-types'
-import createHttpError from 'http-errors'
-import { z } from 'zod'
 import { signInDataSchema } from '../account/sign-in-data.js'
 import { signUpInputSchema } from '../account/sign-up-input.js'
 import { DeviceId, deviceIdSchema } from '../device/device-id.js'
@@ -399,7 +399,12 @@ export function createApiMiddleware<
     apiRoute({
       method: 'POST',
       endpoint: '/accept',
-      schema: z.object({ sub: z.union([subSchema, signedJwtSchema]) }).strict(),
+      schema: z
+        .object({
+          sub: z.union([subSchema, signedJwtSchema]),
+          scope: z.string().optional(),
+        })
+        .strict(),
       async handler(req, res) {
         if (!this.requestUri) {
           throw new InvalidRequestError(
@@ -432,6 +437,7 @@ export function createApiMiddleware<
               account,
               this.deviceId,
               this.deviceMetadata,
+              this.input.scope,
             )
 
             const clientData = authorizedClients.get(clientId)

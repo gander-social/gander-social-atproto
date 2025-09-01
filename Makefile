@@ -22,14 +22,16 @@ test: ## Run all tests
 first-code-install: ## Force all dependencies to be installed, ignoring lockfile, recursively - for first-time setup
 	pnpm firstcodeinstall
 
+
 .PHONY: build-ordered
 build-ordered: ## Ensure initial packages built are built in dependency order
 	pnpm run build:ordered
+	pnpm precodegen
 
 .PHONY: start-here
 start-here: ## Run first time setup in order
 	pnpm firstcodeinstall
-	pnpm build-ordered
+	pnpm run build:ordered
 	pnpm build
 
 .PHONY: run-dev-env

@@ -1,12 +1,12 @@
 import { finished } from 'node:stream/promises'
+import express from 'express'
+import { request } from 'undici'
 import { AtUri, AtpAgent } from '@gander-social-atproto/api'
 import { randomStr } from '@gander-social-atproto/crypto'
 import {
   SeedClient,
   TestNetworkNoAppView,
 } from '@gander-social-atproto/dev-env'
-import express from 'express'
-import { request } from 'undici'
 import { handler as errorHandler } from '../src/error'
 import { startServer } from './_util'
 import basicSeed from './seeds/basic'

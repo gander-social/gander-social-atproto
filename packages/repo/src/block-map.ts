@@ -1,10 +1,22 @@
-import { dataToCborBlock } from '@gander-social-atproto/common'
-import { LexValue, lexToIpld } from '@gander-social-atproto/lexicon'
 import { CID } from 'multiformats/cid'
 import * as uint8arrays from 'uint8arrays'
+import { dataToCborBlock } from '@gander-social-atproto/common'
+import { LexValue, lexToIpld } from '@gander-social-atproto/lexicon'
 
 export class BlockMap {
   private map: Map<string, Uint8Array> = new Map()
+
+  get size(): number {
+    return this.map.size
+  }
+
+  get byteSize(): number {
+    let size = 0
+    this.forEach((bytes) => {
+      size += bytes.length
+    })
+    return size
+  }
 
   async add(value: LexValue): Promise<CID> {
     const block = await dataToCborBlock(lexToIpld(value))
@@ -69,18 +81,6 @@ export class BlockMap {
       this.set(cid, bytes)
     })
     return this
-  }
-
-  get size(): number {
-    return this.map.size
-  }
-
-  get byteSize(): number {
-    let size = 0
-    this.forEach((bytes) => {
-      size += bytes.length
-    })
-    return size
   }
 
   equals(other: BlockMap): boolean {

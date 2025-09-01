@@ -2,6 +2,14 @@ import assert from 'node:assert'
 import { IncomingMessage } from 'node:http'
 import { Readable } from 'node:stream'
 import { pipeline } from 'node:stream/promises'
+import express, {
+  Application,
+  ErrorRequestHandler,
+  Express,
+  Request,
+  RequestHandler,
+  Router,
+} from 'express'
 import { check, schema } from '@gander-social-atproto/common'
 import {
   LexXrpcProcedure,
@@ -11,14 +19,6 @@ import {
   Lexicons,
   lexToJson,
 } from '@gander-social-atproto/lexicon'
-import express, {
-  Application,
-  ErrorRequestHandler,
-  Express,
-  Request,
-  RequestHandler,
-  Router,
-} from 'express'
 import {
   InternalServerError,
   InvalidRequestError,
@@ -174,21 +174,6 @@ export class Server {
   // http
   // =
 
-  protected async addRoute<A extends Auth = Auth>(
-    nsid: string,
-    def: LexXrpcQuery | LexXrpcProcedure,
-    config: MethodConfig<A>,
-  ) {
-    const path = `/xrpc/${nsid}`
-    const handler = this.createHandler(nsid, def, config)
-
-    if (def.type === 'procedure') {
-      this.routes.post(path, handler)
-    } else {
-      this.routes.get(path, handler)
-    }
-  }
-
   catchall: CatchallHandler = async (req, res, next) => {
     // catchall handler only applies to XRPC routes
     if (!req.url.startsWith('/xrpc/')) return next()
@@ -235,41 +220,6 @@ export class Server {
       next(new MethodNotImplementedError())
     } else {
       next()
-    }
-  }
-
-  protected createParamsVerifier(
-    nsid: string,
-    def: LexXrpcQuery | LexXrpcProcedure | LexXrpcSubscription,
-  ) {
-    return (req: Request | IncomingMessage): Params => {
-      const queryParams = 'query' in req ? req.query : getQueryParams(req.url)
-      const params: Params = decodeQueryParams(def, queryParams)
-      try {
-        return this.lex.assertValidXrpcParams(nsid, params) as Params
-      } catch (e) {
-        throw new InvalidRequestError(String(e))
-      }
-    }
-  }
-
-  protected createInputVerifier(
-    nsid: string,
-    def: LexXrpcQuery | LexXrpcProcedure,
-    routeOpts: RouteOptions,
-  ) {
-    return createInputVerifier(nsid, def, routeOpts, this.lex)
-  }
-
-  protected createAuthVerifier<C, A extends Auth>(cfg: {
-    auth?: AuthVerifier<C, A & AuthResult>
-  }): null | ((ctx: C) => Promise<A>) {
-    const { auth } = cfg
-    if (!auth) return null
-
-    return async (ctx: C) => {
-      const result = await auth(ctx)
-      return excludeErrorResult(result)
     }
   }
 
@@ -374,6 +324,56 @@ export class Server {
           next(err)
         }
       }
+    }
+  }
+
+  protected async addRoute<A extends Auth = Auth>(
+    nsid: string,
+    def: LexXrpcQuery | LexXrpcProcedure,
+    config: MethodConfig<A>,
+  ) {
+    const path = `/xrpc/${nsid}`
+    const handler = this.createHandler(nsid, def, config)
+
+    if (def.type === 'procedure') {
+      this.routes.post(path, handler)
+    } else {
+      this.routes.get(path, handler)
+    }
+  }
+
+  protected createParamsVerifier(
+    nsid: string,
+    def: LexXrpcQuery | LexXrpcProcedure | LexXrpcSubscription,
+  ) {
+    return (req: Request | IncomingMessage): Params => {
+      const queryParams = 'query' in req ? req.query : getQueryParams(req.url)
+      const params: Params = decodeQueryParams(def, queryParams)
+      try {
+        return this.lex.assertValidXrpcParams(nsid, params) as Params
+      } catch (e) {
+        throw new InvalidRequestError(String(e))
+      }
+    }
+  }
+
+  protected createInputVerifier(
+    nsid: string,
+    def: LexXrpcQuery | LexXrpcProcedure,
+    routeOpts: RouteOptions,
+  ) {
+    return createInputVerifier(nsid, def, routeOpts, this.lex)
+  }
+
+  protected createAuthVerifier<C, A extends Auth>(cfg: {
+    auth?: AuthVerifier<C, A & AuthResult>
+  }): null | ((ctx: C) => Promise<A>) {
+    const { auth } = cfg
+    if (!auth) return null
+
+    return async (ctx: C) => {
+      const result = await auth(ctx)
+      return excludeErrorResult(result)
     }
   }
 

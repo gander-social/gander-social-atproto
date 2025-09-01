@@ -10,8 +10,6 @@ export type ImagePreset =
 const PATH_REGEX = /^\/(.+?)\/plain\/(.+?)\/(.+?)@(.+?)$/
 
 export class ImageUriBuilder {
-  constructor(public endpoint: string) {}
-
   static presets: ImagePreset[] = [
     'avatar',
     'banner',
@@ -19,20 +17,7 @@ export class ImageUriBuilder {
     'feed_fullsize',
   ]
 
-  getPresetUri(id: ImagePreset, did: string, cid: string): string {
-    const options = presets[id]
-    if (!options) {
-      throw new Error(`Unrecognized requested common uri type: ${id}`)
-    }
-    return (
-      this.endpoint +
-      ImageUriBuilder.getPath({
-        preset: id,
-        did,
-        cid,
-      })
-    )
-  }
+  constructor(public endpoint: string) {}
 
   static getPath(opts: { preset: ImagePreset } & BlobLocation) {
     const { format } = presets[opts.preset]
@@ -62,6 +47,21 @@ export class ImageUriBuilder {
       preset,
       format,
     }
+  }
+
+  getPresetUri(id: ImagePreset, did: string, cid: string): string {
+    const options = presets[id]
+    if (!options) {
+      throw new Error(`Unrecognized requested common uri type: ${id}`)
+    }
+    return (
+      this.endpoint +
+      ImageUriBuilder.getPath({
+        preset: id,
+        did,
+        cid,
+      })
+    )
   }
 }
 

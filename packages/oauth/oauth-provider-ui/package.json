@@ -33,6 +33,7 @@
     "@gander-atproto-nest/rollup-plugin-bundle-manifest": "workspace:*",
     "@gander-social-atproto/oauth-provider-api": "workspace:*",
     "@gander-social-atproto/oauth-types": "workspace:*",
+    "@gander-social-atproto/oauth-scopes": "workspace:*",
     "@hcaptcha/react-hcaptcha": "^1.11.2",
     "@lingui/cli": "^5.2.0",
     "@lingui/core": "^5.2.0",

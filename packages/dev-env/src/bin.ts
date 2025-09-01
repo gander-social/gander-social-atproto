@@ -1,11 +1,11 @@
 import './env'
 
-import * as dotenv from 'dotenv'
+import { config } from 'dotenv'
 import { generateMockSetup } from './mock'
 import { TestNetwork } from './network'
 import { mockMailer } from './util'
 
-dotenv.config({ path: './config/env.dev' })
+config({ path: './config/env.dev' })
 
 console.log('Loaded Environment Variables:', {
   DB_POSTGRES_URL: process.env.DB_POSTGRES_URL,
@@ -22,7 +22,7 @@ const run = async () => {
 ╚█║████╔╝
  ╚╝╚═══╝  protocol
 
-[ created by Gander ]`)
+[ created by Bluesky - operated by Gander ]`)
 
   const network = await TestNetwork.create({
     pds: {

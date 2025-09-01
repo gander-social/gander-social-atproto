@@ -1,5 +1,7 @@
 {
-  "include": ["./src"],
+  "include": [
+    "./src"
+  ],
   "references": [
     {
       "path": "./tsconfig.build.json"

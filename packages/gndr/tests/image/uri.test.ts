@@ -1,5 +1,5 @@
-import { cidForCbor } from '@gander-social-atproto/common'
 import { CID } from 'multiformats/cid'
+import { cidForCbor } from '@gander-social-atproto/common'
 import { BadPathError, ImageUriBuilder } from '../../src/image/uri'
 
 describe('image uri builder', () => {

@@ -1,10 +1,10 @@
 import * as plc from '@did-plc/lib'
-import { AtpAgent } from '@gander-social-atproto/api'
-import { Keypair } from '@gander-social-atproto/crypto'
-import { IdResolver } from '@gander-social-atproto/identity'
 import { Etcd3 } from 'etcd3'
 import express from 'express'
 import { Dispatcher } from 'undici'
+import { AtpAgent } from '@gander-social-atproto/api'
+import { Keypair } from '@gander-social-atproto/crypto'
+import { IdResolver } from '@gander-social-atproto/identity'
 import { AuthVerifier } from './auth-verifier'
 import { BsyncClient } from './bsync'
 import { ServerConfig } from './config'
@@ -12,6 +12,7 @@ import { CourierClient } from './courier'
 import { DataPlaneClient, HostList } from './data-plane/client'
 import { FeatureGates } from './feature-gates'
 import { Hydrator } from './hydration/hydrator'
+import { KwsClient } from './kws'
 import { httpLogger as log } from './logger'
 import { StashClient } from './stash'
 import {
@@ -41,6 +42,7 @@ export class AppContext {
       authVerifier: AuthVerifier
       featureGates: FeatureGates
       blobDispatcher: Dispatcher
+      kwsClient: KwsClient | undefined
     },
   ) {}
 
@@ -114,6 +116,10 @@ export class AppContext {
 
   get blobDispatcher(): Dispatcher {
     return this.opts.blobDispatcher
+  }
+
+  get kwsClient(): KwsClient | undefined {
+    return this.opts.kwsClient
   }
 
   reqLabelers(req: express.Request): ParsedLabelers {

@@ -1,0 +1,38 @@
+{
+  "lexicon": 1,
+  "id": "app.gndr.bookmark.defs",
+  "defs": {
+    "bookmark": {
+      "description": "Object used to store bookmark data in stash.",
+      "type": "object",
+      "required": ["subject"],
+      "properties": {
+        "subject": {
+          "description": "A strong ref to the record to be bookmarked. Currently, only `app.gndr.feed.post` records are supported.",
+          "type": "ref",
+          "ref": "com.atproto.repo.strongRef"
+        }
+      }
+    },
+    "bookmarkView": {
+      "type": "object",
+      "required": ["subject", "item"],
+      "properties": {
+        "subject": {
+          "description": "A strong ref to the bookmarked record.",
+          "type": "ref",
+          "ref": "com.atproto.repo.strongRef"
+        },
+        "createdAt": { "type": "string", "format": "datetime" },
+        "item": {
+          "type": "union",
+          "refs": [
+            "app.gndr.feed.defs#blockedPost",
+            "app.gndr.feed.defs#notFoundPost",
+            "app.gndr.feed.defs#postView"
+          ]
+        }
+      }
+    }
+  }
+}

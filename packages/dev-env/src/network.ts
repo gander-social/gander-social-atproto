@@ -1,16 +1,17 @@
 import assert from 'node:assert'
-import { wait } from '@gander-social-atproto/common-web'
-import { createServiceJwt } from '@gander-social-atproto/xrpc-server'
 import getPort from 'get-port'
 import * as uint8arrays from 'uint8arrays'
+import { wait } from '@gander-social-atproto/common-web'
+import { createServiceJwt } from '@gander-social-atproto/xrpc-server'
 import { EXAMPLE_LABELER } from './const'
 import { TestGndr } from './gndr'
 import { IntrospectServer } from './introspect'
 import { TestNetworkNoAppView } from './network-no-appview'
 import { TestOzone } from './ozone'
-import { OzoneServiceProfile } from './ozone-service-profile'
 import { TestPds } from './pds'
 import { TestPlc } from './plc'
+import { LexiconAuthorityProfile } from './service-profile-lexicon'
+import { OzoneServiceProfile } from './service-profile-ozone'
 import { TestServerParams } from './types'
 import { mockNetworkUtilities } from './util'
 
@@ -44,16 +45,22 @@ export class TestNetwork extends TestNetworkNoAppView {
     const pdsPort = params.pds?.port ?? (await getPort())
     const ozonePort = params.ozone?.port ?? (await getPort())
 
-    const thirdPartyPdsProps = {
+    const thirdPartyPds = await TestPds.create({
       didPlcUrl: plc.url,
       ...params.pds,
       inviteRequired: false,
       port: await getPort(),
-    }
-    const thirdPartyPds = await TestPds.create(thirdPartyPdsProps)
-    const ozoneServiceProfile = new OzoneServiceProfile(thirdPartyPds)
-    const { did: ozoneDid, key: ozoneKey } =
-      await ozoneServiceProfile.createDidAndKey()
+    })
+
+    const ozoneUrl = `http://localhost:${ozonePort}`
+    // @TODO (?) rework the ServiceProfile to live on a separate PDS instead of
+    // requiring to migrate to the main PDS
+    const ozoneServiceProfile = await OzoneServiceProfile.create(
+      thirdPartyPds,
+      ozoneUrl,
+    )
+    const lexiconAuthorityProfile =
+      await LexiconAuthorityProfile.create(thirdPartyPds)
 
     const gndr = await TestGndr.create({
       port: gndrPort,
@@ -63,29 +70,26 @@ export class TestNetwork extends TestNetworkNoAppView {
       dbPostgresSchema: `appview_${dbPostgresSchema}`,
       dbPostgresUrl,
       redisHost,
-      modServiceDid: ozoneDid,
-      labelsFromIssuerDids: [ozoneDid, EXAMPLE_LABELER],
+      modServiceDid: ozoneServiceProfile.did,
+      labelsFromIssuerDids: [ozoneServiceProfile.did, EXAMPLE_LABELER],
       ...params.gndr,
     })
 
-    const modServiceUrl = `http://localhost:${ozonePort}`
-    const pdsProps = {
+    const pds = await TestPds.create({
       port: pdsPort,
       didPlcUrl: plc.url,
       gndrAppViewUrl: gndr.url,
       gndrAppViewDid: gndr.ctx.cfg.serverDid,
-      modServiceUrl,
-      modServiceDid: ozoneDid,
+      modServiceDid: ozoneServiceProfile.did,
+      lexiconDidAuthority: lexiconAuthorityProfile.did,
       ...params.pds,
-    }
-
-    const pds = await TestPds.create(pdsProps)
+    })
 
     const ozone = await TestOzone.create({
       port: ozonePort,
       plcUrl: plc.url,
-      signingKey: ozoneKey,
-      serverDid: ozoneDid,
+      signingKey: ozoneServiceProfile.key,
+      serverDid: ozoneServiceProfile.did,
       dbPostgresSchema: `ozone_${dbPostgresSchema || 'db'}`,
       dbPostgresUrl,
       appviewUrl: gndr.url,
@@ -93,39 +97,30 @@ export class TestNetwork extends TestNetworkNoAppView {
       appviewPushEvents: true,
       pdsUrl: pds.url,
       pdsDid: pds.ctx.cfg.service.did,
-      verifierDid: ozoneDid,
+      verifierDid: ozoneServiceProfile.did,
       verifierUrl: pds.url,
       verifierPassword: 'temp',
       ...params.ozone,
     })
 
-    let inviteCode: string | undefined
-    if (pdsProps.inviteRequired) {
-      const { data: invite } = await pds
-        .getClient()
-        .com.atproto.server.createInviteCode(
-          { useCount: 1 },
-          {
-            encoding: 'application/json',
-            headers: pds.adminAuthHeaders(),
-          },
-        )
-      inviteCode = invite.code
-    }
-    await ozoneServiceProfile.createServiceDetails(pds, modServiceUrl, {
-      inviteCode,
-    })
+    await ozoneServiceProfile.migrateTo(pds)
+    await ozoneServiceProfile.createRecords()
 
-    await ozone.addAdminDid(ozoneDid)
+    await lexiconAuthorityProfile.migrateTo(pds)
+    await lexiconAuthorityProfile.createRecords()
+
+    await ozone.addAdminDid(ozoneServiceProfile.did)
 
     mockNetworkUtilities(pds, gndr)
+    await thirdPartyPds.processAll()
     await pds.processAll()
+    await ozone.processAll()
     await gndr.sub.processAll()
     await thirdPartyPds.close()
 
     // Weird but if we do this before pds.processAll() somehow appview loses this user and tests in different parts fail because appview doesn't return this user in various contexts anymore
     const ozoneVerifierPassword =
-      await ozoneServiceProfile.createAppPasswordForVerification(pds)
+      await ozoneServiceProfile.createAppPasswordForVerification()
     if (ozone.daemon.ctx.cfg.verifier) {
       ozone.daemon.ctx.cfg.verifier.password = ozoneVerifierPassword
     }

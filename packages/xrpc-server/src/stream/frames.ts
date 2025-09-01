@@ -1,5 +1,5 @@
-import { cborDecodeMulti, cborEncode } from '@gander-social-atproto/common'
 import * as uint8arrays from 'uint8arrays'
+import { cborDecodeMulti, cborEncode } from '@gander-social-atproto/common'
 import {
   ErrorFrameBody,
   ErrorFrameHeader,
@@ -16,15 +16,7 @@ export abstract class Frame {
   get op(): FrameType {
     return this.header.op
   }
-  toBytes(): Uint8Array {
-    return uint8arrays.concat([cborEncode(this.header), cborEncode(this.body)])
-  }
-  isMessage(): this is MessageFrame<unknown> {
-    return this.op === FrameType.Message
-  }
-  isError(): this is ErrorFrame {
-    return this.op === FrameType.Error
-  }
+
   static fromBytes(bytes: Uint8Array) {
     const decoded = cborDecodeMulti(bytes)
     if (decoded.length > 2) {
@@ -57,6 +49,18 @@ export abstract class Frame {
       const exhaustiveCheck: never = frameOp
       throw new Error(`Unknown frame op: ${exhaustiveCheck}`)
     }
+  }
+
+  toBytes(): Uint8Array {
+    return uint8arrays.concat([cborEncode(this.header), cborEncode(this.body)])
+  }
+
+  isMessage(): this is MessageFrame<unknown> {
+    return this.op === FrameType.Message
+  }
+
+  isError(): this is ErrorFrame {
+    return this.op === FrameType.Error
   }
 }
 

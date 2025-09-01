@@ -1,5 +1,5 @@
-import { AtUri } from '@gander-social-atproto/syntax'
 import { CID } from 'multiformats/cid'
+import { AtUri } from '@gander-social-atproto/syntax'
 import * as lex from '../../../../lexicon/lexicons'
 import * as Profile from '../../../../lexicon/types/app/gndr/actor/profile'
 import { BackgroundQueue } from '../../background'

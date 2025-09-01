@@ -63,6 +63,10 @@
       "env": { "commonjs": true }
     },
     {
+      "files": ["vite.config.js", "vite.config.cjs", "vite.config.mjs"],
+      "env": { "node": true }
+    },
+    {
       "files": ["jest.setup.js"],
       "env": { "jest": true }
     },
@@ -84,7 +88,7 @@
   ],
   "settings": {
     "node": { "version": ">=18.7.0" },
-    "import/internal-regex": "^@atproto(?:-labs)?/",
+    "import/internal-regex": "^@gander-social-atproto(?:-labs)?/",
     "import/parsers": { "@typescript-eslint/parser": [".ts", ".tsx"] },
     "import/resolver": {
       "typescript": {

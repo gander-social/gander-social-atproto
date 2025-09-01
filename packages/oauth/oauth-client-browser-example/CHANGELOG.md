@@ -1,84 +1,57 @@
-# @atproto/oauth-client-browser-example
+# @gander-social-atproto/oauth-client-browser-example
 
-## 0.1.5
-
-### Patch Changes
-
-- [#19](https://github.com/gander-social/gander-social-atproto/pull/19) [`d1c6a24a4e1747120628a8465154ba37d932f8cd`](https://github.com/gander-social/gander-social-atproto/commit/d1c6a24a4e1747120628a8465154ba37d932f8cd) Thanks [@melodylumen](https://github.com/melodylumen)! - Add in ageAssurance tools
-
-- [#19](https://github.com/gander-social/gander-social-atproto/pull/19) [`d1c6a24a4e1747120628a8465154ba37d932f8cd`](https://github.com/gander-social/gander-social-atproto/commit/d1c6a24a4e1747120628a8465154ba37d932f8cd) Thanks [@melodylumen](https://github.com/melodylumen)! - Package version of Zod bumped up
-
-## 0.1.4
+## 0.0.6
 
 ### Patch Changes
 
-- [#17](https://github.com/gander-social/gander-social-atproto/pull/17) [`1f84fddeafc94dd9f9f44c3ae440430a6c307809`](https://github.com/gander-social/gander-social-atproto/commit/1f84fddeafc94dd9f9f44c3ae440430a6c307809) Thanks [@melodylumen](https://github.com/melodylumen)! - Add in ageAssurance tools
-
-- [#17](https://github.com/gander-social/gander-social-atproto/pull/17) [`1f84fddeafc94dd9f9f44c3ae440430a6c307809`](https://github.com/gander-social/gander-social-atproto/commit/1f84fddeafc94dd9f9f44c3ae440430a6c307809) Thanks [@melodylumen](https://github.com/melodylumen)! - Package version of Zod bumped up
-
-## 0.1.3
-
-### Patch Changes
-
-- [#15](https://github.com/gander-social/gander-social-atproto/pull/15) [`bbcbbb3b237d9907776409acf9aa590fb6783ae5`](https://github.com/gander-social/gander-social-atproto/commit/bbcbbb3b237d9907776409acf9aa590fb6783ae5) Thanks [@melodylumen](https://github.com/melodylumen)! - Add in ageAssurance tools
-
-## 0.1.2
-
-### Patch Changes
-
-- [#12](https://github.com/gander-social/gander-social-atproto/pull/12) [`ee891368a01938f04fb1bd31c60cdf38e67f5100`](https://github.com/gander-social/gander-social-atproto/commit/ee891368a01938f04fb1bd31c60cdf38e67f5100) Thanks [@melodylumen](https://github.com/melodylumen)! - Add in ageAssurance tools
-
-## 0.1.1
-
-### Patch Changes
-
-- [#7](https://github.com/gander-social/gander-social-atproto/pull/7) [`85fea07c9d972a1b1bff4c3c0a8674aeaedaa805`](https://github.com/gander-social/gander-social-atproto/commit/85fea07c9d972a1b1bff4c3c0a8674aeaedaa805) Thanks [@melodylumen](https://github.com/melodylumen)! - Duplicate atproto-labs packages to gander-atproto-nest npm account. Patch bump to ensure they correctly update npm
-  packages with version numbers instead of "workspace:\*"
-
-- [#7](https://github.com/gander-social/gander-social-atproto/pull/7) [`85fea07c9d972a1b1bff4c3c0a8674aeaedaa805`](https://github.com/gander-social/gander-social-atproto/commit/85fea07c9d972a1b1bff4c3c0a8674aeaedaa805) Thanks [@melodylumen](https://github.com/melodylumen)! - Force a patch bump to ensure that the Github action will properly publish to npm for all repos with the dependency
-  version numbers
-
-## 0.1.0
-
-### Minor Changes
-
-- [#5](https://github.com/gander-social/gander-social-atproto/pull/5) [`b5c367a7816349197a86213b69309f66b34ae066`](https://github.com/gander-social/gander-social-atproto/commit/b5c367a7816349197a86213b69309f66b34ae066) Thanks [@melodylumen](https://github.com/melodylumen)! - Adjust all packages to reflect being forked and republished by Gander Social with name changes and primary repository name change to gander-social-atproto to reflect the adjustments
-
-### Patch Changes
-
-- [`3d6cfd937e28a03df240c6bc71b3d26e5b143911`](https://github.com/gander-social/gander-social-atproto/commit/3d6cfd937e28a03df240c6bc71b3d26e5b143911) Thanks [@melodylumen](https://github.com/melodylumen)! - Force a patch bump to ensure that the Github action will properly publish to npm for all repos with the dependency
-  version numbers
+- [`f4cb3e4d0`](https://github.com/bluesky-social/atproto/commit/f4cb3e4d0ac45e567fa14f79b99a84621fa89a56)
+  Thanks [@matthieusieben](https://github.com/matthieusieben)! - Update default scopes
 
 ## 0.0.5
 
 ### Patch Changes
 
-- [#3952](https://github.com/gander-social/atproto/pull/3952) [`09d90ae48`](https://github.com/gander-social/atproto/commit/09d90ae486c451512e72c098228de3f3dd058101) Thanks [@matthieusieben](https://github.com/matthieusieben)! - Improve UI
+- [#3952](https://github.com/bluesky-social/atproto/pull/3952) [
+  `09d90ae48`](https://github.com/bluesky-social/atproto/commit/09d90ae486c451512e72c098228de3f3dd058101)
+  Thanks [@matthieusieben](https://github.com/matthieusieben)! - Improve UI
 
 ## 0.0.4
 
 ### Patch Changes
 
-- [#3820](https://github.com/gander-social/atproto/pull/3820) [`8318c5718`](https://github.com/gander-social/atproto/commit/8318c57187a1fed443be73bfd7639f49febc7337) Thanks [@matthieusieben](https://github.com/matthieusieben)! - Add `com.atproto.server.getSession` query.
+- [#3820](https://github.com/bluesky-social/atproto/pull/3820) [
+  `8318c5718`](https://github.com/bluesky-social/atproto/commit/8318c57187a1fed443be73bfd7639f49febc7337)
+  Thanks [@matthieusieben](https://github.com/matthieusieben)! - Add `com.atproto.server.getSession` query.
 
-- [#3820](https://github.com/gander-social/atproto/pull/3820) [`8318c5718`](https://github.com/gander-social/atproto/commit/8318c57187a1fed443be73bfd7639f49febc7337) Thanks [@matthieusieben](https://github.com/matthieusieben)! - Allow configuration of loopback client id scope through query param
+- [#3820](https://github.com/bluesky-social/atproto/pull/3820) [
+  `8318c5718`](https://github.com/bluesky-social/atproto/commit/8318c57187a1fed443be73bfd7639f49febc7337)
+  Thanks [@matthieusieben](https://github.com/matthieusieben)! - Allow configuration of loopback client id scope through
+  query param
 
 ## 0.0.3
 
 ### Patch Changes
 
-- [#3797](https://github.com/gander-social/atproto/pull/3797) [`a48b093f0`](https://github.com/gander-social/atproto/commit/a48b093f0ba3cf67b7abc50d309afcb336d8ead8) Thanks [@matthieusieben](https://github.com/matthieusieben)! - Expose `pdsAgent` as global constant
+- [#3797](https://github.com/bluesky-social/atproto/pull/3797) [
+  `a48b093f0`](https://github.com/bluesky-social/atproto/commit/a48b093f0ba3cf67b7abc50d309afcb336d8ead8)
+  Thanks [@matthieusieben](https://github.com/matthieusieben)! - Expose `pdsAgent` as global constant
 
 ## 0.0.2
 
 ### Patch Changes
 
-- [#2945](https://github.com/gander-social/atproto/pull/2945) [`850e39843`](https://github.com/gander-social/atproto/commit/850e39843cb0ec9ea716675f7568c0c601f45e29) Thanks [@matthieusieben](https://github.com/matthieusieben)! - Update react to version 19
+- [#2945](https://github.com/bluesky-social/atproto/pull/2945) [
+  `850e39843`](https://github.com/bluesky-social/atproto/commit/850e39843cb0ec9ea716675f7568c0c601f45e29)
+  Thanks [@matthieusieben](https://github.com/matthieusieben)! - Update react to version 19
 
-- [#2945](https://github.com/gander-social/atproto/pull/2945) [`850e39843`](https://github.com/gander-social/atproto/commit/850e39843cb0ec9ea716675f7568c0c601f45e29) Thanks [@matthieusieben](https://github.com/matthieusieben)! - Build using SWC
+- [#2945](https://github.com/bluesky-social/atproto/pull/2945) [
+  `850e39843`](https://github.com/bluesky-social/atproto/commit/850e39843cb0ec9ea716675f7568c0c601f45e29)
+  Thanks [@matthieusieben](https://github.com/matthieusieben)! - Build using SWC
 
 ## 0.0.1
 
 ### Patch Changes
 
-- [#3220](https://github.com/gander-social/atproto/pull/3220) [`61dc0d60e`](https://github.com/gander-social/atproto/commit/61dc0d60e19b88c6427a54c6d95a391b5f4da7bd) Thanks [@matthieusieben](https://github.com/matthieusieben)! - Apply new linting rules regarding import order
+- [#3220](https://github.com/bluesky-social/atproto/pull/3220) [
+  `61dc0d60e`](https://github.com/bluesky-social/atproto/commit/61dc0d60e19b88c6427a54c6d95a391b5f4da7bd)
+  Thanks [@matthieusieben](https://github.com/matthieusieben)! - Apply new linting rules regarding import order

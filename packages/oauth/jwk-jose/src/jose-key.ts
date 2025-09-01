@@ -1,19 +1,4 @@
 import {
-  Jwk,
-  JwkError,
-  JwtCreateError,
-  JwtHeader,
-  JwtPayload,
-  JwtVerifyError,
-  Key,
-  SignedJwt,
-  VerifyOptions,
-  VerifyResult,
-  jwkValidator,
-  jwtHeaderSchema,
-  jwtPayloadSchema,
-} from '@gander-social-atproto/jwk'
-import {
   type GenerateKeyPairOptions,
   type GenerateKeyPairResult,
   type JWK,
@@ -27,6 +12,21 @@ import {
   importPKCS8,
   jwtVerify,
 } from 'jose'
+import {
+  Jwk,
+  JwkError,
+  JwtCreateError,
+  JwtHeader,
+  JwtPayload,
+  JwtVerifyError,
+  Key,
+  SignedJwt,
+  VerifyOptions,
+  VerifyResult,
+  jwkSchema,
+  jwtHeaderSchema,
+  jwtPayloadSchema,
+} from '@gander-social-atproto/jwk'
 import { RequiredKey, either } from './util.js'
 
 const { JOSEError } = errors
@@ -43,100 +43,6 @@ export {
 }
 
 export class JoseKey<J extends Jwk = Jwk> extends Key<J> {
-  /**
-   * Some runtimes (e.g. Bun) require an `alg` second argument to be set when
-   * invoking `importJWK`. In order to be compatible with these runtimes, we
-   * provide the following method to ensure the `alg` is always set. We also
-   * take the opportunity to ensure that the `alg` is compatible with this key.
-   */
-  protected async getKeyObj(alg: string) {
-    if (!this.algorithms.includes(alg)) {
-      throw new JwkError(`Key cannot be used with algorithm "${alg}"`)
-    }
-    try {
-      return await importJWK(this.jwk as JWK, alg)
-    } catch (cause) {
-      throw new JwkError('Failed to import JWK', undefined, { cause })
-    }
-  }
-
-  async createJwt(header: JwtHeader, payload: JwtPayload): Promise<SignedJwt> {
-    try {
-      const { kid } = header
-      if (kid && kid !== this.kid) {
-        throw new JwtCreateError(
-          `Invalid "kid" (${kid}) used to sign with key "${this.kid}"`,
-        )
-      }
-
-      const { alg } = header
-      if (!alg) {
-        throw new JwtCreateError('Missing "alg" in JWT header')
-      }
-
-      const keyObj = await this.getKeyObj(alg)
-      const jwtBuilder = new SignJWT(payload).setProtectedHeader({
-        ...header,
-        alg,
-        kid: this.kid,
-      })
-
-      const signedJwt = await jwtBuilder.sign(keyObj)
-
-      return signedJwt as SignedJwt
-    } catch (cause) {
-      if (cause instanceof JOSEError) {
-        throw new JwtCreateError(cause.message, cause.code, { cause })
-      } else {
-        throw JwtCreateError.from(cause)
-      }
-    }
-  }
-
-  async verifyJwt<C extends string = never>(
-    token: SignedJwt,
-    options?: VerifyOptions<C>,
-  ): Promise<VerifyResult<C>> {
-    try {
-      const result = await jwtVerify(
-        token,
-        async ({ alg }) => this.getKeyObj(alg),
-        { ...options, algorithms: this.algorithms } as JWTVerifyOptions,
-      )
-
-      // @NOTE if all tokens are signed exclusively through createJwt(), then
-      // there should be no need to parse the payload and headers here. But
-      // since the JWT could have been signed with the same key from somewhere
-      // else, let's parse it to ensure the integrity (and type safety) of the
-      // data.
-      const headerParsed = jwtHeaderSchema.safeParse(result.protectedHeader)
-      if (!headerParsed.success) {
-        throw new JwtVerifyError('Invalid JWT header', undefined, {
-          cause: headerParsed.error,
-        })
-      }
-
-      const payloadParsed = jwtPayloadSchema.safeParse(result.payload)
-      if (!payloadParsed.success) {
-        throw new JwtVerifyError('Invalid JWT payload', undefined, {
-          cause: payloadParsed.error,
-        })
-      }
-
-      return {
-        protectedHeader: headerParsed.data,
-        // "requiredClaims" enforced by jwtVerify()
-        payload: payloadParsed.data as RequiredKey<JwtPayload, C>,
-      }
-    } catch (cause) {
-      if (cause instanceof JOSEError) {
-        throw new JwtVerifyError(cause.message, cause.code, { cause })
-      } else {
-        throw JwtVerifyError.from(cause)
-      }
-    }
-  }
-
   static async generateKeyPair(
     allowedAlgos: readonly string[] = ['ES256'],
     options?: GenerateKeyPairOptions,
@@ -241,6 +147,100 @@ export class JoseKey<J extends Jwk = Jwk> extends Key<J> {
     const kid = either(jwk.kid, inputKid)
     const use = jwk.use || 'sig'
 
-    return new JoseKey(jwkValidator.parse({ ...jwk, kid, use }))
+    return new JoseKey(jwkSchema.parse({ ...jwk, kid, use }))
+  }
+
+  async createJwt(header: JwtHeader, payload: JwtPayload): Promise<SignedJwt> {
+    try {
+      const { kid } = header
+      if (kid && kid !== this.kid) {
+        throw new JwtCreateError(
+          `Invalid "kid" (${kid}) used to sign with key "${this.kid}"`,
+        )
+      }
+
+      const { alg } = header
+      if (!alg) {
+        throw new JwtCreateError('Missing "alg" in JWT header')
+      }
+
+      const keyObj = await this.getKeyObj(alg)
+      const jwtBuilder = new SignJWT(payload).setProtectedHeader({
+        ...header,
+        alg,
+        kid: this.kid,
+      })
+
+      const signedJwt = await jwtBuilder.sign(keyObj)
+
+      return signedJwt as SignedJwt
+    } catch (cause) {
+      if (cause instanceof JOSEError) {
+        throw new JwtCreateError(cause.message, cause.code, { cause })
+      } else {
+        throw JwtCreateError.from(cause)
+      }
+    }
+  }
+
+  async verifyJwt<C extends string = never>(
+    token: SignedJwt,
+    options?: VerifyOptions<C>,
+  ): Promise<VerifyResult<C>> {
+    try {
+      const result = await jwtVerify(
+        token,
+        async ({ alg }) => this.getKeyObj(alg),
+        { ...options, algorithms: this.algorithms } as JWTVerifyOptions,
+      )
+
+      // @NOTE if all tokens are signed exclusively through createJwt(), then
+      // there should be no need to parse the payload and headers here. But
+      // since the JWT could have been signed with the same key from somewhere
+      // else, let's parse it to ensure the integrity (and type safety) of the
+      // data.
+      const headerParsed = jwtHeaderSchema.safeParse(result.protectedHeader)
+      if (!headerParsed.success) {
+        throw new JwtVerifyError('Invalid JWT header', undefined, {
+          cause: headerParsed.error,
+        })
+      }
+
+      const payloadParsed = jwtPayloadSchema.safeParse(result.payload)
+      if (!payloadParsed.success) {
+        throw new JwtVerifyError('Invalid JWT payload', undefined, {
+          cause: payloadParsed.error,
+        })
+      }
+
+      return {
+        protectedHeader: headerParsed.data,
+        // "requiredClaims" enforced by jwtVerify()
+        payload: payloadParsed.data as RequiredKey<JwtPayload, C>,
+      }
+    } catch (cause) {
+      if (cause instanceof JOSEError) {
+        throw new JwtVerifyError(cause.message, cause.code, { cause })
+      } else {
+        throw JwtVerifyError.from(cause)
+      }
+    }
+  }
+
+  /**
+   * Some runtimes (e.g. Bun) require an `alg` second argument to be set when
+   * invoking `importJWK`. In order to be compatible with these runtimes, we
+   * provide the following method to ensure the `alg` is always set. We also
+   * take the opportunity to ensure that the `alg` is compatible with this key.
+   */
+  protected async getKeyObj(alg: string) {
+    if (!this.algorithms.includes(alg)) {
+      throw new JwkError(`Key cannot be used with algorithm "${alg}"`)
+    }
+    try {
+      return await importJWK(this.jwk as JWK, alg)
+    } catch (cause) {
+      throw new JwkError('Failed to import JWK', undefined, { cause })
+    }
   }
 }

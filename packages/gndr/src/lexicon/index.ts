@@ -10,6 +10,113 @@ import {
   createServer as createXrpcServer,
 } from '@gander-social-atproto/xrpc-server'
 import { schemas } from './lexicons.js'
+import * as AppGndrActorGetPreferences from './types/app/gndr/actor/getPreferences.js'
+import * as AppGndrActorGetProfile from './types/app/gndr/actor/getProfile.js'
+import * as AppGndrActorGetProfiles from './types/app/gndr/actor/getProfiles.js'
+import * as AppGndrActorGetSuggestions from './types/app/gndr/actor/getSuggestions.js'
+import * as AppGndrActorPutPreferences from './types/app/gndr/actor/putPreferences.js'
+import * as AppGndrActorSearchActors from './types/app/gndr/actor/searchActors.js'
+import * as AppGndrActorSearchActorsTypeahead from './types/app/gndr/actor/searchActorsTypeahead.js'
+import * as AppGndrBookmarkCreateBookmark from './types/app/gndr/bookmark/createBookmark.js'
+import * as AppGndrBookmarkDeleteBookmark from './types/app/gndr/bookmark/deleteBookmark.js'
+import * as AppGndrBookmarkGetBookmarks from './types/app/gndr/bookmark/getBookmarks.js'
+import * as AppGndrFeedDescribeFeedGenerator from './types/app/gndr/feed/describeFeedGenerator.js'
+import * as AppGndrFeedGetActorFeeds from './types/app/gndr/feed/getActorFeeds.js'
+import * as AppGndrFeedGetActorLikes from './types/app/gndr/feed/getActorLikes.js'
+import * as AppGndrFeedGetAuthorFeed from './types/app/gndr/feed/getAuthorFeed.js'
+import * as AppGndrFeedGetFeed from './types/app/gndr/feed/getFeed.js'
+import * as AppGndrFeedGetFeedGenerator from './types/app/gndr/feed/getFeedGenerator.js'
+import * as AppGndrFeedGetFeedGenerators from './types/app/gndr/feed/getFeedGenerators.js'
+import * as AppGndrFeedGetFeedSkeleton from './types/app/gndr/feed/getFeedSkeleton.js'
+import * as AppGndrFeedGetLikes from './types/app/gndr/feed/getLikes.js'
+import * as AppGndrFeedGetListFeed from './types/app/gndr/feed/getListFeed.js'
+import * as AppGndrFeedGetPostThread from './types/app/gndr/feed/getPostThread.js'
+import * as AppGndrFeedGetPosts from './types/app/gndr/feed/getPosts.js'
+import * as AppGndrFeedGetQuotes from './types/app/gndr/feed/getQuotes.js'
+import * as AppGndrFeedGetRepostedBy from './types/app/gndr/feed/getRepostedBy.js'
+import * as AppGndrFeedGetSuggestedFeeds from './types/app/gndr/feed/getSuggestedFeeds.js'
+import * as AppGndrFeedGetTimeline from './types/app/gndr/feed/getTimeline.js'
+import * as AppGndrFeedSearchPosts from './types/app/gndr/feed/searchPosts.js'
+import * as AppGndrFeedSendInteractions from './types/app/gndr/feed/sendInteractions.js'
+import * as AppGndrGraphGetActorStarterPacks from './types/app/gndr/graph/getActorStarterPacks.js'
+import * as AppGndrGraphGetBlocks from './types/app/gndr/graph/getBlocks.js'
+import * as AppGndrGraphGetFollowers from './types/app/gndr/graph/getFollowers.js'
+import * as AppGndrGraphGetFollows from './types/app/gndr/graph/getFollows.js'
+import * as AppGndrGraphGetKnownFollowers from './types/app/gndr/graph/getKnownFollowers.js'
+import * as AppGndrGraphGetList from './types/app/gndr/graph/getList.js'
+import * as AppGndrGraphGetListBlocks from './types/app/gndr/graph/getListBlocks.js'
+import * as AppGndrGraphGetListMutes from './types/app/gndr/graph/getListMutes.js'
+import * as AppGndrGraphGetLists from './types/app/gndr/graph/getLists.js'
+import * as AppGndrGraphGetListsWithMembership from './types/app/gndr/graph/getListsWithMembership.js'
+import * as AppGndrGraphGetMutes from './types/app/gndr/graph/getMutes.js'
+import * as AppGndrGraphGetRelationships from './types/app/gndr/graph/getRelationships.js'
+import * as AppGndrGraphGetStarterPack from './types/app/gndr/graph/getStarterPack.js'
+import * as AppGndrGraphGetStarterPacks from './types/app/gndr/graph/getStarterPacks.js'
+import * as AppGndrGraphGetStarterPacksWithMembership from './types/app/gndr/graph/getStarterPacksWithMembership.js'
+import * as AppGndrGraphGetSuggestedFollowsByActor from './types/app/gndr/graph/getSuggestedFollowsByActor.js'
+import * as AppGndrGraphMuteActor from './types/app/gndr/graph/muteActor.js'
+import * as AppGndrGraphMuteActorList from './types/app/gndr/graph/muteActorList.js'
+import * as AppGndrGraphMuteThread from './types/app/gndr/graph/muteThread.js'
+import * as AppGndrGraphSearchStarterPacks from './types/app/gndr/graph/searchStarterPacks.js'
+import * as AppGndrGraphUnmuteActor from './types/app/gndr/graph/unmuteActor.js'
+import * as AppGndrGraphUnmuteActorList from './types/app/gndr/graph/unmuteActorList.js'
+import * as AppGndrGraphUnmuteThread from './types/app/gndr/graph/unmuteThread.js'
+import * as AppGndrLabelerGetServices from './types/app/gndr/labeler/getServices.js'
+import * as AppGndrNotificationGetPreferences from './types/app/gndr/notification/getPreferences.js'
+import * as AppGndrNotificationGetUnreadCount from './types/app/gndr/notification/getUnreadCount.js'
+import * as AppGndrNotificationListActivitySubscriptions from './types/app/gndr/notification/listActivitySubscriptions.js'
+import * as AppGndrNotificationListNotifications from './types/app/gndr/notification/listNotifications.js'
+import * as AppGndrNotificationPutActivitySubscription from './types/app/gndr/notification/putActivitySubscription.js'
+import * as AppGndrNotificationPutPreferences from './types/app/gndr/notification/putPreferences.js'
+import * as AppGndrNotificationPutPreferencesV2 from './types/app/gndr/notification/putPreferencesV2.js'
+import * as AppGndrNotificationRegisterPush from './types/app/gndr/notification/registerPush.js'
+import * as AppGndrNotificationUnregisterPush from './types/app/gndr/notification/unregisterPush.js'
+import * as AppGndrNotificationUpdateSeen from './types/app/gndr/notification/updateSeen.js'
+import * as AppGndrUnspeccedGetAgeAssuranceState from './types/app/gndr/unspecced/getAgeAssuranceState.js'
+import * as AppGndrUnspeccedGetConfig from './types/app/gndr/unspecced/getConfig.js'
+import * as AppGndrUnspeccedGetPopularFeedGenerators from './types/app/gndr/unspecced/getPopularFeedGenerators.js'
+import * as AppGndrUnspeccedGetPostThreadOtherV2 from './types/app/gndr/unspecced/getPostThreadOtherV2.js'
+import * as AppGndrUnspeccedGetPostThreadV2 from './types/app/gndr/unspecced/getPostThreadV2.js'
+import * as AppGndrUnspeccedGetSuggestedFeeds from './types/app/gndr/unspecced/getSuggestedFeeds.js'
+import * as AppGndrUnspeccedGetSuggestedFeedsSkeleton from './types/app/gndr/unspecced/getSuggestedFeedsSkeleton.js'
+import * as AppGndrUnspeccedGetSuggestedStarterPacks from './types/app/gndr/unspecced/getSuggestedStarterPacks.js'
+import * as AppGndrUnspeccedGetSuggestedStarterPacksSkeleton from './types/app/gndr/unspecced/getSuggestedStarterPacksSkeleton.js'
+import * as AppGndrUnspeccedGetSuggestedUsers from './types/app/gndr/unspecced/getSuggestedUsers.js'
+import * as AppGndrUnspeccedGetSuggestedUsersSkeleton from './types/app/gndr/unspecced/getSuggestedUsersSkeleton.js'
+import * as AppGndrUnspeccedGetSuggestionsSkeleton from './types/app/gndr/unspecced/getSuggestionsSkeleton.js'
+import * as AppGndrUnspeccedGetTaggedSuggestions from './types/app/gndr/unspecced/getTaggedSuggestions.js'
+import * as AppGndrUnspeccedGetTrendingTopics from './types/app/gndr/unspecced/getTrendingTopics.js'
+import * as AppGndrUnspeccedGetTrends from './types/app/gndr/unspecced/getTrends.js'
+import * as AppGndrUnspeccedGetTrendsSkeleton from './types/app/gndr/unspecced/getTrendsSkeleton.js'
+import * as AppGndrUnspeccedInitAgeAssurance from './types/app/gndr/unspecced/initAgeAssurance.js'
+import * as AppGndrUnspeccedSearchActorsSkeleton from './types/app/gndr/unspecced/searchActorsSkeleton.js'
+import * as AppGndrUnspeccedSearchPostsSkeleton from './types/app/gndr/unspecced/searchPostsSkeleton.js'
+import * as AppGndrUnspeccedSearchStarterPacksSkeleton from './types/app/gndr/unspecced/searchStarterPacksSkeleton.js'
+import * as AppGndrVideoGetJobStatus from './types/app/gndr/video/getJobStatus.js'
+import * as AppGndrVideoGetUploadLimits from './types/app/gndr/video/getUploadLimits.js'
+import * as AppGndrVideoUploadVideo from './types/app/gndr/video/uploadVideo.js'
+import * as ChatGndrActorDeleteAccount from './types/chat/gndr/actor/deleteAccount.js'
+import * as ChatGndrActorExportAccountData from './types/chat/gndr/actor/exportAccountData.js'
+import * as ChatGndrConvoAcceptConvo from './types/chat/gndr/convo/acceptConvo.js'
+import * as ChatGndrConvoAddReaction from './types/chat/gndr/convo/addReaction.js'
+import * as ChatGndrConvoDeleteMessageForSelf from './types/chat/gndr/convo/deleteMessageForSelf.js'
+import * as ChatGndrConvoGetConvo from './types/chat/gndr/convo/getConvo.js'
+import * as ChatGndrConvoGetConvoAvailability from './types/chat/gndr/convo/getConvoAvailability.js'
+import * as ChatGndrConvoGetConvoForMembers from './types/chat/gndr/convo/getConvoForMembers.js'
+import * as ChatGndrConvoGetLog from './types/chat/gndr/convo/getLog.js'
+import * as ChatGndrConvoGetMessages from './types/chat/gndr/convo/getMessages.js'
+import * as ChatGndrConvoLeaveConvo from './types/chat/gndr/convo/leaveConvo.js'
+import * as ChatGndrConvoListConvos from './types/chat/gndr/convo/listConvos.js'
+import * as ChatGndrConvoMuteConvo from './types/chat/gndr/convo/muteConvo.js'
+import * as ChatGndrConvoRemoveReaction from './types/chat/gndr/convo/removeReaction.js'
+import * as ChatGndrConvoSendMessage from './types/chat/gndr/convo/sendMessage.js'
+import * as ChatGndrConvoSendMessageBatch from './types/chat/gndr/convo/sendMessageBatch.js'
+import * as ChatGndrConvoUnmuteConvo from './types/chat/gndr/convo/unmuteConvo.js'
+import * as ChatGndrConvoUpdateAllRead from './types/chat/gndr/convo/updateAllRead.js'
+import * as ChatGndrConvoUpdateRead from './types/chat/gndr/convo/updateRead.js'
+import * as ChatGndrModerationGetActorMetadata from './types/chat/gndr/moderation/getActorMetadata.js'
+import * as ChatGndrModerationGetMessageContext from './types/chat/gndr/moderation/getMessageContext.js'
+import * as ChatGndrModerationUpdateActorAccess from './types/chat/gndr/moderation/updateActorAccess.js'
 import * as ComAtprotoAdminDeleteAccount from './types/com/atproto/admin/deleteAccount.js'
 import * as ComAtprotoAdminDisableAccountInvites from './types/com/atproto/admin/disableAccountInvites.js'
 import * as ComAtprotoAdminDisableInviteCodes from './types/com/atproto/admin/disableInviteCodes.js'
@@ -89,120 +196,12 @@ import * as ComAtprotoSyncNotifyOfUpdate from './types/com/atproto/sync/notifyOf
 import * as ComAtprotoSyncRequestCrawl from './types/com/atproto/sync/requestCrawl.js'
 import * as ComAtprotoSyncSubscribeRepos from './types/com/atproto/sync/subscribeRepos.js'
 import * as ComAtprotoTempAddReservedHandle from './types/com/atproto/temp/addReservedHandle.js'
+import * as ComAtprotoTempCheckHandleAvailability from './types/com/atproto/temp/checkHandleAvailability.js'
 import * as ComAtprotoTempCheckSignupQueue from './types/com/atproto/temp/checkSignupQueue.js'
 import * as ComAtprotoTempFetchLabels from './types/com/atproto/temp/fetchLabels.js'
 import * as ComAtprotoTempRequestPhoneVerification from './types/com/atproto/temp/requestPhoneVerification.js'
-import * as AppGndrActorGetPreferences from './types/app/gndr/actor/getPreferences.js'
-import * as AppGndrActorGetProfile from './types/app/gndr/actor/getProfile.js'
-import * as AppGndrActorGetProfiles from './types/app/gndr/actor/getProfiles.js'
-import * as AppGndrActorGetSuggestions from './types/app/gndr/actor/getSuggestions.js'
-import * as AppGndrActorPutPreferences from './types/app/gndr/actor/putPreferences.js'
-import * as AppGndrActorSearchActors from './types/app/gndr/actor/searchActors.js'
-import * as AppGndrActorSearchActorsTypeahead from './types/app/gndr/actor/searchActorsTypeahead.js'
-import * as AppGndrFeedDescribeFeedGenerator from './types/app/gndr/feed/describeFeedGenerator.js'
-import * as AppGndrFeedGetActorFeeds from './types/app/gndr/feed/getActorFeeds.js'
-import * as AppGndrFeedGetActorLikes from './types/app/gndr/feed/getActorLikes.js'
-import * as AppGndrFeedGetAuthorFeed from './types/app/gndr/feed/getAuthorFeed.js'
-import * as AppGndrFeedGetFeed from './types/app/gndr/feed/getFeed.js'
-import * as AppGndrFeedGetFeedGenerator from './types/app/gndr/feed/getFeedGenerator.js'
-import * as AppGndrFeedGetFeedGenerators from './types/app/gndr/feed/getFeedGenerators.js'
-import * as AppGndrFeedGetFeedSkeleton from './types/app/gndr/feed/getFeedSkeleton.js'
-import * as AppGndrFeedGetLikes from './types/app/gndr/feed/getLikes.js'
-import * as AppGndrFeedGetListFeed from './types/app/gndr/feed/getListFeed.js'
-import * as AppGndrFeedGetPostThread from './types/app/gndr/feed/getPostThread.js'
-import * as AppGndrFeedGetPosts from './types/app/gndr/feed/getPosts.js'
-import * as AppGndrFeedGetQuotes from './types/app/gndr/feed/getQuotes.js'
-import * as AppGndrFeedGetRepostedBy from './types/app/gndr/feed/getRepostedBy.js'
-import * as AppGndrFeedGetSuggestedFeeds from './types/app/gndr/feed/getSuggestedFeeds.js'
-import * as AppGndrFeedGetTimeline from './types/app/gndr/feed/getTimeline.js'
-import * as AppGndrFeedSearchPosts from './types/app/gndr/feed/searchPosts.js'
-import * as AppGndrFeedSendInteractions from './types/app/gndr/feed/sendInteractions.js'
-import * as AppGndrGraphGetActorStarterPacks from './types/app/gndr/graph/getActorStarterPacks.js'
-import * as AppGndrGraphGetBlocks from './types/app/gndr/graph/getBlocks.js'
-import * as AppGndrGraphGetFollowers from './types/app/gndr/graph/getFollowers.js'
-import * as AppGndrGraphGetFollows from './types/app/gndr/graph/getFollows.js'
-import * as AppGndrGraphGetKnownFollowers from './types/app/gndr/graph/getKnownFollowers.js'
-import * as AppGndrGraphGetList from './types/app/gndr/graph/getList.js'
-import * as AppGndrGraphGetListBlocks from './types/app/gndr/graph/getListBlocks.js'
-import * as AppGndrGraphGetListMutes from './types/app/gndr/graph/getListMutes.js'
-import * as AppGndrGraphGetLists from './types/app/gndr/graph/getLists.js'
-import * as AppGndrGraphGetMutes from './types/app/gndr/graph/getMutes.js'
-import * as AppGndrGraphGetRelationships from './types/app/gndr/graph/getRelationships.js'
-import * as AppGndrGraphGetStarterPack from './types/app/gndr/graph/getStarterPack.js'
-import * as AppGndrGraphGetStarterPacks from './types/app/gndr/graph/getStarterPacks.js'
-import * as AppGndrGraphGetSuggestedFollowsByActor from './types/app/gndr/graph/getSuggestedFollowsByActor.js'
-import * as AppGndrGraphMuteActor from './types/app/gndr/graph/muteActor.js'
-import * as AppGndrGraphMuteActorList from './types/app/gndr/graph/muteActorList.js'
-import * as AppGndrGraphMuteThread from './types/app/gndr/graph/muteThread.js'
-import * as AppGndrGraphSearchStarterPacks from './types/app/gndr/graph/searchStarterPacks.js'
-import * as AppGndrGraphUnmuteActor from './types/app/gndr/graph/unmuteActor.js'
-import * as AppGndrGraphUnmuteActorList from './types/app/gndr/graph/unmuteActorList.js'
-import * as AppGndrGraphUnmuteThread from './types/app/gndr/graph/unmuteThread.js'
-import * as AppGndrLabelerGetServices from './types/app/gndr/labeler/getServices.js'
-import * as AppGndrNotificationGetPreferences from './types/app/gndr/notification/getPreferences.js'
-import * as AppGndrNotificationGetUnreadCount from './types/app/gndr/notification/getUnreadCount.js'
-import * as AppGndrNotificationListActivitySubscriptions from './types/app/gndr/notification/listActivitySubscriptions.js'
-import * as AppGndrNotificationListNotifications from './types/app/gndr/notification/listNotifications.js'
-import * as AppGndrNotificationPutActivitySubscription from './types/app/gndr/notification/putActivitySubscription.js'
-import * as AppGndrNotificationPutPreferences from './types/app/gndr/notification/putPreferences.js'
-import * as AppGndrNotificationPutPreferencesV2 from './types/app/gndr/notification/putPreferencesV2.js'
-import * as AppGndrNotificationRegisterPush from './types/app/gndr/notification/registerPush.js'
-import * as AppGndrNotificationUpdateSeen from './types/app/gndr/notification/updateSeen.js'
-import * as AppGndrUnspeccedGetAgeAssuranceState from './types/app/gndr/unspecced/getAgeAssuranceState.js'
-import * as AppGndrUnspeccedGetConfig from './types/app/gndr/unspecced/getConfig.js'
-import * as AppGndrUnspeccedGetPopularFeedGenerators from './types/app/gndr/unspecced/getPopularFeedGenerators.js'
-import * as AppGndrUnspeccedGetPostThreadOtherV2 from './types/app/gndr/unspecced/getPostThreadOtherV2.js'
-import * as AppGndrUnspeccedGetPostThreadV2 from './types/app/gndr/unspecced/getPostThreadV2.js'
-import * as AppGndrUnspeccedGetSuggestedFeeds from './types/app/gndr/unspecced/getSuggestedFeeds.js'
-import * as AppGndrUnspeccedGetSuggestedFeedsSkeleton from './types/app/gndr/unspecced/getSuggestedFeedsSkeleton.js'
-import * as AppGndrUnspeccedGetSuggestedStarterPacks from './types/app/gndr/unspecced/getSuggestedStarterPacks.js'
-import * as AppGndrUnspeccedGetSuggestedStarterPacksSkeleton from './types/app/gndr/unspecced/getSuggestedStarterPacksSkeleton.js'
-import * as AppGndrUnspeccedGetSuggestedUsers from './types/app/gndr/unspecced/getSuggestedUsers.js'
-import * as AppGndrUnspeccedGetSuggestedUsersSkeleton from './types/app/gndr/unspecced/getSuggestedUsersSkeleton.js'
-import * as AppGndrUnspeccedGetSuggestionsSkeleton from './types/app/gndr/unspecced/getSuggestionsSkeleton.js'
-import * as AppGndrUnspeccedGetTaggedSuggestions from './types/app/gndr/unspecced/getTaggedSuggestions.js'
-import * as AppGndrUnspeccedGetTrendingTopics from './types/app/gndr/unspecced/getTrendingTopics.js'
-import * as AppGndrUnspeccedGetTrends from './types/app/gndr/unspecced/getTrends.js'
-import * as AppGndrUnspeccedGetTrendsSkeleton from './types/app/gndr/unspecced/getTrendsSkeleton.js'
-import * as AppGndrUnspeccedInitAgeAssurance from './types/app/gndr/unspecced/initAgeAssurance.js'
-import * as AppGndrUnspeccedSearchActorsSkeleton from './types/app/gndr/unspecced/searchActorsSkeleton.js'
-import * as AppGndrUnspeccedSearchPostsSkeleton from './types/app/gndr/unspecced/searchPostsSkeleton.js'
-import * as AppGndrUnspeccedSearchStarterPacksSkeleton from './types/app/gndr/unspecced/searchStarterPacksSkeleton.js'
-import * as AppGndrVideoGetJobStatus from './types/app/gndr/video/getJobStatus.js'
-import * as AppGndrVideoGetUploadLimits from './types/app/gndr/video/getUploadLimits.js'
-import * as AppGndrVideoUploadVideo from './types/app/gndr/video/uploadVideo.js'
-import * as ChatGndrActorDeleteAccount from './types/chat/gndr/actor/deleteAccount.js'
-import * as ChatGndrActorExportAccountData from './types/chat/gndr/actor/exportAccountData.js'
-import * as ChatGndrConvoAcceptConvo from './types/chat/gndr/convo/acceptConvo.js'
-import * as ChatGndrConvoAddReaction from './types/chat/gndr/convo/addReaction.js'
-import * as ChatGndrConvoDeleteMessageForSelf from './types/chat/gndr/convo/deleteMessageForSelf.js'
-import * as ChatGndrConvoGetConvo from './types/chat/gndr/convo/getConvo.js'
-import * as ChatGndrConvoGetConvoAvailability from './types/chat/gndr/convo/getConvoAvailability.js'
-import * as ChatGndrConvoGetConvoForMembers from './types/chat/gndr/convo/getConvoForMembers.js'
-import * as ChatGndrConvoGetLog from './types/chat/gndr/convo/getLog.js'
-import * as ChatGndrConvoGetMessages from './types/chat/gndr/convo/getMessages.js'
-import * as ChatGndrConvoLeaveConvo from './types/chat/gndr/convo/leaveConvo.js'
-import * as ChatGndrConvoListConvos from './types/chat/gndr/convo/listConvos.js'
-import * as ChatGndrConvoMuteConvo from './types/chat/gndr/convo/muteConvo.js'
-import * as ChatGndrConvoRemoveReaction from './types/chat/gndr/convo/removeReaction.js'
-import * as ChatGndrConvoSendMessage from './types/chat/gndr/convo/sendMessage.js'
-import * as ChatGndrConvoSendMessageBatch from './types/chat/gndr/convo/sendMessageBatch.js'
-import * as ChatGndrConvoUnmuteConvo from './types/chat/gndr/convo/unmuteConvo.js'
-import * as ChatGndrConvoUpdateAllRead from './types/chat/gndr/convo/updateAllRead.js'
-import * as ChatGndrConvoUpdateRead from './types/chat/gndr/convo/updateRead.js'
-import * as ChatGndrModerationGetActorMetadata from './types/chat/gndr/moderation/getActorMetadata.js'
-import * as ChatGndrModerationGetMessageContext from './types/chat/gndr/moderation/getMessageContext.js'
-import * as ChatGndrModerationUpdateActorAccess from './types/chat/gndr/moderation/updateActorAccess.js'
+import * as ComAtprotoTempRevokeAccountCredentials from './types/com/atproto/temp/revokeAccountCredentials.js'
 
-export const COM_ATPROTO_MODERATION = {
-  DefsReasonSpam: 'com.atproto.moderation.defs#reasonSpam',
-  DefsReasonViolation: 'com.atproto.moderation.defs#reasonViolation',
-  DefsReasonMisleading: 'com.atproto.moderation.defs#reasonMisleading',
-  DefsReasonSexual: 'com.atproto.moderation.defs#reasonSexual',
-  DefsReasonRude: 'com.atproto.moderation.defs#reasonRude',
-  DefsReasonOther: 'com.atproto.moderation.defs#reasonOther',
-  DefsReasonAppeal: 'com.atproto.moderation.defs#reasonAppeal',
-}
 export const APP_GNDR_ACTOR = {
   StatusLive: 'app.gndr.actor.status#live',
 }
@@ -227,6 +226,15 @@ export const APP_GNDR_GRAPH = {
   DefsCuratelist: 'app.gndr.graph.defs#curatelist',
   DefsReferencelist: 'app.gndr.graph.defs#referencelist',
 }
+export const COM_ATPROTO_MODERATION = {
+  DefsReasonSpam: 'com.atproto.moderation.defs#reasonSpam',
+  DefsReasonViolation: 'com.atproto.moderation.defs#reasonViolation',
+  DefsReasonMisleading: 'com.atproto.moderation.defs#reasonMisleading',
+  DefsReasonSexual: 'com.atproto.moderation.defs#reasonSexual',
+  DefsReasonRude: 'com.atproto.moderation.defs#reasonRude',
+  DefsReasonOther: 'com.atproto.moderation.defs#reasonOther',
+  DefsReasonAppeal: 'com.atproto.moderation.defs#reasonAppeal',
+}
 
 export function createServer(options?: XrpcOptions): Server {
   return new Server(options)
@@ -234,15 +242,1465 @@ export function createServer(options?: XrpcOptions): Server {
 
 export class Server {
   xrpc: XrpcServer
-  com: ComNS
   app: AppNS
   chat: ChatNS
+  com: ComNS
 
   constructor(options?: XrpcOptions) {
     this.xrpc = createXrpcServer(schemas, options)
-    this.com = new ComNS(this)
     this.app = new AppNS(this)
     this.chat = new ChatNS(this)
+    this.com = new ComNS(this)
+  }
+}
+
+export class AppNS {
+  _server: Server
+  gndr: AppGndrNS
+
+  constructor(server: Server) {
+    this._server = server
+    this.gndr = new AppGndrNS(server)
+  }
+}
+
+export class AppGndrNS {
+  _server: Server
+  actor: AppGndrActorNS
+  bookmark: AppGndrBookmarkNS
+  embed: AppGndrEmbedNS
+  feed: AppGndrFeedNS
+  graph: AppGndrGraphNS
+  labeler: AppGndrLabelerNS
+  notification: AppGndrNotificationNS
+  richtext: AppGndrRichtextNS
+  unspecced: AppGndrUnspeccedNS
+  video: AppGndrVideoNS
+
+  constructor(server: Server) {
+    this._server = server
+    this.actor = new AppGndrActorNS(server)
+    this.bookmark = new AppGndrBookmarkNS(server)
+    this.embed = new AppGndrEmbedNS(server)
+    this.feed = new AppGndrFeedNS(server)
+    this.graph = new AppGndrGraphNS(server)
+    this.labeler = new AppGndrLabelerNS(server)
+    this.notification = new AppGndrNotificationNS(server)
+    this.richtext = new AppGndrRichtextNS(server)
+    this.unspecced = new AppGndrUnspeccedNS(server)
+    this.video = new AppGndrVideoNS(server)
+  }
+}
+
+export class AppGndrActorNS {
+  _server: Server
+
+  constructor(server: Server) {
+    this._server = server
+  }
+
+  getPreferences<A extends Auth = void>(
+    cfg: MethodConfigOrHandler<
+      A,
+      AppGndrActorGetPreferences.QueryParams,
+      AppGndrActorGetPreferences.HandlerInput,
+      AppGndrActorGetPreferences.HandlerOutput
+    >,
+  ) {
+    const nsid = 'app.gndr.actor.getPreferences' // @ts-ignore
+    return this._server.xrpc.method(nsid, cfg)
+  }
+
+  getProfile<A extends Auth = void>(
+    cfg: MethodConfigOrHandler<
+      A,
+      AppGndrActorGetProfile.QueryParams,
+      AppGndrActorGetProfile.HandlerInput,
+      AppGndrActorGetProfile.HandlerOutput
+    >,
+  ) {
+    const nsid = 'app.gndr.actor.getProfile' // @ts-ignore
+    return this._server.xrpc.method(nsid, cfg)
+  }
+
+  getProfiles<A extends Auth = void>(
+    cfg: MethodConfigOrHandler<
+      A,
+      AppGndrActorGetProfiles.QueryParams,
+      AppGndrActorGetProfiles.HandlerInput,
+      AppGndrActorGetProfiles.HandlerOutput
+    >,
+  ) {
+    const nsid = 'app.gndr.actor.getProfiles' // @ts-ignore
+    return this._server.xrpc.method(nsid, cfg)
+  }
+
+  getSuggestions<A extends Auth = void>(
+    cfg: MethodConfigOrHandler<
+      A,
+      AppGndrActorGetSuggestions.QueryParams,
+      AppGndrActorGetSuggestions.HandlerInput,
+      AppGndrActorGetSuggestions.HandlerOutput
+    >,
+  ) {
+    const nsid = 'app.gndr.actor.getSuggestions' // @ts-ignore
+    return this._server.xrpc.method(nsid, cfg)
+  }
+
+  putPreferences<A extends Auth = void>(
+    cfg: MethodConfigOrHandler<
+      A,
+      AppGndrActorPutPreferences.QueryParams,
+      AppGndrActorPutPreferences.HandlerInput,
+      AppGndrActorPutPreferences.HandlerOutput
+    >,
+  ) {
+    const nsid = 'app.gndr.actor.putPreferences' // @ts-ignore
+    return this._server.xrpc.method(nsid, cfg)
+  }
+
+  searchActors<A extends Auth = void>(
+    cfg: MethodConfigOrHandler<
+      A,
+      AppGndrActorSearchActors.QueryParams,
+      AppGndrActorSearchActors.HandlerInput,
+      AppGndrActorSearchActors.HandlerOutput
+    >,
+  ) {
+    const nsid = 'app.gndr.actor.searchActors' // @ts-ignore
+    return this._server.xrpc.method(nsid, cfg)
+  }
+
+  searchActorsTypeahead<A extends Auth = void>(
+    cfg: MethodConfigOrHandler<
+      A,
+      AppGndrActorSearchActorsTypeahead.QueryParams,
+      AppGndrActorSearchActorsTypeahead.HandlerInput,
+      AppGndrActorSearchActorsTypeahead.HandlerOutput
+    >,
+  ) {
+    const nsid = 'app.gndr.actor.searchActorsTypeahead' // @ts-ignore
+    return this._server.xrpc.method(nsid, cfg)
+  }
+}
+
+export class AppGndrBookmarkNS {
+  _server: Server
+
+  constructor(server: Server) {
+    this._server = server
+  }
+
+  createBookmark<A extends Auth = void>(
+    cfg: MethodConfigOrHandler<
+      A,
+      AppGndrBookmarkCreateBookmark.QueryParams,
+      AppGndrBookmarkCreateBookmark.HandlerInput,
+      AppGndrBookmarkCreateBookmark.HandlerOutput
+    >,
+  ) {
+    const nsid = 'app.gndr.bookmark.createBookmark' // @ts-ignore
+    return this._server.xrpc.method(nsid, cfg)
+  }
+
+  deleteBookmark<A extends Auth = void>(
+    cfg: MethodConfigOrHandler<
+      A,
+      AppGndrBookmarkDeleteBookmark.QueryParams,
+      AppGndrBookmarkDeleteBookmark.HandlerInput,
+      AppGndrBookmarkDeleteBookmark.HandlerOutput
+    >,
+  ) {
+    const nsid = 'app.gndr.bookmark.deleteBookmark' // @ts-ignore
+    return this._server.xrpc.method(nsid, cfg)
+  }
+
+  getBookmarks<A extends Auth = void>(
+    cfg: MethodConfigOrHandler<
+      A,
+      AppGndrBookmarkGetBookmarks.QueryParams,
+      AppGndrBookmarkGetBookmarks.HandlerInput,
+      AppGndrBookmarkGetBookmarks.HandlerOutput
+    >,
+  ) {
+    const nsid = 'app.gndr.bookmark.getBookmarks' // @ts-ignore
+    return this._server.xrpc.method(nsid, cfg)
+  }
+}
+
+export class AppGndrEmbedNS {
+  _server: Server
+
+  constructor(server: Server) {
+    this._server = server
+  }
+}
+
+export class AppGndrFeedNS {
+  _server: Server
+
+  constructor(server: Server) {
+    this._server = server
+  }
+
+  describeFeedGenerator<A extends Auth = void>(
+    cfg: MethodConfigOrHandler<
+      A,
+      AppGndrFeedDescribeFeedGenerator.QueryParams,
+      AppGndrFeedDescribeFeedGenerator.HandlerInput,
+      AppGndrFeedDescribeFeedGenerator.HandlerOutput
+    >,
+  ) {
+    const nsid = 'app.gndr.feed.describeFeedGenerator' // @ts-ignore
+    return this._server.xrpc.method(nsid, cfg)
+  }
+
+  getActorFeeds<A extends Auth = void>(
+    cfg: MethodConfigOrHandler<
+      A,
+      AppGndrFeedGetActorFeeds.QueryParams,
+      AppGndrFeedGetActorFeeds.HandlerInput,
+      AppGndrFeedGetActorFeeds.HandlerOutput
+    >,
+  ) {
+    const nsid = 'app.gndr.feed.getActorFeeds' // @ts-ignore
+    return this._server.xrpc.method(nsid, cfg)
+  }
+
+  getActorLikes<A extends Auth = void>(
+    cfg: MethodConfigOrHandler<
+      A,
+      AppGndrFeedGetActorLikes.QueryParams,
+      AppGndrFeedGetActorLikes.HandlerInput,
+      AppGndrFeedGetActorLikes.HandlerOutput
+    >,
+  ) {
+    const nsid = 'app.gndr.feed.getActorLikes' // @ts-ignore
+    return this._server.xrpc.method(nsid, cfg)
+  }
+
+  getAuthorFeed<A extends Auth = void>(
+    cfg: MethodConfigOrHandler<
+      A,
+      AppGndrFeedGetAuthorFeed.QueryParams,
+      AppGndrFeedGetAuthorFeed.HandlerInput,
+      AppGndrFeedGetAuthorFeed.HandlerOutput
+    >,
+  ) {
+    const nsid = 'app.gndr.feed.getAuthorFeed' // @ts-ignore
+    return this._server.xrpc.method(nsid, cfg)
+  }
+
+  getFeed<A extends Auth = void>(
+    cfg: MethodConfigOrHandler<
+      A,
+      AppGndrFeedGetFeed.QueryParams,
+      AppGndrFeedGetFeed.HandlerInput,
+      AppGndrFeedGetFeed.HandlerOutput
+    >,
+  ) {
+    const nsid = 'app.gndr.feed.getFeed' // @ts-ignore
+    return this._server.xrpc.method(nsid, cfg)
+  }
+
+  getFeedGenerator<A extends Auth = void>(
+    cfg: MethodConfigOrHandler<
+      A,
+      AppGndrFeedGetFeedGenerator.QueryParams,
+      AppGndrFeedGetFeedGenerator.HandlerInput,
+      AppGndrFeedGetFeedGenerator.HandlerOutput
+    >,
+  ) {
+    const nsid = 'app.gndr.feed.getFeedGenerator' // @ts-ignore
+    return this._server.xrpc.method(nsid, cfg)
+  }
+
+  getFeedGenerators<A extends Auth = void>(
+    cfg: MethodConfigOrHandler<
+      A,
+      AppGndrFeedGetFeedGenerators.QueryParams,
+      AppGndrFeedGetFeedGenerators.HandlerInput,
+      AppGndrFeedGetFeedGenerators.HandlerOutput
+    >,
+  ) {
+    const nsid = 'app.gndr.feed.getFeedGenerators' // @ts-ignore
+    return this._server.xrpc.method(nsid, cfg)
+  }
+
+  getFeedSkeleton<A extends Auth = void>(
+    cfg: MethodConfigOrHandler<
+      A,
+      AppGndrFeedGetFeedSkeleton.QueryParams,
+      AppGndrFeedGetFeedSkeleton.HandlerInput,
+      AppGndrFeedGetFeedSkeleton.HandlerOutput
+    >,
+  ) {
+    const nsid = 'app.gndr.feed.getFeedSkeleton' // @ts-ignore
+    return this._server.xrpc.method(nsid, cfg)
+  }
+
+  getLikes<A extends Auth = void>(
+    cfg: MethodConfigOrHandler<
+      A,
+      AppGndrFeedGetLikes.QueryParams,
+      AppGndrFeedGetLikes.HandlerInput,
+      AppGndrFeedGetLikes.HandlerOutput
+    >,
+  ) {
+    const nsid = 'app.gndr.feed.getLikes' // @ts-ignore
+    return this._server.xrpc.method(nsid, cfg)
+  }
+
+  getListFeed<A extends Auth = void>(
+    cfg: MethodConfigOrHandler<
+      A,
+      AppGndrFeedGetListFeed.QueryParams,
+      AppGndrFeedGetListFeed.HandlerInput,
+      AppGndrFeedGetListFeed.HandlerOutput
+    >,
+  ) {
+    const nsid = 'app.gndr.feed.getListFeed' // @ts-ignore
+    return this._server.xrpc.method(nsid, cfg)
+  }
+
+  getPostThread<A extends Auth = void>(
+    cfg: MethodConfigOrHandler<
+      A,
+      AppGndrFeedGetPostThread.QueryParams,
+      AppGndrFeedGetPostThread.HandlerInput,
+      AppGndrFeedGetPostThread.HandlerOutput
+    >,
+  ) {
+    const nsid = 'app.gndr.feed.getPostThread' // @ts-ignore
+    return this._server.xrpc.method(nsid, cfg)
+  }
+
+  getPosts<A extends Auth = void>(
+    cfg: MethodConfigOrHandler<
+      A,
+      AppGndrFeedGetPosts.QueryParams,
+      AppGndrFeedGetPosts.HandlerInput,
+      AppGndrFeedGetPosts.HandlerOutput
+    >,
+  ) {
+    const nsid = 'app.gndr.feed.getPosts' // @ts-ignore
+    return this._server.xrpc.method(nsid, cfg)
+  }
+
+  getQuotes<A extends Auth = void>(
+    cfg: MethodConfigOrHandler<
+      A,
+      AppGndrFeedGetQuotes.QueryParams,
+      AppGndrFeedGetQuotes.HandlerInput,
+      AppGndrFeedGetQuotes.HandlerOutput
+    >,
+  ) {
+    const nsid = 'app.gndr.feed.getQuotes' // @ts-ignore
+    return this._server.xrpc.method(nsid, cfg)
+  }
+
+  getRepostedBy<A extends Auth = void>(
+    cfg: MethodConfigOrHandler<
+      A,
+      AppGndrFeedGetRepostedBy.QueryParams,
+      AppGndrFeedGetRepostedBy.HandlerInput,
+      AppGndrFeedGetRepostedBy.HandlerOutput
+    >,
+  ) {
+    const nsid = 'app.gndr.feed.getRepostedBy' // @ts-ignore
+    return this._server.xrpc.method(nsid, cfg)
+  }
+
+  getSuggestedFeeds<A extends Auth = void>(
+    cfg: MethodConfigOrHandler<
+      A,
+      AppGndrFeedGetSuggestedFeeds.QueryParams,
+      AppGndrFeedGetSuggestedFeeds.HandlerInput,
+      AppGndrFeedGetSuggestedFeeds.HandlerOutput
+    >,
+  ) {
+    const nsid = 'app.gndr.feed.getSuggestedFeeds' // @ts-ignore
+    return this._server.xrpc.method(nsid, cfg)
+  }
+
+  getTimeline<A extends Auth = void>(
+    cfg: MethodConfigOrHandler<
+      A,
+      AppGndrFeedGetTimeline.QueryParams,
+      AppGndrFeedGetTimeline.HandlerInput,
+      AppGndrFeedGetTimeline.HandlerOutput
+    >,
+  ) {
+    const nsid = 'app.gndr.feed.getTimeline' // @ts-ignore
+    return this._server.xrpc.method(nsid, cfg)
+  }
+
+  searchPosts<A extends Auth = void>(
+    cfg: MethodConfigOrHandler<
+      A,
+      AppGndrFeedSearchPosts.QueryParams,
+      AppGndrFeedSearchPosts.HandlerInput,
+      AppGndrFeedSearchPosts.HandlerOutput
+    >,
+  ) {
+    const nsid = 'app.gndr.feed.searchPosts' // @ts-ignore
+    return this._server.xrpc.method(nsid, cfg)
+  }
+
+  sendInteractions<A extends Auth = void>(
+    cfg: MethodConfigOrHandler<
+      A,
+      AppGndrFeedSendInteractions.QueryParams,
+      AppGndrFeedSendInteractions.HandlerInput,
+      AppGndrFeedSendInteractions.HandlerOutput
+    >,
+  ) {
+    const nsid = 'app.gndr.feed.sendInteractions' // @ts-ignore
+    return this._server.xrpc.method(nsid, cfg)
+  }
+}
+
+export class AppGndrGraphNS {
+  _server: Server
+
+  constructor(server: Server) {
+    this._server = server
+  }
+
+  getActorStarterPacks<A extends Auth = void>(
+    cfg: MethodConfigOrHandler<
+      A,
+      AppGndrGraphGetActorStarterPacks.QueryParams,
+      AppGndrGraphGetActorStarterPacks.HandlerInput,
+      AppGndrGraphGetActorStarterPacks.HandlerOutput
+    >,
+  ) {
+    const nsid = 'app.gndr.graph.getActorStarterPacks' // @ts-ignore
+    return this._server.xrpc.method(nsid, cfg)
+  }
+
+  getBlocks<A extends Auth = void>(
+    cfg: MethodConfigOrHandler<
+      A,
+      AppGndrGraphGetBlocks.QueryParams,
+      AppGndrGraphGetBlocks.HandlerInput,
+      AppGndrGraphGetBlocks.HandlerOutput
+    >,
+  ) {
+    const nsid = 'app.gndr.graph.getBlocks' // @ts-ignore
+    return this._server.xrpc.method(nsid, cfg)
+  }
+
+  getFollowers<A extends Auth = void>(
+    cfg: MethodConfigOrHandler<
+      A,
+      AppGndrGraphGetFollowers.QueryParams,
+      AppGndrGraphGetFollowers.HandlerInput,
+      AppGndrGraphGetFollowers.HandlerOutput
+    >,
+  ) {
+    const nsid = 'app.gndr.graph.getFollowers' // @ts-ignore
+    return this._server.xrpc.method(nsid, cfg)
+  }
+
+  getFollows<A extends Auth = void>(
+    cfg: MethodConfigOrHandler<
+      A,
+      AppGndrGraphGetFollows.QueryParams,
+      AppGndrGraphGetFollows.HandlerInput,
+      AppGndrGraphGetFollows.HandlerOutput
+    >,
+  ) {
+    const nsid = 'app.gndr.graph.getFollows' // @ts-ignore
+    return this._server.xrpc.method(nsid, cfg)
+  }
+
+  getKnownFollowers<A extends Auth = void>(
+    cfg: MethodConfigOrHandler<
+      A,
+      AppGndrGraphGetKnownFollowers.QueryParams,
+      AppGndrGraphGetKnownFollowers.HandlerInput,
+      AppGndrGraphGetKnownFollowers.HandlerOutput
+    >,
+  ) {
+    const nsid = 'app.gndr.graph.getKnownFollowers' // @ts-ignore
+    return this._server.xrpc.method(nsid, cfg)
+  }
+
+  getList<A extends Auth = void>(
+    cfg: MethodConfigOrHandler<
+      A,
+      AppGndrGraphGetList.QueryParams,
+      AppGndrGraphGetList.HandlerInput,
+      AppGndrGraphGetList.HandlerOutput
+    >,
+  ) {
+    const nsid = 'app.gndr.graph.getList' // @ts-ignore
+    return this._server.xrpc.method(nsid, cfg)
+  }
+
+  getListBlocks<A extends Auth = void>(
+    cfg: MethodConfigOrHandler<
+      A,
+      AppGndrGraphGetListBlocks.QueryParams,
+      AppGndrGraphGetListBlocks.HandlerInput,
+      AppGndrGraphGetListBlocks.HandlerOutput
+    >,
+  ) {
+    const nsid = 'app.gndr.graph.getListBlocks' // @ts-ignore
+    return this._server.xrpc.method(nsid, cfg)
+  }
+
+  getListMutes<A extends Auth = void>(
+    cfg: MethodConfigOrHandler<
+      A,
+      AppGndrGraphGetListMutes.QueryParams,
+      AppGndrGraphGetListMutes.HandlerInput,
+      AppGndrGraphGetListMutes.HandlerOutput
+    >,
+  ) {
+    const nsid = 'app.gndr.graph.getListMutes' // @ts-ignore
+    return this._server.xrpc.method(nsid, cfg)
+  }
+
+  getLists<A extends Auth = void>(
+    cfg: MethodConfigOrHandler<
+      A,
+      AppGndrGraphGetLists.QueryParams,
+      AppGndrGraphGetLists.HandlerInput,
+      AppGndrGraphGetLists.HandlerOutput
+    >,
+  ) {
+    const nsid = 'app.gndr.graph.getLists' // @ts-ignore
+    return this._server.xrpc.method(nsid, cfg)
+  }
+
+  getListsWithMembership<A extends Auth = void>(
+    cfg: MethodConfigOrHandler<
+      A,
+      AppGndrGraphGetListsWithMembership.QueryParams,
+      AppGndrGraphGetListsWithMembership.HandlerInput,
+      AppGndrGraphGetListsWithMembership.HandlerOutput
+    >,
+  ) {
+    const nsid = 'app.gndr.graph.getListsWithMembership' // @ts-ignore
+    return this._server.xrpc.method(nsid, cfg)
+  }
+
+  getMutes<A extends Auth = void>(
+    cfg: MethodConfigOrHandler<
+      A,
+      AppGndrGraphGetMutes.QueryParams,
+      AppGndrGraphGetMutes.HandlerInput,
+      AppGndrGraphGetMutes.HandlerOutput
+    >,
+  ) {
+    const nsid = 'app.gndr.graph.getMutes' // @ts-ignore
+    return this._server.xrpc.method(nsid, cfg)
+  }
+
+  getRelationships<A extends Auth = void>(
+    cfg: MethodConfigOrHandler<
+      A,
+      AppGndrGraphGetRelationships.QueryParams,
+      AppGndrGraphGetRelationships.HandlerInput,
+      AppGndrGraphGetRelationships.HandlerOutput
+    >,
+  ) {
+    const nsid = 'app.gndr.graph.getRelationships' // @ts-ignore
+    return this._server.xrpc.method(nsid, cfg)
+  }
+
+  getStarterPack<A extends Auth = void>(
+    cfg: MethodConfigOrHandler<
+      A,
+      AppGndrGraphGetStarterPack.QueryParams,
+      AppGndrGraphGetStarterPack.HandlerInput,
+      AppGndrGraphGetStarterPack.HandlerOutput
+    >,
+  ) {
+    const nsid = 'app.gndr.graph.getStarterPack' // @ts-ignore
+    return this._server.xrpc.method(nsid, cfg)
+  }
+
+  getStarterPacks<A extends Auth = void>(
+    cfg: MethodConfigOrHandler<
+      A,
+      AppGndrGraphGetStarterPacks.QueryParams,
+      AppGndrGraphGetStarterPacks.HandlerInput,
+      AppGndrGraphGetStarterPacks.HandlerOutput
+    >,
+  ) {
+    const nsid = 'app.gndr.graph.getStarterPacks' // @ts-ignore
+    return this._server.xrpc.method(nsid, cfg)
+  }
+
+  getStarterPacksWithMembership<A extends Auth = void>(
+    cfg: MethodConfigOrHandler<
+      A,
+      AppGndrGraphGetStarterPacksWithMembership.QueryParams,
+      AppGndrGraphGetStarterPacksWithMembership.HandlerInput,
+      AppGndrGraphGetStarterPacksWithMembership.HandlerOutput
+    >,
+  ) {
+    const nsid = 'app.gndr.graph.getStarterPacksWithMembership' // @ts-ignore
+    return this._server.xrpc.method(nsid, cfg)
+  }
+
+  getSuggestedFollowsByActor<A extends Auth = void>(
+    cfg: MethodConfigOrHandler<
+      A,
+      AppGndrGraphGetSuggestedFollowsByActor.QueryParams,
+      AppGndrGraphGetSuggestedFollowsByActor.HandlerInput,
+      AppGndrGraphGetSuggestedFollowsByActor.HandlerOutput
+    >,
+  ) {
+    const nsid = 'app.gndr.graph.getSuggestedFollowsByActor' // @ts-ignore
+    return this._server.xrpc.method(nsid, cfg)
+  }
+
+  muteActor<A extends Auth = void>(
+    cfg: MethodConfigOrHandler<
+      A,
+      AppGndrGraphMuteActor.QueryParams,
+      AppGndrGraphMuteActor.HandlerInput,
+      AppGndrGraphMuteActor.HandlerOutput
+    >,
+  ) {
+    const nsid = 'app.gndr.graph.muteActor' // @ts-ignore
+    return this._server.xrpc.method(nsid, cfg)
+  }
+
+  muteActorList<A extends Auth = void>(
+    cfg: MethodConfigOrHandler<
+      A,
+      AppGndrGraphMuteActorList.QueryParams,
+      AppGndrGraphMuteActorList.HandlerInput,
+      AppGndrGraphMuteActorList.HandlerOutput
+    >,
+  ) {
+    const nsid = 'app.gndr.graph.muteActorList' // @ts-ignore
+    return this._server.xrpc.method(nsid, cfg)
+  }
+
+  muteThread<A extends Auth = void>(
+    cfg: MethodConfigOrHandler<
+      A,
+      AppGndrGraphMuteThread.QueryParams,
+      AppGndrGraphMuteThread.HandlerInput,
+      AppGndrGraphMuteThread.HandlerOutput
+    >,
+  ) {
+    const nsid = 'app.gndr.graph.muteThread' // @ts-ignore
+    return this._server.xrpc.method(nsid, cfg)
+  }
+
+  searchStarterPacks<A extends Auth = void>(
+    cfg: MethodConfigOrHandler<
+      A,
+      AppGndrGraphSearchStarterPacks.QueryParams,
+      AppGndrGraphSearchStarterPacks.HandlerInput,
+      AppGndrGraphSearchStarterPacks.HandlerOutput
+    >,
+  ) {
+    const nsid = 'app.gndr.graph.searchStarterPacks' // @ts-ignore
+    return this._server.xrpc.method(nsid, cfg)
+  }
+
+  unmuteActor<A extends Auth = void>(
+    cfg: MethodConfigOrHandler<
+      A,
+      AppGndrGraphUnmuteActor.QueryParams,
+      AppGndrGraphUnmuteActor.HandlerInput,
+      AppGndrGraphUnmuteActor.HandlerOutput
+    >,
+  ) {
+    const nsid = 'app.gndr.graph.unmuteActor' // @ts-ignore
+    return this._server.xrpc.method(nsid, cfg)
+  }
+
+  unmuteActorList<A extends Auth = void>(
+    cfg: MethodConfigOrHandler<
+      A,
+      AppGndrGraphUnmuteActorList.QueryParams,
+      AppGndrGraphUnmuteActorList.HandlerInput,
+      AppGndrGraphUnmuteActorList.HandlerOutput
+    >,
+  ) {
+    const nsid = 'app.gndr.graph.unmuteActorList' // @ts-ignore
+    return this._server.xrpc.method(nsid, cfg)
+  }
+
+  unmuteThread<A extends Auth = void>(
+    cfg: MethodConfigOrHandler<
+      A,
+      AppGndrGraphUnmuteThread.QueryParams,
+      AppGndrGraphUnmuteThread.HandlerInput,
+      AppGndrGraphUnmuteThread.HandlerOutput
+    >,
+  ) {
+    const nsid = 'app.gndr.graph.unmuteThread' // @ts-ignore
+    return this._server.xrpc.method(nsid, cfg)
+  }
+}
+
+export class AppGndrLabelerNS {
+  _server: Server
+
+  constructor(server: Server) {
+    this._server = server
+  }
+
+  getServices<A extends Auth = void>(
+    cfg: MethodConfigOrHandler<
+      A,
+      AppGndrLabelerGetServices.QueryParams,
+      AppGndrLabelerGetServices.HandlerInput,
+      AppGndrLabelerGetServices.HandlerOutput
+    >,
+  ) {
+    const nsid = 'app.gndr.labeler.getServices' // @ts-ignore
+    return this._server.xrpc.method(nsid, cfg)
+  }
+}
+
+export class AppGndrNotificationNS {
+  _server: Server
+
+  constructor(server: Server) {
+    this._server = server
+  }
+
+  getPreferences<A extends Auth = void>(
+    cfg: MethodConfigOrHandler<
+      A,
+      AppGndrNotificationGetPreferences.QueryParams,
+      AppGndrNotificationGetPreferences.HandlerInput,
+      AppGndrNotificationGetPreferences.HandlerOutput
+    >,
+  ) {
+    const nsid = 'app.gndr.notification.getPreferences' // @ts-ignore
+    return this._server.xrpc.method(nsid, cfg)
+  }
+
+  getUnreadCount<A extends Auth = void>(
+    cfg: MethodConfigOrHandler<
+      A,
+      AppGndrNotificationGetUnreadCount.QueryParams,
+      AppGndrNotificationGetUnreadCount.HandlerInput,
+      AppGndrNotificationGetUnreadCount.HandlerOutput
+    >,
+  ) {
+    const nsid = 'app.gndr.notification.getUnreadCount' // @ts-ignore
+    return this._server.xrpc.method(nsid, cfg)
+  }
+
+  listActivitySubscriptions<A extends Auth = void>(
+    cfg: MethodConfigOrHandler<
+      A,
+      AppGndrNotificationListActivitySubscriptions.QueryParams,
+      AppGndrNotificationListActivitySubscriptions.HandlerInput,
+      AppGndrNotificationListActivitySubscriptions.HandlerOutput
+    >,
+  ) {
+    const nsid = 'app.gndr.notification.listActivitySubscriptions' // @ts-ignore
+    return this._server.xrpc.method(nsid, cfg)
+  }
+
+  listNotifications<A extends Auth = void>(
+    cfg: MethodConfigOrHandler<
+      A,
+      AppGndrNotificationListNotifications.QueryParams,
+      AppGndrNotificationListNotifications.HandlerInput,
+      AppGndrNotificationListNotifications.HandlerOutput
+    >,
+  ) {
+    const nsid = 'app.gndr.notification.listNotifications' // @ts-ignore
+    return this._server.xrpc.method(nsid, cfg)
+  }
+
+  putActivitySubscription<A extends Auth = void>(
+    cfg: MethodConfigOrHandler<
+      A,
+      AppGndrNotificationPutActivitySubscription.QueryParams,
+      AppGndrNotificationPutActivitySubscription.HandlerInput,
+      AppGndrNotificationPutActivitySubscription.HandlerOutput
+    >,
+  ) {
+    const nsid = 'app.gndr.notification.putActivitySubscription' // @ts-ignore
+    return this._server.xrpc.method(nsid, cfg)
+  }
+
+  putPreferences<A extends Auth = void>(
+    cfg: MethodConfigOrHandler<
+      A,
+      AppGndrNotificationPutPreferences.QueryParams,
+      AppGndrNotificationPutPreferences.HandlerInput,
+      AppGndrNotificationPutPreferences.HandlerOutput
+    >,
+  ) {
+    const nsid = 'app.gndr.notification.putPreferences' // @ts-ignore
+    return this._server.xrpc.method(nsid, cfg)
+  }
+
+  putPreferencesV2<A extends Auth = void>(
+    cfg: MethodConfigOrHandler<
+      A,
+      AppGndrNotificationPutPreferencesV2.QueryParams,
+      AppGndrNotificationPutPreferencesV2.HandlerInput,
+      AppGndrNotificationPutPreferencesV2.HandlerOutput
+    >,
+  ) {
+    const nsid = 'app.gndr.notification.putPreferencesV2' // @ts-ignore
+    return this._server.xrpc.method(nsid, cfg)
+  }
+
+  registerPush<A extends Auth = void>(
+    cfg: MethodConfigOrHandler<
+      A,
+      AppGndrNotificationRegisterPush.QueryParams,
+      AppGndrNotificationRegisterPush.HandlerInput,
+      AppGndrNotificationRegisterPush.HandlerOutput
+    >,
+  ) {
+    const nsid = 'app.gndr.notification.registerPush' // @ts-ignore
+    return this._server.xrpc.method(nsid, cfg)
+  }
+
+  unregisterPush<A extends Auth = void>(
+    cfg: MethodConfigOrHandler<
+      A,
+      AppGndrNotificationUnregisterPush.QueryParams,
+      AppGndrNotificationUnregisterPush.HandlerInput,
+      AppGndrNotificationUnregisterPush.HandlerOutput
+    >,
+  ) {
+    const nsid = 'app.gndr.notification.unregisterPush' // @ts-ignore
+    return this._server.xrpc.method(nsid, cfg)
+  }
+
+  updateSeen<A extends Auth = void>(
+    cfg: MethodConfigOrHandler<
+      A,
+      AppGndrNotificationUpdateSeen.QueryParams,
+      AppGndrNotificationUpdateSeen.HandlerInput,
+      AppGndrNotificationUpdateSeen.HandlerOutput
+    >,
+  ) {
+    const nsid = 'app.gndr.notification.updateSeen' // @ts-ignore
+    return this._server.xrpc.method(nsid, cfg)
+  }
+}
+
+export class AppGndrRichtextNS {
+  _server: Server
+
+  constructor(server: Server) {
+    this._server = server
+  }
+}
+
+export class AppGndrUnspeccedNS {
+  _server: Server
+
+  constructor(server: Server) {
+    this._server = server
+  }
+
+  getAgeAssuranceState<A extends Auth = void>(
+    cfg: MethodConfigOrHandler<
+      A,
+      AppGndrUnspeccedGetAgeAssuranceState.QueryParams,
+      AppGndrUnspeccedGetAgeAssuranceState.HandlerInput,
+      AppGndrUnspeccedGetAgeAssuranceState.HandlerOutput
+    >,
+  ) {
+    const nsid = 'app.gndr.unspecced.getAgeAssuranceState' // @ts-ignore
+    return this._server.xrpc.method(nsid, cfg)
+  }
+
+  getConfig<A extends Auth = void>(
+    cfg: MethodConfigOrHandler<
+      A,
+      AppGndrUnspeccedGetConfig.QueryParams,
+      AppGndrUnspeccedGetConfig.HandlerInput,
+      AppGndrUnspeccedGetConfig.HandlerOutput
+    >,
+  ) {
+    const nsid = 'app.gndr.unspecced.getConfig' // @ts-ignore
+    return this._server.xrpc.method(nsid, cfg)
+  }
+
+  getPopularFeedGenerators<A extends Auth = void>(
+    cfg: MethodConfigOrHandler<
+      A,
+      AppGndrUnspeccedGetPopularFeedGenerators.QueryParams,
+      AppGndrUnspeccedGetPopularFeedGenerators.HandlerInput,
+      AppGndrUnspeccedGetPopularFeedGenerators.HandlerOutput
+    >,
+  ) {
+    const nsid = 'app.gndr.unspecced.getPopularFeedGenerators' // @ts-ignore
+    return this._server.xrpc.method(nsid, cfg)
+  }
+
+  getPostThreadOtherV2<A extends Auth = void>(
+    cfg: MethodConfigOrHandler<
+      A,
+      AppGndrUnspeccedGetPostThreadOtherV2.QueryParams,
+      AppGndrUnspeccedGetPostThreadOtherV2.HandlerInput,
+      AppGndrUnspeccedGetPostThreadOtherV2.HandlerOutput
+    >,
+  ) {
+    const nsid = 'app.gndr.unspecced.getPostThreadOtherV2' // @ts-ignore
+    return this._server.xrpc.method(nsid, cfg)
+  }
+
+  getPostThreadV2<A extends Auth = void>(
+    cfg: MethodConfigOrHandler<
+      A,
+      AppGndrUnspeccedGetPostThreadV2.QueryParams,
+      AppGndrUnspeccedGetPostThreadV2.HandlerInput,
+      AppGndrUnspeccedGetPostThreadV2.HandlerOutput
+    >,
+  ) {
+    const nsid = 'app.gndr.unspecced.getPostThreadV2' // @ts-ignore
+    return this._server.xrpc.method(nsid, cfg)
+  }
+
+  getSuggestedFeeds<A extends Auth = void>(
+    cfg: MethodConfigOrHandler<
+      A,
+      AppGndrUnspeccedGetSuggestedFeeds.QueryParams,
+      AppGndrUnspeccedGetSuggestedFeeds.HandlerInput,
+      AppGndrUnspeccedGetSuggestedFeeds.HandlerOutput
+    >,
+  ) {
+    const nsid = 'app.gndr.unspecced.getSuggestedFeeds' // @ts-ignore
+    return this._server.xrpc.method(nsid, cfg)
+  }
+
+  getSuggestedFeedsSkeleton<A extends Auth = void>(
+    cfg: MethodConfigOrHandler<
+      A,
+      AppGndrUnspeccedGetSuggestedFeedsSkeleton.QueryParams,
+      AppGndrUnspeccedGetSuggestedFeedsSkeleton.HandlerInput,
+      AppGndrUnspeccedGetSuggestedFeedsSkeleton.HandlerOutput
+    >,
+  ) {
+    const nsid = 'app.gndr.unspecced.getSuggestedFeedsSkeleton' // @ts-ignore
+    return this._server.xrpc.method(nsid, cfg)
+  }
+
+  getSuggestedStarterPacks<A extends Auth = void>(
+    cfg: MethodConfigOrHandler<
+      A,
+      AppGndrUnspeccedGetSuggestedStarterPacks.QueryParams,
+      AppGndrUnspeccedGetSuggestedStarterPacks.HandlerInput,
+      AppGndrUnspeccedGetSuggestedStarterPacks.HandlerOutput
+    >,
+  ) {
+    const nsid = 'app.gndr.unspecced.getSuggestedStarterPacks' // @ts-ignore
+    return this._server.xrpc.method(nsid, cfg)
+  }
+
+  getSuggestedStarterPacksSkeleton<A extends Auth = void>(
+    cfg: MethodConfigOrHandler<
+      A,
+      AppGndrUnspeccedGetSuggestedStarterPacksSkeleton.QueryParams,
+      AppGndrUnspeccedGetSuggestedStarterPacksSkeleton.HandlerInput,
+      AppGndrUnspeccedGetSuggestedStarterPacksSkeleton.HandlerOutput
+    >,
+  ) {
+    const nsid = 'app.gndr.unspecced.getSuggestedStarterPacksSkeleton' // @ts-ignore
+    return this._server.xrpc.method(nsid, cfg)
+  }
+
+  getSuggestedUsers<A extends Auth = void>(
+    cfg: MethodConfigOrHandler<
+      A,
+      AppGndrUnspeccedGetSuggestedUsers.QueryParams,
+      AppGndrUnspeccedGetSuggestedUsers.HandlerInput,
+      AppGndrUnspeccedGetSuggestedUsers.HandlerOutput
+    >,
+  ) {
+    const nsid = 'app.gndr.unspecced.getSuggestedUsers' // @ts-ignore
+    return this._server.xrpc.method(nsid, cfg)
+  }
+
+  getSuggestedUsersSkeleton<A extends Auth = void>(
+    cfg: MethodConfigOrHandler<
+      A,
+      AppGndrUnspeccedGetSuggestedUsersSkeleton.QueryParams,
+      AppGndrUnspeccedGetSuggestedUsersSkeleton.HandlerInput,
+      AppGndrUnspeccedGetSuggestedUsersSkeleton.HandlerOutput
+    >,
+  ) {
+    const nsid = 'app.gndr.unspecced.getSuggestedUsersSkeleton' // @ts-ignore
+    return this._server.xrpc.method(nsid, cfg)
+  }
+
+  getSuggestionsSkeleton<A extends Auth = void>(
+    cfg: MethodConfigOrHandler<
+      A,
+      AppGndrUnspeccedGetSuggestionsSkeleton.QueryParams,
+      AppGndrUnspeccedGetSuggestionsSkeleton.HandlerInput,
+      AppGndrUnspeccedGetSuggestionsSkeleton.HandlerOutput
+    >,
+  ) {
+    const nsid = 'app.gndr.unspecced.getSuggestionsSkeleton' // @ts-ignore
+    return this._server.xrpc.method(nsid, cfg)
+  }
+
+  getTaggedSuggestions<A extends Auth = void>(
+    cfg: MethodConfigOrHandler<
+      A,
+      AppGndrUnspeccedGetTaggedSuggestions.QueryParams,
+      AppGndrUnspeccedGetTaggedSuggestions.HandlerInput,
+      AppGndrUnspeccedGetTaggedSuggestions.HandlerOutput
+    >,
+  ) {
+    const nsid = 'app.gndr.unspecced.getTaggedSuggestions' // @ts-ignore
+    return this._server.xrpc.method(nsid, cfg)
+  }
+
+  getTrendingTopics<A extends Auth = void>(
+    cfg: MethodConfigOrHandler<
+      A,
+      AppGndrUnspeccedGetTrendingTopics.QueryParams,
+      AppGndrUnspeccedGetTrendingTopics.HandlerInput,
+      AppGndrUnspeccedGetTrendingTopics.HandlerOutput
+    >,
+  ) {
+    const nsid = 'app.gndr.unspecced.getTrendingTopics' // @ts-ignore
+    return this._server.xrpc.method(nsid, cfg)
+  }
+
+  getTrends<A extends Auth = void>(
+    cfg: MethodConfigOrHandler<
+      A,
+      AppGndrUnspeccedGetTrends.QueryParams,
+      AppGndrUnspeccedGetTrends.HandlerInput,
+      AppGndrUnspeccedGetTrends.HandlerOutput
+    >,
+  ) {
+    const nsid = 'app.gndr.unspecced.getTrends' // @ts-ignore
+    return this._server.xrpc.method(nsid, cfg)
+  }
+
+  getTrendsSkeleton<A extends Auth = void>(
+    cfg: MethodConfigOrHandler<
+      A,
+      AppGndrUnspeccedGetTrendsSkeleton.QueryParams,
+      AppGndrUnspeccedGetTrendsSkeleton.HandlerInput,
+      AppGndrUnspeccedGetTrendsSkeleton.HandlerOutput
+    >,
+  ) {
+    const nsid = 'app.gndr.unspecced.getTrendsSkeleton' // @ts-ignore
+    return this._server.xrpc.method(nsid, cfg)
+  }
+
+  initAgeAssurance<A extends Auth = void>(
+    cfg: MethodConfigOrHandler<
+      A,
+      AppGndrUnspeccedInitAgeAssurance.QueryParams,
+      AppGndrUnspeccedInitAgeAssurance.HandlerInput,
+      AppGndrUnspeccedInitAgeAssurance.HandlerOutput
+    >,
+  ) {
+    const nsid = 'app.gndr.unspecced.initAgeAssurance' // @ts-ignore
+    return this._server.xrpc.method(nsid, cfg)
+  }
+
+  searchActorsSkeleton<A extends Auth = void>(
+    cfg: MethodConfigOrHandler<
+      A,
+      AppGndrUnspeccedSearchActorsSkeleton.QueryParams,
+      AppGndrUnspeccedSearchActorsSkeleton.HandlerInput,
+      AppGndrUnspeccedSearchActorsSkeleton.HandlerOutput
+    >,
+  ) {
+    const nsid = 'app.gndr.unspecced.searchActorsSkeleton' // @ts-ignore
+    return this._server.xrpc.method(nsid, cfg)
+  }
+
+  searchPostsSkeleton<A extends Auth = void>(
+    cfg: MethodConfigOrHandler<
+      A,
+      AppGndrUnspeccedSearchPostsSkeleton.QueryParams,
+      AppGndrUnspeccedSearchPostsSkeleton.HandlerInput,
+      AppGndrUnspeccedSearchPostsSkeleton.HandlerOutput
+    >,
+  ) {
+    const nsid = 'app.gndr.unspecced.searchPostsSkeleton' // @ts-ignore
+    return this._server.xrpc.method(nsid, cfg)
+  }
+
+  searchStarterPacksSkeleton<A extends Auth = void>(
+    cfg: MethodConfigOrHandler<
+      A,
+      AppGndrUnspeccedSearchStarterPacksSkeleton.QueryParams,
+      AppGndrUnspeccedSearchStarterPacksSkeleton.HandlerInput,
+      AppGndrUnspeccedSearchStarterPacksSkeleton.HandlerOutput
+    >,
+  ) {
+    const nsid = 'app.gndr.unspecced.searchStarterPacksSkeleton' // @ts-ignore
+    return this._server.xrpc.method(nsid, cfg)
+  }
+}
+
+export class AppGndrVideoNS {
+  _server: Server
+
+  constructor(server: Server) {
+    this._server = server
+  }
+
+  getJobStatus<A extends Auth = void>(
+    cfg: MethodConfigOrHandler<
+      A,
+      AppGndrVideoGetJobStatus.QueryParams,
+      AppGndrVideoGetJobStatus.HandlerInput,
+      AppGndrVideoGetJobStatus.HandlerOutput
+    >,
+  ) {
+    const nsid = 'app.gndr.video.getJobStatus' // @ts-ignore
+    return this._server.xrpc.method(nsid, cfg)
+  }
+
+  getUploadLimits<A extends Auth = void>(
+    cfg: MethodConfigOrHandler<
+      A,
+      AppGndrVideoGetUploadLimits.QueryParams,
+      AppGndrVideoGetUploadLimits.HandlerInput,
+      AppGndrVideoGetUploadLimits.HandlerOutput
+    >,
+  ) {
+    const nsid = 'app.gndr.video.getUploadLimits' // @ts-ignore
+    return this._server.xrpc.method(nsid, cfg)
+  }
+
+  uploadVideo<A extends Auth = void>(
+    cfg: MethodConfigOrHandler<
+      A,
+      AppGndrVideoUploadVideo.QueryParams,
+      AppGndrVideoUploadVideo.HandlerInput,
+      AppGndrVideoUploadVideo.HandlerOutput
+    >,
+  ) {
+    const nsid = 'app.gndr.video.uploadVideo' // @ts-ignore
+    return this._server.xrpc.method(nsid, cfg)
+  }
+}
+
+export class ChatNS {
+  _server: Server
+  gndr: ChatGndrNS
+
+  constructor(server: Server) {
+    this._server = server
+    this.gndr = new ChatGndrNS(server)
+  }
+}
+
+export class ChatGndrNS {
+  _server: Server
+  actor: ChatGndrActorNS
+  convo: ChatGndrConvoNS
+  moderation: ChatGndrModerationNS
+
+  constructor(server: Server) {
+    this._server = server
+    this.actor = new ChatGndrActorNS(server)
+    this.convo = new ChatGndrConvoNS(server)
+    this.moderation = new ChatGndrModerationNS(server)
+  }
+}
+
+export class ChatGndrActorNS {
+  _server: Server
+
+  constructor(server: Server) {
+    this._server = server
+  }
+
+  deleteAccount<A extends Auth = void>(
+    cfg: MethodConfigOrHandler<
+      A,
+      ChatGndrActorDeleteAccount.QueryParams,
+      ChatGndrActorDeleteAccount.HandlerInput,
+      ChatGndrActorDeleteAccount.HandlerOutput
+    >,
+  ) {
+    const nsid = 'chat.gndr.actor.deleteAccount' // @ts-ignore
+    return this._server.xrpc.method(nsid, cfg)
+  }
+
+  exportAccountData<A extends Auth = void>(
+    cfg: MethodConfigOrHandler<
+      A,
+      ChatGndrActorExportAccountData.QueryParams,
+      ChatGndrActorExportAccountData.HandlerInput,
+      ChatGndrActorExportAccountData.HandlerOutput
+    >,
+  ) {
+    const nsid = 'chat.gndr.actor.exportAccountData' // @ts-ignore
+    return this._server.xrpc.method(nsid, cfg)
+  }
+}
+
+export class ChatGndrConvoNS {
+  _server: Server
+
+  constructor(server: Server) {
+    this._server = server
+  }
+
+  acceptConvo<A extends Auth = void>(
+    cfg: MethodConfigOrHandler<
+      A,
+      ChatGndrConvoAcceptConvo.QueryParams,
+      ChatGndrConvoAcceptConvo.HandlerInput,
+      ChatGndrConvoAcceptConvo.HandlerOutput
+    >,
+  ) {
+    const nsid = 'chat.gndr.convo.acceptConvo' // @ts-ignore
+    return this._server.xrpc.method(nsid, cfg)
+  }
+
+  addReaction<A extends Auth = void>(
+    cfg: MethodConfigOrHandler<
+      A,
+      ChatGndrConvoAddReaction.QueryParams,
+      ChatGndrConvoAddReaction.HandlerInput,
+      ChatGndrConvoAddReaction.HandlerOutput
+    >,
+  ) {
+    const nsid = 'chat.gndr.convo.addReaction' // @ts-ignore
+    return this._server.xrpc.method(nsid, cfg)
+  }
+
+  deleteMessageForSelf<A extends Auth = void>(
+    cfg: MethodConfigOrHandler<
+      A,
+      ChatGndrConvoDeleteMessageForSelf.QueryParams,
+      ChatGndrConvoDeleteMessageForSelf.HandlerInput,
+      ChatGndrConvoDeleteMessageForSelf.HandlerOutput
+    >,
+  ) {
+    const nsid = 'chat.gndr.convo.deleteMessageForSelf' // @ts-ignore
+    return this._server.xrpc.method(nsid, cfg)
+  }
+
+  getConvo<A extends Auth = void>(
+    cfg: MethodConfigOrHandler<
+      A,
+      ChatGndrConvoGetConvo.QueryParams,
+      ChatGndrConvoGetConvo.HandlerInput,
+      ChatGndrConvoGetConvo.HandlerOutput
+    >,
+  ) {
+    const nsid = 'chat.gndr.convo.getConvo' // @ts-ignore
+    return this._server.xrpc.method(nsid, cfg)
+  }
+
+  getConvoAvailability<A extends Auth = void>(
+    cfg: MethodConfigOrHandler<
+      A,
+      ChatGndrConvoGetConvoAvailability.QueryParams,
+      ChatGndrConvoGetConvoAvailability.HandlerInput,
+      ChatGndrConvoGetConvoAvailability.HandlerOutput
+    >,
+  ) {
+    const nsid = 'chat.gndr.convo.getConvoAvailability' // @ts-ignore
+    return this._server.xrpc.method(nsid, cfg)
+  }
+
+  getConvoForMembers<A extends Auth = void>(
+    cfg: MethodConfigOrHandler<
+      A,
+      ChatGndrConvoGetConvoForMembers.QueryParams,
+      ChatGndrConvoGetConvoForMembers.HandlerInput,
+      ChatGndrConvoGetConvoForMembers.HandlerOutput
+    >,
+  ) {
+    const nsid = 'chat.gndr.convo.getConvoForMembers' // @ts-ignore
+    return this._server.xrpc.method(nsid, cfg)
+  }
+
+  getLog<A extends Auth = void>(
+    cfg: MethodConfigOrHandler<
+      A,
+      ChatGndrConvoGetLog.QueryParams,
+      ChatGndrConvoGetLog.HandlerInput,
+      ChatGndrConvoGetLog.HandlerOutput
+    >,
+  ) {
+    const nsid = 'chat.gndr.convo.getLog' // @ts-ignore
+    return this._server.xrpc.method(nsid, cfg)
+  }
+
+  getMessages<A extends Auth = void>(
+    cfg: MethodConfigOrHandler<
+      A,
+      ChatGndrConvoGetMessages.QueryParams,
+      ChatGndrConvoGetMessages.HandlerInput,
+      ChatGndrConvoGetMessages.HandlerOutput
+    >,
+  ) {
+    const nsid = 'chat.gndr.convo.getMessages' // @ts-ignore
+    return this._server.xrpc.method(nsid, cfg)
+  }
+
+  leaveConvo<A extends Auth = void>(
+    cfg: MethodConfigOrHandler<
+      A,
+      ChatGndrConvoLeaveConvo.QueryParams,
+      ChatGndrConvoLeaveConvo.HandlerInput,
+      ChatGndrConvoLeaveConvo.HandlerOutput
+    >,
+  ) {
+    const nsid = 'chat.gndr.convo.leaveConvo' // @ts-ignore
+    return this._server.xrpc.method(nsid, cfg)
+  }
+
+  listConvos<A extends Auth = void>(
+    cfg: MethodConfigOrHandler<
+      A,
+      ChatGndrConvoListConvos.QueryParams,
+      ChatGndrConvoListConvos.HandlerInput,
+      ChatGndrConvoListConvos.HandlerOutput
+    >,
+  ) {
+    const nsid = 'chat.gndr.convo.listConvos' // @ts-ignore
+    return this._server.xrpc.method(nsid, cfg)
+  }
+
+  muteConvo<A extends Auth = void>(
+    cfg: MethodConfigOrHandler<
+      A,
+      ChatGndrConvoMuteConvo.QueryParams,
+      ChatGndrConvoMuteConvo.HandlerInput,
+      ChatGndrConvoMuteConvo.HandlerOutput
+    >,
+  ) {
+    const nsid = 'chat.gndr.convo.muteConvo' // @ts-ignore
+    return this._server.xrpc.method(nsid, cfg)
+  }
+
+  removeReaction<A extends Auth = void>(
+    cfg: MethodConfigOrHandler<
+      A,
+      ChatGndrConvoRemoveReaction.QueryParams,
+      ChatGndrConvoRemoveReaction.HandlerInput,
+      ChatGndrConvoRemoveReaction.HandlerOutput
+    >,
+  ) {
+    const nsid = 'chat.gndr.convo.removeReaction' // @ts-ignore
+    return this._server.xrpc.method(nsid, cfg)
+  }
+
+  sendMessage<A extends Auth = void>(
+    cfg: MethodConfigOrHandler<
+      A,
+      ChatGndrConvoSendMessage.QueryParams,
+      ChatGndrConvoSendMessage.HandlerInput,
+      ChatGndrConvoSendMessage.HandlerOutput
+    >,
+  ) {
+    const nsid = 'chat.gndr.convo.sendMessage' // @ts-ignore
+    return this._server.xrpc.method(nsid, cfg)
+  }
+
+  sendMessageBatch<A extends Auth = void>(
+    cfg: MethodConfigOrHandler<
+      A,
+      ChatGndrConvoSendMessageBatch.QueryParams,
+      ChatGndrConvoSendMessageBatch.HandlerInput,
+      ChatGndrConvoSendMessageBatch.HandlerOutput
+    >,
+  ) {
+    const nsid = 'chat.gndr.convo.sendMessageBatch' // @ts-ignore
+    return this._server.xrpc.method(nsid, cfg)
+  }
+
+  unmuteConvo<A extends Auth = void>(
+    cfg: MethodConfigOrHandler<
+      A,
+      ChatGndrConvoUnmuteConvo.QueryParams,
+      ChatGndrConvoUnmuteConvo.HandlerInput,
+      ChatGndrConvoUnmuteConvo.HandlerOutput
+    >,
+  ) {
+    const nsid = 'chat.gndr.convo.unmuteConvo' // @ts-ignore
+    return this._server.xrpc.method(nsid, cfg)
+  }
+
+  updateAllRead<A extends Auth = void>(
+    cfg: MethodConfigOrHandler<
+      A,
+      ChatGndrConvoUpdateAllRead.QueryParams,
+      ChatGndrConvoUpdateAllRead.HandlerInput,
+      ChatGndrConvoUpdateAllRead.HandlerOutput
+    >,
+  ) {
+    const nsid = 'chat.gndr.convo.updateAllRead' // @ts-ignore
+    return this._server.xrpc.method(nsid, cfg)
+  }
+
+  updateRead<A extends Auth = void>(
+    cfg: MethodConfigOrHandler<
+      A,
+      ChatGndrConvoUpdateRead.QueryParams,
+      ChatGndrConvoUpdateRead.HandlerInput,
+      ChatGndrConvoUpdateRead.HandlerOutput
+    >,
+  ) {
+    const nsid = 'chat.gndr.convo.updateRead' // @ts-ignore
+    return this._server.xrpc.method(nsid, cfg)
+  }
+}
+
+export class ChatGndrModerationNS {
+  _server: Server
+
+  constructor(server: Server) {
+    this._server = server
+  }
+
+  getActorMetadata<A extends Auth = void>(
+    cfg: MethodConfigOrHandler<
+      A,
+      ChatGndrModerationGetActorMetadata.QueryParams,
+      ChatGndrModerationGetActorMetadata.HandlerInput,
+      ChatGndrModerationGetActorMetadata.HandlerOutput
+    >,
+  ) {
+    const nsid = 'chat.gndr.moderation.getActorMetadata' // @ts-ignore
+    return this._server.xrpc.method(nsid, cfg)
+  }
+
+  getMessageContext<A extends Auth = void>(
+    cfg: MethodConfigOrHandler<
+      A,
+      ChatGndrModerationGetMessageContext.QueryParams,
+      ChatGndrModerationGetMessageContext.HandlerInput,
+      ChatGndrModerationGetMessageContext.HandlerOutput
+    >,
+  ) {
+    const nsid = 'chat.gndr.moderation.getMessageContext' // @ts-ignore
+    return this._server.xrpc.method(nsid, cfg)
+  }
+
+  updateActorAccess<A extends Auth = void>(
+    cfg: MethodConfigOrHandler<
+      A,
+      ChatGndrModerationUpdateActorAccess.QueryParams,
+      ChatGndrModerationUpdateActorAccess.HandlerInput,
+      ChatGndrModerationUpdateActorAccess.HandlerOutput
+    >,
+  ) {
+    const nsid = 'chat.gndr.moderation.updateActorAccess' // @ts-ignore
+    return this._server.xrpc.method(nsid, cfg)
   }
 }
 
@@ -1299,6 +2757,18 @@ export class ComAtprotoTempNS {
     return this._server.xrpc.method(nsid, cfg)
   }
 
+  checkHandleAvailability<A extends Auth = void>(
+    cfg: MethodConfigOrHandler<
+      A,
+      ComAtprotoTempCheckHandleAvailability.QueryParams,
+      ComAtprotoTempCheckHandleAvailability.HandlerInput,
+      ComAtprotoTempCheckHandleAvailability.HandlerOutput
+    >,
+  ) {
+    const nsid = 'com.atproto.temp.checkHandleAvailability' // @ts-ignore
+    return this._server.xrpc.method(nsid, cfg)
+  }
+
   checkSignupQueue<A extends Auth = void>(
     cfg: MethodConfigOrHandler<
       A,
@@ -1334,1372 +2804,16 @@ export class ComAtprotoTempNS {
     const nsid = 'com.atproto.temp.requestPhoneVerification' // @ts-ignore
     return this._server.xrpc.method(nsid, cfg)
   }
-}
 
-export class AppNS {
-  _server: Server
-  gndr: AppGndrNS
-
-  constructor(server: Server) {
-    this._server = server
-    this.gndr = new AppGndrNS(server)
-  }
-}
-
-export class AppGndrNS {
-  _server: Server
-  actor: AppGndrActorNS
-  embed: AppGndrEmbedNS
-  feed: AppGndrFeedNS
-  graph: AppGndrGraphNS
-  labeler: AppGndrLabelerNS
-  notification: AppGndrNotificationNS
-  richtext: AppGndrRichtextNS
-  unspecced: AppGndrUnspeccedNS
-  video: AppGndrVideoNS
-
-  constructor(server: Server) {
-    this._server = server
-    this.actor = new AppGndrActorNS(server)
-    this.embed = new AppGndrEmbedNS(server)
-    this.feed = new AppGndrFeedNS(server)
-    this.graph = new AppGndrGraphNS(server)
-    this.labeler = new AppGndrLabelerNS(server)
-    this.notification = new AppGndrNotificationNS(server)
-    this.richtext = new AppGndrRichtextNS(server)
-    this.unspecced = new AppGndrUnspeccedNS(server)
-    this.video = new AppGndrVideoNS(server)
-  }
-}
-
-export class AppGndrActorNS {
-  _server: Server
-
-  constructor(server: Server) {
-    this._server = server
-  }
-
-  getPreferences<A extends Auth = void>(
-    cfg: MethodConfigOrHandler<
-      A,
-      AppGndrActorGetPreferences.QueryParams,
-      AppGndrActorGetPreferences.HandlerInput,
-      AppGndrActorGetPreferences.HandlerOutput
-    >,
-  ) {
-    const nsid = 'app.gndr.actor.getPreferences' // @ts-ignore
-    return this._server.xrpc.method(nsid, cfg)
-  }
-
-  getProfile<A extends Auth = void>(
-    cfg: MethodConfigOrHandler<
-      A,
-      AppGndrActorGetProfile.QueryParams,
-      AppGndrActorGetProfile.HandlerInput,
-      AppGndrActorGetProfile.HandlerOutput
-    >,
-  ) {
-    const nsid = 'app.gndr.actor.getProfile' // @ts-ignore
-    return this._server.xrpc.method(nsid, cfg)
-  }
-
-  getProfiles<A extends Auth = void>(
-    cfg: MethodConfigOrHandler<
-      A,
-      AppGndrActorGetProfiles.QueryParams,
-      AppGndrActorGetProfiles.HandlerInput,
-      AppGndrActorGetProfiles.HandlerOutput
-    >,
-  ) {
-    const nsid = 'app.gndr.actor.getProfiles' // @ts-ignore
-    return this._server.xrpc.method(nsid, cfg)
-  }
-
-  getSuggestions<A extends Auth = void>(
-    cfg: MethodConfigOrHandler<
-      A,
-      AppGndrActorGetSuggestions.QueryParams,
-      AppGndrActorGetSuggestions.HandlerInput,
-      AppGndrActorGetSuggestions.HandlerOutput
-    >,
-  ) {
-    const nsid = 'app.gndr.actor.getSuggestions' // @ts-ignore
-    return this._server.xrpc.method(nsid, cfg)
-  }
-
-  putPreferences<A extends Auth = void>(
-    cfg: MethodConfigOrHandler<
-      A,
-      AppGndrActorPutPreferences.QueryParams,
-      AppGndrActorPutPreferences.HandlerInput,
-      AppGndrActorPutPreferences.HandlerOutput
-    >,
-  ) {
-    const nsid = 'app.gndr.actor.putPreferences' // @ts-ignore
-    return this._server.xrpc.method(nsid, cfg)
-  }
-
-  searchActors<A extends Auth = void>(
-    cfg: MethodConfigOrHandler<
-      A,
-      AppGndrActorSearchActors.QueryParams,
-      AppGndrActorSearchActors.HandlerInput,
-      AppGndrActorSearchActors.HandlerOutput
-    >,
-  ) {
-    const nsid = 'app.gndr.actor.searchActors' // @ts-ignore
-    return this._server.xrpc.method(nsid, cfg)
-  }
-
-  searchActorsTypeahead<A extends Auth = void>(
-    cfg: MethodConfigOrHandler<
-      A,
-      AppGndrActorSearchActorsTypeahead.QueryParams,
-      AppGndrActorSearchActorsTypeahead.HandlerInput,
-      AppGndrActorSearchActorsTypeahead.HandlerOutput
-    >,
-  ) {
-    const nsid = 'app.gndr.actor.searchActorsTypeahead' // @ts-ignore
-    return this._server.xrpc.method(nsid, cfg)
-  }
-}
-
-export class AppGndrEmbedNS {
-  _server: Server
-
-  constructor(server: Server) {
-    this._server = server
-  }
-}
-
-export class AppGndrFeedNS {
-  _server: Server
-
-  constructor(server: Server) {
-    this._server = server
-  }
-
-  describeFeedGenerator<A extends Auth = void>(
-    cfg: MethodConfigOrHandler<
-      A,
-      AppGndrFeedDescribeFeedGenerator.QueryParams,
-      AppGndrFeedDescribeFeedGenerator.HandlerInput,
-      AppGndrFeedDescribeFeedGenerator.HandlerOutput
-    >,
-  ) {
-    const nsid = 'app.gndr.feed.describeFeedGenerator' // @ts-ignore
-    return this._server.xrpc.method(nsid, cfg)
-  }
-
-  getActorFeeds<A extends Auth = void>(
-    cfg: MethodConfigOrHandler<
-      A,
-      AppGndrFeedGetActorFeeds.QueryParams,
-      AppGndrFeedGetActorFeeds.HandlerInput,
-      AppGndrFeedGetActorFeeds.HandlerOutput
-    >,
-  ) {
-    const nsid = 'app.gndr.feed.getActorFeeds' // @ts-ignore
-    return this._server.xrpc.method(nsid, cfg)
-  }
-
-  getActorLikes<A extends Auth = void>(
-    cfg: MethodConfigOrHandler<
-      A,
-      AppGndrFeedGetActorLikes.QueryParams,
-      AppGndrFeedGetActorLikes.HandlerInput,
-      AppGndrFeedGetActorLikes.HandlerOutput
-    >,
-  ) {
-    const nsid = 'app.gndr.feed.getActorLikes' // @ts-ignore
-    return this._server.xrpc.method(nsid, cfg)
-  }
-
-  getAuthorFeed<A extends Auth = void>(
-    cfg: MethodConfigOrHandler<
-      A,
-      AppGndrFeedGetAuthorFeed.QueryParams,
-      AppGndrFeedGetAuthorFeed.HandlerInput,
-      AppGndrFeedGetAuthorFeed.HandlerOutput
-    >,
-  ) {
-    const nsid = 'app.gndr.feed.getAuthorFeed' // @ts-ignore
-    return this._server.xrpc.method(nsid, cfg)
-  }
-
-  getFeed<A extends Auth = void>(
-    cfg: MethodConfigOrHandler<
-      A,
-      AppGndrFeedGetFeed.QueryParams,
-      AppGndrFeedGetFeed.HandlerInput,
-      AppGndrFeedGetFeed.HandlerOutput
-    >,
-  ) {
-    const nsid = 'app.gndr.feed.getFeed' // @ts-ignore
-    return this._server.xrpc.method(nsid, cfg)
-  }
-
-  getFeedGenerator<A extends Auth = void>(
-    cfg: MethodConfigOrHandler<
-      A,
-      AppGndrFeedGetFeedGenerator.QueryParams,
-      AppGndrFeedGetFeedGenerator.HandlerInput,
-      AppGndrFeedGetFeedGenerator.HandlerOutput
-    >,
-  ) {
-    const nsid = 'app.gndr.feed.getFeedGenerator' // @ts-ignore
-    return this._server.xrpc.method(nsid, cfg)
-  }
-
-  getFeedGenerators<A extends Auth = void>(
-    cfg: MethodConfigOrHandler<
-      A,
-      AppGndrFeedGetFeedGenerators.QueryParams,
-      AppGndrFeedGetFeedGenerators.HandlerInput,
-      AppGndrFeedGetFeedGenerators.HandlerOutput
-    >,
-  ) {
-    const nsid = 'app.gndr.feed.getFeedGenerators' // @ts-ignore
-    return this._server.xrpc.method(nsid, cfg)
-  }
-
-  getFeedSkeleton<A extends Auth = void>(
-    cfg: MethodConfigOrHandler<
-      A,
-      AppGndrFeedGetFeedSkeleton.QueryParams,
-      AppGndrFeedGetFeedSkeleton.HandlerInput,
-      AppGndrFeedGetFeedSkeleton.HandlerOutput
-    >,
-  ) {
-    const nsid = 'app.gndr.feed.getFeedSkeleton' // @ts-ignore
-    return this._server.xrpc.method(nsid, cfg)
-  }
-
-  getLikes<A extends Auth = void>(
-    cfg: MethodConfigOrHandler<
-      A,
-      AppGndrFeedGetLikes.QueryParams,
-      AppGndrFeedGetLikes.HandlerInput,
-      AppGndrFeedGetLikes.HandlerOutput
-    >,
-  ) {
-    const nsid = 'app.gndr.feed.getLikes' // @ts-ignore
-    return this._server.xrpc.method(nsid, cfg)
-  }
-
-  getListFeed<A extends Auth = void>(
-    cfg: MethodConfigOrHandler<
-      A,
-      AppGndrFeedGetListFeed.QueryParams,
-      AppGndrFeedGetListFeed.HandlerInput,
-      AppGndrFeedGetListFeed.HandlerOutput
-    >,
-  ) {
-    const nsid = 'app.gndr.feed.getListFeed' // @ts-ignore
-    return this._server.xrpc.method(nsid, cfg)
-  }
-
-  getPostThread<A extends Auth = void>(
-    cfg: MethodConfigOrHandler<
-      A,
-      AppGndrFeedGetPostThread.QueryParams,
-      AppGndrFeedGetPostThread.HandlerInput,
-      AppGndrFeedGetPostThread.HandlerOutput
-    >,
-  ) {
-    const nsid = 'app.gndr.feed.getPostThread' // @ts-ignore
-    return this._server.xrpc.method(nsid, cfg)
-  }
-
-  getPosts<A extends Auth = void>(
-    cfg: MethodConfigOrHandler<
-      A,
-      AppGndrFeedGetPosts.QueryParams,
-      AppGndrFeedGetPosts.HandlerInput,
-      AppGndrFeedGetPosts.HandlerOutput
-    >,
-  ) {
-    const nsid = 'app.gndr.feed.getPosts' // @ts-ignore
-    return this._server.xrpc.method(nsid, cfg)
-  }
-
-  getQuotes<A extends Auth = void>(
-    cfg: MethodConfigOrHandler<
-      A,
-      AppGndrFeedGetQuotes.QueryParams,
-      AppGndrFeedGetQuotes.HandlerInput,
-      AppGndrFeedGetQuotes.HandlerOutput
-    >,
-  ) {
-    const nsid = 'app.gndr.feed.getQuotes' // @ts-ignore
-    return this._server.xrpc.method(nsid, cfg)
-  }
-
-  getRepostedBy<A extends Auth = void>(
-    cfg: MethodConfigOrHandler<
-      A,
-      AppGndrFeedGetRepostedBy.QueryParams,
-      AppGndrFeedGetRepostedBy.HandlerInput,
-      AppGndrFeedGetRepostedBy.HandlerOutput
-    >,
-  ) {
-    const nsid = 'app.gndr.feed.getRepostedBy' // @ts-ignore
-    return this._server.xrpc.method(nsid, cfg)
-  }
-
-  getSuggestedFeeds<A extends Auth = void>(
-    cfg: MethodConfigOrHandler<
-      A,
-      AppGndrFeedGetSuggestedFeeds.QueryParams,
-      AppGndrFeedGetSuggestedFeeds.HandlerInput,
-      AppGndrFeedGetSuggestedFeeds.HandlerOutput
-    >,
-  ) {
-    const nsid = 'app.gndr.feed.getSuggestedFeeds' // @ts-ignore
-    return this._server.xrpc.method(nsid, cfg)
-  }
-
-  getTimeline<A extends Auth = void>(
-    cfg: MethodConfigOrHandler<
-      A,
-      AppGndrFeedGetTimeline.QueryParams,
-      AppGndrFeedGetTimeline.HandlerInput,
-      AppGndrFeedGetTimeline.HandlerOutput
-    >,
-  ) {
-    const nsid = 'app.gndr.feed.getTimeline' // @ts-ignore
-    return this._server.xrpc.method(nsid, cfg)
-  }
-
-  searchPosts<A extends Auth = void>(
-    cfg: MethodConfigOrHandler<
-      A,
-      AppGndrFeedSearchPosts.QueryParams,
-      AppGndrFeedSearchPosts.HandlerInput,
-      AppGndrFeedSearchPosts.HandlerOutput
-    >,
-  ) {
-    const nsid = 'app.gndr.feed.searchPosts' // @ts-ignore
-    return this._server.xrpc.method(nsid, cfg)
-  }
-
-  sendInteractions<A extends Auth = void>(
-    cfg: MethodConfigOrHandler<
-      A,
-      AppGndrFeedSendInteractions.QueryParams,
-      AppGndrFeedSendInteractions.HandlerInput,
-      AppGndrFeedSendInteractions.HandlerOutput
-    >,
-  ) {
-    const nsid = 'app.gndr.feed.sendInteractions' // @ts-ignore
-    return this._server.xrpc.method(nsid, cfg)
-  }
-}
-
-export class AppGndrGraphNS {
-  _server: Server
-
-  constructor(server: Server) {
-    this._server = server
-  }
-
-  getActorStarterPacks<A extends Auth = void>(
-    cfg: MethodConfigOrHandler<
-      A,
-      AppGndrGraphGetActorStarterPacks.QueryParams,
-      AppGndrGraphGetActorStarterPacks.HandlerInput,
-      AppGndrGraphGetActorStarterPacks.HandlerOutput
-    >,
-  ) {
-    const nsid = 'app.gndr.graph.getActorStarterPacks' // @ts-ignore
-    return this._server.xrpc.method(nsid, cfg)
-  }
-
-  getBlocks<A extends Auth = void>(
-    cfg: MethodConfigOrHandler<
-      A,
-      AppGndrGraphGetBlocks.QueryParams,
-      AppGndrGraphGetBlocks.HandlerInput,
-      AppGndrGraphGetBlocks.HandlerOutput
-    >,
-  ) {
-    const nsid = 'app.gndr.graph.getBlocks' // @ts-ignore
-    return this._server.xrpc.method(nsid, cfg)
-  }
-
-  getFollowers<A extends Auth = void>(
-    cfg: MethodConfigOrHandler<
-      A,
-      AppGndrGraphGetFollowers.QueryParams,
-      AppGndrGraphGetFollowers.HandlerInput,
-      AppGndrGraphGetFollowers.HandlerOutput
-    >,
-  ) {
-    const nsid = 'app.gndr.graph.getFollowers' // @ts-ignore
-    return this._server.xrpc.method(nsid, cfg)
-  }
-
-  getFollows<A extends Auth = void>(
-    cfg: MethodConfigOrHandler<
-      A,
-      AppGndrGraphGetFollows.QueryParams,
-      AppGndrGraphGetFollows.HandlerInput,
-      AppGndrGraphGetFollows.HandlerOutput
-    >,
-  ) {
-    const nsid = 'app.gndr.graph.getFollows' // @ts-ignore
-    return this._server.xrpc.method(nsid, cfg)
-  }
-
-  getKnownFollowers<A extends Auth = void>(
-    cfg: MethodConfigOrHandler<
-      A,
-      AppGndrGraphGetKnownFollowers.QueryParams,
-      AppGndrGraphGetKnownFollowers.HandlerInput,
-      AppGndrGraphGetKnownFollowers.HandlerOutput
-    >,
-  ) {
-    const nsid = 'app.gndr.graph.getKnownFollowers' // @ts-ignore
-    return this._server.xrpc.method(nsid, cfg)
-  }
-
-  getList<A extends Auth = void>(
-    cfg: MethodConfigOrHandler<
-      A,
-      AppGndrGraphGetList.QueryParams,
-      AppGndrGraphGetList.HandlerInput,
-      AppGndrGraphGetList.HandlerOutput
-    >,
-  ) {
-    const nsid = 'app.gndr.graph.getList' // @ts-ignore
-    return this._server.xrpc.method(nsid, cfg)
-  }
-
-  getListBlocks<A extends Auth = void>(
-    cfg: MethodConfigOrHandler<
-      A,
-      AppGndrGraphGetListBlocks.QueryParams,
-      AppGndrGraphGetListBlocks.HandlerInput,
-      AppGndrGraphGetListBlocks.HandlerOutput
-    >,
-  ) {
-    const nsid = 'app.gndr.graph.getListBlocks' // @ts-ignore
-    return this._server.xrpc.method(nsid, cfg)
-  }
-
-  getListMutes<A extends Auth = void>(
-    cfg: MethodConfigOrHandler<
-      A,
-      AppGndrGraphGetListMutes.QueryParams,
-      AppGndrGraphGetListMutes.HandlerInput,
-      AppGndrGraphGetListMutes.HandlerOutput
-    >,
-  ) {
-    const nsid = 'app.gndr.graph.getListMutes' // @ts-ignore
-    return this._server.xrpc.method(nsid, cfg)
-  }
-
-  getLists<A extends Auth = void>(
-    cfg: MethodConfigOrHandler<
-      A,
-      AppGndrGraphGetLists.QueryParams,
-      AppGndrGraphGetLists.HandlerInput,
-      AppGndrGraphGetLists.HandlerOutput
-    >,
-  ) {
-    const nsid = 'app.gndr.graph.getLists' // @ts-ignore
-    return this._server.xrpc.method(nsid, cfg)
-  }
-
-  getMutes<A extends Auth = void>(
-    cfg: MethodConfigOrHandler<
-      A,
-      AppGndrGraphGetMutes.QueryParams,
-      AppGndrGraphGetMutes.HandlerInput,
-      AppGndrGraphGetMutes.HandlerOutput
-    >,
-  ) {
-    const nsid = 'app.gndr.graph.getMutes' // @ts-ignore
-    return this._server.xrpc.method(nsid, cfg)
-  }
-
-  getRelationships<A extends Auth = void>(
-    cfg: MethodConfigOrHandler<
-      A,
-      AppGndrGraphGetRelationships.QueryParams,
-      AppGndrGraphGetRelationships.HandlerInput,
-      AppGndrGraphGetRelationships.HandlerOutput
-    >,
-  ) {
-    const nsid = 'app.gndr.graph.getRelationships' // @ts-ignore
-    return this._server.xrpc.method(nsid, cfg)
-  }
-
-  getStarterPack<A extends Auth = void>(
-    cfg: MethodConfigOrHandler<
-      A,
-      AppGndrGraphGetStarterPack.QueryParams,
-      AppGndrGraphGetStarterPack.HandlerInput,
-      AppGndrGraphGetStarterPack.HandlerOutput
-    >,
-  ) {
-    const nsid = 'app.gndr.graph.getStarterPack' // @ts-ignore
-    return this._server.xrpc.method(nsid, cfg)
-  }
-
-  getStarterPacks<A extends Auth = void>(
-    cfg: MethodConfigOrHandler<
-      A,
-      AppGndrGraphGetStarterPacks.QueryParams,
-      AppGndrGraphGetStarterPacks.HandlerInput,
-      AppGndrGraphGetStarterPacks.HandlerOutput
-    >,
-  ) {
-    const nsid = 'app.gndr.graph.getStarterPacks' // @ts-ignore
-    return this._server.xrpc.method(nsid, cfg)
-  }
-
-  getSuggestedFollowsByActor<A extends Auth = void>(
-    cfg: MethodConfigOrHandler<
-      A,
-      AppGndrGraphGetSuggestedFollowsByActor.QueryParams,
-      AppGndrGraphGetSuggestedFollowsByActor.HandlerInput,
-      AppGndrGraphGetSuggestedFollowsByActor.HandlerOutput
-    >,
-  ) {
-    const nsid = 'app.gndr.graph.getSuggestedFollowsByActor' // @ts-ignore
-    return this._server.xrpc.method(nsid, cfg)
-  }
-
-  muteActor<A extends Auth = void>(
-    cfg: MethodConfigOrHandler<
-      A,
-      AppGndrGraphMuteActor.QueryParams,
-      AppGndrGraphMuteActor.HandlerInput,
-      AppGndrGraphMuteActor.HandlerOutput
-    >,
-  ) {
-    const nsid = 'app.gndr.graph.muteActor' // @ts-ignore
-    return this._server.xrpc.method(nsid, cfg)
-  }
-
-  muteActorList<A extends Auth = void>(
-    cfg: MethodConfigOrHandler<
-      A,
-      AppGndrGraphMuteActorList.QueryParams,
-      AppGndrGraphMuteActorList.HandlerInput,
-      AppGndrGraphMuteActorList.HandlerOutput
-    >,
-  ) {
-    const nsid = 'app.gndr.graph.muteActorList' // @ts-ignore
-    return this._server.xrpc.method(nsid, cfg)
-  }
-
-  muteThread<A extends Auth = void>(
-    cfg: MethodConfigOrHandler<
-      A,
-      AppGndrGraphMuteThread.QueryParams,
-      AppGndrGraphMuteThread.HandlerInput,
-      AppGndrGraphMuteThread.HandlerOutput
-    >,
-  ) {
-    const nsid = 'app.gndr.graph.muteThread' // @ts-ignore
-    return this._server.xrpc.method(nsid, cfg)
-  }
-
-  searchStarterPacks<A extends Auth = void>(
-    cfg: MethodConfigOrHandler<
-      A,
-      AppGndrGraphSearchStarterPacks.QueryParams,
-      AppGndrGraphSearchStarterPacks.HandlerInput,
-      AppGndrGraphSearchStarterPacks.HandlerOutput
-    >,
-  ) {
-    const nsid = 'app.gndr.graph.searchStarterPacks' // @ts-ignore
-    return this._server.xrpc.method(nsid, cfg)
-  }
-
-  unmuteActor<A extends Auth = void>(
-    cfg: MethodConfigOrHandler<
-      A,
-      AppGndrGraphUnmuteActor.QueryParams,
-      AppGndrGraphUnmuteActor.HandlerInput,
-      AppGndrGraphUnmuteActor.HandlerOutput
-    >,
-  ) {
-    const nsid = 'app.gndr.graph.unmuteActor' // @ts-ignore
-    return this._server.xrpc.method(nsid, cfg)
-  }
-
-  unmuteActorList<A extends Auth = void>(
-    cfg: MethodConfigOrHandler<
-      A,
-      AppGndrGraphUnmuteActorList.QueryParams,
-      AppGndrGraphUnmuteActorList.HandlerInput,
-      AppGndrGraphUnmuteActorList.HandlerOutput
-    >,
-  ) {
-    const nsid = 'app.gndr.graph.unmuteActorList' // @ts-ignore
-    return this._server.xrpc.method(nsid, cfg)
-  }
-
-  unmuteThread<A extends Auth = void>(
-    cfg: MethodConfigOrHandler<
-      A,
-      AppGndrGraphUnmuteThread.QueryParams,
-      AppGndrGraphUnmuteThread.HandlerInput,
-      AppGndrGraphUnmuteThread.HandlerOutput
-    >,
-  ) {
-    const nsid = 'app.gndr.graph.unmuteThread' // @ts-ignore
-    return this._server.xrpc.method(nsid, cfg)
-  }
-}
-
-export class AppGndrLabelerNS {
-  _server: Server
-
-  constructor(server: Server) {
-    this._server = server
-  }
-
-  getServices<A extends Auth = void>(
-    cfg: MethodConfigOrHandler<
-      A,
-      AppGndrLabelerGetServices.QueryParams,
-      AppGndrLabelerGetServices.HandlerInput,
-      AppGndrLabelerGetServices.HandlerOutput
-    >,
-  ) {
-    const nsid = 'app.gndr.labeler.getServices' // @ts-ignore
-    return this._server.xrpc.method(nsid, cfg)
-  }
-}
-
-export class AppGndrNotificationNS {
-  _server: Server
-
-  constructor(server: Server) {
-    this._server = server
-  }
-
-  getPreferences<A extends Auth = void>(
-    cfg: MethodConfigOrHandler<
-      A,
-      AppGndrNotificationGetPreferences.QueryParams,
-      AppGndrNotificationGetPreferences.HandlerInput,
-      AppGndrNotificationGetPreferences.HandlerOutput
-    >,
-  ) {
-    const nsid = 'app.gndr.notification.getPreferences' // @ts-ignore
-    return this._server.xrpc.method(nsid, cfg)
-  }
-
-  getUnreadCount<A extends Auth = void>(
-    cfg: MethodConfigOrHandler<
-      A,
-      AppGndrNotificationGetUnreadCount.QueryParams,
-      AppGndrNotificationGetUnreadCount.HandlerInput,
-      AppGndrNotificationGetUnreadCount.HandlerOutput
-    >,
-  ) {
-    const nsid = 'app.gndr.notification.getUnreadCount' // @ts-ignore
-    return this._server.xrpc.method(nsid, cfg)
-  }
-
-  listActivitySubscriptions<A extends Auth = void>(
-    cfg: MethodConfigOrHandler<
-      A,
-      AppGndrNotificationListActivitySubscriptions.QueryParams,
-      AppGndrNotificationListActivitySubscriptions.HandlerInput,
-      AppGndrNotificationListActivitySubscriptions.HandlerOutput
-    >,
-  ) {
-    const nsid = 'app.gndr.notification.listActivitySubscriptions' // @ts-ignore
-    return this._server.xrpc.method(nsid, cfg)
-  }
-
-  listNotifications<A extends Auth = void>(
-    cfg: MethodConfigOrHandler<
-      A,
-      AppGndrNotificationListNotifications.QueryParams,
-      AppGndrNotificationListNotifications.HandlerInput,
-      AppGndrNotificationListNotifications.HandlerOutput
-    >,
-  ) {
-    const nsid = 'app.gndr.notification.listNotifications' // @ts-ignore
-    return this._server.xrpc.method(nsid, cfg)
-  }
-
-  putActivitySubscription<A extends Auth = void>(
-    cfg: MethodConfigOrHandler<
-      A,
-      AppGndrNotificationPutActivitySubscription.QueryParams,
-      AppGndrNotificationPutActivitySubscription.HandlerInput,
-      AppGndrNotificationPutActivitySubscription.HandlerOutput
-    >,
-  ) {
-    const nsid = 'app.gndr.notification.putActivitySubscription' // @ts-ignore
-    return this._server.xrpc.method(nsid, cfg)
-  }
-
-  putPreferences<A extends Auth = void>(
-    cfg: MethodConfigOrHandler<
-      A,
-      AppGndrNotificationPutPreferences.QueryParams,
-      AppGndrNotificationPutPreferences.HandlerInput,
-      AppGndrNotificationPutPreferences.HandlerOutput
-    >,
-  ) {
-    const nsid = 'app.gndr.notification.putPreferences' // @ts-ignore
-    return this._server.xrpc.method(nsid, cfg)
-  }
-
-  putPreferencesV2<A extends Auth = void>(
-    cfg: MethodConfigOrHandler<
-      A,
-      AppGndrNotificationPutPreferencesV2.QueryParams,
-      AppGndrNotificationPutPreferencesV2.HandlerInput,
-      AppGndrNotificationPutPreferencesV2.HandlerOutput
-    >,
-  ) {
-    const nsid = 'app.gndr.notification.putPreferencesV2' // @ts-ignore
-    return this._server.xrpc.method(nsid, cfg)
-  }
-
-  registerPush<A extends Auth = void>(
-    cfg: MethodConfigOrHandler<
-      A,
-      AppGndrNotificationRegisterPush.QueryParams,
-      AppGndrNotificationRegisterPush.HandlerInput,
-      AppGndrNotificationRegisterPush.HandlerOutput
-    >,
-  ) {
-    const nsid = 'app.gndr.notification.registerPush' // @ts-ignore
-    return this._server.xrpc.method(nsid, cfg)
-  }
-
-  updateSeen<A extends Auth = void>(
-    cfg: MethodConfigOrHandler<
-      A,
-      AppGndrNotificationUpdateSeen.QueryParams,
-      AppGndrNotificationUpdateSeen.HandlerInput,
-      AppGndrNotificationUpdateSeen.HandlerOutput
-    >,
-  ) {
-    const nsid = 'app.gndr.notification.updateSeen' // @ts-ignore
-    return this._server.xrpc.method(nsid, cfg)
-  }
-}
-
-export class AppGndrRichtextNS {
-  _server: Server
-
-  constructor(server: Server) {
-    this._server = server
-  }
-}
-
-export class AppGndrUnspeccedNS {
-  _server: Server
-
-  constructor(server: Server) {
-    this._server = server
-  }
-
-  getAgeAssuranceState<A extends Auth = void>(
-    cfg: MethodConfigOrHandler<
-      A,
-      AppGndrUnspeccedGetAgeAssuranceState.QueryParams,
-      AppGndrUnspeccedGetAgeAssuranceState.HandlerInput,
-      AppGndrUnspeccedGetAgeAssuranceState.HandlerOutput
-    >,
-  ) {
-    const nsid = 'app.gndr.unspecced.getAgeAssuranceState' // @ts-ignore
-    return this._server.xrpc.method(nsid, cfg)
-  }
-
-  getConfig<A extends Auth = void>(
-    cfg: MethodConfigOrHandler<
-      A,
-      AppGndrUnspeccedGetConfig.QueryParams,
-      AppGndrUnspeccedGetConfig.HandlerInput,
-      AppGndrUnspeccedGetConfig.HandlerOutput
-    >,
-  ) {
-    const nsid = 'app.gndr.unspecced.getConfig' // @ts-ignore
-    return this._server.xrpc.method(nsid, cfg)
-  }
-
-  getPopularFeedGenerators<A extends Auth = void>(
-    cfg: MethodConfigOrHandler<
-      A,
-      AppGndrUnspeccedGetPopularFeedGenerators.QueryParams,
-      AppGndrUnspeccedGetPopularFeedGenerators.HandlerInput,
-      AppGndrUnspeccedGetPopularFeedGenerators.HandlerOutput
-    >,
-  ) {
-    const nsid = 'app.gndr.unspecced.getPopularFeedGenerators' // @ts-ignore
-    return this._server.xrpc.method(nsid, cfg)
-  }
-
-  getPostThreadOtherV2<A extends Auth = void>(
-    cfg: MethodConfigOrHandler<
-      A,
-      AppGndrUnspeccedGetPostThreadOtherV2.QueryParams,
-      AppGndrUnspeccedGetPostThreadOtherV2.HandlerInput,
-      AppGndrUnspeccedGetPostThreadOtherV2.HandlerOutput
-    >,
-  ) {
-    const nsid = 'app.gndr.unspecced.getPostThreadOtherV2' // @ts-ignore
-    return this._server.xrpc.method(nsid, cfg)
-  }
-
-  getPostThreadV2<A extends Auth = void>(
-    cfg: MethodConfigOrHandler<
-      A,
-      AppGndrUnspeccedGetPostThreadV2.QueryParams,
-      AppGndrUnspeccedGetPostThreadV2.HandlerInput,
-      AppGndrUnspeccedGetPostThreadV2.HandlerOutput
-    >,
-  ) {
-    const nsid = 'app.gndr.unspecced.getPostThreadV2' // @ts-ignore
-    return this._server.xrpc.method(nsid, cfg)
-  }
-
-  getSuggestedFeeds<A extends Auth = void>(
-    cfg: MethodConfigOrHandler<
-      A,
-      AppGndrUnspeccedGetSuggestedFeeds.QueryParams,
-      AppGndrUnspeccedGetSuggestedFeeds.HandlerInput,
-      AppGndrUnspeccedGetSuggestedFeeds.HandlerOutput
-    >,
-  ) {
-    const nsid = 'app.gndr.unspecced.getSuggestedFeeds' // @ts-ignore
-    return this._server.xrpc.method(nsid, cfg)
-  }
-
-  getSuggestedFeedsSkeleton<A extends Auth = void>(
-    cfg: MethodConfigOrHandler<
-      A,
-      AppGndrUnspeccedGetSuggestedFeedsSkeleton.QueryParams,
-      AppGndrUnspeccedGetSuggestedFeedsSkeleton.HandlerInput,
-      AppGndrUnspeccedGetSuggestedFeedsSkeleton.HandlerOutput
-    >,
-  ) {
-    const nsid = 'app.gndr.unspecced.getSuggestedFeedsSkeleton' // @ts-ignore
-    return this._server.xrpc.method(nsid, cfg)
-  }
-
-  getSuggestedStarterPacks<A extends Auth = void>(
-    cfg: MethodConfigOrHandler<
-      A,
-      AppGndrUnspeccedGetSuggestedStarterPacks.QueryParams,
-      AppGndrUnspeccedGetSuggestedStarterPacks.HandlerInput,
-      AppGndrUnspeccedGetSuggestedStarterPacks.HandlerOutput
-    >,
-  ) {
-    const nsid = 'app.gndr.unspecced.getSuggestedStarterPacks' // @ts-ignore
-    return this._server.xrpc.method(nsid, cfg)
-  }
-
-  getSuggestedStarterPacksSkeleton<A extends Auth = void>(
-    cfg: MethodConfigOrHandler<
-      A,
-      AppGndrUnspeccedGetSuggestedStarterPacksSkeleton.QueryParams,
-      AppGndrUnspeccedGetSuggestedStarterPacksSkeleton.HandlerInput,
-      AppGndrUnspeccedGetSuggestedStarterPacksSkeleton.HandlerOutput
-    >,
-  ) {
-    const nsid = 'app.gndr.unspecced.getSuggestedStarterPacksSkeleton' // @ts-ignore
-    return this._server.xrpc.method(nsid, cfg)
-  }
-
-  getSuggestedUsers<A extends Auth = void>(
-    cfg: MethodConfigOrHandler<
-      A,
-      AppGndrUnspeccedGetSuggestedUsers.QueryParams,
-      AppGndrUnspeccedGetSuggestedUsers.HandlerInput,
-      AppGndrUnspeccedGetSuggestedUsers.HandlerOutput
-    >,
-  ) {
-    const nsid = 'app.gndr.unspecced.getSuggestedUsers' // @ts-ignore
-    return this._server.xrpc.method(nsid, cfg)
-  }
-
-  getSuggestedUsersSkeleton<A extends Auth = void>(
-    cfg: MethodConfigOrHandler<
-      A,
-      AppGndrUnspeccedGetSuggestedUsersSkeleton.QueryParams,
-      AppGndrUnspeccedGetSuggestedUsersSkeleton.HandlerInput,
-      AppGndrUnspeccedGetSuggestedUsersSkeleton.HandlerOutput
-    >,
-  ) {
-    const nsid = 'app.gndr.unspecced.getSuggestedUsersSkeleton' // @ts-ignore
-    return this._server.xrpc.method(nsid, cfg)
-  }
-
-  getSuggestionsSkeleton<A extends Auth = void>(
-    cfg: MethodConfigOrHandler<
-      A,
-      AppGndrUnspeccedGetSuggestionsSkeleton.QueryParams,
-      AppGndrUnspeccedGetSuggestionsSkeleton.HandlerInput,
-      AppGndrUnspeccedGetSuggestionsSkeleton.HandlerOutput
-    >,
-  ) {
-    const nsid = 'app.gndr.unspecced.getSuggestionsSkeleton' // @ts-ignore
-    return this._server.xrpc.method(nsid, cfg)
-  }
-
-  getTaggedSuggestions<A extends Auth = void>(
-    cfg: MethodConfigOrHandler<
-      A,
-      AppGndrUnspeccedGetTaggedSuggestions.QueryParams,
-      AppGndrUnspeccedGetTaggedSuggestions.HandlerInput,
-      AppGndrUnspeccedGetTaggedSuggestions.HandlerOutput
-    >,
-  ) {
-    const nsid = 'app.gndr.unspecced.getTaggedSuggestions' // @ts-ignore
-    return this._server.xrpc.method(nsid, cfg)
-  }
-
-  getTrendingTopics<A extends Auth = void>(
-    cfg: MethodConfigOrHandler<
-      A,
-      AppGndrUnspeccedGetTrendingTopics.QueryParams,
-      AppGndrUnspeccedGetTrendingTopics.HandlerInput,
-      AppGndrUnspeccedGetTrendingTopics.HandlerOutput
-    >,
-  ) {
-    const nsid = 'app.gndr.unspecced.getTrendingTopics' // @ts-ignore
-    return this._server.xrpc.method(nsid, cfg)
-  }
-
-  getTrends<A extends Auth = void>(
-    cfg: MethodConfigOrHandler<
-      A,
-      AppGndrUnspeccedGetTrends.QueryParams,
-      AppGndrUnspeccedGetTrends.HandlerInput,
-      AppGndrUnspeccedGetTrends.HandlerOutput
-    >,
-  ) {
-    const nsid = 'app.gndr.unspecced.getTrends' // @ts-ignore
-    return this._server.xrpc.method(nsid, cfg)
-  }
-
-  getTrendsSkeleton<A extends Auth = void>(
-    cfg: MethodConfigOrHandler<
-      A,
-      AppGndrUnspeccedGetTrendsSkeleton.QueryParams,
-      AppGndrUnspeccedGetTrendsSkeleton.HandlerInput,
-      AppGndrUnspeccedGetTrendsSkeleton.HandlerOutput
-    >,
-  ) {
-    const nsid = 'app.gndr.unspecced.getTrendsSkeleton' // @ts-ignore
-    return this._server.xrpc.method(nsid, cfg)
-  }
-
-  initAgeAssurance<A extends Auth = void>(
-    cfg: MethodConfigOrHandler<
-      A,
-      AppGndrUnspeccedInitAgeAssurance.QueryParams,
-      AppGndrUnspeccedInitAgeAssurance.HandlerInput,
-      AppGndrUnspeccedInitAgeAssurance.HandlerOutput
-    >,
-  ) {
-    const nsid = 'app.gndr.unspecced.initAgeAssurance' // @ts-ignore
-    return this._server.xrpc.method(nsid, cfg)
-  }
-
-  searchActorsSkeleton<A extends Auth = void>(
-    cfg: MethodConfigOrHandler<
-      A,
-      AppGndrUnspeccedSearchActorsSkeleton.QueryParams,
-      AppGndrUnspeccedSearchActorsSkeleton.HandlerInput,
-      AppGndrUnspeccedSearchActorsSkeleton.HandlerOutput
-    >,
-  ) {
-    const nsid = 'app.gndr.unspecced.searchActorsSkeleton' // @ts-ignore
-    return this._server.xrpc.method(nsid, cfg)
-  }
-
-  searchPostsSkeleton<A extends Auth = void>(
-    cfg: MethodConfigOrHandler<
-      A,
-      AppGndrUnspeccedSearchPostsSkeleton.QueryParams,
-      AppGndrUnspeccedSearchPostsSkeleton.HandlerInput,
-      AppGndrUnspeccedSearchPostsSkeleton.HandlerOutput
-    >,
-  ) {
-    const nsid = 'app.gndr.unspecced.searchPostsSkeleton' // @ts-ignore
-    return this._server.xrpc.method(nsid, cfg)
-  }
-
-  searchStarterPacksSkeleton<A extends Auth = void>(
-    cfg: MethodConfigOrHandler<
-      A,
-      AppGndrUnspeccedSearchStarterPacksSkeleton.QueryParams,
-      AppGndrUnspeccedSearchStarterPacksSkeleton.HandlerInput,
-      AppGndrUnspeccedSearchStarterPacksSkeleton.HandlerOutput
-    >,
-  ) {
-    const nsid = 'app.gndr.unspecced.searchStarterPacksSkeleton' // @ts-ignore
-    return this._server.xrpc.method(nsid, cfg)
-  }
-}
-
-export class AppGndrVideoNS {
-  _server: Server
-
-  constructor(server: Server) {
-    this._server = server
-  }
-
-  getJobStatus<A extends Auth = void>(
-    cfg: MethodConfigOrHandler<
-      A,
-      AppGndrVideoGetJobStatus.QueryParams,
-      AppGndrVideoGetJobStatus.HandlerInput,
-      AppGndrVideoGetJobStatus.HandlerOutput
-    >,
-  ) {
-    const nsid = 'app.gndr.video.getJobStatus' // @ts-ignore
-    return this._server.xrpc.method(nsid, cfg)
-  }
-
-  getUploadLimits<A extends Auth = void>(
-    cfg: MethodConfigOrHandler<
-      A,
-      AppGndrVideoGetUploadLimits.QueryParams,
-      AppGndrVideoGetUploadLimits.HandlerInput,
-      AppGndrVideoGetUploadLimits.HandlerOutput
-    >,
-  ) {
-    const nsid = 'app.gndr.video.getUploadLimits' // @ts-ignore
-    return this._server.xrpc.method(nsid, cfg)
-  }
-
-  uploadVideo<A extends Auth = void>(
-    cfg: MethodConfigOrHandler<
-      A,
-      AppGndrVideoUploadVideo.QueryParams,
-      AppGndrVideoUploadVideo.HandlerInput,
-      AppGndrVideoUploadVideo.HandlerOutput
-    >,
-  ) {
-    const nsid = 'app.gndr.video.uploadVideo' // @ts-ignore
-    return this._server.xrpc.method(nsid, cfg)
-  }
-}
-
-export class ChatNS {
-  _server: Server
-  gndr: ChatGndrNS
-
-  constructor(server: Server) {
-    this._server = server
-    this.gndr = new ChatGndrNS(server)
-  }
-}
-
-export class ChatGndrNS {
-  _server: Server
-  actor: ChatGndrActorNS
-  convo: ChatGndrConvoNS
-  moderation: ChatGndrModerationNS
-
-  constructor(server: Server) {
-    this._server = server
-    this.actor = new ChatGndrActorNS(server)
-    this.convo = new ChatGndrConvoNS(server)
-    this.moderation = new ChatGndrModerationNS(server)
-  }
-}
-
-export class ChatGndrActorNS {
-  _server: Server
-
-  constructor(server: Server) {
-    this._server = server
-  }
-
-  deleteAccount<A extends Auth = void>(
-    cfg: MethodConfigOrHandler<
-      A,
-      ChatGndrActorDeleteAccount.QueryParams,
-      ChatGndrActorDeleteAccount.HandlerInput,
-      ChatGndrActorDeleteAccount.HandlerOutput
-    >,
-  ) {
-    const nsid = 'chat.gndr.actor.deleteAccount' // @ts-ignore
-    return this._server.xrpc.method(nsid, cfg)
-  }
-
-  exportAccountData<A extends Auth = void>(
-    cfg: MethodConfigOrHandler<
-      A,
-      ChatGndrActorExportAccountData.QueryParams,
-      ChatGndrActorExportAccountData.HandlerInput,
-      ChatGndrActorExportAccountData.HandlerOutput
-    >,
-  ) {
-    const nsid = 'chat.gndr.actor.exportAccountData' // @ts-ignore
-    return this._server.xrpc.method(nsid, cfg)
-  }
-}
-
-export class ChatGndrConvoNS {
-  _server: Server
-
-  constructor(server: Server) {
-    this._server = server
-  }
-
-  acceptConvo<A extends Auth = void>(
-    cfg: MethodConfigOrHandler<
-      A,
-      ChatGndrConvoAcceptConvo.QueryParams,
-      ChatGndrConvoAcceptConvo.HandlerInput,
-      ChatGndrConvoAcceptConvo.HandlerOutput
-    >,
-  ) {
-    const nsid = 'chat.gndr.convo.acceptConvo' // @ts-ignore
-    return this._server.xrpc.method(nsid, cfg)
-  }
-
-  addReaction<A extends Auth = void>(
-    cfg: MethodConfigOrHandler<
-      A,
-      ChatGndrConvoAddReaction.QueryParams,
-      ChatGndrConvoAddReaction.HandlerInput,
-      ChatGndrConvoAddReaction.HandlerOutput
-    >,
-  ) {
-    const nsid = 'chat.gndr.convo.addReaction' // @ts-ignore
-    return this._server.xrpc.method(nsid, cfg)
-  }
-
-  deleteMessageForSelf<A extends Auth = void>(
-    cfg: MethodConfigOrHandler<
-      A,
-      ChatGndrConvoDeleteMessageForSelf.QueryParams,
-      ChatGndrConvoDeleteMessageForSelf.HandlerInput,
-      ChatGndrConvoDeleteMessageForSelf.HandlerOutput
-    >,
-  ) {
-    const nsid = 'chat.gndr.convo.deleteMessageForSelf' // @ts-ignore
-    return this._server.xrpc.method(nsid, cfg)
-  }
-
-  getConvo<A extends Auth = void>(
-    cfg: MethodConfigOrHandler<
-      A,
-      ChatGndrConvoGetConvo.QueryParams,
-      ChatGndrConvoGetConvo.HandlerInput,
-      ChatGndrConvoGetConvo.HandlerOutput
-    >,
-  ) {
-    const nsid = 'chat.gndr.convo.getConvo' // @ts-ignore
-    return this._server.xrpc.method(nsid, cfg)
-  }
-
-  getConvoAvailability<A extends Auth = void>(
-    cfg: MethodConfigOrHandler<
-      A,
-      ChatGndrConvoGetConvoAvailability.QueryParams,
-      ChatGndrConvoGetConvoAvailability.HandlerInput,
-      ChatGndrConvoGetConvoAvailability.HandlerOutput
-    >,
-  ) {
-    const nsid = 'chat.gndr.convo.getConvoAvailability' // @ts-ignore
-    return this._server.xrpc.method(nsid, cfg)
-  }
-
-  getConvoForMembers<A extends Auth = void>(
-    cfg: MethodConfigOrHandler<
-      A,
-      ChatGndrConvoGetConvoForMembers.QueryParams,
-      ChatGndrConvoGetConvoForMembers.HandlerInput,
-      ChatGndrConvoGetConvoForMembers.HandlerOutput
-    >,
-  ) {
-    const nsid = 'chat.gndr.convo.getConvoForMembers' // @ts-ignore
-    return this._server.xrpc.method(nsid, cfg)
-  }
-
-  getLog<A extends Auth = void>(
-    cfg: MethodConfigOrHandler<
-      A,
-      ChatGndrConvoGetLog.QueryParams,
-      ChatGndrConvoGetLog.HandlerInput,
-      ChatGndrConvoGetLog.HandlerOutput
-    >,
-  ) {
-    const nsid = 'chat.gndr.convo.getLog' // @ts-ignore
-    return this._server.xrpc.method(nsid, cfg)
-  }
-
-  getMessages<A extends Auth = void>(
-    cfg: MethodConfigOrHandler<
-      A,
-      ChatGndrConvoGetMessages.QueryParams,
-      ChatGndrConvoGetMessages.HandlerInput,
-      ChatGndrConvoGetMessages.HandlerOutput
-    >,
-  ) {
-    const nsid = 'chat.gndr.convo.getMessages' // @ts-ignore
-    return this._server.xrpc.method(nsid, cfg)
-  }
-
-  leaveConvo<A extends Auth = void>(
-    cfg: MethodConfigOrHandler<
-      A,
-      ChatGndrConvoLeaveConvo.QueryParams,
-      ChatGndrConvoLeaveConvo.HandlerInput,
-      ChatGndrConvoLeaveConvo.HandlerOutput
-    >,
-  ) {
-    const nsid = 'chat.gndr.convo.leaveConvo' // @ts-ignore
-    return this._server.xrpc.method(nsid, cfg)
-  }
-
-  listConvos<A extends Auth = void>(
-    cfg: MethodConfigOrHandler<
-      A,
-      ChatGndrConvoListConvos.QueryParams,
-      ChatGndrConvoListConvos.HandlerInput,
-      ChatGndrConvoListConvos.HandlerOutput
-    >,
-  ) {
-    const nsid = 'chat.gndr.convo.listConvos' // @ts-ignore
-    return this._server.xrpc.method(nsid, cfg)
-  }
-
-  muteConvo<A extends Auth = void>(
-    cfg: MethodConfigOrHandler<
-      A,
-      ChatGndrConvoMuteConvo.QueryParams,
-      ChatGndrConvoMuteConvo.HandlerInput,
-      ChatGndrConvoMuteConvo.HandlerOutput
-    >,
-  ) {
-    const nsid = 'chat.gndr.convo.muteConvo' // @ts-ignore
-    return this._server.xrpc.method(nsid, cfg)
-  }
-
-  removeReaction<A extends Auth = void>(
-    cfg: MethodConfigOrHandler<
-      A,
-      ChatGndrConvoRemoveReaction.QueryParams,
-      ChatGndrConvoRemoveReaction.HandlerInput,
-      ChatGndrConvoRemoveReaction.HandlerOutput
-    >,
-  ) {
-    const nsid = 'chat.gndr.convo.removeReaction' // @ts-ignore
-    return this._server.xrpc.method(nsid, cfg)
-  }
-
-  sendMessage<A extends Auth = void>(
-    cfg: MethodConfigOrHandler<
-      A,
-      ChatGndrConvoSendMessage.QueryParams,
-      ChatGndrConvoSendMessage.HandlerInput,
-      ChatGndrConvoSendMessage.HandlerOutput
-    >,
-  ) {
-    const nsid = 'chat.gndr.convo.sendMessage' // @ts-ignore
-    return this._server.xrpc.method(nsid, cfg)
-  }
-
-  sendMessageBatch<A extends Auth = void>(
-    cfg: MethodConfigOrHandler<
-      A,
-      ChatGndrConvoSendMessageBatch.QueryParams,
-      ChatGndrConvoSendMessageBatch.HandlerInput,
-      ChatGndrConvoSendMessageBatch.HandlerOutput
-    >,
-  ) {
-    const nsid = 'chat.gndr.convo.sendMessageBatch' // @ts-ignore
-    return this._server.xrpc.method(nsid, cfg)
-  }
-
-  unmuteConvo<A extends Auth = void>(
-    cfg: MethodConfigOrHandler<
-      A,
-      ChatGndrConvoUnmuteConvo.QueryParams,
-      ChatGndrConvoUnmuteConvo.HandlerInput,
-      ChatGndrConvoUnmuteConvo.HandlerOutput
-    >,
-  ) {
-    const nsid = 'chat.gndr.convo.unmuteConvo' // @ts-ignore
-    return this._server.xrpc.method(nsid, cfg)
-  }
-
-  updateAllRead<A extends Auth = void>(
-    cfg: MethodConfigOrHandler<
-      A,
-      ChatGndrConvoUpdateAllRead.QueryParams,
-      ChatGndrConvoUpdateAllRead.HandlerInput,
-      ChatGndrConvoUpdateAllRead.HandlerOutput
-    >,
-  ) {
-    const nsid = 'chat.gndr.convo.updateAllRead' // @ts-ignore
-    return this._server.xrpc.method(nsid, cfg)
-  }
-
-  updateRead<A extends Auth = void>(
-    cfg: MethodConfigOrHandler<
-      A,
-      ChatGndrConvoUpdateRead.QueryParams,
-      ChatGndrConvoUpdateRead.HandlerInput,
-      ChatGndrConvoUpdateRead.HandlerOutput
-    >,
-  ) {
-    const nsid = 'chat.gndr.convo.updateRead' // @ts-ignore
-    return this._server.xrpc.method(nsid, cfg)
-  }
-}
-
-export class ChatGndrModerationNS {
-  _server: Server
-
-  constructor(server: Server) {
-    this._server = server
-  }
-
-  getActorMetadata<A extends Auth = void>(
-    cfg: MethodConfigOrHandler<
-      A,
-      ChatGndrModerationGetActorMetadata.QueryParams,
-      ChatGndrModerationGetActorMetadata.HandlerInput,
-      ChatGndrModerationGetActorMetadata.HandlerOutput
-    >,
-  ) {
-    const nsid = 'chat.gndr.moderation.getActorMetadata' // @ts-ignore
-    return this._server.xrpc.method(nsid, cfg)
-  }
-
-  getMessageContext<A extends Auth = void>(
-    cfg: MethodConfigOrHandler<
-      A,
-      ChatGndrModerationGetMessageContext.QueryParams,
-      ChatGndrModerationGetMessageContext.HandlerInput,
-      ChatGndrModerationGetMessageContext.HandlerOutput
-    >,
-  ) {
-    const nsid = 'chat.gndr.moderation.getMessageContext' // @ts-ignore
-    return this._server.xrpc.method(nsid, cfg)
-  }
-
-  updateActorAccess<A extends Auth = void>(
+  revokeAccountCredentials<A extends Auth = void>(
     cfg: MethodConfigOrHandler<
       A,
-      ChatGndrModerationUpdateActorAccess.QueryParams,
-      ChatGndrModerationUpdateActorAccess.HandlerInput,
-      ChatGndrModerationUpdateActorAccess.HandlerOutput
+      ComAtprotoTempRevokeAccountCredentials.QueryParams,
+      ComAtprotoTempRevokeAccountCredentials.HandlerInput,
+      ComAtprotoTempRevokeAccountCredentials.HandlerOutput
     >,
   ) {
-    const nsid = 'chat.gndr.moderation.updateActorAccess' // @ts-ignore
+    const nsid = 'com.atproto.temp.revokeAccountCredentials' // @ts-ignore
     return this._server.xrpc.method(nsid, cfg)
   }
 }

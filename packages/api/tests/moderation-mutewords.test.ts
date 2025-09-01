@@ -331,10 +331,10 @@ describe(`matchMuteWords`, () => {
         expect(match).toBeTruthy()
       })
 
-      it(`match: gander`, () => {
+      it(`match: bluesky`, () => {
         const match = matchMuteWords({
           mutedWords: [
-            { value: 'gander', targets: ['content'], actorTarget: 'all' },
+            { value: 'bluesky', targets: ['content'], actorTarget: 'all' },
           ],
           text: rt.text,
           facets: rt.facets,
@@ -344,10 +344,10 @@ describe(`matchMuteWords`, () => {
         expect(match).toBeTruthy()
       })
 
-      it(`match: ganders`, () => {
+      it(`match: blueskys`, () => {
         const match = matchMuteWords({
           mutedWords: [
-            { value: 'ganders', targets: ['content'], actorTarget: 'all' },
+            { value: 'blueskys', targets: ['content'], actorTarget: 'all' },
           ],
           text: rt.text,
           facets: rt.facets,

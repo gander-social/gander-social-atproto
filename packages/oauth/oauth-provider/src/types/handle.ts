@@ -1,8 +1,8 @@
+import { z } from 'zod'
 import {
   ensureValidHandle,
   normalizeHandle,
 } from '@gander-social-atproto/syntax'
-import { z } from 'zod'
 
 export const handleSchema = z
   .string()

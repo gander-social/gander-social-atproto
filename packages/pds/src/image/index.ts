@@ -1,7 +1,7 @@
 import { Readable } from 'node:stream'
 import { pipeline } from 'node:stream/promises'
-import { errHasMsg } from '@gander-social-atproto/common'
 import sharp from 'sharp'
+import { errHasMsg } from '@gander-social-atproto/common'
 
 export async function maybeGetInfo(
   stream: Readable,

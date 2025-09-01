@@ -1,9 +1,9 @@
 import { Code, ConnectError, ServiceImpl } from '@connectrpc/connect'
+import { sql } from 'kysely'
 import {
   ensureValidNsid,
   ensureValidRecordKey,
 } from '@gander-social-atproto/syntax'
-import { sql } from 'kysely'
 import { AppContext } from '../context'
 import { Database } from '../db'
 import { OperationMethod, createOperationChannel } from '../db/schema/operation'

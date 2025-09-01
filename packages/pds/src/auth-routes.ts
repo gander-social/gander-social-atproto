@@ -1,3 +1,4 @@
+import { Router } from 'express'
 import {
   HandleUnavailableError,
   InvalidRequestError,
@@ -6,7 +7,6 @@ import {
   oauthMiddleware,
   oauthProtectedResourceMetadataSchema,
 } from '@gander-social-atproto/oauth-provider'
-import { Router } from 'express'
 import { AppContext } from './context.js'
 import { oauthLogger, reqSerializer } from './logger.js'
 

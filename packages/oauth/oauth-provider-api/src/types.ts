@@ -27,7 +27,7 @@ export type MultiLangString = { en: string } & Record<
 export type LocalizedString = string | MultiLangString
 
 export type LinkDefinition = {
-  title: LocalizedString
+  title: string | MultiLangString
   href: string
   rel?: string
 }

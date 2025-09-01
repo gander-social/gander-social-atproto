@@ -7,6 +7,7 @@ import {
   TestNetwork,
   basicSeed,
 } from '@gander-social-atproto/dev-env'
+import { TAG_HIDE } from '@gander-social-atproto/dev-env/dist/seed/thread-v2'
 import { delayCursor } from '../../src/api/app/gndr/notification/listNotifications'
 import { ids } from '../../src/lexicon/lexicons'
 import { ProfileView } from '../../src/lexicon/types/app/gndr/actor/defs'
@@ -18,10 +19,13 @@ import {
   Preferences,
 } from '../../src/lexicon/types/app/gndr/notification/defs'
 import {
-  OutputSchema,
+  OutputSchema as ListActivitySubscriptionsOutputSchema,
   QueryParams,
 } from '../../src/lexicon/types/app/gndr/notification/listActivitySubscriptions'
-import { Notification } from '../../src/lexicon/types/app/gndr/notification/listNotifications'
+import {
+  Notification,
+  OutputSchema as ListNotificationsOutputSchema,
+} from '../../src/lexicon/types/app/gndr/notification/listNotifications'
 import { InputSchema } from '../../src/lexicon/types/app/gndr/notification/putPreferencesV2'
 import { Namespaces } from '../../src/stash'
 import { forSnapshot, paginateAll } from '../_util'
@@ -50,6 +54,9 @@ describe('notification views', () => {
   beforeAll(async () => {
     network = await TestNetwork.create({
       dbPostgresSchema: 'gndr_views_notifications',
+      gndr: {
+        threadTagsHide: new Set([TAG_HIDE]),
+      },
     })
     db = network.gndr.db
     agent = network.gndr.getClient()
@@ -86,6 +93,7 @@ describe('notification views', () => {
       handle: 'blocked.test',
       password: 'blocked-pass',
     })
+
     await network.processAll()
 
     alice = sc.dids.alice
@@ -459,7 +467,7 @@ describe('notification views', () => {
   })
 
   it('paginates', async () => {
-    const results = (results) =>
+    const results = (results: ListNotificationsOutputSchema[]) =>
       sortNotifs(results.flatMap((res) => res.notifications))
     const paginator = async (cursor?: string) => {
       const res = await agent.api.app.gndr.notification.listNotifications(
@@ -751,7 +759,7 @@ describe('notification views', () => {
   })
 
   it('paginates filtered notifications', async () => {
-    const results = (results) =>
+    const results = (results: ListNotificationsOutputSchema[]) =>
       sortNotifs(results.flatMap((res) => res.notifications))
     const paginator = async (cursor?: string) => {
       const res = await agent.app.gndr.notification.listNotifications(
@@ -783,6 +791,51 @@ describe('notification views', () => {
 
     expect(full.data.notifications.length).toBe(4)
     expect(results(paginatedAll)).toEqual(results([full.data]))
+  })
+
+  describe('handles hide tag filters', () => {
+    beforeAll(async () => {
+      const danPost = await sc.post(sc.dids.dan, 'hello friends')
+      await network.processAll()
+      const eveReply = await sc.reply(
+        sc.dids.eve,
+        danPost.ref,
+        danPost.ref,
+        'no thanks',
+      )
+      await network.processAll()
+      await createTag(db, { uri: eveReply.ref.uri.toString(), val: TAG_HIDE })
+    })
+
+    it('filters posts with hide tag', async () => {
+      const results = await agent.app.gndr.notification.listNotifications(
+        { reasons: ['reply'] },
+        {
+          headers: await network.serviceHeaders(
+            dan,
+            ids.AppGndrNotificationListNotifications,
+          ),
+        },
+      )
+      expect(results.data.notifications.length).toEqual(0)
+      expect(forSnapshot(results.data.notifications)).toMatchSnapshot()
+    })
+
+    it('shows posts with hide tag if they are followed', async () => {
+      await sc.follow(dan, eve)
+      await network.processAll()
+      const results = await agent.app.gndr.notification.listNotifications(
+        { reasons: ['reply'] },
+        {
+          headers: await network.serviceHeaders(
+            dan,
+            ids.AppGndrNotificationListNotifications,
+          ),
+        },
+      )
+      expect(results.data.notifications.length).toEqual(1)
+      expect(forSnapshot(results.data.notifications)).toMatchSnapshot()
+    })
   })
 
   describe('notifications delay', () => {
@@ -845,7 +898,7 @@ describe('notification views', () => {
       // At this point we won't have any notifications that already crossed the delay threshold.
       jest.setSystemTime(new Date(firstNotification.sortAt))
 
-      const results = (results) =>
+      const results = (results: ListNotificationsOutputSchema[]) =>
         sortNotifs(results.flatMap((res) => res.notifications))
       const paginator = async (cursor?: string) => {
         const res =
@@ -1395,8 +1448,12 @@ describe('notification views', () => {
       await put(actorDid, fred, val)
       await put(actorDid, blocked, val) // blocked is removed from the list.
 
-      const results = (results: OutputSchema[]) =>
-        sortProfiles(results.flatMap((res: OutputSchema) => res.subscriptions))
+      const results = (results: ListActivitySubscriptionsOutputSchema[]) =>
+        sortProfiles(
+          results.flatMap(
+            (res: ListActivitySubscriptionsOutputSchema) => res.subscriptions,
+          ),
+        )
       const paginator = async (cursor?: string) => {
         const { data } = await list(actorDid, { cursor, limit })
         return data
@@ -1478,4 +1535,21 @@ const clearPrivateData = async (db: Database) => {
 
 const clearActivitySubscription = async (db: Database) => {
   await db.db.deleteFrom('activity_subscription').execute()
+}
+
+const createTag = async (
+  db: Database,
+  opts: {
+    uri: string
+    val: string
+  },
+) => {
+  await db.db
+    .updateTable('record')
+    .set({
+      tags: JSON.stringify([opts.val]),
+    })
+    .where('uri', '=', opts.uri)
+    .returningAll()
+    .execute()
 }

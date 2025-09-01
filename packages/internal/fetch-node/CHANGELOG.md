@@ -1,155 +1,143 @@
 # @gander-atproto-nest/fetch-node
 
-## 0.1.16
-
-### Patch Changes
-
-- [#19](https://github.com/gander-social/gander-social-atproto/pull/19) [`d1c6a24a4e1747120628a8465154ba37d932f8cd`](https://github.com/gander-social/gander-social-atproto/commit/d1c6a24a4e1747120628a8465154ba37d932f8cd) Thanks [@melodylumen](https://github.com/melodylumen)! - Add in ageAssurance tools
-
-- [#19](https://github.com/gander-social/gander-social-atproto/pull/19) [`d1c6a24a4e1747120628a8465154ba37d932f8cd`](https://github.com/gander-social/gander-social-atproto/commit/d1c6a24a4e1747120628a8465154ba37d932f8cd) Thanks [@melodylumen](https://github.com/melodylumen)! - Package version of Zod bumped up
-
-- Updated dependencies [[`d1c6a24a4e1747120628a8465154ba37d932f8cd`](https://github.com/gander-social/gander-social-atproto/commit/d1c6a24a4e1747120628a8465154ba37d932f8cd)]:
-  - @gander-atproto-nest/fetch@0.2.9
-  - @gander-atproto-nest/pipe@0.1.7
-
-## 0.1.15
-
-### Patch Changes
-
-- [#17](https://github.com/gander-social/gander-social-atproto/pull/17) [`1f84fddeafc94dd9f9f44c3ae440430a6c307809`](https://github.com/gander-social/gander-social-atproto/commit/1f84fddeafc94dd9f9f44c3ae440430a6c307809) Thanks [@melodylumen](https://github.com/melodylumen)! - Add in ageAssurance tools
-
-- [#17](https://github.com/gander-social/gander-social-atproto/pull/17) [`1f84fddeafc94dd9f9f44c3ae440430a6c307809`](https://github.com/gander-social/gander-social-atproto/commit/1f84fddeafc94dd9f9f44c3ae440430a6c307809) Thanks [@melodylumen](https://github.com/melodylumen)! - Package version of Zod bumped up
-
-- Updated dependencies [[`1f84fddeafc94dd9f9f44c3ae440430a6c307809`](https://github.com/gander-social/gander-social-atproto/commit/1f84fddeafc94dd9f9f44c3ae440430a6c307809)]:
-  - @gander-atproto-nest/fetch@0.2.8
-  - @gander-atproto-nest/pipe@0.1.6
-
-## 0.1.14
-
-### Patch Changes
-
-- [#15](https://github.com/gander-social/gander-social-atproto/pull/15) [`bbcbbb3b237d9907776409acf9aa590fb6783ae5`](https://github.com/gander-social/gander-social-atproto/commit/bbcbbb3b237d9907776409acf9aa590fb6783ae5) Thanks [@melodylumen](https://github.com/melodylumen)! - Add in ageAssurance tools
-
-## 0.1.13
-
-### Patch Changes
-
-- [#12](https://github.com/gander-social/gander-social-atproto/pull/12) [`ee891368a01938f04fb1bd31c60cdf38e67f5100`](https://github.com/gander-social/gander-social-atproto/commit/ee891368a01938f04fb1bd31c60cdf38e67f5100) Thanks [@melodylumen](https://github.com/melodylumen)! - Add in ageAssurance tools
-
-- [`6450bee3f800aa0f7eaf8f88ec4de958f36d4e0a`](https://github.com/gander-social/gander-social-atproto/commit/6450bee3f800aa0f7eaf8f88ec4de958f36d4e0a) Thanks [@melodylumen](https://github.com/melodylumen)! - Update all packages with patch version bump to reflect adjustments to build/test process and adding central config
-
-- Updated dependencies [[`6450bee3f800aa0f7eaf8f88ec4de958f36d4e0a`](https://github.com/gander-social/gander-social-atproto/commit/6450bee3f800aa0f7eaf8f88ec4de958f36d4e0a)]:
-  - @gander-atproto-nest/fetch@0.2.7
-  - @gander-atproto-nest/pipe@0.1.5
-
-## 0.1.11
-
-### Patch Changes
-
-- [#7](https://github.com/gander-social/gander-social-atproto/pull/7) [`85fea07c9d972a1b1bff4c3c0a8674aeaedaa805`](https://github.com/gander-social/gander-social-atproto/commit/85fea07c9d972a1b1bff4c3c0a8674aeaedaa805) Thanks [@melodylumen](https://github.com/melodylumen)! - Duplicate atproto-labs packages to gander-atproto-nest npm account. Patch bump to ensure they correctly update npm
-  packages with version numbers instead of "workspace:\*"
-
-- [#7](https://github.com/gander-social/gander-social-atproto/pull/7) [`85fea07c9d972a1b1bff4c3c0a8674aeaedaa805`](https://github.com/gander-social/gander-social-atproto/commit/85fea07c9d972a1b1bff4c3c0a8674aeaedaa805) Thanks [@melodylumen](https://github.com/melodylumen)! - Force a patch bump to ensure that the Github action will properly publish to npm for all repos with the dependency
-  version numbers
-- Updated dependencies [[`85fea07c9d972a1b1bff4c3c0a8674aeaedaa805`](https://github.com/gander-social/gander-social-atproto/commit/85fea07c9d972a1b1bff4c3c0a8674aeaedaa805), [`85fea07c9d972a1b1bff4c3c0a8674aeaedaa805`](https://github.com/gander-social/gander-social-atproto/commit/85fea07c9d972a1b1bff4c3c0a8674aeaedaa805)]:
-  - @gander-atproto-nest/fetch@0.2.5
-  - @gander-atproto-nest/pipe@0.1.3
-
 ## 0.1.10
 
 ### Patch Changes
 
-- [`3d6cfd937e28a03df240c6bc71b3d26e5b143911`](https://github.com/gander-social/gander-social-atproto/commit/3d6cfd937e28a03df240c6bc71b3d26e5b143911) Thanks [@melodylumen](https://github.com/melodylumen)! - Force a patch bump to ensure that the Github action will properly publish to npm for all repos with the dependency
-  version numbers
-- Updated dependencies [[`3d6cfd937e28a03df240c6bc71b3d26e5b143911`](https://github.com/gander-social/gander-social-atproto/commit/3d6cfd937e28a03df240c6bc71b3d26e5b143911)]:
-  - @atproto-labs/fetch@0.2.4
-  - @atproto-labs/pipe@0.1.2
+- [#4108](https://github.com/bluesky-social/atproto/pull/4108) [
+  `f9dc9aa4c`](https://github.com/bluesky-social/atproto/commit/f9dc9aa4c9eaf2f82d140fbf011a9015e7f1a00d)
+  Thanks [@matthieusieben](https://github.com/matthieusieben)! - Allow forcing the use of keep-alive agent on older
+  NodeJs version when unicast protection is active
+
+- [#4108](https://github.com/bluesky-social/atproto/pull/4108) [
+  `f9dc9aa4c`](https://github.com/bluesky-social/atproto/commit/f9dc9aa4c9eaf2f82d140fbf011a9015e7f1a00d)
+  Thanks [@matthieusieben](https://github.com/matthieusieben)! - Use keep-alive connection when unicast protection is
+  enabled on NodeJS >= 20
 
 ## 0.1.9
 
 ### Patch Changes
 
-- [#3821](https://github.com/gander-social/atproto/pull/3821) [`5050b6550`](https://github.com/gander-social/atproto/commit/5050b6550e07e71b0a524eda0b71b837583294d4) Thanks [@matthieusieben](https://github.com/matthieusieben)! - Allow explicit `follow` mode in safe fetch wrap.
+- [#3821](https://github.com/bluesky-social/atproto/pull/3821) [
+  `5050b6550`](https://github.com/bluesky-social/atproto/commit/5050b6550e07e71b0a524eda0b71b837583294d4)
+  Thanks [@matthieusieben](https://github.com/matthieusieben)! - Allow explicit `follow` mode in safe fetch wrap.
 
-- [#3819](https://github.com/gander-social/atproto/pull/3819) [`36dbd4155`](https://github.com/gander-social/atproto/commit/36dbd41551f74052a3f584719a1a7edd86eca201) Thanks [@matthieusieben](https://github.com/matthieusieben)! - Fix potential memory leak
+- [#3819](https://github.com/bluesky-social/atproto/pull/3819) [
+  `36dbd4155`](https://github.com/bluesky-social/atproto/commit/36dbd41551f74052a3f584719a1a7edd86eca201)
+  Thanks [@matthieusieben](https://github.com/matthieusieben)! - Fix potential memory leak
 
-- [#3821](https://github.com/gander-social/atproto/pull/3821) [`5050b6550`](https://github.com/gander-social/atproto/commit/5050b6550e07e71b0a524eda0b71b837583294d4) Thanks [@matthieusieben](https://github.com/matthieusieben)! - Allow disabling the need for an explicit `redirect` mode
+- [#3821](https://github.com/bluesky-social/atproto/pull/3821) [
+  `5050b6550`](https://github.com/bluesky-social/atproto/commit/5050b6550e07e71b0a524eda0b71b837583294d4)
+  Thanks [@matthieusieben](https://github.com/matthieusieben)! - Allow disabling the need for an explicit `redirect`
+  mode
 
-- [#3818](https://github.com/gander-social/atproto/pull/3818) [`43861a452`](https://github.com/gander-social/atproto/commit/43861a452b70268e738ef12033297cddacbe25d4) Thanks [@matthieusieben](https://github.com/matthieusieben)! - Remove dependency on the Public Suffix List
+- [#3818](https://github.com/bluesky-social/atproto/pull/3818) [
+  `43861a452`](https://github.com/bluesky-social/atproto/commit/43861a452b70268e738ef12033297cddacbe25d4)
+  Thanks [@matthieusieben](https://github.com/matthieusieben)! - Remove dependency on the Public Suffix List
 
-- Updated dependencies [[`5050b6550`](https://github.com/gander-social/atproto/commit/5050b6550e07e71b0a524eda0b71b837583294d4), [`5050b6550`](https://github.com/gander-social/atproto/commit/5050b6550e07e71b0a524eda0b71b837583294d4)]:
-  - @gander-atproto-nest/pipe@0.1.1
-  - @gander-atproto-nest/fetch@0.2.3
+- Updated dependencies [[
+  `5050b6550`](https://github.com/bluesky-social/atproto/commit/5050b6550e07e71b0a524eda0b71b837583294d4), [
+  `5050b6550`](https://github.com/bluesky-social/atproto/commit/5050b6550e07e71b0a524eda0b71b837583294d4)]:
+    - @gander-atproto-nest/pipe@0.1.1
+    - @gander-atproto-nest/fetch@0.2.3
 
 ## 0.1.8
 
 ### Patch Changes
 
-- Updated dependencies [[`850e39843`](https://github.com/gander-social/atproto/commit/850e39843cb0ec9ea716675f7568c0c601f45e29), [`850e39843`](https://github.com/gander-social/atproto/commit/850e39843cb0ec9ea716675f7568c0c601f45e29)]:
-  - @gander-atproto-nest/fetch@0.2.2
+- Updated dependencies [[
+  `850e39843`](https://github.com/bluesky-social/atproto/commit/850e39843cb0ec9ea716675f7568c0c601f45e29), [
+  `850e39843`](https://github.com/bluesky-social/atproto/commit/850e39843cb0ec9ea716675f7568c0c601f45e29)]:
+    - @gander-atproto-nest/fetch@0.2.2
 
 ## 0.1.7
 
 ### Patch Changes
 
-- [#3220](https://github.com/gander-social/atproto/pull/3220) [`61dc0d60e`](https://github.com/gander-social/atproto/commit/61dc0d60e19b88c6427a54c6d95a391b5f4da7bd) Thanks [@matthieusieben](https://github.com/matthieusieben)! - Apply new linting rules regarding import order
+- [#3220](https://github.com/bluesky-social/atproto/pull/3220) [
+  `61dc0d60e`](https://github.com/bluesky-social/atproto/commit/61dc0d60e19b88c6427a54c6d95a391b5f4da7bd)
+  Thanks [@matthieusieben](https://github.com/matthieusieben)! - Apply new linting rules regarding import order
 
-- [#3220](https://github.com/gander-social/atproto/pull/3220) [`61dc0d60e`](https://github.com/gander-social/atproto/commit/61dc0d60e19b88c6427a54c6d95a391b5f4da7bd) Thanks [@matthieusieben](https://github.com/matthieusieben)! - Update NodeJS engine requirement to >=18.7.0
+- [#3220](https://github.com/bluesky-social/atproto/pull/3220) [
+  `61dc0d60e`](https://github.com/bluesky-social/atproto/commit/61dc0d60e19b88c6427a54c6d95a391b5f4da7bd)
+  Thanks [@matthieusieben](https://github.com/matthieusieben)! - Update NodeJS engine requirement to >=18.7.0
 
-- Updated dependencies [[`61dc0d60e`](https://github.com/gander-social/atproto/commit/61dc0d60e19b88c6427a54c6d95a391b5f4da7bd)]:
-  - @gander-atproto-nest/fetch@0.2.1
+- Updated dependencies [[
+  `61dc0d60e`](https://github.com/bluesky-social/atproto/commit/61dc0d60e19b88c6427a54c6d95a391b5f4da7bd)]:
+    - @gander-atproto-nest/fetch@0.2.1
 
 ## 0.1.6
 
 ### Patch Changes
 
-- [#3379](https://github.com/gander-social/atproto/pull/3379) [`9c0128193`](https://github.com/gander-social/atproto/commit/9c01281931a371304bcfa465005d7363c003bc5f) Thanks [@devinivy](https://github.com/devinivy)! - Unicast checks should permit PSL domains.
+- [#3379](https://github.com/bluesky-social/atproto/pull/3379) [
+  `9c0128193`](https://github.com/bluesky-social/atproto/commit/9c01281931a371304bcfa465005d7363c003bc5f)
+  Thanks [@devinivy](https://github.com/devinivy)! - Unicast checks should permit PSL domains.
 
 ## 0.1.5
 
 ### Patch Changes
 
-- Updated dependencies [[`5ece8c6ae`](https://github.com/gander-social/atproto/commit/5ece8c6aeab9c5c3f51295d93ed6e27c3c6095c2), [`5ece8c6ae`](https://github.com/gander-social/atproto/commit/5ece8c6aeab9c5c3f51295d93ed6e27c3c6095c2)]:
-  - @gander-atproto-nest/fetch@0.2.0
+- Updated dependencies [[
+  `5ece8c6ae`](https://github.com/bluesky-social/atproto/commit/5ece8c6aeab9c5c3f51295d93ed6e27c3c6095c2), [
+  `5ece8c6ae`](https://github.com/bluesky-social/atproto/commit/5ece8c6aeab9c5c3f51295d93ed6e27c3c6095c2)]:
+    - @gander-atproto-nest/fetch@0.2.0
 
 ## 0.1.4
 
 ### Patch Changes
 
-- Updated dependencies [[`622654672`](https://github.com/gander-social/atproto/commit/6226546725d1bb0375e3c9e0d71af173e8253c4f)]:
-  - @gander-atproto-nest/fetch@0.1.2
+- Updated dependencies [[
+  `622654672`](https://github.com/bluesky-social/atproto/commit/6226546725d1bb0375e3c9e0d71af173e8253c4f)]:
+    - @gander-atproto-nest/fetch@0.1.2
 
 ## 0.1.3
 
 ### Patch Changes
 
-- [#2865](https://github.com/gander-social/atproto/pull/2865) [`80450cbf2`](https://github.com/gander-social/atproto/commit/80450cbf2ca27967ee9fe1a5f4bc590b26f1e6b2) Thanks [@matthieusieben](https://github.com/matthieusieben)! - Do not use HTTP2 connection when performing "safe fetch" HTTP requests
+- [#2865](https://github.com/bluesky-social/atproto/pull/2865) [
+  `80450cbf2`](https://github.com/bluesky-social/atproto/commit/80450cbf2ca27967ee9fe1a5f4bc590b26f1e6b2)
+  Thanks [@matthieusieben](https://github.com/matthieusieben)! - Do not use HTTP2 connection when performing "safe
+  fetch" HTTP requests
 
 ## 0.1.2
 
 ### Patch Changes
 
-- [#2854](https://github.com/gander-social/atproto/pull/2854) [`8943c1008`](https://github.com/gander-social/atproto/commit/8943c10082702bbc0fc150237c6cc421251afd51) Thanks [@matthieusieben](https://github.com/matthieusieben)! - Disable use of HTTP2 when checking SSRF IP
+- [#2854](https://github.com/bluesky-social/atproto/pull/2854) [
+  `8943c1008`](https://github.com/bluesky-social/atproto/commit/8943c10082702bbc0fc150237c6cc421251afd51)
+  Thanks [@matthieusieben](https://github.com/matthieusieben)! - Disable use of HTTP2 when checking SSRF IP
 
 ## 0.1.1
 
 ### Patch Changes
 
-- [#2770](https://github.com/gander-social/atproto/pull/2770) [`a07b21151`](https://github.com/gander-social/atproto/commit/a07b21151f1850340c4b7797ebb11521b1a6cdf3) Thanks [@matthieusieben](https://github.com/matthieusieben)! - Prevent bypass of ssrf ip verification
+- [#2770](https://github.com/bluesky-social/atproto/pull/2770) [
+  `a07b21151`](https://github.com/bluesky-social/atproto/commit/a07b21151f1850340c4b7797ebb11521b1a6cdf3)
+  Thanks [@matthieusieben](https://github.com/matthieusieben)! - Prevent bypass of ssrf ip verification
 
-- [#2770](https://github.com/gander-social/atproto/pull/2770) [`a07b21151`](https://github.com/gander-social/atproto/commit/a07b21151f1850340c4b7797ebb11521b1a6cdf3) Thanks [@matthieusieben](https://github.com/matthieusieben)! - Expose IP filtering utilities
+- [#2770](https://github.com/bluesky-social/atproto/pull/2770) [
+  `a07b21151`](https://github.com/bluesky-social/atproto/commit/a07b21151f1850340c4b7797ebb11521b1a6cdf3)
+  Thanks [@matthieusieben](https://github.com/matthieusieben)! - Expose IP filtering utilities
 
-- Updated dependencies [[`a07b21151`](https://github.com/gander-social/atproto/commit/a07b21151f1850340c4b7797ebb11521b1a6cdf3), [`a07b21151`](https://github.com/gander-social/atproto/commit/a07b21151f1850340c4b7797ebb11521b1a6cdf3), [`a07b21151`](https://github.com/gander-social/atproto/commit/a07b21151f1850340c4b7797ebb11521b1a6cdf3)]:
-  - @gander-atproto-nest/fetch@0.1.1
+- Updated dependencies [[
+  `a07b21151`](https://github.com/bluesky-social/atproto/commit/a07b21151f1850340c4b7797ebb11521b1a6cdf3), [
+  `a07b21151`](https://github.com/bluesky-social/atproto/commit/a07b21151f1850340c4b7797ebb11521b1a6cdf3), [
+  `a07b21151`](https://github.com/bluesky-social/atproto/commit/a07b21151f1850340c4b7797ebb11521b1a6cdf3)]:
+    - @gander-atproto-nest/fetch@0.1.1
 
 ## 0.1.0
 
 ### Minor Changes
 
-- [#2482](https://github.com/gander-social/atproto/pull/2482) [`a8d6c1123`](https://github.com/gander-social/atproto/commit/a8d6c112359f5c4c0cfbe2df63443ed275f2a646) Thanks [@matthieusieben](https://github.com/matthieusieben)! - Add OAuth provider capability & support for DPoP signed tokens
+- [#2482](https://github.com/bluesky-social/atproto/pull/2482) [
+  `a8d6c1123`](https://github.com/bluesky-social/atproto/commit/a8d6c112359f5c4c0cfbe2df63443ed275f2a646)
+  Thanks [@matthieusieben](https://github.com/matthieusieben)! - Add OAuth provider capability & support for DPoP signed
+  tokens
 
 ### Patch Changes
 
-- Updated dependencies [[`a8d6c1123`](https://github.com/gander-social/atproto/commit/a8d6c112359f5c4c0cfbe2df63443ed275f2a646)]:
-  - @gander-atproto-nest/fetch@0.1.0
-  - @gander-atproto-nest/pipe@0.1.0
+- Updated dependencies [[
+  `a8d6c1123`](https://github.com/bluesky-social/atproto/commit/a8d6c112359f5c4c0cfbe2df63443ed275f2a646)]:
+    - @gander-atproto-nest/fetch@0.1.0
+    - @gander-atproto-nest/pipe@0.1.0

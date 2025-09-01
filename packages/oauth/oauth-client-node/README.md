@@ -85,7 +85,7 @@ app.get('jwks.json', (req, res) => res.json(client.jwks))
 // Create an endpoint to initiate the OAuth flow
 app.get('/login', async (req, res, next) => {
   try {
-    const handle = 'some-handle.bsky.social' // eg. from query string
+    const handle = 'some-handle.gndr.social' // eg. from query string
     const state = '434321'
 
     // Revoke any pending authentication requests if the connection is closed (optional)
@@ -290,9 +290,9 @@ const requestLock: RuntimeLock = async (key, fn) => {
 }
 ```
 
-## Usage with `@atproto/api`
+## Usage with `@gander-social-atproto/api`
 
-`@atproto/oauth-client-*` packages all return an `ApiClient` instance upon
+`@gander-social-atproto/oauth-client-*` packages all return an `ApiClient` instance upon
 successful authentication. This instance can be used to make authenticated
 requests using all the `ApiClient` methods defined in [[API]] (non exhaustive
 list of examples below). Any refresh of the credentials will happen under the
@@ -403,7 +403,7 @@ Using silent sign-in requires to handle retries on the callback endpoint.
 
 ```ts
 app.get('/login', async (req, res) => {
-  const handle = 'some-handle.bsky.social' // eg. from query string
+  const handle = 'some-handle.gndr.social' // eg. from query string
   const user = req.user.id
 
   const url = await client.authorize(handle, {
@@ -468,4 +468,5 @@ app.get('/atproto-oauth-callback', async (req, res) => {
 ```
 
 [ATPROTO]: https://atproto.com/ 'AT Protocol'
+
 [API]: ../../api/README.md

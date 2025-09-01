@@ -46,9 +46,9 @@ const idToPath = (id: string): string => {
 
 export class DidWebServer {
   port: number
-  private _db: DidWebDb
   _app: express.Application
   _httpServer: http.Server | null = null
+  private _db: DidWebDb
 
   constructor(_app: express.Application, _db: DidWebDb, port: number) {
     this._app = _app

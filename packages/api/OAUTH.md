@@ -39,10 +39,17 @@ Here is an example client metadata.
   "logo_uri": "https://example.com/logo.png",
   "tos_uri": "https://example.com/tos",
   "policy_uri": "https://example.com/policy",
-  "redirect_uris": ["https://example.com/callback"],
+  "redirect_uris": [
+    "https://example.com/callback"
+  ],
   "scope": "atproto",
-  "grant_types": ["authorization_code", "refresh_token"],
-  "response_types": ["code"],
+  "grant_types": [
+    "authorization_code",
+    "refresh_token"
+  ],
+  "response_types": [
+    "code"
+  ],
   "token_endpoint_auth_method": "none",
   "application_type": "web",
   "dpop_bound_access_tokens": true
@@ -245,7 +252,7 @@ if (!session) {
 
 At this point in the script, the user **will** be authenticated. Authenticated
 API calls can be made using the `session`. The `session` can be used to instantiate the
-`Agent` class from `@atproto/api`. Let's make a simple call to the API to
+`Agent` class from `@gander-social-atproto/api`. Let's make a simple call to the API to
 retrieve the user's profile. Replace the `// TO BE CONTINUED` comment with the
 following code:
 

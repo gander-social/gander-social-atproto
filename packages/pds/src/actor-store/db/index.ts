@@ -1,6 +1,7 @@
 import { Database, Migrator } from '../../db'
 import migrations from './migrations'
 import { DatabaseSchema } from './schema'
+
 export * from './schema'
 
 export type ActorDb = Database<DatabaseSchema>

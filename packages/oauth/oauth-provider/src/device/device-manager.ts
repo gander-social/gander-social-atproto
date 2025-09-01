@@ -121,6 +121,10 @@ export class DeviceManager {
     }
   }
 
+  public getRequestMetadata(req: IncomingMessage) {
+    return extractRequestMetadata(req, this.options)
+  }
+
   private async create(
     req: IncomingMessage,
     res: ServerResponse,
@@ -309,9 +313,5 @@ export class DeviceManager {
       const hash = value ? this.options.cookie.keys.sign(value) : ''
       setCookie(res, `${name}:hash`, hash, cookieOptions)
     }
-  }
-
-  public getRequestMetadata(req: IncomingMessage) {
-    return extractRequestMetadata(req, this.options)
   }
 }

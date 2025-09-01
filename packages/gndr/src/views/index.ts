@@ -27,6 +27,7 @@ import {
   Record as ProfileRecord,
   isRecord as isProfileRecord,
 } from '../lexicon/types/app/gndr/actor/profile'
+import { BookmarkView } from '../lexicon/types/app/gndr/bookmark/defs'
 import {
   BlockedPost,
   FeedViewPost,
@@ -48,6 +49,7 @@ import {
 import { Record as RepostRecord } from '../lexicon/types/app/gndr/feed/repost'
 import { isListRule } from '../lexicon/types/app/gndr/feed/threadgate'
 import {
+  ListItemView,
   ListView,
   ListViewBasic,
   StarterPackView,
@@ -629,6 +631,16 @@ export class Views {
     }
   }
 
+  listItemView(
+    uri: string,
+    did: string,
+    state: HydrationState,
+  ): Un$Typed<ListItemView> | undefined {
+    const subject = this.profile(did, state)
+    if (!subject) return
+    return { uri, subject }
+  }
+
   starterPackBasic(
     uri: string,
     state: HydrationState,
@@ -844,6 +856,7 @@ export class Views {
           )
         : undefined,
       likeCount: aggs?.likes ?? 0,
+      acceptsInteractions: feedgen.record.acceptsInteractions,
       labels,
       viewer: viewer
         ? {
@@ -1046,6 +1059,32 @@ export class Views {
   reasonPin(): $Typed<ReasonPin> {
     return {
       $type: 'app.gndr.feed.defs#reasonPin',
+    }
+  }
+
+  // Bookmarks
+  // ------------
+  bookmark(
+    key: string,
+    state: HydrationState,
+  ): Un$Typed<BookmarkView> | undefined {
+    const viewer = state.ctx?.viewer
+    if (!viewer) return
+
+    const bookmark = state.bookmarks?.get(viewer)?.get(key)
+    if (!bookmark) return
+
+    const atUri = new AtUri(bookmark.subjectUri)
+    if (atUri.collection !== ids.AppGndrFeedPost) return
+
+    const item = this.maybePost(bookmark.subjectUri, state)
+    return {
+      createdAt: bookmark.indexedAt?.toDate().toISOString(),
+      subject: {
+        uri: bookmark.subjectUri,
+        cid: bookmark.subjectCid,
+      },
+      item,
     }
   }
 
@@ -1331,6 +1370,473 @@ export class Views {
       hasOtherReplies,
       thread,
     }
+  }
+
+  threadOtherV2(
+    skeleton: { anchor: string; uris: string[] },
+    state: HydrationState,
+    {
+      below,
+      branchingFactor,
+      prioritizeFollowedUsers,
+    }: {
+      below: number
+      branchingFactor: number
+      prioritizeFollowedUsers: boolean
+    },
+  ): ThreadOtherItem[] {
+    const { anchor: anchorUri, uris } = skeleton
+
+    // Not found.
+    const postView = this.post(anchorUri, state)
+    const post = state.posts?.get(anchorUri)
+    if (!post || !postView) {
+      return []
+    }
+
+    // Blocked (only 1p for anchor).
+    if (this.viewerBlockExists(postView.author.did, state)) {
+      return []
+    }
+
+    const childrenByParentUri = this.groupThreadChildrenByParent(
+      anchorUri,
+      uris,
+      state,
+    )
+    const rootUri = getRootUri(anchorUri, post)
+    const opDid = uriToDid(rootUri)
+
+    const anchorTree: ThreadOtherAnchorPostNode = {
+      type: 'hiddenAnchor',
+      item: this.threadOtherV2ItemPostAnchor({ depth: 0, uri: anchorUri }),
+      replies: this.threadOtherV2Replies(
+        {
+          parentUri: anchorUri,
+          rootUri,
+          childrenByParentUri,
+          below,
+          depth: 1,
+          prioritizeFollowedUsers,
+        },
+        state,
+      ),
+    }
+
+    return sortTrimFlattenThreadTree(anchorTree, {
+      opDid,
+      branchingFactor,
+      prioritizeFollowedUsers: false,
+      viewer: state.ctx?.viewer ?? null,
+      threadTagsBumpDown: this.threadTagsBumpDown,
+      threadTagsHide: this.threadTagsHide,
+    })
+  }
+
+  embed(
+    postUri: string,
+    embed: Embed | { $type: string },
+    state: HydrationState,
+    depth: number,
+  ): $Typed<EmbedView> | undefined {
+    if (isImagesEmbed(embed)) {
+      return this.imagesEmbed(creatorFromUri(postUri), embed)
+    } else if (isVideoEmbed(embed)) {
+      return this.videoEmbed(creatorFromUri(postUri), embed)
+    } else if (isExternalEmbed(embed)) {
+      return this.externalEmbed(creatorFromUri(postUri), embed)
+    } else if (isRecordEmbed(embed)) {
+      return this.recordEmbed(postUri, embed, state, depth)
+    } else if (isRecordWithMedia(embed)) {
+      return this.recordWithMediaEmbed(postUri, embed, state, depth)
+    } else {
+      return undefined
+    }
+  }
+
+  imagesEmbed(did: string, embed: ImagesEmbed): $Typed<ImagesEmbedView> {
+    const imgViews = embed.images.map((img) => ({
+      thumb: this.imgUriBuilder.getPresetUri(
+        'feed_thumbnail',
+        did,
+        cidFromBlobJson(img.image),
+      ),
+      fullsize: this.imgUriBuilder.getPresetUri(
+        'feed_fullsize',
+        did,
+        cidFromBlobJson(img.image),
+      ),
+      alt: img.alt,
+      aspectRatio: img.aspectRatio,
+    }))
+    return {
+      $type: 'app.gndr.embed.images#view',
+      images: imgViews,
+    }
+  }
+
+  videoEmbed(did: string, embed: VideoEmbed): $Typed<VideoEmbedView> {
+    const cid = cidFromBlobJson(embed.video)
+    return {
+      $type: 'app.gndr.embed.video#view',
+      cid,
+      playlist: this.videoUriBuilder.playlist({ did, cid }),
+      thumbnail: this.videoUriBuilder.thumbnail({ did, cid }),
+      alt: embed.alt,
+      aspectRatio: embed.aspectRatio,
+    }
+  }
+
+  externalEmbed(did: string, embed: ExternalEmbed): $Typed<ExternalEmbedView> {
+    const { uri, title, description, thumb } = embed.external
+    return {
+      $type: 'app.gndr.embed.external#view',
+      external: {
+        uri,
+        title,
+        description,
+        thumb: thumb
+          ? this.imgUriBuilder.getPresetUri(
+              'feed_thumbnail',
+              did,
+              cidFromBlobJson(thumb),
+            )
+          : undefined,
+      },
+    }
+  }
+
+  embedNotFound(uri: string): {
+    $type: 'app.gndr.embed.record#view'
+    record: $Typed<EmbedNotFound>
+  } {
+    return {
+      $type: 'app.gndr.embed.record#view',
+      record: {
+        $type: 'app.gndr.embed.record#viewNotFound',
+        uri,
+        notFound: true,
+      },
+    }
+  }
+
+  embedDetached(uri: string): {
+    $type: 'app.gndr.embed.record#view'
+    record: $Typed<EmbedDetached>
+  } {
+    return {
+      $type: 'app.gndr.embed.record#view',
+      record: {
+        $type: 'app.gndr.embed.record#viewDetached',
+        uri,
+        detached: true,
+      },
+    }
+  }
+
+  embedBlocked(
+    uri: string,
+    state: HydrationState,
+  ): {
+    $type: 'app.gndr.embed.record#view'
+    record: $Typed<EmbedBlocked>
+  } {
+    const creator = creatorFromUri(uri)
+    return {
+      $type: 'app.gndr.embed.record#view',
+      record: {
+        $type: 'app.gndr.embed.record#viewBlocked',
+        uri,
+        blocked: true,
+        author: {
+          did: creator,
+          viewer: this.blockedProfileViewer(creator, state),
+        },
+      },
+    }
+  }
+
+  embedPostView(
+    uri: string,
+    state: HydrationState,
+    depth: number,
+  ): $Typed<PostEmbedView> | undefined {
+    const postView = this.post(uri, state, depth)
+    if (!postView) return
+    return {
+      $type: 'app.gndr.embed.record#viewRecord',
+      uri: postView.uri,
+      cid: postView.cid,
+      author: postView.author,
+      value: postView.record,
+      labels: postView.labels,
+      likeCount: postView.likeCount,
+      replyCount: postView.replyCount,
+      repostCount: postView.repostCount,
+      quoteCount: postView.quoteCount,
+      indexedAt: postView.indexedAt,
+      embeds: depth > 1 ? undefined : postView.embed ? [postView.embed] : [],
+    }
+  }
+
+  recordEmbed(
+    postUri: string,
+    embed: RecordEmbed,
+    state: HydrationState,
+    depth: number,
+    withTypeTag: false,
+  ): RecordEmbedView
+
+  recordEmbed(
+    postUri: string,
+    embed: RecordEmbed,
+    state: HydrationState,
+    depth: number,
+    withTypeTag?: true,
+  ): $Typed<RecordEmbedView>
+
+  recordEmbed(
+    postUri: string,
+    embed: RecordEmbed,
+    state: HydrationState,
+    depth: number,
+    withTypeTag = true,
+  ): RecordEmbedView {
+    const uri = embed.record.uri
+    const parsedUri = new AtUri(uri)
+    if (
+      this.viewerBlockExists(parsedUri.hostname, state) ||
+      (!state.ctx?.include3pBlocks && state.postBlocks?.get(postUri)?.embed)
+    ) {
+      return this.embedBlocked(uri, state)
+    }
+
+    const post = state.posts?.get(postUri)
+    if (post?.violatesEmbeddingRules) {
+      return this.embedDetached(uri)
+    }
+
+    if (parsedUri.collection === ids.AppGndrFeedPost) {
+      const view = this.embedPostView(uri, state, depth)
+      if (!view) return this.embedNotFound(uri)
+      const postgateRecordUri = postUriToPostgateUri(parsedUri.toString())
+      const postgate = state.postgates?.get(postgateRecordUri)
+      if (postgate?.record?.detachedEmbeddingUris?.includes(postUri)) {
+        return this.embedDetached(uri)
+      }
+      return this.recordEmbedWrapper(view, withTypeTag)
+    } else if (parsedUri.collection === ids.AppGndrFeedGenerator) {
+      const view = this.feedGenerator(uri, state)
+      if (!view) return this.embedNotFound(uri)
+      return this.recordEmbedWrapper(
+        { ...view, $type: 'app.gndr.feed.defs#generatorView' },
+        withTypeTag,
+      )
+    } else if (parsedUri.collection === ids.AppGndrGraphList) {
+      const view = this.list(uri, state)
+      if (!view) return this.embedNotFound(uri)
+      return this.recordEmbedWrapper(
+        { ...view, $type: 'app.gndr.graph.defs#listView' },
+        withTypeTag,
+      )
+    } else if (parsedUri.collection === ids.AppGndrLabelerService) {
+      const view = this.labeler(parsedUri.hostname, state)
+      if (!view) return this.embedNotFound(uri)
+      return this.recordEmbedWrapper(
+        { ...view, $type: 'app.gndr.labeler.defs#labelerView' },
+        withTypeTag,
+      )
+    } else if (parsedUri.collection === ids.AppGndrGraphStarterpack) {
+      const view = this.starterPackBasic(uri, state)
+      if (!view) return this.embedNotFound(uri)
+      return this.recordEmbedWrapper(
+        { ...view, $type: 'app.gndr.graph.defs#starterPackViewBasic' },
+        withTypeTag,
+      )
+    }
+    return this.embedNotFound(uri)
+  }
+
+  recordWithMediaEmbed(
+    postUri: string,
+    embed: RecordWithMedia,
+    state: HydrationState,
+    depth: number,
+  ): $Typed<RecordWithMediaView> | undefined {
+    const creator = creatorFromUri(postUri)
+    let mediaEmbed:
+      | $Typed<ImagesEmbedView>
+      | $Typed<VideoEmbedView>
+      | $Typed<ExternalEmbedView>
+    if (isImagesEmbed(embed.media)) {
+      mediaEmbed = this.imagesEmbed(creator, embed.media)
+    } else if (isVideoEmbed(embed.media)) {
+      mediaEmbed = this.videoEmbed(creator, embed.media)
+    } else if (isExternalEmbed(embed.media)) {
+      mediaEmbed = this.externalEmbed(creator, embed.media)
+    } else {
+      return
+    }
+    return {
+      $type: 'app.gndr.embed.recordWithMedia#view',
+      media: mediaEmbed,
+      record: this.recordEmbed(postUri, embed.record, state, depth, false),
+    }
+  }
+
+  // Embeds
+  // ------------
+
+  userReplyDisabled(uri: string, state: HydrationState): boolean | undefined {
+    const post = state.posts?.get(uri)
+    if (post?.violatesThreadGate) {
+      return true
+    }
+    const rootUriStr: string = post?.record.reply?.root.uri ?? uri
+    const gate = state.threadgates?.get(
+      postUriToThreadgateUri(rootUriStr),
+    )?.record
+    const viewer = state.ctx?.viewer
+    if (!gate || !viewer) {
+      return undefined
+    }
+    const rootPost = state.posts?.get(rootUriStr)?.record
+    const ownerDid = creatorFromUri(rootUriStr)
+    const {
+      canReply,
+      allowFollower,
+      allowFollowing,
+      allowListUris = [],
+    } = parseThreadGate(viewer, ownerDid, rootPost ?? null, gate)
+    if (canReply) {
+      return false
+    }
+    if (allowFollower && state.profileViewers?.get(ownerDid)?.following) {
+      return false
+    }
+    if (allowFollowing && state.profileViewers?.get(ownerDid)?.followedBy) {
+      return false
+    }
+    for (const listUri of allowListUris) {
+      const list = state.listViewers?.get(listUri)
+      if (list?.viewerInList) {
+        return false
+      }
+    }
+    return true
+  }
+
+  userPostEmbeddingDisabled(
+    uri: string,
+    state: HydrationState,
+  ): boolean | undefined {
+    const post = state.posts?.get(uri)
+    if (!post) {
+      return true
+    }
+    const postgateRecordUri = postUriToPostgateUri(uri)
+    const gate = state.postgates?.get(postgateRecordUri)?.record
+    const viewerDid = state.ctx?.viewer ?? undefined
+    const {
+      embeddingRules: { canEmbed },
+    } = parsePostgate({
+      gate,
+      viewerDid,
+      authorDid: creatorFromUri(uri),
+    })
+    if (canEmbed) {
+      return false
+    }
+    return true
+  }
+
+  viewerPinned(uri: string, state: HydrationState, authorDid: string) {
+    if (!state.ctx?.viewer || state.ctx.viewer !== authorDid) return
+    const actor = state.actors?.get(authorDid)
+    if (!actor) return
+    const pinnedPost = safePinnedPost(actor.profile?.pinnedPost)
+    if (!pinnedPost) return undefined
+    return pinnedPost.uri === uri
+  }
+
+  notification(
+    notif: Notification,
+    lastSeenAt: string | undefined,
+    state: HydrationState,
+  ): Un$Typed<NotificationView> | undefined {
+    if (!notif.timestamp || !notif.reason) return
+    const uri = new AtUri(notif.uri)
+    const authorDid = uri.hostname
+    const author = this.profile(authorDid, state)
+    if (!author) return
+
+    let recordInfo:
+      | Post
+      | Like
+      | Repost
+      | Follow
+      | RecordInfo<ProfileRecord>
+      | Verification
+      | Pick<RecordInfo<Required<NotificationRecordDeleted>>, 'cid' | 'record'>
+      | undefined
+      | null
+
+    if (uri.collection === ids.AppGndrFeedPost) {
+      recordInfo = state.posts?.get(notif.uri)
+    } else if (uri.collection === ids.AppGndrFeedLike) {
+      recordInfo = state.likes?.get(notif.uri)
+    } else if (uri.collection === ids.AppGndrFeedRepost) {
+      recordInfo = state.reposts?.get(notif.uri)
+    } else if (uri.collection === ids.AppGndrGraphFollow) {
+      recordInfo = state.follows?.get(notif.uri)
+    } else if (uri.collection === ids.AppGndrGraphVerification) {
+      // When a verification record is removed, the record won't be found,
+      // both for the `verified` and `unverified` notifications.
+      recordInfo = state.verifications?.get(notif.uri) ?? {
+        record: notificationDeletedRecord,
+        cid: notificationDeletedRecordCid,
+      }
+    } else if (uri.collection === ids.AppGndrActorProfile) {
+      const actor = state.actors?.get(authorDid)
+      recordInfo =
+        actor && actor.profile && actor.profileCid
+          ? {
+              record: actor.profile,
+              cid: actor.profileCid,
+              sortedAt: actor.sortedAt ?? new Date(0), // @NOTE will be present since profile record is present
+              indexedAt: actor.indexedAt ?? new Date(0), // @NOTE will be present since profile record is present
+              takedownRef: actor.profileTakedownRef,
+            }
+          : undefined
+    }
+    if (!recordInfo) return
+
+    const labels = state.labels?.getBySubject(notif.uri) ?? []
+    const selfLabels = this.selfLabels({
+      uri: notif.uri,
+      cid: recordInfo.cid,
+      record: recordInfo.record,
+    })
+    const indexedAt = notif.timestamp.toDate().toISOString()
+    return {
+      uri: notif.uri,
+      cid: recordInfo.cid,
+      author,
+      reason: notif.reason,
+      reasonSubject: notif.reasonSubject || undefined,
+      record: recordInfo.record,
+      // @NOTE works with a hack in listNotifications so that when there's no last-seen time,
+      // the user's first notification is marked unread, and all previous read. in this case,
+      // the last seen time will be equal to the first notification's indexed time.
+      isRead: lastSeenAt ? lastSeenAt > indexedAt : true,
+      indexedAt: notif.timestamp.toDate().toISOString(),
+      labels: [...labels, ...selfLabels],
+    }
+  }
+
+  indexedAt({ sortedAt, indexedAt }: { sortedAt: Date; indexedAt: Date }) {
+    if (!this.indexedAtEpoch) return sortedAt
+    return indexedAt && indexedAt > this.indexedAtEpoch ? indexedAt : sortedAt
   }
 
   private threadV2Parent(
@@ -1640,67 +2146,6 @@ export class Views {
     }
   }
 
-  threadOtherV2(
-    skeleton: { anchor: string; uris: string[] },
-    state: HydrationState,
-    {
-      below,
-      branchingFactor,
-      prioritizeFollowedUsers,
-    }: {
-      below: number
-      branchingFactor: number
-      prioritizeFollowedUsers: boolean
-    },
-  ): ThreadOtherItem[] {
-    const { anchor: anchorUri, uris } = skeleton
-
-    // Not found.
-    const postView = this.post(anchorUri, state)
-    const post = state.posts?.get(anchorUri)
-    if (!post || !postView) {
-      return []
-    }
-
-    // Blocked (only 1p for anchor).
-    if (this.viewerBlockExists(postView.author.did, state)) {
-      return []
-    }
-
-    const childrenByParentUri = this.groupThreadChildrenByParent(
-      anchorUri,
-      uris,
-      state,
-    )
-    const rootUri = getRootUri(anchorUri, post)
-    const opDid = uriToDid(rootUri)
-
-    const anchorTree: ThreadOtherAnchorPostNode = {
-      type: 'hiddenAnchor',
-      item: this.threadOtherV2ItemPostAnchor({ depth: 0, uri: anchorUri }),
-      replies: this.threadOtherV2Replies(
-        {
-          parentUri: anchorUri,
-          rootUri,
-          childrenByParentUri,
-          below,
-          depth: 1,
-          prioritizeFollowedUsers,
-        },
-        state,
-      ),
-    }
-
-    return sortTrimFlattenThreadTree(anchorTree, {
-      opDid,
-      branchingFactor,
-      prioritizeFollowedUsers: false,
-      viewer: state.ctx?.viewer ?? null,
-      threadTagsBumpDown: this.threadTagsBumpDown,
-      threadTagsHide: this.threadTagsHide,
-    })
-  }
-
   private threadOtherV2Replies(
     {
       parentUri,
@@ -1941,231 +2386,6 @@ export class Views {
     return childrenByParentUri
   }
 
-  // Embeds
-  // ------------
-
-  embed(
-    postUri: string,
-    embed: Embed | { $type: string },
-    state: HydrationState,
-    depth: number,
-  ): $Typed<EmbedView> | undefined {
-    if (isImagesEmbed(embed)) {
-      return this.imagesEmbed(creatorFromUri(postUri), embed)
-    } else if (isVideoEmbed(embed)) {
-      return this.videoEmbed(creatorFromUri(postUri), embed)
-    } else if (isExternalEmbed(embed)) {
-      return this.externalEmbed(creatorFromUri(postUri), embed)
-    } else if (isRecordEmbed(embed)) {
-      return this.recordEmbed(postUri, embed, state, depth)
-    } else if (isRecordWithMedia(embed)) {
-      return this.recordWithMediaEmbed(postUri, embed, state, depth)
-    } else {
-      return undefined
-    }
-  }
-
-  imagesEmbed(did: string, embed: ImagesEmbed): $Typed<ImagesEmbedView> {
-    const imgViews = embed.images.map((img) => ({
-      thumb: this.imgUriBuilder.getPresetUri(
-        'feed_thumbnail',
-        did,
-        cidFromBlobJson(img.image),
-      ),
-      fullsize: this.imgUriBuilder.getPresetUri(
-        'feed_fullsize',
-        did,
-        cidFromBlobJson(img.image),
-      ),
-      alt: img.alt,
-      aspectRatio: img.aspectRatio,
-    }))
-    return {
-      $type: 'app.gndr.embed.images#view',
-      images: imgViews,
-    }
-  }
-
-  videoEmbed(did: string, embed: VideoEmbed): $Typed<VideoEmbedView> {
-    const cid = cidFromBlobJson(embed.video)
-    return {
-      $type: 'app.gndr.embed.video#view',
-      cid,
-      playlist: this.videoUriBuilder.playlist({ did, cid }),
-      thumbnail: this.videoUriBuilder.thumbnail({ did, cid }),
-      alt: embed.alt,
-      aspectRatio: embed.aspectRatio,
-    }
-  }
-
-  externalEmbed(did: string, embed: ExternalEmbed): $Typed<ExternalEmbedView> {
-    const { uri, title, description, thumb } = embed.external
-    return {
-      $type: 'app.gndr.embed.external#view',
-      external: {
-        uri,
-        title,
-        description,
-        thumb: thumb
-          ? this.imgUriBuilder.getPresetUri(
-              'feed_thumbnail',
-              did,
-              cidFromBlobJson(thumb),
-            )
-          : undefined,
-      },
-    }
-  }
-
-  embedNotFound(uri: string): {
-    $type: 'app.gndr.embed.record#view'
-    record: $Typed<EmbedNotFound>
-  } {
-    return {
-      $type: 'app.gndr.embed.record#view',
-      record: {
-        $type: 'app.gndr.embed.record#viewNotFound',
-        uri,
-        notFound: true,
-      },
-    }
-  }
-
-  embedDetached(uri: string): {
-    $type: 'app.gndr.embed.record#view'
-    record: $Typed<EmbedDetached>
-  } {
-    return {
-      $type: 'app.gndr.embed.record#view',
-      record: {
-        $type: 'app.gndr.embed.record#viewDetached',
-        uri,
-        detached: true,
-      },
-    }
-  }
-
-  embedBlocked(
-    uri: string,
-    state: HydrationState,
-  ): {
-    $type: 'app.gndr.embed.record#view'
-    record: $Typed<EmbedBlocked>
-  } {
-    const creator = creatorFromUri(uri)
-    return {
-      $type: 'app.gndr.embed.record#view',
-      record: {
-        $type: 'app.gndr.embed.record#viewBlocked',
-        uri,
-        blocked: true,
-        author: {
-          did: creator,
-          viewer: this.blockedProfileViewer(creator, state),
-        },
-      },
-    }
-  }
-
-  embedPostView(
-    uri: string,
-    state: HydrationState,
-    depth: number,
-  ): $Typed<PostEmbedView> | undefined {
-    const postView = this.post(uri, state, depth)
-    if (!postView) return
-    return {
-      $type: 'app.gndr.embed.record#viewRecord',
-      uri: postView.uri,
-      cid: postView.cid,
-      author: postView.author,
-      value: postView.record,
-      labels: postView.labels,
-      likeCount: postView.likeCount,
-      replyCount: postView.replyCount,
-      repostCount: postView.repostCount,
-      quoteCount: postView.quoteCount,
-      indexedAt: postView.indexedAt,
-      embeds: depth > 1 ? undefined : postView.embed ? [postView.embed] : [],
-    }
-  }
-
-  recordEmbed(
-    postUri: string,
-    embed: RecordEmbed,
-    state: HydrationState,
-    depth: number,
-    withTypeTag: false,
-  ): RecordEmbedView
-  recordEmbed(
-    postUri: string,
-    embed: RecordEmbed,
-    state: HydrationState,
-    depth: number,
-    withTypeTag?: true,
-  ): $Typed<RecordEmbedView>
-  recordEmbed(
-    postUri: string,
-    embed: RecordEmbed,
-    state: HydrationState,
-    depth: number,
-    withTypeTag = true,
-  ): RecordEmbedView {
-    const uri = embed.record.uri
-    const parsedUri = new AtUri(uri)
-    if (
-      this.viewerBlockExists(parsedUri.hostname, state) ||
-      (!state.ctx?.include3pBlocks && state.postBlocks?.get(postUri)?.embed)
-    ) {
-      return this.embedBlocked(uri, state)
-    }
-
-    const post = state.posts?.get(postUri)
-    if (post?.violatesEmbeddingRules) {
-      return this.embedDetached(uri)
-    }
-
-    if (parsedUri.collection === ids.AppGndrFeedPost) {
-      const view = this.embedPostView(uri, state, depth)
-      if (!view) return this.embedNotFound(uri)
-      const postgateRecordUri = postUriToPostgateUri(parsedUri.toString())
-      const postgate = state.postgates?.get(postgateRecordUri)
-      if (postgate?.record?.detachedEmbeddingUris?.includes(postUri)) {
-        return this.embedDetached(uri)
-      }
-      return this.recordEmbedWrapper(view, withTypeTag)
-    } else if (parsedUri.collection === ids.AppGndrFeedGenerator) {
-      const view = this.feedGenerator(uri, state)
-      if (!view) return this.embedNotFound(uri)
-      return this.recordEmbedWrapper(
-        { ...view, $type: 'app.gndr.feed.defs#generatorView' },
-        withTypeTag,
-      )
-    } else if (parsedUri.collection === ids.AppGndrGraphList) {
-      const view = this.list(uri, state)
-      if (!view) return this.embedNotFound(uri)
-      return this.recordEmbedWrapper(
-        { ...view, $type: 'app.gndr.graph.defs#listView' },
-        withTypeTag,
-      )
-    } else if (parsedUri.collection === ids.AppGndrLabelerService) {
-      const view = this.labeler(parsedUri.hostname, state)
-      if (!view) return this.embedNotFound(uri)
-      return this.recordEmbedWrapper(
-        { ...view, $type: 'app.gndr.labeler.defs#labelerView' },
-        withTypeTag,
-      )
-    } else if (parsedUri.collection === ids.AppGndrGraphStarterpack) {
-      const view = this.starterPackBasic(uri, state)
-      if (!view) return this.embedNotFound(uri)
-      return this.recordEmbedWrapper(
-        { ...view, $type: 'app.gndr.graph.defs#starterPackViewBasic' },
-        withTypeTag,
-      )
-    }
-    return this.embedNotFound(uri)
-  }
-
   private recordEmbedWrapper<T extends $Typed<RecordEmbedViewInternal>>(
     record: T,
     withTypeTag: boolean,
@@ -2174,185 +2394,6 @@ export class Views {
       $type: withTypeTag ? ('app.gndr.embed.record#view' as const) : undefined,
       record,
     } satisfies RecordEmbedView
-  }
-
-  recordWithMediaEmbed(
-    postUri: string,
-    embed: RecordWithMedia,
-    state: HydrationState,
-    depth: number,
-  ): $Typed<RecordWithMediaView> | undefined {
-    const creator = creatorFromUri(postUri)
-    let mediaEmbed:
-      | $Typed<ImagesEmbedView>
-      | $Typed<VideoEmbedView>
-      | $Typed<ExternalEmbedView>
-    if (isImagesEmbed(embed.media)) {
-      mediaEmbed = this.imagesEmbed(creator, embed.media)
-    } else if (isVideoEmbed(embed.media)) {
-      mediaEmbed = this.videoEmbed(creator, embed.media)
-    } else if (isExternalEmbed(embed.media)) {
-      mediaEmbed = this.externalEmbed(creator, embed.media)
-    } else {
-      return
-    }
-    return {
-      $type: 'app.gndr.embed.recordWithMedia#view',
-      media: mediaEmbed,
-      record: this.recordEmbed(postUri, embed.record, state, depth, false),
-    }
-  }
-
-  userReplyDisabled(uri: string, state: HydrationState): boolean | undefined {
-    const post = state.posts?.get(uri)
-    if (post?.violatesThreadGate) {
-      return true
-    }
-    const rootUriStr: string = post?.record.reply?.root.uri ?? uri
-    const gate = state.threadgates?.get(
-      postUriToThreadgateUri(rootUriStr),
-    )?.record
-    const viewer = state.ctx?.viewer
-    if (!gate || !viewer) {
-      return undefined
-    }
-    const rootPost = state.posts?.get(rootUriStr)?.record
-    const ownerDid = creatorFromUri(rootUriStr)
-    const {
-      canReply,
-      allowFollower,
-      allowFollowing,
-      allowListUris = [],
-    } = parseThreadGate(viewer, ownerDid, rootPost ?? null, gate)
-    if (canReply) {
-      return false
-    }
-    if (allowFollower && state.profileViewers?.get(ownerDid)?.following) {
-      return false
-    }
-    if (allowFollowing && state.profileViewers?.get(ownerDid)?.followedBy) {
-      return false
-    }
-    for (const listUri of allowListUris) {
-      const list = state.listViewers?.get(listUri)
-      if (list?.viewerInList) {
-        return false
-      }
-    }
-    return true
-  }
-
-  userPostEmbeddingDisabled(
-    uri: string,
-    state: HydrationState,
-  ): boolean | undefined {
-    const post = state.posts?.get(uri)
-    if (!post) {
-      return true
-    }
-    const postgateRecordUri = postUriToPostgateUri(uri)
-    const gate = state.postgates?.get(postgateRecordUri)?.record
-    const viewerDid = state.ctx?.viewer ?? undefined
-    const {
-      embeddingRules: { canEmbed },
-    } = parsePostgate({
-      gate,
-      viewerDid,
-      authorDid: creatorFromUri(uri),
-    })
-    if (canEmbed) {
-      return false
-    }
-    return true
-  }
-
-  viewerPinned(uri: string, state: HydrationState, authorDid: string) {
-    if (!state.ctx?.viewer || state.ctx.viewer !== authorDid) return
-    const actor = state.actors?.get(authorDid)
-    if (!actor) return
-    const pinnedPost = safePinnedPost(actor.profile?.pinnedPost)
-    if (!pinnedPost) return undefined
-    return pinnedPost.uri === uri
-  }
-
-  notification(
-    notif: Notification,
-    lastSeenAt: string | undefined,
-    state: HydrationState,
-  ): Un$Typed<NotificationView> | undefined {
-    if (!notif.timestamp || !notif.reason) return
-    const uri = new AtUri(notif.uri)
-    const authorDid = uri.hostname
-    const author = this.profile(authorDid, state)
-    if (!author) return
-
-    let recordInfo:
-      | Post
-      | Like
-      | Repost
-      | Follow
-      | RecordInfo<ProfileRecord>
-      | Verification
-      | Pick<RecordInfo<Required<NotificationRecordDeleted>>, 'cid' | 'record'>
-      | undefined
-      | null
-
-    if (uri.collection === ids.AppGndrFeedPost) {
-      recordInfo = state.posts?.get(notif.uri)
-    } else if (uri.collection === ids.AppGndrFeedLike) {
-      recordInfo = state.likes?.get(notif.uri)
-    } else if (uri.collection === ids.AppGndrFeedRepost) {
-      recordInfo = state.reposts?.get(notif.uri)
-    } else if (uri.collection === ids.AppGndrGraphFollow) {
-      recordInfo = state.follows?.get(notif.uri)
-    } else if (uri.collection === ids.AppGndrGraphVerification) {
-      // When a verification record is removed, the record won't be found,
-      // both for the `verified` and `unverified` notifications.
-      recordInfo = state.verifications?.get(notif.uri) ?? {
-        record: notificationDeletedRecord,
-        cid: notificationDeletedRecordCid,
-      }
-    } else if (uri.collection === ids.AppGndrActorProfile) {
-      const actor = state.actors?.get(authorDid)
-      recordInfo =
-        actor && actor.profile && actor.profileCid
-          ? {
-              record: actor.profile,
-              cid: actor.profileCid,
-              sortedAt: actor.sortedAt ?? new Date(0), // @NOTE will be present since profile record is present
-              indexedAt: actor.indexedAt ?? new Date(0), // @NOTE will be present since profile record is present
-              takedownRef: actor.profileTakedownRef,
-            }
-          : undefined
-    }
-    if (!recordInfo) return
-
-    const labels = state.labels?.getBySubject(notif.uri) ?? []
-    const selfLabels = this.selfLabels({
-      uri: notif.uri,
-      cid: recordInfo.cid,
-      record: recordInfo.record,
-    })
-    const indexedAt = notif.timestamp.toDate().toISOString()
-    return {
-      uri: notif.uri,
-      cid: recordInfo.cid,
-      author,
-      reason: notif.reason,
-      reasonSubject: notif.reasonSubject || undefined,
-      record: recordInfo.record,
-      // @NOTE works with a hack in listNotifications so that when there's no last-seen time,
-      // the user's first notification is marked unread, and all previous read. in this case,
-      // the last seen time will be equal to the first notification's indexed time.
-      isRead: lastSeenAt ? lastSeenAt > indexedAt : true,
-      indexedAt: notif.timestamp.toDate().toISOString(),
-      labels: [...labels, ...selfLabels],
-    }
-  }
-
-  indexedAt({ sortedAt, indexedAt }: { sortedAt: Date; indexedAt: Date }) {
-    if (!this.indexedAtEpoch) return sortedAt
-    return indexedAt && indexedAt > this.indexedAtEpoch ? indexedAt : sortedAt
   }
 }
 

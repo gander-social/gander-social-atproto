@@ -1,6 +1,6 @@
-import type { LocalizedString } from '@gander-social-atproto/oauth-provider-api'
 import { useLingui } from '@lingui/react/macro'
 import { ReactNode, useMemo } from 'react'
+import type { LocalizedString } from '@gander-social-atproto/oauth-provider-api'
 
 export type MultiLangStringProps = {
   value: LocalizedString

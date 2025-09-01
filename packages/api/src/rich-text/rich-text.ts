@@ -125,20 +125,20 @@ export class RichTextSegment {
     return this.facet?.features.find(AppGndrRichtextFacet.isLink)
   }
 
-  isLink() {
-    return !!this.link
-  }
-
   get mention(): FacetMention | undefined {
     return this.facet?.features.find(AppGndrRichtextFacet.isMention)
   }
 
-  isMention() {
-    return !!this.mention
-  }
-
   get tag(): FacetTag | undefined {
     return this.facet?.features.find(AppGndrRichtextFacet.isTag)
+  }
+
+  isLink() {
+    return !!this.link
+  }
+
+  isMention() {
+    return !!this.mention
   }
 
   isTag() {

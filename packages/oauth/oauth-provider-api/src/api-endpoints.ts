@@ -81,6 +81,11 @@ export type ApiEndpoints = {
     input: RevokeAccountSessionInput
     output: { success: true }
   }
+  '/consent': {
+    method: 'POST'
+    input: ConsentInput
+    output: { url: string }
+  }
   '/accept': {
     method: 'POST'
     input: AcceptInput
@@ -160,8 +165,14 @@ export type RevokeOAuthSessionInput = {
   tokenId: string
 }
 
+export type ConsentInput = {
+  sub: string
+  scope?: string
+}
+
 export type AcceptInput = {
   sub: string
+  scope?: string
 }
 
 export type RejectInput = Record<string, never>

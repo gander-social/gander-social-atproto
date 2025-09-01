@@ -1,6 +1,7 @@
 # Moderation API
 
-Applying the moderation system is a challenging task, but we've done our best to simplify it for you. The Moderation API helps handle a wide range of tasks, including:
+Applying the moderation system is a challenging task, but we've done our best to simplify it for you. The Moderation API
+helps handle a wide range of tasks, including:
 
 - Moderator labeling
 - User muting (including mutelists)
@@ -17,17 +18,26 @@ Every moderation function takes a set of options which look like this:
   // the logged-in user's DID
   userDid: 'did:plc:1234...',
 
-  moderationPrefs: {
+    moderationPrefs
+:
+  {
     // is adult content allowed?
     adultContentEnabled: true,
 
-    // the global label settings (used on self-labels)
-    labels: {
+      // the global label settings (used on self-labels)
+      labels
+  :
+    {
       porn: 'hide',
-      sexual: 'warn',
-      nudity: 'ignore',
+        sexual
+    :
+      'warn',
+        nudity
+    :
+      'ignore',
       // ...
-    },
+    }
+  ,
 
     // the subscribed labelers and their label settings
     labelers: [
@@ -42,14 +52,21 @@ Every moderation function takes a set of options which look like this:
       }
     ],
 
-    mutedWords: [/* ... */],
-    hiddenPosts: [/* ... */]
-  },
+      mutedWords
+  :
+    [/* ... */],
+      hiddenPosts
+  :
+    [/* ... */]
+  }
+,
 
   // custom label definitions
   labelDefs: {
     // labelerDid => defs[]
-    'did:plc:1234...': [
+    'did:plc:1234...'
+  :
+    [
       /* ... */
     ]
   }
@@ -97,7 +114,9 @@ To gather the label definitions (`labelDefs`) see the _Labelers_ section below.
 
 ## Labelers
 
-Labelers are services that provide moderation labels. Your application will typically have 1+ top-level labelers set with the ability to do "takedowns" on content. This is controlled via this static function, though the default is to use Gander's moderation:
+Labelers are services that provide moderation labels. Your application will typically have 1+ top-level labelers set
+with the ability to do "takedowns" on content. This is controlled via this static function, though the default is to use
+Gander's moderation:
 
 ```typescript
 GndrAgent.configure({
@@ -105,7 +124,8 @@ GndrAgent.configure({
 })
 ```
 
-Users may also add their own labelers. The active labelers are controlled via an HTTP header which is automatically set by the agent when `getPreferences` is called, or when the labeler preferences are changed.
+Users may also add their own labelers. The active labelers are controlled via an HTTP header which is automatically set
+by the agent when `getPreferences` is called, or when the labeler preferences are changed.
 
 Labelers publish a `app.gndr.labeler.service` record that looks like this:
 
@@ -139,7 +159,10 @@ Labelers publish a `app.gndr.labeler.service` record that looks like this:
 }
 ```
 
-The label value definition are custom labels which only apply to that labeler. Your client needs to sync those definitions in order to correctly interpret them. To do that, call `app.gndr.labeler.getService()` (or the `getServices` batch variant) periodically to fetch their definitions. We recommend caching the response (at time our writing the official client uses a TTL of 6 hours).
+The label value definition are custom labels which only apply to that labeler. Your client needs to sync those
+definitions in order to correctly interpret them. To do that, call `app.gndr.labeler.getService()` (or the `getServices`
+batch variant) periodically to fetch their definitions. We recommend caching the response (at time our writing the
+official client uses a TTL of 6 hours).
 
 Here is how to do this:
 
@@ -247,7 +270,8 @@ for (const inform of mod.ui('contentList').informs) {
 
 ## Sending moderation reports
 
-Any Labeler is capable of receiving moderation reports. As a result, you need to specify which labeler should receive the report. You do this with the `Atproto-Proxy` header:
+Any Labeler is capable of receiving moderation reports. As a result, you need to specify which labeler should receive
+the report. You do this with the `Atproto-Proxy` header:
 
 ```typescript
 agent

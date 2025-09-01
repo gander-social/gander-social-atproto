@@ -1,10 +1,10 @@
 import { type IncomingMessage } from 'node:http'
+import { stdSerializers } from 'pino'
+import { pinoHttp } from 'pino-http'
 import {
   obfuscateHeaders,
   subsystemLogger,
 } from '@gander-social-atproto/common'
-import { stdSerializers } from 'pino'
-import { pinoHttp } from 'pino-http'
 
 export const dbLogger = subsystemLogger('pds:db')
 export const didCacheLogger = subsystemLogger('pds:did-cache')
@@ -17,6 +17,7 @@ export const crawlerLogger = subsystemLogger('pds:crawler')
 export const httpLogger = subsystemLogger('pds')
 export const fetchLogger = subsystemLogger('pds:fetch')
 export const oauthLogger = subsystemLogger('pds:oauth')
+export const lexiconResolverLogger = subsystemLogger('pds:lexicon-resolver')
 
 export const loggerMiddleware = pinoHttp({
   logger: httpLogger,

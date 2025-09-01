@@ -1,9 +1,9 @@
+import PQueue from 'p-queue'
 import {
   CacheResult,
   DidCache,
   DidDocument,
 } from '@gander-social-atproto/identity'
-import PQueue from 'p-queue'
 import { excluded } from '../db/util'
 import { didCacheLogger } from '../logger'
 import { DidCacheDb, getDb, getMigrator } from './db'

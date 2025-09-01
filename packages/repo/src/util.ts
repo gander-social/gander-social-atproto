@@ -1,3 +1,4 @@
+import * as cbor from '@ipld/dag-cbor'
 import {
   TID,
   cborDecode,
@@ -13,7 +14,6 @@ import {
   ipldToLex,
   lexToIpld,
 } from '@gander-social-atproto/lexicon'
-import * as cbor from '@ipld/dag-cbor'
 import { DataDiff } from './data-diff'
 import {
   Commit,

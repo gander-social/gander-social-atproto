@@ -1,5 +1,5 @@
-import { DeviceData, DeviceId } from '@gander-social-atproto/oauth-provider'
 import { Selectable } from 'kysely'
+import { DeviceData, DeviceId } from '@gander-social-atproto/oauth-provider'
 import { fromDateISO, toDateISO } from '../../db'
 import { AccountDb, Device } from '../db'
 

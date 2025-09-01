@@ -16,10 +16,6 @@ export class DidError extends Error {
     return this.status
   }
 
-  override toString() {
-    return `${this.constructor.name} ${this.code} (${this.did}): ${this.message}`
-  }
-
   static from(cause: unknown, did: string): DidError {
     if (cause instanceof DidError) {
       return cause
@@ -39,6 +35,10 @@ export class DidError extends Error {
       (typeof cause?.['status'] === 'number' ? cause['status'] : undefined)
 
     return new DidError(did, message, 'did-unknown-error', status, cause)
+  }
+
+  override toString() {
+    return `${this.constructor.name} ${this.code} (${this.did}): ${this.message}`
   }
 }
 

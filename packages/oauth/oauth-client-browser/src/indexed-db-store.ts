@@ -17,29 +17,6 @@ export class IndexedDBStore<
     protected maxAge = 600e3,
   ) {}
 
-  protected async run<R>(
-    mode: 'readonly' | 'readwrite',
-    fn: (s: DBObjectStore<Item<V>>) => R | Promise<R>,
-  ): Promise<R> {
-    const db = await DB.open<{ store: Item<V> }>(
-      this.dbName,
-      [
-        (db) => {
-          const store = db.createObjectStore(storeName)
-          store.createIndex('createdAt', 'createdAt', { unique: false })
-        },
-      ],
-      { durability: 'strict' },
-    )
-    try {
-      return await db.transaction([storeName], mode, (tx) =>
-        fn(tx.objectStore(storeName)),
-      )
-    } finally {
-      await db[Symbol.dispose]()
-    }
-  }
-
   async get(key: K): Promise<V | undefined> {
     const item = await this.run('readonly', (store) => store.get(key))
 
@@ -75,5 +52,28 @@ export class IndexedDBStore<
       const keys = await index.getAllKeys(query)
       for (const key of keys) store.delete(key)
     })
+  }
+
+  protected async run<R>(
+    mode: 'readonly' | 'readwrite',
+    fn: (s: DBObjectStore<Item<V>>) => R | Promise<R>,
+  ): Promise<R> {
+    const db = await DB.open<{ store: Item<V> }>(
+      this.dbName,
+      [
+        (db) => {
+          const store = db.createObjectStore(storeName)
+          store.createIndex('createdAt', 'createdAt', { unique: false })
+        },
+      ],
+      { durability: 'strict' },
+    )
+    try {
+      return await db.transaction([storeName], mode, (tx) =>
+        fn(tx.objectStore(storeName)),
+      )
+    } finally {
+      await db[Symbol.dispose]()
+    }
   }
 }

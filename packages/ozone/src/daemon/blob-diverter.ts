@@ -1,5 +1,7 @@
 import { Readable } from 'node:stream'
 import { finished, pipeline } from 'node:stream/promises'
+import { CID } from 'multiformats/cid'
+import * as undici from 'undici'
 import {
   VerifyCidTransform,
   allFulfilled,
@@ -8,8 +10,6 @@ import {
 } from '@gander-social-atproto/common'
 import { IdResolver } from '@gander-social-atproto/identity'
 import { ResponseType, XRPCError } from '@gander-social-atproto/xrpc'
-import { CID } from 'multiformats/cid'
-import * as undici from 'undici'
 import { BlobDivertConfig } from '../config'
 import { Database } from '../db'
 import { retryHttp } from '../util'

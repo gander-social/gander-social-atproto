@@ -1,7 +1,7 @@
 import assert from 'node:assert'
 import { Code, ConnectError } from '@connectrpc/connect'
-import { wait } from '@gander-social-atproto/common'
 import getPort from 'get-port'
+import { wait } from '@gander-social-atproto/common'
 import {
   BsyncClient,
   BsyncService,

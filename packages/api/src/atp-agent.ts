@@ -78,10 +78,6 @@ export class AtpAgent extends Agent {
     }
   }
 
-  clone(): AtpAgent {
-    return this.copyInto(new AtpAgent(this.sessionManager))
-  }
-
   get session() {
     return this.sessionManager.session
   }
@@ -121,6 +117,10 @@ export class AtpAgent extends Agent {
     throw new Error(
       'Cannot set persistSession directly. "persistSession" must be defined in the constructor and can no longer be changed.',
     )
+  }
+
+  clone(): AtpAgent {
+    return this.copyInto(new AtpAgent(this.sessionManager))
   }
 
   /** @deprecated use {@link AtpAgent.serviceUrl} instead */

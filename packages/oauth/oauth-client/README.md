@@ -1,10 +1,11 @@
-# @atproto/oauth-client: atproto flavoured OAuth client
+# @gander-social-atproto/oauth-client: atproto flavoured OAuth client
 
 Core library for implementing [atproto][ATPROTO] OAuth clients.
 
-For a browser specific implementation, see [@atproto/oauth-client-browser](https://www.npmjs.com/package/@atproto/oauth-client-browser).
+For a browser specific implementation,
+see [@gander-social-atproto/oauth-client-browser](https://www.npmjs.com/package/@gander-social-atproto/oauth-client-browser).
 For a node specific implementation, see
-[@atproto/oauth-client-node](https://www.npmjs.com/package/@atproto/oauth-client-node).
+[@gander-social-atproto/oauth-client-node](https://www.npmjs.com/package/@gander-social-atproto/oauth-client-node).
 
 ## Usage
 
@@ -27,7 +28,7 @@ const client = new OAuthClient({
 
   runtimeImplementation: {
     // A runtime specific implementation of the crypto operations needed by the
-    // OAuth client. See "@atproto/oauth-client-browser" for a browser specific
+    // OAuth client. See "@gander-social-atproto/oauth-client-browser" for a browser specific
     // implementation. The following example is suitable for use in NodeJS.
 
     createKey(algs: string[]): Promise<Key> {
@@ -35,7 +36,7 @@ const client = new OAuthClient({
 
       // Note, in browser environments, it is better to use non extractable keys
       // to prevent the private key from being stolen. This can be done using
-      // the WebcryptoKey class from the "@atproto/jwk-webcrypto" package. The
+      // the WebcryptoKey class from the "@gander-social-atproto/jwk-webcrypto" package. The
       // inconvenient of these keys (which is also what makes them stronger) is
       // that the only way to persist them across browser reloads is to save
       // them in the indexed DB.
@@ -133,7 +134,7 @@ const client = new OAuthClient({
 ### Authentication
 
 ```ts
-const url = await client.authorize('foo.bsky.team', {
+const url = await client.authorize('foo.gndr.team', {
   state: '434321',
   prompt: 'consent',
   scope: 'email',
@@ -166,16 +167,16 @@ The `OAuthSession` instance obtained after signing in can be used to make
 authenticated requests to the user's PDS. There are two main use-cases:
 
 1. Making authenticated request to Gander's AppView in order to fetch and
-   manipulate data from the `app.bsky` lexicon.
+   manipulate data from the `app.gndr` lexicon.
 
 2. Making authenticated request to your own AppView, in order to fetch and
    manipulate data from your own lexicon.
 
 #### Making authenticated requests to Gander's AppView
 
-The `@atproto/oauth-client` package provides a `OAuthSession` class that can be
+The `@gander-social-atproto/oauth-client` package provides a `OAuthSession` class that can be
 used to make authenticated requests to Gander's AppView. This can be achieved
-by constructing an `Agent` (from `@atproto/api`) instance using the
+by constructing an `Agent` (from `@gander-social-atproto/api`) instance using the
 `OAuthSession` instance.
 
 ```ts
@@ -196,11 +197,11 @@ await agent.signOut()
 #### Making authenticated requests to your own AppView
 
 The `OAuthSession` instance obtained after signing in can be used to instantiate
-the `XrpcClient` class from the `@atproto/xrpc` package.
+the `XrpcClient` class from the `@gander-social-atproto/xrpc` package.
 
 ```ts
 import { Lexicons } from '@gander-social-atproto/lexicon'
-import { OAuthClient } from '@gander-social-atproto/oauth-client' // or "@atproto/oauth-client-browser" or "@atproto/oauth-client-node"
+import { OAuthClient } from '@gander-social-atproto/oauth-client' // or "@gander-social-atproto/oauth-client-browser" or "@gander-social-atproto/oauth-client-node"
 import { XrpcClient } from '@gander-social-atproto/xrpc'
 
 // Define your lexicons

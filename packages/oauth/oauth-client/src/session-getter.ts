@@ -273,7 +273,7 @@ export class SessionGetter extends CachedGetter<AtprotoDid, Session> {
 
   async get(sub: AtprotoDid, options?: GetCachedOptions): Promise<Session> {
     const session = await this.runtime.usingLock(
-      `@atproto-oauth-client-${sub}`,
+      `@gander-social-atproto-oauth-client-${sub}`,
       async () => {
         // Make sure, even if there is no signal in the options, that the
         // request will be cancelled after at most 30 seconds.

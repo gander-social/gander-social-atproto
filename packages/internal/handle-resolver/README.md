@@ -12,8 +12,8 @@ There are two main classes in this package:
 
 - `AtprotoHandleResolver` This implements the official ATPROTO handle resolution
   algorithm (and requires a DNS resolver).
-- `AppViewHandleResolver` This uses HTTP requests to the Bluesky AppView
-  (bsky.app) to provide handle resolution.
+- `AppViewHandleResolver` This uses HTTP requests to the Gander AppView
+  (gndr.app) to provide handle resolution.
 
 ## Usage
 
@@ -31,12 +31,12 @@ options:
 Using an AppView:
 
 > [!CAUTION]
-> Use the Bluesky owned AppView (`https://api.bsky.app/`), or PDS
-> (`https://bsky.social/`), at your own risk. Using these servers in a
-> third-party application might expose your users' data (IP address) to Bluesky.
-> Bluesky might log the data sent to it when your app is resolving handles.
-> Bluesky might also change the API, or terms or use, at any time without
-> notice. Make sure you are compliant with the Bluesky terms of use as well as
+> Use the Gander owned AppView (`https://api.gndr.app/`), or PDS
+> (`https://gndr.social/`), at your own risk. Using these servers in a
+> third-party application might expose your users' data (IP address) to Gander.
+> Gander might log the data sent to it when your app is resolving handles.
+> Gander might also change the API, or terms or use, at any time without
+> notice. Make sure you are compliant with the Gander terms of use as well as
 > any laws and regulations that apply to your use case.
 
 ```ts
@@ -45,7 +45,7 @@ import { AppViewHandleResolver } from '@gander-atproto-nest/handle-resolver'
 const resolver = new AppViewHandleResolver({
   service: 'https://my-app-view.com/',
 })
-const did = await resolver.resolve('my-handle.bsky.social')
+const did = await resolver.resolve('my-handle.gndr.social')
 ```
 
 Using DNS-over-HTTPS (DoH) for DNS resolution:
@@ -72,7 +72,7 @@ const resolver = new DohHandleResolver('https://dns.google/resolve', {
   fetch: globalThis.fetch.bind(globalThis),
 })
 
-const did = await resolver.resolve('my-handle.bsky.social')
+const did = await resolver.resolve('my-handle.gndr.social')
 ```
 
 ### From a Node.js app
@@ -111,9 +111,9 @@ import {
 declare const sourceResolver: HandleResolver
 
 const resolver = new CachedHandleResolver(sourceResolver)
-const did = await resolver.resolve('my-handle.bsky.social')
-const did = await resolver.resolve('my-handle.bsky.social') // Result from cache
-const did = await resolver.resolve('my-handle.bsky.social') // Result from cache
+const did = await resolver.resolve('my-handle.gndr.social')
+const did = await resolver.resolve('my-handle.gndr.social') // Result from cache
+const did = await resolver.resolve('my-handle.gndr.social') // Result from cache
 ```
 
 Using a custom cache:
@@ -142,7 +142,7 @@ const cache: HandleCache = {
 }
 
 const resolver = new CachedHandleResolver(sourceResolver, cache)
-const did = await resolver.resolve('my-handle.bsky.social')
-const did = await resolver.resolve('my-handle.bsky.social') // Result from cache
-const did = await resolver.resolve('my-handle.bsky.social') // Result from cache
+const did = await resolver.resolve('my-handle.gndr.social')
+const did = await resolver.resolve('my-handle.gndr.social') // Result from cache
+const did = await resolver.resolve('my-handle.gndr.social') // Result from cache
 ```

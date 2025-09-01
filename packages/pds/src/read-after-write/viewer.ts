@@ -219,6 +219,52 @@ export class LocalViewer {
     }
   }
 
+  async formatRecordWithMediaEmbed(did: string, embed: EmbedRecordWithMedia) {
+    if (!isEmbedImages(embed.media) && !isEmbedExternal(embed.media)) {
+      return null
+    }
+    const media = this.formatSimpleEmbed(embed.media)
+    const record = await this.formatRecordEmbed(embed.record)
+    return {
+      $type: 'app.gndr.embed.recordWithMedia#view',
+      record,
+      media,
+    }
+  }
+
+  updateProfileViewBasic<
+    T extends ProfileViewDetailed | ProfileViewBasic | ProfileView,
+  >(view: T, record: ProfileRecord): T {
+    return {
+      ...view,
+      displayName: record.displayName,
+      avatar: record.avatar
+        ? this.getImageUrl('avatar', record.avatar.ref.toString())
+        : undefined,
+    }
+  }
+
+  updateProfileView<
+    T extends ProfileViewDetailed | ProfileViewBasic | ProfileView,
+  >(view: T, record: ProfileRecord): T {
+    return {
+      ...this.updateProfileViewBasic(view, record),
+      description: record.description,
+    }
+  }
+
+  updateProfileDetailed<T extends ProfileViewDetailed>(
+    view: T,
+    record: ProfileRecord,
+  ): T {
+    return {
+      ...this.updateProfileView(view, record),
+      banner: record.banner
+        ? this.getImageUrl('banner', record.banner.ref.toString())
+        : undefined,
+    }
+  }
+
   private async formatRecordEmbedInternal(
     embed: EmbedRecord,
   ): Promise<
@@ -268,51 +314,5 @@ export class LocalViewer {
       }
     }
     return null
-  }
-
-  async formatRecordWithMediaEmbed(did: string, embed: EmbedRecordWithMedia) {
-    if (!isEmbedImages(embed.media) && !isEmbedExternal(embed.media)) {
-      return null
-    }
-    const media = this.formatSimpleEmbed(embed.media)
-    const record = await this.formatRecordEmbed(embed.record)
-    return {
-      $type: 'app.gndr.embed.recordWithMedia#view',
-      record,
-      media,
-    }
-  }
-
-  updateProfileViewBasic<
-    T extends ProfileViewDetailed | ProfileViewBasic | ProfileView,
-  >(view: T, record: ProfileRecord): T {
-    return {
-      ...view,
-      displayName: record.displayName,
-      avatar: record.avatar
-        ? this.getImageUrl('avatar', record.avatar.ref.toString())
-        : undefined,
-    }
-  }
-
-  updateProfileView<
-    T extends ProfileViewDetailed | ProfileViewBasic | ProfileView,
-  >(view: T, record: ProfileRecord): T {
-    return {
-      ...this.updateProfileViewBasic(view, record),
-      description: record.description,
-    }
-  }
-
-  updateProfileDetailed<T extends ProfileViewDetailed>(
-    view: T,
-    record: ProfileRecord,
-  ): T {
-    return {
-      ...this.updateProfileView(view, record),
-      banner: record.banner
-        ? this.getImageUrl('banner', record.banner.ref.toString())
-        : undefined,
-    }
   }
 }

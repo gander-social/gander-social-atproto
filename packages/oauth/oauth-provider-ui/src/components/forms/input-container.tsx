@@ -8,6 +8,7 @@ export type InputContainerProps = Override<
     icon: ReactNode
     append?: ReactNode
     bellow?: ReactNode
+    actionable?: boolean
   }
 >
 
@@ -15,6 +16,7 @@ export function InputContainer({
   icon,
   append,
   bellow,
+  actionable,
 
   // div
   className,
@@ -24,6 +26,8 @@ export function InputContainer({
   ...props
 }: InputContainerProps) {
   const [hasFocus, setHasFocus] = useState(false)
+
+  actionable ??= props.onClick != null
 
   return (
     <div
@@ -43,6 +47,21 @@ export function InputContainer({
         'overflow-hidden',
         // Border
         'rounded-lg',
+
+        // Transition
+        'transition duration-300 ease-in-out',
+
+        // Outline
+        'outline-none',
+        'focus:ring-primary focus:ring-2 focus:ring-offset-1 focus:ring-offset-white dark:focus:ring-offset-black',
+        'has-focus:ring-primary has-focus:ring-2 has-focus:ring-offset-1 has-focus:ring-offset-white dark:has-focus:ring-offset-black',
+
+        // Background
+        'bg-gray-100 dark:bg-gray-800',
+        actionable
+          ? 'cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-700'
+          : undefined,
+
         className,
       )}
     >
@@ -71,8 +90,8 @@ export function InputContainer({
         {icon && (
           <div
             className={clsx(
-              'shrink-0 grow-0',
-              'mx-1',
+              'flex shrink-0 grow-0 items-center justify-center',
+              'mx-2',
               hasFocus ? 'text-primary' : 'text-slate-500',
             )}
           >

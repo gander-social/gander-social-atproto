@@ -51,6 +51,39 @@ describe('proxies admin requests', () => {
     })
 
     beforeAll(async () => {
+      network = await TestNetwork.create({
+        dbPostgresSchema: 'proxy_admin',
+        pds: {
+          inviteRequired: true,
+        },
+      })
+      agent = network.pds.getClient()
+      sc = network.getSeedClient()
+      const { data: invite } =
+        await agent.api.com.atproto.server.createInviteCode(
+          { useCount: 10 },
+          {
+            encoding: 'application/json',
+            headers: network.pds.adminAuthHeaders(),
+          },
+        )
+      await basicSeed(sc, {
+        inviteCode: invite.code,
+        addModLabels: network.gndr,
+      })
+      const modAccount = await sc.createAccount('moderator', {
+        handle: 'testmod.test',
+        email: 'testmod@test.com',
+        password: 'testmod-pass',
+        inviteCode: invite.code,
+      })
+      moderator = modAccount.did
+      await network.ozone.addModeratorDid(moderator)
+
+      await network.processAll()
+    })
+
+    beforeAll(async () => {
       const { data: invite } =
         await agent.api.com.atproto.server.createInviteCode(
           { useCount: 1, forAccount: sc.dids.alice },

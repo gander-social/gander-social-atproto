@@ -10,11 +10,10 @@ export type OutboxOpts = {
 }
 
 export class Outbox {
-  private caughtUp = false
   lastSeen = -1
-
   cutoverBuffer: LabelsEvt[]
   outBuffer: AsyncBuffer<LabelsEvt>
+  private caughtUp = false
 
   constructor(
     public sequencer: Sequencer,

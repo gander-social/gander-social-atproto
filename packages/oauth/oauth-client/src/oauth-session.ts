@@ -48,21 +48,6 @@ export class OAuthSession {
     return this.server.serverMetadata
   }
 
-  /**
-   * @param refresh When `true`, the credentials will be refreshed even if they
-   * are not expired. When `false`, the credentials will not be refreshed even
-   * if they are expired. When `undefined`, the credentials will be refreshed
-   * if, and only if, they are (about to be) expired. Defaults to `undefined`.
-   */
-  protected async getTokenSet(refresh: boolean | 'auto'): Promise<TokenSet> {
-    const { tokenSet } = await this.sessionGetter.get(this.sub, {
-      noCache: refresh === true,
-      allowStale: refresh === false,
-    })
-
-    return tokenSet
-  }
-
   async getTokenInfo(refresh: boolean | 'auto' = 'auto'): Promise<TokenInfo> {
     const tokenSet = await this.getTokenSet(refresh)
     const expiresAt =
@@ -152,6 +137,21 @@ export class OAuthSession {
     }
 
     return finalResponse
+  }
+
+  /**
+   * @param refresh When `true`, the credentials will be refreshed even if they
+   * are not expired. When `false`, the credentials will not be refreshed even
+   * if they are expired. When `undefined`, the credentials will be refreshed
+   * if, and only if, they are (about to be) expired. Defaults to `undefined`.
+   */
+  protected async getTokenSet(refresh: boolean | 'auto'): Promise<TokenSet> {
+    const { tokenSet } = await this.sessionGetter.get(this.sub, {
+      noCache: refresh === true,
+      allowStale: refresh === false,
+    })
+
+    return tokenSet
   }
 }
 

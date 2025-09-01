@@ -14,6 +14,7 @@ import {
 } from '../../../../lexicon/types/app/gndr/feed/getPostThread'
 import { Record as PostRecord } from '../../../../lexicon/types/app/gndr/feed/post'
 import { $Typed } from '../../../../lexicon/util'
+import { computeProxyTo } from '../../../../pipethrough'
 import {
   LocalRecords,
   LocalViewer,
@@ -28,7 +29,13 @@ export default function (server: Server, ctx: AppContext) {
   if (!ctx.gndrAppView) return
 
   server.app.gndr.feed.getPostThread({
-    auth: ctx.authVerifier.accessStandard(),
+    auth: ctx.authVerifier.authorization({
+      authorize: (permissions, { req }) => {
+        const lxm = ids.AppGndrFeedGetPostThread
+        const aud = computeProxyTo(ctx, req, lxm)
+        permissions.assertRpc({ aud, lxm })
+      },
+    }),
     handler: async (reqCtx) => {
       try {
         return await pipethroughReadAfterWrite(ctx, reqCtx, getPostThreadMunge)

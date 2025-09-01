@@ -1,5 +1,5 @@
-import { RepoRecord } from '@gander-social-atproto/lexicon'
 import { CID } from 'multiformats/cid'
+import { RepoRecord } from '@gander-social-atproto/lexicon'
 import { MissingBlocksError } from './error'
 import log from './logger'
 import { MST } from './mst'
@@ -28,6 +28,14 @@ export class ReadableRepo {
     this.cid = params.cid
   }
 
+  get did(): string {
+    return this.commit.did
+  }
+
+  get version(): number {
+    return this.commit.version
+  }
+
   static async load(storage: ReadableBlockstore, commitCid: CID) {
     const commit = await storage.readObj(commitCid, def.versionedCommit)
     const data = await MST.load(storage, commit.data)
@@ -38,14 +46,6 @@ export class ReadableRepo {
       commit: util.ensureV3Commit(commit),
       cid: commitCid,
     })
-  }
-
-  get did(): string {
-    return this.commit.did
-  }
-
-  get version(): number {
-    return this.commit.version
   }
 
   async *walkRecords(from?: string): AsyncIterable<{

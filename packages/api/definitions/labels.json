@@ -3,7 +3,10 @@
     "identifier": "!hide",
     "configurable": false,
     "defaultSetting": "hide",
-    "flags": ["no-override", "no-self"],
+    "flags": [
+      "no-override",
+      "no-self"
+    ],
     "severity": "alert",
     "blurs": "content",
     "behaviors": {
@@ -31,7 +34,9 @@
     "identifier": "!warn",
     "configurable": false,
     "defaultSetting": "warn",
-    "flags": ["no-self"],
+    "flags": [
+      "no-self"
+    ],
     "severity": "none",
     "blurs": "content",
     "behaviors": {
@@ -58,7 +63,10 @@
     "identifier": "!no-unauthenticated",
     "configurable": false,
     "defaultSetting": "hide",
-    "flags": ["no-override", "unauthed"],
+    "flags": [
+      "no-override",
+      "unauthed"
+    ],
     "severity": "none",
     "blurs": "content",
     "behaviors": {
@@ -86,7 +94,9 @@
     "identifier": "porn",
     "configurable": true,
     "defaultSetting": "hide",
-    "flags": ["adult"],
+    "flags": [
+      "adult"
+    ],
     "severity": "none",
     "blurs": "media",
     "behaviors": {
@@ -107,7 +117,9 @@
     "identifier": "sexual",
     "configurable": true,
     "defaultSetting": "warn",
-    "flags": ["adult"],
+    "flags": [
+      "adult"
+    ],
     "severity": "none",
     "blurs": "media",
     "behaviors": {
@@ -147,8 +159,12 @@
   },
   {
     "identifier": "graphic-media",
-    "alias": ["gore"],
-    "flags": ["adult"],
+    "alias": [
+      "gore"
+    ],
+    "flags": [
+      "adult"
+    ],
     "configurable": true,
     "defaultSetting": "warn",
     "severity": "none",

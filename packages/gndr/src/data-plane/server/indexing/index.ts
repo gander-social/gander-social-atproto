@@ -1,3 +1,5 @@
+import { Selectable, sql } from 'kysely'
+import { CID } from 'multiformats/cid'
 import {
   AtpAgent,
   ComAtprotoSyncGetLatestCommit,
@@ -13,8 +15,6 @@ import {
   verifyRepo,
 } from '@gander-social-atproto/repo'
 import { AtUri } from '@gander-social-atproto/syntax'
-import { Selectable, sql } from 'kysely'
-import { CID } from 'multiformats/cid'
 import { subLogger } from '../../../logger'
 import { retryXrpc } from '../../../util/retry'
 import { BackgroundQueue } from '../background'
@@ -293,22 +293,6 @@ export class IndexingService {
     }
   }
 
-  private async getActorIsHosted(did: string) {
-    const doc = await this.idResolver.did.resolve(did, true)
-    const pds = doc && getPds(doc)
-    if (!pds) return false
-    const { api } = new AtpAgent({ service: pds })
-    try {
-      await retryXrpc(() => api.com.atproto.sync.getLatestCommit({ did }))
-      return true
-    } catch (err) {
-      if (err instanceof ComAtprotoSyncGetLatestCommit.RepoNotFoundError) {
-        return false
-      }
-      return null
-    }
-  }
-
   async unindexActor(did: string) {
     this.db.assertNotTransaction()
     // per-record-type indexes
@@ -379,6 +363,22 @@ export class IndexingService {
       )
       .execute()
     await this.db.db.deleteFrom('record').where('did', '=', did).execute()
+  }
+
+  private async getActorIsHosted(did: string) {
+    const doc = await this.idResolver.did.resolve(did, true)
+    const pds = doc && getPds(doc)
+    if (!pds) return false
+    const { api } = new AtpAgent({ service: pds })
+    try {
+      await retryXrpc(() => api.com.atproto.sync.getLatestCommit({ did }))
+      return true
+    } catch (err) {
+      if (err instanceof ComAtprotoSyncGetLatestCommit.RepoNotFoundError) {
+        return false
+      }
+      return null
+    }
   }
 }
 

@@ -1,14 +1,26 @@
-import { InvalidRequestError } from '@gander-social-atproto/xrpc-server'
 import { isEmailValid } from '@hapi/address'
 import { isDisposableEmail } from 'disposable-email-domains-js'
+import {
+  ForbiddenError,
+  InvalidRequestError,
+} from '@gander-social-atproto/xrpc-server'
 import { UserAlreadyExistsError } from '../../../../account-manager/helpers/account'
+import { ACCESS_FULL } from '../../../../auth-scope'
 import { AppContext } from '../../../../context'
 import { Server } from '../../../../lexicon'
 import { ids } from '../../../../lexicon/lexicons'
 
 export default function (server: Server, ctx: AppContext) {
   server.com.atproto.server.updateEmail({
-    auth: ctx.authVerifier.accessFull({ checkTakedown: true }),
+    auth: ctx.authVerifier.authorization({
+      checkTakedown: true,
+      scopes: ACCESS_FULL,
+      authorize: () => {
+        throw new ForbiddenError(
+          'OAuth credentials are not supported for this endpoint',
+        )
+      },
+    }),
     handler: async ({ auth, input, req }) => {
       const did = auth.credentials.did
       const { token, email } = input.body

@@ -1,9 +1,9 @@
+import { z } from 'zod'
 import { JwkError, jwkSchema } from '@gander-social-atproto/jwk'
 import {
   GenerateKeyPairOptions,
   JoseKey,
 } from '@gander-social-atproto/jwk-jose'
-import { z } from 'zod'
 import { fromSubtleAlgorithm, isCryptoKeyPair } from './util.js'
 
 // Webcrypto keys are bound to a single algorithm
@@ -18,6 +18,22 @@ export class WebcryptoKey<
   J extends JwkWithAlg = JwkWithAlg,
 > extends JoseKey<J> {
   // We need to override the static method generate from JoseKey because
+  constructor(
+    jwk: Readonly<J>,
+    readonly cryptoKeyPair: CryptoKeyPair,
+  ) {
+    super(jwk)
+  }
+
+  get isPrivate() {
+    return true
+  }
+
+  get privateJwk(): Readonly<J> | undefined {
+    if (super.isPrivate) return this.jwk
+    throw new Error('Private Webcrypto Key not exportable')
+  }
+
   // the browser needs both the private and public keys
   static override async generate(
     allowedAlgos: string[] = ['ES256'],
@@ -64,22 +80,6 @@ export class WebcryptoKey<
       jwkWithAlgSchema.parse({ ...jwk, kid, alg, use: 'sig' }),
       cryptoKeyPair,
     )
-  }
-
-  constructor(
-    jwk: Readonly<J>,
-    readonly cryptoKeyPair: CryptoKeyPair,
-  ) {
-    super(jwk)
-  }
-
-  get isPrivate() {
-    return true
-  }
-
-  get privateJwk(): Readonly<J> | undefined {
-    if (super.isPrivate) return this.jwk
-    throw new Error('Private Webcrypto Key not exportable')
   }
 
   protected override async getKeyObj(alg: string) {

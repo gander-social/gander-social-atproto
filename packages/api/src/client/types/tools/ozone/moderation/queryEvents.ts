@@ -1,15 +1,9 @@
 /**
  * GENERATED CODE - DO NOT MODIFY
  */
-import { HeadersMap, XRPCError } from '@gander-social-atproto/xrpc'
-import { type ValidationResult, BlobRef } from '@gander-social-atproto/lexicon'
-import { CID } from 'multiformats/cid'
+import { HeadersMap } from '@gander-social-atproto/xrpc'
 import { validate as _validate } from '../../../../lexicons'
-import {
-  type $Typed,
-  is$typed as _is$typed,
-  type OmitKey,
-} from '../../../../util'
+import { is$typed as _is$typed, } from '../../../../util'
 import type * as ToolsOzoneModerationDefs from './defs.js'
 
 const is$typed = _is$typed,
@@ -50,6 +44,16 @@ export type QueryParams = {
   policies?: string[]
   /** If specified, only events where the modTool name matches any of the given values are returned */
   modTool?: string[]
+  /** If specified, only events where the batchId matches the given value are returned */
+  batchId?: string
+  /** If specified, only events where the age assurance state matches the given value are returned */
+  ageAssuranceState?:
+    | 'pending'
+    | 'assured'
+    | 'unknown'
+    | 'reset'
+    | 'blocked'
+    | (string & {})
   cursor?: string
 }
 export type InputSchema = undefined

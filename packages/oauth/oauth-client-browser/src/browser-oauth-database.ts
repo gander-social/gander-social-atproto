@@ -85,7 +85,7 @@ export class BrowserOAuthDatabase {
 
   constructor(options?: BrowserOAuthDatabaseOptions) {
     this.#dbPromise = DB.open<Schema>(
-      options?.name ?? '@atproto-oauth-client',
+      options?.name ?? '@gander-social-atproto-oauth-client',
       [
         (db) => {
           for (const name of STORES) {
@@ -100,65 +100,6 @@ export class BrowserOAuthDatabase {
     this.#cleanupInterval = setInterval(() => {
       void this.cleanup()
     }, options?.cleanupInterval ?? 30e3)
-  }
-
-  protected async run<N extends keyof Schema, R>(
-    storeName: N,
-    mode: 'readonly' | 'readwrite',
-    fn: (s: DBObjectStore<Schema[N]>) => R | Promise<R>,
-  ): Promise<R> {
-    const db = await this.#dbPromise
-    return await db.transaction([storeName], mode, (tx) =>
-      fn(tx.objectStore(storeName)),
-    )
-  }
-
-  protected createStore<N extends keyof Schema, V extends Value>(
-    name: N,
-    {
-      encode,
-      decode,
-      expiresAt,
-    }: {
-      encode: (value: V) => Schema[N]['value'] | PromiseLike<Schema[N]['value']>
-      decode: (encoded: Schema[N]['value']) => V | PromiseLike<V>
-      expiresAt: (value: V) => null | Date
-    },
-  ): DatabaseStore<V> {
-    return {
-      get: async (key) => {
-        // Find item in store
-        const item = await this.run(name, 'readonly', (store) => store.get(key))
-
-        // Not found
-        if (item === undefined) return undefined
-
-        // Too old (delete)
-        if (item.expiresAt != null && new Date(item.expiresAt) < new Date()) {
-          await this.run(name, 'readwrite', (store) => store.delete(key))
-          return undefined
-        }
-
-        // Item found and valid. Decode
-        return decode(item.value)
-      },
-
-      set: async (key, value) => {
-        // Create encoded item record
-        const item = {
-          value: await encode(value),
-          expiresAt: expiresAt(value)?.toISOString(),
-        } as Schema[N]
-
-        // Store item record
-        await this.run(name, 'readwrite', (store) => store.put(item, key))
-      },
-
-      del: async (key) => {
-        // Delete
-        await this.run(name, 'readwrite', (store) => store.delete(key))
-      },
-    }
   }
 
   getSessionStore(): DatabaseStore<Session> {
@@ -262,5 +203,64 @@ export class BrowserOAuthDatabase {
     // Spec recommends not to throw errors in dispose
     const db = await dbPromise.catch(() => null)
     if (db) await (db[Symbol.asyncDispose] || db[Symbol.dispose]).call(db)
+  }
+
+  protected async run<N extends keyof Schema, R>(
+    storeName: N,
+    mode: 'readonly' | 'readwrite',
+    fn: (s: DBObjectStore<Schema[N]>) => R | Promise<R>,
+  ): Promise<R> {
+    const db = await this.#dbPromise
+    return await db.transaction([storeName], mode, (tx) =>
+      fn(tx.objectStore(storeName)),
+    )
+  }
+
+  protected createStore<N extends keyof Schema, V extends Value>(
+    name: N,
+    {
+      encode,
+      decode,
+      expiresAt,
+    }: {
+      encode: (value: V) => Schema[N]['value'] | PromiseLike<Schema[N]['value']>
+      decode: (encoded: Schema[N]['value']) => V | PromiseLike<V>
+      expiresAt: (value: V) => null | Date
+    },
+  ): DatabaseStore<V> {
+    return {
+      get: async (key) => {
+        // Find item in store
+        const item = await this.run(name, 'readonly', (store) => store.get(key))
+
+        // Not found
+        if (item === undefined) return undefined
+
+        // Too old (delete)
+        if (item.expiresAt != null && new Date(item.expiresAt) < new Date()) {
+          await this.run(name, 'readwrite', (store) => store.delete(key))
+          return undefined
+        }
+
+        // Item found and valid. Decode
+        return decode(item.value)
+      },
+
+      set: async (key, value) => {
+        // Create encoded item record
+        const item = {
+          value: await encode(value),
+          expiresAt: expiresAt(value)?.toISOString(),
+        } as Schema[N]
+
+        // Store item record
+        await this.run(name, 'readwrite', (store) => store.put(item, key))
+      },
+
+      del: async (key) => {
+        // Delete
+        await this.run(name, 'readwrite', (store) => store.delete(key))
+      },
+    }
   }
 }

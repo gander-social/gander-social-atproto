@@ -111,51 +111,6 @@ proto3.util.setEnumType(FeedType, 'gndr.FeedType', [
  * @generated from message gndr.Record
  */
 export class Record extends Message<Record> {
-  /**
-   * @generated from field: bytes record = 1;
-   */
-  record = new Uint8Array(0)
-
-  /**
-   * @generated from field: string cid = 2;
-   */
-  cid = ''
-
-  /**
-   * @generated from field: google.protobuf.Timestamp indexed_at = 4;
-   */
-  indexedAt?: Timestamp
-
-  /**
-   * @generated from field: bool taken_down = 5;
-   */
-  takenDown = false
-
-  /**
-   * @generated from field: google.protobuf.Timestamp created_at = 6;
-   */
-  createdAt?: Timestamp
-
-  /**
-   * @generated from field: google.protobuf.Timestamp sorted_at = 7;
-   */
-  sortedAt?: Timestamp
-
-  /**
-   * @generated from field: string takedown_ref = 8;
-   */
-  takedownRef = ''
-
-  /**
-   * @generated from field: repeated string tags = 9;
-   */
-  tags: string[] = []
-
-  constructor(data?: PartialMessage<Record>) {
-    super()
-    proto3.util.initPartial(data, this)
-  }
-
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'gndr.Record'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
@@ -179,6 +134,43 @@ export class Record extends Message<Record> {
       repeated: true,
     },
   ])
+  /**
+   * @generated from field: bytes record = 1;
+   */
+  record = new Uint8Array(0)
+  /**
+   * @generated from field: string cid = 2;
+   */
+  cid = ''
+  /**
+   * @generated from field: google.protobuf.Timestamp indexed_at = 4;
+   */
+  indexedAt?: Timestamp
+  /**
+   * @generated from field: bool taken_down = 5;
+   */
+  takenDown = false
+  /**
+   * @generated from field: google.protobuf.Timestamp created_at = 6;
+   */
+  createdAt?: Timestamp
+  /**
+   * @generated from field: google.protobuf.Timestamp sorted_at = 7;
+   */
+  sortedAt?: Timestamp
+  /**
+   * @generated from field: string takedown_ref = 8;
+   */
+  takedownRef = ''
+  /**
+   * @generated from field: repeated string tags = 9;
+   */
+  tags: string[] = []
+
+  constructor(data?: PartialMessage<Record>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
 
   static fromBinary(
     bytes: Uint8Array,
@@ -213,16 +205,6 @@ export class Record extends Message<Record> {
  * @generated from message gndr.GetBlockRecordsRequest
  */
 export class GetBlockRecordsRequest extends Message<GetBlockRecordsRequest> {
-  /**
-   * @generated from field: repeated string uris = 1;
-   */
-  uris: string[] = []
-
-  constructor(data?: PartialMessage<GetBlockRecordsRequest>) {
-    super()
-    proto3.util.initPartial(data, this)
-  }
-
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'gndr.GetBlockRecordsRequest'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
@@ -234,6 +216,15 @@ export class GetBlockRecordsRequest extends Message<GetBlockRecordsRequest> {
       repeated: true,
     },
   ])
+  /**
+   * @generated from field: repeated string uris = 1;
+   */
+  uris: string[] = []
+
+  constructor(data?: PartialMessage<GetBlockRecordsRequest>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
 
   static fromBinary(
     bytes: Uint8Array,
@@ -274,6 +265,11 @@ export class GetBlockRecordsRequest extends Message<GetBlockRecordsRequest> {
  * @generated from message gndr.GetBlockRecordsResponse
  */
 export class GetBlockRecordsResponse extends Message<GetBlockRecordsResponse> {
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'gndr.GetBlockRecordsResponse'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: 'records', kind: 'message', T: Record, repeated: true },
+  ])
   /**
    * @generated from field: repeated gndr.Record records = 1;
    */
@@ -283,12 +279,6 @@ export class GetBlockRecordsResponse extends Message<GetBlockRecordsResponse> {
     super()
     proto3.util.initPartial(data, this)
   }
-
-  static readonly runtime: typeof proto3 = proto3
-  static readonly typeName = 'gndr.GetBlockRecordsResponse'
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'records', kind: 'message', T: Record, repeated: true },
-  ])
 
   static fromBinary(
     bytes: Uint8Array,
@@ -329,16 +319,6 @@ export class GetBlockRecordsResponse extends Message<GetBlockRecordsResponse> {
  * @generated from message gndr.GetFeedGeneratorRecordsRequest
  */
 export class GetFeedGeneratorRecordsRequest extends Message<GetFeedGeneratorRecordsRequest> {
-  /**
-   * @generated from field: repeated string uris = 1;
-   */
-  uris: string[] = []
-
-  constructor(data?: PartialMessage<GetFeedGeneratorRecordsRequest>) {
-    super()
-    proto3.util.initPartial(data, this)
-  }
-
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'gndr.GetFeedGeneratorRecordsRequest'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
@@ -350,6 +330,15 @@ export class GetFeedGeneratorRecordsRequest extends Message<GetFeedGeneratorReco
       repeated: true,
     },
   ])
+  /**
+   * @generated from field: repeated string uris = 1;
+   */
+  uris: string[] = []
+
+  constructor(data?: PartialMessage<GetFeedGeneratorRecordsRequest>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
 
   static fromBinary(
     bytes: Uint8Array,
@@ -393,6 +382,11 @@ export class GetFeedGeneratorRecordsRequest extends Message<GetFeedGeneratorReco
  * @generated from message gndr.GetFeedGeneratorRecordsResponse
  */
 export class GetFeedGeneratorRecordsResponse extends Message<GetFeedGeneratorRecordsResponse> {
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'gndr.GetFeedGeneratorRecordsResponse'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: 'records', kind: 'message', T: Record, repeated: true },
+  ])
   /**
    * @generated from field: repeated gndr.Record records = 1;
    */
@@ -402,12 +396,6 @@ export class GetFeedGeneratorRecordsResponse extends Message<GetFeedGeneratorRec
     super()
     proto3.util.initPartial(data, this)
   }
-
-  static readonly runtime: typeof proto3 = proto3
-  static readonly typeName = 'gndr.GetFeedGeneratorRecordsResponse'
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'records', kind: 'message', T: Record, repeated: true },
-  ])
 
   static fromBinary(
     bytes: Uint8Array,
@@ -451,16 +439,6 @@ export class GetFeedGeneratorRecordsResponse extends Message<GetFeedGeneratorRec
  * @generated from message gndr.GetFollowRecordsRequest
  */
 export class GetFollowRecordsRequest extends Message<GetFollowRecordsRequest> {
-  /**
-   * @generated from field: repeated string uris = 1;
-   */
-  uris: string[] = []
-
-  constructor(data?: PartialMessage<GetFollowRecordsRequest>) {
-    super()
-    proto3.util.initPartial(data, this)
-  }
-
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'gndr.GetFollowRecordsRequest'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
@@ -472,6 +450,15 @@ export class GetFollowRecordsRequest extends Message<GetFollowRecordsRequest> {
       repeated: true,
     },
   ])
+  /**
+   * @generated from field: repeated string uris = 1;
+   */
+  uris: string[] = []
+
+  constructor(data?: PartialMessage<GetFollowRecordsRequest>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
 
   static fromBinary(
     bytes: Uint8Array,
@@ -512,6 +499,11 @@ export class GetFollowRecordsRequest extends Message<GetFollowRecordsRequest> {
  * @generated from message gndr.GetFollowRecordsResponse
  */
 export class GetFollowRecordsResponse extends Message<GetFollowRecordsResponse> {
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'gndr.GetFollowRecordsResponse'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: 'records', kind: 'message', T: Record, repeated: true },
+  ])
   /**
    * @generated from field: repeated gndr.Record records = 1;
    */
@@ -521,12 +513,6 @@ export class GetFollowRecordsResponse extends Message<GetFollowRecordsResponse> 
     super()
     proto3.util.initPartial(data, this)
   }
-
-  static readonly runtime: typeof proto3 = proto3
-  static readonly typeName = 'gndr.GetFollowRecordsResponse'
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'records', kind: 'message', T: Record, repeated: true },
-  ])
 
   static fromBinary(
     bytes: Uint8Array,
@@ -567,16 +553,6 @@ export class GetFollowRecordsResponse extends Message<GetFollowRecordsResponse> 
  * @generated from message gndr.GetLikeRecordsRequest
  */
 export class GetLikeRecordsRequest extends Message<GetLikeRecordsRequest> {
-  /**
-   * @generated from field: repeated string uris = 1;
-   */
-  uris: string[] = []
-
-  constructor(data?: PartialMessage<GetLikeRecordsRequest>) {
-    super()
-    proto3.util.initPartial(data, this)
-  }
-
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'gndr.GetLikeRecordsRequest'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
@@ -588,6 +564,15 @@ export class GetLikeRecordsRequest extends Message<GetLikeRecordsRequest> {
       repeated: true,
     },
   ])
+  /**
+   * @generated from field: repeated string uris = 1;
+   */
+  uris: string[] = []
+
+  constructor(data?: PartialMessage<GetLikeRecordsRequest>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
 
   static fromBinary(
     bytes: Uint8Array,
@@ -622,6 +607,11 @@ export class GetLikeRecordsRequest extends Message<GetLikeRecordsRequest> {
  * @generated from message gndr.GetLikeRecordsResponse
  */
 export class GetLikeRecordsResponse extends Message<GetLikeRecordsResponse> {
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'gndr.GetLikeRecordsResponse'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: 'records', kind: 'message', T: Record, repeated: true },
+  ])
   /**
    * @generated from field: repeated gndr.Record records = 1;
    */
@@ -631,12 +621,6 @@ export class GetLikeRecordsResponse extends Message<GetLikeRecordsResponse> {
     super()
     proto3.util.initPartial(data, this)
   }
-
-  static readonly runtime: typeof proto3 = proto3
-  static readonly typeName = 'gndr.GetLikeRecordsResponse'
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'records', kind: 'message', T: Record, repeated: true },
-  ])
 
   static fromBinary(
     bytes: Uint8Array,
@@ -677,16 +661,6 @@ export class GetLikeRecordsResponse extends Message<GetLikeRecordsResponse> {
  * @generated from message gndr.GetListBlockRecordsRequest
  */
 export class GetListBlockRecordsRequest extends Message<GetListBlockRecordsRequest> {
-  /**
-   * @generated from field: repeated string uris = 1;
-   */
-  uris: string[] = []
-
-  constructor(data?: PartialMessage<GetListBlockRecordsRequest>) {
-    super()
-    proto3.util.initPartial(data, this)
-  }
-
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'gndr.GetListBlockRecordsRequest'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
@@ -698,6 +672,15 @@ export class GetListBlockRecordsRequest extends Message<GetListBlockRecordsReque
       repeated: true,
     },
   ])
+  /**
+   * @generated from field: repeated string uris = 1;
+   */
+  uris: string[] = []
+
+  constructor(data?: PartialMessage<GetListBlockRecordsRequest>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
 
   static fromBinary(
     bytes: Uint8Array,
@@ -738,6 +721,11 @@ export class GetListBlockRecordsRequest extends Message<GetListBlockRecordsReque
  * @generated from message gndr.GetListBlockRecordsResponse
  */
 export class GetListBlockRecordsResponse extends Message<GetListBlockRecordsResponse> {
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'gndr.GetListBlockRecordsResponse'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: 'records', kind: 'message', T: Record, repeated: true },
+  ])
   /**
    * @generated from field: repeated gndr.Record records = 1;
    */
@@ -747,12 +735,6 @@ export class GetListBlockRecordsResponse extends Message<GetListBlockRecordsResp
     super()
     proto3.util.initPartial(data, this)
   }
-
-  static readonly runtime: typeof proto3 = proto3
-  static readonly typeName = 'gndr.GetListBlockRecordsResponse'
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'records', kind: 'message', T: Record, repeated: true },
-  ])
 
   static fromBinary(
     bytes: Uint8Array,
@@ -793,16 +775,6 @@ export class GetListBlockRecordsResponse extends Message<GetListBlockRecordsResp
  * @generated from message gndr.GetListItemRecordsRequest
  */
 export class GetListItemRecordsRequest extends Message<GetListItemRecordsRequest> {
-  /**
-   * @generated from field: repeated string uris = 1;
-   */
-  uris: string[] = []
-
-  constructor(data?: PartialMessage<GetListItemRecordsRequest>) {
-    super()
-    proto3.util.initPartial(data, this)
-  }
-
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'gndr.GetListItemRecordsRequest'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
@@ -814,6 +786,15 @@ export class GetListItemRecordsRequest extends Message<GetListItemRecordsRequest
       repeated: true,
     },
   ])
+  /**
+   * @generated from field: repeated string uris = 1;
+   */
+  uris: string[] = []
+
+  constructor(data?: PartialMessage<GetListItemRecordsRequest>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
 
   static fromBinary(
     bytes: Uint8Array,
@@ -854,6 +835,11 @@ export class GetListItemRecordsRequest extends Message<GetListItemRecordsRequest
  * @generated from message gndr.GetListItemRecordsResponse
  */
 export class GetListItemRecordsResponse extends Message<GetListItemRecordsResponse> {
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'gndr.GetListItemRecordsResponse'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: 'records', kind: 'message', T: Record, repeated: true },
+  ])
   /**
    * @generated from field: repeated gndr.Record records = 1;
    */
@@ -863,12 +849,6 @@ export class GetListItemRecordsResponse extends Message<GetListItemRecordsRespon
     super()
     proto3.util.initPartial(data, this)
   }
-
-  static readonly runtime: typeof proto3 = proto3
-  static readonly typeName = 'gndr.GetListItemRecordsResponse'
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'records', kind: 'message', T: Record, repeated: true },
-  ])
 
   static fromBinary(
     bytes: Uint8Array,
@@ -909,16 +889,6 @@ export class GetListItemRecordsResponse extends Message<GetListItemRecordsRespon
  * @generated from message gndr.GetListRecordsRequest
  */
 export class GetListRecordsRequest extends Message<GetListRecordsRequest> {
-  /**
-   * @generated from field: repeated string uris = 1;
-   */
-  uris: string[] = []
-
-  constructor(data?: PartialMessage<GetListRecordsRequest>) {
-    super()
-    proto3.util.initPartial(data, this)
-  }
-
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'gndr.GetListRecordsRequest'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
@@ -930,6 +900,15 @@ export class GetListRecordsRequest extends Message<GetListRecordsRequest> {
       repeated: true,
     },
   ])
+  /**
+   * @generated from field: repeated string uris = 1;
+   */
+  uris: string[] = []
+
+  constructor(data?: PartialMessage<GetListRecordsRequest>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
 
   static fromBinary(
     bytes: Uint8Array,
@@ -964,6 +943,11 @@ export class GetListRecordsRequest extends Message<GetListRecordsRequest> {
  * @generated from message gndr.GetListRecordsResponse
  */
 export class GetListRecordsResponse extends Message<GetListRecordsResponse> {
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'gndr.GetListRecordsResponse'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: 'records', kind: 'message', T: Record, repeated: true },
+  ])
   /**
    * @generated from field: repeated gndr.Record records = 1;
    */
@@ -973,12 +957,6 @@ export class GetListRecordsResponse extends Message<GetListRecordsResponse> {
     super()
     proto3.util.initPartial(data, this)
   }
-
-  static readonly runtime: typeof proto3 = proto3
-  static readonly typeName = 'gndr.GetListRecordsResponse'
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'records', kind: 'message', T: Record, repeated: true },
-  ])
 
   static fromBinary(
     bytes: Uint8Array,
@@ -1019,46 +997,6 @@ export class GetListRecordsResponse extends Message<GetListRecordsResponse> {
  * @generated from message gndr.PostRecordMeta
  */
 export class PostRecordMeta extends Message<PostRecordMeta> {
-  /**
-   * @generated from field: bool violates_thread_gate = 1;
-   */
-  violatesThreadGate = false
-
-  /**
-   * @generated from field: bool has_media = 2;
-   */
-  hasMedia = false
-
-  /**
-   * @generated from field: bool is_reply = 3;
-   */
-  isReply = false
-
-  /**
-   * @generated from field: bool violates_embedding_rules = 4;
-   */
-  violatesEmbeddingRules = false
-
-  /**
-   * @generated from field: bool has_post_gate = 5;
-   */
-  hasPostGate = false
-
-  /**
-   * @generated from field: bool has_thread_gate = 6;
-   */
-  hasThreadGate = false
-
-  /**
-   * @generated from field: bool has_video = 7;
-   */
-  hasVideo = false
-
-  constructor(data?: PartialMessage<PostRecordMeta>) {
-    super()
-    proto3.util.initPartial(data, this)
-  }
-
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'gndr.PostRecordMeta'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
@@ -1090,6 +1028,39 @@ export class PostRecordMeta extends Message<PostRecordMeta> {
     },
     { no: 7, name: 'has_video', kind: 'scalar', T: 8 /* ScalarType.BOOL */ },
   ])
+  /**
+   * @generated from field: bool violates_thread_gate = 1;
+   */
+  violatesThreadGate = false
+  /**
+   * @generated from field: bool has_media = 2;
+   */
+  hasMedia = false
+  /**
+   * @generated from field: bool is_reply = 3;
+   */
+  isReply = false
+  /**
+   * @generated from field: bool violates_embedding_rules = 4;
+   */
+  violatesEmbeddingRules = false
+  /**
+   * @generated from field: bool has_post_gate = 5;
+   */
+  hasPostGate = false
+  /**
+   * @generated from field: bool has_thread_gate = 6;
+   */
+  hasThreadGate = false
+  /**
+   * @generated from field: bool has_video = 7;
+   */
+  hasVideo = false
+
+  constructor(data?: PartialMessage<PostRecordMeta>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
 
   static fromBinary(
     bytes: Uint8Array,
@@ -1124,16 +1095,6 @@ export class PostRecordMeta extends Message<PostRecordMeta> {
  * @generated from message gndr.GetPostRecordsRequest
  */
 export class GetPostRecordsRequest extends Message<GetPostRecordsRequest> {
-  /**
-   * @generated from field: repeated string uris = 1;
-   */
-  uris: string[] = []
-
-  constructor(data?: PartialMessage<GetPostRecordsRequest>) {
-    super()
-    proto3.util.initPartial(data, this)
-  }
-
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'gndr.GetPostRecordsRequest'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
@@ -1145,6 +1106,15 @@ export class GetPostRecordsRequest extends Message<GetPostRecordsRequest> {
       repeated: true,
     },
   ])
+  /**
+   * @generated from field: repeated string uris = 1;
+   */
+  uris: string[] = []
+
+  constructor(data?: PartialMessage<GetPostRecordsRequest>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
 
   static fromBinary(
     bytes: Uint8Array,
@@ -1179,11 +1149,16 @@ export class GetPostRecordsRequest extends Message<GetPostRecordsRequest> {
  * @generated from message gndr.GetPostRecordsResponse
  */
 export class GetPostRecordsResponse extends Message<GetPostRecordsResponse> {
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'gndr.GetPostRecordsResponse'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: 'records', kind: 'message', T: Record, repeated: true },
+    { no: 2, name: 'meta', kind: 'message', T: PostRecordMeta, repeated: true },
+  ])
   /**
    * @generated from field: repeated gndr.Record records = 1;
    */
   records: Record[] = []
-
   /**
    * @generated from field: repeated gndr.PostRecordMeta meta = 2;
    */
@@ -1193,13 +1168,6 @@ export class GetPostRecordsResponse extends Message<GetPostRecordsResponse> {
     super()
     proto3.util.initPartial(data, this)
   }
-
-  static readonly runtime: typeof proto3 = proto3
-  static readonly typeName = 'gndr.GetPostRecordsResponse'
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'records', kind: 'message', T: Record, repeated: true },
-    { no: 2, name: 'meta', kind: 'message', T: PostRecordMeta, repeated: true },
-  ])
 
   static fromBinary(
     bytes: Uint8Array,
@@ -1240,16 +1208,6 @@ export class GetPostRecordsResponse extends Message<GetPostRecordsResponse> {
  * @generated from message gndr.GetProfileRecordsRequest
  */
 export class GetProfileRecordsRequest extends Message<GetProfileRecordsRequest> {
-  /**
-   * @generated from field: repeated string uris = 1;
-   */
-  uris: string[] = []
-
-  constructor(data?: PartialMessage<GetProfileRecordsRequest>) {
-    super()
-    proto3.util.initPartial(data, this)
-  }
-
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'gndr.GetProfileRecordsRequest'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
@@ -1261,6 +1219,15 @@ export class GetProfileRecordsRequest extends Message<GetProfileRecordsRequest> 
       repeated: true,
     },
   ])
+  /**
+   * @generated from field: repeated string uris = 1;
+   */
+  uris: string[] = []
+
+  constructor(data?: PartialMessage<GetProfileRecordsRequest>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
 
   static fromBinary(
     bytes: Uint8Array,
@@ -1301,6 +1268,11 @@ export class GetProfileRecordsRequest extends Message<GetProfileRecordsRequest> 
  * @generated from message gndr.GetProfileRecordsResponse
  */
 export class GetProfileRecordsResponse extends Message<GetProfileRecordsResponse> {
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'gndr.GetProfileRecordsResponse'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: 'records', kind: 'message', T: Record, repeated: true },
+  ])
   /**
    * @generated from field: repeated gndr.Record records = 1;
    */
@@ -1310,12 +1282,6 @@ export class GetProfileRecordsResponse extends Message<GetProfileRecordsResponse
     super()
     proto3.util.initPartial(data, this)
   }
-
-  static readonly runtime: typeof proto3 = proto3
-  static readonly typeName = 'gndr.GetProfileRecordsResponse'
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'records', kind: 'message', T: Record, repeated: true },
-  ])
 
   static fromBinary(
     bytes: Uint8Array,
@@ -1356,16 +1322,6 @@ export class GetProfileRecordsResponse extends Message<GetProfileRecordsResponse
  * @generated from message gndr.GetActorChatDeclarationRecordsRequest
  */
 export class GetActorChatDeclarationRecordsRequest extends Message<GetActorChatDeclarationRecordsRequest> {
-  /**
-   * @generated from field: repeated string uris = 1;
-   */
-  uris: string[] = []
-
-  constructor(data?: PartialMessage<GetActorChatDeclarationRecordsRequest>) {
-    super()
-    proto3.util.initPartial(data, this)
-  }
-
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'gndr.GetActorChatDeclarationRecordsRequest'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
@@ -1377,6 +1333,15 @@ export class GetActorChatDeclarationRecordsRequest extends Message<GetActorChatD
       repeated: true,
     },
   ])
+  /**
+   * @generated from field: repeated string uris = 1;
+   */
+  uris: string[] = []
+
+  constructor(data?: PartialMessage<GetActorChatDeclarationRecordsRequest>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
 
   static fromBinary(
     bytes: Uint8Array,
@@ -1426,6 +1391,11 @@ export class GetActorChatDeclarationRecordsRequest extends Message<GetActorChatD
  * @generated from message gndr.GetActorChatDeclarationRecordsResponse
  */
 export class GetActorChatDeclarationRecordsResponse extends Message<GetActorChatDeclarationRecordsResponse> {
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'gndr.GetActorChatDeclarationRecordsResponse'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: 'records', kind: 'message', T: Record, repeated: true },
+  ])
   /**
    * @generated from field: repeated gndr.Record records = 1;
    */
@@ -1435,12 +1405,6 @@ export class GetActorChatDeclarationRecordsResponse extends Message<GetActorChat
     super()
     proto3.util.initPartial(data, this)
   }
-
-  static readonly runtime: typeof proto3 = proto3
-  static readonly typeName = 'gndr.GetActorChatDeclarationRecordsResponse'
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'records', kind: 'message', T: Record, repeated: true },
-  ])
 
   static fromBinary(
     bytes: Uint8Array,
@@ -1490,16 +1454,6 @@ export class GetActorChatDeclarationRecordsResponse extends Message<GetActorChat
  * @generated from message gndr.GetNotificationDeclarationRecordsRequest
  */
 export class GetNotificationDeclarationRecordsRequest extends Message<GetNotificationDeclarationRecordsRequest> {
-  /**
-   * @generated from field: repeated string uris = 1;
-   */
-  uris: string[] = []
-
-  constructor(data?: PartialMessage<GetNotificationDeclarationRecordsRequest>) {
-    super()
-    proto3.util.initPartial(data, this)
-  }
-
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'gndr.GetNotificationDeclarationRecordsRequest'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
@@ -1511,6 +1465,15 @@ export class GetNotificationDeclarationRecordsRequest extends Message<GetNotific
       repeated: true,
     },
   ])
+  /**
+   * @generated from field: repeated string uris = 1;
+   */
+  uris: string[] = []
+
+  constructor(data?: PartialMessage<GetNotificationDeclarationRecordsRequest>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
 
   static fromBinary(
     bytes: Uint8Array,
@@ -1560,6 +1523,11 @@ export class GetNotificationDeclarationRecordsRequest extends Message<GetNotific
  * @generated from message gndr.GetNotificationDeclarationRecordsResponse
  */
 export class GetNotificationDeclarationRecordsResponse extends Message<GetNotificationDeclarationRecordsResponse> {
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'gndr.GetNotificationDeclarationRecordsResponse'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: 'records', kind: 'message', T: Record, repeated: true },
+  ])
   /**
    * @generated from field: repeated gndr.Record records = 1;
    */
@@ -1571,12 +1539,6 @@ export class GetNotificationDeclarationRecordsResponse extends Message<GetNotifi
     super()
     proto3.util.initPartial(data, this)
   }
-
-  static readonly runtime: typeof proto3 = proto3
-  static readonly typeName = 'gndr.GetNotificationDeclarationRecordsResponse'
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'records', kind: 'message', T: Record, repeated: true },
-  ])
 
   static fromBinary(
     bytes: Uint8Array,
@@ -1626,16 +1588,6 @@ export class GetNotificationDeclarationRecordsResponse extends Message<GetNotifi
  * @generated from message gndr.GetStatusRecordsRequest
  */
 export class GetStatusRecordsRequest extends Message<GetStatusRecordsRequest> {
-  /**
-   * @generated from field: repeated string uris = 1;
-   */
-  uris: string[] = []
-
-  constructor(data?: PartialMessage<GetStatusRecordsRequest>) {
-    super()
-    proto3.util.initPartial(data, this)
-  }
-
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'gndr.GetStatusRecordsRequest'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
@@ -1647,6 +1599,15 @@ export class GetStatusRecordsRequest extends Message<GetStatusRecordsRequest> {
       repeated: true,
     },
   ])
+  /**
+   * @generated from field: repeated string uris = 1;
+   */
+  uris: string[] = []
+
+  constructor(data?: PartialMessage<GetStatusRecordsRequest>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
 
   static fromBinary(
     bytes: Uint8Array,
@@ -1687,6 +1648,11 @@ export class GetStatusRecordsRequest extends Message<GetStatusRecordsRequest> {
  * @generated from message gndr.GetStatusRecordsResponse
  */
 export class GetStatusRecordsResponse extends Message<GetStatusRecordsResponse> {
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'gndr.GetStatusRecordsResponse'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: 'records', kind: 'message', T: Record, repeated: true },
+  ])
   /**
    * @generated from field: repeated gndr.Record records = 1;
    */
@@ -1696,12 +1662,6 @@ export class GetStatusRecordsResponse extends Message<GetStatusRecordsResponse> 
     super()
     proto3.util.initPartial(data, this)
   }
-
-  static readonly runtime: typeof proto3 = proto3
-  static readonly typeName = 'gndr.GetStatusRecordsResponse'
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'records', kind: 'message', T: Record, repeated: true },
-  ])
 
   static fromBinary(
     bytes: Uint8Array,
@@ -1742,16 +1702,6 @@ export class GetStatusRecordsResponse extends Message<GetStatusRecordsResponse> 
  * @generated from message gndr.GetRepostRecordsRequest
  */
 export class GetRepostRecordsRequest extends Message<GetRepostRecordsRequest> {
-  /**
-   * @generated from field: repeated string uris = 1;
-   */
-  uris: string[] = []
-
-  constructor(data?: PartialMessage<GetRepostRecordsRequest>) {
-    super()
-    proto3.util.initPartial(data, this)
-  }
-
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'gndr.GetRepostRecordsRequest'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
@@ -1763,6 +1713,15 @@ export class GetRepostRecordsRequest extends Message<GetRepostRecordsRequest> {
       repeated: true,
     },
   ])
+  /**
+   * @generated from field: repeated string uris = 1;
+   */
+  uris: string[] = []
+
+  constructor(data?: PartialMessage<GetRepostRecordsRequest>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
 
   static fromBinary(
     bytes: Uint8Array,
@@ -1803,6 +1762,11 @@ export class GetRepostRecordsRequest extends Message<GetRepostRecordsRequest> {
  * @generated from message gndr.GetRepostRecordsResponse
  */
 export class GetRepostRecordsResponse extends Message<GetRepostRecordsResponse> {
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'gndr.GetRepostRecordsResponse'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: 'records', kind: 'message', T: Record, repeated: true },
+  ])
   /**
    * @generated from field: repeated gndr.Record records = 1;
    */
@@ -1812,12 +1776,6 @@ export class GetRepostRecordsResponse extends Message<GetRepostRecordsResponse> 
     super()
     proto3.util.initPartial(data, this)
   }
-
-  static readonly runtime: typeof proto3 = proto3
-  static readonly typeName = 'gndr.GetRepostRecordsResponse'
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'records', kind: 'message', T: Record, repeated: true },
-  ])
 
   static fromBinary(
     bytes: Uint8Array,
@@ -1858,16 +1816,6 @@ export class GetRepostRecordsResponse extends Message<GetRepostRecordsResponse> 
  * @generated from message gndr.GetThreadGateRecordsRequest
  */
 export class GetThreadGateRecordsRequest extends Message<GetThreadGateRecordsRequest> {
-  /**
-   * @generated from field: repeated string uris = 1;
-   */
-  uris: string[] = []
-
-  constructor(data?: PartialMessage<GetThreadGateRecordsRequest>) {
-    super()
-    proto3.util.initPartial(data, this)
-  }
-
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'gndr.GetThreadGateRecordsRequest'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
@@ -1879,6 +1827,15 @@ export class GetThreadGateRecordsRequest extends Message<GetThreadGateRecordsReq
       repeated: true,
     },
   ])
+  /**
+   * @generated from field: repeated string uris = 1;
+   */
+  uris: string[] = []
+
+  constructor(data?: PartialMessage<GetThreadGateRecordsRequest>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
 
   static fromBinary(
     bytes: Uint8Array,
@@ -1919,6 +1876,11 @@ export class GetThreadGateRecordsRequest extends Message<GetThreadGateRecordsReq
  * @generated from message gndr.GetThreadGateRecordsResponse
  */
 export class GetThreadGateRecordsResponse extends Message<GetThreadGateRecordsResponse> {
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'gndr.GetThreadGateRecordsResponse'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: 'records', kind: 'message', T: Record, repeated: true },
+  ])
   /**
    * @generated from field: repeated gndr.Record records = 1;
    */
@@ -1928,12 +1890,6 @@ export class GetThreadGateRecordsResponse extends Message<GetThreadGateRecordsRe
     super()
     proto3.util.initPartial(data, this)
   }
-
-  static readonly runtime: typeof proto3 = proto3
-  static readonly typeName = 'gndr.GetThreadGateRecordsResponse'
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'records', kind: 'message', T: Record, repeated: true },
-  ])
 
   static fromBinary(
     bytes: Uint8Array,
@@ -1977,16 +1933,6 @@ export class GetThreadGateRecordsResponse extends Message<GetThreadGateRecordsRe
  * @generated from message gndr.GetPostgateRecordsRequest
  */
 export class GetPostgateRecordsRequest extends Message<GetPostgateRecordsRequest> {
-  /**
-   * @generated from field: repeated string uris = 1;
-   */
-  uris: string[] = []
-
-  constructor(data?: PartialMessage<GetPostgateRecordsRequest>) {
-    super()
-    proto3.util.initPartial(data, this)
-  }
-
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'gndr.GetPostgateRecordsRequest'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
@@ -1998,6 +1944,15 @@ export class GetPostgateRecordsRequest extends Message<GetPostgateRecordsRequest
       repeated: true,
     },
   ])
+  /**
+   * @generated from field: repeated string uris = 1;
+   */
+  uris: string[] = []
+
+  constructor(data?: PartialMessage<GetPostgateRecordsRequest>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
 
   static fromBinary(
     bytes: Uint8Array,
@@ -2038,6 +1993,11 @@ export class GetPostgateRecordsRequest extends Message<GetPostgateRecordsRequest
  * @generated from message gndr.GetPostgateRecordsResponse
  */
 export class GetPostgateRecordsResponse extends Message<GetPostgateRecordsResponse> {
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'gndr.GetPostgateRecordsResponse'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: 'records', kind: 'message', T: Record, repeated: true },
+  ])
   /**
    * @generated from field: repeated gndr.Record records = 1;
    */
@@ -2047,12 +2007,6 @@ export class GetPostgateRecordsResponse extends Message<GetPostgateRecordsRespon
     super()
     proto3.util.initPartial(data, this)
   }
-
-  static readonly runtime: typeof proto3 = proto3
-  static readonly typeName = 'gndr.GetPostgateRecordsResponse'
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'records', kind: 'message', T: Record, repeated: true },
-  ])
 
   static fromBinary(
     bytes: Uint8Array,
@@ -2093,16 +2047,6 @@ export class GetPostgateRecordsResponse extends Message<GetPostgateRecordsRespon
  * @generated from message gndr.GetLabelerRecordsRequest
  */
 export class GetLabelerRecordsRequest extends Message<GetLabelerRecordsRequest> {
-  /**
-   * @generated from field: repeated string uris = 1;
-   */
-  uris: string[] = []
-
-  constructor(data?: PartialMessage<GetLabelerRecordsRequest>) {
-    super()
-    proto3.util.initPartial(data, this)
-  }
-
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'gndr.GetLabelerRecordsRequest'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
@@ -2114,6 +2058,15 @@ export class GetLabelerRecordsRequest extends Message<GetLabelerRecordsRequest> 
       repeated: true,
     },
   ])
+  /**
+   * @generated from field: repeated string uris = 1;
+   */
+  uris: string[] = []
+
+  constructor(data?: PartialMessage<GetLabelerRecordsRequest>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
 
   static fromBinary(
     bytes: Uint8Array,
@@ -2154,6 +2107,11 @@ export class GetLabelerRecordsRequest extends Message<GetLabelerRecordsRequest> 
  * @generated from message gndr.GetLabelerRecordsResponse
  */
 export class GetLabelerRecordsResponse extends Message<GetLabelerRecordsResponse> {
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'gndr.GetLabelerRecordsResponse'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: 'records', kind: 'message', T: Record, repeated: true },
+  ])
   /**
    * @generated from field: repeated gndr.Record records = 1;
    */
@@ -2163,12 +2121,6 @@ export class GetLabelerRecordsResponse extends Message<GetLabelerRecordsResponse
     super()
     proto3.util.initPartial(data, this)
   }
-
-  static readonly runtime: typeof proto3 = proto3
-  static readonly typeName = 'gndr.GetLabelerRecordsResponse'
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'records', kind: 'message', T: Record, repeated: true },
-  ])
 
   static fromBinary(
     bytes: Uint8Array,
@@ -2209,14 +2161,14 @@ export class GetLabelerRecordsResponse extends Message<GetLabelerRecordsResponse
  * @generated from message gndr.GetAllLabelersRequest
  */
 export class GetAllLabelersRequest extends Message<GetAllLabelersRequest> {
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'gndr.GetAllLabelersRequest'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [])
+
   constructor(data?: PartialMessage<GetAllLabelersRequest>) {
     super()
     proto3.util.initPartial(data, this)
   }
-
-  static readonly runtime: typeof proto3 = proto3
-  static readonly typeName = 'gndr.GetAllLabelersRequest'
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [])
 
   static fromBinary(
     bytes: Uint8Array,
@@ -2251,21 +2203,6 @@ export class GetAllLabelersRequest extends Message<GetAllLabelersRequest> {
  * @generated from message gndr.GetAllLabelersResponse
  */
 export class GetAllLabelersResponse extends Message<GetAllLabelersResponse> {
-  /**
-   * @generated from field: repeated string uris = 1;
-   */
-  uris: string[] = []
-
-  /**
-   * @generated from field: repeated gndr.Record records = 2;
-   */
-  records: Record[] = []
-
-  constructor(data?: PartialMessage<GetAllLabelersResponse>) {
-    super()
-    proto3.util.initPartial(data, this)
-  }
-
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'gndr.GetAllLabelersResponse'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
@@ -2278,6 +2215,19 @@ export class GetAllLabelersResponse extends Message<GetAllLabelersResponse> {
     },
     { no: 2, name: 'records', kind: 'message', T: Record, repeated: true },
   ])
+  /**
+   * @generated from field: repeated string uris = 1;
+   */
+  uris: string[] = []
+  /**
+   * @generated from field: repeated gndr.Record records = 2;
+   */
+  records: Record[] = []
+
+  constructor(data?: PartialMessage<GetAllLabelersResponse>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
 
   static fromBinary(
     bytes: Uint8Array,
@@ -2318,16 +2268,6 @@ export class GetAllLabelersResponse extends Message<GetAllLabelersResponse> {
  * @generated from message gndr.GetStarterPackRecordsRequest
  */
 export class GetStarterPackRecordsRequest extends Message<GetStarterPackRecordsRequest> {
-  /**
-   * @generated from field: repeated string uris = 1;
-   */
-  uris: string[] = []
-
-  constructor(data?: PartialMessage<GetStarterPackRecordsRequest>) {
-    super()
-    proto3.util.initPartial(data, this)
-  }
-
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'gndr.GetStarterPackRecordsRequest'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
@@ -2339,6 +2279,15 @@ export class GetStarterPackRecordsRequest extends Message<GetStarterPackRecordsR
       repeated: true,
     },
   ])
+  /**
+   * @generated from field: repeated string uris = 1;
+   */
+  uris: string[] = []
+
+  constructor(data?: PartialMessage<GetStarterPackRecordsRequest>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
 
   static fromBinary(
     bytes: Uint8Array,
@@ -2382,6 +2331,11 @@ export class GetStarterPackRecordsRequest extends Message<GetStarterPackRecordsR
  * @generated from message gndr.GetStarterPackRecordsResponse
  */
 export class GetStarterPackRecordsResponse extends Message<GetStarterPackRecordsResponse> {
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'gndr.GetStarterPackRecordsResponse'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: 'records', kind: 'message', T: Record, repeated: true },
+  ])
   /**
    * @generated from field: repeated gndr.Record records = 1;
    */
@@ -2391,12 +2345,6 @@ export class GetStarterPackRecordsResponse extends Message<GetStarterPackRecords
     super()
     proto3.util.initPartial(data, this)
   }
-
-  static readonly runtime: typeof proto3 = proto3
-  static readonly typeName = 'gndr.GetStarterPackRecordsResponse'
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'records', kind: 'message', T: Record, repeated: true },
-  ])
 
   static fromBinary(
     bytes: Uint8Array,
@@ -2443,21 +2391,6 @@ export class GetStarterPackRecordsResponse extends Message<GetStarterPackRecords
  * @generated from message gndr.GetActorFollowsActorsRequest
  */
 export class GetActorFollowsActorsRequest extends Message<GetActorFollowsActorsRequest> {
-  /**
-   * @generated from field: string actor_did = 1;
-   */
-  actorDid = ''
-
-  /**
-   * @generated from field: repeated string target_dids = 2;
-   */
-  targetDids: string[] = []
-
-  constructor(data?: PartialMessage<GetActorFollowsActorsRequest>) {
-    super()
-    proto3.util.initPartial(data, this)
-  }
-
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'gndr.GetActorFollowsActorsRequest'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
@@ -2470,6 +2403,19 @@ export class GetActorFollowsActorsRequest extends Message<GetActorFollowsActorsR
       repeated: true,
     },
   ])
+  /**
+   * @generated from field: string actor_did = 1;
+   */
+  actorDid = ''
+  /**
+   * @generated from field: repeated string target_dids = 2;
+   */
+  targetDids: string[] = []
+
+  constructor(data?: PartialMessage<GetActorFollowsActorsRequest>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
 
   static fromBinary(
     bytes: Uint8Array,
@@ -2513,16 +2459,6 @@ export class GetActorFollowsActorsRequest extends Message<GetActorFollowsActorsR
  * @generated from message gndr.GetActorFollowsActorsResponse
  */
 export class GetActorFollowsActorsResponse extends Message<GetActorFollowsActorsResponse> {
-  /**
-   * @generated from field: repeated string uris = 1;
-   */
-  uris: string[] = []
-
-  constructor(data?: PartialMessage<GetActorFollowsActorsResponse>) {
-    super()
-    proto3.util.initPartial(data, this)
-  }
-
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'gndr.GetActorFollowsActorsResponse'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
@@ -2534,6 +2470,15 @@ export class GetActorFollowsActorsResponse extends Message<GetActorFollowsActors
       repeated: true,
     },
   ])
+  /**
+   * @generated from field: repeated string uris = 1;
+   */
+  uris: string[] = []
+
+  constructor(data?: PartialMessage<GetActorFollowsActorsResponse>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
 
   static fromBinary(
     bytes: Uint8Array,
@@ -2580,16 +2525,21 @@ export class GetActorFollowsActorsResponse extends Message<GetActorFollowsActors
  * @generated from message gndr.GetFollowersRequest
  */
 export class GetFollowersRequest extends Message<GetFollowersRequest> {
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'gndr.GetFollowersRequest'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: 'actor_did', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: 'limit', kind: 'scalar', T: 5 /* ScalarType.INT32 */ },
+    { no: 3, name: 'cursor', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+  ])
   /**
    * @generated from field: string actor_did = 1;
    */
   actorDid = ''
-
   /**
    * @generated from field: int32 limit = 2;
    */
   limit = 0
-
   /**
    * @generated from field: string cursor = 3;
    */
@@ -2599,14 +2549,6 @@ export class GetFollowersRequest extends Message<GetFollowersRequest> {
     super()
     proto3.util.initPartial(data, this)
   }
-
-  static readonly runtime: typeof proto3 = proto3
-  static readonly typeName = 'gndr.GetFollowersRequest'
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'actor_did', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: 'limit', kind: 'scalar', T: 5 /* ScalarType.INT32 */ },
-    { no: 3, name: 'cursor', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-  ])
 
   static fromBinary(
     bytes: Uint8Array,
@@ -2641,26 +2583,6 @@ export class GetFollowersRequest extends Message<GetFollowersRequest> {
  * @generated from message gndr.FollowInfo
  */
 export class FollowInfo extends Message<FollowInfo> {
-  /**
-   * @generated from field: string uri = 1;
-   */
-  uri = ''
-
-  /**
-   * @generated from field: string actor_did = 2;
-   */
-  actorDid = ''
-
-  /**
-   * @generated from field: string subject_did = 3;
-   */
-  subjectDid = ''
-
-  constructor(data?: PartialMessage<FollowInfo>) {
-    super()
-    proto3.util.initPartial(data, this)
-  }
-
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'gndr.FollowInfo'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
@@ -2673,6 +2595,23 @@ export class FollowInfo extends Message<FollowInfo> {
       T: 9 /* ScalarType.STRING */,
     },
   ])
+  /**
+   * @generated from field: string uri = 1;
+   */
+  uri = ''
+  /**
+   * @generated from field: string actor_did = 2;
+   */
+  actorDid = ''
+  /**
+   * @generated from field: string subject_did = 3;
+   */
+  subjectDid = ''
+
+  constructor(data?: PartialMessage<FollowInfo>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
 
   static fromBinary(
     bytes: Uint8Array,
@@ -2707,21 +2646,6 @@ export class FollowInfo extends Message<FollowInfo> {
  * @generated from message gndr.GetFollowersResponse
  */
 export class GetFollowersResponse extends Message<GetFollowersResponse> {
-  /**
-   * @generated from field: repeated gndr.FollowInfo followers = 1;
-   */
-  followers: FollowInfo[] = []
-
-  /**
-   * @generated from field: string cursor = 2;
-   */
-  cursor = ''
-
-  constructor(data?: PartialMessage<GetFollowersResponse>) {
-    super()
-    proto3.util.initPartial(data, this)
-  }
-
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'gndr.GetFollowersResponse'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
@@ -2734,6 +2658,19 @@ export class GetFollowersResponse extends Message<GetFollowersResponse> {
     },
     { no: 2, name: 'cursor', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
   ])
+  /**
+   * @generated from field: repeated gndr.FollowInfo followers = 1;
+   */
+  followers: FollowInfo[] = []
+  /**
+   * @generated from field: string cursor = 2;
+   */
+  cursor = ''
+
+  constructor(data?: PartialMessage<GetFollowersResponse>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
 
   static fromBinary(
     bytes: Uint8Array,
@@ -2771,16 +2708,21 @@ export class GetFollowersResponse extends Message<GetFollowersResponse> {
  * @generated from message gndr.GetFollowsRequest
  */
 export class GetFollowsRequest extends Message<GetFollowsRequest> {
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'gndr.GetFollowsRequest'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: 'actor_did', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: 'limit', kind: 'scalar', T: 5 /* ScalarType.INT32 */ },
+    { no: 3, name: 'cursor', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+  ])
   /**
    * @generated from field: string actor_did = 1;
    */
   actorDid = ''
-
   /**
    * @generated from field: int32 limit = 2;
    */
   limit = 0
-
   /**
    * @generated from field: string cursor = 3;
    */
@@ -2790,14 +2732,6 @@ export class GetFollowsRequest extends Message<GetFollowsRequest> {
     super()
     proto3.util.initPartial(data, this)
   }
-
-  static readonly runtime: typeof proto3 = proto3
-  static readonly typeName = 'gndr.GetFollowsRequest'
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'actor_did', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: 'limit', kind: 'scalar', T: 5 /* ScalarType.INT32 */ },
-    { no: 3, name: 'cursor', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-  ])
 
   static fromBinary(
     bytes: Uint8Array,
@@ -2832,11 +2766,16 @@ export class GetFollowsRequest extends Message<GetFollowsRequest> {
  * @generated from message gndr.GetFollowsResponse
  */
 export class GetFollowsResponse extends Message<GetFollowsResponse> {
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'gndr.GetFollowsResponse'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: 'follows', kind: 'message', T: FollowInfo, repeated: true },
+    { no: 2, name: 'cursor', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+  ])
   /**
    * @generated from field: repeated gndr.FollowInfo follows = 1;
    */
   follows: FollowInfo[] = []
-
   /**
    * @generated from field: string cursor = 2;
    */
@@ -2846,13 +2785,6 @@ export class GetFollowsResponse extends Message<GetFollowsResponse> {
     super()
     proto3.util.initPartial(data, this)
   }
-
-  static readonly runtime: typeof proto3 = proto3
-  static readonly typeName = 'gndr.GetFollowsResponse'
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'follows', kind: 'message', T: FollowInfo, repeated: true },
-    { no: 2, name: 'cursor', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-  ])
 
   static fromBinary(
     bytes: Uint8Array,
@@ -2887,31 +2819,6 @@ export class GetFollowsResponse extends Message<GetFollowsResponse> {
  * @generated from message gndr.VerificationMeta
  */
 export class VerificationMeta extends Message<VerificationMeta> {
-  /**
-   * @generated from field: string rkey = 1;
-   */
-  rkey = ''
-
-  /**
-   * @generated from field: string handle = 2;
-   */
-  handle = ''
-
-  /**
-   * @generated from field: string display_name = 3;
-   */
-  displayName = ''
-
-  /**
-   * @generated from field: google.protobuf.Timestamp sorted_at = 4;
-   */
-  sortedAt?: Timestamp
-
-  constructor(data?: PartialMessage<VerificationMeta>) {
-    super()
-    proto3.util.initPartial(data, this)
-  }
-
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'gndr.VerificationMeta'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
@@ -2925,6 +2832,27 @@ export class VerificationMeta extends Message<VerificationMeta> {
     },
     { no: 4, name: 'sorted_at', kind: 'message', T: Timestamp },
   ])
+  /**
+   * @generated from field: string rkey = 1;
+   */
+  rkey = ''
+  /**
+   * @generated from field: string handle = 2;
+   */
+  handle = ''
+  /**
+   * @generated from field: string display_name = 3;
+   */
+  displayName = ''
+  /**
+   * @generated from field: google.protobuf.Timestamp sorted_at = 4;
+   */
+  sortedAt?: Timestamp
+
+  constructor(data?: PartialMessage<VerificationMeta>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
 
   static fromBinary(
     bytes: Uint8Array,
@@ -2959,16 +2887,6 @@ export class VerificationMeta extends Message<VerificationMeta> {
  * @generated from message gndr.GetVerificationRecordsRequest
  */
 export class GetVerificationRecordsRequest extends Message<GetVerificationRecordsRequest> {
-  /**
-   * @generated from field: repeated string uris = 1;
-   */
-  uris: string[] = []
-
-  constructor(data?: PartialMessage<GetVerificationRecordsRequest>) {
-    super()
-    proto3.util.initPartial(data, this)
-  }
-
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'gndr.GetVerificationRecordsRequest'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
@@ -2980,6 +2898,15 @@ export class GetVerificationRecordsRequest extends Message<GetVerificationRecord
       repeated: true,
     },
   ])
+  /**
+   * @generated from field: repeated string uris = 1;
+   */
+  uris: string[] = []
+
+  constructor(data?: PartialMessage<GetVerificationRecordsRequest>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
 
   static fromBinary(
     bytes: Uint8Array,
@@ -3023,6 +2950,11 @@ export class GetVerificationRecordsRequest extends Message<GetVerificationRecord
  * @generated from message gndr.GetVerificationRecordsResponse
  */
 export class GetVerificationRecordsResponse extends Message<GetVerificationRecordsResponse> {
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'gndr.GetVerificationRecordsResponse'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: 'records', kind: 'message', T: Record, repeated: true },
+  ])
   /**
    * @generated from field: repeated gndr.Record records = 1;
    */
@@ -3032,12 +2964,6 @@ export class GetVerificationRecordsResponse extends Message<GetVerificationRecor
     super()
     proto3.util.initPartial(data, this)
   }
-
-  static readonly runtime: typeof proto3 = proto3
-  static readonly typeName = 'gndr.GetVerificationRecordsResponse'
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'records', kind: 'message', T: Record, repeated: true },
-  ])
 
   static fromBinary(
     bytes: Uint8Array,
@@ -3081,41 +3007,6 @@ export class GetVerificationRecordsResponse extends Message<GetVerificationRecor
  * @generated from message gndr.VerificationIssued
  */
 export class VerificationIssued extends Message<VerificationIssued> {
-  /**
-   * @generated from field: string actor_did = 1;
-   */
-  actorDid = ''
-
-  /**
-   * @generated from field: string rkey = 2;
-   */
-  rkey = ''
-
-  /**
-   * @generated from field: string subject_did = 3;
-   */
-  subjectDid = ''
-
-  /**
-   * @generated from field: google.protobuf.Timestamp created_at = 7;
-   */
-  createdAt?: Timestamp
-
-  /**
-   * @generated from field: google.protobuf.Timestamp indexed_at = 8;
-   */
-  indexedAt?: Timestamp
-
-  /**
-   * @generated from field: google.protobuf.Timestamp sorted_at = 9;
-   */
-  sortedAt?: Timestamp
-
-  constructor(data?: PartialMessage<VerificationIssued>) {
-    super()
-    proto3.util.initPartial(data, this)
-  }
-
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'gndr.VerificationIssued'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
@@ -3131,6 +3022,35 @@ export class VerificationIssued extends Message<VerificationIssued> {
     { no: 8, name: 'indexed_at', kind: 'message', T: Timestamp },
     { no: 9, name: 'sorted_at', kind: 'message', T: Timestamp },
   ])
+  /**
+   * @generated from field: string actor_did = 1;
+   */
+  actorDid = ''
+  /**
+   * @generated from field: string rkey = 2;
+   */
+  rkey = ''
+  /**
+   * @generated from field: string subject_did = 3;
+   */
+  subjectDid = ''
+  /**
+   * @generated from field: google.protobuf.Timestamp created_at = 7;
+   */
+  createdAt?: Timestamp
+  /**
+   * @generated from field: google.protobuf.Timestamp indexed_at = 8;
+   */
+  indexedAt?: Timestamp
+  /**
+   * @generated from field: google.protobuf.Timestamp sorted_at = 9;
+   */
+  sortedAt?: Timestamp
+
+  constructor(data?: PartialMessage<VerificationIssued>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
 
   static fromBinary(
     bytes: Uint8Array,
@@ -3165,16 +3085,21 @@ export class VerificationIssued extends Message<VerificationIssued> {
  * @generated from message gndr.GetVerificationsIssuedRequest
  */
 export class GetVerificationsIssuedRequest extends Message<GetVerificationsIssuedRequest> {
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'gndr.GetVerificationsIssuedRequest'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: 'actor_did', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: 'limit', kind: 'scalar', T: 5 /* ScalarType.INT32 */ },
+    { no: 3, name: 'cursor', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+  ])
   /**
    * @generated from field: string actor_did = 1;
    */
   actorDid = ''
-
   /**
    * @generated from field: int32 limit = 2;
    */
   limit = 0
-
   /**
    * @generated from field: string cursor = 3;
    */
@@ -3184,14 +3109,6 @@ export class GetVerificationsIssuedRequest extends Message<GetVerificationsIssue
     super()
     proto3.util.initPartial(data, this)
   }
-
-  static readonly runtime: typeof proto3 = proto3
-  static readonly typeName = 'gndr.GetVerificationsIssuedRequest'
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'actor_did', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: 'limit', kind: 'scalar', T: 5 /* ScalarType.INT32 */ },
-    { no: 3, name: 'cursor', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-  ])
 
   static fromBinary(
     bytes: Uint8Array,
@@ -3235,21 +3152,6 @@ export class GetVerificationsIssuedRequest extends Message<GetVerificationsIssue
  * @generated from message gndr.GetVerificationsIssuedResponse
  */
 export class GetVerificationsIssuedResponse extends Message<GetVerificationsIssuedResponse> {
-  /**
-   * @generated from field: repeated gndr.VerificationIssued verifications = 1;
-   */
-  verifications: VerificationIssued[] = []
-
-  /**
-   * @generated from field: string cursor = 2;
-   */
-  cursor = ''
-
-  constructor(data?: PartialMessage<GetVerificationsIssuedResponse>) {
-    super()
-    proto3.util.initPartial(data, this)
-  }
-
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'gndr.GetVerificationsIssuedResponse'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
@@ -3262,6 +3164,19 @@ export class GetVerificationsIssuedResponse extends Message<GetVerificationsIssu
     },
     { no: 2, name: 'cursor', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
   ])
+  /**
+   * @generated from field: repeated gndr.VerificationIssued verifications = 1;
+   */
+  verifications: VerificationIssued[] = []
+  /**
+   * @generated from field: string cursor = 2;
+   */
+  cursor = ''
+
+  constructor(data?: PartialMessage<GetVerificationsIssuedResponse>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
 
   static fromBinary(
     bytes: Uint8Array,
@@ -3305,41 +3220,6 @@ export class GetVerificationsIssuedResponse extends Message<GetVerificationsIssu
  * @generated from message gndr.VerificationReceived
  */
 export class VerificationReceived extends Message<VerificationReceived> {
-  /**
-   * @generated from field: string actor_did = 1;
-   */
-  actorDid = ''
-
-  /**
-   * @generated from field: string rkey = 2;
-   */
-  rkey = ''
-
-  /**
-   * @generated from field: string subject_did = 3;
-   */
-  subjectDid = ''
-
-  /**
-   * @generated from field: google.protobuf.Timestamp created_at = 7;
-   */
-  createdAt?: Timestamp
-
-  /**
-   * @generated from field: google.protobuf.Timestamp indexed_at = 8;
-   */
-  indexedAt?: Timestamp
-
-  /**
-   * @generated from field: google.protobuf.Timestamp sorted_at = 9;
-   */
-  sortedAt?: Timestamp
-
-  constructor(data?: PartialMessage<VerificationReceived>) {
-    super()
-    proto3.util.initPartial(data, this)
-  }
-
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'gndr.VerificationReceived'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
@@ -3355,6 +3235,35 @@ export class VerificationReceived extends Message<VerificationReceived> {
     { no: 8, name: 'indexed_at', kind: 'message', T: Timestamp },
     { no: 9, name: 'sorted_at', kind: 'message', T: Timestamp },
   ])
+  /**
+   * @generated from field: string actor_did = 1;
+   */
+  actorDid = ''
+  /**
+   * @generated from field: string rkey = 2;
+   */
+  rkey = ''
+  /**
+   * @generated from field: string subject_did = 3;
+   */
+  subjectDid = ''
+  /**
+   * @generated from field: google.protobuf.Timestamp created_at = 7;
+   */
+  createdAt?: Timestamp
+  /**
+   * @generated from field: google.protobuf.Timestamp indexed_at = 8;
+   */
+  indexedAt?: Timestamp
+  /**
+   * @generated from field: google.protobuf.Timestamp sorted_at = 9;
+   */
+  sortedAt?: Timestamp
+
+  constructor(data?: PartialMessage<VerificationReceived>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
 
   static fromBinary(
     bytes: Uint8Array,
@@ -3389,26 +3298,6 @@ export class VerificationReceived extends Message<VerificationReceived> {
  * @generated from message gndr.GetVerificationsReceivedRequest
  */
 export class GetVerificationsReceivedRequest extends Message<GetVerificationsReceivedRequest> {
-  /**
-   * @generated from field: string subject_did = 1;
-   */
-  subjectDid = ''
-
-  /**
-   * @generated from field: int32 limit = 2;
-   */
-  limit = 0
-
-  /**
-   * @generated from field: string cursor = 3;
-   */
-  cursor = ''
-
-  constructor(data?: PartialMessage<GetVerificationsReceivedRequest>) {
-    super()
-    proto3.util.initPartial(data, this)
-  }
-
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'gndr.GetVerificationsReceivedRequest'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
@@ -3421,6 +3310,23 @@ export class GetVerificationsReceivedRequest extends Message<GetVerificationsRec
     { no: 2, name: 'limit', kind: 'scalar', T: 5 /* ScalarType.INT32 */ },
     { no: 3, name: 'cursor', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
   ])
+  /**
+   * @generated from field: string subject_did = 1;
+   */
+  subjectDid = ''
+  /**
+   * @generated from field: int32 limit = 2;
+   */
+  limit = 0
+  /**
+   * @generated from field: string cursor = 3;
+   */
+  cursor = ''
+
+  constructor(data?: PartialMessage<GetVerificationsReceivedRequest>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
 
   static fromBinary(
     bytes: Uint8Array,
@@ -3464,21 +3370,6 @@ export class GetVerificationsReceivedRequest extends Message<GetVerificationsRec
  * @generated from message gndr.GetVerificationsReceivedResponse
  */
 export class GetVerificationsReceivedResponse extends Message<GetVerificationsReceivedResponse> {
-  /**
-   * @generated from field: repeated gndr.VerificationReceived verifications = 1;
-   */
-  verifications: VerificationReceived[] = []
-
-  /**
-   * @generated from field: string cursor = 2;
-   */
-  cursor = ''
-
-  constructor(data?: PartialMessage<GetVerificationsReceivedResponse>) {
-    super()
-    proto3.util.initPartial(data, this)
-  }
-
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'gndr.GetVerificationsReceivedResponse'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
@@ -3491,6 +3382,19 @@ export class GetVerificationsReceivedResponse extends Message<GetVerificationsRe
     },
     { no: 2, name: 'cursor', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
   ])
+  /**
+   * @generated from field: repeated gndr.VerificationReceived verifications = 1;
+   */
+  verifications: VerificationReceived[] = []
+  /**
+   * @generated from field: string cursor = 2;
+   */
+  cursor = ''
+
+  constructor(data?: PartialMessage<GetVerificationsReceivedResponse>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
 
   static fromBinary(
     bytes: Uint8Array,
@@ -3537,16 +3441,21 @@ export class GetVerificationsReceivedResponse extends Message<GetVerificationsRe
  * @generated from message gndr.GetLikesBySubjectRequest
  */
 export class GetLikesBySubjectRequest extends Message<GetLikesBySubjectRequest> {
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'gndr.GetLikesBySubjectRequest'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: 'subject', kind: 'message', T: RecordRef },
+    { no: 2, name: 'limit', kind: 'scalar', T: 5 /* ScalarType.INT32 */ },
+    { no: 3, name: 'cursor', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+  ])
   /**
    * @generated from field: gndr.RecordRef subject = 1;
    */
   subject?: RecordRef
-
   /**
    * @generated from field: int32 limit = 2;
    */
   limit = 0
-
   /**
    * @generated from field: string cursor = 3;
    */
@@ -3556,14 +3465,6 @@ export class GetLikesBySubjectRequest extends Message<GetLikesBySubjectRequest> 
     super()
     proto3.util.initPartial(data, this)
   }
-
-  static readonly runtime: typeof proto3 = proto3
-  static readonly typeName = 'gndr.GetLikesBySubjectRequest'
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'subject', kind: 'message', T: RecordRef },
-    { no: 2, name: 'limit', kind: 'scalar', T: 5 /* ScalarType.INT32 */ },
-    { no: 3, name: 'cursor', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-  ])
 
   static fromBinary(
     bytes: Uint8Array,
@@ -3604,21 +3505,6 @@ export class GetLikesBySubjectRequest extends Message<GetLikesBySubjectRequest> 
  * @generated from message gndr.GetLikesBySubjectResponse
  */
 export class GetLikesBySubjectResponse extends Message<GetLikesBySubjectResponse> {
-  /**
-   * @generated from field: repeated string uris = 1;
-   */
-  uris: string[] = []
-
-  /**
-   * @generated from field: string cursor = 2;
-   */
-  cursor = ''
-
-  constructor(data?: PartialMessage<GetLikesBySubjectResponse>) {
-    super()
-    proto3.util.initPartial(data, this)
-  }
-
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'gndr.GetLikesBySubjectResponse'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
@@ -3631,6 +3517,19 @@ export class GetLikesBySubjectResponse extends Message<GetLikesBySubjectResponse
     },
     { no: 2, name: 'cursor', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
   ])
+  /**
+   * @generated from field: repeated string uris = 1;
+   */
+  uris: string[] = []
+  /**
+   * @generated from field: string cursor = 2;
+   */
+  cursor = ''
+
+  constructor(data?: PartialMessage<GetLikesBySubjectResponse>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
 
   static fromBinary(
     bytes: Uint8Array,
@@ -3671,16 +3570,21 @@ export class GetLikesBySubjectResponse extends Message<GetLikesBySubjectResponse
  * @generated from message gndr.GetLikesBySubjectSortedRequest
  */
 export class GetLikesBySubjectSortedRequest extends Message<GetLikesBySubjectSortedRequest> {
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'gndr.GetLikesBySubjectSortedRequest'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: 'subject', kind: 'message', T: RecordRef },
+    { no: 2, name: 'limit', kind: 'scalar', T: 5 /* ScalarType.INT32 */ },
+    { no: 3, name: 'cursor', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+  ])
   /**
    * @generated from field: gndr.RecordRef subject = 1;
    */
   subject?: RecordRef
-
   /**
    * @generated from field: int32 limit = 2;
    */
   limit = 0
-
   /**
    * @generated from field: string cursor = 3;
    */
@@ -3690,14 +3594,6 @@ export class GetLikesBySubjectSortedRequest extends Message<GetLikesBySubjectSor
     super()
     proto3.util.initPartial(data, this)
   }
-
-  static readonly runtime: typeof proto3 = proto3
-  static readonly typeName = 'gndr.GetLikesBySubjectSortedRequest'
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'subject', kind: 'message', T: RecordRef },
-    { no: 2, name: 'limit', kind: 'scalar', T: 5 /* ScalarType.INT32 */ },
-    { no: 3, name: 'cursor', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-  ])
 
   static fromBinary(
     bytes: Uint8Array,
@@ -3741,21 +3637,6 @@ export class GetLikesBySubjectSortedRequest extends Message<GetLikesBySubjectSor
  * @generated from message gndr.GetLikesBySubjectSortedResponse
  */
 export class GetLikesBySubjectSortedResponse extends Message<GetLikesBySubjectSortedResponse> {
-  /**
-   * @generated from field: repeated string uris = 1;
-   */
-  uris: string[] = []
-
-  /**
-   * @generated from field: string cursor = 2;
-   */
-  cursor = ''
-
-  constructor(data?: PartialMessage<GetLikesBySubjectSortedResponse>) {
-    super()
-    proto3.util.initPartial(data, this)
-  }
-
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'gndr.GetLikesBySubjectSortedResponse'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
@@ -3768,6 +3649,19 @@ export class GetLikesBySubjectSortedResponse extends Message<GetLikesBySubjectSo
     },
     { no: 2, name: 'cursor', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
   ])
+  /**
+   * @generated from field: repeated string uris = 1;
+   */
+  uris: string[] = []
+  /**
+   * @generated from field: string cursor = 2;
+   */
+  cursor = ''
+
+  constructor(data?: PartialMessage<GetLikesBySubjectSortedResponse>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
 
   static fromBinary(
     bytes: Uint8Array,
@@ -3811,16 +3705,21 @@ export class GetLikesBySubjectSortedResponse extends Message<GetLikesBySubjectSo
  * @generated from message gndr.GetQuotesBySubjectSortedRequest
  */
 export class GetQuotesBySubjectSortedRequest extends Message<GetQuotesBySubjectSortedRequest> {
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'gndr.GetQuotesBySubjectSortedRequest'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: 'subject', kind: 'message', T: RecordRef },
+    { no: 2, name: 'limit', kind: 'scalar', T: 5 /* ScalarType.INT32 */ },
+    { no: 3, name: 'cursor', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+  ])
   /**
    * @generated from field: gndr.RecordRef subject = 1;
    */
   subject?: RecordRef
-
   /**
    * @generated from field: int32 limit = 2;
    */
   limit = 0
-
   /**
    * @generated from field: string cursor = 3;
    */
@@ -3830,14 +3729,6 @@ export class GetQuotesBySubjectSortedRequest extends Message<GetQuotesBySubjectS
     super()
     proto3.util.initPartial(data, this)
   }
-
-  static readonly runtime: typeof proto3 = proto3
-  static readonly typeName = 'gndr.GetQuotesBySubjectSortedRequest'
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'subject', kind: 'message', T: RecordRef },
-    { no: 2, name: 'limit', kind: 'scalar', T: 5 /* ScalarType.INT32 */ },
-    { no: 3, name: 'cursor', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-  ])
 
   static fromBinary(
     bytes: Uint8Array,
@@ -3881,21 +3772,6 @@ export class GetQuotesBySubjectSortedRequest extends Message<GetQuotesBySubjectS
  * @generated from message gndr.GetQuotesBySubjectSortedResponse
  */
 export class GetQuotesBySubjectSortedResponse extends Message<GetQuotesBySubjectSortedResponse> {
-  /**
-   * @generated from field: repeated string uris = 1;
-   */
-  uris: string[] = []
-
-  /**
-   * @generated from field: string cursor = 2;
-   */
-  cursor = ''
-
-  constructor(data?: PartialMessage<GetQuotesBySubjectSortedResponse>) {
-    super()
-    proto3.util.initPartial(data, this)
-  }
-
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'gndr.GetQuotesBySubjectSortedResponse'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
@@ -3908,6 +3784,19 @@ export class GetQuotesBySubjectSortedResponse extends Message<GetQuotesBySubject
     },
     { no: 2, name: 'cursor', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
   ])
+  /**
+   * @generated from field: repeated string uris = 1;
+   */
+  uris: string[] = []
+  /**
+   * @generated from field: string cursor = 2;
+   */
+  cursor = ''
+
+  constructor(data?: PartialMessage<GetQuotesBySubjectSortedResponse>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
 
   static fromBinary(
     bytes: Uint8Array,
@@ -3954,11 +3843,16 @@ export class GetQuotesBySubjectSortedResponse extends Message<GetQuotesBySubject
  * @generated from message gndr.GetLikesByActorAndSubjectsRequest
  */
 export class GetLikesByActorAndSubjectsRequest extends Message<GetLikesByActorAndSubjectsRequest> {
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'gndr.GetLikesByActorAndSubjectsRequest'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: 'actor_did', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: 'refs', kind: 'message', T: RecordRef, repeated: true },
+  ])
   /**
    * @generated from field: string actor_did = 1;
    */
   actorDid = ''
-
   /**
    * @generated from field: repeated gndr.RecordRef refs = 2;
    */
@@ -3968,13 +3862,6 @@ export class GetLikesByActorAndSubjectsRequest extends Message<GetLikesByActorAn
     super()
     proto3.util.initPartial(data, this)
   }
-
-  static readonly runtime: typeof proto3 = proto3
-  static readonly typeName = 'gndr.GetLikesByActorAndSubjectsRequest'
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'actor_did', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: 'refs', kind: 'message', T: RecordRef, repeated: true },
-  ])
 
   static fromBinary(
     bytes: Uint8Array,
@@ -4018,16 +3905,6 @@ export class GetLikesByActorAndSubjectsRequest extends Message<GetLikesByActorAn
  * @generated from message gndr.GetLikesByActorAndSubjectsResponse
  */
 export class GetLikesByActorAndSubjectsResponse extends Message<GetLikesByActorAndSubjectsResponse> {
-  /**
-   * @generated from field: repeated string uris = 1;
-   */
-  uris: string[] = []
-
-  constructor(data?: PartialMessage<GetLikesByActorAndSubjectsResponse>) {
-    super()
-    proto3.util.initPartial(data, this)
-  }
-
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'gndr.GetLikesByActorAndSubjectsResponse'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
@@ -4039,6 +3916,15 @@ export class GetLikesByActorAndSubjectsResponse extends Message<GetLikesByActorA
       repeated: true,
     },
   ])
+  /**
+   * @generated from field: repeated string uris = 1;
+   */
+  uris: string[] = []
+
+  constructor(data?: PartialMessage<GetLikesByActorAndSubjectsResponse>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
 
   static fromBinary(
     bytes: Uint8Array,
@@ -4085,16 +3971,21 @@ export class GetLikesByActorAndSubjectsResponse extends Message<GetLikesByActorA
  * @generated from message gndr.GetActorLikesRequest
  */
 export class GetActorLikesRequest extends Message<GetActorLikesRequest> {
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'gndr.GetActorLikesRequest'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: 'actor_did', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: 'limit', kind: 'scalar', T: 5 /* ScalarType.INT32 */ },
+    { no: 3, name: 'cursor', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+  ])
   /**
    * @generated from field: string actor_did = 1;
    */
   actorDid = ''
-
   /**
    * @generated from field: int32 limit = 2;
    */
   limit = 0
-
   /**
    * @generated from field: string cursor = 3;
    */
@@ -4104,14 +3995,6 @@ export class GetActorLikesRequest extends Message<GetActorLikesRequest> {
     super()
     proto3.util.initPartial(data, this)
   }
-
-  static readonly runtime: typeof proto3 = proto3
-  static readonly typeName = 'gndr.GetActorLikesRequest'
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'actor_did', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: 'limit', kind: 'scalar', T: 5 /* ScalarType.INT32 */ },
-    { no: 3, name: 'cursor', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-  ])
 
   static fromBinary(
     bytes: Uint8Array,
@@ -4146,11 +4029,16 @@ export class GetActorLikesRequest extends Message<GetActorLikesRequest> {
  * @generated from message gndr.LikeInfo
  */
 export class LikeInfo extends Message<LikeInfo> {
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'gndr.LikeInfo'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: 'uri', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: 'subject', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+  ])
   /**
    * @generated from field: string uri = 1;
    */
   uri = ''
-
   /**
    * @generated from field: string subject = 2;
    */
@@ -4160,13 +4048,6 @@ export class LikeInfo extends Message<LikeInfo> {
     super()
     proto3.util.initPartial(data, this)
   }
-
-  static readonly runtime: typeof proto3 = proto3
-  static readonly typeName = 'gndr.LikeInfo'
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'uri', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: 'subject', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-  ])
 
   static fromBinary(
     bytes: Uint8Array,
@@ -4201,11 +4082,16 @@ export class LikeInfo extends Message<LikeInfo> {
  * @generated from message gndr.GetActorLikesResponse
  */
 export class GetActorLikesResponse extends Message<GetActorLikesResponse> {
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'gndr.GetActorLikesResponse'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: 'likes', kind: 'message', T: LikeInfo, repeated: true },
+    { no: 2, name: 'cursor', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+  ])
   /**
    * @generated from field: repeated gndr.LikeInfo likes = 1;
    */
   likes: LikeInfo[] = []
-
   /**
    * @generated from field: string cursor = 2;
    */
@@ -4215,13 +4101,6 @@ export class GetActorLikesResponse extends Message<GetActorLikesResponse> {
     super()
     proto3.util.initPartial(data, this)
   }
-
-  static readonly runtime: typeof proto3 = proto3
-  static readonly typeName = 'gndr.GetActorLikesResponse'
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'likes', kind: 'message', T: LikeInfo, repeated: true },
-    { no: 2, name: 'cursor', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-  ])
 
   static fromBinary(
     bytes: Uint8Array,
@@ -4260,21 +4139,6 @@ export class GetActorLikesResponse extends Message<GetActorLikesResponse> {
  * @generated from message gndr.GetInteractionCountsRequest
  */
 export class GetInteractionCountsRequest extends Message<GetInteractionCountsRequest> {
-  /**
-   * @generated from field: repeated gndr.RecordRef refs = 1;
-   */
-  refs: RecordRef[] = []
-
-  /**
-   * @generated from field: repeated string skip_cache_for_dids = 2;
-   */
-  skipCacheForDids: string[] = []
-
-  constructor(data?: PartialMessage<GetInteractionCountsRequest>) {
-    super()
-    proto3.util.initPartial(data, this)
-  }
-
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'gndr.GetInteractionCountsRequest'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
@@ -4287,6 +4151,19 @@ export class GetInteractionCountsRequest extends Message<GetInteractionCountsReq
       repeated: true,
     },
   ])
+  /**
+   * @generated from field: repeated gndr.RecordRef refs = 1;
+   */
+  refs: RecordRef[] = []
+  /**
+   * @generated from field: repeated string skip_cache_for_dids = 2;
+   */
+  skipCacheForDids: string[] = []
+
+  constructor(data?: PartialMessage<GetInteractionCountsRequest>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
 
   static fromBinary(
     bytes: Uint8Array,
@@ -4327,31 +4204,6 @@ export class GetInteractionCountsRequest extends Message<GetInteractionCountsReq
  * @generated from message gndr.GetInteractionCountsResponse
  */
 export class GetInteractionCountsResponse extends Message<GetInteractionCountsResponse> {
-  /**
-   * @generated from field: repeated int32 likes = 1;
-   */
-  likes: number[] = []
-
-  /**
-   * @generated from field: repeated int32 reposts = 2;
-   */
-  reposts: number[] = []
-
-  /**
-   * @generated from field: repeated int32 replies = 3;
-   */
-  replies: number[] = []
-
-  /**
-   * @generated from field: repeated int32 quotes = 4;
-   */
-  quotes: number[] = []
-
-  constructor(data?: PartialMessage<GetInteractionCountsResponse>) {
-    super()
-    proto3.util.initPartial(data, this)
-  }
-
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'gndr.GetInteractionCountsResponse'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
@@ -4384,6 +4236,27 @@ export class GetInteractionCountsResponse extends Message<GetInteractionCountsRe
       repeated: true,
     },
   ])
+  /**
+   * @generated from field: repeated int32 likes = 1;
+   */
+  likes: number[] = []
+  /**
+   * @generated from field: repeated int32 reposts = 2;
+   */
+  reposts: number[] = []
+  /**
+   * @generated from field: repeated int32 replies = 3;
+   */
+  replies: number[] = []
+  /**
+   * @generated from field: repeated int32 quotes = 4;
+   */
+  quotes: number[] = []
+
+  constructor(data?: PartialMessage<GetInteractionCountsResponse>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
 
   static fromBinary(
     bytes: Uint8Array,
@@ -4427,16 +4300,6 @@ export class GetInteractionCountsResponse extends Message<GetInteractionCountsRe
  * @generated from message gndr.GetCountsForUsersRequest
  */
 export class GetCountsForUsersRequest extends Message<GetCountsForUsersRequest> {
-  /**
-   * @generated from field: repeated string dids = 1;
-   */
-  dids: string[] = []
-
-  constructor(data?: PartialMessage<GetCountsForUsersRequest>) {
-    super()
-    proto3.util.initPartial(data, this)
-  }
-
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'gndr.GetCountsForUsersRequest'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
@@ -4448,6 +4311,15 @@ export class GetCountsForUsersRequest extends Message<GetCountsForUsersRequest> 
       repeated: true,
     },
   ])
+  /**
+   * @generated from field: repeated string dids = 1;
+   */
+  dids: string[] = []
+
+  constructor(data?: PartialMessage<GetCountsForUsersRequest>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
 
   static fromBinary(
     bytes: Uint8Array,
@@ -4488,46 +4360,6 @@ export class GetCountsForUsersRequest extends Message<GetCountsForUsersRequest> 
  * @generated from message gndr.GetCountsForUsersResponse
  */
 export class GetCountsForUsersResponse extends Message<GetCountsForUsersResponse> {
-  /**
-   * @generated from field: repeated int32 posts = 1;
-   */
-  posts: number[] = []
-
-  /**
-   * @generated from field: repeated int32 reposts = 2;
-   */
-  reposts: number[] = []
-
-  /**
-   * @generated from field: repeated int32 following = 3;
-   */
-  following: number[] = []
-
-  /**
-   * @generated from field: repeated int32 followers = 4;
-   */
-  followers: number[] = []
-
-  /**
-   * @generated from field: repeated int32 lists = 5;
-   */
-  lists: number[] = []
-
-  /**
-   * @generated from field: repeated int32 feeds = 6;
-   */
-  feeds: number[] = []
-
-  /**
-   * @generated from field: repeated int32 starter_packs = 7;
-   */
-  starterPacks: number[] = []
-
-  constructor(data?: PartialMessage<GetCountsForUsersResponse>) {
-    super()
-    proto3.util.initPartial(data, this)
-  }
-
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'gndr.GetCountsForUsersResponse'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
@@ -4581,6 +4413,39 @@ export class GetCountsForUsersResponse extends Message<GetCountsForUsersResponse
       repeated: true,
     },
   ])
+  /**
+   * @generated from field: repeated int32 posts = 1;
+   */
+  posts: number[] = []
+  /**
+   * @generated from field: repeated int32 reposts = 2;
+   */
+  reposts: number[] = []
+  /**
+   * @generated from field: repeated int32 following = 3;
+   */
+  following: number[] = []
+  /**
+   * @generated from field: repeated int32 followers = 4;
+   */
+  followers: number[] = []
+  /**
+   * @generated from field: repeated int32 lists = 5;
+   */
+  lists: number[] = []
+  /**
+   * @generated from field: repeated int32 feeds = 6;
+   */
+  feeds: number[] = []
+  /**
+   * @generated from field: repeated int32 starter_packs = 7;
+   */
+  starterPacks: number[] = []
+
+  constructor(data?: PartialMessage<GetCountsForUsersResponse>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
 
   static fromBinary(
     bytes: Uint8Array,
@@ -4621,6 +4486,11 @@ export class GetCountsForUsersResponse extends Message<GetCountsForUsersResponse
  * @generated from message gndr.GetStarterPackCountsRequest
  */
 export class GetStarterPackCountsRequest extends Message<GetStarterPackCountsRequest> {
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'gndr.GetStarterPackCountsRequest'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: 'refs', kind: 'message', T: RecordRef, repeated: true },
+  ])
   /**
    * @generated from field: repeated gndr.RecordRef refs = 1;
    */
@@ -4630,12 +4500,6 @@ export class GetStarterPackCountsRequest extends Message<GetStarterPackCountsReq
     super()
     proto3.util.initPartial(data, this)
   }
-
-  static readonly runtime: typeof proto3 = proto3
-  static readonly typeName = 'gndr.GetStarterPackCountsRequest'
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'refs', kind: 'message', T: RecordRef, repeated: true },
-  ])
 
   static fromBinary(
     bytes: Uint8Array,
@@ -4676,21 +4540,6 @@ export class GetStarterPackCountsRequest extends Message<GetStarterPackCountsReq
  * @generated from message gndr.GetStarterPackCountsResponse
  */
 export class GetStarterPackCountsResponse extends Message<GetStarterPackCountsResponse> {
-  /**
-   * @generated from field: repeated int32 joined_week = 1;
-   */
-  joinedWeek: number[] = []
-
-  /**
-   * @generated from field: repeated int32 joined_all_time = 2;
-   */
-  joinedAllTime: number[] = []
-
-  constructor(data?: PartialMessage<GetStarterPackCountsResponse>) {
-    super()
-    proto3.util.initPartial(data, this)
-  }
-
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'gndr.GetStarterPackCountsResponse'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
@@ -4709,6 +4558,19 @@ export class GetStarterPackCountsResponse extends Message<GetStarterPackCountsRe
       repeated: true,
     },
   ])
+  /**
+   * @generated from field: repeated int32 joined_week = 1;
+   */
+  joinedWeek: number[] = []
+  /**
+   * @generated from field: repeated int32 joined_all_time = 2;
+   */
+  joinedAllTime: number[] = []
+
+  constructor(data?: PartialMessage<GetStarterPackCountsResponse>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
 
   static fromBinary(
     bytes: Uint8Array,
@@ -4752,6 +4614,11 @@ export class GetStarterPackCountsResponse extends Message<GetStarterPackCountsRe
  * @generated from message gndr.GetListCountsRequest
  */
 export class GetListCountsRequest extends Message<GetListCountsRequest> {
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'gndr.GetListCountsRequest'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: 'refs', kind: 'message', T: RecordRef, repeated: true },
+  ])
   /**
    * @generated from field: repeated gndr.RecordRef refs = 1;
    */
@@ -4761,12 +4628,6 @@ export class GetListCountsRequest extends Message<GetListCountsRequest> {
     super()
     proto3.util.initPartial(data, this)
   }
-
-  static readonly runtime: typeof proto3 = proto3
-  static readonly typeName = 'gndr.GetListCountsRequest'
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'refs', kind: 'message', T: RecordRef, repeated: true },
-  ])
 
   static fromBinary(
     bytes: Uint8Array,
@@ -4801,16 +4662,6 @@ export class GetListCountsRequest extends Message<GetListCountsRequest> {
  * @generated from message gndr.GetListCountsResponse
  */
 export class GetListCountsResponse extends Message<GetListCountsResponse> {
-  /**
-   * @generated from field: repeated int32 list_items = 1;
-   */
-  listItems: number[] = []
-
-  constructor(data?: PartialMessage<GetListCountsResponse>) {
-    super()
-    proto3.util.initPartial(data, this)
-  }
-
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'gndr.GetListCountsResponse'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
@@ -4822,6 +4673,15 @@ export class GetListCountsResponse extends Message<GetListCountsResponse> {
       repeated: true,
     },
   ])
+  /**
+   * @generated from field: repeated int32 list_items = 1;
+   */
+  listItems: number[] = []
+
+  constructor(data?: PartialMessage<GetListCountsResponse>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
 
   static fromBinary(
     bytes: Uint8Array,
@@ -4856,11 +4716,16 @@ export class GetListCountsResponse extends Message<GetListCountsResponse> {
  * @generated from message gndr.GetNewUserCountForRangeRequest
  */
 export class GetNewUserCountForRangeRequest extends Message<GetNewUserCountForRangeRequest> {
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'gndr.GetNewUserCountForRangeRequest'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: 'start', kind: 'message', T: Timestamp },
+    { no: 2, name: 'end', kind: 'message', T: Timestamp },
+  ])
   /**
    * @generated from field: google.protobuf.Timestamp start = 1;
    */
   start?: Timestamp
-
   /**
    * @generated from field: google.protobuf.Timestamp end = 2;
    */
@@ -4870,13 +4735,6 @@ export class GetNewUserCountForRangeRequest extends Message<GetNewUserCountForRa
     super()
     proto3.util.initPartial(data, this)
   }
-
-  static readonly runtime: typeof proto3 = proto3
-  static readonly typeName = 'gndr.GetNewUserCountForRangeRequest'
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'start', kind: 'message', T: Timestamp },
-    { no: 2, name: 'end', kind: 'message', T: Timestamp },
-  ])
 
   static fromBinary(
     bytes: Uint8Array,
@@ -4920,6 +4778,11 @@ export class GetNewUserCountForRangeRequest extends Message<GetNewUserCountForRa
  * @generated from message gndr.GetNewUserCountForRangeResponse
  */
 export class GetNewUserCountForRangeResponse extends Message<GetNewUserCountForRangeResponse> {
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'gndr.GetNewUserCountForRangeResponse'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: 'count', kind: 'scalar', T: 5 /* ScalarType.INT32 */ },
+  ])
   /**
    * @generated from field: int32 count = 1;
    */
@@ -4929,12 +4792,6 @@ export class GetNewUserCountForRangeResponse extends Message<GetNewUserCountForR
     super()
     proto3.util.initPartial(data, this)
   }
-
-  static readonly runtime: typeof proto3 = proto3
-  static readonly typeName = 'gndr.GetNewUserCountForRangeResponse'
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'count', kind: 'scalar', T: 5 /* ScalarType.INT32 */ },
-  ])
 
   static fromBinary(
     bytes: Uint8Array,
@@ -4981,16 +4838,21 @@ export class GetNewUserCountForRangeResponse extends Message<GetNewUserCountForR
  * @generated from message gndr.GetRepostsBySubjectRequest
  */
 export class GetRepostsBySubjectRequest extends Message<GetRepostsBySubjectRequest> {
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'gndr.GetRepostsBySubjectRequest'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: 'subject', kind: 'message', T: RecordRef },
+    { no: 2, name: 'limit', kind: 'scalar', T: 5 /* ScalarType.INT32 */ },
+    { no: 3, name: 'cursor', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+  ])
   /**
    * @generated from field: gndr.RecordRef subject = 1;
    */
   subject?: RecordRef
-
   /**
    * @generated from field: int32 limit = 2;
    */
   limit = 0
-
   /**
    * @generated from field: string cursor = 3;
    */
@@ -5000,14 +4862,6 @@ export class GetRepostsBySubjectRequest extends Message<GetRepostsBySubjectReque
     super()
     proto3.util.initPartial(data, this)
   }
-
-  static readonly runtime: typeof proto3 = proto3
-  static readonly typeName = 'gndr.GetRepostsBySubjectRequest'
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'subject', kind: 'message', T: RecordRef },
-    { no: 2, name: 'limit', kind: 'scalar', T: 5 /* ScalarType.INT32 */ },
-    { no: 3, name: 'cursor', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-  ])
 
   static fromBinary(
     bytes: Uint8Array,
@@ -5048,21 +4902,6 @@ export class GetRepostsBySubjectRequest extends Message<GetRepostsBySubjectReque
  * @generated from message gndr.GetRepostsBySubjectResponse
  */
 export class GetRepostsBySubjectResponse extends Message<GetRepostsBySubjectResponse> {
-  /**
-   * @generated from field: repeated string uris = 1;
-   */
-  uris: string[] = []
-
-  /**
-   * @generated from field: string cursor = 2;
-   */
-  cursor = ''
-
-  constructor(data?: PartialMessage<GetRepostsBySubjectResponse>) {
-    super()
-    proto3.util.initPartial(data, this)
-  }
-
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'gndr.GetRepostsBySubjectResponse'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
@@ -5075,6 +4914,19 @@ export class GetRepostsBySubjectResponse extends Message<GetRepostsBySubjectResp
     },
     { no: 2, name: 'cursor', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
   ])
+  /**
+   * @generated from field: repeated string uris = 1;
+   */
+  uris: string[] = []
+  /**
+   * @generated from field: string cursor = 2;
+   */
+  cursor = ''
+
+  constructor(data?: PartialMessage<GetRepostsBySubjectResponse>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
 
   static fromBinary(
     bytes: Uint8Array,
@@ -5118,11 +4970,16 @@ export class GetRepostsBySubjectResponse extends Message<GetRepostsBySubjectResp
  * @generated from message gndr.GetRepostsByActorAndSubjectsRequest
  */
 export class GetRepostsByActorAndSubjectsRequest extends Message<GetRepostsByActorAndSubjectsRequest> {
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'gndr.GetRepostsByActorAndSubjectsRequest'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: 'actor_did', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: 'refs', kind: 'message', T: RecordRef, repeated: true },
+  ])
   /**
    * @generated from field: string actor_did = 1;
    */
   actorDid = ''
-
   /**
    * @generated from field: repeated gndr.RecordRef refs = 2;
    */
@@ -5132,13 +4989,6 @@ export class GetRepostsByActorAndSubjectsRequest extends Message<GetRepostsByAct
     super()
     proto3.util.initPartial(data, this)
   }
-
-  static readonly runtime: typeof proto3 = proto3
-  static readonly typeName = 'gndr.GetRepostsByActorAndSubjectsRequest'
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'actor_did', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: 'refs', kind: 'message', T: RecordRef, repeated: true },
-  ])
 
   static fromBinary(
     bytes: Uint8Array,
@@ -5185,11 +5035,16 @@ export class GetRepostsByActorAndSubjectsRequest extends Message<GetRepostsByAct
  * @generated from message gndr.RecordRef
  */
 export class RecordRef extends Message<RecordRef> {
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'gndr.RecordRef'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: 'uri', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: 'cid', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+  ])
   /**
    * @generated from field: string uri = 1;
    */
   uri = ''
-
   /**
    * @generated from field: string cid = 2;
    */
@@ -5199,13 +5054,6 @@ export class RecordRef extends Message<RecordRef> {
     super()
     proto3.util.initPartial(data, this)
   }
-
-  static readonly runtime: typeof proto3 = proto3
-  static readonly typeName = 'gndr.RecordRef'
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'uri', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: 'cid', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-  ])
 
   static fromBinary(
     bytes: Uint8Array,
@@ -5240,16 +5088,6 @@ export class RecordRef extends Message<RecordRef> {
  * @generated from message gndr.GetRepostsByActorAndSubjectsResponse
  */
 export class GetRepostsByActorAndSubjectsResponse extends Message<GetRepostsByActorAndSubjectsResponse> {
-  /**
-   * @generated from field: repeated string uris = 1;
-   */
-  uris: string[] = []
-
-  constructor(data?: PartialMessage<GetRepostsByActorAndSubjectsResponse>) {
-    super()
-    proto3.util.initPartial(data, this)
-  }
-
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'gndr.GetRepostsByActorAndSubjectsResponse'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
@@ -5261,6 +5099,15 @@ export class GetRepostsByActorAndSubjectsResponse extends Message<GetRepostsByAc
       repeated: true,
     },
   ])
+  /**
+   * @generated from field: repeated string uris = 1;
+   */
+  uris: string[] = []
+
+  constructor(data?: PartialMessage<GetRepostsByActorAndSubjectsResponse>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
 
   static fromBinary(
     bytes: Uint8Array,
@@ -5310,16 +5157,21 @@ export class GetRepostsByActorAndSubjectsResponse extends Message<GetRepostsByAc
  * @generated from message gndr.GetActorRepostsRequest
  */
 export class GetActorRepostsRequest extends Message<GetActorRepostsRequest> {
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'gndr.GetActorRepostsRequest'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: 'actor_did', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: 'limit', kind: 'scalar', T: 5 /* ScalarType.INT32 */ },
+    { no: 3, name: 'cursor', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+  ])
   /**
    * @generated from field: string actor_did = 1;
    */
   actorDid = ''
-
   /**
    * @generated from field: int32 limit = 2;
    */
   limit = 0
-
   /**
    * @generated from field: string cursor = 3;
    */
@@ -5329,14 +5181,6 @@ export class GetActorRepostsRequest extends Message<GetActorRepostsRequest> {
     super()
     proto3.util.initPartial(data, this)
   }
-
-  static readonly runtime: typeof proto3 = proto3
-  static readonly typeName = 'gndr.GetActorRepostsRequest'
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'actor_did', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: 'limit', kind: 'scalar', T: 5 /* ScalarType.INT32 */ },
-    { no: 3, name: 'cursor', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-  ])
 
   static fromBinary(
     bytes: Uint8Array,
@@ -5377,21 +5221,6 @@ export class GetActorRepostsRequest extends Message<GetActorRepostsRequest> {
  * @generated from message gndr.GetActorRepostsResponse
  */
 export class GetActorRepostsResponse extends Message<GetActorRepostsResponse> {
-  /**
-   * @generated from field: repeated string uris = 1;
-   */
-  uris: string[] = []
-
-  /**
-   * @generated from field: string cursor = 2;
-   */
-  cursor = ''
-
-  constructor(data?: PartialMessage<GetActorRepostsResponse>) {
-    super()
-    proto3.util.initPartial(data, this)
-  }
-
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'gndr.GetActorRepostsResponse'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
@@ -5404,6 +5233,19 @@ export class GetActorRepostsResponse extends Message<GetActorRepostsResponse> {
     },
     { no: 2, name: 'cursor', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
   ])
+  /**
+   * @generated from field: repeated string uris = 1;
+   */
+  uris: string[] = []
+  /**
+   * @generated from field: string cursor = 2;
+   */
+  cursor = ''
+
+  constructor(data?: PartialMessage<GetActorRepostsResponse>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
 
   static fromBinary(
     bytes: Uint8Array,
@@ -5448,21 +5290,6 @@ export class GetActorRepostsResponse extends Message<GetActorRepostsResponse> {
  * @generated from message gndr.GetActorsRequest
  */
 export class GetActorsRequest extends Message<GetActorsRequest> {
-  /**
-   * @generated from field: repeated string dids = 1;
-   */
-  dids: string[] = []
-
-  /**
-   * @generated from field: repeated string skip_cache_for_dids = 2;
-   */
-  skipCacheForDids: string[] = []
-
-  constructor(data?: PartialMessage<GetActorsRequest>) {
-    super()
-    proto3.util.initPartial(data, this)
-  }
-
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'gndr.GetActorsRequest'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
@@ -5480,7 +5307,31 @@ export class GetActorsRequest extends Message<GetActorsRequest> {
       T: 9 /* ScalarType.STRING */,
       repeated: true,
     },
+    {
+      no: 3,
+      name: 'return_age_assurance_for_dids',
+      kind: 'scalar',
+      T: 9 /* ScalarType.STRING */,
+      repeated: true,
+    },
   ])
+  /**
+   * @generated from field: repeated string dids = 1;
+   */
+  dids: string[] = []
+  /**
+   * @generated from field: repeated string skip_cache_for_dids = 2;
+   */
+  skipCacheForDids: string[] = []
+  /**
+   * @generated from field: repeated string return_age_assurance_for_dids = 3;
+   */
+  returnAgeAssuranceForDids: string[] = []
+
+  constructor(data?: PartialMessage<GetActorsRequest>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
 
   static fromBinary(
     bytes: Uint8Array,
@@ -5515,105 +5366,6 @@ export class GetActorsRequest extends Message<GetActorsRequest> {
  * @generated from message gndr.ActorInfo
  */
 export class ActorInfo extends Message<ActorInfo> {
-  /**
-   * @generated from field: bool exists = 1;
-   */
-  exists = false
-
-  /**
-   * @generated from field: string handle = 2;
-   */
-  handle = ''
-
-  /**
-   * @generated from field: gndr.Record profile = 3;
-   */
-  profile?: Record
-
-  /**
-   * @generated from field: bool taken_down = 4;
-   */
-  takenDown = false
-
-  /**
-   * @generated from field: string takedown_ref = 5;
-   */
-  takedownRef = ''
-
-  /**
-   * @generated from field: google.protobuf.Timestamp tombstoned_at = 6;
-   */
-  tombstonedAt?: Timestamp
-
-  /**
-   * @generated from field: bool labeler = 7;
-   */
-  labeler = false
-
-  /**
-   * @generated from field: string allow_incoming_chats_from = 8;
-   */
-  allowIncomingChatsFrom = ''
-
-  /**
-   * @generated from field: string upstream_status = 9;
-   */
-  upstreamStatus = ''
-
-  /**
-   * @generated from field: google.protobuf.Timestamp created_at = 10;
-   */
-  createdAt?: Timestamp
-
-  /**
-   * @generated from field: bool priority_notifications = 11;
-   */
-  priorityNotifications = false
-
-  /**
-   * @generated from field: double pagerank = 12;
-   */
-  pagerank = 0
-
-  /**
-   * @generated from field: bool trusted_verifier = 13;
-   */
-  trustedVerifier = false
-
-  /**
-   * @generated from field: map<string, gndr.VerificationMeta> verified_by = 14;
-   */
-  verifiedBy: { [key: string]: VerificationMeta } = {}
-
-  /**
-   * Tags being applied to the account itself
-   *
-   * @generated from field: repeated string tags = 15;
-   */
-  tags: string[] = []
-
-  /**
-   * Tags being applied to the profile record
-   *
-   * @generated from field: repeated string profile_tags = 16;
-   */
-  profileTags: string[] = []
-
-  /**
-   * @generated from field: gndr.Record status_record = 17;
-   */
-  statusRecord?: Record
-
-  /**
-   * @generated from field: string allow_activity_subscriptions_from = 18;
-   */
-  allowActivitySubscriptionsFrom = ''
-
-  constructor(data?: PartialMessage<ActorInfo>) {
-    super()
-    proto3.util.initPartial(data, this)
-  }
-
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'gndr.ActorInfo'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
@@ -5683,7 +5435,99 @@ export class ActorInfo extends Message<ActorInfo> {
       kind: 'scalar',
       T: 9 /* ScalarType.STRING */,
     },
+    {
+      no: 19,
+      name: 'age_assurance_status',
+      kind: 'message',
+      T: AgeAssuranceStatus,
+      opt: true,
+    },
   ])
+  /**
+   * @generated from field: bool exists = 1;
+   */
+  exists = false
+  /**
+   * @generated from field: string handle = 2;
+   */
+  handle = ''
+  /**
+   * @generated from field: gndr.Record profile = 3;
+   */
+  profile?: Record
+  /**
+   * @generated from field: bool taken_down = 4;
+   */
+  takenDown = false
+  /**
+   * @generated from field: string takedown_ref = 5;
+   */
+  takedownRef = ''
+  /**
+   * @generated from field: google.protobuf.Timestamp tombstoned_at = 6;
+   */
+  tombstonedAt?: Timestamp
+  /**
+   * @generated from field: bool labeler = 7;
+   */
+  labeler = false
+  /**
+   * @generated from field: string allow_incoming_chats_from = 8;
+   */
+  allowIncomingChatsFrom = ''
+  /**
+   * @generated from field: string upstream_status = 9;
+   */
+  upstreamStatus = ''
+  /**
+   * @generated from field: google.protobuf.Timestamp created_at = 10;
+   */
+  createdAt?: Timestamp
+  /**
+   * @generated from field: bool priority_notifications = 11;
+   */
+  priorityNotifications = false
+  /**
+   * @generated from field: double pagerank = 12;
+   */
+  pagerank = 0
+  /**
+   * @generated from field: bool trusted_verifier = 13;
+   */
+  trustedVerifier = false
+  /**
+   * @generated from field: map<string, gndr.VerificationMeta> verified_by = 14;
+   */
+  verifiedBy: { [key: string]: VerificationMeta } = {}
+  /**
+   * Tags being applied to the account itself
+   *
+   * @generated from field: repeated string tags = 15;
+   */
+  tags: string[] = []
+  /**
+   * Tags being applied to the profile record
+   *
+   * @generated from field: repeated string profile_tags = 16;
+   */
+  profileTags: string[] = []
+  /**
+   * @generated from field: gndr.Record status_record = 17;
+   */
+  statusRecord?: Record
+  /**
+   * @generated from field: string allow_activity_subscriptions_from = 18;
+   */
+  allowActivitySubscriptionsFrom = ''
+  /**
+   * @generated from field: optional gndr.AgeAssuranceStatus age_assurance_status = 19;
+   */
+  ageAssuranceStatus?: AgeAssuranceStatus
+
+  constructor(data?: PartialMessage<ActorInfo>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
 
   static fromBinary(
     bytes: Uint8Array,
@@ -5715,9 +5559,77 @@ export class ActorInfo extends Message<ActorInfo> {
 }
 
 /**
+ * @generated from message gndr.AgeAssuranceStatus
+ */
+export class AgeAssuranceStatus extends Message<AgeAssuranceStatus> {
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'gndr.AgeAssuranceStatus'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: 'status', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: 'last_initiated_at', kind: 'message', T: Timestamp },
+    {
+      no: 3,
+      name: 'override_applied',
+      kind: 'scalar',
+      T: 8 /* ScalarType.BOOL */,
+    },
+  ])
+  /**
+   * @generated from field: string status = 1;
+   */
+  status = ''
+  /**
+   * @generated from field: google.protobuf.Timestamp last_initiated_at = 2;
+   */
+  lastInitiatedAt?: Timestamp
+  /**
+   * @generated from field: bool override_applied = 3;
+   */
+  overrideApplied = false
+
+  constructor(data?: PartialMessage<AgeAssuranceStatus>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
+
+  static fromBinary(
+    bytes: Uint8Array,
+    options?: Partial<BinaryReadOptions>,
+  ): AgeAssuranceStatus {
+    return new AgeAssuranceStatus().fromBinary(bytes, options)
+  }
+
+  static fromJson(
+    jsonValue: JsonValue,
+    options?: Partial<JsonReadOptions>,
+  ): AgeAssuranceStatus {
+    return new AgeAssuranceStatus().fromJson(jsonValue, options)
+  }
+
+  static fromJsonString(
+    jsonString: string,
+    options?: Partial<JsonReadOptions>,
+  ): AgeAssuranceStatus {
+    return new AgeAssuranceStatus().fromJsonString(jsonString, options)
+  }
+
+  static equals(
+    a: AgeAssuranceStatus | PlainMessage<AgeAssuranceStatus> | undefined,
+    b: AgeAssuranceStatus | PlainMessage<AgeAssuranceStatus> | undefined,
+  ): boolean {
+    return proto3.util.equals(AgeAssuranceStatus, a, b)
+  }
+}
+
+/**
  * @generated from message gndr.GetActorsResponse
  */
 export class GetActorsResponse extends Message<GetActorsResponse> {
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'gndr.GetActorsResponse'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: 'actors', kind: 'message', T: ActorInfo, repeated: true },
+  ])
   /**
    * @generated from field: repeated gndr.ActorInfo actors = 1;
    */
@@ -5727,12 +5639,6 @@ export class GetActorsResponse extends Message<GetActorsResponse> {
     super()
     proto3.util.initPartial(data, this)
   }
-
-  static readonly runtime: typeof proto3 = proto3
-  static readonly typeName = 'gndr.GetActorsResponse'
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'actors', kind: 'message', T: ActorInfo, repeated: true },
-  ])
 
   static fromBinary(
     bytes: Uint8Array,
@@ -5771,21 +5677,6 @@ export class GetActorsResponse extends Message<GetActorsResponse> {
  * @generated from message gndr.GetDidsByHandlesRequest
  */
 export class GetDidsByHandlesRequest extends Message<GetDidsByHandlesRequest> {
-  /**
-   * @generated from field: repeated string handles = 1;
-   */
-  handles: string[] = []
-
-  /**
-   * @generated from field: bool lookup_unidirectional = 2;
-   */
-  lookupUnidirectional = false
-
-  constructor(data?: PartialMessage<GetDidsByHandlesRequest>) {
-    super()
-    proto3.util.initPartial(data, this)
-  }
-
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'gndr.GetDidsByHandlesRequest'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
@@ -5803,6 +5694,19 @@ export class GetDidsByHandlesRequest extends Message<GetDidsByHandlesRequest> {
       T: 8 /* ScalarType.BOOL */,
     },
   ])
+  /**
+   * @generated from field: repeated string handles = 1;
+   */
+  handles: string[] = []
+  /**
+   * @generated from field: bool lookup_unidirectional = 2;
+   */
+  lookupUnidirectional = false
+
+  constructor(data?: PartialMessage<GetDidsByHandlesRequest>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
 
   static fromBinary(
     bytes: Uint8Array,
@@ -5843,16 +5747,6 @@ export class GetDidsByHandlesRequest extends Message<GetDidsByHandlesRequest> {
  * @generated from message gndr.GetDidsByHandlesResponse
  */
 export class GetDidsByHandlesResponse extends Message<GetDidsByHandlesResponse> {
-  /**
-   * @generated from field: repeated string dids = 1;
-   */
-  dids: string[] = []
-
-  constructor(data?: PartialMessage<GetDidsByHandlesResponse>) {
-    super()
-    proto3.util.initPartial(data, this)
-  }
-
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'gndr.GetDidsByHandlesResponse'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
@@ -5864,6 +5758,15 @@ export class GetDidsByHandlesResponse extends Message<GetDidsByHandlesResponse> 
       repeated: true,
     },
   ])
+  /**
+   * @generated from field: repeated string dids = 1;
+   */
+  dids: string[] = []
+
+  constructor(data?: PartialMessage<GetDidsByHandlesResponse>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
 
   static fromBinary(
     bytes: Uint8Array,
@@ -5908,21 +5811,6 @@ export class GetDidsByHandlesResponse extends Message<GetDidsByHandlesResponse> 
  * @generated from message gndr.GetRelationshipsRequest
  */
 export class GetRelationshipsRequest extends Message<GetRelationshipsRequest> {
-  /**
-   * @generated from field: string actor_did = 1;
-   */
-  actorDid = ''
-
-  /**
-   * @generated from field: repeated string target_dids = 2;
-   */
-  targetDids: string[] = []
-
-  constructor(data?: PartialMessage<GetRelationshipsRequest>) {
-    super()
-    proto3.util.initPartial(data, this)
-  }
-
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'gndr.GetRelationshipsRequest'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
@@ -5935,6 +5823,19 @@ export class GetRelationshipsRequest extends Message<GetRelationshipsRequest> {
       repeated: true,
     },
   ])
+  /**
+   * @generated from field: string actor_did = 1;
+   */
+  actorDid = ''
+  /**
+   * @generated from field: repeated string target_dids = 2;
+   */
+  targetDids: string[] = []
+
+  constructor(data?: PartialMessage<GetRelationshipsRequest>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
 
   static fromBinary(
     bytes: Uint8Array,
@@ -5975,51 +5876,6 @@ export class GetRelationshipsRequest extends Message<GetRelationshipsRequest> {
  * @generated from message gndr.Relationships
  */
 export class Relationships extends Message<Relationships> {
-  /**
-   * @generated from field: bool muted = 1;
-   */
-  muted = false
-
-  /**
-   * @generated from field: string muted_by_list = 2;
-   */
-  mutedByList = ''
-
-  /**
-   * @generated from field: string blocked_by = 3;
-   */
-  blockedBy = ''
-
-  /**
-   * @generated from field: string blocking = 4;
-   */
-  blocking = ''
-
-  /**
-   * @generated from field: string blocked_by_list = 5;
-   */
-  blockedByList = ''
-
-  /**
-   * @generated from field: string blocking_by_list = 6;
-   */
-  blockingByList = ''
-
-  /**
-   * @generated from field: string following = 7;
-   */
-  following = ''
-
-  /**
-   * @generated from field: string followed_by = 8;
-   */
-  followedBy = ''
-
-  constructor(data?: PartialMessage<Relationships>) {
-    super()
-    proto3.util.initPartial(data, this)
-  }
-
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'gndr.Relationships'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
@@ -6052,6 +5908,43 @@ export class Relationships extends Message<Relationships> {
       T: 9 /* ScalarType.STRING */,
     },
   ])
+  /**
+   * @generated from field: bool muted = 1;
+   */
+  muted = false
+  /**
+   * @generated from field: string muted_by_list = 2;
+   */
+  mutedByList = ''
+  /**
+   * @generated from field: string blocked_by = 3;
+   */
+  blockedBy = ''
+  /**
+   * @generated from field: string blocking = 4;
+   */
+  blocking = ''
+  /**
+   * @generated from field: string blocked_by_list = 5;
+   */
+  blockedByList = ''
+  /**
+   * @generated from field: string blocking_by_list = 6;
+   */
+  blockingByList = ''
+  /**
+   * @generated from field: string following = 7;
+   */
+  following = ''
+  /**
+   * @generated from field: string followed_by = 8;
+   */
+  followedBy = ''
+
+  constructor(data?: PartialMessage<Relationships>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
 
   static fromBinary(
     bytes: Uint8Array,
@@ -6086,16 +5979,6 @@ export class Relationships extends Message<Relationships> {
  * @generated from message gndr.GetRelationshipsResponse
  */
 export class GetRelationshipsResponse extends Message<GetRelationshipsResponse> {
-  /**
-   * @generated from field: repeated gndr.Relationships relationships = 1;
-   */
-  relationships: Relationships[] = []
-
-  constructor(data?: PartialMessage<GetRelationshipsResponse>) {
-    super()
-    proto3.util.initPartial(data, this)
-  }
-
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'gndr.GetRelationshipsResponse'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
@@ -6107,6 +5990,15 @@ export class GetRelationshipsResponse extends Message<GetRelationshipsResponse> 
       repeated: true,
     },
   ])
+  /**
+   * @generated from field: repeated gndr.Relationships relationships = 1;
+   */
+  relationships: Relationships[] = []
+
+  constructor(data?: PartialMessage<GetRelationshipsResponse>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
 
   static fromBinary(
     bytes: Uint8Array,
@@ -6150,11 +6042,16 @@ export class GetRelationshipsResponse extends Message<GetRelationshipsResponse> 
  * @generated from message gndr.RelationshipPair
  */
 export class RelationshipPair extends Message<RelationshipPair> {
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'gndr.RelationshipPair'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: 'a', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: 'b', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+  ])
   /**
    * @generated from field: string a = 1;
    */
   a = ''
-
   /**
    * @generated from field: string b = 2;
    */
@@ -6164,13 +6061,6 @@ export class RelationshipPair extends Message<RelationshipPair> {
     super()
     proto3.util.initPartial(data, this)
   }
-
-  static readonly runtime: typeof proto3 = proto3
-  static readonly typeName = 'gndr.RelationshipPair'
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'a', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: 'b', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-  ])
 
   static fromBinary(
     bytes: Uint8Array,
@@ -6205,31 +6095,6 @@ export class RelationshipPair extends Message<RelationshipPair> {
  * @generated from message gndr.BlockExistence
  */
 export class BlockExistence extends Message<BlockExistence> {
-  /**
-   * @generated from field: string blocked_by = 1;
-   */
-  blockedBy = ''
-
-  /**
-   * @generated from field: string blocking = 2;
-   */
-  blocking = ''
-
-  /**
-   * @generated from field: string blocked_by_list = 3;
-   */
-  blockedByList = ''
-
-  /**
-   * @generated from field: string blocking_by_list = 4;
-   */
-  blockingByList = ''
-
-  constructor(data?: PartialMessage<BlockExistence>) {
-    super()
-    proto3.util.initPartial(data, this)
-  }
-
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'gndr.BlockExistence'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
@@ -6248,6 +6113,27 @@ export class BlockExistence extends Message<BlockExistence> {
       T: 9 /* ScalarType.STRING */,
     },
   ])
+  /**
+   * @generated from field: string blocked_by = 1;
+   */
+  blockedBy = ''
+  /**
+   * @generated from field: string blocking = 2;
+   */
+  blocking = ''
+  /**
+   * @generated from field: string blocked_by_list = 3;
+   */
+  blockedByList = ''
+  /**
+   * @generated from field: string blocking_by_list = 4;
+   */
+  blockingByList = ''
+
+  constructor(data?: PartialMessage<BlockExistence>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
 
   static fromBinary(
     bytes: Uint8Array,
@@ -6282,16 +6168,6 @@ export class BlockExistence extends Message<BlockExistence> {
  * @generated from message gndr.GetBlockExistenceRequest
  */
 export class GetBlockExistenceRequest extends Message<GetBlockExistenceRequest> {
-  /**
-   * @generated from field: repeated gndr.RelationshipPair pairs = 1;
-   */
-  pairs: RelationshipPair[] = []
-
-  constructor(data?: PartialMessage<GetBlockExistenceRequest>) {
-    super()
-    proto3.util.initPartial(data, this)
-  }
-
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'gndr.GetBlockExistenceRequest'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
@@ -6303,6 +6179,15 @@ export class GetBlockExistenceRequest extends Message<GetBlockExistenceRequest> 
       repeated: true,
     },
   ])
+  /**
+   * @generated from field: repeated gndr.RelationshipPair pairs = 1;
+   */
+  pairs: RelationshipPair[] = []
+
+  constructor(data?: PartialMessage<GetBlockExistenceRequest>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
 
   static fromBinary(
     bytes: Uint8Array,
@@ -6343,21 +6228,6 @@ export class GetBlockExistenceRequest extends Message<GetBlockExistenceRequest> 
  * @generated from message gndr.GetBlockExistenceResponse
  */
 export class GetBlockExistenceResponse extends Message<GetBlockExistenceResponse> {
-  /**
-   * @generated from field: repeated bool exists = 1;
-   */
-  exists: boolean[] = []
-
-  /**
-   * @generated from field: repeated gndr.BlockExistence blocks = 2;
-   */
-  blocks: BlockExistence[] = []
-
-  constructor(data?: PartialMessage<GetBlockExistenceResponse>) {
-    super()
-    proto3.util.initPartial(data, this)
-  }
-
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'gndr.GetBlockExistenceResponse'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
@@ -6376,6 +6246,19 @@ export class GetBlockExistenceResponse extends Message<GetBlockExistenceResponse
       repeated: true,
     },
   ])
+  /**
+   * @generated from field: repeated bool exists = 1;
+   */
+  exists: boolean[] = []
+  /**
+   * @generated from field: repeated gndr.BlockExistence blocks = 2;
+   */
+  blocks: BlockExistence[] = []
+
+  constructor(data?: PartialMessage<GetBlockExistenceResponse>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
 
   static fromBinary(
     bytes: Uint8Array,
@@ -6416,11 +6299,16 @@ export class GetBlockExistenceResponse extends Message<GetBlockExistenceResponse
  * @generated from message gndr.ListItemInfo
  */
 export class ListItemInfo extends Message<ListItemInfo> {
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'gndr.ListItemInfo'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: 'uri', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: 'did', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+  ])
   /**
    * @generated from field: string uri = 1;
    */
   uri = ''
-
   /**
    * @generated from field: string did = 2;
    */
@@ -6430,13 +6318,6 @@ export class ListItemInfo extends Message<ListItemInfo> {
     super()
     proto3.util.initPartial(data, this)
   }
-
-  static readonly runtime: typeof proto3 = proto3
-  static readonly typeName = 'gndr.ListItemInfo'
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'uri', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: 'did', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-  ])
 
   static fromBinary(
     bytes: Uint8Array,
@@ -6474,16 +6355,21 @@ export class ListItemInfo extends Message<ListItemInfo> {
  * @generated from message gndr.GetListMembersRequest
  */
 export class GetListMembersRequest extends Message<GetListMembersRequest> {
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'gndr.GetListMembersRequest'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: 'list_uri', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: 'limit', kind: 'scalar', T: 5 /* ScalarType.INT32 */ },
+    { no: 3, name: 'cursor', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+  ])
   /**
    * @generated from field: string list_uri = 1;
    */
   listUri = ''
-
   /**
    * @generated from field: int32 limit = 2;
    */
   limit = 0
-
   /**
    * @generated from field: string cursor = 3;
    */
@@ -6493,14 +6379,6 @@ export class GetListMembersRequest extends Message<GetListMembersRequest> {
     super()
     proto3.util.initPartial(data, this)
   }
-
-  static readonly runtime: typeof proto3 = proto3
-  static readonly typeName = 'gndr.GetListMembersRequest'
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'list_uri', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: 'limit', kind: 'scalar', T: 5 /* ScalarType.INT32 */ },
-    { no: 3, name: 'cursor', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-  ])
 
   static fromBinary(
     bytes: Uint8Array,
@@ -6535,21 +6413,6 @@ export class GetListMembersRequest extends Message<GetListMembersRequest> {
  * @generated from message gndr.GetListMembersResponse
  */
 export class GetListMembersResponse extends Message<GetListMembersResponse> {
-  /**
-   * @generated from field: repeated gndr.ListItemInfo listitems = 1;
-   */
-  listitems: ListItemInfo[] = []
-
-  /**
-   * @generated from field: string cursor = 2;
-   */
-  cursor = ''
-
-  constructor(data?: PartialMessage<GetListMembersResponse>) {
-    super()
-    proto3.util.initPartial(data, this)
-  }
-
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'gndr.GetListMembersResponse'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
@@ -6562,6 +6425,19 @@ export class GetListMembersResponse extends Message<GetListMembersResponse> {
     },
     { no: 2, name: 'cursor', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
   ])
+  /**
+   * @generated from field: repeated gndr.ListItemInfo listitems = 1;
+   */
+  listitems: ListItemInfo[] = []
+  /**
+   * @generated from field: string cursor = 2;
+   */
+  cursor = ''
+
+  constructor(data?: PartialMessage<GetListMembersResponse>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
 
   static fromBinary(
     bytes: Uint8Array,
@@ -6605,21 +6481,6 @@ export class GetListMembersResponse extends Message<GetListMembersResponse> {
  * @generated from message gndr.GetListMembershipRequest
  */
 export class GetListMembershipRequest extends Message<GetListMembershipRequest> {
-  /**
-   * @generated from field: string actor_did = 1;
-   */
-  actorDid = ''
-
-  /**
-   * @generated from field: repeated string list_uris = 2;
-   */
-  listUris: string[] = []
-
-  constructor(data?: PartialMessage<GetListMembershipRequest>) {
-    super()
-    proto3.util.initPartial(data, this)
-  }
-
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'gndr.GetListMembershipRequest'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
@@ -6632,6 +6493,19 @@ export class GetListMembershipRequest extends Message<GetListMembershipRequest> 
       repeated: true,
     },
   ])
+  /**
+   * @generated from field: string actor_did = 1;
+   */
+  actorDid = ''
+  /**
+   * @generated from field: repeated string list_uris = 2;
+   */
+  listUris: string[] = []
+
+  constructor(data?: PartialMessage<GetListMembershipRequest>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
 
   static fromBinary(
     bytes: Uint8Array,
@@ -6672,16 +6546,6 @@ export class GetListMembershipRequest extends Message<GetListMembershipRequest> 
  * @generated from message gndr.GetListMembershipResponse
  */
 export class GetListMembershipResponse extends Message<GetListMembershipResponse> {
-  /**
-   * @generated from field: repeated string listitem_uris = 1;
-   */
-  listitemUris: string[] = []
-
-  constructor(data?: PartialMessage<GetListMembershipResponse>) {
-    super()
-    proto3.util.initPartial(data, this)
-  }
-
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'gndr.GetListMembershipResponse'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
@@ -6693,6 +6557,15 @@ export class GetListMembershipResponse extends Message<GetListMembershipResponse
       repeated: true,
     },
   ])
+  /**
+   * @generated from field: repeated string listitem_uris = 1;
+   */
+  listitemUris: string[] = []
+
+  constructor(data?: PartialMessage<GetListMembershipResponse>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
 
   static fromBinary(
     bytes: Uint8Array,
@@ -6736,6 +6609,11 @@ export class GetListMembershipResponse extends Message<GetListMembershipResponse
  * @generated from message gndr.GetListCountRequest
  */
 export class GetListCountRequest extends Message<GetListCountRequest> {
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'gndr.GetListCountRequest'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: 'list_uri', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+  ])
   /**
    * @generated from field: string list_uri = 1;
    */
@@ -6745,12 +6623,6 @@ export class GetListCountRequest extends Message<GetListCountRequest> {
     super()
     proto3.util.initPartial(data, this)
   }
-
-  static readonly runtime: typeof proto3 = proto3
-  static readonly typeName = 'gndr.GetListCountRequest'
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'list_uri', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-  ])
 
   static fromBinary(
     bytes: Uint8Array,
@@ -6785,6 +6657,11 @@ export class GetListCountRequest extends Message<GetListCountRequest> {
  * @generated from message gndr.GetListCountResponse
  */
 export class GetListCountResponse extends Message<GetListCountResponse> {
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'gndr.GetListCountResponse'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: 'count', kind: 'scalar', T: 5 /* ScalarType.INT32 */ },
+  ])
   /**
    * @generated from field: int32 count = 1;
    */
@@ -6794,12 +6671,6 @@ export class GetListCountResponse extends Message<GetListCountResponse> {
     super()
     proto3.util.initPartial(data, this)
   }
-
-  static readonly runtime: typeof proto3 = proto3
-  static readonly typeName = 'gndr.GetListCountResponse'
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'count', kind: 'scalar', T: 5 /* ScalarType.INT32 */ },
-  ])
 
   static fromBinary(
     bytes: Uint8Array,
@@ -6837,16 +6708,21 @@ export class GetListCountResponse extends Message<GetListCountResponse> {
  * @generated from message gndr.GetActorListsRequest
  */
 export class GetActorListsRequest extends Message<GetActorListsRequest> {
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'gndr.GetActorListsRequest'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: 'actor_did', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: 'limit', kind: 'scalar', T: 5 /* ScalarType.INT32 */ },
+    { no: 3, name: 'cursor', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+  ])
   /**
    * @generated from field: string actor_did = 1;
    */
   actorDid = ''
-
   /**
    * @generated from field: int32 limit = 2;
    */
   limit = 0
-
   /**
    * @generated from field: string cursor = 3;
    */
@@ -6856,14 +6732,6 @@ export class GetActorListsRequest extends Message<GetActorListsRequest> {
     super()
     proto3.util.initPartial(data, this)
   }
-
-  static readonly runtime: typeof proto3 = proto3
-  static readonly typeName = 'gndr.GetActorListsRequest'
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'actor_did', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: 'limit', kind: 'scalar', T: 5 /* ScalarType.INT32 */ },
-    { no: 3, name: 'cursor', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-  ])
 
   static fromBinary(
     bytes: Uint8Array,
@@ -6898,21 +6766,6 @@ export class GetActorListsRequest extends Message<GetActorListsRequest> {
  * @generated from message gndr.GetActorListsResponse
  */
 export class GetActorListsResponse extends Message<GetActorListsResponse> {
-  /**
-   * @generated from field: repeated string list_uris = 1;
-   */
-  listUris: string[] = []
-
-  /**
-   * @generated from field: string cursor = 2;
-   */
-  cursor = ''
-
-  constructor(data?: PartialMessage<GetActorListsResponse>) {
-    super()
-    proto3.util.initPartial(data, this)
-  }
-
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'gndr.GetActorListsResponse'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
@@ -6925,6 +6778,19 @@ export class GetActorListsResponse extends Message<GetActorListsResponse> {
     },
     { no: 2, name: 'cursor', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
   ])
+  /**
+   * @generated from field: repeated string list_uris = 1;
+   */
+  listUris: string[] = []
+  /**
+   * @generated from field: string cursor = 2;
+   */
+  cursor = ''
+
+  constructor(data?: PartialMessage<GetActorListsResponse>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
 
   static fromBinary(
     bytes: Uint8Array,
@@ -6962,11 +6828,16 @@ export class GetActorListsResponse extends Message<GetActorListsResponse> {
  * @generated from message gndr.GetActorMutesActorRequest
  */
 export class GetActorMutesActorRequest extends Message<GetActorMutesActorRequest> {
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'gndr.GetActorMutesActorRequest'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: 'actor_did', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: 'target_did', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+  ])
   /**
    * @generated from field: string actor_did = 1;
    */
   actorDid = ''
-
   /**
    * @generated from field: string target_did = 2;
    */
@@ -6976,13 +6847,6 @@ export class GetActorMutesActorRequest extends Message<GetActorMutesActorRequest
     super()
     proto3.util.initPartial(data, this)
   }
-
-  static readonly runtime: typeof proto3 = proto3
-  static readonly typeName = 'gndr.GetActorMutesActorRequest'
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'actor_did', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: 'target_did', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-  ])
 
   static fromBinary(
     bytes: Uint8Array,
@@ -7023,6 +6887,11 @@ export class GetActorMutesActorRequest extends Message<GetActorMutesActorRequest
  * @generated from message gndr.GetActorMutesActorResponse
  */
 export class GetActorMutesActorResponse extends Message<GetActorMutesActorResponse> {
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'gndr.GetActorMutesActorResponse'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: 'muted', kind: 'scalar', T: 8 /* ScalarType.BOOL */ },
+  ])
   /**
    * @generated from field: bool muted = 1;
    */
@@ -7032,12 +6901,6 @@ export class GetActorMutesActorResponse extends Message<GetActorMutesActorRespon
     super()
     proto3.util.initPartial(data, this)
   }
-
-  static readonly runtime: typeof proto3 = proto3
-  static readonly typeName = 'gndr.GetActorMutesActorResponse'
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'muted', kind: 'scalar', T: 8 /* ScalarType.BOOL */ },
-  ])
 
   static fromBinary(
     bytes: Uint8Array,
@@ -7081,16 +6944,21 @@ export class GetActorMutesActorResponse extends Message<GetActorMutesActorRespon
  * @generated from message gndr.GetMutesRequest
  */
 export class GetMutesRequest extends Message<GetMutesRequest> {
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'gndr.GetMutesRequest'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: 'actor_did', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: 'limit', kind: 'scalar', T: 5 /* ScalarType.INT32 */ },
+    { no: 3, name: 'cursor', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+  ])
   /**
    * @generated from field: string actor_did = 1;
    */
   actorDid = ''
-
   /**
    * @generated from field: int32 limit = 2;
    */
   limit = 0
-
   /**
    * @generated from field: string cursor = 3;
    */
@@ -7100,14 +6968,6 @@ export class GetMutesRequest extends Message<GetMutesRequest> {
     super()
     proto3.util.initPartial(data, this)
   }
-
-  static readonly runtime: typeof proto3 = proto3
-  static readonly typeName = 'gndr.GetMutesRequest'
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'actor_did', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: 'limit', kind: 'scalar', T: 5 /* ScalarType.INT32 */ },
-    { no: 3, name: 'cursor', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-  ])
 
   static fromBinary(
     bytes: Uint8Array,
@@ -7142,21 +7002,6 @@ export class GetMutesRequest extends Message<GetMutesRequest> {
  * @generated from message gndr.GetMutesResponse
  */
 export class GetMutesResponse extends Message<GetMutesResponse> {
-  /**
-   * @generated from field: repeated string dids = 1;
-   */
-  dids: string[] = []
-
-  /**
-   * @generated from field: string cursor = 2;
-   */
-  cursor = ''
-
-  constructor(data?: PartialMessage<GetMutesResponse>) {
-    super()
-    proto3.util.initPartial(data, this)
-  }
-
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'gndr.GetMutesResponse'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
@@ -7169,6 +7014,19 @@ export class GetMutesResponse extends Message<GetMutesResponse> {
     },
     { no: 2, name: 'cursor', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
   ])
+  /**
+   * @generated from field: repeated string dids = 1;
+   */
+  dids: string[] = []
+  /**
+   * @generated from field: string cursor = 2;
+   */
+  cursor = ''
+
+  constructor(data?: PartialMessage<GetMutesResponse>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
 
   static fromBinary(
     bytes: Uint8Array,
@@ -7207,11 +7065,16 @@ export class GetMutesResponse extends Message<GetMutesResponse> {
  * @generated from message gndr.GetActorMutesActorViaListRequest
  */
 export class GetActorMutesActorViaListRequest extends Message<GetActorMutesActorViaListRequest> {
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'gndr.GetActorMutesActorViaListRequest'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: 'actor_did', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: 'target_did', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+  ])
   /**
    * @generated from field: string actor_did = 1;
    */
   actorDid = ''
-
   /**
    * @generated from field: string target_did = 2;
    */
@@ -7221,13 +7084,6 @@ export class GetActorMutesActorViaListRequest extends Message<GetActorMutesActor
     super()
     proto3.util.initPartial(data, this)
   }
-
-  static readonly runtime: typeof proto3 = proto3
-  static readonly typeName = 'gndr.GetActorMutesActorViaListRequest'
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'actor_did', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: 'target_did', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-  ])
 
   static fromBinary(
     bytes: Uint8Array,
@@ -7271,6 +7127,11 @@ export class GetActorMutesActorViaListRequest extends Message<GetActorMutesActor
  * @generated from message gndr.GetActorMutesActorViaListResponse
  */
 export class GetActorMutesActorViaListResponse extends Message<GetActorMutesActorViaListResponse> {
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'gndr.GetActorMutesActorViaListResponse'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: 'list_uri', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+  ])
   /**
    * @generated from field: string list_uri = 1;
    */
@@ -7280,12 +7141,6 @@ export class GetActorMutesActorViaListResponse extends Message<GetActorMutesActo
     super()
     proto3.util.initPartial(data, this)
   }
-
-  static readonly runtime: typeof proto3 = proto3
-  static readonly typeName = 'gndr.GetActorMutesActorViaListResponse'
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'list_uri', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-  ])
 
   static fromBinary(
     bytes: Uint8Array,
@@ -7332,11 +7187,16 @@ export class GetActorMutesActorViaListResponse extends Message<GetActorMutesActo
  * @generated from message gndr.GetMutelistSubscriptionRequest
  */
 export class GetMutelistSubscriptionRequest extends Message<GetMutelistSubscriptionRequest> {
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'gndr.GetMutelistSubscriptionRequest'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: 'actor_did', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: 'list_uri', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+  ])
   /**
    * @generated from field: string actor_did = 1;
    */
   actorDid = ''
-
   /**
    * @generated from field: string list_uri = 2;
    */
@@ -7346,13 +7206,6 @@ export class GetMutelistSubscriptionRequest extends Message<GetMutelistSubscript
     super()
     proto3.util.initPartial(data, this)
   }
-
-  static readonly runtime: typeof proto3 = proto3
-  static readonly typeName = 'gndr.GetMutelistSubscriptionRequest'
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'actor_did', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: 'list_uri', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-  ])
 
   static fromBinary(
     bytes: Uint8Array,
@@ -7396,6 +7249,11 @@ export class GetMutelistSubscriptionRequest extends Message<GetMutelistSubscript
  * @generated from message gndr.GetMutelistSubscriptionResponse
  */
 export class GetMutelistSubscriptionResponse extends Message<GetMutelistSubscriptionResponse> {
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'gndr.GetMutelistSubscriptionResponse'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: 'subscribed', kind: 'scalar', T: 8 /* ScalarType.BOOL */ },
+  ])
   /**
    * @generated from field: bool subscribed = 1;
    */
@@ -7405,12 +7263,6 @@ export class GetMutelistSubscriptionResponse extends Message<GetMutelistSubscrip
     super()
     proto3.util.initPartial(data, this)
   }
-
-  static readonly runtime: typeof proto3 = proto3
-  static readonly typeName = 'gndr.GetMutelistSubscriptionResponse'
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'subscribed', kind: 'scalar', T: 8 /* ScalarType.BOOL */ },
-  ])
 
   static fromBinary(
     bytes: Uint8Array,
@@ -7457,16 +7309,21 @@ export class GetMutelistSubscriptionResponse extends Message<GetMutelistSubscrip
  * @generated from message gndr.GetMutelistSubscriptionsRequest
  */
 export class GetMutelistSubscriptionsRequest extends Message<GetMutelistSubscriptionsRequest> {
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'gndr.GetMutelistSubscriptionsRequest'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: 'actor_did', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: 'limit', kind: 'scalar', T: 5 /* ScalarType.INT32 */ },
+    { no: 3, name: 'cursor', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+  ])
   /**
    * @generated from field: string actor_did = 1;
    */
   actorDid = ''
-
   /**
    * @generated from field: int32 limit = 2;
    */
   limit = 0
-
   /**
    * @generated from field: string cursor = 3;
    */
@@ -7476,14 +7333,6 @@ export class GetMutelistSubscriptionsRequest extends Message<GetMutelistSubscrip
     super()
     proto3.util.initPartial(data, this)
   }
-
-  static readonly runtime: typeof proto3 = proto3
-  static readonly typeName = 'gndr.GetMutelistSubscriptionsRequest'
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'actor_did', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: 'limit', kind: 'scalar', T: 5 /* ScalarType.INT32 */ },
-    { no: 3, name: 'cursor', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-  ])
 
   static fromBinary(
     bytes: Uint8Array,
@@ -7527,21 +7376,6 @@ export class GetMutelistSubscriptionsRequest extends Message<GetMutelistSubscrip
  * @generated from message gndr.GetMutelistSubscriptionsResponse
  */
 export class GetMutelistSubscriptionsResponse extends Message<GetMutelistSubscriptionsResponse> {
-  /**
-   * @generated from field: repeated string list_uris = 1;
-   */
-  listUris: string[] = []
-
-  /**
-   * @generated from field: string cursor = 2;
-   */
-  cursor = ''
-
-  constructor(data?: PartialMessage<GetMutelistSubscriptionsResponse>) {
-    super()
-    proto3.util.initPartial(data, this)
-  }
-
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'gndr.GetMutelistSubscriptionsResponse'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
@@ -7554,6 +7388,19 @@ export class GetMutelistSubscriptionsResponse extends Message<GetMutelistSubscri
     },
     { no: 2, name: 'cursor', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
   ])
+  /**
+   * @generated from field: repeated string list_uris = 1;
+   */
+  listUris: string[] = []
+  /**
+   * @generated from field: string cursor = 2;
+   */
+  cursor = ''
+
+  constructor(data?: PartialMessage<GetMutelistSubscriptionsResponse>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
 
   static fromBinary(
     bytes: Uint8Array,
@@ -7597,21 +7444,6 @@ export class GetMutelistSubscriptionsResponse extends Message<GetMutelistSubscri
  * @generated from message gndr.GetThreadMutesOnSubjectsRequest
  */
 export class GetThreadMutesOnSubjectsRequest extends Message<GetThreadMutesOnSubjectsRequest> {
-  /**
-   * @generated from field: string actor_did = 1;
-   */
-  actorDid = ''
-
-  /**
-   * @generated from field: repeated string thread_roots = 2;
-   */
-  threadRoots: string[] = []
-
-  constructor(data?: PartialMessage<GetThreadMutesOnSubjectsRequest>) {
-    super()
-    proto3.util.initPartial(data, this)
-  }
-
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'gndr.GetThreadMutesOnSubjectsRequest'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
@@ -7624,6 +7456,19 @@ export class GetThreadMutesOnSubjectsRequest extends Message<GetThreadMutesOnSub
       repeated: true,
     },
   ])
+  /**
+   * @generated from field: string actor_did = 1;
+   */
+  actorDid = ''
+  /**
+   * @generated from field: repeated string thread_roots = 2;
+   */
+  threadRoots: string[] = []
+
+  constructor(data?: PartialMessage<GetThreadMutesOnSubjectsRequest>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
 
   static fromBinary(
     bytes: Uint8Array,
@@ -7667,16 +7512,6 @@ export class GetThreadMutesOnSubjectsRequest extends Message<GetThreadMutesOnSub
  * @generated from message gndr.GetThreadMutesOnSubjectsResponse
  */
 export class GetThreadMutesOnSubjectsResponse extends Message<GetThreadMutesOnSubjectsResponse> {
-  /**
-   * @generated from field: repeated bool muted = 1;
-   */
-  muted: boolean[] = []
-
-  constructor(data?: PartialMessage<GetThreadMutesOnSubjectsResponse>) {
-    super()
-    proto3.util.initPartial(data, this)
-  }
-
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'gndr.GetThreadMutesOnSubjectsResponse'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
@@ -7688,6 +7523,15 @@ export class GetThreadMutesOnSubjectsResponse extends Message<GetThreadMutesOnSu
       repeated: true,
     },
   ])
+  /**
+   * @generated from field: repeated bool muted = 1;
+   */
+  muted: boolean[] = []
+
+  constructor(data?: PartialMessage<GetThreadMutesOnSubjectsResponse>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
 
   static fromBinary(
     bytes: Uint8Array,
@@ -7735,11 +7579,16 @@ export class GetThreadMutesOnSubjectsResponse extends Message<GetThreadMutesOnSu
  * @generated from message gndr.GetBidirectionalBlockRequest
  */
 export class GetBidirectionalBlockRequest extends Message<GetBidirectionalBlockRequest> {
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'gndr.GetBidirectionalBlockRequest'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: 'actor_did', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: 'target_did', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+  ])
   /**
    * @generated from field: string actor_did = 1;
    */
   actorDid = ''
-
   /**
    * @generated from field: string target_did = 2;
    */
@@ -7749,13 +7598,6 @@ export class GetBidirectionalBlockRequest extends Message<GetBidirectionalBlockR
     super()
     proto3.util.initPartial(data, this)
   }
-
-  static readonly runtime: typeof proto3 = proto3
-  static readonly typeName = 'gndr.GetBidirectionalBlockRequest'
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'actor_did', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: 'target_did', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-  ])
 
   static fromBinary(
     bytes: Uint8Array,
@@ -7799,6 +7641,11 @@ export class GetBidirectionalBlockRequest extends Message<GetBidirectionalBlockR
  * @generated from message gndr.GetBidirectionalBlockResponse
  */
 export class GetBidirectionalBlockResponse extends Message<GetBidirectionalBlockResponse> {
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'gndr.GetBidirectionalBlockResponse'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: 'block_uri', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+  ])
   /**
    * @generated from field: string block_uri = 1;
    */
@@ -7808,12 +7655,6 @@ export class GetBidirectionalBlockResponse extends Message<GetBidirectionalBlock
     super()
     proto3.util.initPartial(data, this)
   }
-
-  static readonly runtime: typeof proto3 = proto3
-  static readonly typeName = 'gndr.GetBidirectionalBlockResponse'
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'block_uri', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-  ])
 
   static fromBinary(
     bytes: Uint8Array,
@@ -7860,16 +7701,21 @@ export class GetBidirectionalBlockResponse extends Message<GetBidirectionalBlock
  * @generated from message gndr.GetBlocksRequest
  */
 export class GetBlocksRequest extends Message<GetBlocksRequest> {
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'gndr.GetBlocksRequest'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: 'actor_did', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: 'limit', kind: 'scalar', T: 5 /* ScalarType.INT32 */ },
+    { no: 3, name: 'cursor', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+  ])
   /**
    * @generated from field: string actor_did = 1;
    */
   actorDid = ''
-
   /**
    * @generated from field: int32 limit = 2;
    */
   limit = 0
-
   /**
    * @generated from field: string cursor = 3;
    */
@@ -7879,14 +7725,6 @@ export class GetBlocksRequest extends Message<GetBlocksRequest> {
     super()
     proto3.util.initPartial(data, this)
   }
-
-  static readonly runtime: typeof proto3 = proto3
-  static readonly typeName = 'gndr.GetBlocksRequest'
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'actor_did', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: 'limit', kind: 'scalar', T: 5 /* ScalarType.INT32 */ },
-    { no: 3, name: 'cursor', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-  ])
 
   static fromBinary(
     bytes: Uint8Array,
@@ -7921,21 +7759,6 @@ export class GetBlocksRequest extends Message<GetBlocksRequest> {
  * @generated from message gndr.GetBlocksResponse
  */
 export class GetBlocksResponse extends Message<GetBlocksResponse> {
-  /**
-   * @generated from field: repeated string block_uris = 1;
-   */
-  blockUris: string[] = []
-
-  /**
-   * @generated from field: string cursor = 2;
-   */
-  cursor = ''
-
-  constructor(data?: PartialMessage<GetBlocksResponse>) {
-    super()
-    proto3.util.initPartial(data, this)
-  }
-
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'gndr.GetBlocksResponse'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
@@ -7948,6 +7771,19 @@ export class GetBlocksResponse extends Message<GetBlocksResponse> {
     },
     { no: 2, name: 'cursor', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
   ])
+  /**
+   * @generated from field: repeated string block_uris = 1;
+   */
+  blockUris: string[] = []
+  /**
+   * @generated from field: string cursor = 2;
+   */
+  cursor = ''
+
+  constructor(data?: PartialMessage<GetBlocksResponse>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
 
   static fromBinary(
     bytes: Uint8Array,
@@ -7986,11 +7822,16 @@ export class GetBlocksResponse extends Message<GetBlocksResponse> {
  * @generated from message gndr.GetBidirectionalBlockViaListRequest
  */
 export class GetBidirectionalBlockViaListRequest extends Message<GetBidirectionalBlockViaListRequest> {
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'gndr.GetBidirectionalBlockViaListRequest'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: 'actor_did', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: 'target_did', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+  ])
   /**
    * @generated from field: string actor_did = 1;
    */
   actorDid = ''
-
   /**
    * @generated from field: string target_did = 2;
    */
@@ -8000,13 +7841,6 @@ export class GetBidirectionalBlockViaListRequest extends Message<GetBidirectiona
     super()
     proto3.util.initPartial(data, this)
   }
-
-  static readonly runtime: typeof proto3 = proto3
-  static readonly typeName = 'gndr.GetBidirectionalBlockViaListRequest'
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'actor_did', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: 'target_did', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-  ])
 
   static fromBinary(
     bytes: Uint8Array,
@@ -8053,6 +7887,11 @@ export class GetBidirectionalBlockViaListRequest extends Message<GetBidirectiona
  * @generated from message gndr.GetBidirectionalBlockViaListResponse
  */
 export class GetBidirectionalBlockViaListResponse extends Message<GetBidirectionalBlockViaListResponse> {
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'gndr.GetBidirectionalBlockViaListResponse'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: 'list_uri', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+  ])
   /**
    * @generated from field: string list_uri = 1;
    */
@@ -8062,12 +7901,6 @@ export class GetBidirectionalBlockViaListResponse extends Message<GetBidirection
     super()
     proto3.util.initPartial(data, this)
   }
-
-  static readonly runtime: typeof proto3 = proto3
-  static readonly typeName = 'gndr.GetBidirectionalBlockViaListResponse'
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'list_uri', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-  ])
 
   static fromBinary(
     bytes: Uint8Array,
@@ -8117,11 +7950,16 @@ export class GetBidirectionalBlockViaListResponse extends Message<GetBidirection
  * @generated from message gndr.GetBlocklistSubscriptionRequest
  */
 export class GetBlocklistSubscriptionRequest extends Message<GetBlocklistSubscriptionRequest> {
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'gndr.GetBlocklistSubscriptionRequest'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: 'actor_did', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: 'list_uri', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+  ])
   /**
    * @generated from field: string actor_did = 1;
    */
   actorDid = ''
-
   /**
    * @generated from field: string list_uri = 2;
    */
@@ -8131,13 +7969,6 @@ export class GetBlocklistSubscriptionRequest extends Message<GetBlocklistSubscri
     super()
     proto3.util.initPartial(data, this)
   }
-
-  static readonly runtime: typeof proto3 = proto3
-  static readonly typeName = 'gndr.GetBlocklistSubscriptionRequest'
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'actor_did', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: 'list_uri', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-  ])
 
   static fromBinary(
     bytes: Uint8Array,
@@ -8181,16 +8012,6 @@ export class GetBlocklistSubscriptionRequest extends Message<GetBlocklistSubscri
  * @generated from message gndr.GetBlocklistSubscriptionResponse
  */
 export class GetBlocklistSubscriptionResponse extends Message<GetBlocklistSubscriptionResponse> {
-  /**
-   * @generated from field: string listblock_uri = 1;
-   */
-  listblockUri = ''
-
-  constructor(data?: PartialMessage<GetBlocklistSubscriptionResponse>) {
-    super()
-    proto3.util.initPartial(data, this)
-  }
-
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'gndr.GetBlocklistSubscriptionResponse'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
@@ -8201,6 +8022,15 @@ export class GetBlocklistSubscriptionResponse extends Message<GetBlocklistSubscr
       T: 9 /* ScalarType.STRING */,
     },
   ])
+  /**
+   * @generated from field: string listblock_uri = 1;
+   */
+  listblockUri = ''
+
+  constructor(data?: PartialMessage<GetBlocklistSubscriptionResponse>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
 
   static fromBinary(
     bytes: Uint8Array,
@@ -8247,16 +8077,21 @@ export class GetBlocklistSubscriptionResponse extends Message<GetBlocklistSubscr
  * @generated from message gndr.GetBlocklistSubscriptionsRequest
  */
 export class GetBlocklistSubscriptionsRequest extends Message<GetBlocklistSubscriptionsRequest> {
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'gndr.GetBlocklistSubscriptionsRequest'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: 'actor_did', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: 'limit', kind: 'scalar', T: 5 /* ScalarType.INT32 */ },
+    { no: 3, name: 'cursor', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+  ])
   /**
    * @generated from field: string actor_did = 1;
    */
   actorDid = ''
-
   /**
    * @generated from field: int32 limit = 2;
    */
   limit = 0
-
   /**
    * @generated from field: string cursor = 3;
    */
@@ -8266,14 +8101,6 @@ export class GetBlocklistSubscriptionsRequest extends Message<GetBlocklistSubscr
     super()
     proto3.util.initPartial(data, this)
   }
-
-  static readonly runtime: typeof proto3 = proto3
-  static readonly typeName = 'gndr.GetBlocklistSubscriptionsRequest'
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'actor_did', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: 'limit', kind: 'scalar', T: 5 /* ScalarType.INT32 */ },
-    { no: 3, name: 'cursor', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-  ])
 
   static fromBinary(
     bytes: Uint8Array,
@@ -8317,21 +8144,6 @@ export class GetBlocklistSubscriptionsRequest extends Message<GetBlocklistSubscr
  * @generated from message gndr.GetBlocklistSubscriptionsResponse
  */
 export class GetBlocklistSubscriptionsResponse extends Message<GetBlocklistSubscriptionsResponse> {
-  /**
-   * @generated from field: repeated string list_uris = 1;
-   */
-  listUris: string[] = []
-
-  /**
-   * @generated from field: string cursor = 2;
-   */
-  cursor = ''
-
-  constructor(data?: PartialMessage<GetBlocklistSubscriptionsResponse>) {
-    super()
-    proto3.util.initPartial(data, this)
-  }
-
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'gndr.GetBlocklistSubscriptionsResponse'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
@@ -8344,6 +8156,19 @@ export class GetBlocklistSubscriptionsResponse extends Message<GetBlocklistSubsc
     },
     { no: 2, name: 'cursor', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
   ])
+  /**
+   * @generated from field: repeated string list_uris = 1;
+   */
+  listUris: string[] = []
+  /**
+   * @generated from field: string cursor = 2;
+   */
+  cursor = ''
+
+  constructor(data?: PartialMessage<GetBlocklistSubscriptionsResponse>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
 
   static fromBinary(
     bytes: Uint8Array,
@@ -8387,16 +8212,6 @@ export class GetBlocklistSubscriptionsResponse extends Message<GetBlocklistSubsc
  * @generated from message gndr.GetNotificationPreferencesRequest
  */
 export class GetNotificationPreferencesRequest extends Message<GetNotificationPreferencesRequest> {
-  /**
-   * @generated from field: repeated string dids = 1;
-   */
-  dids: string[] = []
-
-  constructor(data?: PartialMessage<GetNotificationPreferencesRequest>) {
-    super()
-    proto3.util.initPartial(data, this)
-  }
-
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'gndr.GetNotificationPreferencesRequest'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
@@ -8408,6 +8223,15 @@ export class GetNotificationPreferencesRequest extends Message<GetNotificationPr
       repeated: true,
     },
   ])
+  /**
+   * @generated from field: repeated string dids = 1;
+   */
+  dids: string[] = []
+
+  constructor(data?: PartialMessage<GetNotificationPreferencesRequest>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
 
   static fromBinary(
     bytes: Uint8Array,
@@ -8451,6 +8275,11 @@ export class GetNotificationPreferencesRequest extends Message<GetNotificationPr
  * @generated from message gndr.NotificationChannelList
  */
 export class NotificationChannelList extends Message<NotificationChannelList> {
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'gndr.NotificationChannelList'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: 'enabled', kind: 'scalar', T: 8 /* ScalarType.BOOL */ },
+  ])
   /**
    * @generated from field: bool enabled = 1;
    */
@@ -8460,12 +8289,6 @@ export class NotificationChannelList extends Message<NotificationChannelList> {
     super()
     proto3.util.initPartial(data, this)
   }
-
-  static readonly runtime: typeof proto3 = proto3
-  static readonly typeName = 'gndr.NotificationChannelList'
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'enabled', kind: 'scalar', T: 8 /* ScalarType.BOOL */ },
-  ])
 
   static fromBinary(
     bytes: Uint8Array,
@@ -8506,6 +8329,11 @@ export class NotificationChannelList extends Message<NotificationChannelList> {
  * @generated from message gndr.NotificationChannelPush
  */
 export class NotificationChannelPush extends Message<NotificationChannelPush> {
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'gndr.NotificationChannelPush'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: 'enabled', kind: 'scalar', T: 8 /* ScalarType.BOOL */ },
+  ])
   /**
    * @generated from field: bool enabled = 1;
    */
@@ -8515,12 +8343,6 @@ export class NotificationChannelPush extends Message<NotificationChannelPush> {
     super()
     proto3.util.initPartial(data, this)
   }
-
-  static readonly runtime: typeof proto3 = proto3
-  static readonly typeName = 'gndr.NotificationChannelPush'
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'enabled', kind: 'scalar', T: 8 /* ScalarType.BOOL */ },
-  ])
 
   static fromBinary(
     bytes: Uint8Array,
@@ -8561,26 +8383,6 @@ export class NotificationChannelPush extends Message<NotificationChannelPush> {
  * @generated from message gndr.FilterableNotificationPreference
  */
 export class FilterableNotificationPreference extends Message<FilterableNotificationPreference> {
-  /**
-   * @generated from field: gndr.NotificationInclude include = 1;
-   */
-  include = NotificationInclude.UNSPECIFIED
-
-  /**
-   * @generated from field: gndr.NotificationChannelList list = 2;
-   */
-  list?: NotificationChannelList
-
-  /**
-   * @generated from field: gndr.NotificationChannelPush push = 3;
-   */
-  push?: NotificationChannelPush
-
-  constructor(data?: PartialMessage<FilterableNotificationPreference>) {
-    super()
-    proto3.util.initPartial(data, this)
-  }
-
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'gndr.FilterableNotificationPreference'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
@@ -8593,6 +8395,23 @@ export class FilterableNotificationPreference extends Message<FilterableNotifica
     { no: 2, name: 'list', kind: 'message', T: NotificationChannelList },
     { no: 3, name: 'push', kind: 'message', T: NotificationChannelPush },
   ])
+  /**
+   * @generated from field: gndr.NotificationInclude include = 1;
+   */
+  include = NotificationInclude.UNSPECIFIED
+  /**
+   * @generated from field: gndr.NotificationChannelList list = 2;
+   */
+  list?: NotificationChannelList
+  /**
+   * @generated from field: gndr.NotificationChannelPush push = 3;
+   */
+  push?: NotificationChannelPush
+
+  constructor(data?: PartialMessage<FilterableNotificationPreference>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
 
   static fromBinary(
     bytes: Uint8Array,
@@ -8636,11 +8455,16 @@ export class FilterableNotificationPreference extends Message<FilterableNotifica
  * @generated from message gndr.NotificationPreference
  */
 export class NotificationPreference extends Message<NotificationPreference> {
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'gndr.NotificationPreference'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: 'list', kind: 'message', T: NotificationChannelList },
+    { no: 2, name: 'push', kind: 'message', T: NotificationChannelPush },
+  ])
   /**
    * @generated from field: gndr.NotificationChannelList list = 1;
    */
   list?: NotificationChannelList
-
   /**
    * @generated from field: gndr.NotificationChannelPush push = 2;
    */
@@ -8650,13 +8474,6 @@ export class NotificationPreference extends Message<NotificationPreference> {
     super()
     proto3.util.initPartial(data, this)
   }
-
-  static readonly runtime: typeof proto3 = proto3
-  static readonly typeName = 'gndr.NotificationPreference'
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'list', kind: 'message', T: NotificationChannelList },
-    { no: 2, name: 'push', kind: 'message', T: NotificationChannelPush },
-  ])
 
   static fromBinary(
     bytes: Uint8Array,
@@ -8697,21 +8514,6 @@ export class NotificationPreference extends Message<NotificationPreference> {
  * @generated from message gndr.ChatNotificationPreference
  */
 export class ChatNotificationPreference extends Message<ChatNotificationPreference> {
-  /**
-   * @generated from field: gndr.ChatNotificationInclude include = 1;
-   */
-  include = ChatNotificationInclude.UNSPECIFIED
-
-  /**
-   * @generated from field: gndr.NotificationChannelPush push = 2;
-   */
-  push?: NotificationChannelPush
-
-  constructor(data?: PartialMessage<ChatNotificationPreference>) {
-    super()
-    proto3.util.initPartial(data, this)
-  }
-
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'gndr.ChatNotificationPreference'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
@@ -8723,6 +8525,19 @@ export class ChatNotificationPreference extends Message<ChatNotificationPreferen
     },
     { no: 2, name: 'push', kind: 'message', T: NotificationChannelPush },
   ])
+  /**
+   * @generated from field: gndr.ChatNotificationInclude include = 1;
+   */
+  include = ChatNotificationInclude.UNSPECIFIED
+  /**
+   * @generated from field: gndr.NotificationChannelPush push = 2;
+   */
+  push?: NotificationChannelPush
+
+  constructor(data?: PartialMessage<ChatNotificationPreference>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
 
   static fromBinary(
     bytes: Uint8Array,
@@ -8763,81 +8578,6 @@ export class ChatNotificationPreference extends Message<ChatNotificationPreferen
  * @generated from message gndr.NotificationPreferences
  */
 export class NotificationPreferences extends Message<NotificationPreferences> {
-  /**
-   * @generated from field: bytes entry = 1;
-   */
-  entry = new Uint8Array(0)
-
-  /**
-   * @generated from field: gndr.ChatNotificationPreference chat = 2;
-   */
-  chat?: ChatNotificationPreference
-
-  /**
-   * @generated from field: gndr.FilterableNotificationPreference follow = 3;
-   */
-  follow?: FilterableNotificationPreference
-
-  /**
-   * @generated from field: gndr.FilterableNotificationPreference like = 4;
-   */
-  like?: FilterableNotificationPreference
-
-  /**
-   * @generated from field: gndr.FilterableNotificationPreference like_via_repost = 5;
-   */
-  likeViaRepost?: FilterableNotificationPreference
-
-  /**
-   * @generated from field: gndr.FilterableNotificationPreference mention = 6;
-   */
-  mention?: FilterableNotificationPreference
-
-  /**
-   * @generated from field: gndr.FilterableNotificationPreference quote = 7;
-   */
-  quote?: FilterableNotificationPreference
-
-  /**
-   * @generated from field: gndr.FilterableNotificationPreference reply = 8;
-   */
-  reply?: FilterableNotificationPreference
-
-  /**
-   * @generated from field: gndr.FilterableNotificationPreference repost = 9;
-   */
-  repost?: FilterableNotificationPreference
-
-  /**
-   * @generated from field: gndr.FilterableNotificationPreference repost_via_repost = 10;
-   */
-  repostViaRepost?: FilterableNotificationPreference
-
-  /**
-   * @generated from field: gndr.NotificationPreference starterpack_joined = 11;
-   */
-  starterpackJoined?: NotificationPreference
-
-  /**
-   * @generated from field: gndr.NotificationPreference subscribed_post = 12;
-   */
-  subscribedPost?: NotificationPreference
-
-  /**
-   * @generated from field: gndr.NotificationPreference unverified = 13;
-   */
-  unverified?: NotificationPreference
-
-  /**
-   * @generated from field: gndr.NotificationPreference verified = 14;
-   */
-  verified?: NotificationPreference
-
-  constructor(data?: PartialMessage<NotificationPreferences>) {
-    super()
-    proto3.util.initPartial(data, this)
-  }
-
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'gndr.NotificationPreferences'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
@@ -8906,6 +8646,67 @@ export class NotificationPreferences extends Message<NotificationPreferences> {
     { no: 13, name: 'unverified', kind: 'message', T: NotificationPreference },
     { no: 14, name: 'verified', kind: 'message', T: NotificationPreference },
   ])
+  /**
+   * @generated from field: bytes entry = 1;
+   */
+  entry = new Uint8Array(0)
+  /**
+   * @generated from field: gndr.ChatNotificationPreference chat = 2;
+   */
+  chat?: ChatNotificationPreference
+  /**
+   * @generated from field: gndr.FilterableNotificationPreference follow = 3;
+   */
+  follow?: FilterableNotificationPreference
+  /**
+   * @generated from field: gndr.FilterableNotificationPreference like = 4;
+   */
+  like?: FilterableNotificationPreference
+  /**
+   * @generated from field: gndr.FilterableNotificationPreference like_via_repost = 5;
+   */
+  likeViaRepost?: FilterableNotificationPreference
+  /**
+   * @generated from field: gndr.FilterableNotificationPreference mention = 6;
+   */
+  mention?: FilterableNotificationPreference
+  /**
+   * @generated from field: gndr.FilterableNotificationPreference quote = 7;
+   */
+  quote?: FilterableNotificationPreference
+  /**
+   * @generated from field: gndr.FilterableNotificationPreference reply = 8;
+   */
+  reply?: FilterableNotificationPreference
+  /**
+   * @generated from field: gndr.FilterableNotificationPreference repost = 9;
+   */
+  repost?: FilterableNotificationPreference
+  /**
+   * @generated from field: gndr.FilterableNotificationPreference repost_via_repost = 10;
+   */
+  repostViaRepost?: FilterableNotificationPreference
+  /**
+   * @generated from field: gndr.NotificationPreference starterpack_joined = 11;
+   */
+  starterpackJoined?: NotificationPreference
+  /**
+   * @generated from field: gndr.NotificationPreference subscribed_post = 12;
+   */
+  subscribedPost?: NotificationPreference
+  /**
+   * @generated from field: gndr.NotificationPreference unverified = 13;
+   */
+  unverified?: NotificationPreference
+  /**
+   * @generated from field: gndr.NotificationPreference verified = 14;
+   */
+  verified?: NotificationPreference
+
+  constructor(data?: PartialMessage<NotificationPreferences>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
 
   static fromBinary(
     bytes: Uint8Array,
@@ -8946,16 +8747,6 @@ export class NotificationPreferences extends Message<NotificationPreferences> {
  * @generated from message gndr.GetNotificationPreferencesResponse
  */
 export class GetNotificationPreferencesResponse extends Message<GetNotificationPreferencesResponse> {
-  /**
-   * @generated from field: repeated gndr.NotificationPreferences preferences = 1;
-   */
-  preferences: NotificationPreferences[] = []
-
-  constructor(data?: PartialMessage<GetNotificationPreferencesResponse>) {
-    super()
-    proto3.util.initPartial(data, this)
-  }
-
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'gndr.GetNotificationPreferencesResponse'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
@@ -8967,6 +8758,15 @@ export class GetNotificationPreferencesResponse extends Message<GetNotificationP
       repeated: true,
     },
   ])
+  /**
+   * @generated from field: repeated gndr.NotificationPreferences preferences = 1;
+   */
+  preferences: NotificationPreferences[] = []
+
+  constructor(data?: PartialMessage<GetNotificationPreferencesResponse>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
 
   static fromBinary(
     bytes: Uint8Array,
@@ -9014,21 +8814,26 @@ export class GetNotificationPreferencesResponse extends Message<GetNotificationP
  * @generated from message gndr.GetNotificationsRequest
  */
 export class GetNotificationsRequest extends Message<GetNotificationsRequest> {
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'gndr.GetNotificationsRequest'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: 'actor_did', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: 'limit', kind: 'scalar', T: 5 /* ScalarType.INT32 */ },
+    { no: 3, name: 'cursor', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: 'priority', kind: 'scalar', T: 8 /* ScalarType.BOOL */ },
+  ])
   /**
    * @generated from field: string actor_did = 1;
    */
   actorDid = ''
-
   /**
    * @generated from field: int32 limit = 2;
    */
   limit = 0
-
   /**
    * @generated from field: string cursor = 3;
    */
   cursor = ''
-
   /**
    * @generated from field: bool priority = 4;
    */
@@ -9038,15 +8843,6 @@ export class GetNotificationsRequest extends Message<GetNotificationsRequest> {
     super()
     proto3.util.initPartial(data, this)
   }
-
-  static readonly runtime: typeof proto3 = proto3
-  static readonly typeName = 'gndr.GetNotificationsRequest'
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'actor_did', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: 'limit', kind: 'scalar', T: 5 /* ScalarType.INT32 */ },
-    { no: 3, name: 'cursor', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-    { no: 4, name: 'priority', kind: 'scalar', T: 8 /* ScalarType.BOOL */ },
-  ])
 
   static fromBinary(
     bytes: Uint8Array,
@@ -9087,41 +8883,6 @@ export class GetNotificationsRequest extends Message<GetNotificationsRequest> {
  * @generated from message gndr.Notification
  */
 export class Notification extends Message<Notification> {
-  /**
-   * @generated from field: string recipient_did = 1;
-   */
-  recipientDid = ''
-
-  /**
-   * @generated from field: string uri = 2;
-   */
-  uri = ''
-
-  /**
-   * @generated from field: string reason = 3;
-   */
-  reason = ''
-
-  /**
-   * @generated from field: string reason_subject = 4;
-   */
-  reasonSubject = ''
-
-  /**
-   * @generated from field: google.protobuf.Timestamp timestamp = 5;
-   */
-  timestamp?: Timestamp
-
-  /**
-   * @generated from field: bool priority = 6;
-   */
-  priority = false
-
-  constructor(data?: PartialMessage<Notification>) {
-    super()
-    proto3.util.initPartial(data, this)
-  }
-
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'gndr.Notification'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
@@ -9142,6 +8903,35 @@ export class Notification extends Message<Notification> {
     { no: 5, name: 'timestamp', kind: 'message', T: Timestamp },
     { no: 6, name: 'priority', kind: 'scalar', T: 8 /* ScalarType.BOOL */ },
   ])
+  /**
+   * @generated from field: string recipient_did = 1;
+   */
+  recipientDid = ''
+  /**
+   * @generated from field: string uri = 2;
+   */
+  uri = ''
+  /**
+   * @generated from field: string reason = 3;
+   */
+  reason = ''
+  /**
+   * @generated from field: string reason_subject = 4;
+   */
+  reasonSubject = ''
+  /**
+   * @generated from field: google.protobuf.Timestamp timestamp = 5;
+   */
+  timestamp?: Timestamp
+  /**
+   * @generated from field: bool priority = 6;
+   */
+  priority = false
+
+  constructor(data?: PartialMessage<Notification>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
 
   static fromBinary(
     bytes: Uint8Array,
@@ -9176,21 +8966,6 @@ export class Notification extends Message<Notification> {
  * @generated from message gndr.GetNotificationsResponse
  */
 export class GetNotificationsResponse extends Message<GetNotificationsResponse> {
-  /**
-   * @generated from field: repeated gndr.Notification notifications = 1;
-   */
-  notifications: Notification[] = []
-
-  /**
-   * @generated from field: string cursor = 2;
-   */
-  cursor = ''
-
-  constructor(data?: PartialMessage<GetNotificationsResponse>) {
-    super()
-    proto3.util.initPartial(data, this)
-  }
-
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'gndr.GetNotificationsResponse'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
@@ -9203,6 +8978,19 @@ export class GetNotificationsResponse extends Message<GetNotificationsResponse> 
     },
     { no: 2, name: 'cursor', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
   ])
+  /**
+   * @generated from field: repeated gndr.Notification notifications = 1;
+   */
+  notifications: Notification[] = []
+  /**
+   * @generated from field: string cursor = 2;
+   */
+  cursor = ''
+
+  constructor(data?: PartialMessage<GetNotificationsResponse>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
 
   static fromBinary(
     bytes: Uint8Array,
@@ -9246,16 +9034,21 @@ export class GetNotificationsResponse extends Message<GetNotificationsResponse> 
  * @generated from message gndr.UpdateNotificationSeenRequest
  */
 export class UpdateNotificationSeenRequest extends Message<UpdateNotificationSeenRequest> {
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'gndr.UpdateNotificationSeenRequest'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: 'actor_did', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: 'timestamp', kind: 'message', T: Timestamp },
+    { no: 3, name: 'priority', kind: 'scalar', T: 8 /* ScalarType.BOOL */ },
+  ])
   /**
    * @generated from field: string actor_did = 1;
    */
   actorDid = ''
-
   /**
    * @generated from field: google.protobuf.Timestamp timestamp = 2;
    */
   timestamp?: Timestamp
-
   /**
    * @generated from field: bool priority = 3;
    */
@@ -9265,14 +9058,6 @@ export class UpdateNotificationSeenRequest extends Message<UpdateNotificationSee
     super()
     proto3.util.initPartial(data, this)
   }
-
-  static readonly runtime: typeof proto3 = proto3
-  static readonly typeName = 'gndr.UpdateNotificationSeenRequest'
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'actor_did', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: 'timestamp', kind: 'message', T: Timestamp },
-    { no: 3, name: 'priority', kind: 'scalar', T: 8 /* ScalarType.BOOL */ },
-  ])
 
   static fromBinary(
     bytes: Uint8Array,
@@ -9316,14 +9101,14 @@ export class UpdateNotificationSeenRequest extends Message<UpdateNotificationSee
  * @generated from message gndr.UpdateNotificationSeenResponse
  */
 export class UpdateNotificationSeenResponse extends Message<UpdateNotificationSeenResponse> {
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'gndr.UpdateNotificationSeenResponse'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [])
+
   constructor(data?: PartialMessage<UpdateNotificationSeenResponse>) {
     super()
     proto3.util.initPartial(data, this)
   }
-
-  static readonly runtime: typeof proto3 = proto3
-  static readonly typeName = 'gndr.UpdateNotificationSeenResponse'
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [])
 
   static fromBinary(
     bytes: Uint8Array,
@@ -9370,11 +9155,16 @@ export class UpdateNotificationSeenResponse extends Message<UpdateNotificationSe
  * @generated from message gndr.GetNotificationSeenRequest
  */
 export class GetNotificationSeenRequest extends Message<GetNotificationSeenRequest> {
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'gndr.GetNotificationSeenRequest'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: 'actor_did', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: 'priority', kind: 'scalar', T: 8 /* ScalarType.BOOL */ },
+  ])
   /**
    * @generated from field: string actor_did = 1;
    */
   actorDid = ''
-
   /**
    * @generated from field: bool priority = 2;
    */
@@ -9384,13 +9174,6 @@ export class GetNotificationSeenRequest extends Message<GetNotificationSeenReque
     super()
     proto3.util.initPartial(data, this)
   }
-
-  static readonly runtime: typeof proto3 = proto3
-  static readonly typeName = 'gndr.GetNotificationSeenRequest'
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'actor_did', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: 'priority', kind: 'scalar', T: 8 /* ScalarType.BOOL */ },
-  ])
 
   static fromBinary(
     bytes: Uint8Array,
@@ -9431,6 +9214,11 @@ export class GetNotificationSeenRequest extends Message<GetNotificationSeenReque
  * @generated from message gndr.GetNotificationSeenResponse
  */
 export class GetNotificationSeenResponse extends Message<GetNotificationSeenResponse> {
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'gndr.GetNotificationSeenResponse'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: 'timestamp', kind: 'message', T: Timestamp },
+  ])
   /**
    * @generated from field: google.protobuf.Timestamp timestamp = 1;
    */
@@ -9440,12 +9228,6 @@ export class GetNotificationSeenResponse extends Message<GetNotificationSeenResp
     super()
     proto3.util.initPartial(data, this)
   }
-
-  static readonly runtime: typeof proto3 = proto3
-  static readonly typeName = 'gndr.GetNotificationSeenResponse'
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'timestamp', kind: 'message', T: Timestamp },
-  ])
 
   static fromBinary(
     bytes: Uint8Array,
@@ -9489,11 +9271,16 @@ export class GetNotificationSeenResponse extends Message<GetNotificationSeenResp
  * @generated from message gndr.GetUnreadNotificationCountRequest
  */
 export class GetUnreadNotificationCountRequest extends Message<GetUnreadNotificationCountRequest> {
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'gndr.GetUnreadNotificationCountRequest'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: 'actor_did', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: 'priority', kind: 'scalar', T: 8 /* ScalarType.BOOL */ },
+  ])
   /**
    * @generated from field: string actor_did = 1;
    */
   actorDid = ''
-
   /**
    * @generated from field: bool priority = 2;
    */
@@ -9503,13 +9290,6 @@ export class GetUnreadNotificationCountRequest extends Message<GetUnreadNotifica
     super()
     proto3.util.initPartial(data, this)
   }
-
-  static readonly runtime: typeof proto3 = proto3
-  static readonly typeName = 'gndr.GetUnreadNotificationCountRequest'
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'actor_did', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: 'priority', kind: 'scalar', T: 8 /* ScalarType.BOOL */ },
-  ])
 
   static fromBinary(
     bytes: Uint8Array,
@@ -9553,6 +9333,11 @@ export class GetUnreadNotificationCountRequest extends Message<GetUnreadNotifica
  * @generated from message gndr.GetUnreadNotificationCountResponse
  */
 export class GetUnreadNotificationCountResponse extends Message<GetUnreadNotificationCountResponse> {
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'gndr.GetUnreadNotificationCountResponse'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: 'count', kind: 'scalar', T: 5 /* ScalarType.INT32 */ },
+  ])
   /**
    * @generated from field: int32 count = 1;
    */
@@ -9562,12 +9347,6 @@ export class GetUnreadNotificationCountResponse extends Message<GetUnreadNotific
     super()
     proto3.util.initPartial(data, this)
   }
-
-  static readonly runtime: typeof proto3 = proto3
-  static readonly typeName = 'gndr.GetUnreadNotificationCountResponse'
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'count', kind: 'scalar', T: 5 /* ScalarType.INT32 */ },
-  ])
 
   static fromBinary(
     bytes: Uint8Array,
@@ -9611,16 +9390,21 @@ export class GetUnreadNotificationCountResponse extends Message<GetUnreadNotific
  * @generated from message gndr.GetActivitySubscriptionDidsRequest
  */
 export class GetActivitySubscriptionDidsRequest extends Message<GetActivitySubscriptionDidsRequest> {
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'gndr.GetActivitySubscriptionDidsRequest'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: 'actor_did', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: 'limit', kind: 'scalar', T: 5 /* ScalarType.INT32 */ },
+    { no: 3, name: 'cursor', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+  ])
   /**
    * @generated from field: string actor_did = 1;
    */
   actorDid = ''
-
   /**
    * @generated from field: int32 limit = 2;
    */
   limit = 0
-
   /**
    * @generated from field: string cursor = 3;
    */
@@ -9630,14 +9414,6 @@ export class GetActivitySubscriptionDidsRequest extends Message<GetActivitySubsc
     super()
     proto3.util.initPartial(data, this)
   }
-
-  static readonly runtime: typeof proto3 = proto3
-  static readonly typeName = 'gndr.GetActivitySubscriptionDidsRequest'
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'actor_did', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: 'limit', kind: 'scalar', T: 5 /* ScalarType.INT32 */ },
-    { no: 3, name: 'cursor', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-  ])
 
   static fromBinary(
     bytes: Uint8Array,
@@ -9681,21 +9457,6 @@ export class GetActivitySubscriptionDidsRequest extends Message<GetActivitySubsc
  * @generated from message gndr.GetActivitySubscriptionDidsResponse
  */
 export class GetActivitySubscriptionDidsResponse extends Message<GetActivitySubscriptionDidsResponse> {
-  /**
-   * @generated from field: repeated string dids = 1;
-   */
-  dids: string[] = []
-
-  /**
-   * @generated from field: string cursor = 2;
-   */
-  cursor = ''
-
-  constructor(data?: PartialMessage<GetActivitySubscriptionDidsResponse>) {
-    super()
-    proto3.util.initPartial(data, this)
-  }
-
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'gndr.GetActivitySubscriptionDidsResponse'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
@@ -9708,6 +9469,19 @@ export class GetActivitySubscriptionDidsResponse extends Message<GetActivitySubs
     },
     { no: 2, name: 'cursor', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
   ])
+  /**
+   * @generated from field: repeated string dids = 1;
+   */
+  dids: string[] = []
+  /**
+   * @generated from field: string cursor = 2;
+   */
+  cursor = ''
+
+  constructor(data?: PartialMessage<GetActivitySubscriptionDidsResponse>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
 
   static fromBinary(
     bytes: Uint8Array,
@@ -9754,14 +9528,14 @@ export class GetActivitySubscriptionDidsResponse extends Message<GetActivitySubs
  * @generated from message gndr.PostActivitySubscription
  */
 export class PostActivitySubscription extends Message<PostActivitySubscription> {
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'gndr.PostActivitySubscription'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [])
+
   constructor(data?: PartialMessage<PostActivitySubscription>) {
     super()
     proto3.util.initPartial(data, this)
   }
-
-  static readonly runtime: typeof proto3 = proto3
-  static readonly typeName = 'gndr.PostActivitySubscription'
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [])
 
   static fromBinary(
     bytes: Uint8Array,
@@ -9802,14 +9576,14 @@ export class PostActivitySubscription extends Message<PostActivitySubscription> 
  * @generated from message gndr.ReplyActivitySubscription
  */
 export class ReplyActivitySubscription extends Message<ReplyActivitySubscription> {
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'gndr.ReplyActivitySubscription'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [])
+
   constructor(data?: PartialMessage<ReplyActivitySubscription>) {
     super()
     proto3.util.initPartial(data, this)
   }
-
-  static readonly runtime: typeof proto3 = proto3
-  static readonly typeName = 'gndr.ReplyActivitySubscription'
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [])
 
   static fromBinary(
     bytes: Uint8Array,
@@ -9850,46 +9624,6 @@ export class ReplyActivitySubscription extends Message<ReplyActivitySubscription
  * @generated from message gndr.ActivitySubscription
  */
 export class ActivitySubscription extends Message<ActivitySubscription> {
-  /**
-   * @generated from field: string actor_did = 1;
-   */
-  actorDid = ''
-
-  /**
-   * @generated from field: string namespace = 2;
-   */
-  namespace = ''
-
-  /**
-   * @generated from field: string key = 3;
-   */
-  key = ''
-
-  /**
-   * @generated from field: optional gndr.PostActivitySubscription post = 4;
-   */
-  post?: PostActivitySubscription
-
-  /**
-   * @generated from field: optional gndr.ReplyActivitySubscription reply = 5;
-   */
-  reply?: ReplyActivitySubscription
-
-  /**
-   * @generated from field: string subject_did = 6;
-   */
-  subjectDid = ''
-
-  /**
-   * @generated from field: google.protobuf.Timestamp indexed_at = 7;
-   */
-  indexedAt?: Timestamp
-
-  constructor(data?: PartialMessage<ActivitySubscription>) {
-    super()
-    proto3.util.initPartial(data, this)
-  }
-
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'gndr.ActivitySubscription'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
@@ -9918,6 +9652,39 @@ export class ActivitySubscription extends Message<ActivitySubscription> {
     },
     { no: 7, name: 'indexed_at', kind: 'message', T: Timestamp },
   ])
+  /**
+   * @generated from field: string actor_did = 1;
+   */
+  actorDid = ''
+  /**
+   * @generated from field: string namespace = 2;
+   */
+  namespace = ''
+  /**
+   * @generated from field: string key = 3;
+   */
+  key = ''
+  /**
+   * @generated from field: optional gndr.PostActivitySubscription post = 4;
+   */
+  post?: PostActivitySubscription
+  /**
+   * @generated from field: optional gndr.ReplyActivitySubscription reply = 5;
+   */
+  reply?: ReplyActivitySubscription
+  /**
+   * @generated from field: string subject_did = 6;
+   */
+  subjectDid = ''
+  /**
+   * @generated from field: google.protobuf.Timestamp indexed_at = 7;
+   */
+  indexedAt?: Timestamp
+
+  constructor(data?: PartialMessage<ActivitySubscription>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
 
   static fromBinary(
     bytes: Uint8Array,
@@ -9952,23 +9719,6 @@ export class ActivitySubscription extends Message<ActivitySubscription> {
  * @generated from message gndr.GetActivitySubscriptionsByActorAndSubjectsRequest
  */
 export class GetActivitySubscriptionsByActorAndSubjectsRequest extends Message<GetActivitySubscriptionsByActorAndSubjectsRequest> {
-  /**
-   * @generated from field: string actor_did = 1;
-   */
-  actorDid = ''
-
-  /**
-   * @generated from field: repeated string subject_dids = 2;
-   */
-  subjectDids: string[] = []
-
-  constructor(
-    data?: PartialMessage<GetActivitySubscriptionsByActorAndSubjectsRequest>,
-  ) {
-    super()
-    proto3.util.initPartial(data, this)
-  }
-
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName =
     'gndr.GetActivitySubscriptionsByActorAndSubjectsRequest'
@@ -9982,6 +9732,21 @@ export class GetActivitySubscriptionsByActorAndSubjectsRequest extends Message<G
       repeated: true,
     },
   ])
+  /**
+   * @generated from field: string actor_did = 1;
+   */
+  actorDid = ''
+  /**
+   * @generated from field: repeated string subject_dids = 2;
+   */
+  subjectDids: string[] = []
+
+  constructor(
+    data?: PartialMessage<GetActivitySubscriptionsByActorAndSubjectsRequest>,
+  ) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
 
   static fromBinary(
     bytes: Uint8Array,
@@ -10035,18 +9800,6 @@ export class GetActivitySubscriptionsByActorAndSubjectsRequest extends Message<G
  * @generated from message gndr.GetActivitySubscriptionsByActorAndSubjectsResponse
  */
 export class GetActivitySubscriptionsByActorAndSubjectsResponse extends Message<GetActivitySubscriptionsByActorAndSubjectsResponse> {
-  /**
-   * @generated from field: repeated gndr.ActivitySubscription subscriptions = 1;
-   */
-  subscriptions: ActivitySubscription[] = []
-
-  constructor(
-    data?: PartialMessage<GetActivitySubscriptionsByActorAndSubjectsResponse>,
-  ) {
-    super()
-    proto3.util.initPartial(data, this)
-  }
-
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName =
     'gndr.GetActivitySubscriptionsByActorAndSubjectsResponse'
@@ -10059,6 +9812,17 @@ export class GetActivitySubscriptionsByActorAndSubjectsResponse extends Message<
       repeated: true,
     },
   ])
+  /**
+   * @generated from field: repeated gndr.ActivitySubscription subscriptions = 1;
+   */
+  subscriptions: ActivitySubscription[] = []
+
+  constructor(
+    data?: PartialMessage<GetActivitySubscriptionsByActorAndSubjectsResponse>,
+  ) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
 
   static fromBinary(
     bytes: Uint8Array,
@@ -10115,16 +9879,21 @@ export class GetActivitySubscriptionsByActorAndSubjectsResponse extends Message<
  * @generated from message gndr.GetActorFeedsRequest
  */
 export class GetActorFeedsRequest extends Message<GetActorFeedsRequest> {
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'gndr.GetActorFeedsRequest'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: 'actor_did', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: 'limit', kind: 'scalar', T: 5 /* ScalarType.INT32 */ },
+    { no: 3, name: 'cursor', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+  ])
   /**
    * @generated from field: string actor_did = 1;
    */
   actorDid = ''
-
   /**
    * @generated from field: int32 limit = 2;
    */
   limit = 0
-
   /**
    * @generated from field: string cursor = 3;
    */
@@ -10134,14 +9903,6 @@ export class GetActorFeedsRequest extends Message<GetActorFeedsRequest> {
     super()
     proto3.util.initPartial(data, this)
   }
-
-  static readonly runtime: typeof proto3 = proto3
-  static readonly typeName = 'gndr.GetActorFeedsRequest'
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'actor_did', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: 'limit', kind: 'scalar', T: 5 /* ScalarType.INT32 */ },
-    { no: 3, name: 'cursor', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-  ])
 
   static fromBinary(
     bytes: Uint8Array,
@@ -10176,21 +9937,6 @@ export class GetActorFeedsRequest extends Message<GetActorFeedsRequest> {
  * @generated from message gndr.GetActorFeedsResponse
  */
 export class GetActorFeedsResponse extends Message<GetActorFeedsResponse> {
-  /**
-   * @generated from field: repeated string uris = 1;
-   */
-  uris: string[] = []
-
-  /**
-   * @generated from field: string cursor = 2;
-   */
-  cursor = ''
-
-  constructor(data?: PartialMessage<GetActorFeedsResponse>) {
-    super()
-    proto3.util.initPartial(data, this)
-  }
-
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'gndr.GetActorFeedsResponse'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
@@ -10203,6 +9949,19 @@ export class GetActorFeedsResponse extends Message<GetActorFeedsResponse> {
     },
     { no: 2, name: 'cursor', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
   ])
+  /**
+   * @generated from field: repeated string uris = 1;
+   */
+  uris: string[] = []
+  /**
+   * @generated from field: string cursor = 2;
+   */
+  cursor = ''
+
+  constructor(data?: PartialMessage<GetActorFeedsResponse>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
 
   static fromBinary(
     bytes: Uint8Array,
@@ -10241,16 +10000,21 @@ export class GetActorFeedsResponse extends Message<GetActorFeedsResponse> {
  * @generated from message gndr.GetSuggestedFeedsRequest
  */
 export class GetSuggestedFeedsRequest extends Message<GetSuggestedFeedsRequest> {
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'gndr.GetSuggestedFeedsRequest'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: 'actor_did', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: 'limit', kind: 'scalar', T: 5 /* ScalarType.INT32 */ },
+    { no: 3, name: 'cursor', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+  ])
   /**
    * @generated from field: string actor_did = 1;
    */
   actorDid = ''
-
   /**
    * @generated from field: int32 limit = 2;
    */
   limit = 0
-
   /**
    * @generated from field: string cursor = 3;
    */
@@ -10260,14 +10024,6 @@ export class GetSuggestedFeedsRequest extends Message<GetSuggestedFeedsRequest> 
     super()
     proto3.util.initPartial(data, this)
   }
-
-  static readonly runtime: typeof proto3 = proto3
-  static readonly typeName = 'gndr.GetSuggestedFeedsRequest'
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'actor_did', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: 'limit', kind: 'scalar', T: 5 /* ScalarType.INT32 */ },
-    { no: 3, name: 'cursor', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-  ])
 
   static fromBinary(
     bytes: Uint8Array,
@@ -10308,21 +10064,6 @@ export class GetSuggestedFeedsRequest extends Message<GetSuggestedFeedsRequest> 
  * @generated from message gndr.GetSuggestedFeedsResponse
  */
 export class GetSuggestedFeedsResponse extends Message<GetSuggestedFeedsResponse> {
-  /**
-   * @generated from field: repeated string uris = 1;
-   */
-  uris: string[] = []
-
-  /**
-   * @generated from field: string cursor = 2;
-   */
-  cursor = ''
-
-  constructor(data?: PartialMessage<GetSuggestedFeedsResponse>) {
-    super()
-    proto3.util.initPartial(data, this)
-  }
-
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'gndr.GetSuggestedFeedsResponse'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
@@ -10335,6 +10076,19 @@ export class GetSuggestedFeedsResponse extends Message<GetSuggestedFeedsResponse
     },
     { no: 2, name: 'cursor', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
   ])
+  /**
+   * @generated from field: repeated string uris = 1;
+   */
+  uris: string[] = []
+  /**
+   * @generated from field: string cursor = 2;
+   */
+  cursor = ''
+
+  constructor(data?: PartialMessage<GetSuggestedFeedsResponse>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
 
   static fromBinary(
     bytes: Uint8Array,
@@ -10375,11 +10129,16 @@ export class GetSuggestedFeedsResponse extends Message<GetSuggestedFeedsResponse
  * @generated from message gndr.SearchFeedGeneratorsRequest
  */
 export class SearchFeedGeneratorsRequest extends Message<SearchFeedGeneratorsRequest> {
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'gndr.SearchFeedGeneratorsRequest'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: 'query', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: 'limit', kind: 'scalar', T: 5 /* ScalarType.INT32 */ },
+  ])
   /**
    * @generated from field: string query = 1;
    */
   query = ''
-
   /**
    * @generated from field: int32 limit = 2;
    */
@@ -10389,13 +10148,6 @@ export class SearchFeedGeneratorsRequest extends Message<SearchFeedGeneratorsReq
     super()
     proto3.util.initPartial(data, this)
   }
-
-  static readonly runtime: typeof proto3 = proto3
-  static readonly typeName = 'gndr.SearchFeedGeneratorsRequest'
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'query', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: 'limit', kind: 'scalar', T: 5 /* ScalarType.INT32 */ },
-  ])
 
   static fromBinary(
     bytes: Uint8Array,
@@ -10436,16 +10188,6 @@ export class SearchFeedGeneratorsRequest extends Message<SearchFeedGeneratorsReq
  * @generated from message gndr.SearchFeedGeneratorsResponse
  */
 export class SearchFeedGeneratorsResponse extends Message<SearchFeedGeneratorsResponse> {
-  /**
-   * @generated from field: repeated string uris = 1;
-   */
-  uris: string[] = []
-
-  constructor(data?: PartialMessage<SearchFeedGeneratorsResponse>) {
-    super()
-    proto3.util.initPartial(data, this)
-  }
-
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'gndr.SearchFeedGeneratorsResponse'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
@@ -10457,6 +10199,15 @@ export class SearchFeedGeneratorsResponse extends Message<SearchFeedGeneratorsRe
       repeated: true,
     },
   ])
+  /**
+   * @generated from field: repeated string uris = 1;
+   */
+  uris: string[] = []
+
+  constructor(data?: PartialMessage<SearchFeedGeneratorsResponse>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
 
   static fromBinary(
     bytes: Uint8Array,
@@ -10503,16 +10254,6 @@ export class SearchFeedGeneratorsResponse extends Message<SearchFeedGeneratorsRe
  * @generated from message gndr.GetFeedGeneratorStatusRequest
  */
 export class GetFeedGeneratorStatusRequest extends Message<GetFeedGeneratorStatusRequest> {
-  /**
-   * @generated from field: repeated string uris = 1;
-   */
-  uris: string[] = []
-
-  constructor(data?: PartialMessage<GetFeedGeneratorStatusRequest>) {
-    super()
-    proto3.util.initPartial(data, this)
-  }
-
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'gndr.GetFeedGeneratorStatusRequest'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
@@ -10524,6 +10265,15 @@ export class GetFeedGeneratorStatusRequest extends Message<GetFeedGeneratorStatu
       repeated: true,
     },
   ])
+  /**
+   * @generated from field: repeated string uris = 1;
+   */
+  uris: string[] = []
+
+  constructor(data?: PartialMessage<GetFeedGeneratorStatusRequest>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
 
   static fromBinary(
     bytes: Uint8Array,
@@ -10567,16 +10317,6 @@ export class GetFeedGeneratorStatusRequest extends Message<GetFeedGeneratorStatu
  * @generated from message gndr.GetFeedGeneratorStatusResponse
  */
 export class GetFeedGeneratorStatusResponse extends Message<GetFeedGeneratorStatusResponse> {
-  /**
-   * @generated from field: repeated string status = 1;
-   */
-  status: string[] = []
-
-  constructor(data?: PartialMessage<GetFeedGeneratorStatusResponse>) {
-    super()
-    proto3.util.initPartial(data, this)
-  }
-
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'gndr.GetFeedGeneratorStatusResponse'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
@@ -10588,6 +10328,15 @@ export class GetFeedGeneratorStatusResponse extends Message<GetFeedGeneratorStat
       repeated: true,
     },
   ])
+  /**
+   * @generated from field: repeated string status = 1;
+   */
+  status: string[] = []
+
+  constructor(data?: PartialMessage<GetFeedGeneratorStatusResponse>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
 
   static fromBinary(
     bytes: Uint8Array,
@@ -10635,21 +10384,26 @@ export class GetFeedGeneratorStatusResponse extends Message<GetFeedGeneratorStat
  * @generated from message gndr.GetAuthorFeedRequest
  */
 export class GetAuthorFeedRequest extends Message<GetAuthorFeedRequest> {
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'gndr.GetAuthorFeedRequest'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: 'actor_did', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: 'limit', kind: 'scalar', T: 5 /* ScalarType.INT32 */ },
+    { no: 3, name: 'cursor', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: 'feed_type', kind: 'enum', T: proto3.getEnumType(FeedType) },
+  ])
   /**
    * @generated from field: string actor_did = 1;
    */
   actorDid = ''
-
   /**
    * @generated from field: int32 limit = 2;
    */
   limit = 0
-
   /**
    * @generated from field: string cursor = 3;
    */
   cursor = ''
-
   /**
    * @generated from field: gndr.FeedType feed_type = 4;
    */
@@ -10659,15 +10413,6 @@ export class GetAuthorFeedRequest extends Message<GetAuthorFeedRequest> {
     super()
     proto3.util.initPartial(data, this)
   }
-
-  static readonly runtime: typeof proto3 = proto3
-  static readonly typeName = 'gndr.GetAuthorFeedRequest'
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'actor_did', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: 'limit', kind: 'scalar', T: 5 /* ScalarType.INT32 */ },
-    { no: 3, name: 'cursor', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-    { no: 4, name: 'feed_type', kind: 'enum', T: proto3.getEnumType(FeedType) },
-  ])
 
   static fromBinary(
     bytes: Uint8Array,
@@ -10702,66 +10447,6 @@ export class GetAuthorFeedRequest extends Message<GetAuthorFeedRequest> {
  * @generated from message gndr.AuthorFeedItem
  */
 export class AuthorFeedItem extends Message<AuthorFeedItem> {
-  /**
-   * @generated from field: string uri = 1;
-   */
-  uri = ''
-
-  /**
-   * @generated from field: string cid = 2;
-   */
-  cid = ''
-
-  /**
-   * @generated from field: string repost = 3;
-   */
-  repost = ''
-
-  /**
-   * @generated from field: string repost_cid = 4;
-   */
-  repostCid = ''
-
-  /**
-   * @generated from field: bool posts_and_author_threads = 5;
-   */
-  postsAndAuthorThreads = false
-
-  /**
-   * @generated from field: bool posts_no_replies = 6;
-   */
-  postsNoReplies = false
-
-  /**
-   * @generated from field: bool posts_with_media = 7;
-   */
-  postsWithMedia = false
-
-  /**
-   * @generated from field: bool is_reply = 8;
-   */
-  isReply = false
-
-  /**
-   * @generated from field: bool is_repost = 9;
-   */
-  isRepost = false
-
-  /**
-   * @generated from field: bool is_quote_post = 10;
-   */
-  isQuotePost = false
-
-  /**
-   * @generated from field: bool posts_with_video = 11;
-   */
-  postsWithVideo = false
-
-  constructor(data?: PartialMessage<AuthorFeedItem>) {
-    super()
-    proto3.util.initPartial(data, this)
-  }
-
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'gndr.AuthorFeedItem'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
@@ -10802,6 +10487,55 @@ export class AuthorFeedItem extends Message<AuthorFeedItem> {
       T: 8 /* ScalarType.BOOL */,
     },
   ])
+  /**
+   * @generated from field: string uri = 1;
+   */
+  uri = ''
+  /**
+   * @generated from field: string cid = 2;
+   */
+  cid = ''
+  /**
+   * @generated from field: string repost = 3;
+   */
+  repost = ''
+  /**
+   * @generated from field: string repost_cid = 4;
+   */
+  repostCid = ''
+  /**
+   * @generated from field: bool posts_and_author_threads = 5;
+   */
+  postsAndAuthorThreads = false
+  /**
+   * @generated from field: bool posts_no_replies = 6;
+   */
+  postsNoReplies = false
+  /**
+   * @generated from field: bool posts_with_media = 7;
+   */
+  postsWithMedia = false
+  /**
+   * @generated from field: bool is_reply = 8;
+   */
+  isReply = false
+  /**
+   * @generated from field: bool is_repost = 9;
+   */
+  isRepost = false
+  /**
+   * @generated from field: bool is_quote_post = 10;
+   */
+  isQuotePost = false
+  /**
+   * @generated from field: bool posts_with_video = 11;
+   */
+  postsWithVideo = false
+
+  constructor(data?: PartialMessage<AuthorFeedItem>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
 
   static fromBinary(
     bytes: Uint8Array,
@@ -10836,21 +10570,6 @@ export class AuthorFeedItem extends Message<AuthorFeedItem> {
  * @generated from message gndr.GetAuthorFeedResponse
  */
 export class GetAuthorFeedResponse extends Message<GetAuthorFeedResponse> {
-  /**
-   * @generated from field: repeated gndr.AuthorFeedItem items = 1;
-   */
-  items: AuthorFeedItem[] = []
-
-  /**
-   * @generated from field: string cursor = 2;
-   */
-  cursor = ''
-
-  constructor(data?: PartialMessage<GetAuthorFeedResponse>) {
-    super()
-    proto3.util.initPartial(data, this)
-  }
-
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'gndr.GetAuthorFeedResponse'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
@@ -10863,6 +10582,19 @@ export class GetAuthorFeedResponse extends Message<GetAuthorFeedResponse> {
     },
     { no: 2, name: 'cursor', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
   ])
+  /**
+   * @generated from field: repeated gndr.AuthorFeedItem items = 1;
+   */
+  items: AuthorFeedItem[] = []
+  /**
+   * @generated from field: string cursor = 2;
+   */
+  cursor = ''
+
+  constructor(data?: PartialMessage<GetAuthorFeedResponse>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
 
   static fromBinary(
     bytes: Uint8Array,
@@ -10900,41 +10632,6 @@ export class GetAuthorFeedResponse extends Message<GetAuthorFeedResponse> {
  * @generated from message gndr.GetTimelineRequest
  */
 export class GetTimelineRequest extends Message<GetTimelineRequest> {
-  /**
-   * @generated from field: string actor_did = 1;
-   */
-  actorDid = ''
-
-  /**
-   * @generated from field: int32 limit = 2;
-   */
-  limit = 0
-
-  /**
-   * @generated from field: string cursor = 3;
-   */
-  cursor = ''
-
-  /**
-   * @generated from field: bool exclude_replies = 4;
-   */
-  excludeReplies = false
-
-  /**
-   * @generated from field: bool exclude_reposts = 5;
-   */
-  excludeReposts = false
-
-  /**
-   * @generated from field: bool exclude_quotes = 6;
-   */
-  excludeQuotes = false
-
-  constructor(data?: PartialMessage<GetTimelineRequest>) {
-    super()
-    proto3.util.initPartial(data, this)
-  }
-
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'gndr.GetTimelineRequest'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
@@ -10960,6 +10657,35 @@ export class GetTimelineRequest extends Message<GetTimelineRequest> {
       T: 8 /* ScalarType.BOOL */,
     },
   ])
+  /**
+   * @generated from field: string actor_did = 1;
+   */
+  actorDid = ''
+  /**
+   * @generated from field: int32 limit = 2;
+   */
+  limit = 0
+  /**
+   * @generated from field: string cursor = 3;
+   */
+  cursor = ''
+  /**
+   * @generated from field: bool exclude_replies = 4;
+   */
+  excludeReplies = false
+  /**
+   * @generated from field: bool exclude_reposts = 5;
+   */
+  excludeReposts = false
+  /**
+   * @generated from field: bool exclude_quotes = 6;
+   */
+  excludeQuotes = false
+
+  constructor(data?: PartialMessage<GetTimelineRequest>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
 
   static fromBinary(
     bytes: Uint8Array,
@@ -10994,21 +10720,6 @@ export class GetTimelineRequest extends Message<GetTimelineRequest> {
  * @generated from message gndr.GetTimelineResponse
  */
 export class GetTimelineResponse extends Message<GetTimelineResponse> {
-  /**
-   * @generated from field: repeated gndr.TimelineFeedItem items = 1;
-   */
-  items: TimelineFeedItem[] = []
-
-  /**
-   * @generated from field: string cursor = 2;
-   */
-  cursor = ''
-
-  constructor(data?: PartialMessage<GetTimelineResponse>) {
-    super()
-    proto3.util.initPartial(data, this)
-  }
-
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'gndr.GetTimelineResponse'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
@@ -11021,6 +10732,19 @@ export class GetTimelineResponse extends Message<GetTimelineResponse> {
     },
     { no: 2, name: 'cursor', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
   ])
+  /**
+   * @generated from field: repeated gndr.TimelineFeedItem items = 1;
+   */
+  items: TimelineFeedItem[] = []
+  /**
+   * @generated from field: string cursor = 2;
+   */
+  cursor = ''
+
+  constructor(data?: PartialMessage<GetTimelineResponse>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
 
   static fromBinary(
     bytes: Uint8Array,
@@ -11055,46 +10779,6 @@ export class GetTimelineResponse extends Message<GetTimelineResponse> {
  * @generated from message gndr.TimelineFeedItem
  */
 export class TimelineFeedItem extends Message<TimelineFeedItem> {
-  /**
-   * @generated from field: string uri = 1;
-   */
-  uri = ''
-
-  /**
-   * @generated from field: string cid = 2;
-   */
-  cid = ''
-
-  /**
-   * @generated from field: string repost = 3;
-   */
-  repost = ''
-
-  /**
-   * @generated from field: string repost_cid = 4;
-   */
-  repostCid = ''
-
-  /**
-   * @generated from field: bool is_reply = 5;
-   */
-  isReply = false
-
-  /**
-   * @generated from field: bool is_repost = 6;
-   */
-  isRepost = false
-
-  /**
-   * @generated from field: bool is_quote_post = 7;
-   */
-  isQuotePost = false
-
-  constructor(data?: PartialMessage<TimelineFeedItem>) {
-    super()
-    proto3.util.initPartial(data, this)
-  }
-
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'gndr.TimelineFeedItem'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
@@ -11111,6 +10795,39 @@ export class TimelineFeedItem extends Message<TimelineFeedItem> {
       T: 8 /* ScalarType.BOOL */,
     },
   ])
+  /**
+   * @generated from field: string uri = 1;
+   */
+  uri = ''
+  /**
+   * @generated from field: string cid = 2;
+   */
+  cid = ''
+  /**
+   * @generated from field: string repost = 3;
+   */
+  repost = ''
+  /**
+   * @generated from field: string repost_cid = 4;
+   */
+  repostCid = ''
+  /**
+   * @generated from field: bool is_reply = 5;
+   */
+  isReply = false
+  /**
+   * @generated from field: bool is_repost = 6;
+   */
+  isRepost = false
+  /**
+   * @generated from field: bool is_quote_post = 7;
+   */
+  isQuotePost = false
+
+  constructor(data?: PartialMessage<TimelineFeedItem>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
 
   static fromBinary(
     bytes: Uint8Array,
@@ -11149,41 +10866,6 @@ export class TimelineFeedItem extends Message<TimelineFeedItem> {
  * @generated from message gndr.GetListFeedRequest
  */
 export class GetListFeedRequest extends Message<GetListFeedRequest> {
-  /**
-   * @generated from field: string list_uri = 1;
-   */
-  listUri = ''
-
-  /**
-   * @generated from field: int32 limit = 2;
-   */
-  limit = 0
-
-  /**
-   * @generated from field: string cursor = 3;
-   */
-  cursor = ''
-
-  /**
-   * @generated from field: bool exclude_replies = 4;
-   */
-  excludeReplies = false
-
-  /**
-   * @generated from field: bool exclude_reposts = 5;
-   */
-  excludeReposts = false
-
-  /**
-   * @generated from field: bool exclude_quotes = 6;
-   */
-  excludeQuotes = false
-
-  constructor(data?: PartialMessage<GetListFeedRequest>) {
-    super()
-    proto3.util.initPartial(data, this)
-  }
-
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'gndr.GetListFeedRequest'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
@@ -11209,6 +10891,35 @@ export class GetListFeedRequest extends Message<GetListFeedRequest> {
       T: 8 /* ScalarType.BOOL */,
     },
   ])
+  /**
+   * @generated from field: string list_uri = 1;
+   */
+  listUri = ''
+  /**
+   * @generated from field: int32 limit = 2;
+   */
+  limit = 0
+  /**
+   * @generated from field: string cursor = 3;
+   */
+  cursor = ''
+  /**
+   * @generated from field: bool exclude_replies = 4;
+   */
+  excludeReplies = false
+  /**
+   * @generated from field: bool exclude_reposts = 5;
+   */
+  excludeReposts = false
+  /**
+   * @generated from field: bool exclude_quotes = 6;
+   */
+  excludeQuotes = false
+
+  constructor(data?: PartialMessage<GetListFeedRequest>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
 
   static fromBinary(
     bytes: Uint8Array,
@@ -11243,21 +10954,6 @@ export class GetListFeedRequest extends Message<GetListFeedRequest> {
  * @generated from message gndr.GetListFeedResponse
  */
 export class GetListFeedResponse extends Message<GetListFeedResponse> {
-  /**
-   * @generated from field: repeated gndr.TimelineFeedItem items = 1;
-   */
-  items: TimelineFeedItem[] = []
-
-  /**
-   * @generated from field: string cursor = 2;
-   */
-  cursor = ''
-
-  constructor(data?: PartialMessage<GetListFeedResponse>) {
-    super()
-    proto3.util.initPartial(data, this)
-  }
-
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'gndr.GetListFeedResponse'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
@@ -11270,6 +10966,19 @@ export class GetListFeedResponse extends Message<GetListFeedResponse> {
     },
     { no: 2, name: 'cursor', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
   ])
+  /**
+   * @generated from field: repeated gndr.TimelineFeedItem items = 1;
+   */
+  items: TimelineFeedItem[] = []
+  /**
+   * @generated from field: string cursor = 2;
+   */
+  cursor = ''
+
+  constructor(data?: PartialMessage<GetListFeedResponse>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
 
   static fromBinary(
     bytes: Uint8Array,
@@ -11306,16 +11015,21 @@ export class GetListFeedResponse extends Message<GetListFeedResponse> {
  * @generated from message gndr.GetThreadRequest
  */
 export class GetThreadRequest extends Message<GetThreadRequest> {
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'gndr.GetThreadRequest'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: 'post_uri', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: 'above', kind: 'scalar', T: 5 /* ScalarType.INT32 */ },
+    { no: 3, name: 'below', kind: 'scalar', T: 5 /* ScalarType.INT32 */ },
+  ])
   /**
    * @generated from field: string post_uri = 1;
    */
   postUri = ''
-
   /**
    * @generated from field: int32 above = 2;
    */
   above = 0
-
   /**
    * @generated from field: int32 below = 3;
    */
@@ -11325,14 +11039,6 @@ export class GetThreadRequest extends Message<GetThreadRequest> {
     super()
     proto3.util.initPartial(data, this)
   }
-
-  static readonly runtime: typeof proto3 = proto3
-  static readonly typeName = 'gndr.GetThreadRequest'
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'post_uri', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: 'above', kind: 'scalar', T: 5 /* ScalarType.INT32 */ },
-    { no: 3, name: 'below', kind: 'scalar', T: 5 /* ScalarType.INT32 */ },
-  ])
 
   static fromBinary(
     bytes: Uint8Array,
@@ -11367,16 +11073,6 @@ export class GetThreadRequest extends Message<GetThreadRequest> {
  * @generated from message gndr.GetThreadResponse
  */
 export class GetThreadResponse extends Message<GetThreadResponse> {
-  /**
-   * @generated from field: repeated string uris = 1;
-   */
-  uris: string[] = []
-
-  constructor(data?: PartialMessage<GetThreadResponse>) {
-    super()
-    proto3.util.initPartial(data, this)
-  }
-
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'gndr.GetThreadResponse'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
@@ -11388,6 +11084,15 @@ export class GetThreadResponse extends Message<GetThreadResponse> {
       repeated: true,
     },
   ])
+  /**
+   * @generated from field: repeated string uris = 1;
+   */
+  uris: string[] = []
+
+  constructor(data?: PartialMessage<GetThreadResponse>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
 
   static fromBinary(
     bytes: Uint8Array,
@@ -11425,16 +11130,21 @@ export class GetThreadResponse extends Message<GetThreadResponse> {
  * @generated from message gndr.SearchActorsRequest
  */
 export class SearchActorsRequest extends Message<SearchActorsRequest> {
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'gndr.SearchActorsRequest'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: 'term', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: 'limit', kind: 'scalar', T: 5 /* ScalarType.INT32 */ },
+    { no: 3, name: 'cursor', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+  ])
   /**
    * @generated from field: string term = 1;
    */
   term = ''
-
   /**
    * @generated from field: int32 limit = 2;
    */
   limit = 0
-
   /**
    * @generated from field: string cursor = 3;
    */
@@ -11444,14 +11154,6 @@ export class SearchActorsRequest extends Message<SearchActorsRequest> {
     super()
     proto3.util.initPartial(data, this)
   }
-
-  static readonly runtime: typeof proto3 = proto3
-  static readonly typeName = 'gndr.SearchActorsRequest'
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'term', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: 'limit', kind: 'scalar', T: 5 /* ScalarType.INT32 */ },
-    { no: 3, name: 'cursor', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-  ])
 
   static fromBinary(
     bytes: Uint8Array,
@@ -11486,21 +11188,6 @@ export class SearchActorsRequest extends Message<SearchActorsRequest> {
  * @generated from message gndr.SearchActorsResponse
  */
 export class SearchActorsResponse extends Message<SearchActorsResponse> {
-  /**
-   * @generated from field: repeated string dids = 1;
-   */
-  dids: string[] = []
-
-  /**
-   * @generated from field: string cursor = 2;
-   */
-  cursor = ''
-
-  constructor(data?: PartialMessage<SearchActorsResponse>) {
-    super()
-    proto3.util.initPartial(data, this)
-  }
-
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'gndr.SearchActorsResponse'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
@@ -11513,6 +11200,19 @@ export class SearchActorsResponse extends Message<SearchActorsResponse> {
     },
     { no: 2, name: 'cursor', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
   ])
+  /**
+   * @generated from field: repeated string dids = 1;
+   */
+  dids: string[] = []
+  /**
+   * @generated from field: string cursor = 2;
+   */
+  cursor = ''
+
+  constructor(data?: PartialMessage<SearchActorsResponse>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
 
   static fromBinary(
     bytes: Uint8Array,
@@ -11550,16 +11250,21 @@ export class SearchActorsResponse extends Message<SearchActorsResponse> {
  * @generated from message gndr.SearchPostsRequest
  */
 export class SearchPostsRequest extends Message<SearchPostsRequest> {
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'gndr.SearchPostsRequest'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: 'term', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: 'limit', kind: 'scalar', T: 5 /* ScalarType.INT32 */ },
+    { no: 3, name: 'cursor', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+  ])
   /**
    * @generated from field: string term = 1;
    */
   term = ''
-
   /**
    * @generated from field: int32 limit = 2;
    */
   limit = 0
-
   /**
    * @generated from field: string cursor = 3;
    */
@@ -11569,14 +11274,6 @@ export class SearchPostsRequest extends Message<SearchPostsRequest> {
     super()
     proto3.util.initPartial(data, this)
   }
-
-  static readonly runtime: typeof proto3 = proto3
-  static readonly typeName = 'gndr.SearchPostsRequest'
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'term', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: 'limit', kind: 'scalar', T: 5 /* ScalarType.INT32 */ },
-    { no: 3, name: 'cursor', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-  ])
 
   static fromBinary(
     bytes: Uint8Array,
@@ -11611,21 +11308,6 @@ export class SearchPostsRequest extends Message<SearchPostsRequest> {
  * @generated from message gndr.SearchPostsResponse
  */
 export class SearchPostsResponse extends Message<SearchPostsResponse> {
-  /**
-   * @generated from field: repeated string uris = 1;
-   */
-  uris: string[] = []
-
-  /**
-   * @generated from field: string cursor = 2;
-   */
-  cursor = ''
-
-  constructor(data?: PartialMessage<SearchPostsResponse>) {
-    super()
-    proto3.util.initPartial(data, this)
-  }
-
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'gndr.SearchPostsResponse'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
@@ -11638,6 +11320,19 @@ export class SearchPostsResponse extends Message<SearchPostsResponse> {
     },
     { no: 2, name: 'cursor', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
   ])
+  /**
+   * @generated from field: repeated string uris = 1;
+   */
+  uris: string[] = []
+  /**
+   * @generated from field: string cursor = 2;
+   */
+  cursor = ''
+
+  constructor(data?: PartialMessage<SearchPostsResponse>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
 
   static fromBinary(
     bytes: Uint8Array,
@@ -11675,16 +11370,21 @@ export class SearchPostsResponse extends Message<SearchPostsResponse> {
  * @generated from message gndr.SearchStarterPacksRequest
  */
 export class SearchStarterPacksRequest extends Message<SearchStarterPacksRequest> {
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'gndr.SearchStarterPacksRequest'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: 'term', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: 'limit', kind: 'scalar', T: 5 /* ScalarType.INT32 */ },
+    { no: 3, name: 'cursor', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+  ])
   /**
    * @generated from field: string term = 1;
    */
   term = ''
-
   /**
    * @generated from field: int32 limit = 2;
    */
   limit = 0
-
   /**
    * @generated from field: string cursor = 3;
    */
@@ -11694,14 +11394,6 @@ export class SearchStarterPacksRequest extends Message<SearchStarterPacksRequest
     super()
     proto3.util.initPartial(data, this)
   }
-
-  static readonly runtime: typeof proto3 = proto3
-  static readonly typeName = 'gndr.SearchStarterPacksRequest'
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'term', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: 'limit', kind: 'scalar', T: 5 /* ScalarType.INT32 */ },
-    { no: 3, name: 'cursor', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-  ])
 
   static fromBinary(
     bytes: Uint8Array,
@@ -11742,21 +11434,6 @@ export class SearchStarterPacksRequest extends Message<SearchStarterPacksRequest
  * @generated from message gndr.SearchStarterPacksResponse
  */
 export class SearchStarterPacksResponse extends Message<SearchStarterPacksResponse> {
-  /**
-   * @generated from field: repeated string uris = 1;
-   */
-  uris: string[] = []
-
-  /**
-   * @generated from field: string cursor = 2;
-   */
-  cursor = ''
-
-  constructor(data?: PartialMessage<SearchStarterPacksResponse>) {
-    super()
-    proto3.util.initPartial(data, this)
-  }
-
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'gndr.SearchStarterPacksResponse'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
@@ -11769,6 +11446,19 @@ export class SearchStarterPacksResponse extends Message<SearchStarterPacksRespon
     },
     { no: 2, name: 'cursor', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
   ])
+  /**
+   * @generated from field: repeated string uris = 1;
+   */
+  uris: string[] = []
+  /**
+   * @generated from field: string cursor = 2;
+   */
+  cursor = ''
+
+  constructor(data?: PartialMessage<SearchStarterPacksResponse>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
 
   static fromBinary(
     bytes: Uint8Array,
@@ -11812,31 +11502,6 @@ export class SearchStarterPacksResponse extends Message<SearchStarterPacksRespon
  * @generated from message gndr.GetFollowSuggestionsRequest
  */
 export class GetFollowSuggestionsRequest extends Message<GetFollowSuggestionsRequest> {
-  /**
-   * @generated from field: string actor_did = 1;
-   */
-  actorDid = ''
-
-  /**
-   * @generated from field: string relative_to_did = 2;
-   */
-  relativeToDid = ''
-
-  /**
-   * @generated from field: int32 limit = 3;
-   */
-  limit = 0
-
-  /**
-   * @generated from field: string cursor = 4;
-   */
-  cursor = ''
-
-  constructor(data?: PartialMessage<GetFollowSuggestionsRequest>) {
-    super()
-    proto3.util.initPartial(data, this)
-  }
-
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'gndr.GetFollowSuggestionsRequest'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
@@ -11850,6 +11515,27 @@ export class GetFollowSuggestionsRequest extends Message<GetFollowSuggestionsReq
     { no: 3, name: 'limit', kind: 'scalar', T: 5 /* ScalarType.INT32 */ },
     { no: 4, name: 'cursor', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
   ])
+  /**
+   * @generated from field: string actor_did = 1;
+   */
+  actorDid = ''
+  /**
+   * @generated from field: string relative_to_did = 2;
+   */
+  relativeToDid = ''
+  /**
+   * @generated from field: int32 limit = 3;
+   */
+  limit = 0
+  /**
+   * @generated from field: string cursor = 4;
+   */
+  cursor = ''
+
+  constructor(data?: PartialMessage<GetFollowSuggestionsRequest>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
 
   static fromBinary(
     bytes: Uint8Array,
@@ -11890,21 +11576,6 @@ export class GetFollowSuggestionsRequest extends Message<GetFollowSuggestionsReq
  * @generated from message gndr.GetFollowSuggestionsResponse
  */
 export class GetFollowSuggestionsResponse extends Message<GetFollowSuggestionsResponse> {
-  /**
-   * @generated from field: repeated string dids = 1;
-   */
-  dids: string[] = []
-
-  /**
-   * @generated from field: string cursor = 2;
-   */
-  cursor = ''
-
-  constructor(data?: PartialMessage<GetFollowSuggestionsResponse>) {
-    super()
-    proto3.util.initPartial(data, this)
-  }
-
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'gndr.GetFollowSuggestionsResponse'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
@@ -11917,6 +11588,19 @@ export class GetFollowSuggestionsResponse extends Message<GetFollowSuggestionsRe
     },
     { no: 2, name: 'cursor', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
   ])
+  /**
+   * @generated from field: repeated string dids = 1;
+   */
+  dids: string[] = []
+  /**
+   * @generated from field: string cursor = 2;
+   */
+  cursor = ''
+
+  constructor(data?: PartialMessage<GetFollowSuggestionsResponse>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
 
   static fromBinary(
     bytes: Uint8Array,
@@ -11960,31 +11644,6 @@ export class GetFollowSuggestionsResponse extends Message<GetFollowSuggestionsRe
  * @generated from message gndr.SuggestedEntity
  */
 export class SuggestedEntity extends Message<SuggestedEntity> {
-  /**
-   * @generated from field: string tag = 1;
-   */
-  tag = ''
-
-  /**
-   * @generated from field: string subject = 2;
-   */
-  subject = ''
-
-  /**
-   * @generated from field: string subject_type = 3;
-   */
-  subjectType = ''
-
-  /**
-   * @generated from field: int64 priority = 4;
-   */
-  priority = protoInt64.zero
-
-  constructor(data?: PartialMessage<SuggestedEntity>) {
-    super()
-    proto3.util.initPartial(data, this)
-  }
-
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'gndr.SuggestedEntity'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
@@ -11998,6 +11657,27 @@ export class SuggestedEntity extends Message<SuggestedEntity> {
     },
     { no: 4, name: 'priority', kind: 'scalar', T: 3 /* ScalarType.INT64 */ },
   ])
+  /**
+   * @generated from field: string tag = 1;
+   */
+  tag = ''
+  /**
+   * @generated from field: string subject = 2;
+   */
+  subject = ''
+  /**
+   * @generated from field: string subject_type = 3;
+   */
+  subjectType = ''
+  /**
+   * @generated from field: int64 priority = 4;
+   */
+  priority = protoInt64.zero
+
+  constructor(data?: PartialMessage<SuggestedEntity>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
 
   static fromBinary(
     bytes: Uint8Array,
@@ -12032,11 +11712,16 @@ export class SuggestedEntity extends Message<SuggestedEntity> {
  * @generated from message gndr.GetSuggestedEntitiesRequest
  */
 export class GetSuggestedEntitiesRequest extends Message<GetSuggestedEntitiesRequest> {
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'gndr.GetSuggestedEntitiesRequest'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: 'limit', kind: 'scalar', T: 5 /* ScalarType.INT32 */ },
+    { no: 2, name: 'cursor', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+  ])
   /**
    * @generated from field: int32 limit = 1;
    */
   limit = 0
-
   /**
    * @generated from field: string cursor = 2;
    */
@@ -12046,13 +11731,6 @@ export class GetSuggestedEntitiesRequest extends Message<GetSuggestedEntitiesReq
     super()
     proto3.util.initPartial(data, this)
   }
-
-  static readonly runtime: typeof proto3 = proto3
-  static readonly typeName = 'gndr.GetSuggestedEntitiesRequest'
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'limit', kind: 'scalar', T: 5 /* ScalarType.INT32 */ },
-    { no: 2, name: 'cursor', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-  ])
 
   static fromBinary(
     bytes: Uint8Array,
@@ -12093,21 +11771,6 @@ export class GetSuggestedEntitiesRequest extends Message<GetSuggestedEntitiesReq
  * @generated from message gndr.GetSuggestedEntitiesResponse
  */
 export class GetSuggestedEntitiesResponse extends Message<GetSuggestedEntitiesResponse> {
-  /**
-   * @generated from field: repeated gndr.SuggestedEntity entities = 1;
-   */
-  entities: SuggestedEntity[] = []
-
-  /**
-   * @generated from field: string cursor = 2;
-   */
-  cursor = ''
-
-  constructor(data?: PartialMessage<GetSuggestedEntitiesResponse>) {
-    super()
-    proto3.util.initPartial(data, this)
-  }
-
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'gndr.GetSuggestedEntitiesResponse'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
@@ -12120,6 +11783,19 @@ export class GetSuggestedEntitiesResponse extends Message<GetSuggestedEntitiesRe
     },
     { no: 2, name: 'cursor', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
   ])
+  /**
+   * @generated from field: repeated gndr.SuggestedEntity entities = 1;
+   */
+  entities: SuggestedEntity[] = []
+  /**
+   * @generated from field: string cursor = 2;
+   */
+  cursor = ''
+
+  constructor(data?: PartialMessage<GetSuggestedEntitiesResponse>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
 
   static fromBinary(
     bytes: Uint8Array,
@@ -12166,21 +11842,6 @@ export class GetSuggestedEntitiesResponse extends Message<GetSuggestedEntitiesRe
  * @generated from message gndr.GetLabelsRequest
  */
 export class GetLabelsRequest extends Message<GetLabelsRequest> {
-  /**
-   * @generated from field: repeated string subjects = 1;
-   */
-  subjects: string[] = []
-
-  /**
-   * @generated from field: repeated string issuers = 2;
-   */
-  issuers: string[] = []
-
-  constructor(data?: PartialMessage<GetLabelsRequest>) {
-    super()
-    proto3.util.initPartial(data, this)
-  }
-
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'gndr.GetLabelsRequest'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
@@ -12199,6 +11860,19 @@ export class GetLabelsRequest extends Message<GetLabelsRequest> {
       repeated: true,
     },
   ])
+  /**
+   * @generated from field: repeated string subjects = 1;
+   */
+  subjects: string[] = []
+  /**
+   * @generated from field: repeated string issuers = 2;
+   */
+  issuers: string[] = []
+
+  constructor(data?: PartialMessage<GetLabelsRequest>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
 
   static fromBinary(
     bytes: Uint8Array,
@@ -12233,16 +11907,6 @@ export class GetLabelsRequest extends Message<GetLabelsRequest> {
  * @generated from message gndr.GetLabelsResponse
  */
 export class GetLabelsResponse extends Message<GetLabelsResponse> {
-  /**
-   * @generated from field: repeated bytes labels = 1;
-   */
-  labels: Uint8Array[] = []
-
-  constructor(data?: PartialMessage<GetLabelsResponse>) {
-    super()
-    proto3.util.initPartial(data, this)
-  }
-
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'gndr.GetLabelsResponse'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
@@ -12254,6 +11918,15 @@ export class GetLabelsResponse extends Message<GetLabelsResponse> {
       repeated: true,
     },
   ])
+  /**
+   * @generated from field: repeated bytes labels = 1;
+   */
+  labels: Uint8Array[] = []
+
+  constructor(data?: PartialMessage<GetLabelsResponse>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
 
   static fromBinary(
     bytes: Uint8Array,
@@ -12288,16 +11961,21 @@ export class GetLabelsResponse extends Message<GetLabelsResponse> {
  * @generated from message gndr.GetActorStarterPacksRequest
  */
 export class GetActorStarterPacksRequest extends Message<GetActorStarterPacksRequest> {
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'gndr.GetActorStarterPacksRequest'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: 'actor_did', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: 'limit', kind: 'scalar', T: 5 /* ScalarType.INT32 */ },
+    { no: 3, name: 'cursor', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+  ])
   /**
    * @generated from field: string actor_did = 1;
    */
   actorDid = ''
-
   /**
    * @generated from field: int32 limit = 2;
    */
   limit = 0
-
   /**
    * @generated from field: string cursor = 3;
    */
@@ -12307,14 +11985,6 @@ export class GetActorStarterPacksRequest extends Message<GetActorStarterPacksReq
     super()
     proto3.util.initPartial(data, this)
   }
-
-  static readonly runtime: typeof proto3 = proto3
-  static readonly typeName = 'gndr.GetActorStarterPacksRequest'
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'actor_did', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: 'limit', kind: 'scalar', T: 5 /* ScalarType.INT32 */ },
-    { no: 3, name: 'cursor', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-  ])
 
   static fromBinary(
     bytes: Uint8Array,
@@ -12355,21 +12025,6 @@ export class GetActorStarterPacksRequest extends Message<GetActorStarterPacksReq
  * @generated from message gndr.GetActorStarterPacksResponse
  */
 export class GetActorStarterPacksResponse extends Message<GetActorStarterPacksResponse> {
-  /**
-   * @generated from field: repeated string uris = 1;
-   */
-  uris: string[] = []
-
-  /**
-   * @generated from field: string cursor = 2;
-   */
-  cursor = ''
-
-  constructor(data?: PartialMessage<GetActorStarterPacksResponse>) {
-    super()
-    proto3.util.initPartial(data, this)
-  }
-
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'gndr.GetActorStarterPacksResponse'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
@@ -12382,6 +12037,19 @@ export class GetActorStarterPacksResponse extends Message<GetActorStarterPacksRe
     },
     { no: 2, name: 'cursor', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
   ])
+  /**
+   * @generated from field: repeated string uris = 1;
+   */
+  uris: string[] = []
+  /**
+   * @generated from field: string cursor = 2;
+   */
+  cursor = ''
+
+  constructor(data?: PartialMessage<GetActorStarterPacksResponse>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
 
   static fromBinary(
     bytes: Uint8Array,
@@ -12428,6 +12096,11 @@ export class GetActorStarterPacksResponse extends Message<GetActorStarterPacksRe
  * @generated from message gndr.GetLatestRevRequest
  */
 export class GetLatestRevRequest extends Message<GetLatestRevRequest> {
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'gndr.GetLatestRevRequest'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: 'actor_did', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+  ])
   /**
    * @generated from field: string actor_did = 1;
    */
@@ -12437,12 +12110,6 @@ export class GetLatestRevRequest extends Message<GetLatestRevRequest> {
     super()
     proto3.util.initPartial(data, this)
   }
-
-  static readonly runtime: typeof proto3 = proto3
-  static readonly typeName = 'gndr.GetLatestRevRequest'
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'actor_did', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-  ])
 
   static fromBinary(
     bytes: Uint8Array,
@@ -12477,6 +12144,11 @@ export class GetLatestRevRequest extends Message<GetLatestRevRequest> {
  * @generated from message gndr.GetLatestRevResponse
  */
 export class GetLatestRevResponse extends Message<GetLatestRevResponse> {
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'gndr.GetLatestRevResponse'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: 'rev', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+  ])
   /**
    * @generated from field: string rev = 1;
    */
@@ -12486,12 +12158,6 @@ export class GetLatestRevResponse extends Message<GetLatestRevResponse> {
     super()
     proto3.util.initPartial(data, this)
   }
-
-  static readonly runtime: typeof proto3 = proto3
-  static readonly typeName = 'gndr.GetLatestRevResponse'
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'rev', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-  ])
 
   static fromBinary(
     bytes: Uint8Array,
@@ -12526,6 +12192,11 @@ export class GetLatestRevResponse extends Message<GetLatestRevResponse> {
  * @generated from message gndr.GetIdentityByDidRequest
  */
 export class GetIdentityByDidRequest extends Message<GetIdentityByDidRequest> {
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'gndr.GetIdentityByDidRequest'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: 'did', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+  ])
   /**
    * @generated from field: string did = 1;
    */
@@ -12535,12 +12206,6 @@ export class GetIdentityByDidRequest extends Message<GetIdentityByDidRequest> {
     super()
     proto3.util.initPartial(data, this)
   }
-
-  static readonly runtime: typeof proto3 = proto3
-  static readonly typeName = 'gndr.GetIdentityByDidRequest'
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'did', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-  ])
 
   static fromBinary(
     bytes: Uint8Array,
@@ -12581,36 +12246,6 @@ export class GetIdentityByDidRequest extends Message<GetIdentityByDidRequest> {
  * @generated from message gndr.GetIdentityByDidResponse
  */
 export class GetIdentityByDidResponse extends Message<GetIdentityByDidResponse> {
-  /**
-   * @generated from field: string did = 1;
-   */
-  did = ''
-
-  /**
-   * @generated from field: string handle = 2;
-   */
-  handle = ''
-
-  /**
-   * @generated from field: bytes keys = 3;
-   */
-  keys = new Uint8Array(0)
-
-  /**
-   * @generated from field: bytes services = 4;
-   */
-  services = new Uint8Array(0)
-
-  /**
-   * @generated from field: google.protobuf.Timestamp updated = 5;
-   */
-  updated?: Timestamp
-
-  constructor(data?: PartialMessage<GetIdentityByDidResponse>) {
-    super()
-    proto3.util.initPartial(data, this)
-  }
-
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'gndr.GetIdentityByDidResponse'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
@@ -12620,6 +12255,31 @@ export class GetIdentityByDidResponse extends Message<GetIdentityByDidResponse> 
     { no: 4, name: 'services', kind: 'scalar', T: 12 /* ScalarType.BYTES */ },
     { no: 5, name: 'updated', kind: 'message', T: Timestamp },
   ])
+  /**
+   * @generated from field: string did = 1;
+   */
+  did = ''
+  /**
+   * @generated from field: string handle = 2;
+   */
+  handle = ''
+  /**
+   * @generated from field: bytes keys = 3;
+   */
+  keys = new Uint8Array(0)
+  /**
+   * @generated from field: bytes services = 4;
+   */
+  services = new Uint8Array(0)
+  /**
+   * @generated from field: google.protobuf.Timestamp updated = 5;
+   */
+  updated?: Timestamp
+
+  constructor(data?: PartialMessage<GetIdentityByDidResponse>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
 
   static fromBinary(
     bytes: Uint8Array,
@@ -12660,6 +12320,11 @@ export class GetIdentityByDidResponse extends Message<GetIdentityByDidResponse> 
  * @generated from message gndr.GetIdentityByHandleRequest
  */
 export class GetIdentityByHandleRequest extends Message<GetIdentityByHandleRequest> {
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'gndr.GetIdentityByHandleRequest'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: 'handle', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+  ])
   /**
    * @generated from field: string handle = 1;
    */
@@ -12669,12 +12334,6 @@ export class GetIdentityByHandleRequest extends Message<GetIdentityByHandleReque
     super()
     proto3.util.initPartial(data, this)
   }
-
-  static readonly runtime: typeof proto3 = proto3
-  static readonly typeName = 'gndr.GetIdentityByHandleRequest'
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'handle', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-  ])
 
   static fromBinary(
     bytes: Uint8Array,
@@ -12715,36 +12374,6 @@ export class GetIdentityByHandleRequest extends Message<GetIdentityByHandleReque
  * @generated from message gndr.GetIdentityByHandleResponse
  */
 export class GetIdentityByHandleResponse extends Message<GetIdentityByHandleResponse> {
-  /**
-   * @generated from field: string handle = 1;
-   */
-  handle = ''
-
-  /**
-   * @generated from field: string did = 2;
-   */
-  did = ''
-
-  /**
-   * @generated from field: bytes keys = 3;
-   */
-  keys = new Uint8Array(0)
-
-  /**
-   * @generated from field: bytes services = 4;
-   */
-  services = new Uint8Array(0)
-
-  /**
-   * @generated from field: google.protobuf.Timestamp updated = 5;
-   */
-  updated?: Timestamp
-
-  constructor(data?: PartialMessage<GetIdentityByHandleResponse>) {
-    super()
-    proto3.util.initPartial(data, this)
-  }
-
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'gndr.GetIdentityByHandleResponse'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
@@ -12754,6 +12383,31 @@ export class GetIdentityByHandleResponse extends Message<GetIdentityByHandleResp
     { no: 4, name: 'services', kind: 'scalar', T: 12 /* ScalarType.BYTES */ },
     { no: 5, name: 'updated', kind: 'message', T: Timestamp },
   ])
+  /**
+   * @generated from field: string handle = 1;
+   */
+  handle = ''
+  /**
+   * @generated from field: string did = 2;
+   */
+  did = ''
+  /**
+   * @generated from field: bytes keys = 3;
+   */
+  keys = new Uint8Array(0)
+  /**
+   * @generated from field: bytes services = 4;
+   */
+  services = new Uint8Array(0)
+  /**
+   * @generated from field: google.protobuf.Timestamp updated = 5;
+   */
+  updated?: Timestamp
+
+  constructor(data?: PartialMessage<GetIdentityByHandleResponse>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
 
   static fromBinary(
     bytes: Uint8Array,
@@ -12794,11 +12448,16 @@ export class GetIdentityByHandleResponse extends Message<GetIdentityByHandleResp
  * @generated from message gndr.GetBlobTakedownRequest
  */
 export class GetBlobTakedownRequest extends Message<GetBlobTakedownRequest> {
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'gndr.GetBlobTakedownRequest'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: 'did', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: 'cid', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+  ])
   /**
    * @generated from field: string did = 1;
    */
   did = ''
-
   /**
    * @generated from field: string cid = 2;
    */
@@ -12808,13 +12467,6 @@ export class GetBlobTakedownRequest extends Message<GetBlobTakedownRequest> {
     super()
     proto3.util.initPartial(data, this)
   }
-
-  static readonly runtime: typeof proto3 = proto3
-  static readonly typeName = 'gndr.GetBlobTakedownRequest'
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'did', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: 'cid', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-  ])
 
   static fromBinary(
     bytes: Uint8Array,
@@ -12855,21 +12507,6 @@ export class GetBlobTakedownRequest extends Message<GetBlobTakedownRequest> {
  * @generated from message gndr.GetBlobTakedownResponse
  */
 export class GetBlobTakedownResponse extends Message<GetBlobTakedownResponse> {
-  /**
-   * @generated from field: bool taken_down = 1;
-   */
-  takenDown = false
-
-  /**
-   * @generated from field: string takedown_ref = 2;
-   */
-  takedownRef = ''
-
-  constructor(data?: PartialMessage<GetBlobTakedownResponse>) {
-    super()
-    proto3.util.initPartial(data, this)
-  }
-
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'gndr.GetBlobTakedownResponse'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
@@ -12881,6 +12518,19 @@ export class GetBlobTakedownResponse extends Message<GetBlobTakedownResponse> {
       T: 9 /* ScalarType.STRING */,
     },
   ])
+  /**
+   * @generated from field: bool taken_down = 1;
+   */
+  takenDown = false
+  /**
+   * @generated from field: string takedown_ref = 2;
+   */
+  takedownRef = ''
+
+  constructor(data?: PartialMessage<GetBlobTakedownResponse>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
 
   static fromBinary(
     bytes: Uint8Array,
@@ -12921,6 +12571,11 @@ export class GetBlobTakedownResponse extends Message<GetBlobTakedownResponse> {
  * @generated from message gndr.GetActorTakedownRequest
  */
 export class GetActorTakedownRequest extends Message<GetActorTakedownRequest> {
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'gndr.GetActorTakedownRequest'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: 'did', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+  ])
   /**
    * @generated from field: string did = 1;
    */
@@ -12930,12 +12585,6 @@ export class GetActorTakedownRequest extends Message<GetActorTakedownRequest> {
     super()
     proto3.util.initPartial(data, this)
   }
-
-  static readonly runtime: typeof proto3 = proto3
-  static readonly typeName = 'gndr.GetActorTakedownRequest'
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'did', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-  ])
 
   static fromBinary(
     bytes: Uint8Array,
@@ -12976,21 +12625,6 @@ export class GetActorTakedownRequest extends Message<GetActorTakedownRequest> {
  * @generated from message gndr.GetActorTakedownResponse
  */
 export class GetActorTakedownResponse extends Message<GetActorTakedownResponse> {
-  /**
-   * @generated from field: bool taken_down = 1;
-   */
-  takenDown = false
-
-  /**
-   * @generated from field: string takedown_ref = 2;
-   */
-  takedownRef = ''
-
-  constructor(data?: PartialMessage<GetActorTakedownResponse>) {
-    super()
-    proto3.util.initPartial(data, this)
-  }
-
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'gndr.GetActorTakedownResponse'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
@@ -13002,6 +12636,19 @@ export class GetActorTakedownResponse extends Message<GetActorTakedownResponse> 
       T: 9 /* ScalarType.STRING */,
     },
   ])
+  /**
+   * @generated from field: bool taken_down = 1;
+   */
+  takenDown = false
+  /**
+   * @generated from field: string takedown_ref = 2;
+   */
+  takedownRef = ''
+
+  constructor(data?: PartialMessage<GetActorTakedownResponse>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
 
   static fromBinary(
     bytes: Uint8Array,
@@ -13042,6 +12689,11 @@ export class GetActorTakedownResponse extends Message<GetActorTakedownResponse> 
  * @generated from message gndr.GetRecordTakedownRequest
  */
 export class GetRecordTakedownRequest extends Message<GetRecordTakedownRequest> {
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'gndr.GetRecordTakedownRequest'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: 'record_uri', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+  ])
   /**
    * @generated from field: string record_uri = 1;
    */
@@ -13051,12 +12703,6 @@ export class GetRecordTakedownRequest extends Message<GetRecordTakedownRequest> 
     super()
     proto3.util.initPartial(data, this)
   }
-
-  static readonly runtime: typeof proto3 = proto3
-  static readonly typeName = 'gndr.GetRecordTakedownRequest'
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'record_uri', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-  ])
 
   static fromBinary(
     bytes: Uint8Array,
@@ -13097,21 +12743,6 @@ export class GetRecordTakedownRequest extends Message<GetRecordTakedownRequest> 
  * @generated from message gndr.GetRecordTakedownResponse
  */
 export class GetRecordTakedownResponse extends Message<GetRecordTakedownResponse> {
-  /**
-   * @generated from field: bool taken_down = 1;
-   */
-  takenDown = false
-
-  /**
-   * @generated from field: string takedown_ref = 2;
-   */
-  takedownRef = ''
-
-  constructor(data?: PartialMessage<GetRecordTakedownResponse>) {
-    super()
-    proto3.util.initPartial(data, this)
-  }
-
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'gndr.GetRecordTakedownResponse'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
@@ -13123,6 +12754,19 @@ export class GetRecordTakedownResponse extends Message<GetRecordTakedownResponse
       T: 9 /* ScalarType.STRING */,
     },
   ])
+  /**
+   * @generated from field: bool taken_down = 1;
+   */
+  takenDown = false
+  /**
+   * @generated from field: string takedown_ref = 2;
+   */
+  takedownRef = ''
+
+  constructor(data?: PartialMessage<GetRecordTakedownResponse>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
 
   static fromBinary(
     bytes: Uint8Array,
@@ -13165,21 +12809,6 @@ export class GetRecordTakedownResponse extends Message<GetRecordTakedownResponse
  * @generated from message gndr.GetFollowsFollowingRequest
  */
 export class GetFollowsFollowingRequest extends Message<GetFollowsFollowingRequest> {
-  /**
-   * @generated from field: string actor_did = 1;
-   */
-  actorDid = ''
-
-  /**
-   * @generated from field: repeated string target_dids = 2;
-   */
-  targetDids: string[] = []
-
-  constructor(data?: PartialMessage<GetFollowsFollowingRequest>) {
-    super()
-    proto3.util.initPartial(data, this)
-  }
-
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'gndr.GetFollowsFollowingRequest'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
@@ -13192,6 +12821,19 @@ export class GetFollowsFollowingRequest extends Message<GetFollowsFollowingReque
       repeated: true,
     },
   ])
+  /**
+   * @generated from field: string actor_did = 1;
+   */
+  actorDid = ''
+  /**
+   * @generated from field: repeated string target_dids = 2;
+   */
+  targetDids: string[] = []
+
+  constructor(data?: PartialMessage<GetFollowsFollowingRequest>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
 
   static fromBinary(
     bytes: Uint8Array,
@@ -13232,21 +12874,6 @@ export class GetFollowsFollowingRequest extends Message<GetFollowsFollowingReque
  * @generated from message gndr.FollowsFollowing
  */
 export class FollowsFollowing extends Message<FollowsFollowing> {
-  /**
-   * @generated from field: string target_did = 1;
-   */
-  targetDid = ''
-
-  /**
-   * @generated from field: repeated string dids = 2;
-   */
-  dids: string[] = []
-
-  constructor(data?: PartialMessage<FollowsFollowing>) {
-    super()
-    proto3.util.initPartial(data, this)
-  }
-
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'gndr.FollowsFollowing'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
@@ -13259,6 +12886,19 @@ export class FollowsFollowing extends Message<FollowsFollowing> {
       repeated: true,
     },
   ])
+  /**
+   * @generated from field: string target_did = 1;
+   */
+  targetDid = ''
+  /**
+   * @generated from field: repeated string dids = 2;
+   */
+  dids: string[] = []
+
+  constructor(data?: PartialMessage<FollowsFollowing>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
 
   static fromBinary(
     bytes: Uint8Array,
@@ -13293,16 +12933,6 @@ export class FollowsFollowing extends Message<FollowsFollowing> {
  * @generated from message gndr.GetFollowsFollowingResponse
  */
 export class GetFollowsFollowingResponse extends Message<GetFollowsFollowingResponse> {
-  /**
-   * @generated from field: repeated gndr.FollowsFollowing results = 1;
-   */
-  results: FollowsFollowing[] = []
-
-  constructor(data?: PartialMessage<GetFollowsFollowingResponse>) {
-    super()
-    proto3.util.initPartial(data, this)
-  }
-
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'gndr.GetFollowsFollowingResponse'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
@@ -13314,6 +12944,15 @@ export class GetFollowsFollowingResponse extends Message<GetFollowsFollowingResp
       repeated: true,
     },
   ])
+  /**
+   * @generated from field: repeated gndr.FollowsFollowing results = 1;
+   */
+  results: FollowsFollowing[] = []
+
+  constructor(data?: PartialMessage<GetFollowsFollowingResponse>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
 
   static fromBinary(
     bytes: Uint8Array,
@@ -13356,14 +12995,14 @@ export class GetFollowsFollowingResponse extends Message<GetFollowsFollowingResp
  * @generated from message gndr.PingRequest
  */
 export class PingRequest extends Message<PingRequest> {
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'gndr.PingRequest'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [])
+
   constructor(data?: PartialMessage<PingRequest>) {
     super()
     proto3.util.initPartial(data, this)
   }
-
-  static readonly runtime: typeof proto3 = proto3
-  static readonly typeName = 'gndr.PingRequest'
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [])
 
   static fromBinary(
     bytes: Uint8Array,
@@ -13398,14 +13037,14 @@ export class PingRequest extends Message<PingRequest> {
  * @generated from message gndr.PingResponse
  */
 export class PingResponse extends Message<PingResponse> {
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'gndr.PingResponse'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [])
+
   constructor(data?: PartialMessage<PingResponse>) {
     super()
     proto3.util.initPartial(data, this)
   }
-
-  static readonly runtime: typeof proto3 = proto3
-  static readonly typeName = 'gndr.PingResponse'
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [])
 
   static fromBinary(
     bytes: Uint8Array,
@@ -13440,26 +13079,6 @@ export class PingResponse extends Message<PingResponse> {
  * @generated from message gndr.UpdateActorUpstreamStatusRequest
  */
 export class UpdateActorUpstreamStatusRequest extends Message<UpdateActorUpstreamStatusRequest> {
-  /**
-   * @generated from field: string actor_did = 1;
-   */
-  actorDid = ''
-
-  /**
-   * @generated from field: bool active = 2;
-   */
-  active = false
-
-  /**
-   * @generated from field: string upstream_status = 3;
-   */
-  upstreamStatus = ''
-
-  constructor(data?: PartialMessage<UpdateActorUpstreamStatusRequest>) {
-    super()
-    proto3.util.initPartial(data, this)
-  }
-
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'gndr.UpdateActorUpstreamStatusRequest'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
@@ -13472,6 +13091,23 @@ export class UpdateActorUpstreamStatusRequest extends Message<UpdateActorUpstrea
       T: 9 /* ScalarType.STRING */,
     },
   ])
+  /**
+   * @generated from field: string actor_did = 1;
+   */
+  actorDid = ''
+  /**
+   * @generated from field: bool active = 2;
+   */
+  active = false
+  /**
+   * @generated from field: string upstream_status = 3;
+   */
+  upstreamStatus = ''
+
+  constructor(data?: PartialMessage<UpdateActorUpstreamStatusRequest>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
 
   static fromBinary(
     bytes: Uint8Array,
@@ -13515,14 +13151,14 @@ export class UpdateActorUpstreamStatusRequest extends Message<UpdateActorUpstrea
  * @generated from message gndr.UpdateActorUpstreamStatusResponse
  */
 export class UpdateActorUpstreamStatusResponse extends Message<UpdateActorUpstreamStatusResponse> {
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'gndr.UpdateActorUpstreamStatusResponse'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [])
+
   constructor(data?: PartialMessage<UpdateActorUpstreamStatusResponse>) {
     super()
     proto3.util.initPartial(data, this)
   }
-
-  static readonly runtime: typeof proto3 = proto3
-  static readonly typeName = 'gndr.UpdateActorUpstreamStatusResponse'
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [])
 
   static fromBinary(
     bytes: Uint8Array,
@@ -13566,16 +13202,21 @@ export class UpdateActorUpstreamStatusResponse extends Message<UpdateActorUpstre
  * @generated from message gndr.TakedownActorRequest
  */
 export class TakedownActorRequest extends Message<TakedownActorRequest> {
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'gndr.TakedownActorRequest'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: 'did', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: 'ref', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: 'seen', kind: 'message', T: Timestamp },
+  ])
   /**
    * @generated from field: string did = 1;
    */
   did = ''
-
   /**
    * @generated from field: string ref = 2;
    */
   ref = ''
-
   /**
    * @generated from field: google.protobuf.Timestamp seen = 3;
    */
@@ -13585,14 +13226,6 @@ export class TakedownActorRequest extends Message<TakedownActorRequest> {
     super()
     proto3.util.initPartial(data, this)
   }
-
-  static readonly runtime: typeof proto3 = proto3
-  static readonly typeName = 'gndr.TakedownActorRequest'
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'did', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: 'ref', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-    { no: 3, name: 'seen', kind: 'message', T: Timestamp },
-  ])
 
   static fromBinary(
     bytes: Uint8Array,
@@ -13627,14 +13260,14 @@ export class TakedownActorRequest extends Message<TakedownActorRequest> {
  * @generated from message gndr.TakedownActorResponse
  */
 export class TakedownActorResponse extends Message<TakedownActorResponse> {
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'gndr.TakedownActorResponse'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [])
+
   constructor(data?: PartialMessage<TakedownActorResponse>) {
     super()
     proto3.util.initPartial(data, this)
   }
-
-  static readonly runtime: typeof proto3 = proto3
-  static readonly typeName = 'gndr.TakedownActorResponse'
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [])
 
   static fromBinary(
     bytes: Uint8Array,
@@ -13669,11 +13302,16 @@ export class TakedownActorResponse extends Message<TakedownActorResponse> {
  * @generated from message gndr.UntakedownActorRequest
  */
 export class UntakedownActorRequest extends Message<UntakedownActorRequest> {
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'gndr.UntakedownActorRequest'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: 'did', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: 'seen', kind: 'message', T: Timestamp },
+  ])
   /**
    * @generated from field: string did = 1;
    */
   did = ''
-
   /**
    * @generated from field: google.protobuf.Timestamp seen = 2;
    */
@@ -13683,13 +13321,6 @@ export class UntakedownActorRequest extends Message<UntakedownActorRequest> {
     super()
     proto3.util.initPartial(data, this)
   }
-
-  static readonly runtime: typeof proto3 = proto3
-  static readonly typeName = 'gndr.UntakedownActorRequest'
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'did', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: 'seen', kind: 'message', T: Timestamp },
-  ])
 
   static fromBinary(
     bytes: Uint8Array,
@@ -13730,14 +13361,14 @@ export class UntakedownActorRequest extends Message<UntakedownActorRequest> {
  * @generated from message gndr.UntakedownActorResponse
  */
 export class UntakedownActorResponse extends Message<UntakedownActorResponse> {
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'gndr.UntakedownActorResponse'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [])
+
   constructor(data?: PartialMessage<UntakedownActorResponse>) {
     super()
     proto3.util.initPartial(data, this)
   }
-
-  static readonly runtime: typeof proto3 = proto3
-  static readonly typeName = 'gndr.UntakedownActorResponse'
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [])
 
   static fromBinary(
     bytes: Uint8Array,
@@ -13775,24 +13406,441 @@ export class UntakedownActorResponse extends Message<UntakedownActorResponse> {
 }
 
 /**
+ *
+ * Bookmarks
+ *
+ *
+ * @generated from message gndr.Bookmark
+ */
+export class Bookmark extends Message<Bookmark> {
+  /**
+   * @generated from field: gndr.StashRef ref = 1;
+   */
+  ref?: StashRef
+
+  /**
+   * @generated from field: string subject_uri = 2;
+   */
+  subjectUri = ''
+
+  /**
+   * @generated from field: string subject_cid = 3;
+   */
+  subjectCid = ''
+
+  /**
+   * @generated from field: google.protobuf.Timestamp indexed_at = 4;
+   */
+  indexedAt?: Timestamp
+
+  constructor(data?: PartialMessage<Bookmark>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
+
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'gndr.Bookmark'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: 'ref', kind: 'message', T: StashRef },
+    {
+      no: 2,
+      name: 'subject_uri',
+      kind: 'scalar',
+      T: 9 /* ScalarType.STRING */,
+    },
+    {
+      no: 3,
+      name: 'subject_cid',
+      kind: 'scalar',
+      T: 9 /* ScalarType.STRING */,
+    },
+    { no: 4, name: 'indexed_at', kind: 'message', T: Timestamp },
+  ])
+
+  static fromBinary(
+    bytes: Uint8Array,
+    options?: Partial<BinaryReadOptions>,
+  ): Bookmark {
+    return new Bookmark().fromBinary(bytes, options)
+  }
+
+  static fromJson(
+    jsonValue: JsonValue,
+    options?: Partial<JsonReadOptions>,
+  ): Bookmark {
+    return new Bookmark().fromJson(jsonValue, options)
+  }
+
+  static fromJsonString(
+    jsonString: string,
+    options?: Partial<JsonReadOptions>,
+  ): Bookmark {
+    return new Bookmark().fromJsonString(jsonString, options)
+  }
+
+  static equals(
+    a: Bookmark | PlainMessage<Bookmark> | undefined,
+    b: Bookmark | PlainMessage<Bookmark> | undefined,
+  ): boolean {
+    return proto3.util.equals(Bookmark, a, b)
+  }
+}
+
+/**
+ * @generated from message gndr.GetBookmarksByActorAndSubjectsRequest
+ */
+export class GetBookmarksByActorAndSubjectsRequest extends Message<GetBookmarksByActorAndSubjectsRequest> {
+  /**
+   * @generated from field: string actor_did = 1;
+   */
+  actorDid = ''
+
+  /**
+   * @generated from field: repeated string uris = 2;
+   */
+  uris: string[] = []
+
+  constructor(data?: PartialMessage<GetBookmarksByActorAndSubjectsRequest>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
+
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'gndr.GetBookmarksByActorAndSubjectsRequest'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: 'actor_did', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+    {
+      no: 2,
+      name: 'uris',
+      kind: 'scalar',
+      T: 9 /* ScalarType.STRING */,
+      repeated: true,
+    },
+  ])
+
+  static fromBinary(
+    bytes: Uint8Array,
+    options?: Partial<BinaryReadOptions>,
+  ): GetBookmarksByActorAndSubjectsRequest {
+    return new GetBookmarksByActorAndSubjectsRequest().fromBinary(
+      bytes,
+      options,
+    )
+  }
+
+  static fromJson(
+    jsonValue: JsonValue,
+    options?: Partial<JsonReadOptions>,
+  ): GetBookmarksByActorAndSubjectsRequest {
+    return new GetBookmarksByActorAndSubjectsRequest().fromJson(
+      jsonValue,
+      options,
+    )
+  }
+
+  static fromJsonString(
+    jsonString: string,
+    options?: Partial<JsonReadOptions>,
+  ): GetBookmarksByActorAndSubjectsRequest {
+    return new GetBookmarksByActorAndSubjectsRequest().fromJsonString(
+      jsonString,
+      options,
+    )
+  }
+
+  static equals(
+    a:
+      | GetBookmarksByActorAndSubjectsRequest
+      | PlainMessage<GetBookmarksByActorAndSubjectsRequest>
+      | undefined,
+    b:
+      | GetBookmarksByActorAndSubjectsRequest
+      | PlainMessage<GetBookmarksByActorAndSubjectsRequest>
+      | undefined,
+  ): boolean {
+    return proto3.util.equals(GetBookmarksByActorAndSubjectsRequest, a, b)
+  }
+}
+
+/**
+ * @generated from message gndr.GetBookmarksByActorAndSubjectsResponse
+ */
+export class GetBookmarksByActorAndSubjectsResponse extends Message<GetBookmarksByActorAndSubjectsResponse> {
+  /**
+   * @generated from field: repeated gndr.Bookmark bookmarks = 1;
+   */
+  bookmarks: Bookmark[] = []
+
+  constructor(data?: PartialMessage<GetBookmarksByActorAndSubjectsResponse>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
+
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'gndr.GetBookmarksByActorAndSubjectsResponse'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: 'bookmarks', kind: 'message', T: Bookmark, repeated: true },
+  ])
+
+  static fromBinary(
+    bytes: Uint8Array,
+    options?: Partial<BinaryReadOptions>,
+  ): GetBookmarksByActorAndSubjectsResponse {
+    return new GetBookmarksByActorAndSubjectsResponse().fromBinary(
+      bytes,
+      options,
+    )
+  }
+
+  static fromJson(
+    jsonValue: JsonValue,
+    options?: Partial<JsonReadOptions>,
+  ): GetBookmarksByActorAndSubjectsResponse {
+    return new GetBookmarksByActorAndSubjectsResponse().fromJson(
+      jsonValue,
+      options,
+    )
+  }
+
+  static fromJsonString(
+    jsonString: string,
+    options?: Partial<JsonReadOptions>,
+  ): GetBookmarksByActorAndSubjectsResponse {
+    return new GetBookmarksByActorAndSubjectsResponse().fromJsonString(
+      jsonString,
+      options,
+    )
+  }
+
+  static equals(
+    a:
+      | GetBookmarksByActorAndSubjectsResponse
+      | PlainMessage<GetBookmarksByActorAndSubjectsResponse>
+      | undefined,
+    b:
+      | GetBookmarksByActorAndSubjectsResponse
+      | PlainMessage<GetBookmarksByActorAndSubjectsResponse>
+      | undefined,
+  ): boolean {
+    return proto3.util.equals(GetBookmarksByActorAndSubjectsResponse, a, b)
+  }
+}
+
+/**
+ * @generated from message gndr.GetActorBookmarksRequest
+ */
+export class GetActorBookmarksRequest extends Message<GetActorBookmarksRequest> {
+  /**
+   * @generated from field: string actor_did = 1;
+   */
+  actorDid = ''
+
+  /**
+   * @generated from field: int32 limit = 2;
+   */
+  limit = 0
+
+  /**
+   * @generated from field: string cursor = 3;
+   */
+  cursor = ''
+
+  constructor(data?: PartialMessage<GetActorBookmarksRequest>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
+
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'gndr.GetActorBookmarksRequest'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: 'actor_did', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: 'limit', kind: 'scalar', T: 5 /* ScalarType.INT32 */ },
+    { no: 3, name: 'cursor', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+  ])
+
+  static fromBinary(
+    bytes: Uint8Array,
+    options?: Partial<BinaryReadOptions>,
+  ): GetActorBookmarksRequest {
+    return new GetActorBookmarksRequest().fromBinary(bytes, options)
+  }
+
+  static fromJson(
+    jsonValue: JsonValue,
+    options?: Partial<JsonReadOptions>,
+  ): GetActorBookmarksRequest {
+    return new GetActorBookmarksRequest().fromJson(jsonValue, options)
+  }
+
+  static fromJsonString(
+    jsonString: string,
+    options?: Partial<JsonReadOptions>,
+  ): GetActorBookmarksRequest {
+    return new GetActorBookmarksRequest().fromJsonString(jsonString, options)
+  }
+
+  static equals(
+    a:
+      | GetActorBookmarksRequest
+      | PlainMessage<GetActorBookmarksRequest>
+      | undefined,
+    b:
+      | GetActorBookmarksRequest
+      | PlainMessage<GetActorBookmarksRequest>
+      | undefined,
+  ): boolean {
+    return proto3.util.equals(GetActorBookmarksRequest, a, b)
+  }
+}
+
+/**
+ * @generated from message gndr.BookmarkInfo
+ */
+export class BookmarkInfo extends Message<BookmarkInfo> {
+  /**
+   * stash key
+   *
+   * @generated from field: string key = 1;
+   */
+  key = ''
+
+  /**
+   * @generated from field: string subject = 2;
+   */
+  subject = ''
+
+  constructor(data?: PartialMessage<BookmarkInfo>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
+
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'gndr.BookmarkInfo'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: 'key', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: 'subject', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+  ])
+
+  static fromBinary(
+    bytes: Uint8Array,
+    options?: Partial<BinaryReadOptions>,
+  ): BookmarkInfo {
+    return new BookmarkInfo().fromBinary(bytes, options)
+  }
+
+  static fromJson(
+    jsonValue: JsonValue,
+    options?: Partial<JsonReadOptions>,
+  ): BookmarkInfo {
+    return new BookmarkInfo().fromJson(jsonValue, options)
+  }
+
+  static fromJsonString(
+    jsonString: string,
+    options?: Partial<JsonReadOptions>,
+  ): BookmarkInfo {
+    return new BookmarkInfo().fromJsonString(jsonString, options)
+  }
+
+  static equals(
+    a: BookmarkInfo | PlainMessage<BookmarkInfo> | undefined,
+    b: BookmarkInfo | PlainMessage<BookmarkInfo> | undefined,
+  ): boolean {
+    return proto3.util.equals(BookmarkInfo, a, b)
+  }
+}
+
+/**
+ * @generated from message gndr.GetActorBookmarksResponse
+ */
+export class GetActorBookmarksResponse extends Message<GetActorBookmarksResponse> {
+  /**
+   * @generated from field: repeated gndr.BookmarkInfo bookmarks = 1;
+   */
+  bookmarks: BookmarkInfo[] = []
+
+  /**
+   * @generated from field: string cursor = 2;
+   */
+  cursor = ''
+
+  constructor(data?: PartialMessage<GetActorBookmarksResponse>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
+
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'gndr.GetActorBookmarksResponse'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    {
+      no: 1,
+      name: 'bookmarks',
+      kind: 'message',
+      T: BookmarkInfo,
+      repeated: true,
+    },
+    { no: 2, name: 'cursor', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+  ])
+
+  static fromBinary(
+    bytes: Uint8Array,
+    options?: Partial<BinaryReadOptions>,
+  ): GetActorBookmarksResponse {
+    return new GetActorBookmarksResponse().fromBinary(bytes, options)
+  }
+
+  static fromJson(
+    jsonValue: JsonValue,
+    options?: Partial<JsonReadOptions>,
+  ): GetActorBookmarksResponse {
+    return new GetActorBookmarksResponse().fromJson(jsonValue, options)
+  }
+
+  static fromJsonString(
+    jsonString: string,
+    options?: Partial<JsonReadOptions>,
+  ): GetActorBookmarksResponse {
+    return new GetActorBookmarksResponse().fromJsonString(jsonString, options)
+  }
+
+  static equals(
+    a:
+      | GetActorBookmarksResponse
+      | PlainMessage<GetActorBookmarksResponse>
+      | undefined,
+    b:
+      | GetActorBookmarksResponse
+      | PlainMessage<GetActorBookmarksResponse>
+      | undefined,
+  ): boolean {
+    return proto3.util.equals(GetActorBookmarksResponse, a, b)
+  }
+}
+
+/**
  * @generated from message gndr.TakedownBlobRequest
  */
 export class TakedownBlobRequest extends Message<TakedownBlobRequest> {
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'gndr.TakedownBlobRequest'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: 'did', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: 'cid', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: 'ref', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+    { no: 4, name: 'seen', kind: 'message', T: Timestamp },
+  ])
   /**
    * @generated from field: string did = 1;
    */
   did = ''
-
   /**
    * @generated from field: string cid = 2;
    */
   cid = ''
-
   /**
    * @generated from field: string ref = 3;
    */
   ref = ''
-
   /**
    * @generated from field: google.protobuf.Timestamp seen = 4;
    */
@@ -13802,15 +13850,6 @@ export class TakedownBlobRequest extends Message<TakedownBlobRequest> {
     super()
     proto3.util.initPartial(data, this)
   }
-
-  static readonly runtime: typeof proto3 = proto3
-  static readonly typeName = 'gndr.TakedownBlobRequest'
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'did', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: 'cid', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-    { no: 3, name: 'ref', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-    { no: 4, name: 'seen', kind: 'message', T: Timestamp },
-  ])
 
   static fromBinary(
     bytes: Uint8Array,
@@ -13845,14 +13884,14 @@ export class TakedownBlobRequest extends Message<TakedownBlobRequest> {
  * @generated from message gndr.TakedownBlobResponse
  */
 export class TakedownBlobResponse extends Message<TakedownBlobResponse> {
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'gndr.TakedownBlobResponse'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [])
+
   constructor(data?: PartialMessage<TakedownBlobResponse>) {
     super()
     proto3.util.initPartial(data, this)
   }
-
-  static readonly runtime: typeof proto3 = proto3
-  static readonly typeName = 'gndr.TakedownBlobResponse'
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [])
 
   static fromBinary(
     bytes: Uint8Array,
@@ -13887,16 +13926,21 @@ export class TakedownBlobResponse extends Message<TakedownBlobResponse> {
  * @generated from message gndr.UntakedownBlobRequest
  */
 export class UntakedownBlobRequest extends Message<UntakedownBlobRequest> {
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'gndr.UntakedownBlobRequest'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: 'did', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: 'cid', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: 'seen', kind: 'message', T: Timestamp },
+  ])
   /**
    * @generated from field: string did = 1;
    */
   did = ''
-
   /**
    * @generated from field: string cid = 2;
    */
   cid = ''
-
   /**
    * @generated from field: google.protobuf.Timestamp seen = 3;
    */
@@ -13906,14 +13950,6 @@ export class UntakedownBlobRequest extends Message<UntakedownBlobRequest> {
     super()
     proto3.util.initPartial(data, this)
   }
-
-  static readonly runtime: typeof proto3 = proto3
-  static readonly typeName = 'gndr.UntakedownBlobRequest'
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'did', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: 'cid', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-    { no: 3, name: 'seen', kind: 'message', T: Timestamp },
-  ])
 
   static fromBinary(
     bytes: Uint8Array,
@@ -13948,14 +13984,14 @@ export class UntakedownBlobRequest extends Message<UntakedownBlobRequest> {
  * @generated from message gndr.UntakedownBlobResponse
  */
 export class UntakedownBlobResponse extends Message<UntakedownBlobResponse> {
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'gndr.UntakedownBlobResponse'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [])
+
   constructor(data?: PartialMessage<UntakedownBlobResponse>) {
     super()
     proto3.util.initPartial(data, this)
   }
-
-  static readonly runtime: typeof proto3 = proto3
-  static readonly typeName = 'gndr.UntakedownBlobResponse'
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [])
 
   static fromBinary(
     bytes: Uint8Array,
@@ -13996,16 +14032,21 @@ export class UntakedownBlobResponse extends Message<UntakedownBlobResponse> {
  * @generated from message gndr.TakedownRecordRequest
  */
 export class TakedownRecordRequest extends Message<TakedownRecordRequest> {
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'gndr.TakedownRecordRequest'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: 'record_uri', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: 'ref', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: 'seen', kind: 'message', T: Timestamp },
+  ])
   /**
    * @generated from field: string record_uri = 1;
    */
   recordUri = ''
-
   /**
    * @generated from field: string ref = 2;
    */
   ref = ''
-
   /**
    * @generated from field: google.protobuf.Timestamp seen = 3;
    */
@@ -14015,14 +14056,6 @@ export class TakedownRecordRequest extends Message<TakedownRecordRequest> {
     super()
     proto3.util.initPartial(data, this)
   }
-
-  static readonly runtime: typeof proto3 = proto3
-  static readonly typeName = 'gndr.TakedownRecordRequest'
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'record_uri', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: 'ref', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-    { no: 3, name: 'seen', kind: 'message', T: Timestamp },
-  ])
 
   static fromBinary(
     bytes: Uint8Array,
@@ -14057,14 +14090,14 @@ export class TakedownRecordRequest extends Message<TakedownRecordRequest> {
  * @generated from message gndr.TakedownRecordResponse
  */
 export class TakedownRecordResponse extends Message<TakedownRecordResponse> {
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'gndr.TakedownRecordResponse'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [])
+
   constructor(data?: PartialMessage<TakedownRecordResponse>) {
     super()
     proto3.util.initPartial(data, this)
   }
-
-  static readonly runtime: typeof proto3 = proto3
-  static readonly typeName = 'gndr.TakedownRecordResponse'
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [])
 
   static fromBinary(
     bytes: Uint8Array,
@@ -14105,11 +14138,16 @@ export class TakedownRecordResponse extends Message<TakedownRecordResponse> {
  * @generated from message gndr.UntakedownRecordRequest
  */
 export class UntakedownRecordRequest extends Message<UntakedownRecordRequest> {
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'gndr.UntakedownRecordRequest'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: 'record_uri', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: 'seen', kind: 'message', T: Timestamp },
+  ])
   /**
    * @generated from field: string record_uri = 1;
    */
   recordUri = ''
-
   /**
    * @generated from field: google.protobuf.Timestamp seen = 2;
    */
@@ -14119,13 +14157,6 @@ export class UntakedownRecordRequest extends Message<UntakedownRecordRequest> {
     super()
     proto3.util.initPartial(data, this)
   }
-
-  static readonly runtime: typeof proto3 = proto3
-  static readonly typeName = 'gndr.UntakedownRecordRequest'
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'record_uri', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: 'seen', kind: 'message', T: Timestamp },
-  ])
 
   static fromBinary(
     bytes: Uint8Array,
@@ -14166,14 +14197,14 @@ export class UntakedownRecordRequest extends Message<UntakedownRecordRequest> {
  * @generated from message gndr.UntakedownRecordResponse
  */
 export class UntakedownRecordResponse extends Message<UntakedownRecordResponse> {
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'gndr.UntakedownRecordResponse'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [])
+
   constructor(data?: PartialMessage<UntakedownRecordResponse>) {
     super()
     proto3.util.initPartial(data, this)
   }
-
-  static readonly runtime: typeof proto3 = proto3
-  static readonly typeName = 'gndr.UntakedownRecordResponse'
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [])
 
   static fromBinary(
     bytes: Uint8Array,
@@ -14214,21 +14245,6 @@ export class UntakedownRecordResponse extends Message<UntakedownRecordResponse> 
  * @generated from message gndr.CreateActorMuteRequest
  */
 export class CreateActorMuteRequest extends Message<CreateActorMuteRequest> {
-  /**
-   * @generated from field: string actor_did = 1;
-   */
-  actorDid = ''
-
-  /**
-   * @generated from field: string subject_did = 2;
-   */
-  subjectDid = ''
-
-  constructor(data?: PartialMessage<CreateActorMuteRequest>) {
-    super()
-    proto3.util.initPartial(data, this)
-  }
-
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'gndr.CreateActorMuteRequest'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
@@ -14240,6 +14256,19 @@ export class CreateActorMuteRequest extends Message<CreateActorMuteRequest> {
       T: 9 /* ScalarType.STRING */,
     },
   ])
+  /**
+   * @generated from field: string actor_did = 1;
+   */
+  actorDid = ''
+  /**
+   * @generated from field: string subject_did = 2;
+   */
+  subjectDid = ''
+
+  constructor(data?: PartialMessage<CreateActorMuteRequest>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
 
   static fromBinary(
     bytes: Uint8Array,
@@ -14280,14 +14309,14 @@ export class CreateActorMuteRequest extends Message<CreateActorMuteRequest> {
  * @generated from message gndr.CreateActorMuteResponse
  */
 export class CreateActorMuteResponse extends Message<CreateActorMuteResponse> {
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'gndr.CreateActorMuteResponse'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [])
+
   constructor(data?: PartialMessage<CreateActorMuteResponse>) {
     super()
     proto3.util.initPartial(data, this)
   }
-
-  static readonly runtime: typeof proto3 = proto3
-  static readonly typeName = 'gndr.CreateActorMuteResponse'
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [])
 
   static fromBinary(
     bytes: Uint8Array,
@@ -14328,21 +14357,6 @@ export class CreateActorMuteResponse extends Message<CreateActorMuteResponse> {
  * @generated from message gndr.DeleteActorMuteRequest
  */
 export class DeleteActorMuteRequest extends Message<DeleteActorMuteRequest> {
-  /**
-   * @generated from field: string actor_did = 1;
-   */
-  actorDid = ''
-
-  /**
-   * @generated from field: string subject_did = 2;
-   */
-  subjectDid = ''
-
-  constructor(data?: PartialMessage<DeleteActorMuteRequest>) {
-    super()
-    proto3.util.initPartial(data, this)
-  }
-
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'gndr.DeleteActorMuteRequest'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
@@ -14354,6 +14368,19 @@ export class DeleteActorMuteRequest extends Message<DeleteActorMuteRequest> {
       T: 9 /* ScalarType.STRING */,
     },
   ])
+  /**
+   * @generated from field: string actor_did = 1;
+   */
+  actorDid = ''
+  /**
+   * @generated from field: string subject_did = 2;
+   */
+  subjectDid = ''
+
+  constructor(data?: PartialMessage<DeleteActorMuteRequest>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
 
   static fromBinary(
     bytes: Uint8Array,
@@ -14394,14 +14421,14 @@ export class DeleteActorMuteRequest extends Message<DeleteActorMuteRequest> {
  * @generated from message gndr.DeleteActorMuteResponse
  */
 export class DeleteActorMuteResponse extends Message<DeleteActorMuteResponse> {
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'gndr.DeleteActorMuteResponse'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [])
+
   constructor(data?: PartialMessage<DeleteActorMuteResponse>) {
     super()
     proto3.util.initPartial(data, this)
   }
-
-  static readonly runtime: typeof proto3 = proto3
-  static readonly typeName = 'gndr.DeleteActorMuteResponse'
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [])
 
   static fromBinary(
     bytes: Uint8Array,
@@ -14442,6 +14469,11 @@ export class DeleteActorMuteResponse extends Message<DeleteActorMuteResponse> {
  * @generated from message gndr.ClearActorMutesRequest
  */
 export class ClearActorMutesRequest extends Message<ClearActorMutesRequest> {
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'gndr.ClearActorMutesRequest'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: 'actor_did', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+  ])
   /**
    * @generated from field: string actor_did = 1;
    */
@@ -14451,12 +14483,6 @@ export class ClearActorMutesRequest extends Message<ClearActorMutesRequest> {
     super()
     proto3.util.initPartial(data, this)
   }
-
-  static readonly runtime: typeof proto3 = proto3
-  static readonly typeName = 'gndr.ClearActorMutesRequest'
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'actor_did', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-  ])
 
   static fromBinary(
     bytes: Uint8Array,
@@ -14497,14 +14523,14 @@ export class ClearActorMutesRequest extends Message<ClearActorMutesRequest> {
  * @generated from message gndr.ClearActorMutesResponse
  */
 export class ClearActorMutesResponse extends Message<ClearActorMutesResponse> {
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'gndr.ClearActorMutesResponse'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [])
+
   constructor(data?: PartialMessage<ClearActorMutesResponse>) {
     super()
     proto3.util.initPartial(data, this)
   }
-
-  static readonly runtime: typeof proto3 = proto3
-  static readonly typeName = 'gndr.ClearActorMutesResponse'
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [])
 
   static fromBinary(
     bytes: Uint8Array,
@@ -14545,21 +14571,6 @@ export class ClearActorMutesResponse extends Message<ClearActorMutesResponse> {
  * @generated from message gndr.CreateActorMutelistSubscriptionRequest
  */
 export class CreateActorMutelistSubscriptionRequest extends Message<CreateActorMutelistSubscriptionRequest> {
-  /**
-   * @generated from field: string actor_did = 1;
-   */
-  actorDid = ''
-
-  /**
-   * @generated from field: string subject_uri = 2;
-   */
-  subjectUri = ''
-
-  constructor(data?: PartialMessage<CreateActorMutelistSubscriptionRequest>) {
-    super()
-    proto3.util.initPartial(data, this)
-  }
-
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'gndr.CreateActorMutelistSubscriptionRequest'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
@@ -14571,6 +14582,19 @@ export class CreateActorMutelistSubscriptionRequest extends Message<CreateActorM
       T: 9 /* ScalarType.STRING */,
     },
   ])
+  /**
+   * @generated from field: string actor_did = 1;
+   */
+  actorDid = ''
+  /**
+   * @generated from field: string subject_uri = 2;
+   */
+  subjectUri = ''
+
+  constructor(data?: PartialMessage<CreateActorMutelistSubscriptionRequest>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
 
   static fromBinary(
     bytes: Uint8Array,
@@ -14620,14 +14644,14 @@ export class CreateActorMutelistSubscriptionRequest extends Message<CreateActorM
  * @generated from message gndr.CreateActorMutelistSubscriptionResponse
  */
 export class CreateActorMutelistSubscriptionResponse extends Message<CreateActorMutelistSubscriptionResponse> {
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'gndr.CreateActorMutelistSubscriptionResponse'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [])
+
   constructor(data?: PartialMessage<CreateActorMutelistSubscriptionResponse>) {
     super()
     proto3.util.initPartial(data, this)
   }
-
-  static readonly runtime: typeof proto3 = proto3
-  static readonly typeName = 'gndr.CreateActorMutelistSubscriptionResponse'
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [])
 
   static fromBinary(
     bytes: Uint8Array,
@@ -14677,21 +14701,6 @@ export class CreateActorMutelistSubscriptionResponse extends Message<CreateActor
  * @generated from message gndr.DeleteActorMutelistSubscriptionRequest
  */
 export class DeleteActorMutelistSubscriptionRequest extends Message<DeleteActorMutelistSubscriptionRequest> {
-  /**
-   * @generated from field: string actor_did = 1;
-   */
-  actorDid = ''
-
-  /**
-   * @generated from field: string subject_uri = 2;
-   */
-  subjectUri = ''
-
-  constructor(data?: PartialMessage<DeleteActorMutelistSubscriptionRequest>) {
-    super()
-    proto3.util.initPartial(data, this)
-  }
-
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'gndr.DeleteActorMutelistSubscriptionRequest'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
@@ -14703,6 +14712,19 @@ export class DeleteActorMutelistSubscriptionRequest extends Message<DeleteActorM
       T: 9 /* ScalarType.STRING */,
     },
   ])
+  /**
+   * @generated from field: string actor_did = 1;
+   */
+  actorDid = ''
+  /**
+   * @generated from field: string subject_uri = 2;
+   */
+  subjectUri = ''
+
+  constructor(data?: PartialMessage<DeleteActorMutelistSubscriptionRequest>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
 
   static fromBinary(
     bytes: Uint8Array,
@@ -14752,14 +14774,14 @@ export class DeleteActorMutelistSubscriptionRequest extends Message<DeleteActorM
  * @generated from message gndr.DeleteActorMutelistSubscriptionResponse
  */
 export class DeleteActorMutelistSubscriptionResponse extends Message<DeleteActorMutelistSubscriptionResponse> {
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'gndr.DeleteActorMutelistSubscriptionResponse'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [])
+
   constructor(data?: PartialMessage<DeleteActorMutelistSubscriptionResponse>) {
     super()
     proto3.util.initPartial(data, this)
   }
-
-  static readonly runtime: typeof proto3 = proto3
-  static readonly typeName = 'gndr.DeleteActorMutelistSubscriptionResponse'
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [])
 
   static fromBinary(
     bytes: Uint8Array,
@@ -14809,6 +14831,11 @@ export class DeleteActorMutelistSubscriptionResponse extends Message<DeleteActor
  * @generated from message gndr.ClearActorMutelistSubscriptionsRequest
  */
 export class ClearActorMutelistSubscriptionsRequest extends Message<ClearActorMutelistSubscriptionsRequest> {
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'gndr.ClearActorMutelistSubscriptionsRequest'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: 'actor_did', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+  ])
   /**
    * @generated from field: string actor_did = 1;
    */
@@ -14818,12 +14845,6 @@ export class ClearActorMutelistSubscriptionsRequest extends Message<ClearActorMu
     super()
     proto3.util.initPartial(data, this)
   }
-
-  static readonly runtime: typeof proto3 = proto3
-  static readonly typeName = 'gndr.ClearActorMutelistSubscriptionsRequest'
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'actor_did', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-  ])
 
   static fromBinary(
     bytes: Uint8Array,
@@ -14873,14 +14894,14 @@ export class ClearActorMutelistSubscriptionsRequest extends Message<ClearActorMu
  * @generated from message gndr.ClearActorMutelistSubscriptionsResponse
  */
 export class ClearActorMutelistSubscriptionsResponse extends Message<ClearActorMutelistSubscriptionsResponse> {
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'gndr.ClearActorMutelistSubscriptionsResponse'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [])
+
   constructor(data?: PartialMessage<ClearActorMutelistSubscriptionsResponse>) {
     super()
     proto3.util.initPartial(data, this)
   }
-
-  static readonly runtime: typeof proto3 = proto3
-  static readonly typeName = 'gndr.ClearActorMutelistSubscriptionsResponse'
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [])
 
   static fromBinary(
     bytes: Uint8Array,
@@ -14930,21 +14951,6 @@ export class ClearActorMutelistSubscriptionsResponse extends Message<ClearActorM
  * @generated from message gndr.CreateThreadMuteRequest
  */
 export class CreateThreadMuteRequest extends Message<CreateThreadMuteRequest> {
-  /**
-   * @generated from field: string actor_did = 1;
-   */
-  actorDid = ''
-
-  /**
-   * @generated from field: string thread_root = 2;
-   */
-  threadRoot = ''
-
-  constructor(data?: PartialMessage<CreateThreadMuteRequest>) {
-    super()
-    proto3.util.initPartial(data, this)
-  }
-
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'gndr.CreateThreadMuteRequest'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
@@ -14956,6 +14962,19 @@ export class CreateThreadMuteRequest extends Message<CreateThreadMuteRequest> {
       T: 9 /* ScalarType.STRING */,
     },
   ])
+  /**
+   * @generated from field: string actor_did = 1;
+   */
+  actorDid = ''
+  /**
+   * @generated from field: string thread_root = 2;
+   */
+  threadRoot = ''
+
+  constructor(data?: PartialMessage<CreateThreadMuteRequest>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
 
   static fromBinary(
     bytes: Uint8Array,
@@ -14996,14 +15015,14 @@ export class CreateThreadMuteRequest extends Message<CreateThreadMuteRequest> {
  * @generated from message gndr.CreateThreadMuteResponse
  */
 export class CreateThreadMuteResponse extends Message<CreateThreadMuteResponse> {
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'gndr.CreateThreadMuteResponse'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [])
+
   constructor(data?: PartialMessage<CreateThreadMuteResponse>) {
     super()
     proto3.util.initPartial(data, this)
   }
-
-  static readonly runtime: typeof proto3 = proto3
-  static readonly typeName = 'gndr.CreateThreadMuteResponse'
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [])
 
   static fromBinary(
     bytes: Uint8Array,
@@ -15044,21 +15063,6 @@ export class CreateThreadMuteResponse extends Message<CreateThreadMuteResponse> 
  * @generated from message gndr.DeleteThreadMuteRequest
  */
 export class DeleteThreadMuteRequest extends Message<DeleteThreadMuteRequest> {
-  /**
-   * @generated from field: string actor_did = 1;
-   */
-  actorDid = ''
-
-  /**
-   * @generated from field: string thread_root = 2;
-   */
-  threadRoot = ''
-
-  constructor(data?: PartialMessage<DeleteThreadMuteRequest>) {
-    super()
-    proto3.util.initPartial(data, this)
-  }
-
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'gndr.DeleteThreadMuteRequest'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
@@ -15070,6 +15074,19 @@ export class DeleteThreadMuteRequest extends Message<DeleteThreadMuteRequest> {
       T: 9 /* ScalarType.STRING */,
     },
   ])
+  /**
+   * @generated from field: string actor_did = 1;
+   */
+  actorDid = ''
+  /**
+   * @generated from field: string thread_root = 2;
+   */
+  threadRoot = ''
+
+  constructor(data?: PartialMessage<DeleteThreadMuteRequest>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
 
   static fromBinary(
     bytes: Uint8Array,
@@ -15110,14 +15127,14 @@ export class DeleteThreadMuteRequest extends Message<DeleteThreadMuteRequest> {
  * @generated from message gndr.DeleteThreadMuteResponse
  */
 export class DeleteThreadMuteResponse extends Message<DeleteThreadMuteResponse> {
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'gndr.DeleteThreadMuteResponse'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [])
+
   constructor(data?: PartialMessage<DeleteThreadMuteResponse>) {
     super()
     proto3.util.initPartial(data, this)
   }
-
-  static readonly runtime: typeof proto3 = proto3
-  static readonly typeName = 'gndr.DeleteThreadMuteResponse'
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [])
 
   static fromBinary(
     bytes: Uint8Array,
@@ -15158,6 +15175,11 @@ export class DeleteThreadMuteResponse extends Message<DeleteThreadMuteResponse> 
  * @generated from message gndr.ClearThreadMutesRequest
  */
 export class ClearThreadMutesRequest extends Message<ClearThreadMutesRequest> {
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'gndr.ClearThreadMutesRequest'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: 'actor_did', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+  ])
   /**
    * @generated from field: string actor_did = 1;
    */
@@ -15167,12 +15189,6 @@ export class ClearThreadMutesRequest extends Message<ClearThreadMutesRequest> {
     super()
     proto3.util.initPartial(data, this)
   }
-
-  static readonly runtime: typeof proto3 = proto3
-  static readonly typeName = 'gndr.ClearThreadMutesRequest'
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'actor_did', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-  ])
 
   static fromBinary(
     bytes: Uint8Array,
@@ -15213,14 +15229,14 @@ export class ClearThreadMutesRequest extends Message<ClearThreadMutesRequest> {
  * @generated from message gndr.ClearThreadMutesResponse
  */
 export class ClearThreadMutesResponse extends Message<ClearThreadMutesResponse> {
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'gndr.ClearThreadMutesResponse'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [])
+
   constructor(data?: PartialMessage<ClearThreadMutesResponse>) {
     super()
     proto3.util.initPartial(data, this)
   }
-
-  static readonly runtime: typeof proto3 = proto3
-  static readonly typeName = 'gndr.ClearThreadMutesResponse'
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [])
 
   static fromBinary(
     bytes: Uint8Array,

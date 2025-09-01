@@ -1,16 +1,16 @@
 import events from 'node:events'
 import http from 'node:http'
 import { AddressInfo } from 'node:net'
-import { AtpAgent } from '@gander-social-atproto/api'
-import { DAY, SECOND } from '@gander-social-atproto/common'
-import { Keypair } from '@gander-social-atproto/crypto'
-import { IdResolver } from '@gander-social-atproto/identity'
 import compression from 'compression'
 import cors from 'cors'
 import { Etcd3 } from 'etcd3'
 import express from 'express'
 import { HttpTerminator, createHttpTerminator } from 'http-terminator'
-import API, { blobResolver, health, wellKnown } from './api'
+import { AtpAgent } from '@gander-social-atproto/api'
+import { DAY, SECOND } from '@gander-social-atproto/common'
+import { Keypair } from '@gander-social-atproto/crypto'
+import { IdResolver } from '@gander-social-atproto/identity'
+import API, { blobResolver, external, health, wellKnown } from './api'
 import { createBlobDispatcher } from './api/blob-dispatcher'
 import { AuthVerifier, createPublicKeyObject } from './auth-verifier'
 import { authWithApiKey as bsyncAuth, createBsyncClient } from './bsync'
@@ -27,6 +27,7 @@ import { FeatureGates } from './feature-gates'
 import { Hydrator } from './hydration/hydrator'
 import * as imageServer from './image/server'
 import { ImageUriBuilder } from './image/uri'
+import { createKwsClient } from './kws'
 import { createServer } from './lexicon'
 import { loggerMiddleware } from './logger'
 import { createStashClient } from './stash'
@@ -58,6 +59,7 @@ export class GndrAppView {
   }): GndrAppView {
     const { config, signingKey } = opts
     const app = express()
+    app.set('trust proxy', true)
     app.use(cors({ maxAge: DAY / SECOND }))
     app.use(loggerMiddleware)
     app.use(compression())
@@ -150,6 +152,8 @@ export class GndrAppView {
         })
       : undefined
 
+    const kwsClient = config.kws ? createKwsClient(config.kws) : undefined
+
     const entrywayJwtPublicKey = config.entrywayJwtPublicKeyHex
       ? createPublicKeyObject(config.entrywayJwtPublicKeyHex)
       : undefined
@@ -186,6 +190,7 @@ export class GndrAppView {
       authVerifier,
       featureGates,
       blobDispatcher,
+      kwsClient,
     })
 
     let server = createServer({
@@ -205,6 +210,7 @@ export class GndrAppView {
     app.use(imageServer.createMiddleware(ctx, { prefix: '/img/' }))
     app.use(server.xrpc.router)
     app.use(error.handler)
+    app.use('/external', external.createRouter(ctx))
 
     return new GndrAppView({ ctx, app })
   }

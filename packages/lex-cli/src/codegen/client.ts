@@ -1,15 +1,15 @@
 import {
-  type LexRecord,
-  type LexiconDoc,
-  Lexicons,
-} from '@gander-social-atproto/lexicon'
-import { NSID } from '@gander-social-atproto/syntax'
-import {
   IndentationText,
   Project,
   SourceFile,
   VariableDeclarationKind,
 } from 'ts-morph'
+import {
+  type LexRecord,
+  type LexiconDoc,
+  Lexicons,
+} from '@gander-social-atproto/lexicon'
+import { NSID } from '@gander-social-atproto/syntax'
 import { type GeneratedAPI } from '../types'
 import { gen, lexiconsTs, utilTs } from './common'
 import {
@@ -74,11 +74,11 @@ const indexTs = (
       { name: 'FetchHandler', isTypeOnly: true },
       { name: 'FetchHandlerOptions', isTypeOnly: true },
     ])
-    //= import {schemas} from './lexicons.js'
+    //= import { schemas } from './lexicons.js'
     file
       .addImportDeclaration({ moduleSpecifier: './lexicons.js' })
       .addNamedImports([{ name: 'schemas' }])
-    //= import {CID} from 'multiformats/cid'
+    //= import { CID } from 'multiformats/cid'
     file
       .addImportDeclaration({
         moduleSpecifier: 'multiformats/cid',
@@ -468,12 +468,12 @@ const lexiconTs = (project, lexicons: Lexicons, lexiconDoc: LexiconDoc) =>
             genXrpcInput(file, imports, lexicons, lexUri, false)
             genXrpcOutput(file, imports, lexicons, lexUri)
             genClientXrpcCommon(file, lexicons, lexUri)
-          } else if (def.type === 'subscription') {
-            continue
-          } else if (def.type === 'record') {
-            genRecord(file, imports, lexicons, lexUri)
-          } else {
-            genUserType(file, imports, lexicons, lexUri)
+          } else if (def.type !== 'subscription') {
+            if (def.type === 'record') {
+              genRecord(file, imports, lexicons, lexUri)
+            } else {
+              genUserType(file, imports, lexicons, lexUri)
+            }
           }
         } else {
           genUserType(file, imports, lexicons, lexUri)

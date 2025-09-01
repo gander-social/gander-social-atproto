@@ -2,6 +2,7 @@ import fsSync from 'node:fs'
 import fs from 'node:fs/promises'
 import path from 'node:path'
 import stream from 'node:stream'
+import { CID } from 'multiformats/cid'
 import {
   fileExists,
   isErrnoException,
@@ -9,7 +10,6 @@ import {
 } from '@gander-social-atproto/common'
 import { randomStr } from '@gander-social-atproto/crypto'
 import { BlobNotFoundError, BlobStore } from '@gander-social-atproto/repo'
-import { CID } from 'multiformats/cid'
 import { httpLogger as log } from './logger'
 
 export class DiskBlobStore implements BlobStore {
@@ -30,24 +30,6 @@ export class DiskBlobStore implements BlobStore {
       const quarantine = quarantineLocation || path.join(location, 'quarantine')
       return new DiskBlobStore(did, location, tmp, quarantine)
     }
-  }
-
-  private async ensureDir() {
-    await fs.mkdir(path.join(this.location, this.did), { recursive: true })
-  }
-
-  private async ensureTemp() {
-    await fs.mkdir(path.join(this.tmpLocation, this.did), { recursive: true })
-  }
-
-  private async ensureQuarantine() {
-    await fs.mkdir(path.join(this.quarantineLocation, this.did), {
-      recursive: true,
-    })
-  }
-
-  private genKey() {
-    return randomStr(32, 'base32')
   }
 
   getTmpPath(key: string): string {
@@ -148,6 +130,24 @@ export class DiskBlobStore implements BlobStore {
     await rmIfExists(path.join(this.location, this.did), true)
     await rmIfExists(path.join(this.tmpLocation, this.did), true)
     await rmIfExists(path.join(this.quarantineLocation, this.did), true)
+  }
+
+  private async ensureDir() {
+    await fs.mkdir(path.join(this.location, this.did), { recursive: true })
+  }
+
+  private async ensureTemp() {
+    await fs.mkdir(path.join(this.tmpLocation, this.did), { recursive: true })
+  }
+
+  private async ensureQuarantine() {
+    await fs.mkdir(path.join(this.quarantineLocation, this.did), {
+      recursive: true,
+    })
+  }
+
+  private genKey() {
+    return randomStr(32, 'base32')
   }
 }
 

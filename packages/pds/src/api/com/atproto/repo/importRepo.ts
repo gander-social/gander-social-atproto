@@ -1,3 +1,5 @@
+import { CID } from 'multiformats/cid'
+import PQueue from 'p-queue'
 import { TID } from '@gander-social-atproto/common'
 import { BlobRef, LexValue, RepoRecord } from '@gander-social-atproto/lexicon'
 import {
@@ -9,22 +11,27 @@ import {
 } from '@gander-social-atproto/repo'
 import { AtUri } from '@gander-social-atproto/syntax'
 import { InvalidRequestError } from '@gander-social-atproto/xrpc-server'
-import { CID } from 'multiformats/cid'
-import PQueue from 'p-queue'
 import { ActorStoreTransactor } from '../../../../actor-store/actor-store-transactor'
+import { ACCESS_FULL } from '../../../../auth-scope'
 import { AppContext } from '../../../../context'
 import { Server } from '../../../../lexicon'
 
 export default function (server: Server, ctx: AppContext) {
   server.com.atproto.repo.importRepo({
-    auth: ctx.authVerifier.accessFull({
+    auth: ctx.authVerifier.authorization({
       checkTakedown: true,
+      scopes: ACCESS_FULL,
+      authorize: (permissions) => {
+        permissions.assertAccount({ attr: 'repo', action: 'manage' })
+      },
     }),
     handler: async ({ input, auth }) => {
-      const did = auth.credentials.did
       if (!ctx.cfg.service.acceptingImports) {
         throw new InvalidRequestError('Service is not accepting repo imports')
       }
+
+      const { did } = auth.credentials
+
       await ctx.actorStore.transact(did, (store) =>
         importRepo(store, input.body),
       )

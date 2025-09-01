@@ -1,8 +1,8 @@
 import { once } from 'node:events'
 import * as http from 'node:http'
 import { AddressInfo } from 'node:net'
-import { XRPCError } from '@gander-social-atproto/xrpc'
 import { WebSocket } from 'ws'
+import { XRPCError } from '@gander-social-atproto/xrpc'
 import {
   ErrorFrame,
   Frame,

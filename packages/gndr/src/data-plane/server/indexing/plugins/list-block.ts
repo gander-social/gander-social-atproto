@@ -1,6 +1,6 @@
-import { AtUri, normalizeDatetimeAlways } from '@gander-social-atproto/syntax'
 import { Selectable } from 'kysely'
 import { CID } from 'multiformats/cid'
+import { AtUri, normalizeDatetimeAlways } from '@gander-social-atproto/syntax'
 import * as lex from '../../../../lexicon/lexicons'
 import * as ListBlock from '../../../../lexicon/types/app/gndr/graph/listblock'
 import { BackgroundQueue } from '../../background'

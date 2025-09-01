@@ -21,6 +21,10 @@ export class Html implements Iterable<string> {
     this.#fragments = Array.from(fragments)
   }
 
+  static dangerouslyCreate(fragments: Iterable<Html | string>): Html {
+    return new Html(fragments, symbol)
+  }
+
   toString(): string {
     // More efficient than `return this.#fragments.join('')` because it avoids
     // creating intermediate strings when items of this.#fragments are Html
@@ -48,9 +52,5 @@ export class Html implements Iterable<string> {
         yield* fragment
       }
     }
-  }
-
-  static dangerouslyCreate(fragments: Iterable<Html | string>): Html {
-    return new Html(fragments, symbol)
   }
 }

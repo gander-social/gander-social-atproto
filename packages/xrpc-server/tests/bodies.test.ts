@@ -531,7 +531,7 @@ describe('Bodies', () => {
       method: 'post',
       headers: { 'Content-Type': '' },
       body: randomBytes(BLOB_LIMIT),
-      // @ts-ignore see note in @atproto/xrpc/client.ts
+      // @ts-ignore see note in @gander-social-atproto/xrpc/client.ts
       duplex: 'half',
     })
     const resBody = await res.json()

@@ -10,6 +10,10 @@ export class TestPlc {
     public server: plc.PlcServer,
   ) {}
 
+  get ctx(): plc.AppContext {
+    return this.server.ctx
+  }
+
   static async create(cfg: PlcConfig): Promise<TestPlc> {
     const db = plc.Database.mock()
     const port = cfg.port || (await getPort())
@@ -17,10 +21,6 @@ export class TestPlc {
     const server = plc.PlcServer.create({ db, port, ...cfg })
     await server.start()
     return new TestPlc(url, port, server)
-  }
-
-  get ctx(): plc.AppContext {
-    return this.server.ctx
   }
 
   getClient(): PlcClient {

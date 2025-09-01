@@ -14,10 +14,10 @@ type VerificationRecord = {
 
 export class VerificationListener {
   destroyed = false
+  public backgroundQueue = new BackgroundQueue(this.db, { concurrency: 1 })
   private cursor?: number
   private jetstream: Jetstream | null = null
   private collection = 'app.gndr.graph.verification'
-  public backgroundQueue = new BackgroundQueue(this.db, { concurrency: 1 })
   private verificationService = VerificationService.creator()(this.db)
 
   constructor(

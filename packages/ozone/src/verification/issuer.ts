@@ -1,5 +1,5 @@
-import { Agent, AtUri, CredentialSession } from '@gander-social-atproto/api'
 import { Selectable } from 'kysely'
+import { Agent, AtUri, CredentialSession } from '@gander-social-atproto/api'
 import { VerifierConfig } from '../config'
 import { Verification } from '../db/schema/verification'
 

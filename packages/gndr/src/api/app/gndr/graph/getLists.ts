@@ -1,10 +1,14 @@
 import { mapDefined } from '@gander-social-atproto/common'
 import { InvalidRequestError } from '@gander-social-atproto/xrpc-server'
 import { AppContext } from '../../../../context'
-import { HydrateCtx, Hydrator } from '../../../../hydration/hydrator'
+import {
+  HydrateCtx,
+  HydrationState,
+  Hydrator,
+  mergeManyStates,
+} from '../../../../hydration/hydrator'
 import { Server } from '../../../../lexicon'
-import { REFERENCELIST } from '../../../../lexicon/types/app/gndr/graph/defs'
-import { QueryParams } from '../../../../lexicon/types/app/gndr/graph/getLists'
+import { QueryParams } from '../../../../lexicon/types/app/gndr/graph/getList'
 import {
   HydrationFnInput,
   PresentationFnInput,
@@ -12,28 +16,25 @@ import {
   SkeletonFnInput,
   createPipeline,
 } from '../../../../pipeline'
+import { ListItemInfo } from '../../../../proto/gndr_pb'
+import { uriToDid as didFromUri } from '../../../../util/uris'
 import { Views } from '../../../../views'
 import { clearlyBadCursor, resHeaders } from '../../../util'
 
 export default function (server: Server, ctx: AppContext) {
-  const getLists = createPipeline(
-    skeleton,
-    hydration,
-    noReferenceLists,
-    presentation,
-  )
-  server.app.gndr.graph.getLists({
-    auth: ctx.authVerifier.optionalStandardOrRole,
+  const getList = createPipeline(skeleton, hydration, noBlocks, presentation)
+  server.app.gndr.graph.getList({
+    auth: ctx.authVerifier.standardOptional,
     handler: async ({ params, auth, req }) => {
-      const labelers = ctx.reqLabelers(req)
       const { viewer, includeTakedowns } = ctx.authVerifier.parseCreds(auth)
+
+      const labelers = ctx.reqLabelers(req)
       const hydrateCtx = await ctx.hydrator.createContext({
         labelers,
         viewer,
         includeTakedowns,
       })
-      const result = await getLists({ ...params, hydrateCtx }, ctx)
-
+      const result = await getList({ ...params, hydrateCtx }, ctx)
       return {
         encoding: 'application/json',
         body: result,
@@ -48,35 +49,47 @@ const skeleton = async (
 ): Promise<SkeletonState> => {
   const { ctx, params } = input
   if (clearlyBadCursor(params.cursor)) {
-    return { listUris: [] }
+    return { listUri: params.list, listitems: [] }
   }
-
-  const [did] = await ctx.hydrator.actor.getDids([params.actor])
-  if (!did) throw new InvalidRequestError('Profile not found')
-
-  const { listUris, cursor } = await ctx.hydrator.dataplane.getActorLists({
-    actorDid: did,
-    cursor: params.cursor,
+  const { listitems, cursor } = await ctx.hydrator.dataplane.getListMembers({
+    listUri: params.list,
     limit: params.limit,
+    cursor: params.cursor,
   })
-  return { listUris, cursor: cursor || undefined }
+  return {
+    listUri: params.list,
+    listitems,
+    cursor: cursor || undefined,
+  }
 }
 
 const hydration = async (
   input: HydrationFnInput<Context, Params, SkeletonState>,
 ) => {
   const { ctx, params, skeleton } = input
-  const { listUris } = skeleton
-  return ctx.hydrator.hydrateLists(listUris, params.hydrateCtx)
+  const { listUri, listitems } = skeleton
+  const [listState, profileState] = await Promise.all([
+    ctx.hydrator.hydrateLists([listUri], params.hydrateCtx),
+    ctx.hydrator.hydrateProfiles(
+      listitems.map(({ did }) => did),
+      params.hydrateCtx,
+    ),
+  ])
+  const bidirectionalBlocks = await maybeGetBlocksForReferenceAndCurateList({
+    ctx,
+    params,
+    skeleton,
+    listState,
+  })
+  return mergeManyStates(listState, profileState, { bidirectionalBlocks })
 }
 
-const noReferenceLists = (
-  input: RulesFnInput<Context, Params, SkeletonState>,
-) => {
+const noBlocks = (input: RulesFnInput<Context, Params, SkeletonState>) => {
   const { skeleton, hydration } = input
-  skeleton.listUris = skeleton.listUris.filter((uri) => {
-    const list = hydration.lists?.get(uri)
-    return list?.record.purpose !== REFERENCELIST
+  const creator = didFromUri(skeleton.listUri)
+  const blocks = hydration.bidirectionalBlocks?.get(creator)
+  skeleton.listitems = skeleton.listitems.filter(({ did }) => {
+    return !blocks?.get(did)
   })
   return skeleton
 }
@@ -85,11 +98,40 @@ const presentation = (
   input: PresentationFnInput<Context, Params, SkeletonState>,
 ) => {
   const { ctx, skeleton, hydration } = input
-  const { listUris, cursor } = skeleton
-  const lists = mapDefined(listUris, (uri) => {
-    return ctx.views.list(uri, hydration)
-  })
-  return { lists, cursor }
+  const { listUri, listitems, cursor } = skeleton
+  const list = ctx.views.list(listUri, hydration)
+  const items = mapDefined(listitems, ({ uri, did }) =>
+    ctx.views.listItemView(uri, did, hydration),
+  )
+  if (!list) {
+    throw new InvalidRequestError('List not found')
+  }
+  return { list, items, cursor }
+}
+
+const maybeGetBlocksForReferenceAndCurateList = async (input: {
+  ctx: Context
+  listState: HydrationState
+  skeleton: SkeletonState
+  params: Params
+}) => {
+  const { ctx, params, listState, skeleton } = input
+  const { listitems } = skeleton
+  const { list } = params
+  const listRecord = listState.lists?.get(list)
+  const creator = didFromUri(list)
+  if (
+    params.hydrateCtx.viewer === creator ||
+    listRecord?.record.purpose === 'app.bsky.graph.defs#modlist'
+  ) {
+    return
+  }
+  const pairs: Map<string, string[]> = new Map()
+  pairs.set(
+    creator,
+    listitems.map(({ did }) => did),
+  )
+  return await ctx.hydrator.hydrateBidirectionalBlocks(pairs, params.hydrateCtx)
 }
 
 type Context = {
@@ -102,6 +144,7 @@ type Params = QueryParams & {
 }
 
 type SkeletonState = {
-  listUris: string[]
+  listUri: string
+  listitems: ListItemInfo[]
   cursor?: string
 }

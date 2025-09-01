@@ -5,6 +5,8 @@ import {
   followsSeed,
 } from '@gander-social-atproto/dev-env'
 import { ids } from '../../src/lexicon/lexicons'
+import { OutputSchema as GetFollowersOutputSchema } from '../../src/lexicon/types/app/gndr/graph/getFollowers'
+import { OutputSchema as GetFollowsOutputSchema } from '../../src/lexicon/types/app/gndr/graph/getFollows'
 import { forSnapshot, paginateAll, stripViewer } from '../_util'
 
 describe('pds follow views', () => {
@@ -118,7 +120,8 @@ describe('pds follow views', () => {
   })
 
   it('paginates followers', async () => {
-    const results = (results) => results.flatMap((res) => res.followers)
+    const results = (results: GetFollowersOutputSchema[]) =>
+      results.flatMap((res) => res.followers)
     const paginator = async (cursor?: string) => {
       const res = await agent.api.app.gndr.graph.getFollowers(
         {
@@ -281,7 +284,8 @@ describe('pds follow views', () => {
   })
 
   it('paginates follows', async () => {
-    const results = (results) => results.flatMap((res) => res.follows)
+    const results = (results: GetFollowsOutputSchema[]) =>
+      results.flatMap((res) => res.follows)
     const paginator = async (cursor?: string) => {
       const res = await agent.api.app.gndr.graph.getFollows(
         {

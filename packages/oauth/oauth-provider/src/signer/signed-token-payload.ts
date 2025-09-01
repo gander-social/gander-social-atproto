@@ -1,5 +1,5 @@
-import { jwtPayloadSchema } from '@gander-social-atproto/jwk'
 import { z } from 'zod'
+import { jwtPayloadSchema } from '@gander-social-atproto/jwk'
 import { clientIdSchema } from '../client/client-id.js'
 import { subSchema } from '../oidc/sub.js'
 import { tokenIdSchema } from '../token/token-id.js'

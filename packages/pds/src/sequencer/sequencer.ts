@@ -1,6 +1,6 @@
 import EventEmitter from 'node:events'
-import { SECOND, cborDecode, wait } from '@gander-social-atproto/common'
 import TypedEmitter from 'typed-emitter'
+import { SECOND, cborDecode, wait } from '@gander-social-atproto/common'
 import { AccountStatus } from '../account-manager/helpers/account'
 import { Crawlers } from '../crawlers'
 import { seqLogger as log } from '../logger'
@@ -129,36 +129,6 @@ export class Sequencer extends (EventEmitter as new () => SequencerEmitter) {
     return parseRepoSeqRows(rows)
   }
 
-  private async pollDb(): Promise<void> {
-    if (this.destroyed) return
-    // if already polling, do not start another poll
-    try {
-      const evts = await this.requestSeqRange({
-        earliestSeq: this.lastSeen,
-        limit: 1000,
-      })
-      if (evts.length > 0) {
-        this.triesWithNoResults = 0
-        this.emit('events', evts)
-        this.lastSeen = evts.at(-1)?.seq ?? this.lastSeen
-      } else {
-        await this.exponentialBackoff()
-      }
-      this.pollPromise = this.pollDb()
-    } catch (err) {
-      log.error({ err, lastSeen: this.lastSeen }, 'sequencer failed to poll db')
-      await this.exponentialBackoff()
-      this.pollPromise = this.pollDb()
-    }
-  }
-
-  // when no results, exponential backoff on pulling, with a max of a second wait
-  private async exponentialBackoff(): Promise<void> {
-    this.triesWithNoResults++
-    const waitTime = Math.min(Math.pow(2, this.triesWithNoResults), SECOND)
-    await wait(waitTime)
-  }
-
   async sequenceEvt(evt: RepoSeqInsert): Promise<number> {
     const res = await this.db.executeWithRetry(
       this.db.db.insertInto('repo_seq').values(evt).returningAll(),
@@ -202,6 +172,36 @@ export class Sequencer extends (EventEmitter as new () => SequencerEmitter) {
           qb.where('seq', 'not in', excludingSeqs),
         ),
     )
+  }
+
+  private async pollDb(): Promise<void> {
+    if (this.destroyed) return
+    // if already polling, do not start another poll
+    try {
+      const evts = await this.requestSeqRange({
+        earliestSeq: this.lastSeen,
+        limit: 1000,
+      })
+      if (evts.length > 0) {
+        this.triesWithNoResults = 0
+        this.emit('events', evts)
+        this.lastSeen = evts.at(-1)?.seq ?? this.lastSeen
+      } else {
+        await this.exponentialBackoff()
+      }
+      this.pollPromise = this.pollDb()
+    } catch (err) {
+      log.error({ err, lastSeen: this.lastSeen }, 'sequencer failed to poll db')
+      await this.exponentialBackoff()
+      this.pollPromise = this.pollDb()
+    }
+  }
+
+  // when no results, exponential backoff on pulling, with a max of a second wait
+  private async exponentialBackoff(): Promise<void> {
+    this.triesWithNoResults++
+    const waitTime = Math.min(Math.pow(2, this.triesWithNoResults), SECOND)
+    await wait(waitTime)
   }
 }
 

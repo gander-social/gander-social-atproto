@@ -27,8 +27,14 @@ export function buildMetadata(
 
     scopes_supported: [
       'atproto',
-      //
-      ...(customMetadata?.scopes_supported ?? []),
+
+      // These serve as hint that this server supports the transitional scopes.
+      // This is not a specced behavior.
+      'transition:email',
+      'transition:generic',
+      'transition:chat.gndr',
+
+      // Other atproto scopes can't be enumerated as they are dynamic.
     ],
     subject_types_supported: [
       //

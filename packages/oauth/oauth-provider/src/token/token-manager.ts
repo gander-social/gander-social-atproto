@@ -1,4 +1,5 @@
 import { SignedJwt, isSignedJwt } from '@gander-social-atproto/jwk'
+import { LexiconResolutionError } from '@gander-social-atproto/lexicon-resolver'
 import type { Account } from '@gander-social-atproto/oauth-provider-api'
 import {
   OAuthAccessToken,
@@ -14,6 +15,7 @@ import { DeviceId } from '../device/device-id.js'
 import { InvalidGrantError } from '../errors/invalid-grant-error.js'
 import { InvalidRequestError } from '../errors/invalid-request-error.js'
 import { InvalidTokenError } from '../errors/invalid-token-error.js'
+import { LexiconManager } from '../lexicon/lexicon-manager.js'
 import { RequestMetadata } from '../lib/http/request.js'
 import { dateToEpoch, dateToRelativeSeconds } from '../lib/util/date.js'
 import { callAsync } from '../lib/util/function.js'
@@ -28,9 +30,8 @@ import {
   generateRefreshToken,
   isRefreshToken,
 } from './refresh-token.js'
-import { TokenData } from './token-data.js'
 import { TokenId, generateTokenId, isTokenId } from './token-id.js'
-import { TokenInfo, TokenStore } from './token-store.js'
+import { CreateTokenData, TokenInfo, TokenStore } from './token-store.js'
 import {
   VerifyTokenClaimsOptions,
   VerifyTokenClaimsResult,
@@ -43,41 +44,12 @@ export type { OAuthHooks, TokenStore, VerifyTokenClaimsResult }
 export class TokenManager {
   constructor(
     protected readonly store: TokenStore,
+    protected readonly lexiconManager: LexiconManager,
     protected readonly signer: Signer,
     protected readonly hooks: OAuthHooks,
     protected readonly accessTokenMode: AccessTokenMode,
     protected readonly tokenMaxAge = TOKEN_MAX_AGE,
   ) {}
-
-  protected createTokenExpiry(now = new Date()) {
-    return new Date(now.getTime() + this.tokenMaxAge)
-  }
-
-  protected async buildAccessToken(
-    tokenId: TokenId,
-    account: Account,
-    client: Client,
-    parameters: OAuthAuthorizationRequestParameters,
-    options: {
-      now: Date
-      expiresAt: Date
-    },
-  ): Promise<OAuthAccessToken> {
-    return this.signer.createAccessToken({
-      jti: tokenId,
-      sub: account.sub,
-      exp: dateToEpoch(options.expiresAt),
-      iat: dateToEpoch(options.now),
-      cnf: parameters.dpop_jkt ? { jkt: parameters.dpop_jkt } : undefined,
-
-      ...(this.accessTokenMode === AccessTokenMode.stateless && {
-        aud: account.aud,
-        scope: parameters.scope,
-        // https://datatracker.ietf.org/doc/html/rfc8693#section-4.3
-        client_id: client.id,
-      }),
-    })
-  }
 
   async createToken(
     client: Client,
@@ -98,7 +70,38 @@ export class TokenManager {
     const now = new Date()
     const expiresAt = this.createTokenExpiry(now)
 
-    const tokenData: TokenData = {
+    const scope = await this.lexiconManager
+      .buildTokenScope(parameters.scope!)
+      .catch((err) => {
+        // Parse expected errors
+        if (err instanceof LexiconResolutionError) {
+          throw new InvalidRequestError(err.message, err)
+        }
+
+        // Unexpected error
+        throw err
+      })
+
+    const accessToken = await this.buildAccessToken(
+      tokenId,
+      account,
+      client,
+      parameters,
+      now,
+      expiresAt,
+      scope,
+    )
+
+    const response = this.buildTokenResponse(
+      inferTokenType(parameters),
+      accessToken,
+      refreshToken,
+      expiresAt,
+      account.sub,
+      scope,
+    )
+
+    const tokenData: CreateTokenData = {
       createdAt: now,
       updatedAt: now,
       expiresAt,
@@ -108,25 +111,9 @@ export class TokenManager {
       sub: account.sub,
       parameters,
       details: null,
+      scope,
       code,
     }
-
-    const accessToken = await this.buildAccessToken(
-      tokenId,
-      account,
-      client,
-      parameters,
-      { now, expiresAt },
-    )
-
-    const response = await this.buildTokenResponse(
-      client,
-      accessToken,
-      refreshToken,
-      expiresAt,
-      parameters,
-      account.sub,
-    )
 
     await this.store.createToken(tokenId, tokenData, refreshToken)
 
@@ -148,45 +135,6 @@ export class TokenManager {
     }
   }
 
-  protected async validateTokenParams(
-    client: Client,
-    clientAuth: ClientAuth,
-    parameters: OAuthAuthorizationRequestParameters,
-  ): Promise<void> {
-    if (client.metadata.dpop_bound_access_tokens && !parameters.dpop_jkt) {
-      throw new InvalidGrantError(
-        `DPoP JKT is required for DPoP bound access tokens`,
-      )
-    }
-  }
-
-  protected buildTokenResponse(
-    client: Client,
-    accessToken: OAuthAccessToken,
-    refreshToken: string | undefined,
-    expiresAt: Date,
-    parameters: OAuthAuthorizationRequestParameters,
-    sub: Sub,
-  ): OAuthTokenResponse {
-    return {
-      access_token: accessToken,
-      token_type: parameters.dpop_jkt ? 'DPoP' : 'Bearer',
-      refresh_token: refreshToken,
-      scope: parameters.scope,
-
-      // @NOTE using a getter so that the value gets computed when the JSON
-      // response is generated, allowing to value to be as accurate as possible.
-      get expires_in() {
-        return dateToRelativeSeconds(expiresAt)
-      },
-
-      // ATPROTO extension: add the sub claim to the token response to allow
-      // clients to resolve the PDS url (audience) using the did resolution
-      // mechanism.
-      sub,
-    }
-  }
-
   async rotateToken(
     client: Client,
     clientAuth: ClientAuth,
@@ -204,6 +152,11 @@ export class TokenManager {
     const now = new Date()
     const expiresAt = this.createTokenExpiry(now)
 
+    // @NOTE since the permission sets are stored in a persistent store,
+    // it's fine to propagate a 500 (server_error) here as the values should
+    // be retrievable from the store.
+    const scope = await this.lexiconManager.buildTokenScope(parameters.scope!)
+
     await this.store.rotateToken(tokenInfo.id, nextTokenId, nextRefreshToken, {
       updatedAt: now,
       expiresAt,
@@ -214,6 +167,7 @@ export class TokenManager {
       // - Allow clients to become "confidential" if they were previously
       //   "public"
       clientAuth,
+      scope,
     })
 
     const accessToken = await this.buildAccessToken(
@@ -221,16 +175,18 @@ export class TokenManager {
       account,
       client,
       parameters,
-      { now, expiresAt },
+      now,
+      expiresAt,
+      scope,
     )
 
-    const response = await this.buildTokenResponse(
-      client,
+    const response = this.buildTokenResponse(
+      inferTokenType(parameters),
       accessToken,
       nextRefreshToken,
       expiresAt,
-      parameters,
       account.sub,
+      scope,
     )
 
     await callAsync(this.hooks.onTokenRefreshed, {
@@ -279,12 +235,6 @@ export class TokenManager {
     }
 
     return tokenInfo
-  }
-
-  protected async findByRefreshToken(
-    token: RefreshToken,
-  ): Promise<null | TokenInfo> {
-    return this.store.findTokenByRefreshToken(token)
   }
 
   public async consumeRefreshToken(token: RefreshToken): Promise<TokenInfo> {
@@ -361,7 +311,9 @@ export class TokenManager {
       // These are not stored in the JWT access token in "light" access token
       // mode. See `buildAccessToken`.
       aud: account.aud,
-      scope: parameters.scope,
+      // Note we fallback to parameters.scope for sessions created before
+      // TokenData.scope was introduced.
+      scope: data.scope ?? parameters.scope,
       client_id: data.clientId,
     }
 
@@ -381,8 +333,91 @@ export class TokenManager {
       .filter((tokenInfo) => tokenInfo.account.sub === sub) // Fool proof
       .filter((tokenInfo) => !isCurrentTokenExpired(tokenInfo))
   }
+
+  protected createTokenExpiry(now = new Date()) {
+    return new Date(now.getTime() + this.tokenMaxAge)
+  }
+
+  protected async buildAccessToken(
+    tokenId: TokenId,
+    account: Account,
+    client: Client,
+    parameters: OAuthAuthorizationRequestParameters,
+    createdAt: Date,
+    expiresAt: Date,
+    scope: string,
+  ): Promise<OAuthAccessToken> {
+    return this.signer.createAccessToken({
+      jti: tokenId,
+      sub: account.sub,
+      exp: dateToEpoch(expiresAt),
+      iat: dateToEpoch(createdAt),
+      cnf: parameters.dpop_jkt ? { jkt: parameters.dpop_jkt } : undefined,
+
+      ...(this.accessTokenMode === AccessTokenMode.stateless && {
+        aud: account.aud,
+        scope,
+        // https://datatracker.ietf.org/doc/html/rfc8693#section-4.3
+        client_id: client.id,
+      }),
+    })
+  }
+
+  protected async validateTokenParams(
+    client: Client,
+    clientAuth: ClientAuth,
+    parameters: OAuthAuthorizationRequestParameters,
+  ): Promise<void> {
+    if (client.metadata.dpop_bound_access_tokens && !parameters.dpop_jkt) {
+      throw new InvalidGrantError(
+        `DPoP JKT is required for DPoP bound access tokens`,
+      )
+    }
+  }
+
+  protected buildTokenResponse(
+    tokenType: OAuthTokenType,
+    accessToken: OAuthAccessToken,
+    refreshToken: string | undefined,
+    expiresAt: Date,
+    sub: Sub,
+    scope: string,
+  ): OAuthTokenResponse {
+    return {
+      access_token: accessToken,
+      token_type: tokenType,
+      refresh_token: refreshToken,
+      scope,
+
+      // @NOTE using a getter so that the value gets computed when the JSON
+      // response is generated, allowing to value to be as accurate as possible.
+      get expires_in() {
+        return dateToRelativeSeconds(expiresAt)
+      },
+
+      // ATPROTO extension: add the sub claim to the token response to allow
+      // clients to resolve the PDS url (audience) using the did resolution
+      // mechanism.
+      sub,
+    }
+  }
+
+  protected async findByRefreshToken(
+    token: RefreshToken,
+  ): Promise<null | TokenInfo> {
+    return this.store.findTokenByRefreshToken(token)
+  }
 }
 
 function isCurrentTokenExpired(tokenInfo: TokenInfo): boolean {
   return tokenInfo.data.expiresAt.getTime() < Date.now()
+}
+
+function inferTokenType(
+  parameters: OAuthAuthorizationRequestParameters,
+): OAuthTokenType {
+  if (parameters.dpop_jkt) {
+    return 'DPoP'
+  }
+  return 'Bearer'
 }

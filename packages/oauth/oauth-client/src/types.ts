@@ -1,15 +1,15 @@
+import { TypeOf, z } from 'zod'
 import {
   OAuthAuthorizationRequestParameters,
   oauthClientIdDiscoverableSchema,
   oauthClientIdLoopbackSchema,
   oauthClientMetadataSchema,
 } from '@gander-social-atproto/oauth-types'
-import { TypeOf, z } from 'zod'
 import { Simplify } from './util.js'
 
 // Note: These types are not prefixed with `OAuth` because they are not specific
 // to OAuth. They are specific to this packages. OAuth specific types are in
-// `@atproto/oauth-types`.
+// `@gander-social-atproto/oauth-types`.
 
 export type AuthorizeOptions = Simplify<
   Omit<
@@ -23,6 +23,10 @@ export type AuthorizeOptions = Simplify<
   > & {
     signal?: AbortSignal
   }
+>
+
+export type CallbackOptions = Simplify<
+  Partial<Pick<OAuthAuthorizationRequestParameters, 'redirect_uri'>>
 >
 
 export const clientMetadataSchema = oauthClientMetadataSchema.extend({

@@ -45,7 +45,7 @@ services:
     volumes:
       - dev-pds-db-data:/var/lib/postgresql/data
     healthcheck:
-      test: ['CMD-SHELL', 'pg_isready -U pds']
+      test: [ 'CMD-SHELL', 'pg_isready -U pds' ]
       interval: 5s
       timeout: 5s
       retries: 5
@@ -56,7 +56,7 @@ services:
   dev-gndr:
     build:
       context: ../../../.. # Root of the repository
-      dockerfile: packages/gndr/Dockerfile # or packages/bsky/Dockerfile if gndr doesn't exist yet
+      dockerfile: packages/gndr/Dockerfile # or packages/gndr/Dockerfile if gndr doesn't exist yet
     container_name: gander-gndr-dev
     ports:
       - '2585:2585'
@@ -95,7 +95,7 @@ services:
     volumes:
       - dev-gndr-db-data:/var/lib/postgresql/data
     healthcheck:
-      test: ['CMD-SHELL', 'pg_isready -U gndr']
+      test: [ 'CMD-SHELL', 'pg_isready -U gndr' ]
       interval: 5s
       timeout: 5s
       retries: 5
@@ -140,7 +140,7 @@ services:
     volumes:
       - dev-plc-db-data:/var/lib/postgresql/data
     healthcheck:
-      test: ['CMD-SHELL', 'pg_isready -U plc']
+      test: [ 'CMD-SHELL', 'pg_isready -U plc' ]
       interval: 5s
       timeout: 5s
       retries: 5
