@@ -1,6 +1,6 @@
 {
   "name": "@gander-social-atproto/ozone",
-  "version": "0.2.7",
+  "version": "0.2.8",
   "license": "MIT",
   "description": "Backend service for moderating the Gander network.",
   "keywords": [

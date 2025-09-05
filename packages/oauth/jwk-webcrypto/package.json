@@ -1,6 +1,6 @@
 {
   "name": "@gander-social-atproto/jwk-webcrypto",
-  "version": "0.2.5",
+  "version": "0.2.6",
   "license": "MIT",
   "description": "Webcrypto based implementation of @gander-social-atproto/jwk Key's",
   "keywords": [
