@@ -78,6 +78,23 @@ msgstr ""
 msgid "By clicking <0>Authorize</0>, you allow this application to perform the following actions in accordance with their <1>terms of service</1> and <2>privacy policy</2>:"
 msgstr ""
 
+#: src/components/utils/scope-description.tsx:745
+msgid "Blob storage"
+msgstr ""
+
+#: src/components/utils/scope-description.tsx:836
+msgid "Gander App services"
+msgstr ""
+
+#: src/components/utils/scope-description.tsx:843
+msgid "Gander Chat services"
+msgstr ""
+
+#. placeholder {0}: consentLabel || <Trans>Authorize</Trans>
+#: src/views/authorize/consent/consent-form.tsx:173
+msgid "By clicking <0>{0}</0>, you will grant this application access to your account in accordance with its <1>terms of service</1> and <2>privacy policy</2>."
+msgstr ""
+
 #. placeholder {0}: tosLink ? ( <LinkAnchor className="text-primary underline" link={tosLink}> <Trans>Terms of Service</Trans> </LinkAnchor> ) : ( <Trans>Terms of Service</Trans> )
 #. placeholder {1}: ppLink ? ( <LinkAnchor className="text-primary underline" link={ppLink}> <Trans>Privacy Policy</Trans> </LinkAnchor> ) : ( <Trans>Privacy Policy</Trans> )
 #: src/views/authorize/sign-up/sign-up-disclaimer.tsx:30
@@ -501,4 +518,8 @@ msgstr ""
 
 #: src/views/authorize/reset-password/reset-password-view.tsx:108
 msgid "Your password has been updated!"
+msgstr ""
+
+#: src/components/utils/scope-description.tsx:641
+msgid "Your repository contains all the data publicly available on the ATProto network, such as Gander posts, likes, and follows. It also contains data created through other apps you've signed into using this account."
 msgstr ""

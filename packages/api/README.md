@@ -42,7 +42,7 @@ class.
 >
 > This method is deprecated in favor of OAuth based session management. It is
 > recommended to use OAuth based session management (through the
-> `@atproto/oauth-client-*` packages).
+> `@gander-social-atproto/oauth-client-*` packages).
 
 ```typescript
 import {
@@ -84,16 +84,17 @@ await agent.login({
 Depending on the environment used by your application, different OAuth clients
 are available:
 
-- [@atproto/oauth-client-browser](https://www.npmjs.com/package/@atproto/oauth-client-browser):
+- [@gander-social-atproto/oauth-client-browser](https://www.npmjs.com/package/@gander-social-atproto/oauth-client-browser):
   for the browser.
-- [@atproto/oauth-client-node](https://www.npmjs.com/package/@atproto/oauth-client-node): for
+- [@gander-social-atproto/oauth-client-node](https://www.npmjs.com/package/@gander-social-atproto/oauth-client-node):
+  for
   Node.js.
-- [@atproto/oauth-client](https://www.npmjs.com/package/@atproto/oauth-client):
+- [@gander-social-atproto/oauth-client](https://www.npmjs.com/package/@gander-social-atproto/oauth-client):
   Lower level; compatible with most JS engines.
 
-Every `@atproto/oauth-client-*` implementation has a different way to obtain an
+Every `@gander-social-atproto/oauth-client-*` implementation has a different way to obtain an
 `OAuthSession` instance that can be used to instantiate an `Agent` (from
-`@atproto/api`). Here is an example restoring a previously saved session:
+`@gander-social-atproto/api`). Here is an example restoring a previously saved session:
 
 ```typescript
 import { Agent } from '@gander-social-atproto/api'
@@ -175,7 +176,8 @@ if (agent instanceof AtpAgent) {
 
 ### Validation and types
 
-The package includes a complete types system which includes validation and type-guards. For example, to validate a post record:
+The package includes a complete types system which includes validation and type-guards. For example, to validate a post
+record:
 
 ```typescript
 import { AppGndrFeedPost } from '@gander-social-atproto/api'
@@ -196,9 +198,12 @@ if (AppGndrFeedPost.isRecord(post)) {
 
 ### Rich text
 
-Some records (ie posts) use the `app.bsky.richtext` lexicon. At the moment richtext is only used for links and mentions, but it will be extended over time to include bold, italic, and so on.
+Some records (ie posts) use the `app.gndr.richtext` lexicon. At the moment richtext is only used for links and mentions,
+but it will be extended over time to include bold, italic, and so on.
 
-ℹ️ It is **strongly** recommended to use this package's `RichText` library. Javascript encodes strings in utf16 while the protocol (and most other programming environments) use utf8. Converting between the two is challenging, but `RichText` handles that for you.
+ℹ️ It is **strongly** recommended to use this package's `RichText` library. Javascript encodes strings in utf16 while
+the protocol (and most other programming environments) use utf8. Converting between the two is challenging, but
+`RichText` handles that for you.
 
 ```typescript
 import { RichText } from '@gander-social-atproto/api'
@@ -209,7 +214,7 @@ const rt = new RichText({
 })
 await rt.detectFacets(agent) // automatically detects mentions and links
 const postRecord = {
-  $type: 'app.bsky.feed.post',
+  $type: 'app.gndr.feed.post',
   text: rt.text,
   facets: rt.facets,
   createdAt: new Date().toISOString(),
@@ -221,7 +226,7 @@ for (const segment of rt.segments()) {
   if (segment.isLink()) {
     markdown += `[${segment.text}](${segment.link?.uri})`
   } else if (segment.isMention()) {
-    markdown += `[${segment.text}](https://my-bsky-app.com/user/${segment.mention?.did})`
+    markdown += `[${segment.text}](https://my-gndr-app.com/user/${segment.mention?.did})`
   } else {
     markdown += segment.text
   }
@@ -238,7 +243,8 @@ console.log(rt3.graphemeLength) // => 1
 
 ### Moderation
 
-Applying the moderation system is a challenging task, but we've done our best to simplify it for you. The Moderation API helps handle a wide range of tasks, including:
+Applying the moderation system is a challenging task, but we've done our best to simplify it for you. The Moderation API
+helps handle a wide range of tasks, including:
 
 - Moderator labeling
 - User muting (including mutelists)
@@ -319,26 +325,26 @@ The AT Protocol identifies methods and records with reverse-DNS names. You can u
 ```typescript
 const res1 = await agent.com.atproto.repo.createRecord({
   did: alice.did,
-  collection: 'app.bsky.feed.post',
+  collection: 'app.gndr.feed.post',
   record: {
-    $type: 'app.bsky.feed.post',
+    $type: 'app.gndr.feed.post',
     text: 'Hello, world!',
     createdAt: new Date().toISOString(),
   },
 })
 const res2 = await agent.com.atproto.repo.listRecords({
   repo: alice.did,
-  collection: 'app.bsky.feed.post',
+  collection: 'app.gndr.feed.post',
 })
 
-const res3 = await agent.app.bsky.feed.post.create(
+const res3 = await agent.app.gndr.feed.post.create(
   { repo: alice.did },
   {
     text: 'Hello, world!',
     createdAt: new Date().toISOString(),
   },
 )
-const res4 = await agent.app.bsky.feed.post.list({ repo: alice.did })
+const res4 = await agent.app.gndr.feed.post.list({ repo: alice.did })
 ```
 
 ### Non-browser configuration
@@ -371,7 +377,11 @@ const agent = new AtpAgent({
 
 This project is dual-licensed under MIT and Apache 2.0 terms:
 
-- MIT license ([LICENSE-MIT.txt](https://github.com/bluesky-social/atproto/blob/main/LICENSE-MIT.txt) or http://opensource.org/licenses/MIT)
-- Apache License, Version 2.0, ([LICENSE-APACHE.txt](https://github.com/bluesky-social/atproto/blob/main/LICENSE-APACHE.txt) or http://www.apache.org/licenses/LICENSE-2.0)
+- MIT license ([LICENSE-MIT.txt](https://github.com/bluesky-social/atproto/blob/main/LICENSE-MIT.txt)
+  or http://opensource.org/licenses/MIT)
+- Apache License, Version
+  2.0, ([LICENSE-APACHE.txt](https://github.com/bluesky-social/atproto/blob/main/LICENSE-APACHE.txt)
+  or http://www.apache.org/licenses/LICENSE-2.0)
 
-Downstream projects and end users may chose either license individually, or both together, at their discretion. The motivation for this dual-licensing is the additional software patent assurance provided by Apache 2.0.
+Downstream projects and end users may chose either license individually, or both together, at their discretion. The
+motivation for this dual-licensing is the additional software patent assurance provided by Apache 2.0.

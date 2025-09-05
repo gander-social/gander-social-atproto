@@ -3,6 +3,7 @@ import { once } from 'node:events'
 import http from 'node:http'
 import { AddressInfo } from 'node:net'
 import * as plc from '@did-plc/lib'
+import express from 'express'
 import { Keypair } from '@gander-social-atproto/crypto'
 import {
   SeedClient,
@@ -10,7 +11,6 @@ import {
   usersSeed,
 } from '@gander-social-atproto/dev-env'
 import { verifyJwt } from '@gander-social-atproto/xrpc-server'
-import express from 'express'
 import { parseProxyHeader } from '../../src/pipethrough'
 
 describe('proxy header', () => {
@@ -141,6 +141,19 @@ describe('proxy header', () => {
 
     expect(proxyServer.requests.length).toBe(1)
   })
+
+  it('handles failing manual pipethroughs', async () => {
+    // This is a PDS endpoint which uses a manual pipethrough() in its handler
+    const path = '/xrpc/app.gndr.actor.getPreferences'
+    const res = await fetch(`${network.pds.url}${path}`, {
+      headers: {
+        ...sc.getHeaders(alice),
+        'atproto-proxy': `${proxyServer.did}#atproto_test`,
+      },
+    })
+    await res.arrayBuffer() // drain
+    expect(res.status).toBe(501)
+  })
 })
 
 type ProxyReq = {
@@ -163,6 +176,12 @@ class ProxyServer {
   ): Promise<ProxyServer> {
     const requests: ProxyReq[] = []
     const app = express()
+
+    // This is a PDS endpoint which uses a manual pipethrough() in its handler
+    app.get('/xrpc/app.gndr.actor.getPreferences', (req, res) => {
+      res.sendStatus(501)
+    })
+
     app.get('*', (req, res) => {
       requests.push({
         url: req.url,

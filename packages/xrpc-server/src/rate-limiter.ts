@@ -206,6 +206,14 @@ export class WrappedRateLimiter<
     private readonly options: Readonly<WrappedRateLimiterOptions<C>>,
   ) {}
 
+  static from<C extends RateLimiterContext = RateLimiterContext>(
+    rateLimiter: RateLimiterI<C>,
+    { calcKey, calcPoints }: WrappedRateLimiterOptions<C> = {},
+  ): RateLimiterI<C> {
+    if (!calcKey && !calcPoints) return rateLimiter
+    return new WrappedRateLimiter<C>(rateLimiter, { calcKey, calcPoints })
+  }
+
   async consume(ctx: C, opts?: RateLimiterConsumeOptions<C>) {
     return this.rateLimiter.consume(ctx, {
       calcKey: opts?.calcKey ?? this.options.calcKey,
@@ -217,14 +225,6 @@ export class WrappedRateLimiter<
     return this.rateLimiter.reset(ctx, {
       calcKey: opts?.calcKey ?? this.options.calcKey,
     })
-  }
-
-  static from<C extends RateLimiterContext = RateLimiterContext>(
-    rateLimiter: RateLimiterI<C>,
-    { calcKey, calcPoints }: WrappedRateLimiterOptions<C> = {},
-  ): RateLimiterI<C> {
-    if (!calcKey && !calcPoints) return rateLimiter
-    return new WrappedRateLimiter<C>(rateLimiter, { calcKey, calcPoints })
   }
 }
 
@@ -242,6 +242,14 @@ export class CombinedRateLimiter<
     private readonly rateLimiters: readonly RateLimiterI<C>[],
   ) {}
 
+  static from<C extends RateLimiterContext = RateLimiterContext>(
+    rateLimiters: readonly RateLimiterI<C>[],
+  ): RateLimiterI<C> | undefined {
+    if (rateLimiters.length === 0) return undefined
+    if (rateLimiters.length === 1) return rateLimiters[0]
+    return new CombinedRateLimiter(rateLimiters)
+  }
+
   async consume(ctx: C, opts?: RateLimiterConsumeOptions<C>) {
     const promises: ReturnType<RateLimiterConsume>[] = []
     for (const rl of this.rateLimiters) promises.push(rl.consume(ctx, opts))
@@ -252,14 +260,6 @@ export class CombinedRateLimiter<
     const promises: ReturnType<RateLimiterReset>[] = []
     for (const rl of this.rateLimiters) promises.push(rl.reset(ctx, opts))
     await Promise.all(promises)
-  }
-
-  static from<C extends RateLimiterContext = RateLimiterContext>(
-    rateLimiters: readonly RateLimiterI<C>[],
-  ): RateLimiterI<C> | undefined {
-    if (rateLimiters.length === 0) return undefined
-    if (rateLimiters.length === 1) return rateLimiters[0]
-    return new CombinedRateLimiter(rateLimiters)
   }
 }
 
@@ -295,6 +295,16 @@ export class RouteRateLimiter<C extends RateLimiterContext = RateLimiterContext>
     private readonly options: Readonly<RouteRateLimiterOptions<C>> = {},
   ) {}
 
+  static from<C extends RateLimiterContext = RateLimiterContext>(
+    rateLimiters: readonly RateLimiterI<C>[],
+    { bypass }: RouteRateLimiterOptions<C> = {},
+  ): RouteRateLimiter<C> | undefined {
+    const rateLimiter = CombinedRateLimiter.from(rateLimiters)
+    if (!rateLimiter) return undefined
+
+    return new RouteRateLimiter(rateLimiter, { bypass })
+  }
+
   async handle(ctx: C): Promise<RateLimiterStatus | null> {
     const { bypass } = this.options
     if (bypass && bypass(ctx)) {
@@ -318,16 +328,6 @@ export class RouteRateLimiter<C extends RateLimiterContext = RateLimiterContext>
 
   async reset(...args: Parameters<RateLimiterReset<C>>) {
     return this.rateLimiter.reset(...args)
-  }
-
-  static from<C extends RateLimiterContext = RateLimiterContext>(
-    rateLimiters: readonly RateLimiterI<C>[],
-    { bypass }: RouteRateLimiterOptions<C> = {},
-  ): RouteRateLimiter<C> | undefined {
-    const rateLimiter = CombinedRateLimiter.from(rateLimiters)
-    if (!rateLimiter) return undefined
-
-    return new RouteRateLimiter(rateLimiter, { bypass })
   }
 }
 

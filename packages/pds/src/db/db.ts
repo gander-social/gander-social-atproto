@@ -24,6 +24,10 @@ export class Database<Schema> {
 
   constructor(public db: Kysely<Schema>) {}
 
+  get isTransaction() {
+    return this.db.isTransaction
+  }
+
   static sqlite<T>(
     location: string,
     opts?: { pragmas?: Record<string, string> },
@@ -93,10 +97,6 @@ export class Database<Schema> {
   onCommit(fn: () => void) {
     this.assertTransaction()
     this.commitHooks.push(fn)
-  }
-
-  get isTransaction() {
-    return this.db.isTransaction
   }
 
   assertTransaction() {

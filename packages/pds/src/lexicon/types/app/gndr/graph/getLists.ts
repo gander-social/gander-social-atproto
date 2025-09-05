@@ -1,14 +1,8 @@
 /**
  * GENERATED CODE - DO NOT MODIFY
  */
-import { type ValidationResult, BlobRef } from '@gander-social-atproto/lexicon'
-import { CID } from 'multiformats/cid'
 import { validate as _validate } from '../../../../lexicons'
-import {
-  type $Typed,
-  is$typed as _is$typed,
-  type OmitKey,
-} from '../../../../util'
+import { is$typed as _is$typed, } from '../../../../util'
 import type * as AppGndrGraphDefs from './defs.js'
 
 const is$typed = _is$typed,
@@ -20,6 +14,8 @@ export type QueryParams = {
   actor: string
   limit: number
   cursor?: string
+  /** Optional filter by list purpose. If not specified, all supported types are returned. */
+  purposes?: 'modlist' | 'curatelist' | (string & {})[]
 }
 export type InputSchema = undefined
 

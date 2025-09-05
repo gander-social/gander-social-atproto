@@ -1,3 +1,4 @@
+import { CID } from 'multiformats/cid'
 import { TID, check, dataToCborBlock } from '@gander-social-atproto/common'
 import {
   BlobRef,
@@ -21,7 +22,6 @@ import {
   ensureValidDatetime,
   ensureValidRecordKey,
 } from '@gander-social-atproto/syntax'
-import { CID } from 'multiformats/cid'
 import { hasExplicitSlur } from '../handle/explicit-slurs'
 import * as lex from '../lexicon/lexicons'
 import * as AppGndrActorProfile from '../lexicon/types/app/gndr/actor/profile'

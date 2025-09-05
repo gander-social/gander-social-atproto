@@ -4,5 +4,7 @@
     "rootDir": ".",
     "noUnusedLocals": false
   },
-  "include": ["./tests"]
+  "include": [
+    "./tests"
+  ]
 }

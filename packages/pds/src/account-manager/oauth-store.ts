@@ -1,5 +1,6 @@
 import assert from 'node:assert'
 import { Client, createOp as createPlcOp } from '@did-plc/lib'
+import { Selectable } from 'kysely'
 import { Keypair, Secp256k1Keypair } from '@gander-social-atproto/crypto'
 import {
   Account,
@@ -17,6 +18,8 @@ import {
   HandleUnavailableError,
   InvalidInviteCodeError,
   InvalidRequestError,
+  LexiconData,
+  LexiconStore,
   NewTokenData,
   RefreshToken,
   RequestData,
@@ -36,7 +39,6 @@ import {
   AuthRequiredError as XrpcAuthRequiredError,
   InvalidRequestError as XrpcInvalidRequestError,
 } from '@gander-social-atproto/xrpc-server'
-import { Selectable } from 'kysely'
 import { ActorStore } from '../actor-store/actor-store'
 import { BackgroundQueue } from '../background'
 import { fromDateISO } from '../db'
@@ -52,6 +54,7 @@ import * as accountDeviceHelper from './helpers/account-device'
 import * as authRequestHelper from './helpers/authorization-request'
 import * as authorizedClientHelper from './helpers/authorized-client'
 import * as deviceHelper from './helpers/device'
+import * as lexiconHelper from './helpers/lexicon'
 import * as tokenHelper from './helpers/token'
 import * as usedRefreshTokenHelper from './helpers/used-refresh-token'
 
@@ -62,7 +65,7 @@ import * as usedRefreshTokenHelper from './helpers/used-refresh-token'
  * @note The use of this class assumes that there is no entryway.
  */
 export class OAuthStore
-  implements AccountStore, RequestStore, DeviceStore, TokenStore
+  implements AccountStore, RequestStore, DeviceStore, LexiconStore, TokenStore
 {
   constructor(
     private readonly accountManager: AccountManager,
@@ -86,31 +89,6 @@ export class OAuthStore
   private get serviceDid() {
     return this.accountManager.serviceDid
   }
-
-  private async verifyEmailAvailability(email: string): Promise<void> {
-    // @NOTE Email validity & disposability check performed by the OAuthProvider
-
-    const account = await this.accountManager.getAccountByEmail(email, {
-      includeDeactivated: true,
-      includeTakenDown: true,
-    })
-
-    if (account) {
-      throw new InvalidRequestError(`Email already taken`)
-    }
-  }
-
-  private async verifyInviteCode(code: string) {
-    try {
-      await this.accountManager.ensureInviteIsAvailable(code)
-    } catch (err) {
-      const message =
-        err instanceof XrpcInvalidRequestError ? err.message : undefined
-      throw new InvalidInviteCodeError(message, err)
-    }
-  }
-
-  // AccountStore
 
   async createAccount({
     locale: _locale,
@@ -229,6 +207,8 @@ export class OAuthStore
       throw err
     }
   }
+
+  // AccountStore
 
   async setAuthorizedClient(
     sub: Sub,
@@ -393,8 +373,6 @@ export class OAuthStore
     }
   }
 
-  // RequestStore
-
   async createRequest(id: RequestId, data: RequestData): Promise<void> {
     await this.db.executeWithRetry(
       authRequestHelper.createQB(this.db, id, data),
@@ -418,6 +396,8 @@ export class OAuthStore
     }
   }
 
+  // RequestStore
+
   async updateRequest(id: RequestId, data: UpdateRequestData): Promise<void> {
     await this.db.executeWithRetry(
       authRequestHelper.updateQB(this.db, id, data),
@@ -435,8 +415,6 @@ export class OAuthStore
     return row ? authRequestHelper.rowToFoundRequestResult(row) : null
   }
 
-  // DeviceStore
-
   async createDevice(deviceId: DeviceId, data: DeviceData): Promise<void> {
     await this.db.executeWithRetry(
       deviceHelper.createQB(this.db, deviceId, data),
@@ -447,6 +425,8 @@ export class OAuthStore
     const row = await deviceHelper.readQB(this.db, deviceId).executeTakeFirst()
     return row ? deviceHelper.rowToDeviceData(row) : null
   }
+
+  // DeviceStore
 
   async updateDevice(
     deviceId: DeviceId,
@@ -462,7 +442,19 @@ export class OAuthStore
     await this.db.executeWithRetry(deviceHelper.removeQB(this.db, deviceId))
   }
 
-  // TokenStore
+  async findLexicon(nsid: string): Promise<LexiconData | null> {
+    return lexiconHelper.find(this.db, nsid)
+  }
+
+  async storeLexicon(nsid: string, data: LexiconData): Promise<void> {
+    return lexiconHelper.upsert(this.db, nsid, data)
+  }
+
+  // LexiconStore
+
+  async deleteLexicon(nsid: string): Promise<void> {
+    return lexiconHelper.remove(this.db, nsid)
+  }
 
   async createToken(
     id: TokenId,
@@ -488,6 +480,8 @@ export class OAuthStore
     const rows = await tokenHelper.findByQB(this.db, { did: sub }).execute()
     return Promise.all(rows.map((row) => this.toTokenInfo(row)))
   }
+
+  // TokenStore
 
   async readToken(tokenId: TokenId): Promise<TokenInfo | null> {
     const row = await tokenHelper
@@ -553,6 +547,29 @@ export class OAuthStore
   async findTokenByCode(code: Code): Promise<TokenInfo | null> {
     const row = await tokenHelper.findByQB(this.db, { code }).executeTakeFirst()
     return row ? this.toTokenInfo(row) : null
+  }
+
+  private async verifyEmailAvailability(email: string): Promise<void> {
+    // @NOTE Email validity & disposability check performed by the OAuthProvider
+
+    const account = await this.accountManager.getAccountByEmail(email, {
+      includeDeactivated: true,
+      includeTakenDown: true,
+    })
+
+    if (account) {
+      throw new InvalidRequestError(`Email already taken`)
+    }
+  }
+
+  private async verifyInviteCode(code: string) {
+    try {
+      await this.accountManager.ensureInviteIsAvailable(code)
+    } catch (err) {
+      const message =
+        err instanceof XrpcInvalidRequestError ? err.message : undefined
+      throw new InvalidInviteCodeError(message, err)
+    }
   }
 
   private async toTokenInfo(

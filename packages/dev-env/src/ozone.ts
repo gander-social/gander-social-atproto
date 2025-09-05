@@ -1,10 +1,10 @@
 import * as plc from '@did-plc/lib'
+import getPort from 'get-port'
+import * as ui8 from 'uint8arrays'
 import { AtpAgent } from '@gander-social-atproto/api'
 import { Keypair, Secp256k1Keypair } from '@gander-social-atproto/crypto'
 import * as ozone from '@gander-social-atproto/ozone'
 import { createServiceJwt } from '@gander-social-atproto/xrpc-server'
-import getPort from 'get-port'
-import * as ui8 from 'uint8arrays'
 import { ADMIN_PASSWORD, EXAMPLE_LABELER } from './const'
 import { ModeratorClient } from './moderator-client'
 import { DidAndKey, OzoneConfig } from './types'
@@ -20,6 +20,10 @@ export class TestOzone {
     public moderatorAccnt: DidAndKey,
     public triageAccnt: DidAndKey,
   ) {}
+
+  get ctx(): ozone.AppContext {
+    return this.server.ctx
+  }
 
   static async create(config: OzoneConfig): Promise<TestOzone> {
     const serviceKeypair =
@@ -97,10 +101,6 @@ export class TestOzone {
     await daemon.ctx.eventReverser.destroy()
 
     return new TestOzone(url, port, server, daemon, admin, moderator, triage)
-  }
-
-  get ctx(): ozone.AppContext {
-    return this.server.ctx
   }
 
   getClient(): AtpAgent {

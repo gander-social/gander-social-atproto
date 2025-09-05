@@ -14,16 +14,6 @@ export class UserQueues {
     })
   }
 
-  private getQueue(did: string) {
-    let queue = this.queues.get(did)
-    if (!queue) {
-      queue = new PQueue({ concurrency: 1 })
-      queue.once('idle', () => this.queues.delete(did))
-      this.queues.set(did, queue)
-    }
-    return queue
-  }
-
   async onEmpty() {
     await this.main.onEmpty()
   }
@@ -37,5 +27,15 @@ export class UserQueues {
     this.main.clear()
     this.queues.forEach((q) => q.clear())
     await this.processAll()
+  }
+
+  private getQueue(did: string) {
+    let queue = this.queues.get(did)
+    if (!queue) {
+      queue = new PQueue({ concurrency: 1 })
+      queue.once('idle', () => this.queues.delete(did))
+      this.queues.set(did, queue)
+    }
+    return queue
   }
 }

@@ -1,3 +1,4 @@
+import { CID } from 'multiformats/cid'
 import { AtUri } from '@gander-social-atproto/api'
 import {
   SeedClient,
@@ -5,7 +6,6 @@ import {
 } from '@gander-social-atproto/dev-env'
 import * as repo from '@gander-social-atproto/repo'
 import { Subscription } from '@gander-social-atproto/xrpc-server'
-import { CID } from 'multiformats/cid'
 import {
   OutputSchema as SubscribeReposOutput,
   RepoOp,

@@ -1,8 +1,17 @@
 {
-  "extends": ["../../../tsconfig/nodenext.json"],
+  "extends": [
+    "../../../tsconfig/nodenext.json"
+  ],
   "compilerOptions": {
     "rootDir": ".",
     "noEmit": true
   },
-  "include": ["./*.js", "./*.cjs", "./*.mjs", "./*.ts", "./*.cts", "./*.mts"]
+  "include": [
+    "./*.js",
+    "./*.cjs",
+    "./*.mjs",
+    "./*.ts",
+    "./*.cts",
+    "./*.mts"
+  ]
 }

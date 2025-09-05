@@ -9,12 +9,12 @@ type CacheVal = {
 export class MemoryCache implements DidCache {
   public staleTTL: number
   public maxTTL: number
+  public cache: Map<string, CacheVal> = new Map()
+
   constructor(staleTTL?: number, maxTTL?: number) {
     this.staleTTL = staleTTL ?? HOUR
     this.maxTTL = maxTTL ?? DAY
   }
-
-  public cache: Map<string, CacheVal> = new Map()
 
   async cacheDid(did: string, doc: DidDocument): Promise<void> {
     this.cache.set(did, { doc, updatedAt: Date.now() })

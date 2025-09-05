@@ -1,77 +1,82 @@
-# @atproto/did
-
-## 0.2.5
-
-### Patch Changes
-
-- [#19](https://github.com/gander-social/gander-social-atproto/pull/19) [`d1c6a24a4e1747120628a8465154ba37d932f8cd`](https://github.com/gander-social/gander-social-atproto/commit/d1c6a24a4e1747120628a8465154ba37d932f8cd) Thanks [@melodylumen](https://github.com/melodylumen)! - Package version of Zod bumped up
-
-## 0.2.4
-
-### Patch Changes
-
-- [#17](https://github.com/gander-social/gander-social-atproto/pull/17) [`1f84fddeafc94dd9f9f44c3ae440430a6c307809`](https://github.com/gander-social/gander-social-atproto/commit/1f84fddeafc94dd9f9f44c3ae440430a6c307809) Thanks [@melodylumen](https://github.com/melodylumen)! - Package version of Zod bumped up
-
-## 0.2.3
-
-### Patch Changes
-
-- [`6450bee3f800aa0f7eaf8f88ec4de958f36d4e0a`](https://github.com/gander-social/gander-social-atproto/commit/6450bee3f800aa0f7eaf8f88ec4de958f36d4e0a) Thanks [@melodylumen](https://github.com/melodylumen)! - Update all packages with patch version bump to reflect adjustments to build/test process and adding central config
-
-## 0.2.1
-
-### Patch Changes
-
-- [#7](https://github.com/gander-social/gander-social-atproto/pull/7) [`85fea07c9d972a1b1bff4c3c0a8674aeaedaa805`](https://github.com/gander-social/gander-social-atproto/commit/85fea07c9d972a1b1bff4c3c0a8674aeaedaa805) Thanks [@melodylumen](https://github.com/melodylumen)! - Force a patch bump to ensure that the Github action will properly publish to npm for all repos with the dependency
-  version numbers
+# @gander-social-atproto/did
 
 ## 0.2.0
 
 ### Minor Changes
 
-- [#5](https://github.com/gander-social/gander-social-atproto/pull/5) [`b5c367a7816349197a86213b69309f66b34ae066`](https://github.com/gander-social/gander-social-atproto/commit/b5c367a7816349197a86213b69309f66b34ae066) Thanks [@melodylumen](https://github.com/melodylumen)! - Adjust all packages to reflect being forked and republished by Gander Social with name changes and primary repository name change to gander-social-atproto to reflect the adjustments
+- [#4108](https://github.com/bluesky-social/atproto/pull/4108) [
+  `f9dc9aa4c`](https://github.com/bluesky-social/atproto/commit/f9dc9aa4c9eaf2f82d140fbf011a9015e7f1a00d)
+  Thanks [@matthieusieben](https://github.com/matthieusieben)! - Enforce proper formatting of relative uris fragments
 
 ### Patch Changes
 
-- [`3d6cfd937e28a03df240c6bc71b3d26e5b143911`](https://github.com/gander-social/gander-social-atproto/commit/3d6cfd937e28a03df240c6bc71b3d26e5b143911) Thanks [@melodylumen](https://github.com/melodylumen)! - Force a patch bump to ensure that the Github action will properly publish to npm for all repos with the dependency
-  version numbers
+- [#4108](https://github.com/bluesky-social/atproto/pull/4108) [
+  `f9dc9aa4c`](https://github.com/bluesky-social/atproto/commit/f9dc9aa4c9eaf2f82d140fbf011a9015e7f1a00d)
+  Thanks [@matthieusieben](https://github.com/matthieusieben)! - Export `AtprotoAudience` type and validation function
+
+- [#4108](https://github.com/bluesky-social/atproto/pull/4108) [
+  `f9dc9aa4c`](https://github.com/bluesky-social/atproto/commit/f9dc9aa4c9eaf2f82d140fbf011a9015e7f1a00d)
+  Thanks [@matthieusieben](https://github.com/matthieusieben)! - Small performance improvement
+
+- [#4108](https://github.com/bluesky-social/atproto/pull/4108) [
+  `f9dc9aa4c`](https://github.com/bluesky-social/atproto/commit/f9dc9aa4c9eaf2f82d140fbf011a9015e7f1a00d)
+  Thanks [@matthieusieben](https://github.com/matthieusieben)! - Small performance improvement
 
 ## 0.1.5
 
 ### Patch Changes
 
-- [#3220](https://github.com/gander-social/atproto/pull/3220) [`61dc0d60e`](https://github.com/gander-social/atproto/commit/61dc0d60e19b88c6427a54c6d95a391b5f4da7bd) Thanks [@matthieusieben](https://github.com/matthieusieben)! - Apply new linting rules regarding import order
+- [#3220](https://github.com/bluesky-social/atproto/pull/3220) [
+  `61dc0d60e`](https://github.com/bluesky-social/atproto/commit/61dc0d60e19b88c6427a54c6d95a391b5f4da7bd)
+  Thanks [@matthieusieben](https://github.com/matthieusieben)! - Apply new linting rules regarding import order
 
 ## 0.1.4
 
 ### Patch Changes
 
-- [#3454](https://github.com/gander-social/atproto/pull/3454) [`cc2a1222b`](https://github.com/gander-social/atproto/commit/cc2a1222bd2b8ddd70d70dad174c1c63246a2d87) Thanks [@matthieusieben](https://github.com/matthieusieben)! - Fix encoding and decoding of did:web
+- [#3454](https://github.com/bluesky-social/atproto/pull/3454) [
+  `cc2a1222b`](https://github.com/bluesky-social/atproto/commit/cc2a1222bd2b8ddd70d70dad174c1c63246a2d87)
+  Thanks [@matthieusieben](https://github.com/matthieusieben)! - Fix encoding and decoding of did:web
 
 ## 0.1.3
 
 ### Patch Changes
 
-- [#2871](https://github.com/gander-social/atproto/pull/2871) [`9d40ccbb6`](https://github.com/gander-social/atproto/commit/9d40ccbb69103fae9aae7e3cec31e9b3116f3ba2) Thanks [@matthieusieben](https://github.com/matthieusieben)! - Add atprotoDidSchema to validate Atproto supported DID's using zod
+- [#2871](https://github.com/bluesky-social/atproto/pull/2871) [
+  `9d40ccbb6`](https://github.com/bluesky-social/atproto/commit/9d40ccbb69103fae9aae7e3cec31e9b3116f3ba2)
+  Thanks [@matthieusieben](https://github.com/matthieusieben)! - Add atprotoDidSchema to validate Atproto supported
+  DID's using zod
 
 ## 0.1.2
 
 ### Patch Changes
 
-- [#2776](https://github.com/gander-social/atproto/pull/2776) [`cb4abbb67`](https://github.com/gander-social/atproto/commit/cb4abbb673c69a8a89b49dca5c038f3da2153c6c) Thanks [@matthieusieben](https://github.com/matthieusieben)! - Disallow path component in Web DID's (as per spec)
+- [#2776](https://github.com/bluesky-social/atproto/pull/2776) [
+  `cb4abbb67`](https://github.com/bluesky-social/atproto/commit/cb4abbb673c69a8a89b49dca5c038f3da2153c6c)
+  Thanks [@matthieusieben](https://github.com/matthieusieben)! - Disallow path component in Web DID's (as per spec)
 
-- [#2776](https://github.com/gander-social/atproto/pull/2776) [`cb4abbb67`](https://github.com/gander-social/atproto/commit/cb4abbb673c69a8a89b49dca5c038f3da2153c6c) Thanks [@matthieusieben](https://github.com/matthieusieben)! - Properly parse localhost did:web
+- [#2776](https://github.com/bluesky-social/atproto/pull/2776) [
+  `cb4abbb67`](https://github.com/bluesky-social/atproto/commit/cb4abbb673c69a8a89b49dca5c038f3da2153c6c)
+  Thanks [@matthieusieben](https://github.com/matthieusieben)! - Properly parse localhost did:web
 
-- [#2776](https://github.com/gander-social/atproto/pull/2776) [`cb4abbb67`](https://github.com/gander-social/atproto/commit/cb4abbb673c69a8a89b49dca5c038f3da2153c6c) Thanks [@matthieusieben](https://github.com/matthieusieben)! - Code optimizations and documentation. Rename `check*` utility function to `assert*`.
+- [#2776](https://github.com/bluesky-social/atproto/pull/2776) [
+  `cb4abbb67`](https://github.com/bluesky-social/atproto/commit/cb4abbb673c69a8a89b49dca5c038f3da2153c6c)
+  Thanks [@matthieusieben](https://github.com/matthieusieben)! - Code optimizations and documentation. Rename `check*`
+  utility function to `assert*`.
 
 ## 0.1.1
 
 ### Patch Changes
 
-- [#2483](https://github.com/gander-social/atproto/pull/2483) [`b934b396b`](https://github.com/gander-social/atproto/commit/b934b396b13ba32bf2bf7e75ecdf6871e5f310dd) Thanks [@matthieusieben](https://github.com/matthieusieben)! - Expose atproto specific types and utilities
+- [#2483](https://github.com/bluesky-social/atproto/pull/2483) [
+  `b934b396b`](https://github.com/bluesky-social/atproto/commit/b934b396b13ba32bf2bf7e75ecdf6871e5f310dd)
+  Thanks [@matthieusieben](https://github.com/matthieusieben)! - Expose atproto specific types and utilities
 
 ## 0.1.0
 
 ### Minor Changes
 
-- [#2482](https://github.com/gander-social/atproto/pull/2482) [`a8d6c1123`](https://github.com/gander-social/atproto/commit/a8d6c112359f5c4c0cfbe2df63443ed275f2a646) Thanks [@matthieusieben](https://github.com/matthieusieben)! - Add OAuth provider capability & support for DPoP signed tokens
+- [#2482](https://github.com/bluesky-social/atproto/pull/2482) [
+  `a8d6c1123`](https://github.com/bluesky-social/atproto/commit/a8d6c112359f5c4c0cfbe2df63443ed275f2a646)
+  Thanks [@matthieusieben](https://github.com/matthieusieben)! - Add OAuth provider capability & support for DPoP signed
+  tokens

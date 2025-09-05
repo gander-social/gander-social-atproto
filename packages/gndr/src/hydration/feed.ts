@@ -157,20 +157,6 @@ export class FeedHydrator {
     }, new HydrationMap<PostViewerState>())
   }
 
-  private async getThreadMutes(
-    threadRoots: string[],
-    viewer: string,
-  ): Promise<Map<string, boolean>> {
-    const deduped = dedupeStrs(threadRoots)
-    const threadMutes = await this.dataplane.getThreadMutesOnSubjects({
-      actorDid: viewer,
-      threadRoots: deduped,
-    })
-    return deduped.reduce((acc, cur, i) => {
-      return acc.set(cur, threadMutes.muted[i] ?? false)
-    }, new Map<string, boolean>())
-  }
-
   async getThreadContexts(refs: ThreadRef[]): Promise<ThreadContexts> {
     if (!refs.length) return new HydrationMap<ThreadContext>()
 
@@ -338,5 +324,19 @@ export class FeedHydrator {
       const record = parseRecord<RepostRecord>(res.records[i], includeTakedowns)
       return acc.set(uri, record ?? null)
     }, new HydrationMap<Repost>())
+  }
+
+  private async getThreadMutes(
+    threadRoots: string[],
+    viewer: string,
+  ): Promise<Map<string, boolean>> {
+    const deduped = dedupeStrs(threadRoots)
+    const threadMutes = await this.dataplane.getThreadMutesOnSubjects({
+      actorDid: viewer,
+      threadRoots: deduped,
+    })
+    return deduped.reduce((acc, cur, i) => {
+      return acc.set(cur, threadMutes.muted[i] ?? false)
+    }, new Map<string, boolean>())
   }
 }

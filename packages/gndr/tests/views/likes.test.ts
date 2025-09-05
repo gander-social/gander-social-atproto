@@ -5,6 +5,7 @@ import {
   likesSeed,
 } from '@gander-social-atproto/dev-env'
 import { ids } from '../../src/lexicon/lexicons'
+import { OutputSchema as GetLikesOutputSchema } from '../../src/lexicon/types/app/gndr/feed/getLikes'
 import { constantDate, forSnapshot, paginateAll, stripViewer } from '../_util'
 
 describe('pds like views', () => {
@@ -75,7 +76,8 @@ describe('pds like views', () => {
   })
 
   it('paginates', async () => {
-    const results = (results) => results.flatMap((res) => res.likes)
+    const results = (results: GetLikesOutputSchema[]) =>
+      results.flatMap((res) => res.likes)
     const paginator = async (cursor?: string) => {
       const res = await agent.api.app.gndr.feed.getLikes(
         {

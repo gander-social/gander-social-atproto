@@ -1,9 +1,9 @@
 import stream from 'node:stream'
 import * as aws from '@aws-sdk/client-s3'
 import { Upload } from '@aws-sdk/lib-storage'
+import { CID } from 'multiformats/cid'
 import { randomStr } from '@gander-social-atproto/crypto'
 import { BlobNotFoundError, BlobStore } from '@gander-social-atproto/repo'
-import { CID } from 'multiformats/cid'
 
 export type S3Config = { bucket: string; uploadTimeoutMs?: number } & Omit<
   aws.S3ClientConfig,
@@ -35,22 +35,6 @@ export class S3BlobStore implements BlobStore {
     return (did: string) => {
       return new S3BlobStore(did, cfg)
     }
-  }
-
-  private genKey() {
-    return randomStr(32, 'base32')
-  }
-
-  private getTmpPath(key: string): string {
-    return `tmp/${this.did}/${key}`
-  }
-
-  private getStoredPath(cid: CID): string {
-    return `blocks/${this.did}/${cid.toString()}`
-  }
-
-  private getQuarantinedPath(cid: CID): string {
-    return `quarantine/${this.did}/${cid.toString()}`
   }
 
   async putTemp(bytes: Uint8Array | stream.Readable): Promise<string> {
@@ -133,18 +117,6 @@ export class S3BlobStore implements BlobStore {
     })
   }
 
-  private async getObject(cid: CID) {
-    const res = await this.client.getObject({
-      Bucket: this.bucket,
-      Key: this.getStoredPath(cid),
-    })
-    if (res.Body) {
-      return res.Body
-    } else {
-      throw new BlobNotFoundError()
-    }
-  }
-
   async getBytes(cid: CID): Promise<Uint8Array> {
     const res = await this.getObject(cid)
     return res.transformToByteArray()
@@ -170,6 +142,34 @@ export class S3BlobStore implements BlobStore {
 
   async hasTemp(key: string): Promise<boolean> {
     return this.hasKey(this.getTmpPath(key))
+  }
+
+  private genKey() {
+    return randomStr(32, 'base32')
+  }
+
+  private getTmpPath(key: string): string {
+    return `tmp/${this.did}/${key}`
+  }
+
+  private getStoredPath(cid: CID): string {
+    return `blocks/${this.did}/${cid.toString()}`
+  }
+
+  private getQuarantinedPath(cid: CID): string {
+    return `quarantine/${this.did}/${cid.toString()}`
+  }
+
+  private async getObject(cid: CID) {
+    const res = await this.client.getObject({
+      Bucket: this.bucket,
+      Key: this.getStoredPath(cid),
+    })
+    if (res.Body) {
+      return res.Body
+    } else {
+      throw new BlobNotFoundError()
+    }
   }
 
   private async hasKey(key: string) {

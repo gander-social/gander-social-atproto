@@ -17,7 +17,7 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "codegen": "node ./scripts/generate-code.mjs && lex gen-api --yes ./src/client ../../lexicons/com/gander-social-atproto/*/* ../../lexicons/app/gndr/*/* ../../lexicons/chat/gndr/*/* ../../lexicons/tools/ozone/*/*",
+    "codegen": "node ./scripts/generate-code.mjs && lex gen-api --yes ./src/client ../../lexicons/com/gander-social-atproto/**/*.json ../../lexicons/app/gndr/**/*.json ../../lexicons/chat/gndr/**/*.json ../../lexicons/tools/ozone/**/*.json",
     "build": "tsc --build tsconfig.build.json",
     "test": "jest"
   },
@@ -26,14 +26,15 @@
     "@gander-social-atproto/lexicon": "workspace:^",
     "@gander-social-atproto/syntax": "workspace:^",
     "@gander-social-atproto/xrpc": "workspace:^",
+    "@gander-social-atproto/xrpc-server": "workspace:^",
     "@gander-social-atproto/test-config": "workspace:*",
+    "@gander-social-atproto/lex-cli": "workspace:^",
     "await-lock": "^2.2.2",
     "multiformats": "^9.9.0",
     "tlds": "^1.234.0",
     "zod": "^3.25.76"
   },
   "devDependencies": {
-    "@gander-social-atproto/lex-cli": "workspace:^",
     "jest": "^28.1.2",
     "prettier": "^3.2.5",
     "typescript": "^5.6.3"

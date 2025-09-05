@@ -1,5 +1,6 @@
 import assert from 'node:assert'
 import * as plc from '@did-plc/lib'
+import express from 'express'
 import { AtpAgent } from '@gander-social-atproto/api'
 import { Keypair, Secp256k1Keypair } from '@gander-social-atproto/crypto'
 import {
@@ -8,7 +9,6 @@ import {
   MemoryCache,
 } from '@gander-social-atproto/identity'
 import { createServiceAuthHeaders } from '@gander-social-atproto/xrpc-server'
-import express from 'express'
 import { AuthVerifier } from './auth-verifier'
 import { BackgroundQueue } from './background'
 import {
@@ -75,6 +75,94 @@ export class AppContext {
     private opts: AppContextOptions,
     private secrets: OzoneSecrets,
   ) {}
+
+  get db(): Database {
+    return this.opts.db
+  }
+
+  get cfg(): OzoneConfig {
+    return this.opts.cfg
+  }
+
+  get modService(): ModerationServiceCreator {
+    return this.opts.modService
+  }
+
+  get blobDiverter(): BlobDiverter | undefined {
+    return this.opts.blobDiverter
+  }
+
+  get communicationTemplateService(): CommunicationTemplateServiceCreator {
+    return this.opts.communicationTemplateService
+  }
+
+  get safelinkRuleService(): SafelinkRuleServiceCreator {
+    return this.opts.safelinkRuleService
+  }
+
+  get teamService(): TeamServiceCreator {
+    return this.opts.teamService
+  }
+
+  get setService(): SetServiceCreator {
+    return this.opts.setService
+  }
+
+  get settingService(): SettingServiceCreator {
+    return this.opts.settingService
+  }
+
+  get verificationService(): VerificationServiceCreator {
+    return this.opts.verificationService
+  }
+
+  get verificationIssuer(): VerificationIssuerCreator {
+    return this.opts.verificationIssuer
+  }
+
+  get appviewAgent(): AtpAgent {
+    return this.opts.appviewAgent
+  }
+
+  get pdsAgent(): AtpAgent | undefined {
+    return this.opts.pdsAgent
+  }
+
+  get chatAgent(): AtpAgent | undefined {
+    return this.opts.chatAgent
+  }
+
+  get signingKey(): Keypair {
+    return this.opts.signingKey
+  }
+
+  get signingKeyId(): number {
+    return this.opts.signingKeyId
+  }
+
+  get plcClient(): plc.Client {
+    return new plc.Client(this.cfg.identity.plcUrl)
+  }
+
+  get didCache(): DidCache {
+    return this.opts.didCache
+  }
+
+  get idResolver(): IdResolver {
+    return this.opts.idResolver
+  }
+
+  get backgroundQueue(): BackgroundQueue {
+    return this.opts.backgroundQueue
+  }
+
+  get sequencer(): Sequencer {
+    return this.opts.sequencer
+  }
+
+  get authVerifier(): AuthVerifier {
+    return this.opts.authVerifier
+  }
 
   static async fromConfig(
     cfg: OzoneConfig,
@@ -193,94 +281,6 @@ export class AppContext {
       'Conflicting port in config',
     )
     this.opts.cfg.service.port = port
-  }
-
-  get db(): Database {
-    return this.opts.db
-  }
-
-  get cfg(): OzoneConfig {
-    return this.opts.cfg
-  }
-
-  get modService(): ModerationServiceCreator {
-    return this.opts.modService
-  }
-
-  get blobDiverter(): BlobDiverter | undefined {
-    return this.opts.blobDiverter
-  }
-
-  get communicationTemplateService(): CommunicationTemplateServiceCreator {
-    return this.opts.communicationTemplateService
-  }
-
-  get safelinkRuleService(): SafelinkRuleServiceCreator {
-    return this.opts.safelinkRuleService
-  }
-
-  get teamService(): TeamServiceCreator {
-    return this.opts.teamService
-  }
-
-  get setService(): SetServiceCreator {
-    return this.opts.setService
-  }
-
-  get settingService(): SettingServiceCreator {
-    return this.opts.settingService
-  }
-
-  get verificationService(): VerificationServiceCreator {
-    return this.opts.verificationService
-  }
-
-  get verificationIssuer(): VerificationIssuerCreator {
-    return this.opts.verificationIssuer
-  }
-
-  get appviewAgent(): AtpAgent {
-    return this.opts.appviewAgent
-  }
-
-  get pdsAgent(): AtpAgent | undefined {
-    return this.opts.pdsAgent
-  }
-
-  get chatAgent(): AtpAgent | undefined {
-    return this.opts.chatAgent
-  }
-
-  get signingKey(): Keypair {
-    return this.opts.signingKey
-  }
-
-  get signingKeyId(): number {
-    return this.opts.signingKeyId
-  }
-
-  get plcClient(): plc.Client {
-    return new plc.Client(this.cfg.identity.plcUrl)
-  }
-
-  get didCache(): DidCache {
-    return this.opts.didCache
-  }
-
-  get idResolver(): IdResolver {
-    return this.opts.idResolver
-  }
-
-  get backgroundQueue(): BackgroundQueue {
-    return this.opts.backgroundQueue
-  }
-
-  get sequencer(): Sequencer {
-    return this.opts.sequencer
-  }
-
-  get authVerifier(): AuthVerifier {
-    return this.opts.authVerifier
   }
 
   async serviceAuthHeaders(aud: string, lxm: string) {

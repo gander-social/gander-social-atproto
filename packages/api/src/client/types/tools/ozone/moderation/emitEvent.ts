@@ -2,14 +2,8 @@
  * GENERATED CODE - DO NOT MODIFY
  */
 import { HeadersMap, XRPCError } from '@gander-social-atproto/xrpc'
-import { type ValidationResult, BlobRef } from '@gander-social-atproto/lexicon'
-import { CID } from 'multiformats/cid'
 import { validate as _validate } from '../../../../lexicons'
-import {
-  type $Typed,
-  is$typed as _is$typed,
-  type OmitKey,
-} from '../../../../util'
+import { type $Typed, is$typed as _is$typed, } from '../../../../util'
 import type * as ToolsOzoneModerationDefs from './defs.js'
 import type * as ComAtprotoAdminDefs from '../../../com/atproto/admin/defs.js'
 import type * as ComAtprotoRepoStrongRef from '../../../com/atproto/repo/strongRef.js'
@@ -41,6 +35,8 @@ export interface InputSchema {
     | $Typed<ToolsOzoneModerationDefs.IdentityEvent>
     | $Typed<ToolsOzoneModerationDefs.RecordEvent>
     | $Typed<ToolsOzoneModerationDefs.ModEventPriorityScore>
+    | $Typed<ToolsOzoneModerationDefs.AgeAssuranceEvent>
+    | $Typed<ToolsOzoneModerationDefs.AgeAssuranceOverrideEvent>
     | { $type: string }
   subject:
     | $Typed<ComAtprotoAdminDefs.RepoRef>
@@ -49,6 +45,8 @@ export interface InputSchema {
   subjectBlobCids?: string[]
   createdBy: string
   modTool?: ToolsOzoneModerationDefs.ModTool
+  /** An optional external ID for the event, used to deduplicate events from external systems. Fails when an event of same type with the same external ID exists for the same subject. */
+  externalId?: string
 }
 
 export type OutputSchema = ToolsOzoneModerationDefs.ModEventView
@@ -72,9 +70,17 @@ export class SubjectHasActionError extends XRPCError {
   }
 }
 
+export class DuplicateExternalIdError extends XRPCError {
+  constructor(src: XRPCError) {
+    super(src.status, src.error, src.message, src.headers, { cause: src })
+  }
+}
+
 export function toKnownErr(e: any) {
   if (e instanceof XRPCError) {
     if (e.error === 'SubjectHasAction') return new SubjectHasActionError(e)
+    if (e.error === 'DuplicateExternalId')
+      return new DuplicateExternalIdError(e)
   }
 
   return e

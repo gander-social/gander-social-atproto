@@ -85,6 +85,10 @@ export class Database {
     return this.opts.schema
   }
 
+  get isTransaction() {
+    return this.db.isTransaction
+  }
+
   async transaction<T>(fn: (db: Database) => Promise<T>): Promise<T> {
     const leakyTxPlugin = new LeakyTxPlugin()
     const { dbTxn, txRes } = await this.db
@@ -108,10 +112,6 @@ export class Database {
       })
     dbTxn?.txEvt.emit('commit')
     return txRes
-  }
-
-  get isTransaction() {
-    return this.db.isTransaction
   }
 
   assertTransaction() {

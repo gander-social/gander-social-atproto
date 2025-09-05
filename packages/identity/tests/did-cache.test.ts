@@ -1,8 +1,8 @@
 import * as plc from '@did-plc/lib'
 import { Database as DidPlcDb, PlcServer } from '@did-plc/server'
+import getPort from 'get-port'
 import { wait } from '@gander-social-atproto/common-web'
 import { Secp256k1Keypair } from '@gander-social-atproto/crypto'
-import getPort from 'get-port'
 import { DidResolver } from '../src'
 import { MemoryCache } from '../src/did/memory-cache'
 
@@ -25,6 +25,7 @@ describe('did cache', () => {
     const signingKey = await Secp256k1Keypair.create()
     const rotationKey = await Secp256k1Keypair.create()
     const plcClient = new plc.Client(plcUrl)
+    // TODO url to config
     did = await plcClient.createDid({
       signingKey: signingKey.did(),
       handle: 'alice.test',

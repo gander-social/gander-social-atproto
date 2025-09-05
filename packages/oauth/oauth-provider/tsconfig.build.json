@@ -1,8 +1,12 @@
 {
-  "extends": ["../../../tsconfig/nodenext.json"],
+  "extends": [
+    "../../../tsconfig/nodenext.json"
+  ],
   "compilerOptions": {
     "outDir": "dist",
     "rootDir": "src"
   },
-  "include": ["src"]
+  "include": [
+    "src"
+  ]
 }

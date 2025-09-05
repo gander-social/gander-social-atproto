@@ -61,6 +61,15 @@ export class DpopNonce {
     return (Date.now() / this.#rotationInterval) | 0
   }
 
+  public next() {
+    this.rotate()
+    return this.#next
+  }
+
+  public check(nonce: string) {
+    return this.#next === nonce || this.#now === nonce || this.#prev === nonce
+  }
+
   protected rotate() {
     const counter = this.currentCounter
     switch (counter - this.#counter) {
@@ -94,15 +103,6 @@ export class DpopNonce {
       .update(numTo64bits(counter))
       .digest()
       .toString('base64url')
-  }
-
-  public next() {
-    this.rotate()
-    return this.#next
-  }
-
-  public check(nonce: string) {
-    return this.#next === nonce || this.#now === nonce || this.#prev === nonce
   }
 }
 

@@ -4,14 +4,14 @@ This package provides a browser specific OAuth client implementation for
 atproto. It implements all the OAuth features required by [ATPROTO] (PKCE, DPoP,
 etc.).
 
-`@atproto/oauth-client-browser` is designed for front-end applications that do
+`@gander-social-atproto/oauth-client-browser` is designed for front-end applications that do
 not have a backend server to manage OAuth sessions, a.k.a "Single Page
 Applications" (SPA).
 
 > [!IMPORTANT]
 >
 > When a backend server is available, it is recommended to use
-> [`@atproto/oauth-client-node`](https://www.npmjs.com/package/@atproto/oauth-client-node)
+> [`@gander-social-atproto/oauth-client-node`](https://www.npmjs.com/package/@gander-social-atproto/oauth-client-node)
 > to manage OAuth sessions from the server side and use a session cookie to map
 > the OAuth session to the front-end. Because this mechanism allows the backend
 > to invalidate OAuth credentials at scale, this method is more secure than
@@ -94,9 +94,9 @@ backend service must be provided.
 
 > [!CAUTION]
 >
-> Using Bluesky-hosted services for handle resolution (eg, the `bsky.social`
-> endpoint) will leak both user IP addresses and handle identifiers to Bluesky,
-> a third party. While Bluesky has a declared privacy policy, both developers
+> Using Gander-hosted services for handle resolution (eg, the `gndr.social`
+> endpoint) will leak both user IP addresses and handle identifiers to Gander,
+> a third party. While Gander has a declared privacy policy, both developers
 > and users of applications need to be informed and aware of the privacy
 > implications of this arrangement. Application developers are encouraged to
 > improve user privacy by operating their own handle resolution service when
@@ -260,10 +260,10 @@ client.addEventListener(
 )
 ```
 
-## Usage with `@atproto/api`
+## Usage with `@gander-social-atproto/api`
 
-The `@atproto/api` package provides a way to interact with multiple Bluesky
-specific XRPC lexicons (`com.atproto`, `app.bsky`, `chat.bsky`, `tools.ozone`)
+The `@gander-social-atproto/api` package provides a way to interact with multiple Gander
+specific XRPC lexicons (`com.atproto`, `app.gndr`, `chat.gndr`, `tools.ozone`)
 through the `Agent` interface. The `oauthSession` returned by the
 `BrowserOAuthClient` can be used to instantiate an `Agent` instance.
 
@@ -315,7 +315,7 @@ client can be instantiated like this:
 import { BrowserOAuthClient } from '@gander-social-atproto/oauth-client-browser'
 
 const client = new BrowserOAuthClient({
-  handleResolver: 'https://bsky.social',
+  handleResolver: 'https://gndr.social',
   // Only works if the current origin is a loopback address:
   clientMetadata: undefined,
 })
@@ -327,7 +327,7 @@ If you need to use a special `redirect_uris`, you can configure them like this:
 import { BrowserOAuthClient } from '@gander-social-atproto/oauth-client-browser'
 
 const client = new BrowserOAuthClient({
-  handleResolver: 'https://bsky.social',
+  handleResolver: 'https://gndr.social',
   // Note that the origin of the "client_id" URL must be "http://localhost" when
   // using this configuration, regardless of the actual hostname ("127.0.0.1" or
   // "[::1]"), port or pathname. Only the `redirect_uris` must contain the

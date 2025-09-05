@@ -1,12 +1,15 @@
 import { IncomingHttpHeaders, ServerResponse } from 'node:http'
-import { PassThrough, Readable } from 'node:stream'
+import { PassThrough, Readable, finished } from 'node:stream'
 import { buildProxiedContentEncoding } from '@gander-atproto-nest/xrpc-utils'
+import { Request } from 'express'
+import { Dispatcher } from 'undici'
 import {
   decodeStream,
   getServiceEndpoint,
   omit,
   streamToNodeBuffer,
 } from '@gander-social-atproto/common'
+import { RpcPermissionMatch } from '@gander-social-atproto/oauth-scopes'
 import {
   ResponseType,
   XRPCError as XRPCClientError,
@@ -18,16 +21,19 @@ import {
   InternalServerError,
   InvalidRequestError,
   XRPCError as XRPCServerError,
+  excludeErrorResult,
   parseReqNsid,
 } from '@gander-social-atproto/xrpc-server'
-import express from 'express'
-import { Dispatcher } from 'undici'
+import { isAccessPrivileged } from './auth-scope'
 import { AppContext } from './context'
 import { ids } from './lexicon/lexicons'
 import { httpLogger } from './logger'
 
 export const proxyHandler = (ctx: AppContext): CatchallHandler => {
-  const accessStandard = ctx.authVerifier.accessStandard()
+  const performAuth = ctx.authVerifier.authorization<RpcPermissionMatch>({
+    authorize: (permissions, { params }) => permissions.assertRpc(params),
+  })
+
   return async (req, res, next) => {
     // /!\ Hot path
     try {
@@ -53,12 +59,19 @@ export const proxyHandler = (ctx: AppContext): CatchallHandler => {
         throw new InvalidRequestError('Bad token method', 'InvalidToken')
       }
 
-      const auth = await accessStandard({ req, res })
-      if (!auth.credentials.isPrivileged && PRIVILEGED_METHODS.has(lxm)) {
+      const { url: origin, did: aud } = await parseProxyInfo(ctx, req, lxm)
+
+      const authResult = await performAuth({ req, res, params: { lxm, aud } })
+
+      const { credentials } = excludeErrorResult(authResult)
+
+      if (
+        credentials.type === 'access' &&
+        !isAccessPrivileged(credentials.scope) &&
+        PRIVILEGED_METHODS.has(lxm)
+      ) {
         throw new InvalidRequestError('Bad token method', 'InvalidToken')
       }
-
-      const { url: origin, did: aud } = await parseProxyInfo(ctx, req, lxm)
 
       const headers: IncomingHttpHeaders = {
         'accept-encoding': req.headers['accept-encoding'] || 'identity',
@@ -70,9 +83,7 @@ export const proxyHandler = (ctx: AppContext): CatchallHandler => {
         'content-encoding': body && req.headers['content-encoding'],
         'content-length': body && req.headers['content-length'],
 
-        authorization: auth.credentials.did
-          ? `Bearer ${await ctx.serviceAuthJwt(auth.credentials.did, aud, lxm)}`
-          : undefined,
+        authorization: `Bearer ${await ctx.serviceAuthJwt(credentials.did, aud, lxm)}`,
       }
 
       const dispatchOptions: Dispatcher.RequestOptions = {
@@ -125,7 +136,7 @@ export type PipethroughOptions = {
 
 export async function pipethrough(
   ctx: AppContext,
-  req: express.Request,
+  req: Request,
   options?: PipethroughOptions,
 ): Promise<
   HandlerPipeThroughStream & {
@@ -192,9 +203,25 @@ export async function pipethrough(
 // Request setup/formatting
 // -------------------
 
+export function computeProxyTo(
+  ctx: AppContext,
+  req: Request,
+  lxm: string,
+): string {
+  const proxyToHeader = req.header('atproto-proxy')
+  if (proxyToHeader) return proxyToHeader
+
+  const service = defaultService(ctx, lxm)
+  if (service.serviceInfo) {
+    return `${service.serviceInfo.did}#${service.serviceId}`
+  }
+
+  throw new InvalidRequestError(`No service configured for ${lxm}`)
+}
+
 export async function parseProxyInfo(
   ctx: AppContext,
-  req: express.Request,
+  req: Request,
   lxm: string,
 ): Promise<{ url: string; did: string }> {
   // /!\ Hot path
@@ -202,8 +229,8 @@ export async function parseProxyInfo(
   const proxyToHeader = req.header('atproto-proxy')
   if (proxyToHeader) return parseProxyHeader(ctx, proxyToHeader)
 
-  const defaultProxy = defaultService(ctx, lxm)
-  if (defaultProxy) return defaultProxy
+  const { serviceInfo } = defaultService(ctx, lxm)
+  if (serviceInfo) return serviceInfo
 
   throw new InvalidRequestError(`No service configured for ${lxm}`)
 }
@@ -236,6 +263,15 @@ export const parseProxyHeader = async (
   }
 
   const did = proxyTo.slice(0, hashIndex)
+
+  // Special case a configured appview, while still proxying correctly any other appview
+  if (
+    ctx.cfg.gndrAppView &&
+    proxyTo === `${ctx.cfg.gndrAppView.did}#gndr_appview`
+  ) {
+    return { did, url: ctx.cfg.gndrAppView.url }
+  }
+
   const didDoc = await ctx.idResolver.did.resolve(did)
   if (!didDoc) {
     throw new InvalidRequestError('could not resolve proxy did')
@@ -373,15 +409,24 @@ async function tryParsingError(
   if (isJsonContentType(headers['content-type']) === false) {
     // We don't known how to parse non JSON content types so we can discard the
     // whole response.
-    //
-    // @NOTE we could also simply "drain" the stream here. This would prevent
-    // the upstream HTTP/1.1 connection from getting destroyed (closed). This
-    // would however imply to read the whole upstream response, which would be
-    // costly in terms of bandwidth and I/O processing. It is recommended to use
-    // HTTP/2 to avoid this issue (be able to destroy a single response stream
-    // without resetting the whole connection). This is not expected to happen
-    // too much as 4xx and 5xx responses are expected to be JSON.
-    readable.destroy()
+
+    // Since we don't care about the response, we would normally just destroy
+    // the stream. However, if the underlying HTTP connection is an HTTP/1.1
+    // connection, this also destroys the underlying (keep-alive) TCP socket. In
+    // order to avoid destroying the TCP socket, while avoiding the cost of
+    // consuming too much IO, we give it a chance to finish first.
+
+    // @NOTE we need to listen (and ignore) "error" events, otherwise the
+    // process could crash (since we drain the stream asynchronously here). This
+    // is performed through the "finished" call below.
+
+    const to = setTimeout(() => {
+      readable.destroy()
+    }, 100)
+    finished(readable, (_err) => {
+      clearTimeout(to)
+    })
+    readable.resume()
 
     return {}
   }
@@ -475,7 +520,7 @@ function* responseHeaders(
 // Utils
 // -------------------
 
-export const PRIVILEGED_METHODS = new Set<string>([
+export const CHAT_GNDR_METHODS = new Set<string>([
   ids.ChatGndrActorDeleteAccount,
   ids.ChatGndrActorExportAccountData,
   ids.ChatGndrConvoDeleteMessageForSelf,
@@ -490,6 +535,10 @@ export const PRIVILEGED_METHODS = new Set<string>([
   ids.ChatGndrConvoSendMessageBatch,
   ids.ChatGndrConvoUnmuteConvo,
   ids.ChatGndrConvoUpdateRead,
+])
+
+export const PRIVILEGED_METHODS = new Set<string>([
+  ...CHAT_GNDR_METHODS,
   ids.ComAtprotoServerCreateAccount,
 ])
 
@@ -518,7 +567,10 @@ export const PROTECTED_METHODS = new Set<string>([
 const defaultService = (
   ctx: AppContext,
   nsid: string,
-): { url: string; did: string } | null => {
+): {
+  serviceId: string
+  serviceInfo: { url: string; did: string } | null
+} => {
   switch (nsid) {
     case ids.ToolsOzoneTeamAddMember:
     case ids.ToolsOzoneTeamDeleteMember:
@@ -535,6 +587,7 @@ const defaultService = (
     case ids.ToolsOzoneModerationQueryEvents:
     case ids.ToolsOzoneModerationQueryStatuses:
     case ids.ToolsOzoneModerationSearchRepos:
+    case ids.ToolsOzoneModerationGetAccountTimeline:
     case ids.ToolsOzoneVerificationListVerifications:
     case ids.ToolsOzoneVerificationGrantVerifications:
     case ids.ToolsOzoneVerificationRevokeVerifications:
@@ -543,11 +596,20 @@ const defaultService = (
     case ids.ToolsOzoneSafelinkRemoveRule:
     case ids.ToolsOzoneSafelinkQueryEvents:
     case ids.ToolsOzoneSafelinkQueryRules:
-      return ctx.cfg.modService
+      return {
+        serviceId: 'atproto_labeler',
+        serviceInfo: ctx.cfg.modService,
+      }
     case ids.ComAtprotoModerationCreateReport:
-      return ctx.cfg.reportService
+      return {
+        serviceId: 'atproto_labeler',
+        serviceInfo: ctx.cfg.reportService,
+      }
     default:
-      return ctx.cfg.gndrAppView
+      return {
+        serviceId: 'gndr_appview',
+        serviceInfo: ctx.cfg.gndrAppView,
+      }
   }
 }
 

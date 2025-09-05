@@ -1,14 +1,8 @@
 /**
  * GENERATED CODE - DO NOT MODIFY
  */
-import { type ValidationResult, BlobRef } from '@gander-social-atproto/lexicon'
-import { CID } from 'multiformats/cid'
 import { validate as _validate } from '../../../../lexicons'
-import {
-  type $Typed,
-  is$typed as _is$typed,
-  type OmitKey,
-} from '../../../../util'
+import { is$typed as _is$typed, } from '../../../../util'
 import type * as ToolsOzoneModerationDefs from './defs.js'
 
 const is$typed = _is$typed,
@@ -82,6 +76,14 @@ export type QueryParams = {
   minTakendownRecordsCount?: number
   /** If specified, only subjects that have priority score value above the given value will be returned. */
   minPriorityScore?: number
+  /** If specified, only subjects with the given age assurance state will be returned. */
+  ageAssuranceState?:
+    | 'pending'
+    | 'assured'
+    | 'unknown'
+    | 'reset'
+    | 'blocked'
+    | (string & {})
 }
 export type InputSchema = undefined
 

@@ -1,3 +1,4 @@
+import type { Redis, RedisOptions } from 'ioredis'
 import { Key, Keyset, isSignedJwt } from '@gander-social-atproto/jwk'
 import {
   OAuthAccessToken,
@@ -5,7 +6,6 @@ import {
   OAuthTokenType,
   oauthIssuerIdentifierSchema,
 } from '@gander-social-atproto/oauth-types'
-import type { Redis, RedisOptions } from 'ioredis'
 import { DpopManager, DpopManagerOptions } from './dpop/dpop-manager.js'
 import { DpopNonce } from './dpop/dpop-nonce.js'
 import { DpopProof } from './dpop/dpop-proof.js'
@@ -25,6 +25,8 @@ import {
   VerifyTokenClaimsResult,
   verifyTokenClaims,
 } from './token/verify-token-claims.js'
+
+export type * from './token/verify-token-claims.js'
 
 export type OAuthVerifierOptions = Override<
   DpopManagerOptions,
@@ -116,32 +118,6 @@ export class OAuthVerifier {
     return dpopProof
   }
 
-  protected async verifyToken(
-    tokenType: OAuthTokenType,
-    token: OAuthAccessToken,
-    dpopProof: null | DpopProof,
-    verifyOptions?: VerifyTokenClaimsOptions,
-  ): Promise<VerifyTokenClaimsResult> {
-    if (!isSignedJwt(token)) {
-      throw new InvalidTokenError(tokenType, `Malformed token`)
-    }
-
-    const { payload } = await this.signer
-      .verifyAccessToken(token)
-      .catch((err) => {
-        throw InvalidTokenError.from(err, tokenType)
-      })
-
-    return verifyTokenClaims(
-      token,
-      payload.jti,
-      tokenType,
-      payload,
-      dpopProof,
-      verifyOptions,
-    )
-  }
-
   public async authenticateRequest(
     httpMethod: string,
     httpUrl: Readonly<URL>,
@@ -173,5 +149,31 @@ export class OAuthVerifier {
 
       throw InvalidTokenError.from(err, tokenType)
     }
+  }
+
+  protected async verifyToken(
+    tokenType: OAuthTokenType,
+    token: OAuthAccessToken,
+    dpopProof: null | DpopProof,
+    verifyOptions?: VerifyTokenClaimsOptions,
+  ): Promise<VerifyTokenClaimsResult> {
+    if (!isSignedJwt(token)) {
+      throw new InvalidTokenError(tokenType, `Malformed token`)
+    }
+
+    const { payload } = await this.signer
+      .verifyAccessToken(token)
+      .catch((err) => {
+        throw InvalidTokenError.from(err, tokenType)
+      })
+
+    return verifyTokenClaims(
+      token,
+      payload.jti,
+      tokenType,
+      payload,
+      dpopProof,
+      verifyOptions,
+    )
   }
 }

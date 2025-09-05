@@ -195,6 +195,26 @@ const noBlockOrMutesOrNeedsReview = (
         }
       }
     }
+    // Filter out notifications from users that have thread hide tags and are from people they
+    // are not following
+    if (
+      item.reason === 'reply' ||
+      item.reason === 'quote' ||
+      item.reason === 'mention'
+    ) {
+      const post = hydration.posts?.get(item.uri)
+      if (post) {
+        for (const [tag] of post.tags.entries()) {
+          if (ctx.cfg.threadTagsHide.has(tag)) {
+            if (!hydration.profileViewers?.get(did)?.following) {
+              return false
+            } else {
+              break
+            }
+          }
+        }
+      }
+    }
     // Filter out notifications from users that need review unless moots
     if (
       item.reason === 'reply' ||

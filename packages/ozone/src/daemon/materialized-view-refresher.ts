@@ -1,5 +1,5 @@
-import { MINUTE } from '@gander-social-atproto/common'
 import { sql } from 'kysely'
+import { MINUTE } from '@gander-social-atproto/common'
 import { BackgroundQueue, PeriodicBackgroundTask } from '../background'
 
 export class MaterializedViewRefresher extends PeriodicBackgroundTask {

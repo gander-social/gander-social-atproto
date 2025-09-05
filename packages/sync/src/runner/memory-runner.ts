@@ -32,16 +32,6 @@ export class MemoryRunner implements EventRunner {
     })
   }
 
-  private getPartition(partitionId: string) {
-    let partition = this.partitions.get(partitionId)
-    if (!partition) {
-      partition = new PQueue({ concurrency: 1 })
-      partition.once('idle', () => this.partitions.delete(partitionId))
-      this.partitions.set(partitionId, partition)
-    }
-    return partition
-  }
-
   async trackEvent(did: string, seq: number, handler: () => Promise<void>) {
     if (this.mainQueue.isPaused) return
     const item = this.consecutive.push(seq)
@@ -66,5 +56,15 @@ export class MemoryRunner implements EventRunner {
     this.mainQueue.clear()
     this.partitions.forEach((p) => p.clear())
     await this.mainQueue.onIdle()
+  }
+
+  private getPartition(partitionId: string) {
+    let partition = this.partitions.get(partitionId)
+    if (!partition) {
+      partition = new PQueue({ concurrency: 1 })
+      partition.once('idle', () => this.partitions.delete(partitionId))
+      this.partitions.set(partitionId, partition)
+    }
+    return partition
   }
 }

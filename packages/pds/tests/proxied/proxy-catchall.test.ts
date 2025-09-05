@@ -3,11 +3,11 @@ import http from 'node:http'
 import { AddressInfo } from 'node:net'
 import { setTimeout as sleep } from 'node:timers/promises'
 import * as plc from '@did-plc/lib'
+import express from 'express'
 import AtpAgent from '@gander-social-atproto/api'
 import { Keypair } from '@gander-social-atproto/crypto'
 import { TestNetworkNoAppView } from '@gander-social-atproto/dev-env'
 import { LexiconDoc } from '@gander-social-atproto/lexicon'
-import express from 'express'
 
 const lexicons = [
   {

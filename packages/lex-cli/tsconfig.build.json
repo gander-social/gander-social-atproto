@@ -4,5 +4,11 @@
     "rootDir": "./src",
     "outDir": "./dist"
   },
-  "include": ["./src"]
+  "include": [
+    "./src/index.ts",
+    "./src/codegen/**/*.ts",
+    "./src/mdgen/**/*.ts",
+    "./src/types.ts",
+    "./src/util.ts"
+  ]
 }

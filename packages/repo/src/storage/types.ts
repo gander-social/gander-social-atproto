@@ -1,7 +1,7 @@
 import stream from 'node:stream'
+import { CID } from 'multiformats/cid'
 import { check } from '@gander-social-atproto/common'
 import { RepoRecord } from '@gander-social-atproto/lexicon'
-import { CID } from 'multiformats/cid'
 import { BlockMap } from '../block-map'
 import { CommitData } from '../types'
 

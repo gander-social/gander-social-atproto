@@ -22,6 +22,14 @@ export type ListViewerState = {
 
 export type ListViewerStates = HydrationMap<ListViewerState>
 
+export type ListMembershipState = {
+  actorListItemUri?: string
+}
+// list uri => actor did => state
+export type ListMembershipStates = HydrationMap<
+  HydrationMap<ListMembershipState>
+>
+
 export type Follow = RecordInfo<FollowRecord>
 export type Follows = HydrationMap<Follow>
 
@@ -138,23 +146,6 @@ export class GraphHydrator {
     }, new HydrationMap<ListViewerState>())
   }
 
-  private async getMutesAndBlocks(uri: string, viewer: string) {
-    const [muted, listBlockUri] = await Promise.all([
-      this.dataplane.getMutelistSubscription({
-        actorDid: viewer,
-        listUri: uri,
-      }),
-      this.dataplane.getBlocklistSubscription({
-        actorDid: viewer,
-        listUri: uri,
-      }),
-    ])
-    return {
-      muted: muted.subscribed,
-      listBlockUri: listBlockUri.listblockUri,
-    }
-  }
-
   async getBidirectionalBlocks(pairs: RelationshipPair[]): Promise<Blocks> {
     if (!pairs.length) return new Blocks()
     const deduped = dedupePairs(pairs).map(([a, b]) => ({ a, b }))
@@ -269,5 +260,22 @@ export class GraphHydrator {
         listItems: counts.listItems[i] ?? 0,
       })
     }, new HydrationMap<ListAgg>())
+  }
+
+  private async getMutesAndBlocks(uri: string, viewer: string) {
+    const [muted, listBlockUri] = await Promise.all([
+      this.dataplane.getMutelistSubscription({
+        actorDid: viewer,
+        listUri: uri,
+      }),
+      this.dataplane.getBlocklistSubscription({
+        actorDid: viewer,
+        listUri: uri,
+      }),
+    ])
+    return {
+      muted: muted.subscribed,
+      listBlockUri: listBlockUri.listblockUri,
+    }
   }
 }

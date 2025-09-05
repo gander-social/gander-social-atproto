@@ -17,7 +17,7 @@
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
-    "codegen": "lex gen-server --yes ./src/lexicon ../../lexicons/com/gander-social-atproto/*/* ../../lexicons/app/gndr/*/* ../../lexicons/chat/gndr/*/* ../../lexicons/tools/ozone/*/*",
+    "codegen": "lex gen-server --yes ./src/lexicon ../../lexicons/com/gander-social-atproto/**/*.json ../../lexicons/app/gndr/**/*.json ../../lexicons/chat/gndr/**/*.json ../../lexicons/tools/ozone/**/*.json",
     "build": "tsc --build tsconfig.build.json",
     "start": "node --enable-source-maps dist/bin.js",
     "test": "../dev-infra/with-test-redis-and-db.sh jest",
@@ -34,6 +34,7 @@
     "@gander-social-atproto/crypto": "workspace:^",
     "@gander-social-atproto/identity": "workspace:^",
     "@gander-social-atproto/lexicon": "workspace:^",
+    "@gander-social-atproto/lex-cli": "workspace:^",
     "@gander-social-atproto/syntax": "workspace:^",
     "@gander-social-atproto/xrpc": "workspace:^",
     "@gander-social-atproto/xrpc-server": "workspace:^",

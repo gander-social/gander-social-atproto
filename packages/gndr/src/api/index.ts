@@ -29,10 +29,12 @@ import getList from './app/gndr/graph/getList'
 import getListBlocks from './app/gndr/graph/getListBlocks'
 import getListMutes from './app/gndr/graph/getListMutes'
 import getLists from './app/gndr/graph/getLists'
+import getListsWithMembership from './app/gndr/graph/getListsWithMembership'
 import getMutes from './app/gndr/graph/getMutes'
 import getRelationships from './app/gndr/graph/getRelationships'
 import getStarterPack from './app/gndr/graph/getStarterPack'
 import getStarterPacks from './app/gndr/graph/getStarterPacks'
+import getStarterPacksWithMembership from './app/gndr/graph/getStarterPacksWithMembership'
 import getSuggestedFollowsByActor from './app/gndr/graph/getSuggestedFollowsByActor'
 import muteActor from './app/gndr/graph/muteActor'
 import muteActorList from './app/gndr/graph/muteActorList'
@@ -51,6 +53,7 @@ import putPreferences from './app/gndr/notification/putPreferences'
 import putPreferencesV2 from './app/gndr/notification/putPreferencesV2'
 import registerPush from './app/gndr/notification/registerPush'
 import updateSeen from './app/gndr/notification/updateSeen'
+import getAgeAssuranceState from './app/gndr/unspecced/getAgeAssuranceState'
 import getConfig from './app/gndr/unspecced/getConfig'
 import getPopularFeedGenerators from './app/gndr/unspecced/getPopularFeedGenerators'
 import getPostThreadOtherV2 from './app/gndr/unspecced/getPostThreadOtherV2'
@@ -61,6 +64,7 @@ import getSuggestedUsers from './app/gndr/unspecced/getSuggestedUsers'
 import getTaggedSuggestions from './app/gndr/unspecced/getTaggedSuggestions'
 import getTrendingTopics from './app/gndr/unspecced/getTrendingTopics'
 import getTrends from './app/gndr/unspecced/getTrends'
+import initAgeAssurance from './app/gndr/unspecced/initAgeAssurance'
 import getAccountInfos from './com/atproto/admin/getAccountInfos'
 import getSubjectStatus from './com/atproto/admin/getSubjectStatus'
 import updateSubjectStatus from './com/atproto/admin/updateSubjectStatus'
@@ -74,6 +78,8 @@ export * as health from './health'
 export * as wellKnown from './well-known'
 
 export * as blobResolver from './blob-resolver'
+
+export * as external from './external'
 
 export default function (server: Server, ctx: AppContext) {
   // app.gndr
@@ -104,11 +110,13 @@ export default function (server: Server, ctx: AppContext) {
   getFollows(server, ctx)
   getList(server, ctx)
   getLists(server, ctx)
+  getListsWithMembership(server, ctx)
   getListMutes(server, ctx)
   getMutes(server, ctx)
   getRelationships(server, ctx)
   getStarterPack(server, ctx)
   getStarterPacks(server, ctx)
+  getStarterPacksWithMembership(server, ctx)
   searchStarterPacks(server, ctx)
   muteActor(server, ctx)
   unmuteActor(server, ctx)
@@ -138,6 +146,8 @@ export default function (server: Server, ctx: AppContext) {
   getConfig(server, ctx)
   getPopularFeedGenerators(server, ctx)
   getTaggedSuggestions(server, ctx)
+  getAgeAssuranceState(server, ctx)
+  initAgeAssurance(server, ctx)
   // com.atproto
   getSubjectStatus(server, ctx)
   updateSubjectStatus(server, ctx)

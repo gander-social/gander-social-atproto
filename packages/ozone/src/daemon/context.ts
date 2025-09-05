@@ -30,6 +30,38 @@ export type DaemonContextOptions = {
 export class DaemonContext {
   constructor(private opts: DaemonContextOptions) {}
 
+  get db(): Database {
+    return this.opts.db
+  }
+
+  get cfg(): OzoneConfig {
+    return this.opts.cfg
+  }
+
+  get backgroundQueue(): BackgroundQueue {
+    return this.opts.backgroundQueue
+  }
+
+  get eventPusher(): EventPusher {
+    return this.opts.eventPusher
+  }
+
+  get eventReverser(): EventReverser {
+    return this.opts.eventReverser
+  }
+
+  get materializedViewRefresher(): MaterializedViewRefresher {
+    return this.opts.materializedViewRefresher
+  }
+
+  get teamProfileSynchronizer(): TeamProfileSynchronizer {
+    return this.opts.teamProfileSynchronizer
+  }
+
+  get verificationListener(): VerificationListener | undefined {
+    return this.opts.verificationListener
+  }
+
   static async fromConfig(
     cfg: OzoneConfig,
     secrets: OzoneSecrets,
@@ -112,38 +144,6 @@ export class DaemonContext {
       verificationListener,
       ...(overrides ?? {}),
     })
-  }
-
-  get db(): Database {
-    return this.opts.db
-  }
-
-  get cfg(): OzoneConfig {
-    return this.opts.cfg
-  }
-
-  get backgroundQueue(): BackgroundQueue {
-    return this.opts.backgroundQueue
-  }
-
-  get eventPusher(): EventPusher {
-    return this.opts.eventPusher
-  }
-
-  get eventReverser(): EventReverser {
-    return this.opts.eventReverser
-  }
-
-  get materializedViewRefresher(): MaterializedViewRefresher {
-    return this.opts.materializedViewRefresher
-  }
-
-  get teamProfileSynchronizer(): TeamProfileSynchronizer {
-    return this.opts.teamProfileSynchronizer
-  }
-
-  get verificationListener(): VerificationListener | undefined {
-    return this.opts.verificationListener
   }
 
   async start() {

@@ -1,5 +1,5 @@
-import { ValidationError } from '@gander-social-atproto/lexicon'
 import { z } from 'zod'
+import { ValidationError } from '@gander-social-atproto/lexicon'
 
 export type QueryParams = Record<string, any>
 export type HeadersMap = Record<string, string | undefined>

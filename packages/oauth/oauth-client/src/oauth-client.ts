@@ -1,8 +1,6 @@
 import {
   AtprotoDid,
   DidCache,
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  type DidResolverCommonOptions,
   assertAtprotoDid,
 } from '@gander-atproto-nest/did-resolver'
 import { Fetch } from '@gander-atproto-nest/fetch'
@@ -50,7 +48,7 @@ import {
   SessionStore,
 } from './session-getter.js'
 import { InternalStateData, StateStore } from './state-store.js'
-import { AuthorizeOptions, ClientMetadata } from './types.js'
+import { AuthorizeOptions, CallbackOptions, ClientMetadata } from './types.js'
 import { CustomEventTarget } from './util.js'
 import { validateClientMetadata } from './validate-client-metadata.js'
 
@@ -367,7 +365,10 @@ export class OAuthClient extends CustomEventTarget<OAuthClientEventMap> {
     // @TODO investigate actual necessity & feasibility of this feature
   }
 
-  async callback(params: URLSearchParams): Promise<{
+  async callback(
+    params: URLSearchParams,
+    options: CallbackOptions = {},
+  ): Promise<{
     session: OAuthSession
     state: string | null
   }> {
@@ -441,7 +442,11 @@ export class OAuthClient extends CustomEventTarget<OAuthClientEventMap> {
         )
       }
 
-      const tokenSet = await server.exchangeCode(codeParam, stateData.verifier)
+      const tokenSet = await server.exchangeCode(
+        codeParam,
+        stateData.verifier,
+        options?.redirect_uri ?? server.clientMetadata.redirect_uris[0],
+      )
       try {
         await this.sessionGetter.setStored(tokenSet.sub, {
           dpopKey: stateData.dpopKey,

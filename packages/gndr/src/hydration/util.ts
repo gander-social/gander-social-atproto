@@ -1,7 +1,7 @@
-import { jsonToLex } from '@gander-social-atproto/lexicon'
-import { AtUri } from '@gander-social-atproto/syntax'
 import { CID } from 'multiformats/cid'
 import * as ui8 from 'uint8arrays'
+import { jsonToLex } from '@gander-social-atproto/lexicon'
+import { AtUri } from '@gander-social-atproto/syntax'
 import { lexicons } from '../lexicon/lexicons'
 import { Record } from '../proto/gndr_pb'
 

@@ -1,15 +1,9 @@
 /**
  * GENERATED CODE - DO NOT MODIFY
  */
-import { HeadersMap, XRPCError } from '@gander-social-atproto/xrpc'
-import { type ValidationResult, BlobRef } from '@gander-social-atproto/lexicon'
-import { CID } from 'multiformats/cid'
+import { HeadersMap } from '@gander-social-atproto/xrpc'
 import { validate as _validate } from '../../../../lexicons'
-import {
-  type $Typed,
-  is$typed as _is$typed,
-  type OmitKey,
-} from '../../../../util'
+import { is$typed as _is$typed, } from '../../../../util'
 
 const is$typed = _is$typed,
   validate = _validate
@@ -22,6 +16,8 @@ export interface InputSchema {
   token: string
   platform: 'ios' | 'android' | 'web' | (string & {})
   appId: string
+  /** Set to true when the actor is age restricted */
+  ageRestricted?: boolean
 }
 
 export interface CallOptions {

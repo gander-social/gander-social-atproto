@@ -1,9 +1,9 @@
 import assert from 'node:assert'
 import { KeyObject } from 'node:crypto'
-import * as crypto from '@gander-social-atproto/crypto'
 import * as jose from 'jose'
 import * as ui8 from 'uint8arrays'
-import { AuthScope } from '../../auth-verifier'
+import * as crypto from '@gander-social-atproto/crypto'
+import { AuthScope } from '../../auth-scope'
 import { AccountDb } from '../db'
 import { AppPassDescript } from './password'
 

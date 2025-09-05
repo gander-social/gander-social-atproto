@@ -14,4 +14,5 @@ export * from './util'
 export * from './const'
 
 import * as seedThreadV2 from './seed/thread-v2.js'
+
 export { seedThreadV2 }

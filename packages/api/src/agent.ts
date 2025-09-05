@@ -1,3 +1,4 @@
+import AwaitLock from 'await-lock'
 import { TID, retry } from '@gander-social-atproto/common-web'
 import { AtUri, ensureValidDid } from '@gander-social-atproto/syntax'
 import {
@@ -6,7 +7,6 @@ import {
   XrpcClient,
   buildFetchHandler,
 } from '@gander-social-atproto/xrpc'
-import AwaitLock from 'await-lock'
 import {
   AppGndrActorDefs,
   AppGndrActorProfile,
@@ -81,29 +81,18 @@ export class Agent extends XrpcClient {
    * The labelers to be used across all requests with the takedown capability
    */
   static appLabelers: readonly string[] = [GNDR_LABELER_DID]
-
-  /**
-   * Configures the Agent (or its sub classes) globally.
-   */
-  static configure(opts: AtpAgentGlobalOpts) {
-    if (opts.appLabelers) {
-      this.appLabelers = opts.appLabelers.map(asDid) // Validate & copy
-    }
-  }
+  com = new ComNS(this)
 
   //#endregion
-
-  com = new ComNS(this)
   app = new AppNS(this)
   chat = new ChatNS(this)
   tools = new ToolsNS(this)
-
-  /** @deprecated use `this` instead */
-  get xrpc(): XrpcClient {
-    return this
-  }
-
   readonly sessionManager: SessionManager
+  labelers: readonly string[] = []
+  proxy?: `${Did}#${AtprotoServiceType}`
+  #prefsLock = new AwaitLock()
+
+  //#region Cloning utilities
 
   constructor(options: SessionManager | FetchHandler | FetchHandlerOptions) {
     const sessionManager: SessionManager =
@@ -140,29 +129,10 @@ export class Agent extends XrpcClient {
     this.sessionManager = sessionManager
   }
 
-  //#region Cloning utilities
-
-  clone(): Agent {
-    return this.copyInto(new Agent(this.sessionManager))
+  /** @deprecated use `this` instead */
+  get xrpc(): XrpcClient {
+    return this
   }
-
-  copyInto<T extends Agent>(inst: T): T {
-    inst.configureLabelers(this.labelers)
-    inst.configureProxy(this.proxy ?? null)
-    inst.clearHeaders()
-    for (const [key, value] of this.headers) inst.setHeader(key, value)
-    return inst
-  }
-
-  withProxy(serviceType: AtprotoServiceType, did: string) {
-    const inst = this.clone()
-    inst.configureProxy(`${asDid(did)}#${serviceType}`)
-    return inst as ReturnType<this['clone']>
-  }
-
-  //#endregion
-
-  //#region ATPROTO labelers configuration utilities
 
   /**
    * The labelers statically configured on the class of the current instance.
@@ -171,39 +141,9 @@ export class Agent extends XrpcClient {
     return (this.constructor as typeof Agent).appLabelers
   }
 
-  labelers: readonly string[] = []
-
-  configureLabelers(labelerDids: readonly string[]) {
-    this.labelers = labelerDids.map(asDid) // Validate & copy
-  }
-
-  /** @deprecated use {@link configureLabelers} instead */
-  configureLabelersHeader(labelerDids: readonly string[]) {
-    // Filtering non-did values for backwards compatibility
-    this.configureLabelers(labelerDids.filter(isDid))
-  }
-
   //#endregion
 
-  //#region ATPROTO proxy configuration utilities
-
-  proxy?: `${Did}#${AtprotoServiceType}`
-
-  configureProxy(value: `${Did}#${AtprotoServiceType}` | null) {
-    if (value === null) this.proxy = undefined
-    else if (isDid(value)) this.proxy = value
-    else throw new TypeError('Invalid proxy DID')
-  }
-
-  /** @deprecated use {@link configureProxy} instead */
-  configureProxyHeader(serviceType: AtprotoServiceType, did: string) {
-    // Ignoring non-did values for backwards compatibility
-    if (isDid(did)) this.configureProxy(`${did}#${serviceType}`)
-  }
-
-  //#endregion
-
-  //#region Session management
+  //#region ATPROTO labelers configuration utilities
 
   /**
    * Get the authenticated user's DID, if any.
@@ -225,21 +165,78 @@ export class Agent extends XrpcClient {
     return this.did
   }
 
+  /** @deprecated use "this" instead */
+  get api() {
+    return this
+  }
+
+  //#endregion
+
+  //#region ATPROTO proxy configuration utilities
+
+  /**
+   * Configures the Agent (or its sub classes) globally.
+   */
+  static configure(opts: AtpAgentGlobalOpts) {
+    if (opts.appLabelers) {
+      this.appLabelers = opts.appLabelers.map(asDid) // Validate & copy
+    }
+  }
+
+  clone(): Agent {
+    return this.copyInto(new Agent(this.sessionManager))
+  }
+
+  copyInto<T extends Agent>(inst: T): T {
+    inst.configureLabelers(this.labelers)
+    inst.configureProxy(this.proxy ?? null)
+    inst.clearHeaders()
+    for (const [key, value] of this.headers) inst.setHeader(key, value)
+    return inst
+  }
+
+  //#endregion
+
+  //#region Session management
+
+  withProxy(serviceType: AtprotoServiceType, did: string) {
+    const inst = this.clone()
+    inst.configureProxy(`${asDid(did)}#${serviceType}`)
+    return inst as ReturnType<this['clone']>
+  }
+
+  configureLabelers(labelerDids: readonly string[]) {
+    this.labelers = labelerDids.map(asDid) // Validate & copy
+  }
+
+  /** @deprecated use {@link configureLabelers} instead */
+  configureLabelersHeader(labelerDids: readonly string[]) {
+    // Filtering non-did values for backwards compatibility
+    this.configureLabelers(labelerDids.filter(isDid))
+  }
+
+  configureProxy(value: `${Did}#${AtprotoServiceType}` | null) {
+    if (value === null) this.proxy = undefined
+    else if (isDid(value)) this.proxy = value
+    else throw new TypeError('Invalid proxy DID')
+  }
+
+  //#endregion
+
+  /** @deprecated use {@link configureProxy} instead */
+  configureProxyHeader(serviceType: AtprotoServiceType, did: string) {
+    // Ignoring non-did values for backwards compatibility
+    if (isDid(did)) this.configureProxy(`${did}#${serviceType}`)
+  }
+
+  //#region "com.atproto" lexicon short hand methods
+
   /**
    * Assert that the user is authenticated.
    */
   public assertAuthenticated(): asserts this is { did: string } {
     if (!this.did) throw new Error('Not logged in')
   }
-
-  //#endregion
-
-  /** @deprecated use "this" instead */
-  get api() {
-    return this
-  }
-
-  //#region "com.atproto" lexicon short hand methods
 
   /**
    * Upload a binary blob to the server
@@ -260,6 +257,10 @@ export class Agent extends XrpcClient {
    */
   updateHandle: typeof this.com.atproto.identity.updateHandle = (data, opts) =>
     this.com.atproto.identity.updateHandle(data, opts)
+
+  //#endregion
+
+  //#region "app.gndr. lexicon short hand methods
 
   /**
    * Create a moderation report
@@ -1343,6 +1344,8 @@ export class Agent extends XrpcClient {
     })
   }
 
+  //- Private methods
+
   async setVerificationPrefs(settings: AppGndrActorDefs.VerificationPrefs) {
     const result = AppGndrActorDefs.validateVerificationPrefs(settings)
     // Fool-proofing (should not be needed because of type safety)
@@ -1361,10 +1364,6 @@ export class Agent extends XrpcClient {
         .concat(pref)
     })
   }
-
-  //- Private methods
-
-  #prefsLock = new AwaitLock()
 
   /**
    * This function updates the preferences of a user and allows for a callback function to be executed

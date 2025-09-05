@@ -6,5 +6,7 @@
     "noUnusedLocals": false,
     "composite": true
   },
-  "include": ["./src"]
+  "include": [
+    "./src"
+  ]
 }

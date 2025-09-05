@@ -1,7 +1,7 @@
-import * as common from '@gander-social-atproto/common'
-import { MINUTE } from '@gander-social-atproto/common'
-import * as crypto from '@gander-social-atproto/crypto'
 import * as ui8 from 'uint8arrays'
+import { MINUTE } from '@gander-social-atproto/common'
+import * as common from '@gander-social-atproto/common'
+import * as crypto from '@gander-social-atproto/crypto'
 import { AuthRequiredError } from './errors'
 
 type ServiceJwtParams = {
@@ -89,7 +89,7 @@ export const verifyJwt = async (
     // service tokens are not OAuth 2.0 access tokens
     // https://datatracker.ietf.org/doc/html/rfc9068
     header['typ'] === 'at+jwt' ||
-    // "refresh+jwt" is a non-standard type used by the @atproto packages
+    // "refresh+jwt" is a non-standard type used by the @gander-social-atproto packages
     header['typ'] === 'refresh+jwt' ||
     // "DPoP" proofs are not meant to be used as service tokens
     // https://datatracker.ietf.org/doc/html/rfc9449

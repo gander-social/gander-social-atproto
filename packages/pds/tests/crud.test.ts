@@ -1,6 +1,6 @@
 import assert from 'node:assert'
 import fs from 'node:fs/promises'
-import { AtpAgent } from '@gander-social-atproto/api'
+import { AppGndrFeedPostRecord, AtpAgent } from '@gander-social-atproto/api'
 import {
   TID,
   cidForCbor,
@@ -251,7 +251,9 @@ describe('crud operations', () => {
     })
 
     it('in forwards order', async () => {
-      const results = (results) => results.flatMap((res) => res.records)
+      const results = (
+        results: Awaited<ReturnType<AppGndrFeedPostRecord['list']>>[],
+      ) => results.flatMap((res) => res.records)
       const paginator = async (cursor?: string) => {
         const res = await agent.app.gndr.feed.post.list({
           repo: aliceAgent.accountDid,
@@ -275,7 +277,9 @@ describe('crud operations', () => {
     })
 
     it('in reverse order', async () => {
-      const results = (results) => results.flatMap((res) => res.records)
+      const results = (
+        results: Awaited<ReturnType<AppGndrFeedPostRecord['list']>>[],
+      ) => results.flatMap((res) => res.records)
       const paginator = async (cursor?: string) => {
         const res = await agent.app.gndr.feed.post.list({
           repo: aliceAgent.accountDid,
@@ -452,6 +456,18 @@ describe('crud operations', () => {
         $type: ids.AppGndrActorProfile,
         displayName: 'Robert',
         description: 'Dog lover',
+      })
+    })
+
+    it('still works if repo is specified by handle', async () => {
+      await bobAgent.api.com.atproto.repo.putRecord({
+        repo: 'bob.test',
+        collection: ids.AppGndrGraphFollow,
+        rkey: TID.nextStr(),
+        record: {
+          subject: aliceAgent.accountDid,
+          createdAt: new Date().toISOString(),
+        },
       })
     })
 

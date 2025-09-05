@@ -1,3 +1,4 @@
+import { CID } from 'multiformats/cid'
 import { AtpAgent } from '@gander-social-atproto/api'
 import { TID, cidForCbor } from '@gander-social-atproto/common'
 import { Keypair, randomStr } from '@gander-social-atproto/crypto'
@@ -8,7 +9,6 @@ import {
 import * as repo from '@gander-social-atproto/repo'
 import { MemoryBlockstore } from '@gander-social-atproto/repo'
 import { AtUri } from '@gander-social-atproto/syntax'
-import { CID } from 'multiformats/cid'
 
 describe('repo sync', () => {
   let network: TestNetworkNoAppView

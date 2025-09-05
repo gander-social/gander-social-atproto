@@ -7,13 +7,18 @@ import {
   createServer,
 } from 'node:http'
 import { AddressInfo } from 'node:net'
+import { type Browser, type Page, launch } from 'puppeteer'
 import { TestNetworkNoAppView } from '@gander-social-atproto/dev-env'
 // @ts-expect-error (json file)
 import files from '@gander-social-atproto/oauth-client-browser-example'
-import { type Browser, type Page, launch } from 'puppeteer'
 
 class PageHelper implements AsyncDisposable {
   constructor(protected readonly page: Page) {}
+
+  static async from(browser: Browser) {
+    const page = await browser.newPage()
+    return new PageHelper(page)
+  }
 
   async goto(url: string) {
     await this.page.goto(url)
@@ -60,6 +65,10 @@ class PageHelper implements AsyncDisposable {
     await this.page.waitForSelector(`${tag}::-p-text(${text})`)
   }
 
+  async [Symbol.asyncDispose]() {
+    return this.page.close()
+  }
+
   protected async getVisibleElement(selector: string) {
     const elementHandle = await this.page.waitForSelector(selector)
 
@@ -69,15 +78,6 @@ class PageHelper implements AsyncDisposable {
     await expect(elementHandle.isVisible()).resolves.toBe(true)
 
     return elementHandle
-  }
-
-  async [Symbol.asyncDispose]() {
-    return this.page.close()
-  }
-
-  static async from(browser: Browser) {
-    const page = await browser.newPage()
-    return new PageHelper(page)
   }
 }
 
@@ -124,6 +124,7 @@ describe('oauth', () => {
       handle_resolver: network.pds.url,
       sign_up_url: network.pds.url,
       env: 'test',
+      scope: `atproto account:email identity:* repo:*`,
     })}`
   })
 
@@ -157,6 +158,10 @@ describe('oauth', () => {
 
     await page.clickOnButton("S'inscrire")
 
+    await page.ensureTextVisibility(
+      `L'application demande un contrôle total sur votre identité, ce qui signifie qu'elle pourrait casser de façon permanente, ou même usurper, votre compte. N'authorisez l'accès qu'aux applications auxquelles vous faites vraiment confiance.`,
+    )
+
     // Make sure the new account is propagated to the PLC directory, allowing
     // the client to resolve the account's did
     await network.processAll()
@@ -180,7 +185,11 @@ describe('oauth', () => {
   })
 
   it('allows resetting the password', async () => {
-    const sendTemplateMock = await withMokedMailer(network)
+    const sendTemplateMock = jest
+      .spyOn(network.pds.ctx.mailer, 'sendResetPassword')
+      .mockImplementation(async () => {
+        // noop
+      })
 
     const page = await PageHelper.from(browser)
 
@@ -194,7 +203,7 @@ describe('oauth', () => {
       await input.press('Enter')
     })
 
-    await page.checkTitle('Se connecter')
+    await page.checkTitle('Connexion')
 
     await page.clickOnButton('Oublié ?')
 
@@ -210,17 +219,13 @@ describe('oauth', () => {
 
     expect(sendTemplateMock).toHaveBeenCalledTimes(1)
 
-    const [templateName, params] = sendTemplateMock.mock.calls[0]
-
-    expect(templateName).toBe('resetPassword')
+    const [params] = sendTemplateMock.mock.lastCall
     expect(params).toEqual({
       handle: 'alice.test',
       token: expect.any(String),
     })
 
-    const { token } = params as { token: string }
-
-    await page.typeInInput('code', token)
+    await page.typeInInput('code', params.token)
 
     await page.typeInInput('password', 'alice-new-pass')
 
@@ -233,8 +238,7 @@ describe('oauth', () => {
     // TODO: Find out why we can't use "using" here
     await page[Symbol.asyncDispose]()
 
-    // TODO: Find out why we can't use "using" here
-    sendTemplateMock[Symbol.dispose]()
+    sendTemplateMock.mockRestore()
   })
 
   it('Allows to sign-in trough OAuth', async () => {
@@ -250,12 +254,12 @@ describe('oauth', () => {
       await input.press('Enter')
     })
 
-    await page.checkTitle('Se connecter')
+    await page.checkTitle('Connexion')
 
     await page.typeIn('input[type="password"]', 'alice-new-pass')
 
     // Make sure the warning is visible
-    await page.ensureTextVisibility('Avertissement')
+    await page.ensureTextVisibility('Avertissement', 'h3')
 
     await page.clickOn(
       'label::-p-text(Se souvenir de ce compte sur cet appareil)',
@@ -316,31 +320,6 @@ describe('oauth', () => {
     await page[Symbol.asyncDispose]()
   })
 })
-
-async function withMokedMailer(network: TestNetworkNoAppView) {
-  // @ts-expect-error
-  const sendTemplateOrig = network.pds.ctx.mailer.sendTemplate
-  const sendTemplateMock = jest.fn(
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    async (templateName: unknown, params: unknown, mailOpts: unknown) => {
-      //
-    },
-  ) as jest.Mock<
-    Promise<void>,
-    [templateName: unknown, params: unknown, mailOpts: unknown]
-  > &
-    Disposable
-
-  sendTemplateMock[Symbol.dispose] = () => {
-    // @ts-expect-error
-    network.pds.ctx.mailer.sendTemplate = sendTemplateOrig
-  }
-
-  // @ts-expect-error
-  network.pds.ctx.mailer.sendTemplate = sendTemplateMock
-
-  return sendTemplateMock
-}
 
 function clientHandler(
   req: IncomingMessage,

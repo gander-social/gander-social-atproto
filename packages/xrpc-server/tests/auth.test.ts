@@ -1,13 +1,13 @@
 import { KeyObject, createPrivateKey } from 'node:crypto'
 import * as http from 'node:http'
 import { AddressInfo } from 'node:net'
+import * as jose from 'jose'
+import KeyEncoder from 'key-encoder'
+import * as ui8 from 'uint8arrays'
 import { MINUTE } from '@gander-social-atproto/common'
 import { Secp256k1Keypair } from '@gander-social-atproto/crypto'
 import { LexiconDoc } from '@gander-social-atproto/lexicon'
 import { XRPCError, XrpcClient } from '@gander-social-atproto/xrpc'
-import * as jose from 'jose'
-import KeyEncoder from 'key-encoder'
-import * as ui8 from 'uint8arrays'
 import * as xrpcServer from '../src'
 import {
   basicAuthHeaders,

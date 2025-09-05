@@ -19,39 +19,6 @@ export class ReadThroughCache<T> {
     public opts: CacheOptions<T>,
   ) {}
 
-  private async _fetchMany(keys: string[]): Promise<Record<string, T | null>> {
-    let result: Record<string, T | null> = {}
-    if (this.opts.fetchManyMethod) {
-      result = await this.opts.fetchManyMethod(keys)
-    } else {
-      const got = await Promise.all(keys.map((k) => this.opts.fetchMethod(k)))
-      for (let i = 0; i < keys.length; i++) {
-        result[keys[i]] = got[i] ?? null
-      }
-    }
-    // ensure caching negatives
-    for (const key of keys) {
-      result[key] ??= null
-    }
-    return result
-  }
-
-  private async fetchAndCache(key: string): Promise<T | null> {
-    const fetched = await this.opts.fetchMethod(key)
-    this.set(key, fetched).catch((err) =>
-      log.error({ err, key }, 'failed to set cache value'),
-    )
-    return fetched
-  }
-
-  private async fetchAndCacheMany(keys: string[]): Promise<Record<string, T>> {
-    const fetched = await this._fetchMany(keys)
-    this.setMany(fetched).catch((err) =>
-      log.error({ err, keys }, 'failed to set cache values'),
-    )
-    return removeNulls(fetched)
-  }
-
   async get(key: string, opts?: { revalidate?: boolean }): Promise<T | null> {
     if (opts?.revalidate) {
       return this.fetchAndCache(key)
@@ -141,6 +108,39 @@ export class ReadThroughCache<T> {
 
   isStale(result: CacheItem<T>) {
     return Date.now() > result.updatedAt + this.opts.staleTTL
+  }
+
+  private async _fetchMany(keys: string[]): Promise<Record<string, T | null>> {
+    let result: Record<string, T | null> = {}
+    if (this.opts.fetchManyMethod) {
+      result = await this.opts.fetchManyMethod(keys)
+    } else {
+      const got = await Promise.all(keys.map((k) => this.opts.fetchMethod(k)))
+      for (let i = 0; i < keys.length; i++) {
+        result[keys[i]] = got[i] ?? null
+      }
+    }
+    // ensure caching negatives
+    for (const key of keys) {
+      result[key] ??= null
+    }
+    return result
+  }
+
+  private async fetchAndCache(key: string): Promise<T | null> {
+    const fetched = await this.opts.fetchMethod(key)
+    this.set(key, fetched).catch((err) =>
+      log.error({ err, key }, 'failed to set cache value'),
+    )
+    return fetched
+  }
+
+  private async fetchAndCacheMany(keys: string[]): Promise<Record<string, T>> {
+    const fetched = await this._fetchMany(keys)
+    this.setMany(fetched).catch((err) =>
+      log.error({ err, keys }, 'failed to set cache values'),
+    )
+    return removeNulls(fetched)
   }
 }
 

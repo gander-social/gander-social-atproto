@@ -1,5 +1,5 @@
-import type { Account } from '@gander-social-atproto/oauth-provider-api'
 import { JSX } from 'react'
+import type { Account } from '@gander-social-atproto/oauth-provider-api'
 import { Override } from '../../lib/util.ts'
 
 export type AccountIdentifierProps = Override<

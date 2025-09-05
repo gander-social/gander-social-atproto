@@ -5,6 +5,7 @@ declare const process: { env: { NODE_ENV: string } }
 
 export const ENV = searchParams.get('env') ?? process.env.NODE_ENV
 
+// TODO url to config
 export const PLC_DIRECTORY_URL: string | undefined =
   searchParams.get('plc_directory_url') ??
   (ENV === 'development' ? 'http://localhost:2582' : undefined)
@@ -20,5 +21,18 @@ export const SIGN_UP_URL: string =
 export const OAUTH_SCOPE: string =
   searchParams.get('scope') ??
   (ENV === 'development'
-    ? 'atproto transition:generic transition:email transition:chat.gndr'
-    : 'atproto transition:generic')
+    ? [
+        'atproto',
+        'account:email',
+        'identity:*',
+        'include:com.atproto.moderation.basePermissions',
+        'include:com.example.calendar.basePermissions?aud=did:web:api.gndr.app#foo',
+      ].join(' ')
+    : [
+        'atproto',
+        'account:email',
+        'account:status',
+        'blob:*/*',
+        'repo:*',
+        'rpc:*?aud=did:web:gndr.app.gndr.appview',
+      ].join(' '))

@@ -1,9 +1,9 @@
 import { Client as PlcClient } from '@did-plc/lib'
+import getPort from 'get-port'
+import * as ui8 from 'uint8arrays'
 import { AtpAgent } from '@gander-social-atproto/api'
 import { Secp256k1Keypair } from '@gander-social-atproto/crypto'
 import * as gndr from '@gander-social-atproto/gndr'
-import getPort from 'get-port'
-import * as ui8 from 'uint8arrays'
 import { ADMIN_PASSWORD, EXAMPLE_LABELER } from './const'
 import { GndrConfig } from './types'
 
@@ -18,7 +18,12 @@ export class TestGndr {
     public dataplane: gndr.DataPlaneServer,
     public bsync: gndr.MockBsync,
     public sub: gndr.RepoSubscription,
+    public serverDid: string,
   ) {}
+
+  get ctx(): gndr.AppContext {
+    return this.server.ctx
+  }
 
   static async create(cfg: GndrConfig): Promise<TestGndr> {
     const serviceKeypair = await Secp256k1Keypair.create()
@@ -116,11 +121,7 @@ export class TestGndr {
 
     sub.start()
 
-    return new TestGndr(url, port, db, server, dataplane, bsync, sub)
-  }
-
-  get ctx(): gndr.AppContext {
-    return this.server.ctx
+    return new TestGndr(url, port, db, server, dataplane, bsync, sub, serverDid)
   }
 
   getClient(): AtpAgent {

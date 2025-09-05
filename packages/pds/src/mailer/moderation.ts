@@ -6,8 +6,8 @@ import { ServerConfig } from '../config'
 import { mailerLogger } from '../logger'
 
 export class ModerationMailer {
-  private config: ServerConfig
   transporter: Transporter<SMTPTransport.SentMessageInfo>
+  private config: ServerConfig
 
   constructor(
     transporter: Transporter<SMTPTransport.SentMessageInfo>,

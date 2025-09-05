@@ -1,4 +1,5 @@
 import { EventEmitter, once } from 'node:events'
+import Mail from 'nodemailer/lib/mailer'
 import {
   AtpAgent,
   ComAtprotoServerConfirmEmail,
@@ -8,7 +9,6 @@ import {
   SeedClient,
   TestNetworkNoAppView,
 } from '@gander-social-atproto/dev-env'
-import Mail from 'nodemailer/lib/mailer'
 import { ServerMailer } from '../src/mailer'
 import userSeed from './seeds/users'
 

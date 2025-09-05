@@ -30,7 +30,9 @@
     "publicKeyMultibase": "zxdM8dSstjrpZaRUwBmDvjGXweKuEMVN95A9oJBFjkWMh",
     "signatureBase64": "2vZNsG3UKvvO/CDlrdvyZRISOFylinBh0Jupc6KcWoKp7O4VS9giSAah8k5IUbXIW00SuOrjfEqQ9HEkN9JGzw",
     "validSignature": false,
-    "tags": ["high-s"]
+    "tags": [
+      "high-s"
+    ]
   },
   {
     "comment": "K-256 key and signature, with non-low-S signature which is invalid in atproto",
@@ -41,7 +43,9 @@
     "publicKeyMultibase": "z25z9DTpsiYYJKGsWmSPJK2NFN8PcJtZig12K59UgW7q5t",
     "signatureBase64": "5WpdIuEUUfVUYaozsi8G0B3cWO09cgZbIIwg1t2YKdXYA67MYxYiTMAVfdnkDCMN9S5B3vHosRe07aORmoshoQ",
     "validSignature": false,
-    "tags": ["high-s"]
+    "tags": [
+      "high-s"
+    ]
   },
   {
     "comment": "P-256 key and signature, with DER-encoded signature which is invalid in atproto",
@@ -52,7 +56,9 @@
     "publicKeyMultibase": "ze8N2PPxnu19hmBQ58t5P3E9Yj6CqakJmTVCaKvf9Byq2",
     "signatureBase64": "MEQCIFxYelWJ9lNcAVt+jK0y/T+DC/X4ohFZ+m8f9SEItkY1AiACX7eXz5sgtaRrz/SdPR8kprnbHMQVde0T2R8yOTBweA",
     "validSignature": false,
-    "tags": ["der-encoded"]
+    "tags": [
+      "der-encoded"
+    ]
   },
   {
     "comment": "K-256 key and signature, with DER-encoded signature which is invalid in atproto",
@@ -63,6 +69,8 @@
     "publicKeyMultibase": "z22uZXWP8fdHXi4jyx8cCDiBf9qQTsAe6VcycoMQPfcMQX",
     "signatureBase64": "MEUCIQCWumUqJqOCqInXF7AzhIRg2MhwRz2rWZcOEsOjPmNItgIgXJH7RnqfYY6M0eg33wU0sFYDlprwdOcpRn78Sz5ePgk",
     "validSignature": false,
-    "tags": ["der-encoded"]
+    "tags": [
+      "der-encoded"
+    ]
   }
 ]

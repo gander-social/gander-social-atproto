@@ -1,6 +1,6 @@
-import type { CustomizationData } from '@gander-social-atproto/oauth-provider-api'
 import { Trans, useLingui } from '@lingui/react/macro'
 import { ReactNode, useCallback, useState } from 'react'
+import type { CustomizationData } from '@gander-social-atproto/oauth-provider-api'
 import { WizardCard } from '../../../components/forms/wizard-card.tsx'
 import {
   LayoutTitlePage,
@@ -51,6 +51,8 @@ export function SignUpView({
   backLabel,
 
   // LayoutTitlePage
+  title,
+  subtitle,
   ...props
 }: SignUpViewProps) {
   const { t } = useLingui()
@@ -77,9 +79,9 @@ export function SignUpView({
   return (
     <LayoutTitlePage
       {...props}
-      title={props.title ?? t`Create Account`}
+      title={title ?? t`Create Account`}
       subtitle={
-        props.subtitle ?? <Trans>We're so excited to have you join us!</Trans>
+        subtitle ?? <Trans>We're so excited to have you join us!</Trans>
       }
     >
       <WizardCard

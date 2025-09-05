@@ -1,6 +1,6 @@
 import assert from 'node:assert'
-import { InvalidRequestError } from '@gander-social-atproto/xrpc-server'
 import { Selectable } from 'kysely'
+import { InvalidRequestError } from '@gander-social-atproto/xrpc-server'
 import { Database } from '../db'
 import { Member } from '../db/schema/member'
 import { Setting, SettingScope } from '../db/schema/setting'

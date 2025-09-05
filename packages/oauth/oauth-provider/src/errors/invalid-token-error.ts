@@ -1,6 +1,6 @@
-import { JwtVerifyError } from '@gander-social-atproto/jwk'
 import { errors } from 'jose'
 import { ZodError } from 'zod'
+import { JwtVerifyError } from '@gander-social-atproto/jwk'
 import { OAuthError } from './oauth-error.js'
 import { WWWAuthenticateError } from './www-authenticate-error.js'
 
@@ -16,6 +16,20 @@ const { JOSEError } = errors
  * protected resource request.
  */
 export class InvalidTokenError extends WWWAuthenticateError {
+  constructor(
+    readonly tokenType: string,
+    error_description: string,
+    cause?: unknown,
+  ) {
+    const error = 'invalid_token'
+    super(
+      error,
+      error_description,
+      { [tokenType]: { error, error_description } },
+      cause,
+    )
+  }
+
   static from(
     err: unknown,
     tokenType: string,
@@ -42,19 +56,5 @@ export class InvalidTokenError extends WWWAuthenticateError {
     }
 
     return new InvalidTokenError(tokenType, fallbackMessage, err)
-  }
-
-  constructor(
-    readonly tokenType: string,
-    error_description: string,
-    cause?: unknown,
-  ) {
-    const error = 'invalid_token'
-    super(
-      error,
-      error_description,
-      { [tokenType]: { error, error_description } },
-      cause,
-    )
   }
 }

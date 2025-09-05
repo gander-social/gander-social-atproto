@@ -51,6 +51,7 @@ describe('did parsing', () => {
     }
   ]
 }`
+    // TODO url to config (whole file)
     const resolver = new DidResolver({})
     const doc = resolver.validateDidDoc(did, JSON.parse(docJson))
     const atpData = ensureAtpDocument(doc)

@@ -37,13 +37,6 @@ export class AtUri {
     this.searchParams = parsed.searchParams
   }
 
-  static make(handleOrDid: string, collection?: string, rkey?: string) {
-    let str = handleOrDid
-    if (collection) str += '/' + collection
-    if (rkey) str += '/' + rkey
-    return new AtUri(str)
-  }
-
   get protocol() {
     return 'at:'
   }
@@ -91,6 +84,13 @@ export class AtUri {
 
   get href() {
     return this.toString()
+  }
+
+  static make(handleOrDid: string, collection?: string, rkey?: string) {
+    let str = handleOrDid
+    if (collection) str += '/' + collection
+    if (rkey) str += '/' + rkey
+    return new AtUri(str)
   }
 
   toString() {

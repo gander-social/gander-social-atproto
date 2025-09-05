@@ -2,6 +2,7 @@ import assert from 'node:assert'
 import { once } from 'node:events'
 import { EventEmitter } from 'node:stream'
 import * as plc from '@did-plc/lib'
+import Mail from 'nodemailer/lib/mailer'
 import { AtpAgent } from '@gander-social-atproto/api'
 import { check } from '@gander-social-atproto/common'
 import { Secp256k1Keypair } from '@gander-social-atproto/crypto'
@@ -10,7 +11,6 @@ import {
   TestNetworkNoAppView,
   basicSeed,
 } from '@gander-social-atproto/dev-env'
-import Mail from 'nodemailer/lib/mailer'
 import { AppContext } from '../src'
 
 describe('plc operations', () => {

@@ -1,5 +1,5 @@
-import * as bsync from '@gander-social-atproto/bsync'
 import getPort from 'get-port'
+import * as bsync from '@gander-social-atproto/bsync'
 import { BsyncConfig } from './types'
 
 export class TestBsync {
@@ -8,6 +8,10 @@ export class TestBsync {
     public port: number,
     public service: bsync.BsyncService,
   ) {}
+
+  get ctx(): bsync.AppContext {
+    return this.service.ctx
+  }
 
   static async create(cfg: BsyncConfig): Promise<TestBsync> {
     const port = cfg.port || (await getPort())
@@ -24,10 +28,6 @@ export class TestBsync {
     await service.start()
 
     return new TestBsync(url, port, service)
-  }
-
-  get ctx(): bsync.AppContext {
-    return this.service.ctx
   }
 
   async close() {

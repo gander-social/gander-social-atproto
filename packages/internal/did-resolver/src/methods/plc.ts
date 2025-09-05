@@ -32,9 +32,8 @@ export type DidPlcMethodOptions = {
 }
 
 export class DidPlcMethod implements DidMethod<'plc'> {
-  protected readonly fetch: Fetch<unknown>
-
   public readonly plcDirectoryUrl: URL
+  protected readonly fetch: Fetch<unknown>
 
   constructor(options?: DidPlcMethodOptions) {
     this.plcDirectoryUrl = new URL(

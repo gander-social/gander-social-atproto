@@ -1,0 +1,40 @@
+{
+  "name": "@gander-social-atproto/oauth-scopes",
+  "version": "0.1.0",
+  "license": "MIT",
+  "description": "A library for manipulating and validating ATproto OAuth scopes in TypeScript.",
+  "keywords": [
+    "atproto",
+    "oauth",
+    "scopes",
+    "permissions"
+  ],
+  "homepage": "https://gandersocial.ca",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gander-social/gander-social-atproto",
+    "directory": "packages/oauth/auth-scopes"
+  },
+  "type": "commonjs",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "dependencies": {
+    "@gander-social-atproto/did": "workspace:^",
+    "@gander-social-atproto/lexicon": "workspace:^",
+    "@gander-social-atproto/syntax": "workspace:^"
+  },
+  "devDependencies": {
+    "jest": "^28.1.2",
+    "typescript": "^5.6.3"
+  },
+  "scripts": {
+    "build": "tsc --build tsconfig.build.json",
+    "test": "jest"
+  }
+}

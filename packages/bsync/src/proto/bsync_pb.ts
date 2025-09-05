@@ -49,31 +49,6 @@ proto3.util.setEnumType(Method, 'bsync.Method', [
  * @generated from message bsync.MuteOperation
  */
 export class MuteOperation extends Message<MuteOperation> {
-  /**
-   * @generated from field: string id = 1;
-   */
-  id = ''
-
-  /**
-   * @generated from field: bsync.MuteOperation.Type type = 2;
-   */
-  type = MuteOperation_Type.UNSPECIFIED
-
-  /**
-   * @generated from field: string actor_did = 3;
-   */
-  actorDid = ''
-
-  /**
-   * @generated from field: string subject = 4;
-   */
-  subject = ''
-
-  constructor(data?: PartialMessage<MuteOperation>) {
-    super()
-    proto3.util.initPartial(data, this)
-  }
-
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'bsync.MuteOperation'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
@@ -87,6 +62,27 @@ export class MuteOperation extends Message<MuteOperation> {
     { no: 3, name: 'actor_did', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
     { no: 4, name: 'subject', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
   ])
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = ''
+  /**
+   * @generated from field: bsync.MuteOperation.Type type = 2;
+   */
+  type = MuteOperation_Type.UNSPECIFIED
+  /**
+   * @generated from field: string actor_did = 3;
+   */
+  actorDid = ''
+  /**
+   * @generated from field: string subject = 4;
+   */
+  subject = ''
+
+  constructor(data?: PartialMessage<MuteOperation>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
 
   static fromBinary(
     bytes: Uint8Array,
@@ -153,26 +149,6 @@ proto3.util.setEnumType(MuteOperation_Type, 'bsync.MuteOperation.Type', [
  * @generated from message bsync.AddMuteOperationRequest
  */
 export class AddMuteOperationRequest extends Message<AddMuteOperationRequest> {
-  /**
-   * @generated from field: bsync.MuteOperation.Type type = 1;
-   */
-  type = MuteOperation_Type.UNSPECIFIED
-
-  /**
-   * @generated from field: string actor_did = 2;
-   */
-  actorDid = ''
-
-  /**
-   * @generated from field: string subject = 3;
-   */
-  subject = ''
-
-  constructor(data?: PartialMessage<AddMuteOperationRequest>) {
-    super()
-    proto3.util.initPartial(data, this)
-  }
-
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'bsync.AddMuteOperationRequest'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
@@ -185,6 +161,23 @@ export class AddMuteOperationRequest extends Message<AddMuteOperationRequest> {
     { no: 2, name: 'actor_did', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
     { no: 3, name: 'subject', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
   ])
+  /**
+   * @generated from field: bsync.MuteOperation.Type type = 1;
+   */
+  type = MuteOperation_Type.UNSPECIFIED
+  /**
+   * @generated from field: string actor_did = 2;
+   */
+  actorDid = ''
+  /**
+   * @generated from field: string subject = 3;
+   */
+  subject = ''
+
+  constructor(data?: PartialMessage<AddMuteOperationRequest>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
 
   static fromBinary(
     bytes: Uint8Array,
@@ -225,6 +218,11 @@ export class AddMuteOperationRequest extends Message<AddMuteOperationRequest> {
  * @generated from message bsync.AddMuteOperationResponse
  */
 export class AddMuteOperationResponse extends Message<AddMuteOperationResponse> {
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'bsync.AddMuteOperationResponse'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: 'operation', kind: 'message', T: MuteOperation },
+  ])
   /**
    * @generated from field: bsync.MuteOperation operation = 1;
    */
@@ -234,12 +232,6 @@ export class AddMuteOperationResponse extends Message<AddMuteOperationResponse> 
     super()
     proto3.util.initPartial(data, this)
   }
-
-  static readonly runtime: typeof proto3 = proto3
-  static readonly typeName = 'bsync.AddMuteOperationResponse'
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'operation', kind: 'message', T: MuteOperation },
-  ])
 
   static fromBinary(
     bytes: Uint8Array,
@@ -280,11 +272,16 @@ export class AddMuteOperationResponse extends Message<AddMuteOperationResponse> 
  * @generated from message bsync.ScanMuteOperationsRequest
  */
 export class ScanMuteOperationsRequest extends Message<ScanMuteOperationsRequest> {
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'bsync.ScanMuteOperationsRequest'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: 'cursor', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: 'limit', kind: 'scalar', T: 5 /* ScalarType.INT32 */ },
+  ])
   /**
    * @generated from field: string cursor = 1;
    */
   cursor = ''
-
   /**
    * @generated from field: int32 limit = 2;
    */
@@ -294,13 +291,6 @@ export class ScanMuteOperationsRequest extends Message<ScanMuteOperationsRequest
     super()
     proto3.util.initPartial(data, this)
   }
-
-  static readonly runtime: typeof proto3 = proto3
-  static readonly typeName = 'bsync.ScanMuteOperationsRequest'
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'cursor', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: 'limit', kind: 'scalar', T: 5 /* ScalarType.INT32 */ },
-  ])
 
   static fromBinary(
     bytes: Uint8Array,
@@ -341,21 +331,6 @@ export class ScanMuteOperationsRequest extends Message<ScanMuteOperationsRequest
  * @generated from message bsync.ScanMuteOperationsResponse
  */
 export class ScanMuteOperationsResponse extends Message<ScanMuteOperationsResponse> {
-  /**
-   * @generated from field: repeated bsync.MuteOperation operations = 1;
-   */
-  operations: MuteOperation[] = []
-
-  /**
-   * @generated from field: string cursor = 2;
-   */
-  cursor = ''
-
-  constructor(data?: PartialMessage<ScanMuteOperationsResponse>) {
-    super()
-    proto3.util.initPartial(data, this)
-  }
-
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'bsync.ScanMuteOperationsResponse'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
@@ -368,6 +343,19 @@ export class ScanMuteOperationsResponse extends Message<ScanMuteOperationsRespon
     },
     { no: 2, name: 'cursor', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
   ])
+  /**
+   * @generated from field: repeated bsync.MuteOperation operations = 1;
+   */
+  operations: MuteOperation[] = []
+  /**
+   * @generated from field: string cursor = 2;
+   */
+  cursor = ''
+
+  constructor(data?: PartialMessage<ScanMuteOperationsResponse>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
 
   static fromBinary(
     bytes: Uint8Array,
@@ -408,26 +396,6 @@ export class ScanMuteOperationsResponse extends Message<ScanMuteOperationsRespon
  * @generated from message bsync.NotifOperation
  */
 export class NotifOperation extends Message<NotifOperation> {
-  /**
-   * @generated from field: string id = 1;
-   */
-  id = ''
-
-  /**
-   * @generated from field: string actor_did = 2;
-   */
-  actorDid = ''
-
-  /**
-   * @generated from field: optional bool priority = 3;
-   */
-  priority?: boolean
-
-  constructor(data?: PartialMessage<NotifOperation>) {
-    super()
-    proto3.util.initPartial(data, this)
-  }
-
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'bsync.NotifOperation'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
@@ -441,6 +409,23 @@ export class NotifOperation extends Message<NotifOperation> {
       opt: true,
     },
   ])
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = ''
+  /**
+   * @generated from field: string actor_did = 2;
+   */
+  actorDid = ''
+  /**
+   * @generated from field: optional bool priority = 3;
+   */
+  priority?: boolean
+
+  constructor(data?: PartialMessage<NotifOperation>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
 
   static fromBinary(
     bytes: Uint8Array,
@@ -475,21 +460,6 @@ export class NotifOperation extends Message<NotifOperation> {
  * @generated from message bsync.AddNotifOperationRequest
  */
 export class AddNotifOperationRequest extends Message<AddNotifOperationRequest> {
-  /**
-   * @generated from field: string actor_did = 1;
-   */
-  actorDid = ''
-
-  /**
-   * @generated from field: optional bool priority = 2;
-   */
-  priority?: boolean
-
-  constructor(data?: PartialMessage<AddNotifOperationRequest>) {
-    super()
-    proto3.util.initPartial(data, this)
-  }
-
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'bsync.AddNotifOperationRequest'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
@@ -502,6 +472,19 @@ export class AddNotifOperationRequest extends Message<AddNotifOperationRequest> 
       opt: true,
     },
   ])
+  /**
+   * @generated from field: string actor_did = 1;
+   */
+  actorDid = ''
+  /**
+   * @generated from field: optional bool priority = 2;
+   */
+  priority?: boolean
+
+  constructor(data?: PartialMessage<AddNotifOperationRequest>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
 
   static fromBinary(
     bytes: Uint8Array,
@@ -542,6 +525,11 @@ export class AddNotifOperationRequest extends Message<AddNotifOperationRequest> 
  * @generated from message bsync.AddNotifOperationResponse
  */
 export class AddNotifOperationResponse extends Message<AddNotifOperationResponse> {
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'bsync.AddNotifOperationResponse'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: 'operation', kind: 'message', T: NotifOperation },
+  ])
   /**
    * @generated from field: bsync.NotifOperation operation = 1;
    */
@@ -551,12 +539,6 @@ export class AddNotifOperationResponse extends Message<AddNotifOperationResponse
     super()
     proto3.util.initPartial(data, this)
   }
-
-  static readonly runtime: typeof proto3 = proto3
-  static readonly typeName = 'bsync.AddNotifOperationResponse'
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'operation', kind: 'message', T: NotifOperation },
-  ])
 
   static fromBinary(
     bytes: Uint8Array,
@@ -597,11 +579,16 @@ export class AddNotifOperationResponse extends Message<AddNotifOperationResponse
  * @generated from message bsync.ScanNotifOperationsRequest
  */
 export class ScanNotifOperationsRequest extends Message<ScanNotifOperationsRequest> {
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'bsync.ScanNotifOperationsRequest'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: 'cursor', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: 'limit', kind: 'scalar', T: 5 /* ScalarType.INT32 */ },
+  ])
   /**
    * @generated from field: string cursor = 1;
    */
   cursor = ''
-
   /**
    * @generated from field: int32 limit = 2;
    */
@@ -611,13 +598,6 @@ export class ScanNotifOperationsRequest extends Message<ScanNotifOperationsReque
     super()
     proto3.util.initPartial(data, this)
   }
-
-  static readonly runtime: typeof proto3 = proto3
-  static readonly typeName = 'bsync.ScanNotifOperationsRequest'
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'cursor', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: 'limit', kind: 'scalar', T: 5 /* ScalarType.INT32 */ },
-  ])
 
   static fromBinary(
     bytes: Uint8Array,
@@ -658,21 +638,6 @@ export class ScanNotifOperationsRequest extends Message<ScanNotifOperationsReque
  * @generated from message bsync.ScanNotifOperationsResponse
  */
 export class ScanNotifOperationsResponse extends Message<ScanNotifOperationsResponse> {
-  /**
-   * @generated from field: repeated bsync.NotifOperation operations = 1;
-   */
-  operations: NotifOperation[] = []
-
-  /**
-   * @generated from field: string cursor = 2;
-   */
-  cursor = ''
-
-  constructor(data?: PartialMessage<ScanNotifOperationsResponse>) {
-    super()
-    proto3.util.initPartial(data, this)
-  }
-
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'bsync.ScanNotifOperationsResponse'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
@@ -685,6 +650,19 @@ export class ScanNotifOperationsResponse extends Message<ScanNotifOperationsResp
     },
     { no: 2, name: 'cursor', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
   ])
+  /**
+   * @generated from field: repeated bsync.NotifOperation operations = 1;
+   */
+  operations: NotifOperation[] = []
+  /**
+   * @generated from field: string cursor = 2;
+   */
+  cursor = ''
+
+  constructor(data?: PartialMessage<ScanNotifOperationsResponse>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
 
   static fromBinary(
     bytes: Uint8Array,
@@ -725,41 +703,6 @@ export class ScanNotifOperationsResponse extends Message<ScanNotifOperationsResp
  * @generated from message bsync.Operation
  */
 export class Operation extends Message<Operation> {
-  /**
-   * @generated from field: string id = 1;
-   */
-  id = ''
-
-  /**
-   * @generated from field: string actor_did = 2;
-   */
-  actorDid = ''
-
-  /**
-   * @generated from field: string namespace = 3;
-   */
-  namespace = ''
-
-  /**
-   * @generated from field: string key = 4;
-   */
-  key = ''
-
-  /**
-   * @generated from field: bsync.Method method = 5;
-   */
-  method = Method.UNSPECIFIED
-
-  /**
-   * @generated from field: bytes payload = 6;
-   */
-  payload = new Uint8Array(0)
-
-  constructor(data?: PartialMessage<Operation>) {
-    super()
-    proto3.util.initPartial(data, this)
-  }
-
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'bsync.Operation'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
@@ -770,6 +713,35 @@ export class Operation extends Message<Operation> {
     { no: 5, name: 'method', kind: 'enum', T: proto3.getEnumType(Method) },
     { no: 6, name: 'payload', kind: 'scalar', T: 12 /* ScalarType.BYTES */ },
   ])
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = ''
+  /**
+   * @generated from field: string actor_did = 2;
+   */
+  actorDid = ''
+  /**
+   * @generated from field: string namespace = 3;
+   */
+  namespace = ''
+  /**
+   * @generated from field: string key = 4;
+   */
+  key = ''
+  /**
+   * @generated from field: bsync.Method method = 5;
+   */
+  method = Method.UNSPECIFIED
+  /**
+   * @generated from field: bytes payload = 6;
+   */
+  payload = new Uint8Array(0)
+
+  constructor(data?: PartialMessage<Operation>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
 
   static fromBinary(
     bytes: Uint8Array,
@@ -804,36 +776,6 @@ export class Operation extends Message<Operation> {
  * @generated from message bsync.PutOperationRequest
  */
 export class PutOperationRequest extends Message<PutOperationRequest> {
-  /**
-   * @generated from field: string actor_did = 1;
-   */
-  actorDid = ''
-
-  /**
-   * @generated from field: string namespace = 2;
-   */
-  namespace = ''
-
-  /**
-   * @generated from field: string key = 3;
-   */
-  key = ''
-
-  /**
-   * @generated from field: bsync.Method method = 4;
-   */
-  method = Method.UNSPECIFIED
-
-  /**
-   * @generated from field: bytes payload = 5;
-   */
-  payload = new Uint8Array(0)
-
-  constructor(data?: PartialMessage<PutOperationRequest>) {
-    super()
-    proto3.util.initPartial(data, this)
-  }
-
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'bsync.PutOperationRequest'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
@@ -843,6 +785,31 @@ export class PutOperationRequest extends Message<PutOperationRequest> {
     { no: 4, name: 'method', kind: 'enum', T: proto3.getEnumType(Method) },
     { no: 5, name: 'payload', kind: 'scalar', T: 12 /* ScalarType.BYTES */ },
   ])
+  /**
+   * @generated from field: string actor_did = 1;
+   */
+  actorDid = ''
+  /**
+   * @generated from field: string namespace = 2;
+   */
+  namespace = ''
+  /**
+   * @generated from field: string key = 3;
+   */
+  key = ''
+  /**
+   * @generated from field: bsync.Method method = 4;
+   */
+  method = Method.UNSPECIFIED
+  /**
+   * @generated from field: bytes payload = 5;
+   */
+  payload = new Uint8Array(0)
+
+  constructor(data?: PartialMessage<PutOperationRequest>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
 
   static fromBinary(
     bytes: Uint8Array,
@@ -877,6 +844,11 @@ export class PutOperationRequest extends Message<PutOperationRequest> {
  * @generated from message bsync.PutOperationResponse
  */
 export class PutOperationResponse extends Message<PutOperationResponse> {
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'bsync.PutOperationResponse'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: 'operation', kind: 'message', T: Operation },
+  ])
   /**
    * @generated from field: bsync.Operation operation = 1;
    */
@@ -886,12 +858,6 @@ export class PutOperationResponse extends Message<PutOperationResponse> {
     super()
     proto3.util.initPartial(data, this)
   }
-
-  static readonly runtime: typeof proto3 = proto3
-  static readonly typeName = 'bsync.PutOperationResponse'
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'operation', kind: 'message', T: Operation },
-  ])
 
   static fromBinary(
     bytes: Uint8Array,
@@ -926,11 +892,16 @@ export class PutOperationResponse extends Message<PutOperationResponse> {
  * @generated from message bsync.ScanOperationsRequest
  */
 export class ScanOperationsRequest extends Message<ScanOperationsRequest> {
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'bsync.ScanOperationsRequest'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: 'cursor', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: 'limit', kind: 'scalar', T: 5 /* ScalarType.INT32 */ },
+  ])
   /**
    * @generated from field: string cursor = 1;
    */
   cursor = ''
-
   /**
    * @generated from field: int32 limit = 2;
    */
@@ -940,13 +911,6 @@ export class ScanOperationsRequest extends Message<ScanOperationsRequest> {
     super()
     proto3.util.initPartial(data, this)
   }
-
-  static readonly runtime: typeof proto3 = proto3
-  static readonly typeName = 'bsync.ScanOperationsRequest'
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'cursor', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
-    { no: 2, name: 'limit', kind: 'scalar', T: 5 /* ScalarType.INT32 */ },
-  ])
 
   static fromBinary(
     bytes: Uint8Array,
@@ -981,21 +945,6 @@ export class ScanOperationsRequest extends Message<ScanOperationsRequest> {
  * @generated from message bsync.ScanOperationsResponse
  */
 export class ScanOperationsResponse extends Message<ScanOperationsResponse> {
-  /**
-   * @generated from field: repeated bsync.Operation operations = 1;
-   */
-  operations: Operation[] = []
-
-  /**
-   * @generated from field: string cursor = 2;
-   */
-  cursor = ''
-
-  constructor(data?: PartialMessage<ScanOperationsResponse>) {
-    super()
-    proto3.util.initPartial(data, this)
-  }
-
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'bsync.ScanOperationsResponse'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
@@ -1008,6 +957,19 @@ export class ScanOperationsResponse extends Message<ScanOperationsResponse> {
     },
     { no: 2, name: 'cursor', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
   ])
+  /**
+   * @generated from field: repeated bsync.Operation operations = 1;
+   */
+  operations: Operation[] = []
+  /**
+   * @generated from field: string cursor = 2;
+   */
+  cursor = ''
+
+  constructor(data?: PartialMessage<ScanOperationsResponse>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
 
   static fromBinary(
     bytes: Uint8Array,
@@ -1050,14 +1012,14 @@ export class ScanOperationsResponse extends Message<ScanOperationsResponse> {
  * @generated from message bsync.PingRequest
  */
 export class PingRequest extends Message<PingRequest> {
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'bsync.PingRequest'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [])
+
   constructor(data?: PartialMessage<PingRequest>) {
     super()
     proto3.util.initPartial(data, this)
   }
-
-  static readonly runtime: typeof proto3 = proto3
-  static readonly typeName = 'bsync.PingRequest'
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [])
 
   static fromBinary(
     bytes: Uint8Array,
@@ -1092,14 +1054,14 @@ export class PingRequest extends Message<PingRequest> {
  * @generated from message bsync.PingResponse
  */
 export class PingResponse extends Message<PingResponse> {
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'bsync.PingResponse'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [])
+
   constructor(data?: PartialMessage<PingResponse>) {
     super()
     proto3.util.initPartial(data, this)
   }
-
-  static readonly runtime: typeof proto3 = proto3
-  static readonly typeName = 'bsync.PingResponse'
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [])
 
   static fromBinary(
     bytes: Uint8Array,

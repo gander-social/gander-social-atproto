@@ -1,3 +1,5 @@
+import { CID } from 'multiformats/cid'
+import type { ClientOptions } from 'ws'
 import {
   Deferrable,
   createDeferrable,
@@ -19,8 +21,6 @@ import {
 } from '@gander-social-atproto/repo'
 import { AtUri } from '@gander-social-atproto/syntax'
 import { Subscription } from '@gander-social-atproto/xrpc-server'
-import { CID } from 'multiformats/cid'
-import type { ClientOptions } from 'ws'
 import {
   AccountEvt,
   AccountStatus,
@@ -136,6 +136,11 @@ export class Firehose {
     }
   }
 
+  async destroy(): Promise<void> {
+    this.abortController.abort()
+    await this.destoryDefer.complete
+  }
+
   private async parseEvt(evt: RepoEvent): Promise<Event[]> {
     try {
       if (isCommit(evt) && !this.opts.excludeCommit) {
@@ -177,11 +182,6 @@ export class Firehose {
         this.opts.onError(new FirehoseHandlerError(err, write))
       }
     }
-  }
-
-  async destroy(): Promise<void> {
-    this.abortController.abort()
-    await this.destoryDefer.complete
   }
 }
 
@@ -225,7 +225,9 @@ export const parseCommitAuthenticated = async (
       return op.cid !== null && op.cid.equals(verifiedCids[op.path])
     }
   })
-  return formatCommitOps(evt, verifiedOps)
+  return formatCommitOps(evt, verifiedOps, {
+    skipCidVerification: true, // already checked via verifyProofs()
+  })
 }
 
 export const parseCommitUnauthenticated = async (
@@ -247,8 +249,12 @@ const maybeFilterOps = (
   })
 }
 
-const formatCommitOps = async (evt: Commit, ops: RepoOp[]) => {
-  const car = await readCar(evt.blocks)
+const formatCommitOps = async (
+  evt: Commit,
+  ops: RepoOp[],
+  options?: { skipCidVerification: boolean },
+) => {
+  const car = await readCar(evt.blocks, options)
 
   const evts: CommitEvt[] = []
 

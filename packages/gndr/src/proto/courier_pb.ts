@@ -51,14 +51,14 @@ proto3.util.setEnumType(AppPlatform, 'courier.AppPlatform', [
  * @generated from message courier.PingRequest
  */
 export class PingRequest extends Message<PingRequest> {
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'courier.PingRequest'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [])
+
   constructor(data?: PartialMessage<PingRequest>) {
     super()
     proto3.util.initPartial(data, this)
   }
-
-  static readonly runtime: typeof proto3 = proto3
-  static readonly typeName = 'courier.PingRequest'
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [])
 
   static fromBinary(
     bytes: Uint8Array,
@@ -93,14 +93,14 @@ export class PingRequest extends Message<PingRequest> {
  * @generated from message courier.PingResponse
  */
 export class PingResponse extends Message<PingResponse> {
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'courier.PingResponse'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [])
+
   constructor(data?: PartialMessage<PingResponse>) {
     super()
     proto3.util.initPartial(data, this)
   }
-
-  static readonly runtime: typeof proto3 = proto3
-  static readonly typeName = 'courier.PingResponse'
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [])
 
   static fromBinary(
     bytes: Uint8Array,
@@ -135,56 +135,6 @@ export class PingResponse extends Message<PingResponse> {
  * @generated from message courier.Notification
  */
 export class Notification extends Message<Notification> {
-  /**
-   * @generated from field: string id = 1;
-   */
-  id = ''
-
-  /**
-   * @generated from field: string recipient_did = 2;
-   */
-  recipientDid = ''
-
-  /**
-   * @generated from field: string title = 3;
-   */
-  title = ''
-
-  /**
-   * @generated from field: string message = 4;
-   */
-  message = ''
-
-  /**
-   * @generated from field: string collapse_key = 5;
-   */
-  collapseKey = ''
-
-  /**
-   * @generated from field: bool always_deliver = 6;
-   */
-  alwaysDeliver = false
-
-  /**
-   * @generated from field: google.protobuf.Timestamp timestamp = 7;
-   */
-  timestamp?: Timestamp
-
-  /**
-   * @generated from field: google.protobuf.Struct additional = 8;
-   */
-  additional?: Struct
-
-  /**
-   * @generated from field: bool client_controlled = 9;
-   */
-  clientControlled = false
-
-  constructor(data?: PartialMessage<Notification>) {
-    super()
-    proto3.util.initPartial(data, this)
-  }
-
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'courier.Notification'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
@@ -218,6 +168,47 @@ export class Notification extends Message<Notification> {
       T: 8 /* ScalarType.BOOL */,
     },
   ])
+  /**
+   * @generated from field: string id = 1;
+   */
+  id = ''
+  /**
+   * @generated from field: string recipient_did = 2;
+   */
+  recipientDid = ''
+  /**
+   * @generated from field: string title = 3;
+   */
+  title = ''
+  /**
+   * @generated from field: string message = 4;
+   */
+  message = ''
+  /**
+   * @generated from field: string collapse_key = 5;
+   */
+  collapseKey = ''
+  /**
+   * @generated from field: bool always_deliver = 6;
+   */
+  alwaysDeliver = false
+  /**
+   * @generated from field: google.protobuf.Timestamp timestamp = 7;
+   */
+  timestamp?: Timestamp
+  /**
+   * @generated from field: google.protobuf.Struct additional = 8;
+   */
+  additional?: Struct
+  /**
+   * @generated from field: bool client_controlled = 9;
+   */
+  clientControlled = false
+
+  constructor(data?: PartialMessage<Notification>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
 
   static fromBinary(
     bytes: Uint8Array,
@@ -252,16 +243,6 @@ export class Notification extends Message<Notification> {
  * @generated from message courier.PushNotificationsRequest
  */
 export class PushNotificationsRequest extends Message<PushNotificationsRequest> {
-  /**
-   * @generated from field: repeated courier.Notification notifications = 1;
-   */
-  notifications: Notification[] = []
-
-  constructor(data?: PartialMessage<PushNotificationsRequest>) {
-    super()
-    proto3.util.initPartial(data, this)
-  }
-
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'courier.PushNotificationsRequest'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
@@ -273,6 +254,15 @@ export class PushNotificationsRequest extends Message<PushNotificationsRequest> 
       repeated: true,
     },
   ])
+  /**
+   * @generated from field: repeated courier.Notification notifications = 1;
+   */
+  notifications: Notification[] = []
+
+  constructor(data?: PartialMessage<PushNotificationsRequest>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
 
   static fromBinary(
     bytes: Uint8Array,
@@ -313,14 +303,14 @@ export class PushNotificationsRequest extends Message<PushNotificationsRequest> 
  * @generated from message courier.PushNotificationsResponse
  */
 export class PushNotificationsResponse extends Message<PushNotificationsResponse> {
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'courier.PushNotificationsResponse'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [])
+
   constructor(data?: PartialMessage<PushNotificationsResponse>) {
     super()
     proto3.util.initPartial(data, this)
   }
-
-  static readonly runtime: typeof proto3 = proto3
-  static readonly typeName = 'courier.PushNotificationsResponse'
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [])
 
   static fromBinary(
     bytes: Uint8Array,
@@ -361,31 +351,6 @@ export class PushNotificationsResponse extends Message<PushNotificationsResponse
  * @generated from message courier.RegisterDeviceTokenRequest
  */
 export class RegisterDeviceTokenRequest extends Message<RegisterDeviceTokenRequest> {
-  /**
-   * @generated from field: string did = 1;
-   */
-  did = ''
-
-  /**
-   * @generated from field: string token = 2;
-   */
-  token = ''
-
-  /**
-   * @generated from field: string app_id = 3;
-   */
-  appId = ''
-
-  /**
-   * @generated from field: courier.AppPlatform platform = 4;
-   */
-  platform = AppPlatform.UNSPECIFIED
-
-  constructor(data?: PartialMessage<RegisterDeviceTokenRequest>) {
-    super()
-    proto3.util.initPartial(data, this)
-  }
-
   static readonly runtime: typeof proto3 = proto3
   static readonly typeName = 'courier.RegisterDeviceTokenRequest'
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
@@ -398,7 +363,38 @@ export class RegisterDeviceTokenRequest extends Message<RegisterDeviceTokenReque
       kind: 'enum',
       T: proto3.getEnumType(AppPlatform),
     },
+    {
+      no: 5,
+      name: 'age_restricted',
+      kind: 'scalar',
+      T: 8 /* ScalarType.BOOL */,
+    },
   ])
+  /**
+   * @generated from field: string did = 1;
+   */
+  did = ''
+  /**
+   * @generated from field: string token = 2;
+   */
+  token = ''
+  /**
+   * @generated from field: string app_id = 3;
+   */
+  appId = ''
+  /**
+   * @generated from field: courier.AppPlatform platform = 4;
+   */
+  platform = AppPlatform.UNSPECIFIED
+  /**
+   * @generated from field: bool age_restricted = 5;
+   */
+  ageRestricted = false
+
+  constructor(data?: PartialMessage<RegisterDeviceTokenRequest>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
 
   static fromBinary(
     bytes: Uint8Array,
@@ -439,14 +435,14 @@ export class RegisterDeviceTokenRequest extends Message<RegisterDeviceTokenReque
  * @generated from message courier.RegisterDeviceTokenResponse
  */
 export class RegisterDeviceTokenResponse extends Message<RegisterDeviceTokenResponse> {
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'courier.RegisterDeviceTokenResponse'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [])
+
   constructor(data?: PartialMessage<RegisterDeviceTokenResponse>) {
     super()
     proto3.util.initPartial(data, this)
   }
-
-  static readonly runtime: typeof proto3 = proto3
-  static readonly typeName = 'courier.RegisterDeviceTokenResponse'
-  static readonly fields: FieldList = proto3.util.newFieldList(() => [])
 
   static fromBinary(
     bytes: Uint8Array,
@@ -480,5 +476,245 @@ export class RegisterDeviceTokenResponse extends Message<RegisterDeviceTokenResp
       | undefined,
   ): boolean {
     return proto3.util.equals(RegisterDeviceTokenResponse, a, b)
+  }
+}
+
+/**
+ * @generated from message courier.UnregisterDeviceTokenRequest
+ */
+export class UnregisterDeviceTokenRequest extends Message<UnregisterDeviceTokenRequest> {
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'courier.UnregisterDeviceTokenRequest'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: 'did', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+    { no: 2, name: 'token', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+    { no: 3, name: 'app_id', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+    {
+      no: 4,
+      name: 'platform',
+      kind: 'enum',
+      T: proto3.getEnumType(AppPlatform),
+    },
+  ])
+  /**
+   * @generated from field: string did = 1;
+   */
+  did = ''
+  /**
+   * @generated from field: string token = 2;
+   */
+  token = ''
+  /**
+   * @generated from field: string app_id = 3;
+   */
+  appId = ''
+  /**
+   * @generated from field: courier.AppPlatform platform = 4;
+   */
+  platform = AppPlatform.UNSPECIFIED
+
+  constructor(data?: PartialMessage<UnregisterDeviceTokenRequest>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
+
+  static fromBinary(
+    bytes: Uint8Array,
+    options?: Partial<BinaryReadOptions>,
+  ): UnregisterDeviceTokenRequest {
+    return new UnregisterDeviceTokenRequest().fromBinary(bytes, options)
+  }
+
+  static fromJson(
+    jsonValue: JsonValue,
+    options?: Partial<JsonReadOptions>,
+  ): UnregisterDeviceTokenRequest {
+    return new UnregisterDeviceTokenRequest().fromJson(jsonValue, options)
+  }
+
+  static fromJsonString(
+    jsonString: string,
+    options?: Partial<JsonReadOptions>,
+  ): UnregisterDeviceTokenRequest {
+    return new UnregisterDeviceTokenRequest().fromJsonString(
+      jsonString,
+      options,
+    )
+  }
+
+  static equals(
+    a:
+      | UnregisterDeviceTokenRequest
+      | PlainMessage<UnregisterDeviceTokenRequest>
+      | undefined,
+    b:
+      | UnregisterDeviceTokenRequest
+      | PlainMessage<UnregisterDeviceTokenRequest>
+      | undefined,
+  ): boolean {
+    return proto3.util.equals(UnregisterDeviceTokenRequest, a, b)
+  }
+}
+
+/**
+ * @generated from message courier.UnregisterDeviceTokenResponse
+ */
+export class UnregisterDeviceTokenResponse extends Message<UnregisterDeviceTokenResponse> {
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'courier.UnregisterDeviceTokenResponse'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [])
+
+  constructor(data?: PartialMessage<UnregisterDeviceTokenResponse>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
+
+  static fromBinary(
+    bytes: Uint8Array,
+    options?: Partial<BinaryReadOptions>,
+  ): UnregisterDeviceTokenResponse {
+    return new UnregisterDeviceTokenResponse().fromBinary(bytes, options)
+  }
+
+  static fromJson(
+    jsonValue: JsonValue,
+    options?: Partial<JsonReadOptions>,
+  ): UnregisterDeviceTokenResponse {
+    return new UnregisterDeviceTokenResponse().fromJson(jsonValue, options)
+  }
+
+  static fromJsonString(
+    jsonString: string,
+    options?: Partial<JsonReadOptions>,
+  ): UnregisterDeviceTokenResponse {
+    return new UnregisterDeviceTokenResponse().fromJsonString(
+      jsonString,
+      options,
+    )
+  }
+
+  static equals(
+    a:
+      | UnregisterDeviceTokenResponse
+      | PlainMessage<UnregisterDeviceTokenResponse>
+      | undefined,
+    b:
+      | UnregisterDeviceTokenResponse
+      | PlainMessage<UnregisterDeviceTokenResponse>
+      | undefined,
+  ): boolean {
+    return proto3.util.equals(UnregisterDeviceTokenResponse, a, b)
+  }
+}
+
+/**
+ * @generated from message courier.SetAgeRestrictedRequest
+ */
+export class SetAgeRestrictedRequest extends Message<SetAgeRestrictedRequest> {
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'courier.SetAgeRestrictedRequest'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [
+    { no: 1, name: 'did', kind: 'scalar', T: 9 /* ScalarType.STRING */ },
+    {
+      no: 2,
+      name: 'age_restricted',
+      kind: 'scalar',
+      T: 8 /* ScalarType.BOOL */,
+    },
+  ])
+  /**
+   * @generated from field: string did = 1;
+   */
+  did = ''
+  /**
+   * @generated from field: bool age_restricted = 2;
+   */
+  ageRestricted = false
+
+  constructor(data?: PartialMessage<SetAgeRestrictedRequest>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
+
+  static fromBinary(
+    bytes: Uint8Array,
+    options?: Partial<BinaryReadOptions>,
+  ): SetAgeRestrictedRequest {
+    return new SetAgeRestrictedRequest().fromBinary(bytes, options)
+  }
+
+  static fromJson(
+    jsonValue: JsonValue,
+    options?: Partial<JsonReadOptions>,
+  ): SetAgeRestrictedRequest {
+    return new SetAgeRestrictedRequest().fromJson(jsonValue, options)
+  }
+
+  static fromJsonString(
+    jsonString: string,
+    options?: Partial<JsonReadOptions>,
+  ): SetAgeRestrictedRequest {
+    return new SetAgeRestrictedRequest().fromJsonString(jsonString, options)
+  }
+
+  static equals(
+    a:
+      | SetAgeRestrictedRequest
+      | PlainMessage<SetAgeRestrictedRequest>
+      | undefined,
+    b:
+      | SetAgeRestrictedRequest
+      | PlainMessage<SetAgeRestrictedRequest>
+      | undefined,
+  ): boolean {
+    return proto3.util.equals(SetAgeRestrictedRequest, a, b)
+  }
+}
+
+/**
+ * @generated from message courier.SetAgeRestrictedResponse
+ */
+export class SetAgeRestrictedResponse extends Message<SetAgeRestrictedResponse> {
+  static readonly runtime: typeof proto3 = proto3
+  static readonly typeName = 'courier.SetAgeRestrictedResponse'
+  static readonly fields: FieldList = proto3.util.newFieldList(() => [])
+
+  constructor(data?: PartialMessage<SetAgeRestrictedResponse>) {
+    super()
+    proto3.util.initPartial(data, this)
+  }
+
+  static fromBinary(
+    bytes: Uint8Array,
+    options?: Partial<BinaryReadOptions>,
+  ): SetAgeRestrictedResponse {
+    return new SetAgeRestrictedResponse().fromBinary(bytes, options)
+  }
+
+  static fromJson(
+    jsonValue: JsonValue,
+    options?: Partial<JsonReadOptions>,
+  ): SetAgeRestrictedResponse {
+    return new SetAgeRestrictedResponse().fromJson(jsonValue, options)
+  }
+
+  static fromJsonString(
+    jsonString: string,
+    options?: Partial<JsonReadOptions>,
+  ): SetAgeRestrictedResponse {
+    return new SetAgeRestrictedResponse().fromJsonString(jsonString, options)
+  }
+
+  static equals(
+    a:
+      | SetAgeRestrictedResponse
+      | PlainMessage<SetAgeRestrictedResponse>
+      | undefined,
+    b:
+      | SetAgeRestrictedResponse
+      | PlainMessage<SetAgeRestrictedResponse>
+      | undefined,
+  ): boolean {
+    return proto3.util.equals(SetAgeRestrictedResponse, a, b)
   }
 }

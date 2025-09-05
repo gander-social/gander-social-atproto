@@ -2,6 +2,42 @@ import { DBTransaction } from './db-transaction.js'
 import { DatabaseSchema } from './schema.js'
 
 export class DB<Schema extends DatabaseSchema> implements Disposable {
+  #db: null | IDBDatabase
+
+  constructor(
+    db: IDBDatabase,
+    protected readonly txOptions?: IDBTransactionOptions,
+  ) {
+    this.#db = db
+
+    const cleanup = () => {
+      this.#db = null
+      db.removeEventListener('versionchange', cleanup)
+      db.removeEventListener('close', cleanup)
+      db.close() // Can we call close on a "closed" database?
+    }
+
+    db.addEventListener('versionchange', cleanup)
+    db.addEventListener('close', cleanup)
+  }
+
+  get name() {
+    return this.db.name
+  }
+
+  get objectStoreNames() {
+    return this.db.objectStoreNames
+  }
+
+  get version() {
+    return this.db.version
+  }
+
+  protected get db(): IDBDatabase {
+    if (!this.#db) throw new Error('Database closed')
+    return this.#db
+  }
+
   static async open<Schema extends DatabaseSchema = DatabaseSchema>(
     dbName: string,
     migrations: ReadonlyArray<(db: IDBDatabase) => void>,
@@ -32,42 +68,6 @@ export class DB<Schema extends DatabaseSchema> implements Disposable {
     })
 
     return new DB<Schema>(db, txOptions)
-  }
-
-  #db: null | IDBDatabase
-
-  constructor(
-    db: IDBDatabase,
-    protected readonly txOptions?: IDBTransactionOptions,
-  ) {
-    this.#db = db
-
-    const cleanup = () => {
-      this.#db = null
-      db.removeEventListener('versionchange', cleanup)
-      db.removeEventListener('close', cleanup)
-      db.close() // Can we call close on a "closed" database?
-    }
-
-    db.addEventListener('versionchange', cleanup)
-    db.addEventListener('close', cleanup)
-  }
-
-  protected get db(): IDBDatabase {
-    if (!this.#db) throw new Error('Database closed')
-    return this.#db
-  }
-
-  get name() {
-    return this.db.name
-  }
-
-  get objectStoreNames() {
-    return this.db.objectStoreNames
-  }
-
-  get version() {
-    return this.db.version
   }
 
   async transaction<T extends readonly (keyof Schema & string)[], R>(

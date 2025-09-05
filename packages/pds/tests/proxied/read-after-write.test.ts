@@ -6,11 +6,6 @@ import {
   SeedClient,
   TestNetwork,
 } from '@gander-social-atproto/dev-env'
-import {
-  ensureTestSuiteHasTest,
-  runUpstreamTests,
-} from '@gander-social-atproto/test-config'
-import { request } from 'undici'
 import { isView as isExternalEmbedView } from '../../src/lexicon/types/app/gndr/embed/external'
 import { isView as isImagesEmbedView } from '../../src/lexicon/types/app/gndr/embed/images'
 import { isView as isRecordEmbedView } from '../../src/lexicon/types/app/gndr/embed/record'

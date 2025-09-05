@@ -1,7 +1,7 @@
-import type { LinkDefinition } from '@gander-social-atproto/oauth-provider-api'
 import { Trans } from '@lingui/react/macro'
 import { clsx } from 'clsx'
 import { JSX } from 'react'
+import type { LinkDefinition } from '@gander-social-atproto/oauth-provider-api'
 import { LinkAnchor } from '../../../components/utils/link-anchor.tsx'
 import { Override } from '../../../lib/util.ts'
 

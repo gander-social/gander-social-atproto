@@ -1,3 +1,5 @@
+import { isHttpError } from 'http-errors'
+import { z } from 'zod'
 import {
   ResponseType,
   ResponseTypeStrings,
@@ -5,8 +7,6 @@ import {
   httpResponseCodeToName,
   httpResponseCodeToString,
 } from '@gander-social-atproto/xrpc'
-import { isHttpError } from 'http-errors'
-import { z } from 'zod'
 
 // @NOTE Do not depend (directly or indirectly) on "./types" here, as it would
 // create a circular dependency.

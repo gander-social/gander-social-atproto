@@ -5,6 +5,8 @@ import { XrpcClient } from './xrpc-client'
 
 /** @deprecated Use {@link XrpcClient} instead */
 export class Client {
+  lex = new Lexicons()
+
   /** @deprecated */
   get fetch(): never {
     throw new Error(
@@ -18,8 +20,6 @@ export class Client {
       'Client.fetch is no longer supported. Use an XrpcClient instead.',
     )
   }
-
-  lex = new Lexicons()
 
   // method calls
   //

@@ -2,36 +2,31 @@
 
 Welcome friends!
 
-This repository contains Gander's implementation of AT Protocol, and of the `app.gndr` microblogging application service backend.
+This repository contains Bluesky's reference implementation of AT Protocol, and of the `app.bsky` microblogging application service backend.
 
 ## What is in here?
 
 **TypeScript Packages:**
 
 | Package                                                                                     | Docs                                       | NPM                                                                                                                                         |
-|---------------------------------------------------------------------------------------------|--------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------|
+| ------------------------------------------------------------------------------------------- | ------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------- |
 | `@gander-social-atproto/api`: client library                                                | [README](./packages/api/README.md)         | [![NPM](https://img.shields.io/npm/v/@gander-social-atproto/api)](https://www.npmjs.com/package/@gander-social-atproto/api)                 |
-| `@gander-social-atproto/common-web`: shared code and helpers which can run in web browsers  | [README](./packages/common-web/README.md)  | [![NPM](https://img.shields.io/npm/v/@gander-soclal-atproto/common-web)](https://www.npmjs.com/package/@gander-soclal-atproto/common-web)   |
-| `@gander-social-atproto/common`: shared code and helpers which doesn't work in web browsers | [README](./packages/common/README.md)      | [![NPM](https://img.shields.io/npm/v/@gander-soclal-atproto/common)](https://www.npmjs.com/package/@gander-soclal-atproto/common)           |
-| `@gander-social-atproto/crypto`: cryptographic signing and key serialization                | [README](./packages/crypto/README.md)      | [![NPM](https://img.shields.io/npm/v/@gander-soclal-atproto/crypto)](https://www.npmjs.com/package/@gander-soclal-atproto/crypto)           |
-| `@gander-social-atproto/identity`: DID and handle resolution                                | [README](./packages/identity/README.md)    | [![NPM](https://img.shields.io/npm/v/@gander-soclal-atproto/identity)](https://www.npmjs.com/package/@gander-soclal-atproto/identity)       |
-| `@gander-social-atproto/lexicon`: schema definition language                                | [README](./packages/lexicon/README.md)     | [![NPM](https://img.shields.io/npm/v/@gander-soclal-atproto/lexicon)](https://www.npmjs.com/package/@gander-soclal-atproto/lexicon)         |
-| `@gander-social-atproto/repo`: data storage structure, including MST                        | [README](./packages/repo/README.md)        | [![NPM](https://img.shields.io/npm/v/@gander-soclal-atproto/repo)](https://www.npmjs.com/package/@gander-soclal-atproto/repo)               |
-| `@gander-social-atproto/syntax`: string parsers for identifiers                             | [README](./packages/syntax/README.md)      | [![NPM](https://img.shields.io/npm/v/@gander-soclal-atproto/syntax)](https://www.npmjs.com/package/@gander-soclal-atproto/syntax)           |
-| `@gander-social-atproto/xrpc`: client-side HTTP API helpers                                 | [README](./packages/xrpc/README.md)        | [![NPM](https://img.shields.io/npm/v/@gander-soclal-atproto/xrpc)](https://www.npmjs.com/package/@gander-soclal-atproto/xrpc)               |
-| `@gander-social-atproto/xrpc-server`: server-side HTTP API helpers                          | [README](./packages/xrpc-server/README.md) | [![NPM](https://img.shields.io/npm/v/@gander-soclal-atproto/xrpc-server)](https://www.npmjs.com/package/@gander-soclal-atproto/xrpc-server) |
+| `@gander-social-atproto/common-web`: shared code and helpers which can run in web browsers  | [README](./packages/common-web/README.md)  | [![NPM](https://img.shields.io/npm/v/@gander-social-atproto/common-web)](https://www.npmjs.com/package/@gander-social-atproto/common-web)   |
+| `@gander-social-atproto/common`: shared code and helpers which doesn't work in web browsers | [README](./packages/common/README.md)      | [![NPM](https://img.shields.io/npm/v/@gander-social-atproto/common)](https://www.npmjs.com/package/@gander-social-atproto/common)           |
+| `@gander-social-atproto/crypto`: cryptographic signing and key serialization                | [README](./packages/crypto/README.md)      | [![NPM](https://img.shields.io/npm/v/@gander-social-atproto/crypto)](https://www.npmjs.com/package/@gander-social-atproto/crypto)           |
+| `@gander-social-atproto/identity`: DID and handle resolution                                | [README](./packages/identity/README.md)    | [![NPM](https://img.shields.io/npm/v/@gander-social-atproto/identity)](https://www.npmjs.com/package/@gander-social-atproto/identity)       |
+| `@gander-social-atproto/lexicon`: schema definition language                                | [README](./packages/lexicon/README.md)     | [![NPM](https://img.shields.io/npm/v/@gander-social-atproto/lexicon)](https://www.npmjs.com/package/@gander-social-atproto/lexicon)         |
+| `@gander-social-atproto/repo`: data storage structure, including MST                        | [README](./packages/repo/README.md)        | [![NPM](https://img.shields.io/npm/v/@gander-social-atproto/repo)](https://www.npmjs.com/package/@gander-social-atproto/repo)               |
+| `@gander-social-atproto/syntax`: string parsers for identifiers                             | [README](./packages/syntax/README.md)      | [![NPM](https://img.shields.io/npm/v/@gander-social-atproto/syntax)](https://www.npmjs.com/package/@gander-social-atproto/syntax)           |
+| `@gander-social-atproto/xrpc`: client-side HTTP API helpers                                 | [README](./packages/xrpc/README.md)        | [![NPM](https://img.shields.io/npm/v/@gander-social-atproto/xrpc)](https://www.npmjs.com/package/@gander-social-atproto/xrpc)               |
+| `@gander-social-atproto/xrpc-server`: server-side HTTP API helpers                          | [README](./packages/xrpc-server/README.md) | [![NPM](https://img.shields.io/npm/v/@gander-social-atproto/xrpc-server)](https://www.npmjs.com/package/@gander-social-atproto/xrpc-server) |
 
 **TypeScript Services:**
 
-- `pds`: "Personal Data Server", hosting repo content for atproto accounts. Most implementation code in `packages/pds`,
-  with runtime wrapper in `services/pds`. See [gander-social/pds](https://github.com/gander-social/pds) for directions
-  on self-hosting.
-- `gndr`: AppView implementation of the `app.gndr.*` API endpoints. Running on main network at `api.gndr.app`. Most
-  implementation code in `packages/gndr`, with runtime wrapper in `services/gndr`.
+- `pds`: "Personal Data Server", hosting repo content for atproto accounts. Most implementation code in `packages/pds`, with runtime wrapper in `services/pds`. See [bluesky-social/pds](https://github.com/bluesky-social/pds) for directions on self-hosting.
+- `bsky`: AppView implementation of the `app.bsky.*` API endpoints. Running on main network at `api.bsky.app`. Most implementation code in `packages/bsky`, with runtime wrapper in `services/bsky`.
 
-**Lexicons:** for both the `com.atproto.*` and `app.gndr.*` are canonically versioned in this repo, for now, under
-`./lexicons/`. These are JSON files in the [Lexicon schema definition language](https://atproto.com/specs/lexicon),
-similar to JSON Schema or OpenAPI.
+**Lexicons:** for both the `com.atproto.*` and `app.bsky.*` are canonically versioned in this repo, for now, under `./lexicons/`. These are JSON files in the [Lexicon schema definition language](https://atproto.com/specs/lexicon), similar to JSON Schema or OpenAPI.
 
 **Interoperability Test Data:** the language-neutral test files in `./interop-test-files/` may be useful for other protocol implementations to ensure that they follow the specification correctly
 
@@ -49,15 +44,9 @@ There is a Makefile which can help with basic development tasks:
 # use existing nvm to install node 18 and pnpm
 make nvm-setup
 
-# pull dependencies and build all local packages - build needs to run to be able to make deps
-# IMPORTANT: follow these steps for a first install
-# If there is a pnpm-lock.yaml file, delete it
-make start-here
-
-# this will ensure all dependencies are installed, ignoring build scripts
-# this will then run the ordered build scripts in the right order
-# this will then run make build completing the install
-
+# pull dependencies and build all local packages
+make deps
+make build
 
 # run the tests, using Docker services as needed
 make test
@@ -72,16 +61,14 @@ make help
 
 ## About AT Protocol
 
-The Authenticated Transfer Protocol ("ATP" or "atproto") is a decentralized social media protocol, developed
-by [Gander Social PBC](https://gndr.social). Learn more at:
+The Authenticated Transfer Protocol ("ATP" or "atproto") is a decentralized social media protocol, developed by [Bluesky Social PBC](https://bsky.social). Learn more at:
 
 - [Overview and Guides](https://atproto.com/guides/overview) 👈 Best starting point
 - [Github Discussions](https://github.com/bluesky-social/atproto/discussions) 👈 Great place to ask questions
 - [Protocol Specifications](https://atproto.com/specs/atp)
-- [Blogpost on self-authenticating data structures](https://gndr.social/about/blog/3-6-2022-a-self-authenticating-social-protocol)
+- [Blogpost on self-authenticating data structures](https://bsky.social/about/blog/3-6-2022-a-self-authenticating-social-protocol)
 
-The Bluesky Social application encompasses a set of schemas and APIs built in the overall AT Protocol framework. The
-namespace for these "Lexicons" is `app.gndr.*`.
+The Bluesky Social application encompasses a set of schemas and APIs built in the overall AT Protocol framework. The namespace for these "Lexicons" is `app.bsky.*`.
 
 ## Contributions
 
@@ -116,9 +103,7 @@ Bluesky is an open social network built on the AT Protocol, a flexible technolog
 
 ## Security disclosures
 
-If you discover any security issues, please send an email to security@gndr.app. The email is automatically CCed to the
-entire team, and we'll respond promptly.
-See [SECURITY.md](https://github.com/bluesky-social/atproto/blob/main/SECURITY.md) for more info.
+If you discover any security issues, please send an email to security@bsky.app. The email is automatically CCed to the entire team, and we'll respond promptly. See [SECURITY.md](https://github.com/bluesky-social/atproto/blob/main/SECURITY.md) for more info.
 
 ## License
 
@@ -127,5 +112,4 @@ This project is dual-licensed under MIT and Apache 2.0 terms:
 - MIT license ([LICENSE-MIT.txt](https://github.com/bluesky-social/atproto/blob/main/LICENSE-MIT.txt) or http://opensource.org/licenses/MIT)
 - Apache License, Version 2.0, ([LICENSE-APACHE.txt](https://github.com/bluesky-social/atproto/blob/main/LICENSE-APACHE.txt) or http://www.apache.org/licenses/LICENSE-2.0)
 
-Downstream projects and end users may choose either license individually, or both together, at their discretion. The
-motivation for this dual-licensing is the additional software patent assurance provided by Apache 2.0.
+Downstream projects and end users may chose either license individually, or both together, at their discretion. The motivation for this dual-licensing is the additional software patent assurance provided by Apache 2.0.

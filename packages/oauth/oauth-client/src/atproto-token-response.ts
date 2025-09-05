@@ -1,6 +1,6 @@
+import { TypeOf, z } from 'zod'
 import { atprotoDidSchema } from '@gander-social-atproto/did'
 import { oauthTokenResponseSchema } from '@gander-social-atproto/oauth-types'
-import { TypeOf, z } from 'zod'
 import { SpaceSeparatedValue, includesSpaceSeparatedValue } from './util'
 
 export type AtprotoScope = SpaceSeparatedValue<'atproto'>

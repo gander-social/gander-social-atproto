@@ -1,4 +1,4 @@
-export type Awaitable<V> = V | PromiseLike<V>
+import { Awaitable } from './util.js'
 
 export type Key = string | number
 export type Value = NonNullable<unknown> | null

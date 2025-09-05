@@ -1,6 +1,6 @@
-import type { Session } from '@gander-social-atproto/oauth-provider-api'
 import { Trans, useLingui } from '@lingui/react/macro'
 import { ReactNode, useCallback, useEffect, useMemo, useState } from 'react'
+import type { Session } from '@gander-social-atproto/oauth-provider-api'
 import {
   LayoutTitlePage,
   LayoutTitlePageProps,
@@ -49,7 +49,7 @@ export function SignInView({
   const accounts = useMemo(() => sessions.map((s) => s.account), [sessions])
   const [showSignInForm, setShowSignInForm] = useState(sessions.length === 0)
 
-  title ??= t`Sign in`
+  title ??= t({ message: 'Sign in', context: 'noun' })
 
   useEffect(() => {
     // Make sure the "back" action shows the account picker instead of the

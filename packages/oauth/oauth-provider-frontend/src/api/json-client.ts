@@ -31,6 +31,12 @@ export class JsonClient<
     >,
   ) {}
 
+  public static parseError(json: unknown): undefined | JsonErrorResponse {
+    if (JsonErrorResponse.is(json)) {
+      return new JsonErrorResponse(json)
+    }
+  }
+
   public async fetch<Path extends EndpointPath & keyof Endpoints>(
     method: Endpoints[Path]['method'],
     path: Path,
@@ -91,12 +97,6 @@ export class JsonClient<
     if (error) return error
 
     return new Error('Invalid JSON response', { cause: response })
-  }
-
-  public static parseError(json: unknown): undefined | JsonErrorResponse {
-    if (JsonErrorResponse.is(json)) {
-      return new JsonErrorResponse(json)
-    }
   }
 }
 
